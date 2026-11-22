@@ -13,3 +13,8 @@
 /data/silver/
 /data/gold/
 /data/reference-cache/
+
+# Native build products and operational caches
+**/target/
+**/__pycache__/
+*.pyc

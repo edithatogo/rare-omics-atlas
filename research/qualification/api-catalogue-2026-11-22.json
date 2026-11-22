@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-22",
+  "status": "implemented_reviewed_cloud_qualified",
+  "repository": "https://github.com/edithatogo/rare-omics-atlas",
+  "base_commit": "89b268fe1d1d457f03bf75320ae82e027fbd43d9",
+  "source_manifest": [
+    {
+      "path": "tools/catalogue/Cargo.lock",
+      "sha256": "5a557f33934ebcb4ec2730f7f4d195ccd91d40bbad18945277cb91d5307272cb",
+      "bytes": 43542
+    },
+    {
+      "path": "tools/catalogue/Cargo.toml",
+      "sha256": "b5a1f7d8725dd5a224018e797427f47312933e8eef4a2b93e81618b8749a5bf2",
+      "bytes": 386
+    },
+    {
+      "path": "tools/catalogue/src/lib.rs",
+      "sha256": "855b8c227e318d8437def6ba88b9c0a7a1816b7bd874ef7d0da6eaba1cb4f08b",
+      "bytes": 11839
+    },
+    {
+      "path": "tools/catalogue/src/main.rs",
+      "sha256": "72b6cc13f0de0f2a1e2bc6ccb7f191c116e2e36ce2622f28eec2120d3412c19d",
+      "bytes": 14304
+    },
+    {
+      "path": "tools/catalogue/tests/contracts.rs",
+      "sha256": "c7c5c32517883cb468188550be520c7d5bd8409f777bcd4adc10bf52166d2084",
+      "bytes": 3743
+    }
+  ],
+  "source_manifest_sha256": "0e373583b83febca88df0942c53439b50a79bbbada3242321bf574795116db40",
+  "scope": "Official public metadata catalogue; no new scientific disease analysis or raw-array transfer",
+  "api_methods": {
+    "GEO": [
+      "EUtils GDS exact-accession ESearch",
+      "EUtils GDS ESummary",
+      "documented GEO SOFT series self/quick",
+      "documented GEO SOFT samples gsm/brief"
+    ],
+    "PRIDE": [
+      "Archive v3 exact project",
+      "Archive v3 unpaginated files/all"
+    ]
+  },
+  "live_harvest": {
+    "catalogued_accession_count": 29,
+    "completed_at_unix_ms": 1795344930107,
+    "distinct_assay_accessions": 2465,
+    "elapsed_seconds": 168.22394233,
+    "extra_accessions": [
+      "GSE154566"
+    ],
+    "failed_accession_count": 0,
+    "file_metadata_rows": 4514,
+    "independent_cohort_count": null,
+    "limitations": [
+      "Seed inventory, not an exhaustive rare-disease survey",
+      "GEO assay identifiers are not independent participants",
+      "SuperSeries/subseries memberships can repeat assays",
+      "File URLs are source-declared listings, not fresh download checks",
+      "Scientific admission and sample phenotypes require separate curation",
+      "Raw API/SOFT cache is excluded from public catalogue; contacts and personal traits are not exported"
+    ],
+    "registry_sha256": "e00b4100381a8e3dbd9f8656e7111618f125abee2c64921f892001ee81fa59e9",
+    "request_receipts": 114,
+    "requested_accession_count": 29,
+    "schema_version": 1,
+    "series_assay_membership_rows": 2532,
+    "started_at_unix_ms": 1795344761883,
+    "tool_version": "0.1.0"
+  },
+  "final_offline_replay": {
+    "catalogued_accession_count": 29,
+    "completed_at_unix_ms": 1795345033391,
+    "distinct_assay_accessions": 2465,
+    "elapsed_seconds": 3.009152895,
+    "extra_accessions": [],
+    "failed_accession_count": 0,
+    "file_metadata_rows": 4514,
+    "independent_cohort_count": null,
+    "limitations": [
+      "Seed inventory, not an exhaustive rare-disease survey",
+      "GEO assay identifiers are not independent participants",
+      "SuperSeries/subseries memberships can repeat assays",
+      "File URLs are source-declared listings, not fresh download checks",
+      "Scientific admission and sample phenotypes require separate curation",
+      "Raw API/SOFT cache is excluded from public catalogue; contacts and personal traits are not exported"
+    ],
+    "registry_sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+    "request_receipts": 114,
+    "requested_accession_count": 29,
+    "schema_version": 1,
+    "series_assay_membership_rows": 2532,
+    "started_at_unix_ms": 1795345030382,
+    "status": "complete",
+    "tool_version": "0.1.0"
+  },
+  "verification": {
+    "raw_response_objects_verified": 114,
+    "all_response_hashes_sizes_url_ids_match": true,
+    "all_dataset_request_links_resolve": true,
+    "all_catalogued_records_exact_identity_and_count_checks_pass": true,
+    "nonempty_geo_organism_arrays": 28,
+    "duplicate_membership_groups": [
+      {
+        "series": [
+          "GSE86829",
+          "GSE86833"
+        ],
+        "assays": 15
+      },
+      {
+        "series": [
+          "GSE86831",
+          "GSE86833"
+        ],
+        "assays": 15
+      },
+      {
+        "series": [
+          "GSE92577",
+          "GSE92580"
+        ],
+        "assays": 12
+      },
+      {
+        "series": [
+          "GSE92579",
+          "GSE92580"
+        ],
+        "assays": 25
+      }
+    ],
+    "platform_membership_counts": {
+      "GPL13534": 747,
+      "GPL16791": 45,
+      "GPL18573": 23,
+      "GPL20301": 20,
+      "GPL21145": 580,
+      "GPL23227": 25,
+      "GPL23976": 956,
+      "GPL24676": 15,
+      "GPL25507": 108,
+      "GPL34284": 13
+    },
+    "unit_tests_passed": 11
+  },
+  "checks": {
+    "checks": [
+      {
+        "argv": [
+          "cargo",
+          "+1.95.0",
+          "fmt",
+          "--manifest-path",
+          "tools/catalogue/Cargo.toml",
+          "--",
+          "--check"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 0.07443702399905305
+      },
+      {
+        "argv": [
+          "cargo",
+          "+1.95.0",
+          "test",
+          "--locked",
+          "--manifest-path",
+          "tools/catalogue/Cargo.toml"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 1.1118666260008467
+      },
+      {
+        "argv": [
+          "cargo",
+          "+1.95.0",
+          "clippy",
+          "--locked",
+          "--manifest-path",
+          "tools/catalogue/Cargo.toml",
+          "--all-targets",
+          "--",
+          "-D",
+          "warnings"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 0.1258602729976701
+      },
+      {
+        "argv": [
+          "cargo",
+          "+1.95.0",
+          "tree",
+          "--locked",
+          "--manifest-path",
+          "tools/catalogue/Cargo.toml",
+          "-d"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 0.09741314600250917
+      }
+    ],
+    "direct_dependencies": [
+      {
+        "name": "clap",
+        "version": "4.6.9",
+        "declared_license": "MIT OR Apache-2.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "reqwest",
+        "version": "0.13.5",
+        "declared_license": "MIT OR Apache-2.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "declared_license": "MIT OR Apache-2.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha2",
+        "version": "0.11.1",
+        "declared_license": "MIT OR Apache-2.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      }
+    ],
+    "locked_registry_packages": 180
+  },
+  "advisory_review": {
+    "url": "https://api.osv.dev/v1/querybatch",
+    "queried_at_unix": 1795344931.9718697,
+    "http_status": 200,
+    "packages": 180,
+    "returned_results": 180,
+    "findings": [],
+    "elapsed_seconds": 5.434711456298828
+  },
+  "outputs": [
+    {
+      "path": "research/catalogue/2026-11-22/assays.jsonl",
+      "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "bytes": 992318
+    },
+    {
+      "path": "research/catalogue/2026-11-22/datasets.jsonl",
+      "sha256": "0c996f2774db79b68f757aa7c4bf94be393e65d9b292728f4d1b3ae92c1c4ef2",
+      "bytes": 37716
+    },
+    {
+      "path": "research/catalogue/2026-11-22/files.jsonl",
+      "sha256": "6a16069b68e6759244f0005813e13cd5a5a8e964c45718c509208aa311f1b0bf",
+      "bytes": 1089982
+    },
+    {
+      "path": "research/catalogue/2026-11-22/requests.jsonl",
+      "sha256": "1e4be2edb4dd112c6ef879fa787dba9eeadb4f7b3efa79abe7cfd4f488fffc58",
+      "bytes": 70037
+    },
+    {
+      "path": "research/catalogue/2026-11-22/summary.json",
+      "sha256": "7d7f9c68fb3c70d7d9ab2be592fd6d7cd00d9dda61cb1f68f8b3fdbb7bb9e222",
+      "bytes": 1039
+    }
+  ],
+  "review": {
+    "mode": "Ponytail full",
+    "independent_reviewer": "rust_backend_search_v2",
+    "resolved_findings": [
+      "Record cache rejection and offline cache-miss receipts",
+      "Replace stale completion summary with running status at startup",
+      "Normalise common array-typed metadata fields for downstream Arrow/HF readers",
+      "Document no implicit cache expiry; use refresh for a new source retrieval"
+    ],
+    "final_result": "No remaining implementation finding in the bounded review"
+  },
+  "environment": {
+    "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "rust_toolchain": "1.95.0",
+    "official_owner_local_runner_executed": false,
+    "rss_peak_bytes": null,
+    "benchmark_claim": false
+  },
+  "work_accounting": {
+    "agent_batches": [
+      "API/source reconnaissance and failing identity/error tests",
+      "Rust adapter and complete live intake",
+      "Independent review fixes, cache replay and qualification"
+    ],
+    "human_duration_estimates_used": false,
+    "live_api_seconds": 168.22394233,
+    "final_offline_replay_seconds": 3.009152895
+  },
+  "limitations": [
+    "29 source records are a seed set, not all rare-disease methylation datasets",
+    "Assay records are not independent people; family/specimen linkage remains separate",
+    "File URLs are source-declared metadata, not download verification",
+    "Age/sex/diagnostic/variant/contact values are excluded from public catalogue",
+    "No new research ethics determination or source-rights expansion",
+    "Cloud qualification is not owner-device official GitHub runner acceptance",
+    "An advisory query with no returned findings does not prove absence of vulnerabilities"
+  ],
+  "source_documents": [
+    "https://www.ncbi.nlm.nih.gov/geo/info/geo_paccess.html",
+    "https://www.ncbi.nlm.nih.gov/geo/info/download.html",
+    "https://www.ncbi.nlm.nih.gov/geo/info/soft.html",
+    "https://www.ncbi.nlm.nih.gov/books/NBK25497/",
+    "https://www.ebi.ac.uk/pride/ws/archive/v3/docs/api-guide.html"
+  ]
+}

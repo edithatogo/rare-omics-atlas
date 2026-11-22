@@ -1,0 +1,14 @@
+[project]
+name = "rare-omics-hf-release"
+version = "0.1.0"
+description = "Source-bound Hugging Face publication for rare-omics-atlas"
+requires-python = ">=3.11"
+dependencies = ["huggingface-hub==2.4.0", "httpx2[socks]==2.16.2"]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true

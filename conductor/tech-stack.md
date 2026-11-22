@@ -7,7 +7,7 @@ Status: source-reviewed candidates; the owner fork's existing corpus was replaye
 | Typed metadata / results | Rust Polars, Arrow/Parquet | DataFusion CLI if SQL suffices; retain a simpler existing DuckDB query. One engine per stage |
 | HPO / ontology / intervals | `hpo`, `ontolius`, `bedrs`/`gia`, each only when needed | Semsimian only for a real weighted/negated phenotype need; its Python-free build is unverified. Preserve full HPOA evidence; qualify MONDO and coordinates |
 | Raw Illumina array QC | No complete Rust replacement qualified | R minfi/SeSAMe reference; SeSAMe2 C CLI candidate with licence, mask and platform conformance gates |
-| Differential CpG models | Owner MassDynamics-derived `limma-rust` (`limma-core`) | Existing 104-test corpus passed; independent R recipe, supported API/label/consumer contract, target-device and fixed M-matrix acceptance still required; global moderation/FDR |
+| Differential CpG models | Owner MassDynamics-derived `limma-rust` (`limma-core`) | Original 104-test corpus plus fresh public synthetic R slice pass (110 tests); supported API/label/consumer contract, target-device and fixed M-matrix acceptance still required; global moderation/FDR |
 | DMR / probe-aware enrichment | Exact validated DMR / missMethyl workflow until suitable replacement | Generic Rust enrichment or interval grouping does not reproduce the method |
 | Networks | `petgraph` with only required algorithm crates | `rustworkx-core`, `leiden-rs`, or alternative `graphrs`; signed/multilayer objective and holdout checks |
 | Hierarchical inference | Assess `nuts-rs` with a qualified model/gradient route | Julia Turing fallback/reference; a sampler alone is not a full probabilistic model language |

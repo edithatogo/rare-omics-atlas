@@ -56,4 +56,4 @@ The [five-condition crosswalk](registries/initial-disease-crosswalk.tsv) and [re
 | GSE120428 | 13 EPIC assays; listed IDAT 342.5 MB | Mixed blood/fibroblasts, repeats, HESJAS/DNMT3A-overgrowth/PCNT comparators and controls. The same paper's human exome/RNA/RRBS/ChIP data are controlled EGA sources, excluded from no-application intake |
 | GSE301386 | 15 WT H1/WA01 CUT&RUN assays; archive listed 1.0G, sample bigWig tracks and SRA links | Three labelled replicates per IgG/H3K4me1/H3K4me3/H3K27me3/H2AK119ub condition. Wild-type chromatin reference, not mutant rescue or patient methylation |
 
-No raw archives/sequences from these three additional leads were transferred. Exact sources and per-artifact rights are recorded in the [28-accession register](dataset-rights.md). GEO archive names alone do not establish that a RAW.tar contains sequencing reads.
+No raw archives/sequences from these three additional leads were transferred. Exact sources and per-artifact rights are recorded in the [29-accession register](dataset-rights.md). GEO archive names alone do not establish that a RAW.tar contains sequencing reads.

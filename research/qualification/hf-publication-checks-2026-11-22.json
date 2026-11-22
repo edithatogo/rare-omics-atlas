@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "argv": [
+        "/workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/hf-release/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5390079410026374
+    },
+    {
+      "argv": [
+        "/workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python",
+        "tools/hf-release/publisher.py",
+        "--manifest",
+        "research/releases/2026-11-22/manifest.json",
+        "--root",
+        ".",
+        "--data-root",
+        "/workspace/scratch/f247f15c065b/atlas_source_receipts",
+        "--receipt",
+        "/workspace/scratch/f247f15c065b/hf-release-final-dry-run.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.592128041997057
+    }
+  ],
+  "files": [
+    {
+      "path": "tools/hf-release/publisher.py",
+      "sha256": "1641709238710f6496b3fed1d8983aa9fa3f867cc50cd68753df69a85a447aea"
+    },
+    {
+      "path": "tools/hf-release/pyproject.toml",
+      "sha256": "94a564885f79b3d3fd6a406cb24e31dd59f470bba8fee3797543969f6599ba6a"
+    },
+    {
+      "path": "tools/hf-release/uv.lock",
+      "sha256": "6dbe5c00650daf62a89e3256ec1cad540b1705036269b41fdcd68ab9d993735f"
+    },
+    {
+      "path": "tools/hf-release/tests/test_publisher.py",
+      "sha256": "c1aeb885c246def49fca6402eaf5167053dc94ec851c56b1578c725bd4dd086f"
+    }
+  ]
+}

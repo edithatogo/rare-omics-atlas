@@ -143,6 +143,23 @@
         "T00.context"
       ],
       "scope": "Separate quantitative data, institutional/method gates and own N1"
+    },
+    {
+      "id": "T08.api_catalogue",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "29 official API records and provenance; cloud infrastructure acceptance; archived"
+    },
+    {
+      "id": "T09.hf_publication",
+      "status": "in_progress",
+      "requires": [
+        "T08.api_catalogue",
+        "T01.initial_intake"
+      ],
+      "scope": "Source-bound catalogue and three-archive mirror; actual Hub/API verification; does not admit scientific inference"
     }
   ],
   "external_gate_resolution": {

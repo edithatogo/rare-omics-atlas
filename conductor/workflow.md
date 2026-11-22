@@ -1,6 +1,6 @@
 # Research operating procedure — Ponytail full
 
-1. Read active track `spec.md` and `plan.md`; check repository state, issue/PR ownership and source truth. **No work outside approved track.**
+1. Read active track `spec.md` and `plan.md`; check repository state, issue/PR ownership and source truth. **Work within the currently authorised track; the owner has authorised continued implementation.**
 2. Independently record public landing/download listings, actual transfer/content hash, research-use permission, redistribution/hosting conditions and institutional classification as separate statuses. Verify sample-level independence, tissue/platform, molecular diagnosis and assay controls before inference. Hold only the affected claim when a required gate is unresolved; public intake can proceed on affirmative source policy without private consent forms. Refer to `research/source-access-ethics.md`.
 3. For **each analysis**, run and record N0/N1 *before execution* per [novelty/priority protocol](../research/novelty-priority-protocol.md): current published/early-online/preprint studies and new datasets, exact dataset or method overlap, clinical journal fit and justified priority. Freeze the scientific contrast, estimand, covariates, outcomes, negative controls, splits and provisional journal. A search not executed is a hold, not a negative finding.
 4. Start with published validated methods and simplest baselines. Among suitable implementations use **Rust > Julia > Python > R**. Read the [candidate audit](../research/rust-candidate-audit.md); prefer existing CLIs/libraries and distinguish the runtime engine from its interface and test oracle.
@@ -13,7 +13,7 @@
 
 **Approved:** logical Bronze (raw originals/rights/hash), Silver (qualified observations and ontology maps), Gold (published analysis tables/results). **Deferred:** a service-backed lakehouse, managed catalogues, orchestration, Fabric/Databricks/Delta/Iceberg, platinum layer, data warehouse schemas until materially needed.
 
-Follow [hosting and resource decisions](../research/resources-hosting-reuse.md). Reuse the existing Hugging Face estate registry and eligible MONDO/Orphadata snapshots. Medallion promotion does not expand rights. Begin public distribution with source manifests and eligible aggregate outputs; any actual human-data upload needs the applicable rights, disclosure and hosting determination. No upload is authorised merely by this plan.
+Follow [hosting and resource decisions](../research/resources-hosting-reuse.md). Reuse the existing Hugging Face estate registry and eligible MONDO/Orphadata snapshots. Medallion promotion does not expand rights. The owner authorises the minimal GitHub–HF integration. Publish the API catalogue and eligible artifacts through a source-bound manifest. Record one artifact decision, reusing it for identical bytes; do not add a second human sign-off, new author permission or blanket ethics requirement unless an actual source or institutional condition requires it. Rights do not expand through transformation. Source-linked Bronze is sufficient; mirrored Bronze is optional and explicitly recorded.
 
 ### Publication boundaries
 
@@ -25,3 +25,7 @@ Use the [experiment/publication plan](../research/experiment-publication-plan.md
 ### Current execution receipts
 
 The [setup](../research/qualification/setup-receipt.md), [source checks](../research/qualification/initial-source-receipt.md), [literature map](../research/literature/README.md) and linked fork corpus replay record initial work actually executed. The weekly literature watch is scheduled; no custom crawler has been built. Use [task-level dependencies](dependencies.json): selected-method qualification precedes its clinical consumer, while optional ports remain separate.
+
+### Track completion and archiving
+
+The owner has chosen implement → review → archive. Once a bounded track passes its declared exit criteria, record the source/input hashes, commands and outcomes, independent Ponytail review and limitations, then move it to `conductor/archive/<track_id>/`. Remove it from the active track list and link it from `conductor/archive/README.md`. Do not archive a parent with unresolved scientific/device tasks. A completed infrastructure track may explicitly leave owner-device qualification in the existing device milestone. Timing estimates use agent batches; actual execution duration is recorded separately.

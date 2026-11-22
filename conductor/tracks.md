@@ -5,7 +5,7 @@ Updated 22 November 2026. **Initial executable work is recorded; complete scient
 | Execution stage | Track / milestone | Requires | Current state |
 |---|---|---|---|
 | 1 | T00 context and source installation | Repository identity | Complete for project context and pinned source; host auto-activation unobserved |
-| 2a | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 28-accession rights review complete; broader intake continues |
+| 2a | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 29-accession rights review complete; broader intake continues |
 | 2b | T07 selected-method baseline | T00 context; named method | Fork provenance and existing cloud corpus checked; independent R and consumer qualification pending |
 | 2c | T00 official local runner / institutional route | Actual target device / institutional process | External prerequisites recorded; no operational or ethics approval claim |
 | 3 | T01 analysis admission | Exact cohort, controls, overlap, covariates, annotations and applicable institutional determination | Pending; no dataset accepted for inference yet |
@@ -18,6 +18,12 @@ Updated 22 November 2026. **Initial executable work is recorded; complete scient
 | Separate later | T06 genotype–toxin question | Quantitative disease/host/perturbation evidence and model identifiability | Conditional, not a prerequisite for the clinical paper |
 
 See [dependencies.json](dependencies.json) for task-level prerequisites and [setup receipt](../research/qualification/setup-receipt.md) for what was actually performed. A partially complete parent track does not prevent work depending only on its completed context milestone.
+
+## Active implementation increment
+
+- [~] [T09 — Minimal GitHub–Hugging Face medallion](tracks/t09_hf_medallion_20261122/index.md): consumes completed T08.
+- Completed: [T08 API catalogue](archive/t08_catalogue_20261122/index.md), independently reviewed and archived before T09.
+- Next: reproducible local decision support and bounded native preprocessing foundations where the source review justifies them. Parent scientific tracks retain their acceptance criteria.
 
 ## Linked plans
 
