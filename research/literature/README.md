@@ -8,9 +8,10 @@
 |---|---|
 | [PubMed searches](2026-11-22-pubmed-searches.json) | Three exact queries, query translations, warning lists, pagination receipts and citation metadata: 64 platform-comparison results, 3 accession-query results, 65 broad Kabuki/modelling results. All pages for these queries were retrieved; selected relevant studies received full-text checks. Counts are not counts of eligible datasets or a systematic-review result |
 | [OpenAlex seeds](2026-11-22-openalex-seeds.json) | Exact request URL, timestamp, HTTP 200 and ten DOI-resolved works. IDs support later citation tracing; this request did not execute a forward-citation census or establish dataset reuse |
-| [Study–dataset edges](2026-11-22-study-dataset-edges.json) | Ten study metadata records, fifteen explicit generated/reused edges, four parent/subseries relationships, one unresolved EPIC linkage and a source-date conflict |
-| [Edge table](2026-11-22-study-dataset-edges.tsv) | The same fifteen verified edges in a simple tabular interchange format |
+| [Study–dataset edges](2026-11-22-study-dataset-edges.json) | Thirteen study metadata records, seventeen explicit generated/reused/benchmark-used edges, four parent/subseries relationships, an unresolved EPIC linkage, an unresolved E-Risk participant-overlap relationship and a source-date conflict |
+| [Edge table](2026-11-22-study-dataset-edges.tsv) | The same seventeen verified edges in a simple tabular interchange format; unresolved overlap is kept separately in the JSON |
 | [Europe PMC receipts](2026-11-22-europepmc-receipts.json) | Eight actual XML request outcomes: two HTTP 200, five HTTP 500, one timeout. Successful accession mentions are retained; full-text passages are omitted |
+| [Paired-array addendum API receipts](2026-11-22-paired-addendum-api-receipts.json) | Fresh exact-ID/DOI lookups for Kandaswamy, Sugden and Cheung through PubMed, OpenAlex and Europe PMC; failed full-text calls and successful documented PMC AWS retrievals, with hashes, version metadata and limits |
 
 ## How to extend the record
 
@@ -45,3 +46,17 @@ Record each future run as a new dated event. Do not infer a negative finding fro
 The later source-rights pass added six explicit Wheeler study–dataset edges (three reused patient series and three generated model/reference series), bringing this seed edge register to 15. These additions come from the primary Methods/Data Availability and GEO source checks; they were not part of the original ten-DOI OpenAlex request. The original API receipts remain unchanged.
 
 The [schedule receipt](watch-schedule.json) records creation-time status and timezone. Its last-run field was empty at creation; a scheduled future run is not a completed search.
+
+## Paired-array addendum — 22 November 2026
+
+The [focused qualification receipt](../qualification/paired-literature-addendum-2026-11-22.md) reconciles the additional paired-array evidence with this central ledger. It adds Kandaswamy (PMID 33371772) and Sugden (PMID 32885222), bringing the current register to **13 studies and 17 verified study–dataset edges**. Cheung's two existing GSE86833/GSE92580 reuse edges were reconfirmed from primary text and retained without duplication. Original search receipts remain unchanged.
+
+Kandaswamy's article explicitly deposits its study at **GSE154566**. The separately qualified GEO pairing metadata identifies 233 blood specimens measured on both arrays. Sugden reports a 350-specimen E-Risk comparison and identifies **GSE105018** for the 450K layer; this does not establish public access to all paired EPIC raw files. Because both concern age-18 E-Risk blood, **participant overlap remains unresolved**. The ledger does not treat them as two independent calibration cohorts, add their sample counts, or assert that Sugden used GSE154566. Explicit specimen/person/family linkage is required before a joint calibration or independent holdout claim.
+
+Cheung already compared multiple tissues and public paired cohorts. Sugden already examined downstream implications of probe reliability. These are specific prior-art constraints on a simple pooled-concordance or generic reliability paper. They do not establish that every clinically focused transfer question is exhausted. This exact-seed reconciliation is not a new systematic review, a completed N1 protocol or an assessment that a proposed disease analysis is novel.
+
+### Current full-text API route
+
+All three metadata lookups succeeded. The new Europe PMC fullTextXML attempts returned two HTTP 500s and one timeout; those failures are recorded. An attempted legacy `oa.fcgi` request returned 404. [NCBI documents that this service retired on 25 August 2026](https://pmc.ncbi.nlm.nih.gov/tools/oa-service/); that response must not be interpreted as lack of open access.
+
+The [current PMC Article Datasets documentation](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/) and its [bucket README](https://pmc-oa-opendata.s3.amazonaws.com/README.txt) describe anonymous HTTPS/S3 access. The addendum used ListObjectsV2 to enumerate each PMCID's versions, read their metadata and retrieve the XML. Published versions were selected using `is_manuscript`, not by assuming the largest version suffix is newest. All four retrieved XML objects matched the metadata-supplied MD5, and each received a separate SHA-256. Only citation metadata, relationship assertions and receipts are committed; article text and participant records are not republished.

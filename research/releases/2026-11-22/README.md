@@ -1,8 +1,8 @@
 ---
 pretty_name: Rare Omics Atlas
 license: other
-license_name: Source-specific rights with retained attribution
-license_link: LICENSES.md
+license_name: rare-omics-source-specific
+license_link: https://huggingface.co/datasets/edithatogo/rare-omics-atlas/blob/main/LICENSES.md
 tags:
 - methylation
 - rare-disease

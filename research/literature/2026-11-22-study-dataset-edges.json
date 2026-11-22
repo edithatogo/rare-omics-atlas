@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "retrieved_on": "2026-11-22",
-  "scope": "Targeted seed studies and explicit study\u2013dataset\u2013analysis relationships. Generated vs reused are not inferred from citations.",
+  "scope": "Targeted seed studies and explicit study–dataset–analysis relationships. Generated vs reused are not inferred from citations.",
   "studies": [
     {
       "study_id": "PMID:27717381",
@@ -137,6 +137,42 @@
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/41456056/",
       "full_text_url": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
       "canonical_date_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1"
+    },
+    {
+      "study_id": "PMID:33371772",
+      "pmid": "33371772",
+      "pmcid": "PMC8813077",
+      "doi": "10.1080/15592294.2020.1853317",
+      "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample.",
+      "journal": "Epigenetics",
+      "pubmed_publication_date": "2021 Nov",
+      "pubmed_electronic_publication_date": "2020-12-29",
+      "openalex_id": "https://openalex.org/W3096350653",
+      "openalex_publication_date": "2020-12-29",
+      "europepmc_first_publication_date": "2020-12-29",
+      "canonical_publication_date": null,
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33371772/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8813077/",
+      "metadata_receipt": "2026-11-22-paired-addendum-api-receipts.json",
+      "checked_on": "2026-11-22"
+    },
+    {
+      "study_id": "PMID:32885222",
+      "pmid": "32885222",
+      "pmcid": "PMC7467214",
+      "doi": "10.1016/j.patter.2020.100014",
+      "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement.",
+      "journal": "Patterns (New York, N.Y.)",
+      "pubmed_publication_date": "2020 May 08",
+      "pubmed_electronic_publication_date": "2020-04-23",
+      "openalex_id": "https://openalex.org/W3011777860",
+      "openalex_publication_date": "2020-04-23",
+      "europepmc_first_publication_date": "2020-04-23",
+      "canonical_publication_date": null,
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32885222/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467214/",
+      "metadata_receipt": "2026-11-22-paired-addendum-api-receipts.json",
+      "checked_on": "2026-11-22"
     }
   ],
   "edges": [
@@ -162,7 +198,7 @@
       "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5379646/",
       "evidence_location": "Methods/Results/Data availability",
       "checked_on": "2026-11-22",
-      "notes": "Nine fresh-frozen tumour specimens T01\u2013T09 and three FFPE specimens T10\u2013T12 have both array types: twelve cross-platform specimen pairs; independent participant count is not established. Nine additional FFPE records matched to the fresh-frozen material supply a separate preservation comparison."
+      "notes": "Nine fresh-frozen tumour specimens T01–T09 and three FFPE specimens T10–T12 have both array types: twelve cross-platform specimen pairs; independent participant count is not established. Nine additional FFPE records matched to the fresh-frozen material supply a separate preservation comparison."
     },
     {
       "study_id": "PMID:31833794",
@@ -319,6 +355,30 @@
       "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
       "checked_on": "2026-11-22",
       "notes": "Data availability explicitly identifies RNA-seq; direct GEO file inventory not verified in this intake."
+    },
+    {
+      "study_id": "PMID:33371772",
+      "doi": "10.1080/15592294.2020.1853317",
+      "dataset_id": "GSE154566",
+      "relation": "generated",
+      "analysis_type": "longitudinal_twin_victimization_ewas_with_paired_platform_subset",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8813077/",
+      "evidence_location": "Methods: Genome-wide DNA methylation analysis; PMC8813077.1 published XML via documented PMC Article Datasets AWS API",
+      "checked_on": "2026-11-22",
+      "notes": "The article explicitly deposits this study at GSE154566. The separately verified GEO pair manifest contains 233 age-18 blood specimens measured on both 450K and EPIC; the entire series also contains longitudinal buccal samples. Dataset deposition does not establish that every included assay was newly generated, or independence from the Sugden E-Risk subset."
+    },
+    {
+      "study_id": "PMID:32885222",
+      "doi": "10.1016/j.patter.2020.100014",
+      "dataset_id": "GSE105018",
+      "relation": "benchmark-used",
+      "analysis_type": "paired_450k_epic_reliability_and_downstream_association_benchmark",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467214/",
+      "evidence_location": "Methods: DNA methylation; Data and code availability; PMC7467214.2 published XML via documented PMC Article Datasets AWS API",
+      "checked_on": "2026-11-22",
+      "notes": "The article reports 350 E-Risk age-18 blood specimens measured on both arrays and names GSE105018 for its 450K layer. This accession does not establish open download of all paired EPIC raw files. Exact participant overlap with GSE154566 is unresolved; the two reports cannot be counted as independent calibration cohorts."
     }
   ],
   "dataset_relationships": [
@@ -357,6 +417,23 @@
       "dataset_id": "GSE218186",
       "status": "study_of_origin_link_requires_original_metadata_confirmation",
       "reason": "Main text names Cuvertino EPIC study reference34 but retrieved main-text portion does not contain this accession explicitly. Parent has series-level SOFT and should verify before promoting to an explicit edge."
+    },
+    {
+      "study_id": "PMID:32885222",
+      "dataset_id": "GSE154566",
+      "related_study_id": "PMID:33371772",
+      "related_dataset_id": "GSE105018",
+      "status": "possible_participant_overlap_not_verified_dataset_reuse",
+      "reason": "Both studies involve age-18 whole-blood DNA from the E-Risk twin cohort, with paired 450K/EPIC measurements. The 233-specimen GSE154566 subset may overlap the 350-specimen Sugden comparison; shared cohort/timepoint is evidence to investigate linkage, not proof of identical individuals or a measured overlap.",
+      "overlap_participant_count": null,
+      "independent_holdout_established": false,
+      "checked_on": "2026-11-22",
+      "evidence_sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8813077/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467214/",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154566"
+      ],
+      "required_before_joint_use": "Reconcile explicit specimen/person and family IDs; keep related/repeated observations together. Do not add the sample counts or promote this to an explicit Sugden-to-GSE154566 use edge without primary confirmation."
     }
   ],
   "date_conflicts": [

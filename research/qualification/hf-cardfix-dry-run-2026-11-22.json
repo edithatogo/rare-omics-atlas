@@ -1,0 +1,124 @@
+{
+  "completed_at": "2026-11-22T12:06:39.709547+00:00",
+  "elapsed_seconds": 2.3802757040029974,
+  "local_objects": [
+    {
+      "path_in_repo": "README.md",
+      "sha256": "5545c33546788b46ec6eee315454722d8d45de6d46dca238e5ffd5ed76b18a18",
+      "size_bytes": 3566,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "LICENSES.md",
+      "sha256": "556974f253f4f842794714186c76e9eaee0ca8c65c8de1cd9e6a208285b05ed7",
+      "size_bytes": 2512,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "bronze/README.md",
+      "sha256": "a174b707367c2f6fdbab8fe61993ba4dc4ba4254d4b5a3e79f01effe6b88c20d",
+      "size_bytes": 313,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/README.md",
+      "sha256": "c086f83f31d8b99f97553051cdec33910684594d10fa83bf74baadeaa2e4de01",
+      "size_bytes": 291,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "gold/README.md",
+      "sha256": "b0e546e5067804809c5d59f191917ee054356167ad679a744441c6107e3b2304",
+      "size_bytes": 188,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/datasets.jsonl",
+      "sha256": "0c996f2774db79b68f757aa7c4bf94be393e65d9b292728f4d1b3ae92c1c4ef2",
+      "size_bytes": 37716,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/assays.jsonl",
+      "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "size_bytes": 992318,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/files.jsonl",
+      "sha256": "6a16069b68e6759244f0005813e13cd5a5a8e964c45718c509208aa311f1b0bf",
+      "size_bytes": 1089982,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/requests.jsonl",
+      "sha256": "1e4be2edb4dd112c6ef879fa787dba9eeadb4f7b3efa79abe7cfd4f488fffc58",
+      "size_bytes": 70037,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/summary.json",
+      "sha256": "7d7f9c68fb3c70d7d9ab2be592fd6d7cd00d9dda61cb1f68f8b3fdbb7bb9e222",
+      "size_bytes": 1039,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "metadata/dataset-rights.json",
+      "sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+      "size_bytes": 80450,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "metadata/initial-source-receipt.json",
+      "sha256": "15bc7c85b2bee788b880da7f432dcf481dfc069fd7e0b92867b16904bd158cc8",
+      "size_bytes": 9025,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "metadata/full-gzip-check.json",
+      "sha256": "02e8c7e628c001430e8ac331e3cfd3dbdf22b6e07af4f280b403d5d513660485",
+      "size_bytes": 1692,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "bronze/geo/GSE97362/GSE97362_RAW.tar",
+      "sha256": "521fb68f049c69d3911bc8b91f010e81cb76caa7092436a823632c11249da7c7",
+      "size_bytes": 2181539840,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "bronze/geo/GSE116300/GSE116300_RAW.tar",
+      "sha256": "82742b84a4e9b7f352afad1e54524673517e14031e972df7d0facfe59757f326",
+      "size_bytes": 565248000,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "bronze/geo/GSE218186/GSE218186_RAW.tar",
+      "sha256": "9c6014691c6bc0838efaca1ea697533ac68c85a86f600c1d69cbe69fa5143ab0",
+      "size_bytes": 1082193920,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "releases/2026-11-22/manifest.json",
+      "sha256": "6954bacc70ec1adb19e2104def524b837c3abcb84bfceb24426cda9815744a52",
+      "size_bytes": 7956,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "releases/2026-11-22/provenance.json",
+      "sha256": "d7dca63c7a31aa7b11522421e544bf1346ba0d7c8b9a5b035beec57d1d91a11f",
+      "size_bytes": 3614,
+      "status": "verified"
+    }
+  ],
+  "manifest_sha256": "6954bacc70ec1adb19e2104def524b837c3abcb84bfceb24426cda9815744a52",
+  "mode": "dry_run",
+  "python_version": "3.15.2",
+  "release_id": "2026-11-22",
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "schema_version": 1,
+  "source_repository": "https://github.com/edithatogo/rare-omics-atlas",
+  "source_revision": null,
+  "started_at": "2026-11-22T12:06:37.329297+00:00",
+  "status": "dry_run_verified"
+}

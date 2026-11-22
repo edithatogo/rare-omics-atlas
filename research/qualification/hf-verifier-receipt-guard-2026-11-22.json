@@ -1,0 +1,67 @@
+{
+  "scope": "Receipt collision and pre-import identity fix only",
+  "pre_fix_helper_sha256": "702df9b4ce76d24b6d03a58f342adfbab5a24407fab1747dfab830fc6c50ef73",
+  "negative_controls": [
+    {
+      "stage": "original helper",
+      "focused_regression": "failed 12 protected-path/symlink subcases; safe output passed",
+      "actual_repository_damage": false
+    },
+    {
+      "stage": "initial guard before source hash pin",
+      "focused_regression": "modified publisher top-level sentinel executed; same focused regression failed",
+      "actual_repository_damage": false
+    }
+  ],
+  "checks": [
+    {
+      "argv": [
+        "/workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/hf-release/tests",
+        "-p",
+        "test_publisher.py",
+        "-k",
+        "invalid_revision_cannot",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2998255229977076
+    },
+    {
+      "argv": [
+        "/workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/hf-release/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3503133609992801
+    }
+  ],
+  "focused_contract_tests": 1,
+  "focused_subcases": 14,
+  "full_suite_tests_expected": 16,
+  "files": [
+    {
+      "path": "research/releases/2026-11-22/hub-staging/verify-metadata.py",
+      "sha256": "e7495ed243873706e2935e263c321d40364f18f5a76f1040d7618b2b6cae084b"
+    },
+    {
+      "path": "tools/hf-release/tests/test_publisher.py",
+      "sha256": "115bc1ecfe9c46d334020a1435f661273831354d4cd6196c2249a9ccd63fa0cd"
+    },
+    {
+      "path": "tools/hf-release/publisher.py",
+      "sha256": "1641709238710f6496b3fed1d8983aa9fa3f867cc50cd68753df69a85a447aea"
+    }
+  ],
+  "live_hub_check_performed": false,
+  "reason_no_live_check": "Root owns the single final 14-object read-back; this fix was checked offline with no HTTP requests"
+}

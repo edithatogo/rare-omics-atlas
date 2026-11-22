@@ -156,15 +156,42 @@
       "id": "T09.hf_publication",
       "status": "in_progress",
       "requires": [
-        "T08.api_catalogue",
-        "T01.initial_intake"
+        "T09.metadata_publication",
+        "T09.raw_mirror"
       ],
-      "scope": "Source-bound catalogue and three-archive mirror; actual Hub/API verification; does not admit scientific inference"
+      "scope": "Full source-bound three-archive mirror remains open. Reviewed publisher, 14-object metadata publication and canonical estate entry are complete; raw Hub transfer externally blocked."
+    },
+    {
+      "id": "T07.fresh_reference",
+      "status": "complete",
+      "requires": [
+        "T07.fork_baseline"
+      ],
+      "scope": "LM01a public synthetic R reference: 30,840 comparisons; archived. LM02a identifier hygiene/four fresh named cases archived; production consumer/device/methylation gates remain."
+    },
+    {
+      "id": "T09.metadata_publication",
+      "status": "complete",
+      "requires": [
+        "T08.api_catalogue"
+      ],
+      "scope": "13 metadata objects plus staging manifest verified at Hub 3f1cb8e64d8e31e7e40773441ba6266714569d05; existing estate updated, no raw files."
+    },
+    {
+      "id": "T09.raw_mirror",
+      "status": "blocked_external",
+      "requires": [
+        "T01.initial_intake",
+        "T09.metadata_publication",
+        "T00.local_runner"
+      ],
+      "scope": "Three raw archives remain local. Available remote compute returned HTTP 402; browser download transport failed. Existing official-runner workflow can publish once an authenticated runner is available."
     }
   ],
   "external_gate_resolution": {
     "T00.local_runner": "Owner device access plus official runner registration and observed workflow; no current session can supply this.",
-    "T01.institutional_classification": "Applicable institutional decision; source policy is not a substituted institutional decision."
+    "T01.institutional_classification": "Applicable institutional decision; source policy is not a substituted institutional decision.",
+    "T09.raw_mirror": "Use the configured manual workflow on a trusted official owner runner with scoped HF_TOKEN; verify full immutable release and reconcile notices/estate. Do not require a paid remote-compute subscription. Source-linked Bronze permits independent local technical work."
   },
   "conditional_rust_route": [
     "limma-rust:LM00",

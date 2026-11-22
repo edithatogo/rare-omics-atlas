@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-11-22",
+  "scope": "Three exact literature seeds and primary accession/overlap context; no systematic search, forward-citation census, scientific analysis or data-rights change",
+  "requested_pmids": [
+    "33371772",
+    "32885222",
+    "31833794"
+  ],
+  "requests": [
+    {
+      "id": "pubmed_efetch",
+      "request_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=33371772%2C32885222%2C31833794&retmode=xml&tool=rare-omics-atlas-literature-review",
+      "retrieved_at_utc": "2026-11-22T11:56:46.020627+00:00",
+      "method": "GET",
+      "status": 200,
+      "bytes": 78748,
+      "sha256": "ebadec85197b4397c857b4e5482b9f34d6ca771cc23e8388e3bb0047ab840b18",
+      "content_type": "text/xml; charset=UTF-8",
+      "elapsed_seconds": 7.558376376000524
+    },
+    {
+      "id": "openalex_exact_doi",
+      "request_url": "https://api.openalex.org/works?filter=doi%3Ahttps%3A%2F%2Fdoi.org%2F10.1080%2F15592294.2020.1853317%7Chttps%3A%2F%2Fdoi.org%2F10.1016%2Fj.patter.2020.100014%7Chttps%3A%2F%2Fdoi.org%2F10.1080%2F15592294.2019.1700003&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cpublication_date%2Cids&per-page=10",
+      "retrieved_at_utc": "2026-11-22T11:56:46.021318+00:00",
+      "method": "GET",
+      "status": 200,
+      "bytes": 3145,
+      "sha256": "e708dcdc3d13ddb9ad867f196bd3a0b0d2527c74b0f5e473f2db3b18ce4d9efb",
+      "content_type": "application/json",
+      "elapsed_seconds": 7.021157547998882
+    },
+    {
+      "id": "europepmc_exact_pmid",
+      "request_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28EXT_ID%3A33371772+OR+EXT_ID%3A32885222+OR+EXT_ID%3A31833794%29+AND+SRC%3AMED&format=json&resultType=core&pageSize=10",
+      "retrieved_at_utc": "2026-11-22T11:56:46.021695+00:00",
+      "method": "GET",
+      "status": 200,
+      "bytes": 31236,
+      "sha256": "e49feb5c170fcc914743169296fceeacdaf0ba1fc889cceee42b08f8e7ca62d1",
+      "content_type": "application/json;charset=UTF-8",
+      "elapsed_seconds": 37.88123404900034
+    },
+    {
+      "id": "PMC8813077",
+      "provider": "Europe PMC fullTextXML",
+      "request_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8813077/fullTextXML",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T11:57:50.938158+00:00",
+      "status": null,
+      "error_type": "TimeoutError",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 39.00776985899938
+    },
+    {
+      "id": "PMC7467214",
+      "provider": "Europe PMC fullTextXML",
+      "request_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7467214/fullTextXML",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T11:57:50.938744+00:00",
+      "status": 500,
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error",
+      "elapsed_seconds": 38.0117217909974
+    },
+    {
+      "id": "PMC7574380",
+      "provider": "Europe PMC fullTextXML",
+      "request_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7574380/fullTextXML",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T11:58:28.950495+00:00",
+      "status": 500,
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error",
+      "elapsed_seconds": 15.2079316499985
+    },
+    {
+      "id": "pmc_oa_PMC8813077",
+      "provider": "PMC Open Access API",
+      "request_url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC8813077",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T11:59:32.586461+00:00",
+      "status": 404,
+      "error_type": "HTTPError",
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 4.447397151998302
+    },
+    {
+      "id": "PMC8813077-s3-list.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC8813077.&delimiter=%2F&max-keys=20",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:27.461274+00:00",
+      "status": 200,
+      "bytes": 342,
+      "sha256": "8259135e87fc01772dc7cadefd26fbebbbeaa9c9914c8bc199c2bd63cf5c4dce",
+      "elapsed_seconds": 6.921728053999686,
+      "prefixes": [
+        "PMC8813077.1/"
+      ],
+      "is_truncated": "false"
+    },
+    {
+      "id": "PMC8813077.1.json",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8813077.1/PMC8813077.1.json",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:34.383523+00:00",
+      "status": 200,
+      "bytes": 1380,
+      "sha256": "1ef388560b7c0ee6a1e630d61e52775a36e6132bcabc2d01d06ae116cbf20bf9",
+      "elapsed_seconds": 5.6373018189988215,
+      "selected_metadata": {
+        "pmcid": "PMC8813077",
+        "version": 1,
+        "pmid": 33371772,
+        "doi": "10.1080/15592294.2020.1853317",
+        "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample",
+        "is_manuscript": false,
+        "license_code": "CC BY",
+        "xml_url": "s3://pmc-oa-opendata/PMC8813077.1/PMC8813077.1.xml?md5=20b1b29efeb9ca9c857c957d4cd56d9b"
+      }
+    },
+    {
+      "id": "PMC8813077.1.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8813077.1/PMC8813077.1.xml?md5=20b1b29efeb9ca9c857c957d4cd56d9b",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:40.020928+00:00",
+      "status": 200,
+      "bytes": 203212,
+      "sha256": "7e12174afb26c19495bfd6178089e3f6361e942211d0601394479368ede39f8b",
+      "elapsed_seconds": 4.426537118997658,
+      "accessions_mentioned": [
+        "GSE154566"
+      ],
+      "publisher_metadata_md5": "20b1b29efeb9ca9c857c957d4cd56d9b",
+      "publisher_metadata_md5_verified": true
+    },
+    {
+      "id": "PMC7467214-s3-list.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC7467214.&delimiter=%2F&max-keys=20",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:27.461874+00:00",
+      "status": 200,
+      "bytes": 405,
+      "sha256": "3d83d9364332b7a88d30b3b4c1c4193454db120419a1bc4a84a8904020cba995",
+      "elapsed_seconds": 7.23693488400022,
+      "prefixes": [
+        "PMC7467214.1/",
+        "PMC7467214.2/"
+      ],
+      "is_truncated": "false"
+    },
+    {
+      "id": "PMC7467214.1.json",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7467214.1/PMC7467214.1.json",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:34.699031+00:00",
+      "status": 200,
+      "bytes": 1650,
+      "sha256": "8795ac79ad8e69b8d72856cc81e921c72f7c489adb4e81c23f11e88c535ac637",
+      "elapsed_seconds": 5.379747647999466,
+      "selected_metadata": {
+        "pmcid": "PMC7467214",
+        "version": 1,
+        "pmid": 32885222,
+        "doi": "10.1016/j.patter.2020.100014",
+        "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement",
+        "is_manuscript": true,
+        "license_code": "TDM",
+        "xml_url": "s3://pmc-oa-opendata/PMC7467214.1/PMC7467214.1.xml?md5=3798c9a9516377ad83e0170c81c6158b"
+      }
+    },
+    {
+      "id": "PMC7467214.1.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7467214.1/PMC7467214.1.xml?md5=3798c9a9516377ad83e0170c81c6158b",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:40.078862+00:00",
+      "status": 200,
+      "bytes": 122299,
+      "sha256": "e87bcc0012d8fda21d77316051d81eb1603265289c7c5cfe34c7ec8ef648ab3a",
+      "elapsed_seconds": 4.247831147000397,
+      "accessions_mentioned": [
+        "GSE105018"
+      ],
+      "publisher_metadata_md5": "3798c9a9516377ad83e0170c81c6158b",
+      "publisher_metadata_md5_verified": true
+    },
+    {
+      "id": "PMC7467214.2.json",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7467214.2/PMC7467214.2.json",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:44.328330+00:00",
+      "status": 200,
+      "bytes": 1501,
+      "sha256": "6a78bfedeb4a77016951f15afe540423a45d2556762b2ec6a85eeff050fce508",
+      "elapsed_seconds": 4.189358028997958,
+      "selected_metadata": {
+        "pmcid": "PMC7467214",
+        "version": 2,
+        "pmid": 32885222,
+        "doi": "10.1016/j.patter.2020.100014",
+        "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement",
+        "is_manuscript": false,
+        "license_code": "CC BY",
+        "xml_url": "s3://pmc-oa-opendata/PMC7467214.2/PMC7467214.2.xml?md5=6c37c33eb0e265ca62b906343e53c74f"
+      }
+    },
+    {
+      "id": "PMC7467214.2.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7467214.2/PMC7467214.2.xml?md5=6c37c33eb0e265ca62b906343e53c74f",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:48.517788+00:00",
+      "status": 200,
+      "bytes": 129295,
+      "sha256": "c577b8826e97a26e128ad8c97237110db8e22187013c797282e99f6e552cfcda",
+      "elapsed_seconds": 10.751856775998021,
+      "accessions_mentioned": [
+        "GSE105018"
+      ],
+      "publisher_metadata_md5": "6c37c33eb0e265ca62b906343e53c74f",
+      "publisher_metadata_md5_verified": true
+    },
+    {
+      "id": "PMC7574380-s3-list.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC7574380.&delimiter=%2F&max-keys=20",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:27.462340+00:00",
+      "status": 200,
+      "bytes": 342,
+      "sha256": "715e1235f4d60b2e25499eccc905bf61b122aa61683930ad82f1b1c0fcbe89fb",
+      "elapsed_seconds": 6.976365700997121,
+      "prefixes": [
+        "PMC7574380.1/"
+      ],
+      "is_truncated": "false"
+    },
+    {
+      "id": "PMC7574380.1.json",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7574380.1/PMC7574380.1.json",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:34.438913+00:00",
+      "status": 200,
+      "bytes": 1473,
+      "sha256": "7cb08c792cb9a3c8090511ebdb08e90c1d30a52101070650f7ee46fde2a55645",
+      "elapsed_seconds": 5.604193098999531,
+      "selected_metadata": {
+        "pmcid": "PMC7574380",
+        "version": 1,
+        "pmid": 31833794,
+        "doi": "10.1080/15592294.2019.1700003",
+        "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage",
+        "is_manuscript": false,
+        "license_code": "CC BY",
+        "xml_url": "s3://pmc-oa-opendata/PMC7574380.1/PMC7574380.1.xml?md5=63183d961cfc7d18fba6d464a91f9a5d"
+      }
+    },
+    {
+      "id": "PMC7574380.1.xml",
+      "provider": "PMC Article Datasets on AWS",
+      "request_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC7574380.1/PMC7574380.1.xml?md5=63183d961cfc7d18fba6d464a91f9a5d",
+      "method": "GET",
+      "retrieved_at_utc": "2026-11-22T12:00:40.043203+00:00",
+      "status": 200,
+      "bytes": 63603,
+      "sha256": "664a27cc24a03fdcbf77ba62a5b4e1b4b284a6f0a5c73710565c052862ce751c",
+      "elapsed_seconds": 4.145525087998976,
+      "accessions_mentioned": [
+        "GSE86833",
+        "GSE92580"
+      ],
+      "publisher_metadata_md5": "63183d961cfc7d18fba6d464a91f9a5d",
+      "publisher_metadata_md5_verified": true
+    }
+  ],
+  "pubmed": {
+    "returned_records": 3,
+    "records": [
+      {
+        "pmid": "33371772",
+        "pmcid": "PMC8813077",
+        "doi": "10.1080/15592294.2020.1853317",
+        "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample.",
+        "journal": "Epigenetics",
+        "issue_date": {
+          "Year": "2021",
+          "Month": "Nov"
+        },
+        "article_dates": [
+          {
+            "type": "Electronic",
+            "date": "2020-12-29"
+          }
+        ]
+      },
+      {
+        "pmid": "32885222",
+        "pmcid": "PMC7467214",
+        "doi": "10.1016/j.patter.2020.100014",
+        "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement.",
+        "journal": "Patterns (New York, N.Y.)",
+        "issue_date": {
+          "Year": "2020",
+          "Month": "May",
+          "Day": "08"
+        },
+        "article_dates": [
+          {
+            "type": "Electronic",
+            "date": "2020-04-23"
+          }
+        ]
+      },
+      {
+        "pmid": "31833794",
+        "pmcid": "PMC7574380",
+        "doi": "10.1080/15592294.2019.1700003",
+        "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage.",
+        "journal": "Epigenetics",
+        "issue_date": {
+          "Year": "2020",
+          "Season": "Jun-Jul"
+        },
+        "article_dates": [
+          {
+            "type": "Electronic",
+            "date": "2019-12-13"
+          }
+        ]
+      }
+    ],
+    "pagination": "Exact-ID EFetch; all three requested PMIDs returned; no discovery search or ESearch translation was requested"
+  },
+  "openalex": {
+    "reported_count": 3,
+    "returned_records": 3,
+    "records": [
+      {
+        "id": "https://openalex.org/W3011777860",
+        "doi": "https://doi.org/10.1016/j.patter.2020.100014",
+        "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement",
+        "publication_year": 2020,
+        "publication_date": "2020-04-23",
+        "ids": {
+          "openalex": "https://openalex.org/W3011777860",
+          "doi": "https://doi.org/10.1016/j.patter.2020.100014",
+          "mag": "3011777860",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/32885222",
+          "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7467214"
+        }
+      },
+      {
+        "id": "https://openalex.org/W2998215188",
+        "doi": "https://doi.org/10.1080/15592294.2019.1700003",
+        "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage",
+        "publication_year": 2019,
+        "publication_date": "2019-12-13",
+        "ids": {
+          "openalex": "https://openalex.org/W2998215188",
+          "doi": "https://doi.org/10.1080/15592294.2019.1700003",
+          "mag": "2998215188",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/31833794",
+          "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7574380"
+        }
+      },
+      {
+        "id": "https://openalex.org/W3096350653",
+        "doi": "https://doi.org/10.1080/15592294.2020.1853317",
+        "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample",
+        "publication_year": 2020,
+        "publication_date": "2020-12-29",
+        "ids": {
+          "openalex": "https://openalex.org/W3096350653",
+          "doi": "https://doi.org/10.1080/15592294.2020.1853317",
+          "mag": "3096350653",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/33371772",
+          "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/8813077"
+        }
+      }
+    ],
+    "pagination": "One exact-DOI filtered page, per-page=10, count=3; not citation tracing"
+  },
+  "europepmc": {
+    "reported_count": 3,
+    "returned_records": 3,
+    "records": [
+      {
+        "id": "33371772",
+        "source": "MED",
+        "pmid": "33371772",
+        "pmcid": "PMC8813077",
+        "doi": "10.1080/15592294.2020.1853317",
+        "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample.",
+        "firstPublicationDate": "2020-12-29",
+        "pubYear": "2021",
+        "electronicPublicationDate": "2020-12-29"
+      },
+      {
+        "id": "32885222",
+        "source": "MED",
+        "pmid": "32885222",
+        "pmcid": "PMC7467214",
+        "doi": "10.1016/j.patter.2020.100014",
+        "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement.",
+        "firstPublicationDate": "2020-04-23",
+        "pubYear": "2020",
+        "electronicPublicationDate": "2020-04-23"
+      },
+      {
+        "id": "31833794",
+        "source": "MED",
+        "pmid": "31833794",
+        "pmcid": "PMC7574380",
+        "doi": "10.1080/15592294.2019.1700003",
+        "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage.",
+        "firstPublicationDate": "2019-12-13",
+        "pubYear": "2020",
+        "electronicPublicationDate": "2019-12-13"
+      }
+    ],
+    "pagination": "One exact-PMID page, pageSize=10, hitCount=3"
+  },
+  "selected_full_text_versions": [
+    {
+      "pmcid": "PMC8813077",
+      "version": 1,
+      "pmid": 33371772,
+      "doi": "10.1080/15592294.2020.1853317",
+      "title": "DNA methylation signatures of adolescent victimization: analysis of a longitudinal monozygotic twin sample",
+      "is_manuscript": false,
+      "license_code": "CC BY",
+      "xml_url": "s3://pmc-oa-opendata/PMC8813077.1/PMC8813077.1.xml?md5=20b1b29efeb9ca9c857c957d4cd56d9b"
+    },
+    {
+      "pmcid": "PMC7467214",
+      "version": 2,
+      "pmid": 32885222,
+      "doi": "10.1016/j.patter.2020.100014",
+      "title": "Patterns of Reliability: Assessing the Reproducibility and Integrity of DNA Methylation Measurement",
+      "is_manuscript": false,
+      "license_code": "CC BY",
+      "xml_url": "s3://pmc-oa-opendata/PMC7467214.2/PMC7467214.2.xml?md5=6c37c33eb0e265ca62b906343e53c74f"
+    },
+    {
+      "pmcid": "PMC7574380",
+      "version": 1,
+      "pmid": 31833794,
+      "doi": "10.1080/15592294.2019.1700003",
+      "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage",
+      "is_manuscript": false,
+      "license_code": "CC BY",
+      "xml_url": "s3://pmc-oa-opendata/PMC7574380.1/PMC7574380.1.xml?md5=63183d961cfc7d18fba6d464a91f9a5d"
+    }
+  ],
+  "version_selection": "Select the version explicitly marked is_manuscript=false after listing all PMCID versions. Sugden version1 is an author manuscript, version2 is published; a higher suffix is not in itself evidence of recency. All four retrieved XML objects match their metadata MD5 and have separately computed SHA-256.",
+  "api_change": {
+    "deprecated_endpoint": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi",
+    "observed_status": 404,
+    "retired_on": "2026-08-25",
+    "official_documentation": "https://pmc.ncbi.nlm.nih.gov/tools/oa-service/",
+    "replacement_documentation": [
+      "https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/",
+      "https://pmc-oa-opendata.s3.amazonaws.com/README.txt"
+    ],
+    "interpretation": "This 404 reflects a retired service, not closed access. The documented anonymous ListObjectsV2 and article metadata/XML routes succeeded."
+  },
+  "committed_content": "Citation metadata, accession relationships, endpoint receipts and identifiers only. Abstracts, full article XML and individual participant metadata are not committed.",
+  "limits": [
+    "Three exact known papers are not an exhaustive novelty search or an N1 analysis freeze.",
+    "Europe PMC fullTextXML returned two HTTP500 responses and one timeout; those failures are retained.",
+    "No specimen/person linkage between the Kandaswamy and Sugden E-Risk subsets has been established.",
+    "GSE105018 names the 450K layer, not proof that all 350 EPIC raw arrays are openly downloadable.",
+    "No new biological raw files, processed matrices or scientific results were downloaded or analysed by this addendum."
+  ]
+}

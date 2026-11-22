@@ -6,7 +6,7 @@ Updated 22 November 2026. **Initial executable work is recorded; complete scient
 |---|---|---|---|
 | 1 | T00 context and source installation | Repository identity | Complete for project context and pinned source; host auto-activation unobserved |
 | 2a | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 29-accession rights review complete; broader intake continues |
-| 2b | T07 selected-method baseline | T00 context; named method | Fork provenance and existing cloud corpus checked; independent R and consumer qualification pending |
+| 2b | T07 selected-method baseline | T00 context; named method | Fork corpus, fresh synthetic R slice and fresh-fixture identity increments passed; production consumer and disease-method qualification pending |
 | 2c | T00 official local runner / institutional route | Actual target device / institutional process | External prerequisites recorded; no operational or ethics approval claim |
 | 3 | T01 analysis admission | Exact cohort, controls, overlap, covariates, annotations and applicable institutional determination | Pending; no dataset accepted for inference yet |
 | 4a | T07 protocol freeze | Data admission + selected method/independent reference contract | Pending; freeze N1 and protect clinical replication before numerical qualification |
@@ -21,9 +21,11 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 ## Active implementation increment
 
-- [~] [T09 — Minimal GitHub–Hugging Face medallion](tracks/t09_hf_medallion_20261122/index.md): consumes completed T08.
+- [~] [T09 — Minimal GitHub–Hugging Face medallion](tracks/t09_hf_medallion_20261122/index.md): reviewed publisher/workflows and 14-object metadata publication complete; estate registered; raw transfer externally blocked. Full T09 remains open.
 - Completed: [T08 API catalogue](archive/t08_catalogue_20261122/index.md), independently reviewed and archived before T09.
 - Next: reproducible local decision support and bounded native preprocessing foundations where the source review justifies them. Parent scientific tracks retain their acceptance criteria.
+
+The published metadata and source-linked Bronze are usable independently of the optional mirror. A raw-upload transport failure does not block eligible local technical work; it also does not close the mirror's acceptance criterion. The configured official-runner workflow is the concrete remaining route. [Observed publication and blocker](../research/qualification/hf-metadata-publication-2026-11-22.md).
 
 ## Linked plans
 

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "stage_id": "2026-11-22-metadata-subset",
+  "full_release_status": "pending_raw_archives",
+  "metadata_status": "prepared_for_remote_byte_verification",
+  "publication_route": "browser_ui_editor",
+  "automated_publication_workflow_executed": false,
+  "baseline_source_revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+  "planned_full_manifest_sha256": "6954bacc70ec1adb19e2104def524b837c3abcb84bfceb24426cda9815744a52",
+  "expected_metadata_objects": 13,
+  "unchanged_baseline_objects": 10,
+  "new_staging_notices": 3,
+  "raw_archive_objects_expected_in_this_subset": 0,
+  "raw_archives_locally_verified_bytes": 3828981760,
+  "objects": [
+    {
+      "path_in_repo": "README.md",
+      "source_path": "research/releases/2026-11-22/hub-staging/README.md",
+      "kind": "metadata",
+      "size_bytes": 4984,
+      "sha256": "1b563dbecf7e7b9b6d67443254a20421a52ceac4e31716fbd98a9eaac762beea",
+      "git_blob_sha1": "8d1c46578e1e237021ceb192e224b65d574c4c7f",
+      "origin": {
+        "kind": "new_staging_notice",
+        "path": "research/releases/2026-11-22/hub-staging/README.md",
+        "revision": null,
+        "revision_status": "not_claimed_from_baseline; content_bound_by_sha256",
+        "git_blob_sha1": "8d1c46578e1e237021ceb192e224b65d574c4c7f"
+      },
+      "redistribution_basis": "Original project documentation with upstream attribution; third-party rights remain source-specific"
+    },
+    {
+      "path_in_repo": "LICENSES.md",
+      "source_path": "research/releases/2026-11-22/hub-staging/LICENSES.md",
+      "kind": "metadata",
+      "size_bytes": 2818,
+      "sha256": "a993e0747e7f4b1ea6ba198bcf5342658909c089791a950287540f2350b4a86b",
+      "git_blob_sha1": "32d36b7ecc5d734e45e52479a781653ef3d3f8d5",
+      "origin": {
+        "kind": "new_staging_notice",
+        "path": "research/releases/2026-11-22/hub-staging/LICENSES.md",
+        "revision": null,
+        "revision_status": "not_claimed_from_baseline; content_bound_by_sha256",
+        "git_blob_sha1": "32d36b7ecc5d734e45e52479a781653ef3d3f8d5"
+      },
+      "redistribution_basis": "Original project documentation with upstream attribution; third-party rights remain source-specific"
+    },
+    {
+      "path_in_repo": "bronze/README.md",
+      "source_path": "research/releases/2026-11-22/hub-staging/bronze-README.md",
+      "kind": "metadata",
+      "size_bytes": 734,
+      "sha256": "4fde9bd87fb52e57f5d18ed27fc07b1899d6f58f0b96e75b3f96e887a9e8693b",
+      "git_blob_sha1": "19049eabae411d08fb2f1dcf4a30401404e625fe",
+      "origin": {
+        "kind": "new_staging_notice",
+        "path": "research/releases/2026-11-22/hub-staging/bronze-README.md",
+        "revision": null,
+        "revision_status": "not_claimed_from_baseline; content_bound_by_sha256",
+        "git_blob_sha1": "19049eabae411d08fb2f1dcf4a30401404e625fe"
+      },
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "path_in_repo": "silver/README.md",
+      "source_path": "research/releases/2026-11-22/silver-README.md",
+      "kind": "metadata",
+      "size_bytes": 291,
+      "sha256": "c086f83f31d8b99f97553051cdec33910684594d10fa83bf74baadeaa2e4de01",
+      "git_blob_sha1": "09bb1df87a28c3b5969a1732c05ec043a3c51ead",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/releases/2026-11-22/silver-README.md",
+        "git_blob_sha1": "09bb1df87a28c3b5969a1732c05ec043a3c51ead",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/releases/2026-11-22/silver-README.md"
+      },
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "path_in_repo": "gold/README.md",
+      "source_path": "research/releases/2026-11-22/gold-README.md",
+      "kind": "metadata",
+      "size_bytes": 188,
+      "sha256": "b0e546e5067804809c5d59f191917ee054356167ad679a744441c6107e3b2304",
+      "git_blob_sha1": "39178c43733516d2cc376cea1ab329542341bb44",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/releases/2026-11-22/gold-README.md",
+        "git_blob_sha1": "39178c43733516d2cc376cea1ab329542341bb44",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/releases/2026-11-22/gold-README.md"
+      },
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/datasets.jsonl",
+      "source_path": "research/catalogue/2026-11-22/datasets.jsonl",
+      "kind": "metadata",
+      "size_bytes": 37716,
+      "sha256": "0c996f2774db79b68f757aa7c4bf94be393e65d9b292728f4d1b3ae92c1c4ef2",
+      "git_blob_sha1": "5bf2f19820dfbdfa5873d6363e7e99ab6f59ae24",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/catalogue/2026-11-22/datasets.jsonl",
+        "git_blob_sha1": "5bf2f19820dfbdfa5873d6363e7e99ab6f59ae24",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/catalogue/2026-11-22/datasets.jsonl"
+      },
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/assays.jsonl",
+      "source_path": "research/catalogue/2026-11-22/assays.jsonl",
+      "kind": "metadata",
+      "size_bytes": 992318,
+      "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "git_blob_sha1": "18e4085d649a8f72e31dafa6d925d07fe3de6ddb",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/catalogue/2026-11-22/assays.jsonl",
+        "git_blob_sha1": "18e4085d649a8f72e31dafa6d925d07fe3de6ddb",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/catalogue/2026-11-22/assays.jsonl"
+      },
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/files.jsonl",
+      "source_path": "research/catalogue/2026-11-22/files.jsonl",
+      "kind": "metadata",
+      "size_bytes": 1089982,
+      "sha256": "6a16069b68e6759244f0005813e13cd5a5a8e964c45718c509208aa311f1b0bf",
+      "git_blob_sha1": "d9bf7de5f603dd88357e0a2011c7f6337daf223c",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/catalogue/2026-11-22/files.jsonl",
+        "git_blob_sha1": "d9bf7de5f603dd88357e0a2011c7f6337daf223c",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/catalogue/2026-11-22/files.jsonl"
+      },
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/requests.jsonl",
+      "source_path": "research/catalogue/2026-11-22/requests.jsonl",
+      "kind": "metadata",
+      "size_bytes": 70037,
+      "sha256": "1e4be2edb4dd112c6ef879fa787dba9eeadb4f7b3efa79abe7cfd4f488fffc58",
+      "git_blob_sha1": "2b0cfbd6e24121b156b3e3e4d1ff191b5703fae9",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/catalogue/2026-11-22/requests.jsonl",
+        "git_blob_sha1": "2b0cfbd6e24121b156b3e3e4d1ff191b5703fae9",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/catalogue/2026-11-22/requests.jsonl"
+      },
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "path_in_repo": "silver/catalogue/2026-11-22/summary.json",
+      "source_path": "research/catalogue/2026-11-22/summary.json",
+      "kind": "metadata",
+      "size_bytes": 1039,
+      "sha256": "7d7f9c68fb3c70d7d9ab2be592fd6d7cd00d9dda61cb1f68f8b3fdbb7bb9e222",
+      "git_blob_sha1": "198f74014dfd459e4a77483bca22f3d486354dde",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/catalogue/2026-11-22/summary.json",
+        "git_blob_sha1": "198f74014dfd459e4a77483bca22f3d486354dde",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/catalogue/2026-11-22/summary.json"
+      },
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "path_in_repo": "metadata/dataset-rights.json",
+      "source_path": "research/registries/dataset-rights.json",
+      "kind": "metadata",
+      "size_bytes": 80450,
+      "sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+      "git_blob_sha1": "3833dd5cc0068735a5143fd7eed30f3553134385",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/registries/dataset-rights.json",
+        "git_blob_sha1": "3833dd5cc0068735a5143fd7eed30f3553134385",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/registries/dataset-rights.json"
+      },
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    },
+    {
+      "path_in_repo": "metadata/initial-source-receipt.json",
+      "source_path": "research/qualification/initial-source-receipt.json",
+      "kind": "metadata",
+      "size_bytes": 9025,
+      "sha256": "15bc7c85b2bee788b880da7f432dcf481dfc069fd7e0b92867b16904bd158cc8",
+      "git_blob_sha1": "626533394b8594d7509e792f63e5c918aee0bb53",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/qualification/initial-source-receipt.json",
+        "git_blob_sha1": "626533394b8594d7509e792f63e5c918aee0bb53",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/qualification/initial-source-receipt.json"
+      },
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    },
+    {
+      "path_in_repo": "metadata/full-gzip-check.json",
+      "source_path": "research/qualification/full-gzip-check-2026-11-22.json",
+      "kind": "metadata",
+      "size_bytes": 1692,
+      "sha256": "02e8c7e628c001430e8ac331e3cfd3dbdf22b6e07af4f280b403d5d513660485",
+      "git_blob_sha1": "150d59f49e104655d0278dcdb63ed517eb2d1e9a",
+      "origin": {
+        "kind": "unchanged_github_blob",
+        "repository": "https://github.com/edithatogo/rare-omics-atlas",
+        "revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+        "path": "research/qualification/full-gzip-check-2026-11-22.json",
+        "git_blob_sha1": "150d59f49e104655d0278dcdb63ed517eb2d1e9a",
+        "immutable_url": "https://github.com/edithatogo/rare-omics-atlas/blob/8cfc85110911a2991301b358e4510e28026d13b8/research/qualification/full-gzip-check-2026-11-22.json"
+      },
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    }
+  ],
+  "note": "This bounded metadata manifest does not replace or complete the planned full release. Remote acceptance is recorded by a separate pinned-revision read-back receipt; it does not close the raw archive transfer task."
+}

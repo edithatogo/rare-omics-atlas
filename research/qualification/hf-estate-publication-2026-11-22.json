@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-22T12:09:27.563852+00:00",
+  "repo_id": "edithatogo/dataset-estate-registry",
+  "base_revision": "f82a1b706e7c55845ffef5dad0a1d4571b2892dd",
+  "revision": "bc551011281caabca9cc2d6e37a72459d8367242",
+  "catalog_sha256": "54a72ce6185f861eceeca0a2d5d6a9de44fc202363488a79d0b99c8795357c64",
+  "bytes": 43072,
+  "candidate_exact_match": true,
+  "previous_rows_preserved": 78,
+  "rows": 79,
+  "publication_route": "browser_ui_editor",
+  "scope": "one additive atlas entry; not an estate-wide audit",
+  "atlas_revision": "3f1cb8e64d8e31e7e40773441ba6266714569d05"
+}

@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-11-22T12:07:35.258709+00:00",
+  "scope": "Review of the three metadata-only staging notices and the minimum publication-evidence boundary",
+  "notice_files": [
+    {
+      "path": "research/releases/2026-11-22/hub-staging/README.md",
+      "sha256": "1b563dbecf7e7b9b6d67443254a20421a52ceac4e31716fbd98a9eaac762beea"
+    },
+    {
+      "path": "research/releases/2026-11-22/hub-staging/LICENSES.md",
+      "sha256": "a993e0747e7f4b1ea6ba198bcf5342658909c089791a950287540f2350b4a86b"
+    },
+    {
+      "path": "research/releases/2026-11-22/hub-staging/bronze-README.md",
+      "sha256": "4fde9bd87fb52e57f5d18ed27fc07b1899d6f58f0b96e75b3f96e887a9e8693b"
+    }
+  ],
+  "scientific_claim_review": "No scientific/clinical model result, processed methylation matrix, independent cohort total, unique donor count or completed full raw release is asserted",
+  "ethics_rights_review": "No institutional HREC/IRB approval or universal reuse licence is asserted; factual metadata, upstream source-specific terms, local checks and later scientific admission remain distinct",
+  "scope_count_review": "29 accessions are explicitly a seed inventory including technical/companion datasets; GSM membership counts are not participants",
+  "source_origin_review": "10 unchanged metadata files verified against immutable8cfc source;3newnotices content-bound separately and do not claim baselineorigin",
+  "sufficient_publication_evidence": "A final immutableHubrevision verifying13metadatafiles plusstagingmanifest, withUIroute,rawabsenceandfullT09stillopen, is sufficient for this boundedmetadata publication. It does not qualify the automatedupload workflow or complete the raw transfer",
+  "card_metadata_fix": "Onlythe2specifiedfrontmatterfields corrected; checksum bindings andprospective18-objectdryrun updated",
+  "source_revision_warning": "Revised canonicalfullcard/manifest requirethenextreviewedGitcommit before automatedupload",
+  "no_remote_writes": true
+}
