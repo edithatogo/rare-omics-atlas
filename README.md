@@ -11,7 +11,8 @@ An ontology-linked, public-data rare-disease epigenomics programme, designed to 
 1. [Conductor index](conductor/index.md) and [tracks](conductor/tracks.md).
 2. [Proposed public datasets](research/datasets.md); every record is **candidate**, not independently qualified.
 3. [Public access, ethics and rights triage](research/source-access-ethics.md), [backend replacement protocol](research/backend-replacement-policy.md), [Analysis priorities and scoring](research/analyses.md), [clinical journal strategy](research/journals.md), [language/data contracts](research/interoperability.md) and [Ponytail decisions](research/ponytail-decisions.md).
-4. Follow the [scientific workflow](conductor/workflow.md) before any data is processed or code is written.
+4. Rust replacements are managed under [conditional T07](conductor/tracks/t07-backend-qualification/index.md), not a universal plugin framework.
+5. Follow the [scientific workflow](conductor/workflow.md) before any data is processed or code is written.
 
 ## Repository governance
 
