@@ -168,7 +168,42 @@
           "pmcid": "PMC13633427"
         }
       ],
-      "all_three_exact_doi_resolutions": true
+      "all_three_exact_doi_resolutions": true,
+      "historical_reuse_works": [
+        {
+          "doi": "10.1186/s13148-019-0615-3",
+          "openalex": "https://openalex.org/W2919985781",
+          "pmid": "30678737",
+          "pmcid": "PMC6346546",
+          "publication_online": "2019-01-24",
+          "record_type": "publishedVersion"
+        },
+        {
+          "doi": "10.1080/15592294.2023.2230670",
+          "openalex": "https://openalex.org/W4383303126",
+          "pmid": "37409354",
+          "pmcid": "PMC10327521",
+          "publication_online": "2023-07-06",
+          "record_type": "publishedVersion"
+        },
+        {
+          "doi": "10.1038/s41467-024-54711-2",
+          "openalex": "https://openalex.org/W4404735508",
+          "pmid": "39592593",
+          "pmcid": "PMC11599844",
+          "publication_online": "2024-11-26",
+          "record_type": "publishedVersion"
+        },
+        {
+          "doi_query": "10.1101/2024.03.02.583106",
+          "resolved_canonical_doi": "10.1038/s41467-024-54711-2",
+          "openalex": "https://openalex.org/W4404735508",
+          "preprint_pmid": "38496542",
+          "preprint_pmcid": "PMC10942294",
+          "status": "OpenAlex merges DOI query to same published work; PubMed retains separate preprint PMID; one scientific study, not two cohorts"
+        }
+      ],
+      "canonicalisation_note": "DOI resolution for the 2024-03 preprint returns published 2024-11-26 Nature Communications W4404735508, while PubMed separately identifies the original preprint. Do not count versions as independent studies."
     }
   },
   "verified_prior_use": {
@@ -177,13 +212,17 @@
         "study_id": "PMID:30678737",
         "doi": "10.1186/s13148-019-0615-3",
         "pmid": "30678737",
-        "pmcid": "PMC6346546"
+        "pmcid": "PMC6346546",
+        "openalex_id": "https://openalex.org/W2919985781",
+        "publication_online": "2019-01-24"
       },
       {
         "study_id": "PMID:37409354",
         "doi": "10.1080/15592294.2023.2230670",
         "pmid": "37409354",
-        "pmcid": "PMC10327521"
+        "pmcid": "PMC10327521",
+        "openalex_id": "https://openalex.org/W4383303126",
+        "publication_online": "2023-07-06"
       },
       {
         "study_id": "PMID:39592593",
@@ -195,7 +234,9 @@
           "pmid": "38496542",
           "pmcid": "PMC10942294",
           "date": "2024-03-05"
-        }
+        },
+        "openalex_id": "https://openalex.org/W4404735508",
+        "publication_online": "2024-11-26"
       }
     ],
     "edges": [
