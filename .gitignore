@@ -18,3 +18,10 @@
 **/target/
 **/__pycache__/
 *.pyc
+**/.venv/
+/.tools/
+/artifacts/
+/.coverage*
+/.env
+/.env.*
+!/.env.example

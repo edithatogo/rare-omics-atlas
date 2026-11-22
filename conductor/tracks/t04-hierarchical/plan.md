@@ -11,6 +11,17 @@
 - [ ] **T04.09 — record actual local acceptance:** Use the [official GitHub Actions self-hosted runner](../../../research/local-development.md) on each relevant target OS/architecture. Retain source/workflow revisions, input hashes, toolchain, run URL, numerical/consumer results, timings, peak memory and failures/unavailable measurements. Do not treat a configured workflow, emulator or cloud-shell result as a completed local run.
 - [ ] **T04.10 — decide the publication bundle:** Complete N2 after results and N3 before submission/transfer, refreshing novelty, journal fit and dependency retain/replace/remove/defer decisions. Combine coherent E4/E5/E6 findings under P2, retain a bounded validation as supporting material, reframe as justified replication or stop. Keep frozen N1 outcomes intact; do not manufacture a separate paper from a backend swap.
 
+## Bounded implementation order
+
+| Batch / tasks | Concrete input and action | Output / pass criterion |
+|---|---|---|
+| A: .01–.03, activate or stop | Receive T03's effect/SE/df/identity/dependence tables and verify adequate independent study/disease holdouts. Write `n1.md` in this track with the actual target, loss, baselines, priors and evaluation splits; select the existing model/engine and its exact command. | Admitted local manifest plus a declared density and uncertainty convention. Hold if scaled uncertainty, independence, identifiability or enough independent evaluation units is unresolved. No model code before this decision. |
+| B: .04, one smallest qualified model | Implement only the selected density using the chosen existing engine. Leave one runnable synthetic known-answer/reference check next to that implementation; run it and the shared strict code gate. Test analytic fixed-hyperparameter cases before simulation/Monte Carlo comparisons. | Versioned synthetic fixture/reference and receipt of actual density/gradient/posterior checks. Failures return to the same bounded model; do not build a sampler or adapter framework. |
+| C: .05–.07 / .09, frozen comparison | Execute independent, complete-pooling and selected partial-pooling commands on the exact frozen folds; run calibration, negative-transfer, leakage, joint-refit order and actual-device checks. Record compile/startup separately from execution and unavailable resource counters explicitly. | Local `data/gold/t04-hierarchical/` predictions, intervals, diagnostics and comparisons, plus cleared receipt with source/data hashes and observed official-runner URL. Pass the predefined contract; retain the simpler baseline if the extension adds no supported benefit. |
+| D: .10 / optional .08 | Execute N2 and choose the bundle. Consider Enzyme only if an observed required derivative limitation remains after the qualified model. | `n2.md` records retain / simplify / stop and the manuscript role; optional AD work has its own exact need and comparison before implementation. |
+
+All output paths above are planned. The future T04 owner receives actual T03 evidence before choosing a model; a synthetic pass does not qualify patient inference or close official-device requirements.
+
 ## Receiving record
 
 - Assigned owner: **unassigned**

@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "evidence_class": "cloud_linux_code_verification",
+  "base_revision": "3618c3de4dd1b57fde44350f5a54cc583cab4655",
+  "tested_source_tree_sha256": "405b801ba58617b16a2b0f2ab6cbc5d51327d74f297db757f04eb42420d89759",
+  "source_scope": "Current tracked and nonignored untracked candidate contents before this evidence document was added; base_revision alone is not the changed candidate.",
+  "status": "passed",
+  "check_count": 33,
+  "elapsed_seconds": 20.191,
+  "python_version": "3.15.2",
+  "rust_version": "1.95.0",
+  "checks": [
+    {
+      "name": "rust-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.019
+    },
+    {
+      "name": "python-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "name": "uv-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.006
+    },
+    {
+      "name": "cargo-llvm-cov-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.01
+    },
+    {
+      "name": "cargo-audit-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.006
+    },
+    {
+      "name": "gitleaks-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.271
+    },
+    {
+      "name": "actionlint-version",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.008
+    },
+    {
+      "name": "diff",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.006
+    },
+    {
+      "name": "python-lock",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.01
+    },
+    {
+      "name": "contracts",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.034
+    },
+    {
+      "name": "workflow-lint",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.004
+    },
+    {
+      "name": "rust-format",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.046
+    },
+    {
+      "name": "rust-clippy",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.293
+    },
+    {
+      "name": "rust-test-debug",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.194
+    },
+    {
+      "name": "rust-test-release",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.14
+    },
+    {
+      "name": "rust-doctests",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.118
+    },
+    {
+      "name": "rust-docs",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.133
+    },
+    {
+      "name": "python-lint",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.043
+    },
+    {
+      "name": "python-format",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.052
+    },
+    {
+      "name": "python-types",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 1.528
+    },
+    {
+      "name": "harness-tests",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.189
+    },
+    {
+      "name": "publisher-tests",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.847
+    },
+    {
+      "name": "python-coverage",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.118
+    },
+    {
+      "name": "python-coverage-summary",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.11
+    },
+    {
+      "name": "rust-coverage",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 4.06
+    },
+    {
+      "name": "rust-advisories",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 9.718
+    },
+    {
+      "name": "rust-coverage-xml",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.076
+    },
+    {
+      "name": "patch-coverage",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.152
+    },
+    {
+      "name": "python-advisories",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.59
+    },
+    {
+      "name": "rust-dependency-inventory",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.149
+    },
+    {
+      "name": "source-secrets",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.678
+    },
+    {
+      "name": "complete-history",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.022
+    },
+    {
+      "name": "history-secrets",
+      "status": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.487
+    }
+  ],
+  "rust_tests": {
+    "debug": 11,
+    "release": 11,
+    "instrumented": 11,
+    "failed": 0,
+    "ignored": 0
+  },
+  "python_tests": {
+    "publisher_and_metadata": 33,
+    "verification_harness": 12,
+    "failed": 0
+  },
+  "changed_line_coverage": {
+    "covered": 480,
+    "total": 511,
+    "minimum_percent": 90,
+    "percent": 93.9334637964775
+  },
+  "rust_production_lines": {
+    "covered": 267,
+    "total": 538,
+    "percent": 49.628252788104085
+  },
+  "python_statement_branch_coverage_percent_rounded": 85,
+  "original_receipt_sha256": "bdde94811372053d9306d93e4757de06f842b337cfb4254a7f1670388cab73ca",
+  "privacy_baseline": {
+    "revision": "b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4",
+    "history_secrets": 0,
+    "tracked_text_blocking_findings": 0,
+    "tracked_text_advisory_findings": 24,
+    "unscanned": [
+      "existing binary screenshot",
+      "Conductor submodule"
+    ],
+    "scope_note": "Pre-commit tracked main snapshot; receiving candidate scan still required."
+  },
+  "hosted_ci": "not_observed",
+  "codecov_provider": "not_observed",
+  "official_owner_device": "not_observed",
+  "scientific_acceptance": "not_claimed",
+  "atlas_code_licence": "unresolved",
+  "preserved": {
+    "full_manifest_sha256": "6954bacc70ec1adb19e2104def524b837c3abcb84bfceb24426cda9815744a52",
+    "staged_manifest_sha256": "3b5ab3a3dee81a48f42c10844d6b87f8ef75613e034f0d10b96e7026292f51c4"
+  }
+}
