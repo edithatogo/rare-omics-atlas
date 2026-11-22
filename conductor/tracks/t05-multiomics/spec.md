@@ -24,4 +24,5 @@ Primary European Journal of Medical Genetics; backup Molecular Syndromology with
 
 ## Stop conditions
 
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+Reassess overlapping publications through N0/N2; continue only with a documented distinct contribution or justified replication. Stop if no worthwhile contribution remains, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+

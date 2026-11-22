@@ -1,27 +1,42 @@
-# Ponytail language and dependency choices
+# Language preference and dependency selection
 
-**No installation is authorised by this planning document.** Reuse already-qualified tools first, and compare scientific results before claiming a replacement. The minimal file-based Arrow/Parquet contracts in [interoperability](interoperability.md) remain authoritative.
+**Owner preference, 22 November 2026: Rust > Julia or Mojo > Python > R.** Apply this order among implementations that meet the actual scientific, reproducibility, platform and licence requirements. Julia and Mojo share a preference tier; they do not have interchangeable domain ecosystems. No installation or analytical code is authorised by this document.
 
-| Candidate | Initial decision | Admit when / remove when |
+The [dated candidate audit](rust-candidate-audit.md) records primary sources, observed limitations and the work needed for promising replacements. All candidates remain unqualified for this project until their named acceptance case has actually passed.
+
+## How the hierarchy changes decisions
+
+1. **A new stage:** choose an existing suitable Rust implementation first. A Rust choice does not require a speed claim or a pre-existing bottleneck. Reuse a CLI or narrow library; do not create an engine to satisfy a language preference.
+2. **An existing qualified stage:** compare its replacement on identical inputs and scientific contracts. Correctness is mandatory; portability, simpler deployment, maintainability or reduced runtime/memory can justify the move. With otherwise suitable choices and comparable cost, prefer Rust. Do not require a performance win as the only legitimate reason, and do not accept a material regression without a reason.
+3. **A missing Rust capability:** first consider a small upstream contribution or existing supported interface. If that becomes a new statistical-method development programme, use the next suitable language. No new code is authorised at present.
+4. **The reference is separate from routine execution:** R/Bioconductor can remain an isolated scientific oracle after a Rust stage is selected. Retaining an oracle does not make R the preferred production language. Replace and remove obsolete routine dependencies only after consumer acceptance.
+5. **Record interface and engine separately:** Python Polars uses a Rust engine; BridgeStan uses Stan/C++; SeSAMe2 is C. A wrapper does not change the numerical implementation's language. Established C/C++/Fortran engines and a justified specialist language are permitted exceptions when they reduce work or provide needed science.
+
+## Proposed choices, conditional on a real consumer
+
+| Stage | Preferred candidate / route | Fallback and unresolved work |
 |---|---|---|
-| **Julia** | Preferred modelling language | Use Turing, SciML/Catalyst and Graphs.jl for concrete hierarchical, regulatory and kinetic models; do not write new mechanistic solvers without identified data |
-| **Rust** | Preferred native processing where needed | Typed provenance, genomic intervals, parsing, sparse graph work, resource-constrained throughput. Do not equate Rust with automatic scientific or speed advantage |
-| **R/Bioconductor** | Qualified scientific reference | IDAT QC, normalisation, limma, DMR and missMethyl. A Rust replacement requires numerical/statistical parity and value |
-| **Python** | **Optional**, not prohibited | Use specific mature ontology/repository SDK, algorithm, comparison oracle or visualisation if Julia/Rust/R implementation would entail more work. No duplicate Python data pipeline merely for convenience |
-| **Mojo** | **Defer** | Mojo 1.0 was announced Aug 2026, but maturity of *this scientific workflow* and target hardware is unproven. Consider only an isolated benchmarked numerical kernel with an actual bottleneck and scientific oracle |
-| **DuckDB** | Initial local metadata engine | SQL joins/provenance/catalogue, no managed lakehouse. Reuse until its query model or throughput is insufficient |
-| **Polars (Rust)** | **Preferred conditional** | Add LazyFrame/streaming for real large ingestion/joins/transforms beyond a simple DuckDB query. Require stable IDs, null/schema/row-count parity, identical data, time+peak RSS and reduced custom code. Do not duplicate Python and Rust Polars without an existing consumer |
-| **petgraph (Rust)** | **Preferred conditional** | Add when there is an actual Rust graph algorithm; SQL/Parquet relationships suffice for metadata and Julia Graphs.jl for Julia network modelling. Validate graph direction, node IDs, multi-edges, duplicate handling and algorithm output before adoption |
-| **limma-rust** | First numerical Rust candidate, **not selected** | Compare exact M matrices, design, empirical Bayes, SE/p/FDR tails, null and small-n simulations, public cohort effects, resource evidence |
-| **Rust-Bio, diffsol, pathwaykit, nuts-rs** | Defer | Add only when one qualified native method or bottleneck requires it, benchmarking against existing genomics/Julia references |
-| **Burn/CubeCL/GPU** | Defer | Only a large real workload and CPU vs Metal/CUDA numerical/resource comparison justify installation |
+| Typed tables and joins | Rust Polars with Arrow/Parquet | DataFusion CLI for a SQL-only consumer; retain a simple existing DuckDB query when replacement adds needless work. Choose one engine for a stage |
+| HPO similarity and disease associations | Rust `hpo` | Preserve complete source annotations outside its simplified term sets; compare pinned semantic-similarity results |
+| General ontology graph loading | Rust `ontolius` if needed | Qualify the exact MONDO release; its documented tested list does not establish MONDO support. Do not add alongside `hpo` without a separate need |
+| Genomic interval operations | Rust `bedrs` or existing `gia` CLI | Coordinate/build/strand tests; `grangers` only if broader annotation functions repay extra dependency and conversion cost |
+| Differential CpG models | **First numerical qualification: `limma-rust`** | Pinned R limma remains oracle and fallback. No raw IDAT preprocessing, DMR or missMethyl substitution is implied |
+| Raw Illumina arrays | No qualified complete Rust pipeline found in this review | R minfi/SeSAMe reference; **SeSAMe2 C CLI** is a targeted exception candidate with numerical and licence gates |
+| Array DMR inference and probe-aware pathway testing | Keep exact validated method until a suitable replacement is qualified | No verified complete Rust equivalent to the chosen DMR workflow or missMethyl found; a t-test, interval merge or generic enrichment is insufficient |
+| Bulk RNA counts, later T05 | Assess Rust `rsdeseq2` for a DESeq2 estimand, or qualified `limma-rust` voom for its own estimand | These are different statistical methods; choose scientifically, not as interchangeable function names. Canonical DESeq2/limma reference |
+| Networks | `petgraph`; add `rustworkx-core` only for a missing algorithm | `leiden-rs` for a qualified community objective; `graphrs` is an alternative integrated stack, not an extra mandatory graph representation |
+| Hierarchical inference | Assess `nuts-rs` with an existing density/gradient route | Julia Turing is the practical fallback when Rust would require substantial model infrastructure. BridgeStan is a C++-backed option; no new sampler |
+| Deterministic kinetics | Assess Rust `diffsol` for an identified ODE/DAE | Julia Catalyst/SciML for reaction construction, inference and unsupported semantics. A solver does not discover kinetics from methylation |
+| Stochastic models | `rebop` for well-mixed reaction jumps; `differential-equations` for a specified SDE | Match the mathematical process and validate distributions/convergence against Julia/analytic references |
+| GPU/tensors | Existing Burn operators first; CubeCL only for a missing kernel | CPU float64 reference. Candle is an alternative if it fits an existing model better. No GPU work solely because hardware is available |
+| Specialist multi-omics | Prefer a qualified Rust/Julia method if it implements the required model | Python `mofapy2` is a legitimate direct interface to MOFA's Python core when that model is needed; generic Rust PCA/NMF is not a MOFA replacement |
+| Mojo | Same preference tier as Julia; **conditional kernel candidate** | Current language/platform support is real, but no complete matching array/statistical workflow was established. Benchmark a specific existing capability before adding a runtime |
 
-## Required dependency swap decision
+Primary sources and version-specific limitations are in the [audit](rust-candidate-audit.md). Arrow IPC/Parquet [file contracts](interoperability.md) and [backend qualification](backend-replacement-policy.md) remain the integration mechanism. Do not add all candidates or a universal plugin framework.
 
-At N0/N1 and N2/N3: (1) understand the scientific estimand and actual consumers; (2) use repository-owned helpers, stdlib or existing SQL/Julia/R libraries; (3) identify one missing feature; (4) qualify a candidate on exact-source synthetic and admissible public inputs, including licensing and security; (5) demonstrate a material scientific, cost or maintainability advantage; (6) replace *and remove* obsolete dependency only after consumer tests pass. Merely being faster or newer does not imply identical methods.
+## Review and upstream work
 
-References: https://docs.pola.rs/user-guide/concepts/lazy-api/ ; https://docs.rs/petgraph/latest/petgraph/ ; https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here .
+At N0/N1 and N2/N3, record retain / replace / remove / defer against the current method, source revision, required capability and total cost. Distinguish **integration/validation**, **a bounded missing feature**, and **a new method or major rewrite**. Prefer submitting a reproducible fixture or narrow fix upstream when later authorised; do not silently maintain a fork. Document provenance and licence obligations before copying or translating source.
 
-## Cross-repository assessment
+The [central scientific-native standard](https://github.com/edithatogo/repository-standards/blob/main/docs/scientific-native.md) already requires exact-source, security, numerical, consumer and resource evidence. Its [FAIR guidance](https://github.com/edithatogo/repository-standards/blob/main/docs/fair-research-software-standard.md) already supports Ponytail reuse. No estate-wide plugin installation, template replacement or compulsory language migration is warranted. Research-specific candidate decisions belong here; reusable evidence may later justify an opt-in central proposal.
 
-The [central scientific-native standard](https://github.com/edithatogo/repository-standards/blob/main/docs/scientific-native.md) already requires exact-version, security, numerical and consumer qualification and a minimal native core. Its [FAIR standard](https://github.com/edithatogo/repository-standards/blob/main/docs/fair-research-software-standard.md) already documents Ponytail's reuse-first approach. **No mandatory estate-wide Ponytail installation, workflow, duplicate policy, or package addition is justified.** Keep research-specific publication/source gates here. If this project demonstrates a broadly useful algorithm contract or resource benefit, propose one *opt-in advisory* central change with reproducible receipts, not a rollout to unrelated repos. Do not overwrite existing repo templates, Conductor ownership or shared controls.

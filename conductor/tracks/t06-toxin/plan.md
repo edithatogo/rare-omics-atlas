@@ -2,7 +2,7 @@
 
 - [ ] **T06.01:** Start with GSE261305 for complement disease and PXD003403 venom proteins; verify genetic subsets and whether CVF identification is quantitative.
 - [ ] **T06.02:** Inventory pre-existing complement models, species-specific validity, venom concentration/kinetics and published experimental observations.
-- [ ] **T06.03:** Check identifiability and design a simple Julia/Catalyst/DifferentialEquations benchmark against existing models.
+- [ ] **T06.03:** Check identifiability and specify a simple model against existing quantitative evidence. Assess diffsol for ODE/DAE, rebop for reaction jumps, or differential-equations for a required SDE, with Julia Catalyst/SciML reference/fallback. Public solver/SBML tests and biological perturbation validation are separate requirements.
 - [ ] **T06.04:** If data permit, freeze a genotype-by-toxin prediction and compare with independent functional observations; otherwise retain feasibility hold.
 
 ## Receiving record
@@ -15,3 +15,4 @@
 - Conductor disposition: **planned**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
+
