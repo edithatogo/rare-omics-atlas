@@ -12,6 +12,10 @@ The broader candidate review was source/documentation inspection. Source-derived
 
 Qualify the current fork's bounded interface and reference evidence; consider **SeSAMe2's existing C CLI** before a Rust preprocessing rewrite. Its R comparisons already exist, but actual production export, public bytes, annotation/mask versions and permitted use still need qualification. [T07](../conductor/tracks/t07-backend-qualification/spec.md) qualifies the selected method before the consuming analysis. Optional ports do not block a qualified reference route; see [the Rust port roadmap](rust-port-roadmap.md).
 
+## Bounded integration update — 23 November 2026
+
+The named consumer and synthetic exporter are now delivered at pinned source `c08c53943a7acb9c6a1152df8d79e27cffe7199b`. Atlas independently received the actual CSV/JSON outputs: three exchanges over two synthetic fixture sets, 576 rows, 6,912 numerical comparisons and all 54 expected nonfinite fields passed unchanged tolerances. [The current receiving receipt](qualification/contracts-hooks-2026-11-23.md) is authoritative for this increment and links the canonical producer contract. This closes the bounded synthetic exchange; the historical source audit below remains dated evidence. Production preprocessing/ingestion, the seven historical positional identities, actual devices and methylation admission remain open.
+
 ## Current MassDynamics-derived fork: evidence and remaining work
 
 The [current fork source audit](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/source-audit-2026-11-22.md) is authoritative for its implementation. Preserve GPL-3.0-or-later and R-source attribution.

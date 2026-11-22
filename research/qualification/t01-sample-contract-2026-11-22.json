@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "scope": "T01a public assay reconciliation and structural declaration contract",
+  "executed_date_utc": "2026-11-22",
+  "analysis_admitted": false,
+  "scientific_source_claims_verified": false,
+  "independent_participant_count": null,
+  "base_revision": "6bd452abde7aff9fbf2969814dca39a0f182d18a",
+  "source_files_sha256": {
+    "tools/catalogue/Cargo.toml": "7e9b43ba92ea4643fb8e946c87efa847b57d099d7a3ff69fd669f4bd97c8a894",
+    "tools/catalogue/Cargo.lock": "6eb53f2396c2540a6e983d673d1d7fbd5ce90a41603775225b0ec2392d1b6e0a",
+    "tools/catalogue/src/lib.rs": "6c42afdafc74b35be7a131fabcc20b0404aa378d073b99fde53e2693d2a09783",
+    "tools/catalogue/src/sample_contract.rs": "a20a3d019fa25d72692eb8f52b475930abf281622a9fe65edcb548a09b24df2d",
+    "tools/catalogue/src/bin/sample-contract.rs": "fcd3f8f9af26cc554a7bdf6b84dbb9f3bedfbbec4887fbdcfcbee5336c057574",
+    "tools/catalogue/tests/contracts.rs": "827ae78acc34e8bd9d28913afec1c4c201cb635e248a36d8fdd28591a397c7b3"
+  },
+  "public_sources": [
+    {
+      "accession": "GSE97362",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief",
+      "retrieved_at": "2026-11-22T14:12:06.753895+00:00",
+      "status": 200,
+      "size_bytes": 622682,
+      "sha256": "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf",
+      "assay_records": 235,
+      "characteristic_field_coverage": {
+        "age (years)": 235,
+        "disease state": 235,
+        "gender": 235,
+        "sample type": 235,
+        "tissue": 235
+      },
+      "independent_participant_count": null,
+      "analysis_admitted": false
+    },
+    {
+      "accession": "GSE116300",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief",
+      "retrieved_at": "2026-11-22T14:12:20.742797+00:00",
+      "status": 200,
+      "size_bytes": 97399,
+      "sha256": "9a8722a365f07c83e6f663d0ab0bb8b7723bd736aad16696d099ee9d2b12c7e1",
+      "assay_records": 44,
+      "characteristic_field_coverage": {
+        "array position": 44,
+        "case status": 44,
+        "mutation": 44,
+        "phenotype": 44,
+        "sex": 44,
+        "slide id": 44,
+        "variant classification": 14
+      },
+      "independent_participant_count": null,
+      "analysis_admitted": false
+    },
+    {
+      "accession": "GSE218186",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief",
+      "retrieved_at": "2026-11-22T14:12:27.331211+00:00",
+      "status": 200,
+      "size_bytes": 163381,
+      "sha256": "0e72adc9bc6547023f23d5ba4743eb76dfd98a4cf7357ed8abe3dddcb11bcbde",
+      "assay_records": 62,
+      "characteristic_field_coverage": {
+        "disease state": 62,
+        "tissue": 62
+      },
+      "independent_participant_count": null,
+      "analysis_admitted": false
+    }
+  ],
+  "catalogue_path": "research/catalogue/2026-11-22/assays.jsonl",
+  "catalogue_sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+  "reconciliation_and_review": {
+    "exit_code": 2,
+    "summary": {
+      "excluded": 0,
+      "held": 341,
+      "ready_for_review": 0
+    },
+    "analysis_admitted": false,
+    "independent_participant_count": null,
+    "source_claims_verified": false,
+    "reconciliation": [
+      {
+        "dataset_accession": "GSE97362",
+        "source_assays": 235,
+        "catalogue_assays": 235,
+        "missing_from_catalogue": 0,
+        "added_to_catalogue": 0,
+        "duplicate_assay_records": 0
+      },
+      {
+        "dataset_accession": "GSE116300",
+        "source_assays": 44,
+        "catalogue_assays": 44,
+        "missing_from_catalogue": 0,
+        "added_to_catalogue": 0,
+        "duplicate_assay_records": 0
+      },
+      {
+        "dataset_accession": "GSE218186",
+        "source_assays": 62,
+        "catalogue_assays": 62,
+        "missing_from_catalogue": 0,
+        "added_to_catalogue": 0,
+        "duplicate_assay_records": 0
+      }
+    ],
+    "shared_assay_accessions_between_series": {
+      "GSE116300|GSE97362": 0,
+      "GSE116300|GSE218186": 0,
+      "GSE218186|GSE97362": 0
+    },
+    "reason_counts": {
+      "independence_unknown": 341,
+      "molecular_eligibility_unknown": 341,
+      "participant_unknown": 341,
+      "partition_unknown": 341,
+      "role_unknown": 341,
+      "specimen_unknown": 341
+    },
+    "input_sha256": "a529ebe107070c367f332f8bf26d0e6b799bf4b36ba46666071821e39fe82766",
+    "output_sha256": "e4401a83a0c4d368d9aac950d9424e6e941c969d587ad7c58270c9ed97674a06"
+  },
+  "held_input_path": "data/silver/t01-sample-contract-2026-11-22/declared-samples.json",
+  "held_output_path": "data/silver/t01-sample-contract-2026-11-22/review.json",
+  "review_command": "cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml --bin sample-contract -- --input data/silver/t01-sample-contract-2026-11-22/declared-samples.json",
+  "review_exit_code": 2,
+  "targeted_validation": {
+    "rust_tests_passed": 20,
+    "integration_tests_passed": 19,
+    "rust_tests_failed": 0,
+    "fmt": "passed",
+    "clippy_warnings_denied": "passed",
+    "patch_coverage": {
+      "base": "origin/main at 6bd452abde7aff9fbf2969814dca39a0f182d18a",
+      "report": "artifacts/t01-contract-coverage.xml",
+      "changed_lines": 191,
+      "covered_changed_lines": 190,
+      "percent": 99.47643979057592,
+      "branch_coverage_option": true,
+      "threshold_percent": 90
+    },
+    "official_owner_device_accepted": false
+  },
+  "strict_before_change": {
+    "source_revision": "9b06b16a6809a51e013dc89800b1b7bf59d57d72",
+    "first_environment_failure_receipt": "artifacts/verification/t01-before/receipt.json",
+    "corrected_environment_receipt": "artifacts/verification/t01-before-qualified/receipt.json",
+    "corrected_environment_status": "passed",
+    "checks_passed": 33,
+    "elapsed_seconds": 26.355,
+    "integration_note": "The accepted predecessor PR was subsequently merged as base_revision. Final after-change strict and hosted evidence are recorded by the integrator for the combined revision."
+  },
+  "peer_review": {
+    "reviewer": "independent limma_ci agent",
+    "finding": "Duplicate JSON keys initially overwrote earlier unknown declarations.",
+    "resolution": "Strict typed Serde deserialization; duplicate top-level, assay, escaped-equivalent and source fields reject through the actual CLI.",
+    "recheck": "Prior reproduction now exits 1 with empty stdout and a fixed diagnostic; no private identifier leak or automatic scientific admission found.",
+    "scope": "Declaration contract accepted; scientific source claims and owner-device acceptance remain unverified."
+  },
+  "remaining_gates": [
+    "source_claim_review",
+    "source_rights_and_disclosure",
+    "covariates_and_design",
+    "technical_preprocessing_and_qc",
+    "institutional_classification",
+    "selected_backend_and_device",
+    "analysis_specific_n1"
+  ],
+  "publication_implication": "Infrastructure evidence supports E0/P1; no new scientific result, participant denominator or separate manuscript claim.",
+  "strict_after_change": {
+    "status": "passed",
+    "checks_passed": 34,
+    "source_revision": "6bd452abde7aff9fbf2969814dca39a0f182d18a",
+    "source_tree_sha256": "0577334a5275ac1ca5e2da8f44b9f0935424ba996f58bf2231d93d4b4cfb2230",
+    "runtime_receipt": "artifacts/verification/contracts-hooks-corrected/receipt.json",
+    "runtime_receipt_sha256": "e2fd84d913862ffdb9b309409fa7b0d8f1eed0b2024c6878668deacfb8475651",
+    "durable_receipt": "research/qualification/contracts-hooks-2026-11-23.json",
+    "elapsed_seconds": 28.318,
+    "rust_tests_passed_per_debug_release_instrumented_run": 20,
+    "python_harness_tests_passed": 38,
+    "publisher_tests_passed": 41,
+    "combined_patch_coverage": {
+      "covered_changed_lines": 499,
+      "changed_lines": 513,
+      "percent": 97.270955165692,
+      "threshold_percent": 90
+    },
+    "first_failed_combined_run": {
+      "stage": "first combined strict run",
+      "status": "failed",
+      "failed_checks": [
+        "harness-tests"
+      ],
+      "receipt_sha256": "a0ed53faab7c0e79eb18c8a62fbec0ac0c6aa1637eafdcc03a9e6a7bdf06db80",
+      "resolution": "Existing branch-coverage isolation fixture now creates the newly mandatory limma-contract.json artifact; production gate unchanged"
+    },
+    "source_identity_note": "The implementation candidate passed before evidence/archive edits. The final native commit hook revalidates the final archived tree; this receipt does not claim that later source identity."
+  },
+  "closure": {
+    "status": "completed",
+    "archived_date": "2026-11-23 Australia/Brisbane",
+    "archive": "conductor/archive/t01a_sample_contract_20261123",
+    "parent_T01_status": "in_progress",
+    "scientific_admission": false,
+    "official_owner_device_accepted": false
+  }
+}

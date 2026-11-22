@@ -54,3 +54,15 @@ A failed or redundant experiment can remain useful supporting validation. Preser
 - Execution: implement, review and archive each completed bounded track. Preserve incomplete parent scientific/device milestones. Use agent batches and measured durations; no human-effort estimates or fabricated delivery times.
 
 See the [new Rust search](qualification/rust-backend-search-2026-11-22.md) and [paired/decision review](qualification/paired-calibration-review-2026-11-22.md). These are source reviews; implementation-specific receipts govern what actually ran.
+
+## Repository and integration refinement — 23 November 2026
+
+Retain the two projects and the central policy source. Limma owns the numerical API, independent oracle and canonical contract; atlas owns source/admission, preprocessing and the receiving adapter. The [repository integration contract](repository-integration.md) records the exact ownership and producer-first update sequence. Independent source work and producer CI can run alongside the receiving work once a real immutable producer commit exists.
+
+Use native Git hooks and the existing strict verifiers, with the exact central privacy scanner. No hook framework or shared package is justified for these two small wrappers. The actual committing index must be scanned, including alternate indexes, and the tested working tree must match it. Clone-local installation and server-side required checks remain distinct.
+
+Use the existing Rust numerical operations through one thin named boundary. Reuse the already-present development CSV/Serde support for a synthetic exporter and the existing atlas Python environment's standard library for its receiver. This avoids a new numerical dependency, a language bridge and a second implementation of inference. The numerical contract does not include production raw-data parsing.
+
+Keep real exporter round-trip tests in Cargo's ordinary target selection. The pinned cargo-llvm-cov native defaults exclude example files from coverage reporting; its unsupported all-default override would require duplicating toolchain/vendor/test filtering. Preserve those defaults and disclose that scope while requiring the executable tests, rather than transform reports or claim coverage that was not measured.
+
+The source/sample boundary validates declarations and keeps unresolved evidence held. Reusing already-locked Serde for strict duplicate-field rejection is justified by an independently reproduced parser ambiguity. No new scientific admission rule or identity inference is introduced.

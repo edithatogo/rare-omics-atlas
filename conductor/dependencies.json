@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-22",
+  "updated_on": "2026-11-23",
   "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
   "milestones": [
     {
@@ -15,7 +15,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "33/33 strict cloud Linux code checks passed with branch-aware 90% patch coverage on the candidate source digest in research/qualification/strict-ci-branch-coverage-2026-11-22.json; hosted/provider, owner-device, licence and scientific acceptance remain separate."
+      "scope": "Strict local/hosted code command is implemented and historically accepted; every new candidate must pass again. Exact receipts, rather than mutable counts here, are recorded under research/qualification/. Official device, licence and scientific acceptance remain separate."
     },
     {
       "id": "T00.hosted_ci",
@@ -23,7 +23,7 @@
       "requires": [
         "T00.strict_code"
       ],
-      "scope": "Observed successful strict-verification, dependency-review, privacy and Codecov patch 95.30% at 412cc2720072bbf91b7c35e1e1256e3decd7d389, run 45028590999; receipt in research/qualification/strict-ci-2026-11-22.md. Required merge enforcement, project baseline and owner-device acceptance remain separate."
+      "scope": "Prior strict implementation merged as 6bd452abde7aff9fbf2969814dca39a0f182d18a; main run 45031759251 strict/privacy passed. Every follow-up receives its own applicable PR/provider checks; required server enforcement remains an administrator task."
     },
     {
       "id": "T00.host_integration",
@@ -82,7 +82,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Actual fork identity and existing 104-test cloud corpus replay; optional Rust evidence"
+      "scope": "Historical 104-test cloud corpus replay at its recorded source; fresh independent and named-exchange evidence are separate milestones."
     },
     {
       "id": "T07.selected_contract",
@@ -109,7 +109,7 @@
         "T07.selected_contract",
         "T00.strict_code"
       ],
-      "scope": "Receive independent synthetic/reference evidence for the selected route's named input/output, fit/contrast and scaled-uncertainty contract. Require LM02 only for the selected Rust route; a separately qualified reference route has its own evidence. Patient admission and owner-device access do not block isolated synthetic contract work."
+      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence."
     },
     {
       "id": "T07.protocol_freeze",
@@ -223,6 +223,32 @@
         "T00.local_runner"
       ],
       "scope": "Three raw archives remain local. Available remote compute returned HTTP 402; browser download transport failed. Existing official-runner workflow can publish once an authenticated runner is available."
+    },
+    {
+      "id": "T00.native_hooks",
+      "status": "complete",
+      "requires": [
+        "T00.strict_code"
+      ],
+      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each actual publishing commit must pass its hook; source mapping is recorded in its PR. Server-side required checks and owner-device execution remain separate."
+    },
+    {
+      "id": "T01.sample_contract",
+      "status": "complete",
+      "requires": [
+        "T01.initial_intake",
+        "T00.strict_code"
+      ],
+      "scope": "Archived T01a structural declaration/CLI and exact public 341-assay reconciliation, independently reviewed with 34/34 combined strict checks. All actual assays are held; no participant independence or scientific admission is inferred."
+    },
+    {
+      "id": "T07.synthetic_consumer",
+      "status": "complete",
+      "requires": [
+        "T07.fresh_reference",
+        "T00.strict_code"
+      ],
+      "scope": "Archived T07a named-v1 receiver at immutable limma c08c53943a7acb9c6a1152df8d79e27cffe7199b: three actual exchanges, 576 rows, 6912 numerical fields and 54 preserved nonfinite results; 34/34 strict checks. This synthetic Rust route does not gate an independently qualified reference route or establish production preprocessing."
     }
   ],
   "external_gate_resolution": {

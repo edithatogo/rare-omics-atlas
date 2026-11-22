@@ -167,6 +167,10 @@ class VerificationContracts(unittest.TestCase):
                         Path(command[command.index("--output-path") + 1]).write_text("TN:fresh\n")
                     if "pip_audit" in command:
                         Path(command[command.index("--output") + 1]).write_text('{"components":[]}')
+                    if "scripts/qualify_limma.py" in command:
+                        (Path(command[-1]) / "limma-contract.json").write_text(
+                            '{"status":"passed"}'
+                        )
                     return subprocess.CompletedProcess(command, 0)
 
                 with (

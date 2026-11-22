@@ -131,6 +131,7 @@ def main() -> int:
         "rust-lcov.info",
         "rust-coverage.xml",
         "python-sbom.json",
+        "limma-contract.json",
     ):
         (output / name).unlink(missing_ok=True)
     started = time.monotonic()
@@ -239,6 +240,19 @@ def main() -> int:
         ],
     )
     check(
+        "limma-consumer-contract",
+        [
+            python,
+            "-m",
+            "coverage",
+            "run",
+            "--append",
+            "scripts/qualify_limma.py",
+            "--output",
+            str(output),
+        ],
+    )
+    check(
         "python-coverage",
         [python, "-m", "coverage", "xml", "-o", str(output / "python-coverage.xml")],
     )
@@ -343,7 +357,13 @@ def main() -> int:
                 )
     if source_hash(ROOT) != receipt["source_tree_sha256"]:
         checks.append({"name": "source-unchanged", "status": "failed", "exit_code": 1})
-    for name in ("python-coverage.xml", "rust-lcov.info", "rust-coverage.xml", "python-sbom.json"):
+    for name in (
+        "python-coverage.xml",
+        "rust-lcov.info",
+        "rust-coverage.xml",
+        "python-sbom.json",
+        "limma-contract.json",
+    ):
         path = output / name
         if not path.is_file() or path.stat().st_size == 0:
             checks.append({"name": f"artifact-{name}", "status": "failed", "exit_code": 1})

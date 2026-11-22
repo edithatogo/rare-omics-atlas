@@ -1,11 +1,11 @@
 # Dependency-ordered tracks
 
-Updated 22 November 2026. **Initial executable work is recorded; complete scientific tracks are not claimed.** Stable track IDs are retained, but T07 selection/qualification moves ahead of every consuming analysis.
+Updated 23 November 2026. **Bounded executable work is recorded; complete scientific tracks are not claimed.** Stable track IDs are retained, but T07 selection/qualification moves ahead of every consuming analysis.
 
 | Execution stage | Track / milestone | Requires | Current state |
 |---|---|---|---|
 | 1 | T00 context and source installation | Repository identity | Complete for project context and pinned source; host auto-activation unobserved |
-| 2a | T00 strict code qualification | T00 context; pinned tools | Complete for the bounded code increment: 33/33 local checks and all hosted gates, including Codecov 95.30%, passed; merge enforcement and official device acceptance remain separate |
+| 2a | T00 strict code qualification and native hooks | T00 context; pinned tools | Prior strict implementation is merged with main CI passing; native hooks are installed and each new candidate must pass its own full local/hosted gates |
 | 2b | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 29-accession rights review complete; broader intake continues |
 | 2c | T07 selected-method baseline | T00 context; named method; strict code checks for changes | Fork corpus, fresh synthetic R slice and fresh-fixture identity increments passed; production consumer and disease-method qualification pending |
 | 2d | T00 official local runner / institutional route | Actual target device / institutional process | External prerequisites recorded; no operational or ethics approval claim |
@@ -23,16 +23,19 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 ## Active implementation increment
 
+- [x] [T01a — source/sample declaration boundary](archive/t01a_sample_contract_20261123/index.md): public 341-assay reconciliation and strict local CLI passed independent review and combined verification. Archived; actual identities/independence and scientific admission remain held.
+- [x] [T07a — pinned synthetic numerical exchange](archive/t07a_named_exchange_20261123/index.md): actual immutable producer/receiver exchanges and all 34 strict gates passed. Archived for the bounded synthetic contract; preprocessing and scientific/device acceptance remain separate.
+
 - [~] [T09 — Minimal GitHub–Hugging Face medallion](tracks/t09_hf_medallion_20261122/index.md): reviewed publisher/workflows and 14-object metadata publication complete; estate registered; raw transfer externally blocked. Full T09 remains open.
 - Completed: [T08 API catalogue](archive/t08_catalogue_20261122/index.md), independently reviewed and archived before T09.
-- Next: the [T00 strict code/hosted increment](tracks/t00-governance/plan.md#strict-verification-increment) has passed. Continue the [T01 source/admission tasks](tracks/t01-sources/plan.md#next-executable-batches) and [T07 selected contract](tracks/t07-backend-qualification/plan.md#next-executable-batches) in dependency order. Source-only decision support can use existing admission statuses; a native preprocessing change needs an observed blocker and reference case first. Parent scientific tracks retain their acceptance criteria.
+- Next: resolve the selected preprocessing/QC route and required annotations on technical fixtures, alongside [T01's remaining identity/admission evidence](tracks/t01-sources/plan.md#next-executable-batches). The [bounded receiving receipt](../research/qualification/contracts-hooks-2026-11-23.md) closes the synthetic exchange, while [T07](tracks/t07-backend-qualification/plan.md#next-executable-batches) retains production, protocol and device criteria. A native preprocessing change still needs an observed blocker and independent reference first.
 
 The published metadata and source-linked Bronze are usable independently of the optional mirror. A raw-upload transport failure does not block eligible local technical work; it also does not close the mirror's acceptance criterion. The configured official-runner workflow is the concrete remaining route. [Observed publication and blocker](../research/qualification/hf-metadata-publication-2026-11-22.md).
 
 ## Executing one ready batch
 
 1. Read the selected specification and plan; claim only its named paths. Record the starting commit and unresolved prerequisites. The tables below refine existing tasks; they do not add parallel copies of the same milestone.
-2. Before changing code, run `uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py` and retain the baseline receipt. Run the same strict command after the change. The default includes debug/release tests, docs, lint, dependency audit and coverage; `--deep` additionally scans reachable Git history and requires a complete clone. Missing tools, skipped required checks and failed checks are unresolved gates, never passes.
+2. Install the native hook using [the CI contract](../research/ci-plan.md#install-the-native-pre-commit-hook), then run `uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep` and retain the baseline receipt. Run the same strict command after the change. The default includes debug/release tests, docs, lint, dependency audit, coverage and the pinned numerical receiving gate; `--deep` additionally scans reachable Git history and requires a complete clone. Missing tools, skipped required checks and failed checks are unresolved gates, never passes.
 3. Use each plan's inputs, outputs and pass/fail criteria. A future output path below is an acceptance target, not a claim that the file or command already exists. For an unselected scientific backend, first freeze its real command in T07.02; do not fabricate a runnable analysis CLI in a plan.
 4. Keep participant-level manifests and scientific results in ignored `data/silver/` or `data/gold/`. Commit only cleared metadata, synthetic fixtures, code, aggregate decisions and receipts. Record the exact data hashes separately from Git source identity.
 5. Review the smallest completed increment, record actual commands/outcomes, then start its dependent. Code checks, hosted PR checks, official owner-device acceptance, source publication and scientific admission require distinct evidence. Mark a parent complete only when all of its original exit criteria pass.
@@ -42,8 +45,8 @@ The published metadata and source-linked Bronze are usable independently of the 
 | Next task | Can proceed on current evidence? | Owner and resolution of the remaining dependency |
 |---|---|---|
 | T00 strict command and hosted PR workflow | Complete for the accepted bounded code increment; run again for every code change | Current CI integrator; preserve failed attempts and exact source/provider receipts; required merge settings remain a separate administrator task |
-| T01 public source reconciliation / synthetic cohort contract | Yes, bounded metadata work | T01 implementation owner; source evidence resolves identity, unknowns remain excluded from inference |
-| T07 selected method contract / synthetic consumer checks | Yes, independent of patient inference | T07 owner plus the existing limma-rust LM02 owner; use exact fork commits |
+| T01 public source reconciliation / synthetic cohort contract | Initial 341-assay reconciliation and structural contract archived; remaining participant/admission evidence open | T01 implementation owner; source evidence resolves identity, unknowns remain excluded from inference |
+| T07 named synthetic consumer / next preprocessing contract | Named v1 exchange archived; technical preprocessing/annotation qualification is the next independent batch | T07 owner plus existing stage owners; use exact source revisions and an actual exported reference |
 | T01 analysis admission / T07 protocol freeze | Only after cohort and applicable governance requirements pass | T01 owner records the institutional determination; T07 owner freezes the selected method and N1 |
 | T00 actual-device acceptance / T09 original raw mirror | External runner and authenticated transport remain unavailable | Owner's trusted runner operator; revisit when registered-device access and a source-bound job are available |
 | T02, then a justified T03 or T05 | Blocked until their named data, method, device and N1 receipts pass | Receiving scientific track owner; do not substitute a code test or metadata publication |

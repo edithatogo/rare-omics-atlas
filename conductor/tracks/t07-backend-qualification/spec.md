@@ -10,7 +10,7 @@ This track is no longer deferred until after clinical work. Its baseline can beg
 
 The owner's MassDynamics-derived [limma-rust](https://github.com/edithatogo/limma-rust) is package limma-core at audited base ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa. The earlier sinmojito audit describes a different implementation. Do not transfer its parser, lfcSE, rank or comparator defects to this fork.
 
-The existing suite passed 104 tests in this Linux workspace. Its mixed synthetic/proteomics corpus, fresh R reproduction, actual local-runner acceptance and methylation consumer validation are separate evidence classes. Follow fork LM00 → LM01 → LM02 → LM03. Do not treat historical upstream parity as a new result at this source revision.
+The historical baseline passed 104 tests in this Linux workspace. The later LM01a fresh independent R reference and LM02a fresh-fixture identity increments are completed, with exact receipts linked in the [backend audit](../../../research/methylation-backend-audit.md). The [selected synthetic contract](selected-contract.md) defines the next bounded named exchange. Historical positional identities, production methylation consumption and actual local-runner acceptance retain their separate gates. Follow fork LM00 → LM01 → LM02 → LM03. Do not relabel historical evidence as a new result at another source revision.
 
 ## Required method contract
 
@@ -28,7 +28,7 @@ The MassDynamics fork has neither faer nor statrs installed. Introducing one req
 
 Record exact source/reference/input versions, prespecified numerical and consumer thresholds, actual target-device official runner evidence and deployment/resource limits. If a method differs, label it a method comparison rather than exact parity. Choose only a supported contract; retain a qualified reference route while a candidate is held.
 
-No new statistical source code or clinical analysis is implemented by this specification. The completed corpus replay is an initial baseline, not scientific backend admission.
+This specification does not itself qualify scientific use. Bounded implementation/receiving receipts identify which numerical and file-contract operations have actually passed; clinical analysis and scientific backend admission remain pending.
 
 ## Replication boundary
 

@@ -1,0 +1,14 @@
+{
+  "track_id": "t01a_sample_contract_20261123",
+  "type": "feature",
+  "status": "completed",
+  "created_at": "2026-11-23",
+  "updated_at": "2026-11-23",
+  "description": "Public GEO assay reconciliation and structural local declaration review; scientific admission held",
+  "parent_track": "T01",
+  "analysis_admitted": false,
+  "independent_participant_count": null,
+  "actual_assays_held": 341,
+  "archived_at": "2026-11-23",
+  "acceptance_receipt": "../../../research/qualification/contracts-hooks-2026-11-23.json"
+}

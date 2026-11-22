@@ -1,6 +1,6 @@
 # Rare Omics Atlas
 
-**Status: official API catalogue published and verified on Hugging Face; three raw archives verified locally, with their Hub transfer still pending. Scientific analyses have not started.** Updated 22 November 2026.
+**Status: official API catalogue published; source/sample validation and a pinned synthetic numerical exchange are implemented and locally verified with native commit hooks. Three raw archives remain locally verified, with their Hub transfer pending. Scientific analyses have not started.** Updated 23 November 2026.
 
 An ontology-linked rare-disease epigenomics programme. The first proposed paper tests whether a prespecified Kabuki methylation result transfers across independent cohorts and platforms, with explicit clinical interpretation limits. A pooled network, extra ontology or change of programming language is not by itself a novel clinical finding.
 
@@ -14,6 +14,8 @@ An ontology-linked rare-disease epigenomics programme. The first proposed paper 
 6. [Logical medallion storage](research/medallion-layout.md), [reference resources and hosting](research/resources-hosting-reuse.md), [official local runner policy](research/local-development.md) and [Ponytail decisions](research/ponytail-decisions.md).
 
 ## What is now evidenced
+
+- The [new bounded source and receiving increments](research/qualification/contracts-hooks-2026-11-23.md) passed 34 strict local gates. T01a reconciles 341 public assay records and holds all actual declarations; T07a receives actual files from the pinned limma producer and passes 6,912 numerical comparisons. Both increments are reviewed and archived. Installed native hooks require exact staged privacy scanning and the full verifier for publishing commits; hosted outcomes remain separately recorded.
 
 - The pinned Conductor submodule was fetched and its project context completed in a real clone. Automatic activation by a particular host application was not observed.
 - The three initial public Kabuki archives were downloaded without an application or login. Their exact bytes, SHA-256 identifiers, TAR structure and IDAT headers were checked; see the receipt for counts and limitations. Raw files are outside Git.
@@ -39,6 +41,8 @@ Patient files are never committed to Git. The current Hub publication is the [me
 
 ## Strict development verification
 
+The [repository integration contract](research/repository-integration.md) assigns numerical ownership to limma and source/receiving ownership to atlas. Atlas's strict command runs an actual synthetic file exchange against an immutable limma commit and its independent R references. It also tests the local source/sample boundary; neither code contract admits a dataset for inference.
+
 Install and run the pinned checks from the repository root before new code changes and after each increment:
 
 ```sh
@@ -48,3 +52,5 @@ uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify
 ```
 
 See the [CI contract](research/ci-plan.md) for prerequisites, exact scope, receipts and template alignment. Hosted CI and the trusted manual official-device workflow reuse this command. The atlas code licence is unresolved; code checks do not establish Community Standards, scientific or actual-device acceptance.
+
+Install the [native pre-commit hook](research/ci-plan.md#install-the-native-pre-commit-hook) in each clone before committing. It runs the pinned central privacy scanner on the actual staged candidate and the same strict verifier, refusing incomplete staging, missing tools or failed checks.
