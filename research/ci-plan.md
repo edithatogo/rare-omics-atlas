@@ -56,7 +56,7 @@ The central reusable Rust job assumes a root Cargo manifest and floating stable 
 | Item | Disposition and receiving owner |
 |---|---|
 | Atlas code licence | **Unresolved.** The maintainer must choose or identify applicable terms. Do not copy a template licence or infer rights from public visibility. This prevents a claim of complete Community Standards/licence conformance. Existing source-specific dataset rights remain separate. |
-| Hosted execution/provider receipt | Requires observed runs at the PR commit and actual Codecov result; workflow configuration alone is insufficient. CI integrator owns reconciliation. |
+| Hosted execution/provider receipt | Received at `412cc2720072bbf91b7c35e1e1256e3decd7d389`: strict, privacy, dependency-review, SPDX/upload and Codecov patch 95.30% succeeded. [Acceptance](qualification/strict-ci-2026-11-22.md#accepted-hosted-increment). Every subsequent candidate still needs its actual checks. A first project-regression baseline/result is not inferred from patch success. |
 | Stable required-check enforcement | GitHub's repository/branch APIs were read on 22 November 2026: no rulesets were returned, `main` was unprotected, and required status contexts were empty. After observed successful jobs, the repository administrator can require the exact names. No branch protection or ruleset change is claimed here; preserve zero mandatory human approvals and existing protections. |
 | Official device qualification | Trusted device operator must run the configured official workflow and retain its revision-bound receipt. |
 | Published scientific releases | Remain behind existing source/data/method/N1/device gates; add release provenance/checksums for a real release, not speculative packaging. |

@@ -5,7 +5,7 @@ Updated 22 November 2026. **Initial executable work is recorded; complete scient
 | Execution stage | Track / milestone | Requires | Current state |
 |---|---|---|---|
 | 1 | T00 context and source installation | Repository identity | Complete for project context and pinned source; host auto-activation unobserved |
-| 2a | T00 strict code qualification | T00 context; pinned tools | Configure and run the same fail-closed command locally and on hosted PRs; official device acceptance remains separate |
+| 2a | T00 strict code qualification | T00 context; pinned tools | Complete for the bounded code increment: 33/33 local checks and all hosted gates, including Codecov 95.30%, passed; merge enforcement and official device acceptance remain separate |
 | 2b | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 29-accession rights review complete; broader intake continues |
 | 2c | T07 selected-method baseline | T00 context; named method; strict code checks for changes | Fork corpus, fresh synthetic R slice and fresh-fixture identity increments passed; production consumer and disease-method qualification pending |
 | 2d | T00 official local runner / institutional route | Actual target device / institutional process | External prerequisites recorded; no operational or ethics approval claim |
@@ -25,7 +25,7 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 - [~] [T09 — Minimal GitHub–Hugging Face medallion](tracks/t09_hf_medallion_20261122/index.md): reviewed publisher/workflows and 14-object metadata publication complete; estate registered; raw transfer externally blocked. Full T09 remains open.
 - Completed: [T08 API catalogue](archive/t08_catalogue_20261122/index.md), independently reviewed and archived before T09.
-- Next: complete [T00 strict verification](tracks/t00-governance/plan.md#strict-verification-increment), then the [T01 source/admission tasks](tracks/t01-sources/plan.md#next-executable-batches) and [T07 selected contract](tracks/t07-backend-qualification/plan.md#next-executable-batches). Source-only decision support can use existing admission statuses; a native preprocessing change needs an observed blocker and reference case first. Parent scientific tracks retain their acceptance criteria.
+- Next: the [T00 strict code/hosted increment](tracks/t00-governance/plan.md#strict-verification-increment) has passed. Continue the [T01 source/admission tasks](tracks/t01-sources/plan.md#next-executable-batches) and [T07 selected contract](tracks/t07-backend-qualification/plan.md#next-executable-batches) in dependency order. Source-only decision support can use existing admission statuses; a native preprocessing change needs an observed blocker and reference case first. Parent scientific tracks retain their acceptance criteria.
 
 The published metadata and source-linked Bronze are usable independently of the optional mirror. A raw-upload transport failure does not block eligible local technical work; it also does not close the mirror's acceptance criterion. The configured official-runner workflow is the concrete remaining route. [Observed publication and blocker](../research/qualification/hf-metadata-publication-2026-11-22.md).
 
@@ -41,7 +41,7 @@ The published metadata and source-linked Bronze are usable independently of the 
 
 | Next task | Can proceed on current evidence? | Owner and resolution of the remaining dependency |
 |---|---|---|
-| T00 strict command and hosted PR workflow | Yes, implementation and cloud verification | Current CI integrator; preserve failed checks and tool/version receipts |
+| T00 strict command and hosted PR workflow | Complete for the accepted bounded code increment; run again for every code change | Current CI integrator; preserve failed attempts and exact source/provider receipts; required merge settings remain a separate administrator task |
 | T01 public source reconciliation / synthetic cohort contract | Yes, bounded metadata work | T01 implementation owner; source evidence resolves identity, unknowns remain excluded from inference |
 | T07 selected method contract / synthetic consumer checks | Yes, independent of patient inference | T07 owner plus the existing limma-rust LM02 owner; use exact fork commits |
 | T01 analysis admission / T07 protocol freeze | Only after cohort and applicable governance requirements pass | T01 owner records the institutional determination; T07 owner freezes the selected method and N1 |

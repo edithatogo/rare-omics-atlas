@@ -19,11 +19,11 @@
     },
     {
       "id": "T00.hosted_ci",
-      "status": "pending",
+      "status": "complete",
       "requires": [
         "T00.strict_code"
       ],
-      "scope": "Observed strict-verification, dependency-review, privacy and Codecov results at the actual submitted commit. Workflow configuration is not a successful run."
+      "scope": "Observed successful strict-verification, dependency-review, privacy and Codecov patch 95.30% at 412cc2720072bbf91b7c35e1e1256e3decd7d389, run 45028590999; receipt in research/qualification/strict-ci-2026-11-22.md. Required merge enforcement, project baseline and owner-device acceptance remain separate."
     },
     {
       "id": "T00.host_integration",
