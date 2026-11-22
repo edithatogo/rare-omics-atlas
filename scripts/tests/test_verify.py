@@ -359,6 +359,42 @@ class VerificationContracts(unittest.TestCase):
                 bootstrap.main()
             native.assert_not_called()
 
+    def test_bootstrap_pins_each_cargo_tool_and_supports_native_only(self):
+        for native_only in (False, True):
+            with self.subTest(native_only=native_only), tempfile.TemporaryDirectory() as folder:
+                arguments = ["bootstrap.py", "--bin-dir", folder]
+                if native_only:
+                    arguments.append("--native-only")
+                with (
+                    patch.object(sys, "argv", arguments),
+                    patch.object(bootstrap.subprocess, "run") as execute,
+                    patch.object(bootstrap, "install_native") as native,
+                    redirect_stdout(io.StringIO()),
+                ):
+                    bootstrap.main()
+                native.assert_called_once_with(Path(folder))
+                if native_only:
+                    execute.assert_not_called()
+                else:
+                    calls = [call.args[0] for call in execute.call_args_list]
+                    self.assertEqual(
+                        calls[0][:4], ["rustup", "toolchain", "install", bootstrap.RUST]
+                    )
+                    self.assertEqual(len(calls), 1 + len(bootstrap.CARGO_TOOLS))
+                    for name, version in bootstrap.CARGO_TOOLS.items():
+                        self.assertIn(
+                            [
+                                "cargo",
+                                f"+{bootstrap.RUST}",
+                                "install",
+                                name,
+                                "--locked",
+                                "--version",
+                                version,
+                            ],
+                            calls,
+                        )
+
 
 if __name__ == "__main__":
     unittest.main()

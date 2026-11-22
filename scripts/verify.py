@@ -281,6 +281,7 @@ def main() -> int:
             "--compare-branch",
             str(receipt["coverage_base_revision"]),
             "--include-untracked",
+            "--branch-coverage",
             "--fail-under",
             "90",
         ],

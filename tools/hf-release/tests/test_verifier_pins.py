@@ -52,6 +52,17 @@ class PublisherPins(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "historical publisher"):
                 VERIFIER.verify_baseline_publisher(ROOT, baseline)
 
+    def test_unavailable_module_loader_never_executes_reviewed_source(self):
+        for module_spec in (None, type("MissingLoader", (), {"loader": None})()):
+            with (
+                self.subTest(spec=module_spec),
+                patch.object(
+                    VERIFIER.importlib.util, "spec_from_file_location", return_value=module_spec
+                ),
+            ):
+                with self.assertRaisesRegex(ValueError, "cannot be loaded"):
+                    VERIFIER.load_reviewed_publisher(ROOT)
+
 
 if __name__ == "__main__":
     unittest.main()

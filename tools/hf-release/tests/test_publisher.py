@@ -1,3 +1,4 @@
+import copy
 import hashlib
 import importlib.util
 import json
@@ -41,6 +42,25 @@ class Contracts(unittest.TestCase):
         self.manifest["objects"].append(dict(self.row))
         with self.assertRaises(publisher.ReleaseError):
             publisher.validate_manifest(self.manifest)
+
+    def test_rejects_untyped_manifest_and_invalid_object_contracts(self):
+        invalid_manifests = [None, [], {**self.manifest, "schema_version": 2}]
+        for fields in ({"objects": []}, {"repo_id": "other/repository"}):
+            invalid_manifests.append({**self.manifest, **fields})
+        for fields in (
+            {"size_bytes": True},
+            {"size_bytes": -1},
+            {"sha256": "unverified"},
+            {"redistribution_basis": " "},
+            {"kind": "unknown"},
+        ):
+            candidate = copy.deepcopy(self.manifest)
+            candidate["objects"][0].update(fields)
+            invalid_manifests.append(candidate)
+        invalid_manifests.append({**self.manifest, "objects": [None]})
+        for manifest in invalid_manifests:
+            with self.subTest(manifest=manifest), self.assertRaises(publisher.ReleaseError):
+                publisher.validate_manifest(manifest)
 
     def test_rejects_auto_generated_path_collision(self):
         self.row["path_in_repo"] = "releases/2026-11-22/provenance.json"
@@ -228,6 +248,53 @@ class HubContracts(unittest.TestCase):
             publisher.fetch_archive(destination, obj)
         opener.assert_not_called()
         self.assertEqual(destination.read_bytes(), b"badbytes\n")
+
+    def test_source_archive_preparation_preserves_bytes_and_uses_explicit_cache(self):
+        from io import BytesIO
+        from types import SimpleNamespace
+        from unittest.mock import patch
+
+        cache = self.root / "bronze"
+        original = b"synthetic archive bytes\n"
+        archive = {
+            "kind": "source_archive",
+            "path_in_repo": "bronze/GSE97362_RAW.tar",
+            "cache_path": "GSE97362_RAW.tar",
+            "accession": "GSE97362",
+            "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE97nnn/GSE97362/suppl/GSE97362_RAW.tar",
+            "size_bytes": len(original),
+            "sha256": hashlib.sha256(original).hexdigest(),
+            "redistribution_basis": "Synthetic fixture bytes only",
+        }
+        manifest = {**self.manifest, "objects": [archive]}
+        response = BytesIO(original)
+        response.status = 200
+        with patch.object(
+            publisher,
+            "build_opener",
+            return_value=SimpleNamespace(open=lambda *args, **kwargs: response),
+        ) as opener:
+            first = publisher.prepare(
+                manifest, json.dumps(manifest).encode(), self.root, cache, True, None
+            )
+            self.assertEqual((cache / archive["cache_path"]).read_bytes(), original)
+            self.assertFalse((self.root / archive["cache_path"]).exists())
+            self.assertFalse((cache / (archive["cache_path"] + ".part")).exists())
+            opener.assert_called_once()
+            opener.reset_mock()
+            replay = publisher.prepare(
+                manifest, json.dumps(manifest).encode(), self.root, cache, False, None
+            )
+            self.assertEqual(first, replay)
+            opener.assert_not_called()
+
+    def test_changed_input_between_validation_and_commit_is_rejected(self):
+        payloads = self.payloads()
+        api = self.fake_api(payloads)
+        (self.root / "note.txt").write_bytes(b"changed!\n")
+        with self.assertRaisesRegex(publisher.ReleaseError, "changed after validation"):
+            publisher.publish(api, self.manifest, payloads, {})
+        self.assertEqual(api.calls, [])
 
 
 class GitSourceContracts(unittest.TestCase):

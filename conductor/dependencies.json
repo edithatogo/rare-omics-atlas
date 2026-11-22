@@ -15,7 +15,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "33/33 strict cloud Linux code checks passed on the candidate source digest in research/qualification/strict-ci-2026-11-22.json; hosted/provider, owner-device, licence and scientific acceptance remain separate."
+      "scope": "33/33 strict cloud Linux code checks passed with branch-aware 90% patch coverage on the candidate source digest in research/qualification/strict-ci-branch-coverage-2026-11-22.json; hosted/provider, owner-device, licence and scientific acceptance remain separate."
     },
     {
       "id": "T00.hosted_ci",
@@ -71,7 +71,8 @@
       "requires": [
         "T01.initial_intake",
         "T01.reference_assets",
-        "T01.institutional_classification"
+        "T01.institutional_classification",
+        "T07.technical_preprocessing"
       ],
       "scope": "Molecular subset, native controls, overlap/covariates and source eligibility"
     },
@@ -92,6 +93,25 @@
       "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1."
     },
     {
+      "id": "T07.technical_preprocessing",
+      "status": "pending",
+      "requires": [
+        "T07.selected_contract",
+        "T01.reference_assets",
+        "T00.local_runner"
+      ],
+      "scope": "Accept the selected preprocessing/QC stage before T01 sample QC: exact stage source, required manifest/mask/build/annotation assets, independent technical fixtures, actual exported precision and applicable device receipts. Isolated fixture development can proceed before device acceptance; optional references are not prerequisites."
+    },
+    {
+      "id": "T07.consumer_contract",
+      "status": "pending",
+      "requires": [
+        "T07.selected_contract",
+        "T00.strict_code"
+      ],
+      "scope": "Receive independent synthetic/reference evidence for the selected route's named input/output, fit/contrast and scaled-uncertainty contract. Require LM02 only for the selected Rust route; a separately qualified reference route has its own evidence. Patient admission and owner-device access do not block isolated synthetic contract work."
+    },
+    {
       "id": "T07.protocol_freeze",
       "status": "pending",
       "requires": [
@@ -105,7 +125,8 @@
       "status": "pending",
       "requires": [
         "T07.protocol_freeze",
-        "T00.local_runner"
+        "T00.local_runner",
+        "T07.consumer_contract"
       ],
       "scope": "Accept selected reference or Rust method using technical/discovery qualification evidence; reserved clinical replication effects remain concealed."
     },

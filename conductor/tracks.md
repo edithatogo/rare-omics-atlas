@@ -9,9 +9,10 @@ Updated 22 November 2026. **Initial executable work is recorded; complete scient
 | 2b | T01 source discovery, terms and initial transfers | T00 context | Initial three archive checks and 29-accession rights review complete; broader intake continues |
 | 2c | T07 selected-method baseline | T00 context; named method; strict code checks for changes | Fork corpus, fresh synthetic R slice and fresh-fixture identity increments passed; production consumer and disease-method qualification pending |
 | 2d | T00 official local runner / institutional route | Actual target device / institutional process | External prerequisites recorded; no operational or ethics approval claim |
-| 3 | T01 analysis admission | Exact cohort, controls, overlap, covariates, annotations and applicable institutional determination | Pending; no dataset accepted for inference yet |
+| 2e | T07 technical preprocessing acceptance | Selected contract, required reference assets, independent technical fixtures and applicable device receipt | Pending; isolated fixture development can start before device acceptance |
+| 3 | T01 analysis admission | Exact cohort, controls, overlap, covariates, accepted technical preprocessing and applicable institutional determination | Pending; no dataset accepted for inference yet |
 | 4a | T07 protocol freeze | Data admission + selected method/independent reference contract | Pending; freeze N1 and protect clinical replication before numerical qualification |
-| 4b | T07 selected-method acceptance | Frozen protocol, consumer evidence and official target runner | Pending; qualify reference or Rust route using technical/discovery evidence |
+| 4b | T07 selected-method acceptance | Frozen protocol, independent consumer-contract evidence and official target runner | Pending; qualify reference or Rust route using technical/discovery evidence |
 | 5 | T02 Kabuki E2/E3 | T01 admission + T07 accepted route + confirmation of frozen N1 | Planned |
 | 6 | T03 focused cross-disease comparison | T02 reference + separately admitted disease cohorts + selected method + N1 | Planned |
 | 7 | T04 hierarchical model | Qualified independent disease effects/uncertainty from T03 + simplest baseline | Planned, conditional on adequate data |

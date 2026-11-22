@@ -9,6 +9,7 @@ import unittest
 from contextlib import redirect_stdout
 from io import StringIO
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
@@ -76,6 +77,18 @@ class ReceiptInputProtection(unittest.TestCase):
         receipt = json.loads(output.read_text())
         self.assertEqual(receipt["status"], "dry_run_verified")
         self.assertEqual(len(receipt["local_objects"]), 3)
+        self.assertEqual(self.source.read_bytes(), self.original)
+
+    def test_http_failure_retains_status_without_disclosing_exception_details(self):
+        output = self.root / "reports/failure.json"
+        failure = RuntimeError("synthetic confidential transport detail")
+        failure.response = SimpleNamespace(status_code=503)
+        with patch.object(PUBLISHER, "prepare", side_effect=failure):
+            self.assertEqual(self.run_publisher(output), 1)
+        receipt = json.loads(output.read_text())
+        self.assertEqual(receipt["status"], "failed")
+        self.assertEqual(receipt["failure"]["http_status"], 503)
+        self.assertNotIn("confidential", output.read_text())
         self.assertEqual(self.source.read_bytes(), self.original)
 
 

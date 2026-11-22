@@ -76,7 +76,7 @@ class MetadataReadbackContracts(unittest.TestCase):
             if obj["origin"]["kind"] == "unchanged_github_blob"
         )
 
-    def run_verifier(self, include_manifest=False):
+    def run_verifier(self, include_manifest=False, hub_revision=HUB_SHA):
         def repo_info(repo_id, *, repo_type, revision):
             self.assertEqual(
                 (repo_id, repo_type, revision), (self.manifest["repo_id"], "dataset", HUB_SHA)
@@ -104,7 +104,7 @@ class MetadataReadbackContracts(unittest.TestCase):
             "--root",
             str(self.root),
             "--hub-revision",
-            HUB_SHA,
+            hub_revision,
             "--receipt",
             str(self.output),
         ]
@@ -220,6 +220,65 @@ class MetadataReadbackContracts(unittest.TestCase):
         path = self.root / "research/releases/2026-11-22/manifest.json"
         path.write_bytes(path.read_bytes() + b"\n")
         self.assert_failure("planned full release manifest changed", before_api=True)
+
+    def test_metadata_fields_require_declared_json_types(self):
+        for function, invalid, message in (
+            (HELPER.record, [], "metadata record expected"),
+            (HELPER.record, {1: "value"}, "keys must be strings"),
+            (HELPER.records, {}, "object list expected"),
+            (HELPER.records, [None], "metadata record expected"),
+            (HELPER.text, 123, "text field expected"),
+        ):
+            with self.subTest(function=function.__name__, value=invalid):
+                with self.assertRaisesRegex(ValueError, message):
+                    function(invalid)
+
+    def test_subset_invariants_reject_invalid_claims_before_remote_access(self):
+        original = json.dumps(self.manifest)
+        for scenario, expected in (
+            ("wrong_count", "unexpected metadata subset contract"),
+            ("claimed_complete", "unexpected metadata subset contract"),
+            ("raw_kind", "invalid or duplicate subset object"),
+            ("duplicate", "invalid or duplicate subset object"),
+            ("boolean_size", "invalid metadata object size"),
+            ("negative_size", "invalid metadata object size"),
+            ("notice_origin_claim", "unverified baseline origin"),
+            ("unknown_origin", "unknown notice/source origin"),
+        ):
+            with self.subTest(scenario=scenario):
+                self.manifest = json.loads(original)
+                first = self.manifest["objects"][0]
+                if scenario == "wrong_count":
+                    self.manifest["objects"].pop()
+                elif scenario == "claimed_complete":
+                    self.manifest["full_release_status"] = "complete"
+                elif scenario == "raw_kind":
+                    first["kind"] = "source_archive"
+                elif scenario == "duplicate":
+                    self.manifest["objects"][1]["path_in_repo"] = first["path_in_repo"]
+                elif scenario in ("boolean_size", "negative_size"):
+                    first["size_bytes"] = True if scenario == "boolean_size" else -1
+                elif scenario == "notice_origin_claim":
+                    notice = next(
+                        obj
+                        for obj in self.manifest["objects"]
+                        if obj["origin"]["kind"] == "new_staging_notice"
+                    )
+                    notice["origin"]["revision"] = "a" * 40
+                else:
+                    first["origin"]["kind"] = "unverified"
+                self.save_manifest()
+                self.output.unlink(missing_ok=True)
+                self.assert_failure(expected, before_api=True)
+
+    def test_mutable_hub_reference_and_unreviewed_client_are_rejected(self):
+        code, receipt = self.run_verifier(hub_revision="main")
+        self.assertEqual(code, 1)
+        self.assertIn("immutable Hub SHA", receipt["failure"]["message"])
+        self.assertFalse(self.client_called)
+        self.output.unlink()
+        with patch.object(HELPER.importlib.metadata, "version", return_value="2.4.1"):
+            self.assert_failure("reviewed Hub client", before_api=True)
 
     def test_remote_readback_requires_public_exact_revision(self):
         for private, revision in ((True, HUB_SHA), (False, "d" * 40)):
