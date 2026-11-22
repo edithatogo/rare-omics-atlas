@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-22",
+  "scope": "Initial public Kabuki source intake; no statistical analysis or scientific QC.",
+  "access_route": "Public HTTPS without login, application or author contact.",
+  "total_archive_bytes": 3828981760,
+  "total_idat_pairs": 341,
+  "archives": [
+    {
+      "accession": "GSE97362",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE97nnn/GSE97362/suppl/GSE97362_RAW.tar",
+      "started_at_utc": "2026-11-22T09:28:15.047839+00:00",
+      "expected_content_length_from_head": 2181539840,
+      "http_status": 200,
+      "response_content_length": "2181539840",
+      "downloaded_bytes": 2181539840,
+      "sha256": "521fb68f049c69d3911bc8b91f010e81cb76caa7092436a823632c11249da7c7",
+      "content_length_matches": true,
+      "tar_members": 474,
+      "unsafe_member_names": 0,
+      "idat_members": 470,
+      "valid_idat_headers": 470,
+      "idat_versions": {
+        "3": 470
+      },
+      "idat_field_counts": {
+        "19": 470
+      },
+      "channels": {
+        "grn": 235,
+        "red": 235
+      },
+      "complete_red_green_pairs": 235,
+      "incomplete_pairs": 0,
+      "tar_structure_read": true,
+      "gzip_full_crc_checked": false,
+      "scientific_qc_or_analysis_run": false,
+      "publisher_checksum_comparison": "No publisher checksum supplied in this check; SHA-256 is a local content identifier.",
+      "status": "downloaded_and_header_checked",
+      "elapsed_seconds": 59.44,
+      "completed_at_utc": "2026-11-22T09:29:14.483845+00:00"
+    },
+    {
+      "accession": "GSE116300",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE116nnn/GSE116300/suppl/GSE116300_RAW.tar",
+      "started_at_utc": "2026-11-22T09:28:15.048499+00:00",
+      "expected_content_length_from_head": 565248000,
+      "http_status": 200,
+      "response_content_length": "565248000",
+      "downloaded_bytes": 565248000,
+      "sha256": "82742b84a4e9b7f352afad1e54524673517e14031e972df7d0facfe59757f326",
+      "content_length_matches": true,
+      "tar_members": 92,
+      "unsafe_member_names": 0,
+      "idat_members": 88,
+      "valid_idat_headers": 88,
+      "idat_versions": {
+        "3": 88
+      },
+      "idat_field_counts": {
+        "19": 88
+      },
+      "channels": {
+        "grn": 44,
+        "red": 44
+      },
+      "complete_red_green_pairs": 44,
+      "incomplete_pairs": 0,
+      "tar_structure_read": true,
+      "gzip_full_crc_checked": false,
+      "scientific_qc_or_analysis_run": false,
+      "publisher_checksum_comparison": "No publisher checksum supplied in this check; SHA-256 is a local content identifier.",
+      "status": "downloaded_and_header_checked",
+      "elapsed_seconds": 43.15,
+      "completed_at_utc": "2026-11-22T09:28:58.194433+00:00"
+    },
+    {
+      "accession": "GSE218186",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218186/suppl/GSE218186_RAW.tar",
+      "started_at_utc": "2026-11-22T09:28:58.195237+00:00",
+      "expected_content_length_from_head": 1082193920,
+      "http_status": 200,
+      "response_content_length": "1082193920",
+      "downloaded_bytes": 1082193920,
+      "sha256": "9c6014691c6bc0838efaca1ea697533ac68c85a86f600c1d69cbe69fa5143ab0",
+      "content_length_matches": true,
+      "tar_members": 125,
+      "unsafe_member_names": 0,
+      "idat_members": 124,
+      "valid_idat_headers": 124,
+      "idat_versions": {
+        "3": 124
+      },
+      "idat_field_counts": {
+        "19": 124
+      },
+      "channels": {
+        "grn": 62,
+        "red": 62
+      },
+      "complete_red_green_pairs": 62,
+      "incomplete_pairs": 0,
+      "tar_structure_read": true,
+      "gzip_full_crc_checked": false,
+      "scientific_qc_or_analysis_run": false,
+      "publisher_checksum_comparison": "No publisher checksum supplied in this check; SHA-256 is a local content identifier.",
+      "status": "downloaded_and_header_checked",
+      "elapsed_seconds": 30.22,
+      "completed_at_utc": "2026-11-22T09:29:28.417252+00:00"
+    }
+  ],
+  "source_metadata": [
+    {
+      "accession": "GSE97362",
+      "sample_records": 235,
+      "characteristic_field_counts": {
+        "gender": 235,
+        "age (years)": 235,
+        "sample type": 235,
+        "disease state": 235,
+        "tissue": 235
+      },
+      "aggregate_categories": {
+        "sample type": {
+          "CHD7 LOF discovery cohort": 19,
+          "CHD7 sequence variant": 13,
+          "Validation cohort": 57,
+          "KMT2D LOF discovery cohort": 11,
+          "KMT2D sequence variant": 10,
+          "Control for CHD7 LOF discovery cohort": 29,
+          "Control for KMT2D LOF discovery cohort": 11,
+          "Control for validation cohort": 85
+        },
+        "disease state": {
+          "CHARGE": 19,
+          "CHD7 variant": 53,
+          "Kabuki": 11,
+          "KMT2D variant": 26,
+          "KDM6A variant": 1,
+          "Control": 125
+        },
+        "tissue": {
+          "whole blood": 235
+        }
+      },
+      "files": [
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=self&form=text&view=full",
+          "bytes": 10344,
+          "sha256": "5159bb5379cca45f702d49dcf65b2d1eeba94bc72936df3c28ed0b3bbce3e342",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=quick",
+          "bytes": 771329,
+          "sha256": "52b6188f4aaf04efb76a9040cfd8cd940f735d9b78034f639c72df7e80d49f99",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        }
+      ]
+    },
+    {
+      "accession": "GSE116300",
+      "sample_records": 44,
+      "characteristic_field_counts": {
+        "case status": 44,
+        "phenotype": 44,
+        "mutation": 44,
+        "Sex": 44,
+        "slide id": 44,
+        "array position": 44,
+        "variant classification": 14
+      },
+      "aggregate_categories": {
+        "phenotype": {
+          "normal": 9,
+          "KS": 29,
+          "unknown": 6
+        }
+      },
+      "files": [
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=self&form=text&view=full",
+          "bytes": 5094,
+          "sha256": "d452f5c96e400ee27759307b593901675ab13d2919f02fbd12eccdfbf91fb5d5",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=quick",
+          "bytes": 97399,
+          "sha256": "9a8722a365f07c83e6f663d0ab0bb8b7723bd736aad16696d099ee9d2b12c7e1",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        }
+      ]
+    },
+    {
+      "accession": "GSE218186",
+      "sample_records": 62,
+      "characteristic_field_counts": {
+        "tissue": 62,
+        "disease state": 62
+      },
+      "aggregate_categories": {
+        "tissue": {
+          "Whole blood": 62
+        },
+        "disease state": {
+          "Kabuki syndrome": 7,
+          "Control": 55
+        }
+      },
+      "files": [
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=self&form=text&view=full",
+          "bytes": 4955,
+          "sha256": "7be3fdb9903d099eaab10d84ed4585c7ed65c528af47d3533099acfd349248d3",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=quick",
+          "bytes": 163381,
+          "sha256": "0e72adc9bc6547023f23d5ba4743eb76dfd98a4cf7357ed8abe3dddcb11bcbde",
+          "content_note": "Series/sample SOFT source; quick sample view can include assay-table previews, not a full analysed matrix."
+        }
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "Array pairs are assays and include controls/other diagnoses, not affected-patient counts.",
+    "Only the first 16 decompressed bytes of each IDAT were inspected; full gzip CRC and intensity/detection/QC were not checked.",
+    "Local SHA-256 is a content identifier, not a comparison against a publisher-provided checksum.",
+    "Public download does not establish participant independence, clinical diagnosis or institutional analysis admission.",
+    "Original source bytes and detailed metadata remain outside Git; no Hugging Face upload."
+  ],
+  "next_gates": [
+    "Molecular subset and native controls",
+    "Declared participant/control reuse and covariates",
+    "Pinned array annotations and selected preprocessing",
+    "Institutional classification before inference",
+    "Selected backend and N1 protocol freeze"
+  ]
+}

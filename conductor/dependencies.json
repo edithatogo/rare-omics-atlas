@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-11-22",
+  "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
+  "milestones": [
+    {
+      "id": "T00.context",
+      "status": "complete",
+      "requires": [],
+      "scope": "Pinned source and project context"
+    },
+    {
+      "id": "T00.host_integration",
+      "status": "not_observed",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Optional host-specific automatic integration"
+    },
+    {
+      "id": "T00.local_runner",
+      "status": "blocked_external",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Official selected-device runner registration and trusted observed run"
+    },
+    {
+      "id": "T01.initial_intake",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Three archives and bounded source/rights/prior-art review"
+    },
+    {
+      "id": "T01.reference_assets",
+      "status": "in_progress",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete; selected array manifests/annotation and actual consumer semantics remain."
+    },
+    {
+      "id": "T01.institutional_classification",
+      "status": "blocked_external",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Applicable institution exemption/review/governance determination"
+    },
+    {
+      "id": "T01.analysis_admission",
+      "status": "pending",
+      "requires": [
+        "T01.initial_intake",
+        "T01.reference_assets",
+        "T01.institutional_classification"
+      ],
+      "scope": "Molecular subset, native controls, overlap/covariates and source eligibility"
+    },
+    {
+      "id": "T07.fork_baseline",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Actual fork identity and existing 104-test cloud corpus replay; optional Rust evidence"
+    },
+    {
+      "id": "T07.selected_contract",
+      "status": "pending",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Select method/reference and define independent numerical/consumer acceptance"
+    },
+    {
+      "id": "T07.protocol_freeze",
+      "status": "pending",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_contract"
+      ],
+      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification."
+    },
+    {
+      "id": "T07.selected_backend",
+      "status": "pending",
+      "requires": [
+        "T07.protocol_freeze",
+        "T00.local_runner"
+      ],
+      "scope": "Accept selected reference or Rust method using technical/discovery qualification evidence; reserved clinical replication effects remain concealed."
+    },
+    {
+      "id": "T02.ready",
+      "status": "pending",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_backend"
+      ],
+      "scope": "Confirm already frozen N1 and current novelty before clinical execution; method changes require a new version and requalification."
+    },
+    {
+      "id": "T02.results",
+      "status": "planned",
+      "requires": [
+        "T02.ready"
+      ],
+      "scope": "Kabuki reference and external transfer"
+    },
+    {
+      "id": "T03.results",
+      "status": "planned",
+      "requires": [
+        "T02.results",
+        "T07.selected_backend"
+      ],
+      "scope": "Separately admitted cross-disease comparisons and own N1"
+    },
+    {
+      "id": "T04.results",
+      "status": "conditional",
+      "requires": [
+        "T03.results"
+      ],
+      "scope": "Adequate independent effects, model qualification and own N1"
+    },
+    {
+      "id": "T05.results",
+      "status": "conditional",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_backend"
+      ],
+      "scope": "Separately admitted modalities/pairing; T02/T03 outputs additionally when used"
+    },
+    {
+      "id": "T06.results",
+      "status": "conditional",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Separate quantitative data, institutional/method gates and own N1"
+    }
+  ],
+  "external_gate_resolution": {
+    "T00.local_runner": "Owner device access plus official runner registration and observed workflow; no current session can supply this.",
+    "T01.institutional_classification": "Applicable institutional decision; source policy is not a substituted institutional decision."
+  },
+  "conditional_rust_route": [
+    "limma-rust:LM00",
+    "limma-rust:LM01",
+    "limma-rust:LM02",
+    "limma-rust:LM03"
+  ],
+  "optional_rust_branches": [
+    "limma-rust:LM04",
+    "limma-rust:LM05"
+  ],
+  "rust_fallback": "A separately qualified reference backend does not depend on completion of the optional Rust route."
+}

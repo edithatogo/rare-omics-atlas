@@ -1,4 +1,5 @@
-# T07: Conditional scientific backend qualification (Rust preferred)
+# T07: Selected backend qualification
 
-**Status: deferred.** Read [specification](spec.md), [tasks](plan.md), and [backend policy](../../../research/backend-replacement-policy.md). Only activate for a named scientific stage and a concrete capability, portability, maintainability or resource requirement. Read the [source-reviewed candidates](../../../research/rust-candidate-audit.md). A suitable existing Rust library does not need a speed advantage to be preferred; all scientific qualification gates still apply. No source code or dependency installation is authorised.
+**Status: in progress.** The selected backend must pass before its clinical consumer. Source identity and the owner's fork existing-corpus baseline are complete; independent reference, consumer and local-device gates remain.
 
+Read [specification](spec.md), [plan](plan.md), [backend contracts](../../../research/backend-replacement-policy.md) and [tracks registry](../../tracks.md). Optional ports do not gate a qualified reference route.

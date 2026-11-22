@@ -1,9 +1,18 @@
 {
   "track_id": "T00",
   "title": "Repository governance and Conductor activation",
-  "status": "planned",
-  "implementation_authorized": false,
-  "owner": null,
-  "evidence": [],
-  "publication_target": "N/A; foundational governance only."
+  "status": "in_progress",
+  "implementation_authorized": true,
+  "owner": "ChatGPT integrator",
+  "evidence": [
+    "../../../research/qualification/setup-receipt.md",
+    "../../../research/qualification/initial-source-receipt.md"
+  ],
+  "publication_target": "N/A; foundational governance only.",
+  "authorization_scope": "Initial context/source qualification and existing corpus only; new scientific implementation/analysis not started.",
+  "milestones": [
+    "T00.context",
+    "T00.local_runner"
+  ],
+  "scientific_analysis_authorized": false
 }

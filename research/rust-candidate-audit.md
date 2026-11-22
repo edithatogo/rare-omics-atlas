@@ -2,13 +2,17 @@
 
 ## Decision and evidence status
 
-Apply the owner's **Rust > Julia or Mojo > Python > R** preference using the [selection policy](language-dependency-triage.md). The best next step is to qualify existing implementations, not start an R/Julia porting programme. Rust can cover more of this project than the previous shortlist suggested. Its strongest immediate opportunities are typed data, ontology similarity, interval operations and the existing limma port. Some advertised substitutes implement materially different methods.
+Apply the owner's **Rust > Julia > Python > R** preference using the [selection policy](language-dependency-triage.md). The best next step is to qualify existing implementations, not start an R/Julia porting programme. Rust can cover more of this project than the previous shortlist suggested. Its strongest immediate opportunities are typed data, ontology similarity, interval operations and the existing limma port. Some advertised substitutes implement materially different methods.
 
-**Evidence level:** primary documentation and selected source/CI/benchmark-file inspection. No candidate was installed, compiled, run, benchmarked or scientifically qualified here. Upstream performance and test results remain upstream reports. Exact source snapshots below identify the inspected bytes, not necessarily the published release commits. No source data were downloaded, no ethics determination made and no analysis novelty search completed by this dependency review.
+**Current candidate and evidence:** the owner's [edithatogo/limma-rust](https://github.com/edithatogo/limma-rust) is the **MassDynamics-derived `limma-core`** at audited base `ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa`. It is a different implementation from the earlier sinmojito audit. Its cloud Linux debug replay with Rust 1.95.0 passed **104 tests** against committed mixed synthetic/proteomics references ([receipt](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/cloud-corpus-replay-2026-11-22.json)); fresh independent R generation, the methylation consumer and actual official local-runner acceptance remain pending. See [the current fork source audit](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/source-audit-2026-11-22.md).
+
+**Evidence boundary:** the broader candidate search was primary-documentation and selected source/CI inspection; those packages were not executed by that review. Upstream results remain upstream reports unless an exact local receipt is identified. The current fork replay is the explicit initial executable exception, not a benchmark, a disease analysis or scientific admission. Source access/rights and literature novelty have their own records.
+
+**Execution order:** [T07](../conductor/tracks/t07-backend-qualification/spec.md) qualifies whichever method is selected before the consuming analysis. Its committed/synthetic baseline can proceed alongside T01; human methylation qualification requires T01 admission. Optional replacements and the broader [Rust port roadmap](rust-port-roadmap.md) do not block a qualified reference route.
 
 ### Search coverage
 
-Two web search engines, docs.rs, official project documentation, GitHub repositories and source files were used. Query families included Rust IDAT/noob/SWAN/minfi/SeSAMe; differential methylation/limma/empirical Bayes; DMRcate/bumphunter/missMethyl/GOmeth; HPO/MONDO/Obographs; Polars/Arrow/DataFusion; genomic intervals; RNA DESeq2; MOFA/single-cell statistics; Bayesian NUTS/PPL; ODE/DAE/SDE/SBML/reaction networks; community detection/multiplex graphs; GPU/Metal/CUDA/Mojo/automatic differentiation. Strong substitution claims triggered source-level inspection. Absence from this search means **not identified in this review**, not proof no implementation exists anywhere.
+Two web search engines, docs.rs, official project documentation, GitHub repositories and source files were used. Query families included Rust IDAT/noob/SWAN/minfi/SeSAMe; differential methylation/limma/empirical Bayes; DMRcate/bumphunter/missMethyl/GOmeth; HPO/MONDO/Obographs; Polars/Arrow/DataFusion; genomic intervals; RNA DESeq2; MOFA/single-cell statistics; Bayesian NUTS/PPL; ODE/DAE/SDE/SBML/reaction networks; community detection/multiplex graphs; GPU/Metal/CUDA/automatic differentiation. Strong substitution claims triggered source-level inspection. Absence from this search means **not identified in this review**, not proof no implementation exists anywhere.
 
 ## 1. Near-term candidates
 
@@ -19,25 +23,31 @@ Two web search engines, docs.rs, official project documentation, GitHub reposito
 | **hpo** | PyHPO-style phenotype similarity and association traversal | Same ontology/IC corpus, obsolete/alternate IDs and grouping metric; preserve full source annotations outside simplified term sets | Preferred phenotype candidate |
 | **ontolius** | General ontology loading/traversal in Python or custom code | Actual MONDO JSON/xref/relation qualification; licence and data-use review | Conditional; do not add just to duplicate hpo |
 | **bedrs / gia** | Custom interval overlaps and some GenomicRanges/bedtools operations | Coordinate, strand, build, ties, duplicates and operation-specific reference fixtures | Try existing gia CLI first; use bedrs for a real native consumer |
-| **limma-rust** | The supported linear-model/empirical-Bayes stage of R limma | Independent public-array replay, edge cases and target-platform checks | **First numerical qualification candidate** |
+| **Owner's MassDynamics-derived limma-core** | The supported linear-model/empirical-Bayes stage of R limma | Build on the passed corpus replay; independent R, public-array consumer and target-device gates | **First numerical candidate; not yet admitted for methylation** |
 | **rsdeseq2** | Supported DESeq2 count-model workflow in later T05 | Actual count-matrix/design parity and downstream scientific checks | Later RNA candidate; never apply to array beta values |
 
-Primary sources: [Polars](https://github.com/pola-rs/polars), [DataFusion](https://datafusion.apache.org/user-guide/introduction.html), [hpo](https://docs.rs/hpo/0.12.0/hpo/), [ontolius](https://docs.rs/ontolius/0.8.2/ontolius/), [bedrs](https://github.com/noamteyssier/bedrs), [gia](https://github.com/noamteyssier/gia), [limma-rust](https://github.com/sinmojito/limma-rust), [rsdeseq2](https://github.com/deminden/rsdeseq2).
+Primary sources: [Polars](https://github.com/pola-rs/polars), [DataFusion](https://datafusion.apache.org/user-guide/introduction.html), [hpo](https://docs.rs/hpo/0.12.0/hpo/), [ontolius](https://docs.rs/ontolius/0.8.2/ontolius/), [bedrs](https://github.com/noamteyssier/bedrs), [gia](https://github.com/noamteyssier/gia), [owner's limma-rust](https://github.com/edithatogo/limma-rust), [rsdeseq2](https://github.com/deminden/rsdeseq2).
 
-### limma-rust: qualify the existing implementation
+### Current owner's fork: qualify the existing implementation
 
-The inspected v0.1.0 project is an unofficial GPL-3.0-or-later port with reference fixtures for linear models, contrasts, empirical Bayes including robust/trend options, weights and related methods. Its [benchmark report](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/benchmarks/REPORT.md) reports agreement on public RNA/protein/metabolite datasets; it does not establish this project's rare-disease array performance. [CI](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/.github/workflows/ci.yml) is Windows-based and checks stored reference values rather than independently regenerating them with R. [The fit implementation](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/src/fit.rs) rejects a rank-deficient design. Do not promise all R partial-estimability semantics.
+The active `limma-core` fork is GPL-3.0-or-later, with `thiserror` as its runtime dependency and CSV/Serde test machinery. It already implements rank-aware per-feature missingness, NaN-aware ordering, confidence-interval scaling and numerical gates for p/F p-values, BH and nonfinite mismatches. There is no production file parser or field called `lfcSE`, and neither faer nor statrs is a dependency. Those facts change the work needed before use; they do not remove scientific qualification.
 
-**Planned qualification, not executed:**
+Follow fork [LM01 baseline](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm01_baseline_20261122/spec.md) → [LM02 consumer](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm02_consumer_20261122/spec.md) → [LM03 methylation admission](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm03_methylation_20261122/spec.md):
 
-1. After T01 admission, select eligible molecularly confirmed cases and appropriate controls separately from GSE97362, GSE116300 and GSE218186. Participant independence is a scientific replication requirement; a shared-input software comparison is not an independent biological cohort.
-2. Freeze one normalized M-value matrix, sample exclusions, design, contrasts, covariates and full tested feature universe per study. Keep preprocessing fixed while comparing differential-model engines; otherwise differences cannot be attributed to the Rust stage.
-3. Compare coefficients, residual/prior/posterior variances, standard errors, degrees of freedom, moderated t/F statistics, log p-value tails, adjusted p-values and threshold-adjacent decisions. High correlation and the same top genes are insufficient.
-4. Add synthetic null and known-effect data, small/imbalanced groups, constant probes, missingness, covariate confounding, near-singular/full-rank designs and required robust/trend options. Specify supported inputs and error behavior. If rank-deficient models are outside the chosen contract, reject them explicitly in both routes; do not conceal a narrower contract as full equivalence.
-5. **Preserve global moderation and the intended multiple-testing family.** Independently fitting eBayes priors or BH adjustment per Parquet chunk changes the statistical procedure. Chunked I/O is allowed; arbitrary chunk-specific inference is not.
-6. Assess the complete stage on Apple ARM64 and the actual x86 OS/CPU, including input/output, single versus matched thread counts, startup/compile costs, peak memory and failures. Review scientific conclusions after replacing only this stage.
+1. Reuse the passed committed-corpus replay and existing harness. Make a bounded synthetic R fit/contrast/eBayes generator independently runnable with exact versions, input/reference hashes and expected errors; the external full corpus and locally named R image are not self-contained prerequisites yet.
+2. Define the named consumer's unique sample/feature/design/contrast IDs, exact ordering, numeric/missingness policy, supported public inputs and output units. Reuse a shared strict fixture loader instead of creating a schema framework or assuming a production-parser defect.
+3. Export actual ordinary/moderated SE from existing fit quantities if required. The fork already computes CI margins using `sqrt(s2_post) * stdev_unscaled`; no `lfcSE` field requires renaming. Preserve non-estimable outputs and compare supported rank/missingness/error cases, without assuming weighted fitting or full limma API coverage.
+4. After T01 admission, select eligible cases and appropriate within-study controls from GSE97362/GSE116300/GSE218186. Freeze a processed M-value matrix, design, contrasts, covariates and full tested feature universe. Compare coefficients, variance components, df, actual SE, t/F, p/FDR tails and threshold-adjacent decisions. Software comparison on shared inputs is not independent biological replication.
+5. **Preserve global moderation and the intended testing family.** Parquet chunks may support I/O but must not acquire separate eBayes priors or BH families. Include null/known-effect and small/imbalanced cases; high correlations or the same top hits are insufficient.
+6. Obtain the actual official local-runner evidence for the required devices and measure the accepted end-to-end consumer. The 104-test cloud result does not establish Mac/Windows acceptance or a speed advantage.
 
-Likely work is reference-fixture replay, a narrow input/output adapter only if existing interfaces are inadequate, platform evidence and bounded upstream fixes. A new implementation of limma is not justified. Keep canonical R limma as an isolated oracle even after any routine-execution replacement.
+A new numerical dependency is conditional on a demonstrated need under LM04. Preserve R LINPACK's limited-pivot/rank/non-estimable semantics and specialised tails; a generic QR can reproduce fitted values while changing coefficient estimability. The current core need not acquire dataframe, GPU or language-binding dependencies merely to integrate with the atlas.
+
+### Historical comparison: sinmojito/limma-rust
+
+The previously inspected [sinmojito implementation at c569f87](https://github.com/sinmojito/limma-rust/tree/c569f87a1b5aa97f3499255bee7a1a8b45e200fa) is also an unofficial GPL-3.0-or-later limma port, but has a different package/source architecture and dependencies. Its [benchmark report](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/benchmarks/REPORT.md) reports public RNA/protein/metabolite agreement; [its CI](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/.github/workflows/ci.yml) uses stored references on Windows. Neither report establishes this project's methylation acceptance.
+
+The parser/`lfcSE`/missingness-rank/comparator findings and faer/statrs reuse opportunities remain preserved with pinned source links in [the historical sections of the focused audit](methylation-backend-audit.md). They are not defects or installed dependencies of the owner's MassDynamics-derived fork. Reconsider this alternative only for a named capability or demonstrated benefit, with its own acceptance.
 
 ### Ontology and interval details that affect science
 
@@ -104,13 +114,12 @@ Sources: [nuts-rs](https://github.com/pymc-devs/nuts-rs), [BridgeStan](https://g
 
 `ode_solvers` is a smaller [explicit ODE option](https://docs.rs/ode_solvers/latest/ode_solvers/) for non-stiff problems. [mini-mcmc](https://docs.rs/crate/mini-mcmc/latest) is an alternative sampler/autodiff candidate, with compatible versions required. [fugue-ppl](https://github.com/alexnodeland/fugue) explicitly describes research-grade maturity; [Ferric](https://github.com/Ferric-AI/ferric) explicitly limits its present hierarchical inference. Improving a general PPL is a separate research programme. Reuse `faer`/`argmin` when already required; a linear-algebra library does not supply a disease model.
 
-## 5. GPU, Mojo and other languages
+## 5. GPU and other languages
 
 [Burn](https://github.com/tracel-ai/burn) offers higher-level tensors/autodiff; [CubeCL](https://github.com/tracel-ai/cubecl) targets portable compute kernels and describes its API as alpha. Prefer existing operations before custom kernels. [Candle](https://github.com/huggingface/candle) is an alternative for a specifically better-supported model. Choose one relevant stack; GPU availability does not justify neural modelling on tiny cohorts.
 
 CPU float64 is the reference on both machines. [Apple Metal](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf) does not provide general double-precision arithmetic. The later [hardware review](local-development.md) verifies purchase records for M1 Max/32 GB and i9-14900K/128 GB/RTX 4060 8 GB; live OS/driver state and performance remain unmeasured. Measure compile, transfer and full runtime, numerical tails and backend-specific behavior. Polars' [documented GPU engine](https://docs.pola.rs/user-guide/gpu-support/) currently targets Python Lazy API users on NVIDIA via cuDF; that does not imply a Rust Polars Metal engine.
 
-Mojo's official [1.2.0 release](https://mojolang.org/releases/v1.2.0/) is dated 22 October 2026. Its [requirements](https://mojolang.org/docs/requirements/) and [MAX hardware documentation](https://max.modular.com/gpu/hardware-compatibility/) include Apple silicon, with the specific caveat that some kernels supported on later Apple chips fail on M1. [GPU use requires MAX](https://mojolang.org/docs/faq/), whose [licence is separate](https://www.modular.com/blog/max-license) from the open Mojo SDK. This removes outdated blanket objections about absent Apple support or pre-1.0 status; it does not establish a validated methylation ecosystem. Mojo sits beside Julia in preference, with a conditional role in a specific qualified kernel.
 
 Rust's experimental [Enzyme/std::autodiff route](https://rustc-dev-guide.rust-lang.org/autodiff/installation.html) is a more direct frontier candidate for gradients than adding a new modelling language. It needs a pinned nightly, operation coverage, analytic/finite-difference checks and a fallback. [Futhark](https://futhark-lang.org/) is a specialised array-kernel option, but its advertised GPU backends do not establish a Metal route. No additional language/toolchain is selected now. Mature C/C++ components are useful when they avoid reimplementation; SeSAMe2 and BridgeStan are concrete examples.
 
@@ -129,20 +138,21 @@ Rust's experimental [Enzyme/std::autodiff route](https://rustc-dev-guide.rust-la
 ## 7. Minimal development and validation sequence
 
 1. **T01 data/ontology work:** use existing Rust data/ontology/interval tools for the concrete need, and existing CLIs where sufficient. Qualification effort is mainly contracts and fixtures; no new engine.
-2. **T02 with T07 qualification:** first limma-rust comparison using fixed processed arrays. If it passes, select it for supported routine CpG modelling. In a separate experiment, assess SeSAMe2 against R SeSAMe. Never change preprocessing and inference simultaneously while attributing differences.
+2. **T07 before T02 consumption:** build on the owner's fork baseline, independent R generator and consumer contract. Qualify the selected inference method on fixed processed arrays after T01 admission, then let T02 consume accepted outputs. SeSAMe2 is a separate conditional preprocessing comparison. A qualified reference route can proceed while an optional Rust replacement remains held; do not change preprocessing and inference simultaneously while attributing differences.
 3. **T03/T05:** add a community method or RNA-count backend only for the frozen analysis. Missing supported inputs may justify a bounded upstream extension. Array DMR/probe-aware enrichment stay narrow R fallbacks until a scientifically complete substitute is ready.
 4. **T04/T06:** qualify nuts-rs or diffsol only when the model exists. An existing solver plus a small model definition is plausible; recreating Turing/Catalyst is not.
-5. **GPU/experimental AD/Mojo:** deferred until a specified workload warrants them. Native language preference by itself does not require GPU execution.
+5. **GPU/experimental AD:** deferred until a specified workload warrants them. Native language preference by itself does not require GPU execution.
 
-Every promotion needs exact source/licence, build/security, scientific numerical, consumer and resource evidence. A package's upstream tests are evidence to inspect, not this project's passed tests. Version pinning and explicit error behavior matter more than marketing speed multipliers. Prefer reproducible test cases and small upstream fixes over a private fork. No upstream issue/PR or message was sent during this review.
+Every promotion needs exact source/licence, build/security, scientific numerical, consumer and resource evidence. Upstream tests are evidence to inspect; the separately receipted 104-test fork replay is this project's bounded cloud result, not broader admission. Version pinning and explicit error behavior matter more than marketing speed multipliers. Prefer reproducible test cases and small upstream fixes over a private fork. No upstream issue/PR or message was sent during this review.
 
 ### Source snapshots inspected
 
-These are read-at-source observations, not a dependency lockfile or installation approval. Confirm the exact version/revision pairing before execution.
+These identify the source reviewed, not a project-wide dependency lockfile. The owner's fork also has the explicit initial cloud test receipt; other entries remain source-only observations. Confirm exact version/revision pairing before use.
 
 | Repository | Source snapshot |
 |---|---|
-| sinmojito/limma-rust | `c569f87a1b5aa97f3499255bee7a1a8b45e200fa` |
+| edithatogo/limma-rust, parent MassDynamics/limma-rust — current candidate | `ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa`; initial cloud replay recorded |
+| sinmojito/limma-rust — historical alternative | `c569f87a1b5aa97f3499255bee7a1a8b45e200fa`; source findings are separate |
 | cyanea-bio/labs | `5d39b14357064efcfb918b1192e2f26d28b81ece` |
 | zhou-lab/sesame | `f6713747181764e0b7a97b64c3c0d52ab9d82703` |
 | anergictcell/hpo | `c56fc31398a1a332876bbdcc17bee4ab45e3e750` |
@@ -161,9 +171,9 @@ Journal routing, including Orphanet and the SSIEM journals, is maintained in [jo
 
 The [deeper methylation source audit](methylation-backend-audit.md) supersedes any impression that the first candidate is ready without interface checks. It records exact code paths and bounded upstream changes rather than recommending a new library.
 
-**limma-rust:** before cohort execution, qualify strict sample/contrast IDs, duplicate and malformed-input errors, retained-design rank after missingness/zero weights, NaN-aware BH/results and correctly named ordinary/moderated effect SEs. The inspected top-table field called lfcSE is unscaled design uncertainty, not an effect SE; never feed it directly to T04. Strengthen the existing dump comparator to fail on mismatched keys/missingness and gate p-value tails/FDR. These are source-derived findings, not executed failure tests.
+**Current fork:** complete the independently reproducible R reference and narrow consumer contract, then qualify methylation inputs and actual local devices. Strict fixture identity and supported public misuse cases are concrete small additions. Existing rank-aware fitting, CI scaling, NaN ordering and numerical comparison gates should be retained and tested, not reimplemented to repair defects from another repository. The [new roadmap](rust-port-roadmap.md) separates these additions from optional larger ports.
 
-**Reuse first:** its existing faer dependency can replace selected handwritten QR/SVD/eigen/Cholesky operations, with rank/tolerance and all-caller contracts preserved. Existing statrs can cover ordinary beta/log-beta and direct survival operations. Keep stable log-tail/trigamma differences and R-specific robust estimation where no equivalent is demonstrated; log(cdf) is not a safe log-tail replacement. CDFLIB-rs is a conditional additional tail candidate, not a required dependency. The inspected rmathlib 1.1.0 is excluded based on unresolved upstream numerical failures/abandonment. See the focused audit for versions and sources.
+**Reuse first:** the current core has only thiserror at runtime. No faer/statrs upgrade is pending. A new dependency needs a named need, exact source/licence/features, all affected caller tests and acceptable cost. The historical sinmojito audit retains its valid existing-library suggestions; they are scoped to that implementation. CDFLIB-rs remains an optional focused candidate and rmathlib 1.1.0 remains held on the separately documented unresolved upstream report; neither is compulsory.
 
 **SeSAMe2 already has R comparisons.** Its per-step and QCDPB drivers, NUMERICS and DIVERGENCES should be reused. The full external lab corpus is not enumerated, but core test specimens are traceable to public material, including GSM2995280 and GSE228820; released/de-identified bytes must be checked against the original fixtures. Public CI skips real-IDAT/R gates, while synthetic tests still run. Production float32 .cg and six-significant-digit text output are distinct from the float64 oracle helper: qualify the actual export and beta-to-M tails. A supported precision/export option, if needed, is a small upstream task. The 2023 paper's R workflow called “SeSAMe 2” is not a validation of today's standalone C SeSAMe2.
 
@@ -182,9 +192,9 @@ rsfgsea's decor mode changes its scoring/null using expression correlations and 
 
 Source snapshots added: rsfgsea c422ddb205585bd88c23c5ee82644c5572aac2d4; Semsimian 3ee1beb8f841f56db82aa7a575d76729c5effba3; CDFLIB-rs 98476cddbd07ed33a61f5471678f2938674ee167. These are source observations, not installed dependencies.
 
-### Python and Mojo: actual need determines activation
+### Python: use only for a required specialist capability
 
-No Python or Mojo runtime is required by the initial plan. **Remove Mojo from the active stack**; keep it on the future candidate list at the owner's Julia/Mojo preference tier. No selected early experiment needs a unique Mojo capability.
+No Python runtime is required by the initial plan. Retain optional specialist methods only when they avoid substantive custom scientific code.
 
 Python remains an optional, isolated route for an actual specialist consumer: MOFA's mofapy2 core; PyMC/nutpie if a specified model would otherwise require substantial new Rust inference infrastructure; or [methylprep/methylcheck](https://github.com/FoxoTech/methylprep) if their processing/QC functions resolve a specific gap. Methylprep already documents Parquet output, so do not write a duplicate exporter. Historical benchmark claims are not current exact QCDPB parity. SeSAMe2/R SeSAMe is the first same-method preprocessing qualification, subject to its licence, precision and platform gates. Avoid mandatory pandas orchestration and do not install Python just to expose a native Rust CLI.
 

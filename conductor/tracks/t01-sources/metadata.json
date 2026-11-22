@@ -1,9 +1,18 @@
 {
   "track_id": "T01",
   "title": "Public source, ontology and prior-art qualification",
-  "status": "planned",
-  "implementation_authorized": false,
-  "owner": null,
-  "evidence": [],
-  "publication_target": "E0 qualification supports the bundled P1 clinical study; no separate manuscript by default."
+  "status": "in_progress",
+  "implementation_authorized": true,
+  "owner": "ChatGPT integrator",
+  "evidence": [
+    "../../../research/qualification/setup-receipt.md",
+    "../../../research/qualification/initial-source-receipt.md"
+  ],
+  "publication_target": "E0 qualification supports the bundled P1 clinical study; no separate manuscript by default.",
+  "authorization_scope": "Initial context/source qualification and existing corpus only; new scientific implementation/analysis not started.",
+  "milestones": [
+    "T01.initial_intake",
+    "T01.analysis_admission"
+  ],
+  "scientific_analysis_authorized": false
 }

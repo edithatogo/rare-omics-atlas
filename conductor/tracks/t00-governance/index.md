@@ -1,7 +1,8 @@
-# T00: Repository governance and Conductor activation
+# T00: Governance and operating prerequisites
 
 - [Specification](spec.md)
-- [Bounded implementation plan](plan.md)
-- [Project tracks registry](../../tracks.md)
+- [Execution record](plan.md)
+- [Project tracks](../../tracks.md)
+- [Setup receipt](../../../research/qualification/setup-receipt.md)
 
-Status: **planned, not executed**. No person or agent currently owns implementation. A future receiving owner must explicitly accept scope.
+**Status: in progress.** Context and pinned source installation are complete. Actual official local-runner acceptance remains pending; host auto-activation is unobserved.

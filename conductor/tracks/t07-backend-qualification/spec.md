@@ -1,32 +1,35 @@
-# T07 — specification
+# T07 — selected backend qualification
 
-## Objective
+## Objective and ordering
 
-Qualify an existing backend for a named stage using Rust > Julia or Mojo > Python > R among suitable implementations. Preserve estimands, statistical decisions, provenance, rights and reproducibility. A justified C/C++ exception such as SeSAMe2 uses the same admission process.
+Qualify the actual selected method before any consuming scientific analysis. Use Rust > Julia > Python > R among suitable implementations, allowing justified existing C/C++ engines. Keep the independent reference separate from routine execution.
 
-## Scope and boundaries
+This track is no longer deferred until after clinical work. Its baseline can begin with public committed fixtures alongside T01. Human methylation qualification additionally requires the corresponding T01 admission. Optional replacements remain separate and do not block a qualified reference route.
 
-Candidate-first, one method at a time, using fixed file-level data contracts. Compare against reference scientific implementations. Do not build a universal plugin framework, porting programme, GPU system or novel method simply to change language.
+## Actual Rust candidate
 
-Current authorisation is documentation/planning only. This specification does not implement a backend, install dependencies or establish passed tests. Qualification is limited to the selected stage; every possible replacement is not a prerequisite for T02 or publication.
+The owner's MassDynamics-derived [limma-rust](https://github.com/edithatogo/limma-rust) is package limma-core at audited base ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa. The earlier sinmojito audit describes a different implementation. Do not transfer its parser, lfcSE, rank or comparator defects to this fork.
 
-## Source gates
+The existing suite passed 104 tests in this Linux workspace. Its mixed synthetic/proteomics corpus, fresh R reproduction, actual local-runner acceptance and methylation consumer validation are separate evidence classes. Follow fork LM00 → LM01 → LM02 → LM03. Do not treat historical upstream parity as a new result at this source revision.
 
-T01-qualified human molecular data with ethics/governance and terms status; synthetic edge cases; eligible public cohorts such as GSE97362/GSE116300/GSE218186 with valid sample splits. For preprocessing, the [focused audit](../../../research/methylation-backend-audit.md) maps author test prefixes to public GSM2995280, GSE228820 and GSE264438 records and a documented HM450 fixture. Verify exact bytes and de-identification before treating these as a replay of the external lab corpus. Software comparison on shared inputs is distinct from independent biological replication.
+## Required method contract
 
-## Initial candidate requirements
+Define sample/probe/design/contrast identity, input scale, missingness and estimability, supported weights/blocks, output effect and actual uncertainty, multiple-testing family and consumer format. The numeric core is positional; labels and output provenance belong at a narrow boundary. Existing posterior variance and unscaled design SE can supply a declared moderated SE; no production field called lfcSE was found in this fork.
 
-- **limma-rust:** first resolve strict sample/coefficient/probe matching and malformed values, actual ordinary/moderated SE rather than the inspected unscaled `lfcSE`, NaN-safe BH/output and per-probe retained-design rank. A narrow explicit rejection contract is acceptable. Reuse reference generation/dumps with an independent comparator that fails on key/missingness differences and gates p-value tails/FDR; preserve global eBayes and the intended testing family.
-- **Numerical reuse:** prefer standard-library and already declared faer/statrs capabilities before new dependencies or handwritten numerics. Compare newer versions only for documented needed fixes, including toolchain implications; do not auto-upgrade or discard cancellation-resistant log-tail/R-specific routines. No installed dependency or qualified numerical route is claimed.
-- **SeSAMe2, only if selected:** reuse existing author R comparisons, matching annotation/mask versions and admitted public raw fixtures. Compare raw signals, per-step QC/betas and the actual production interface: `.cg` float32 plus `describe-probe` `%.6g` versus the internal float64 test oracle. Validate export and beta-to-M effects before using the C CLI, with a narrow precision improvement only if required. Ordinary C DML is not limma moderation; minfi functional normalization is a different preprocessing method. Respect the academic/nonprofit research licence conditions.
+A self-contained independent R recipe, strict fixture identity and misuse checks for supported entry points precede cohort admission. Preserve global empirical-Bayes moderation and intended FDR families across storage chunks.
 
-## Acceptance
+## Alternative preprocessing and dependencies
 
-Demonstrate numerical and clinical-result equivalence as appropriate (effect sizes, SE, p/FDR tails, null and small-n calibration, errors), version-pinned software, measured runtime and peak memory, licensing compatibility and independent verification. For a scientifically different method, compare outcomes rather than falsely claiming exact numerical parity. Keep the Julia/R reference oracle.
+SeSAMe2 already has R comparison scripts. Qualify the exact public fixtures, masks/manifests, licence and production float32/text exports before using its C CLI. A precision option, if needed, is a smaller candidate change than a full Rust rewrite. It does not supply limma moderation.
 
-The [official local GitHub Actions runner policy](../../../research/local-development.md) applies to the relevant Mac/Windows/Linux lane. Record the observed run/job, source/workflow/toolchain versions, input hashes, machine details and measured results. An emulator, cloud-shell command, hosted-only check or unexecuted workflow does not satisfy that local qualification requirement.
+The MassDynamics fork has neither faer nor statrs installed. Introducing one requires a demonstrated need and a narrowly qualified change; preserve R LINPACK rank/pivot and specialised tail semantics. See [Rust roadmap](../../../research/rust-port-roadmap.md).
 
-## Stop
+## Acceptance and stop rules
 
-No real consumer, unclear terms, unacceptable migration cost or failed scientific/consumer checks: hold the candidate and retain the qualified backend. A performance bottleneck is not mandatory for native portability/maintenance work. No clinical efficacy claim follows from a faster implementation.
+Record exact source/reference/input versions, prespecified numerical and consumer thresholds, actual target-device official runner evidence and deployment/resource limits. If a method differs, label it a method comparison rather than exact parity. Choose only a supported contract; retain a qualified reference route while a candidate is held.
 
+No new statistical source code or clinical analysis is implemented by this specification. The completed corpus replay is an initial baseline, not scientific backend admission.
+
+## Replication boundary
+
+Before disease-conditioned backend comparisons, freeze N1 scientific and numerical protocols, sample roles, features, contrasts and acceptance thresholds. Prefer unrelated technical fixtures and the designated discovery data. Keep eventual E3 replication disease-effect results concealed until discovery choices are locked; a numerical validation reserve is not automatically an untouched clinical holdout. If the same reserved files must support a blinded engineering parity check, prespecify access/output controls and prohibit scientific retuning from that check. No such analysis has yet occurred.
