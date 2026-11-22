@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-11-23",
+  "basis": {
+    "repository": "edithatogo/rare-omics-atlas",
+    "baseline_commit": "4162111f38e63ca21d811d7df2e628239297bc8d",
+    "baseline_receipt": "research/literature/2026-11-22-pubmed-searches.json",
+    "overlap_window": "2026-10-23 through 2026-11-23 (PubMed Date - Entry); interval overlaps last verified receipt for indexing latency",
+    "preexisting_frozen_protocol": "Unchanged; this is not an N1 or N2 scientific gate"
+  },
+  "searches": {
+    "pubmed": {
+      "provider": "connected PubMed search_articles",
+      "date_range_handling": "Backend returned Invalid NCBI request for date_from/date_to arguments. Retried using a literal [edat] interval in the PubMed query; translated date filter and counts returned.",
+      "all_six_single_page_queries_complete": true,
+      "queries": [
+        {
+          "domain": "Kabuki/KMT2D/KDM6A with methylation or episignature",
+          "query": "(Kabuki[tiab] OR KMT2D[tiab] OR KDM6A[tiab]) AND (methylation[tiab] OR episignature[tiab]) AND (\"2026/10/23\"[edat]:\"2026/11/23\"[edat])",
+          "total": 6,
+          "returned": 6,
+          "next_offset": null,
+          "warnings": [],
+          "screened": "Review PMID43027742, other hits not qualifying new clinical reuse edges"
+        },
+        {
+          "domain": "Sotos/Weaver/DNMT3A/ADNP/chromatinopathy",
+          "query": "(Sotos[tiab] OR Weaver[tiab] OR DNMT3A[tiab] OR ADNP[tiab] OR chromatinopathy[tiab]) AND (methylation[tiab] OR episignature[tiab]) AND (\"2026/10/23\"[edat]:\"2026/11/23\"[edat])",
+          "total": 17,
+          "returned": 17,
+          "next_offset": null,
+          "warnings": [],
+          "screened": "Title/metadata screen; no newly verified cohort-specific reuse edge from this query"
+        },
+        {
+          "domain": "EPICv2/MethylationEPIC/450K concordance/paired/reliability",
+          "query": "(EPICv2[tiab] OR MethylationEPIC[tiab] OR 450K[tiab]) AND (concordance[tiab] OR paired[tiab] OR reliability[tiab]) AND (\"2026/10/23\"[edat]:\"2026/11/23\"[edat])",
+          "total": 2,
+          "returned": 2,
+          "next_offset": null,
+          "warnings": [],
+          "screened": "Methods PMID42954814 primary article checked"
+        },
+        {
+          "domain": "limma/SeSAMe methylation/bioinformatics",
+          "query": "(limma[tiab] OR SeSAMe[tiab]) AND (methylation[tiab] OR bioinformatics[tiab]) AND (\"2026/10/23\"[edat]:\"2026/11/23\"[edat])",
+          "total": 13,
+          "returned": 13,
+          "next_offset": null,
+          "warnings": [],
+          "screened": "No directly relevant newly released numerical implementation qualified; use/citation not a dependency replacement"
+        },
+        {
+          "domain": "exact accessions",
+          "query": "GSE97362 OR GSE116300 OR GSE218186 OR GSE154566 OR GSE105018 OR GSE86833 OR GSE92580",
+          "total": 4,
+          "returned": 4,
+          "next_offset": null,
+          "warnings": [
+            "GSE116300 omitted in PubMed translation",
+            "GSE154566 omitted in PubMed translation"
+          ],
+          "screened": "Provider's 4 returned abstracts are not a full-text reuse census; indexed-abstract absence cannot establish non-use"
+        },
+        {
+          "domain": "Goel/Goh/Stuart exact DOI",
+          "query": "10.1002/mgg3.70319[doi]",
+          "total": 1,
+          "returned": 1,
+          "next_offset": null,
+          "warnings": [],
+          "screened": "PMID42827301 verified review, no new study-dataset edge"
+        }
+      ],
+      "broad_nodate_discovery": {
+        "query": "(Kabuki OR KMT2D OR KDM6A) AND (methylation OR episignature)",
+        "total": 486,
+        "returned": 25,
+        "pagination_complete": false,
+        "scope": "prior-art seed discovery only, not exhaustive"
+      },
+      "targeted_2026_prior_art": {
+        "pmid": "42134323",
+        "doi": "10.1016/j.ajhg.2026.04.010",
+        "status": "already in 22-Nov bibliography and experiment plan, not a new finding"
+      }
+    },
+    "biostudies": {
+      "provider": "EMBL-EBI BioStudies public API",
+      "query_template": "https://www.ebi.ac.uk/biostudies/api/v1/search?query={accession}&pageSize=100&page=1",
+      "accession_results": [
+        {
+          "accession": "GSE97362",
+          "hits": 22,
+          "returned": 22
+        },
+        {
+          "accession": "GSE116300",
+          "hits": 10,
+          "returned": 10
+        },
+        {
+          "accession": "GSE218186",
+          "hits": 0,
+          "returned": 0
+        },
+        {
+          "accession": "GSE154566",
+          "hits": 6,
+          "returned": 6
+        },
+        {
+          "accession": "GSE105018",
+          "hits": 9,
+          "returned": 9
+        },
+        {
+          "accession": "GSE86833",
+          "hits": 6,
+          "returned": 6
+        },
+        {
+          "accession": "GSE92580",
+          "hits": 4,
+          "returned": 4
+        }
+      ],
+      "next_cursor": null,
+      "query_caveat": "These are indexed study/article metadata hits, including citations, not 61 independent reanalyses. A zero BioStudies GSE218186 search is not evidence that the GEO series is absent or unused."
+    },
+    "geo": {
+      "provider": "NCBI GEO public SOFT metadata only",
+      "request": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=self&form=text&view=brief",
+      "status": "retrieved metadata (not assay files)",
+      "title": "CHARGE and Kabuki syndromes: Gene-specific DNA methylation signatures",
+      "geo_last_update": "2020-10-22",
+      "linked_pmid": "28475860",
+      "ncbi_eutils_esearch": {
+        "request": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term=GSE97362%5BACCN%5D&retmode=json&retmax=5",
+        "total": 237,
+        "returned": 5,
+        "pagination_complete": false,
+        "scope": "broad NCBI GDS index; not a separate reuse count"
+      }
+    },
+    "openalex": {
+      "provider": "public OpenAlex Works DOI resolution",
+      "works": [
+        {
+          "doi": "10.1080/15592294.2026.2753261",
+          "id": "https://openalex.org/W7224631745",
+          "publication_date": "2026-10-29",
+          "pmid": "42954814",
+          "pmcid": "PMC13733195"
+        },
+        {
+          "doi": "10.3390/ijms27219490",
+          "id": "https://openalex.org/W7223875010",
+          "publication_date": "2026-10-24",
+          "pmid": "43027742",
+          "pmcid": "PMC13762602"
+        },
+        {
+          "doi": "10.1002/mgg3.70319",
+          "id": "https://openalex.org/W7218350019",
+          "publication_date": "2026-10-01",
+          "pmid": "42827301",
+          "pmcid": "PMC13633427"
+        }
+      ],
+      "all_three_exact_doi_resolutions": true
+    }
+  },
+  "verified_prior_use": {
+    "new_studies": [
+      {
+        "study_id": "PMID:30678737",
+        "doi": "10.1186/s13148-019-0615-3",
+        "pmid": "30678737",
+        "pmcid": "PMC6346546"
+      },
+      {
+        "study_id": "PMID:37409354",
+        "doi": "10.1080/15592294.2023.2230670",
+        "pmid": "37409354",
+        "pmcid": "PMC10327521"
+      },
+      {
+        "study_id": "PMID:39592593",
+        "doi": "10.1038/s41467-024-54711-2",
+        "pmid": "39592593",
+        "pmcid": "PMC11599844",
+        "preprint": {
+          "doi": "10.1101/2024.03.02.583106",
+          "pmid": "38496542",
+          "pmcid": "PMC10942294",
+          "date": "2024-03-05"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "study_id": "PMID:30678737",
+        "dataset_id": "GSE97362",
+        "relation": "reanalysed",
+        "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6346546/",
+        "evidence_location": "Methods: Data; table of 17 450K source studies and sex counts; Results: Detection of Y-chromosome probes",
+        "limits": "GSE97362 explicitly forms one whole-blood source series in the multi-study detection-p-value/QC evaluation (table 145 male and 83 female assay records). It is not independent clinical replication of Kabuki effects; no donor or participant identity/linkage was established."
+      },
+      {
+        "study_id": "PMID:37409354",
+        "dataset_id": "GSE97362",
+        "relation": "comparator",
+        "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10327521/",
+        "evidence_location": "Methods: epimutacionsData demonstration / data package; explicit three cases from GSE97362 and 48 controls from GSE104812",
+        "limits": "The published epimutacionsData example includes three case samples from GSE97362 as a demonstration/comparator; this does not establish an independent prospective clinical validation cohort, new Kabuki cases or donor-independent split."
+      },
+      {
+        "study_id": "PMID:39592593",
+        "dataset_id": "GSE154566",
+        "relation": "reanalysed",
+        "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11599844/",
+        "evidence_location": "Results: Table 1 Description of datasets; Results following Table 1: extracted methylation profiles; Nature Communications published version",
+        "limits": "Age-18 monozygotic twin dataset (116 twin pairs in published Table 1) was reused for a separate hematopoietic clonality question. Same 2024 paper also lists GSE105018; neither within-dataset pairing nor cross-dataset participant overlap is resolved."
+      },
+      {
+        "study_id": "PMID:39592593",
+        "dataset_id": "GSE105018",
+        "relation": "reanalysed",
+        "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11599844/",
+        "evidence_location": "Results: Table 1 Description of datasets; Results following Table 1: extracted methylation profiles; Nature Communications published version",
+        "limits": "Age-18 twin series (426 monozygotic and 306 dizygotic twin pairs as reported in Table 1) reused for a published clonality analysis. This is not paired-array validation, and joint appearance with GSE154566 does not determine person/family overlap or independent test eligibility."
+      }
+    ],
+    "source_method": "PubMed PMID identity and legally accessible, published PMC full text: original Methods/data source table, not citation counts or indexed abstract alone"
+  },
+  "screened_non_edges": [
+    {
+      "pmid": "42954814",
+      "doi": "10.1080/15592294.2026.2753261",
+      "pmcid": "PMC13733195",
+      "openalex_id": "https://openalex.org/W7224631745",
+      "publication_online": "2026-10-29",
+      "pubmed_issue": "2026 Dec",
+      "evidence_location": "Methods, BACH2 HEK293T CRISPR/dCas9 experimental samples; Results on eight EPIC/TMS CpGs, two shared all three platforms; Discussion limitations",
+      "primary_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13733195/",
+      "finding": "Site- and methylation-level-dependent absolute assay differences; particularly low methylation. 33 EPIC samples are a subset of 90 TMS/pyrosequencing samples; limited BACH2 loci, not whole-blood cross-array replication.",
+      "decision": "E1 T07/T02 technical context. Keep planned absolute beta difference, locus/region uncertainty and low-beta stratification if appropriate; no new cohort, no new direct dependency and no required new experiment."
+    },
+    {
+      "pmid": "43027742",
+      "doi": "10.3390/ijms27219490",
+      "pmcid": "PMC13762602",
+      "openalex_id": "https://openalex.org/W7223875010",
+      "publication_online": "2026-10-24",
+      "evidence_location": "Publisher Data Availability Statement: no new data created or analyzed",
+      "primary_source": "https://www.mdpi.com/1422-0067/27/21/9490",
+      "finding": "Narrative Kabuki clinical episignature review, no demonstrated accession reanalysis",
+      "decision": "Background clinical interpretation; no new edge, independent cohort or novelty reset"
+    },
+    {
+      "pmid": "42827301",
+      "doi": "10.1002/mgg3.70319",
+      "pmcid": "PMC13633427",
+      "openalex_id": "https://openalex.org/W7218350019",
+      "publication_issue": "2026 Oct",
+      "primary_source": "https://doi.org/10.1002/mgg3.70319",
+      "finding": "Goel/Goh/Stuart 2026 episignature clinical review already flagged in baseline protocol; not a new cohort",
+      "decision": "N0/N3 background only; interpretation remains adjunct to genotype/phenotype"
+    }
+  ],
+  "decision": {
+    "E0_T01": "The same GSE97362 case series has historical technical and epimutation-tool reuse; explicit prior study reuse is not independent cohort linkage. E-Risk GSE154566 and GSE105018 were both used in the same 2024 paper but overlap remains unknown. Preserve person/specimen/family independence hold.",
+    "E1_T07_T02": "Rangani adds a narrow low-methylation/CpG-dependent measurement-bias comparator; not a 450K-to-EPIC rare-disease matched cohort, not new T07 code acceptance.",
+    "E2_T02": "No new molecularly confirmed case/independent-control evidence; do not promote published downstream examples to discovery cohorts.",
+    "E3_T02": "No new independent EPIC replication; planned held-out design unchanged.",
+    "E4_T03": "No specific new Sotos/Weaver/DNMT3A competing dataset edge qualified from overlap search.",
+    "E5_T04": "No generalisable new hierarchical competitor that displaces simple baselines.",
+    "E6_T05": "No new verified paired rare-disease methylation/expression donor linkage.",
+    "E7_T05_T06": "No new causal/functional perturbation evidence; still separately gated.",
+    "novelty": "Reused historical Kabuki cases and E-Risk cohorts are more extensively documented than previous 17-edge baseline; novelty must be a distinct clinical effect and independent validation, not untouched accession or generic toolkit.",
+    "clinical_interpretation": "Rangani's engineered HEK293T BACH2 assay context cannot establish clinical platform interchangeability; prior reviews reinforce that episignatures complement molecular diagnosis.",
+    "scientific_priority": "No resequencing: E0 admission > T07 accepted method > E2/E3; E1 stays optional.",
+    "paper_bundling": "Keep E1 method caveat as P1 supplement if material; no standalone paper inferred.",
+    "journal": "No change to provisional Molecular Syndromology / EJMG routing; OJRD remains conditional.",
+    "rights": "No changes; publisher article licences do not automatically relicense GEO sources.",
+    "dependency": "No newly verified MassDynamics-derived limma-core change/removal or other direct implementation release; no fork modification or numerical qualification."
+  },
+  "limitations": {
+    "search_screen": "Targeted non-systematic search and source verification. BioStudies returns candidate mentions that were not all full-text classified; no claim of exhaustive reuse mapping.",
+    "provider_errors": [
+      "PubMed date_from/date_to searches invalid via connector; successful literal [edat] filters are recorded.",
+      "Direct browser view of GEO GSE97362 triggered anti-bot challenge; metadata-only GEO SOFT endpoint succeeded.",
+      "BioStudies /studies/GSE97362 returned 404 because GEO ID not a BioStudies study identifier; used /search instead."
+    ],
+    "tests": "Structural ledger/TSV identity and referential checks only; no native pre-commit/strict verify or official runner executed from automation environment.",
+    "study_access": "No patient-level files, assay downloads, HF releases or clinical analyses",
+    "status": "Evidence addendum awaiting normal PR qualification; no claim that native, device or scientific gates passed"
+  }
+}
