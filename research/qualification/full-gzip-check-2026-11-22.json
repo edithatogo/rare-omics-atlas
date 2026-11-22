@@ -1,0 +1,49 @@
+{
+  "checked_at_utc": "2026-11-22T10:58:25.462441+00:00",
+  "purpose": "Full decompression and gzip CRC checks before source-bound mirror; not scientific QC or licence clearance",
+  "datasets": [
+    {
+      "accession": "GSE116300",
+      "archive_name": "GSE116300_RAW.tar",
+      "gzip_member_files": 92,
+      "idat_files": 88,
+      "uncompressed_bytes_read": 1304705055,
+      "gzip_crc_result": "passed_all_members",
+      "other_members": [
+        "GPL13534_450K_Manifest_header_Descriptions.xlsx.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.1.bpm.txt.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.1.csv.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.2.bpm.gz"
+      ],
+      "elapsed_seconds": 3.616
+    },
+    {
+      "accession": "GSE218186",
+      "archive_name": "GSE218186_RAW.tar",
+      "gzip_member_files": 125,
+      "idat_files": 124,
+      "uncompressed_bytes_read": 2247211046,
+      "gzip_crc_result": "passed_all_members",
+      "other_members": [
+        "GPL21145_MethylationEPIC_15073387_v-1-0.csv.gz"
+      ],
+      "elapsed_seconds": 6.623
+    },
+    {
+      "accession": "GSE97362",
+      "archive_name": "GSE97362_RAW.tar",
+      "gzip_member_files": 474,
+      "idat_files": 470,
+      "uncompressed_bytes_read": 4397096071,
+      "gzip_crc_result": "passed_all_members",
+      "other_members": [
+        "GPL13534_450K_Manifest_header_Descriptions.xlsx.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.1.bpm.txt.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.1.csv.gz",
+        "GPL13534_HumanMethylation450_15017482_v.1.2.bpm.gz"
+      ],
+      "elapsed_seconds": 12.158
+    }
+  ],
+  "elapsed_seconds": 22.398
+}

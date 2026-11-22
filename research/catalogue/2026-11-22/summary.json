@@ -1,0 +1,26 @@
+{
+  "catalogued_accession_count": 29,
+  "completed_at_unix_ms": 1795345033391,
+  "distinct_assay_accessions": 2465,
+  "elapsed_seconds": 3.009152895,
+  "extra_accessions": [],
+  "failed_accession_count": 0,
+  "file_metadata_rows": 4514,
+  "independent_cohort_count": null,
+  "limitations": [
+    "Seed inventory, not an exhaustive rare-disease survey",
+    "GEO assay identifiers are not independent participants",
+    "SuperSeries/subseries memberships can repeat assays",
+    "File URLs are source-declared listings, not fresh download checks",
+    "Scientific admission and sample phenotypes require separate curation",
+    "Raw API/SOFT cache is excluded from public catalogue; contacts and personal traits are not exported"
+  ],
+  "registry_sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+  "request_receipts": 114,
+  "requested_accession_count": 29,
+  "schema_version": 1,
+  "series_assay_membership_rows": 2532,
+  "started_at_unix_ms": 1795345030382,
+  "status": "complete",
+  "tool_version": "0.1.0"
+}

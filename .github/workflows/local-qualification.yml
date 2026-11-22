@@ -1,0 +1,53 @@
+name: Official local qualification
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Registered owner device and native OS
+        required: true
+        type: choice
+        default: macos-arm64
+        options: [macos-arm64, windows-x64, linux-x64]
+permissions:
+  contents: read
+concurrency:
+  group: local-qualification-${{ inputs.target }}
+  cancel-in-progress: false
+jobs:
+  infrastructure:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
+    timeout-minutes: 25
+    steps:
+      - name: Check out trusted main revision
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-22
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          submodules: false
+          fetch-depth: 1
+      - name: Record source and tools
+        run: |
+          git rev-parse HEAD
+          rustup --version
+          uv --version
+      - name: Install isolated pinned Rust
+        env:
+          CARGO_HOME: ${{ runner.temp }}/atlas-cargo-${{ github.run_id }}
+          RUSTUP_HOME: ${{ runner.temp }}/atlas-rustup-${{ github.run_id }}
+        run: |
+          rustup toolchain install 1.95.0 --profile minimal --component rustfmt --component clippy
+          rustc +1.95.0 --version --verbose
+      - name: Qualify catalogue
+        env:
+          CARGO_HOME: ${{ runner.temp }}/atlas-cargo-${{ github.run_id }}
+          RUSTUP_HOME: ${{ runner.temp }}/atlas-rustup-${{ github.run_id }}
+        run: |
+          cargo +1.95.0 fmt --manifest-path tools/catalogue/Cargo.toml -- --check
+          cargo +1.95.0 clippy --manifest-path tools/catalogue/Cargo.toml --all-targets --locked -- -D warnings
+          cargo +1.95.0 test --manifest-path tools/catalogue/Cargo.toml --locked
+      - name: Qualify publication boundary without credentials
+        run: |
+          uv run --project tools/hf-release --frozen python --version
+          uv run --project tools/hf-release --frozen python -m unittest discover -s tools/hf-release/tests -v

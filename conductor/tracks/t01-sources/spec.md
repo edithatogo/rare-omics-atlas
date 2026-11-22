@@ -19,6 +19,6 @@ The initial increment retrieves public source metadata and the three selected Ka
 
 ## Evidence and limits
 
-[Initial source receipt](../../../research/qualification/initial-source-receipt.md) establishes successful transfers/header checks for three sources. The [28-accession rights register](../../../research/registries/dataset-rights.json) has a broader scope and does not assert all those files were downloaded.
+[Initial source receipt](../../../research/qualification/initial-source-receipt.md) establishes successful transfers/header checks for three sources. The [29-accession rights register](../../../research/registries/dataset-rights.json) has a broader scope and does not assert all those files were downloaded.
 
 A completed intake subtask is not full T01 admission. Newly selected diseases and file revisions repeat the relevant gates. The [medallion layout](../../../research/medallion-layout.md) preserves originals and derivation provenance without requiring a service-backed lakehouse or raw public mirror.

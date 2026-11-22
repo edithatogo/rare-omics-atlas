@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-11-22",
+  "scope": "bounded read-only source investigation; no repository mutation or numerical qualification",
+  "report_sha256": "fd264b379fa3600483f45d3e0571ec7b4bf87bb48f7a62f01f5f91b02fbdd3c9",
+  "sources": [
+    {
+      "id": "GSE154566",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154566",
+      "type": "official_dataset",
+      "pairing": "233 TwinIDs, each one 450K and one EPIC, in117families; downloaded pair manifest",
+      "rights_status": "no-application access verified; hosting/redistribution not adjudicated by this lane"
+    },
+    {
+      "id": "PMID33371772",
+      "doi": "10.1080/15592294.2020.1853317",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33371772/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID32885222",
+      "doi": "10.1016/j.patter.2020.100014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467214/",
+      "type": "primary_publication",
+      "overlap": "E-Risk350 pairs may overlap GSE154566; exact specimen edge unresolved"
+    },
+    {
+      "id": "PMID31833794",
+      "doi": "10.1080/15592294.2019.1700003",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7574380/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID39578866",
+      "doi": "10.1186/s13148-024-01761-4",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11583407/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID38564759",
+      "doi": "10.1080/15592294.2024.2333660",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38564759/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID39289706",
+      "doi": "10.1186/s13148-024-01739-2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39289706/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID35765087",
+      "doi": "10.1186/s13148-022-01299-3",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238140/",
+      "type": "primary_publication"
+    },
+    {
+      "id": "PMID37834090",
+      "doi": "10.3390/ijms241914640",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10572275/",
+      "type": "primary_publication",
+      "rights_status": "NTR consent prevents open release; EGA/request access"
+    }
+  ],
+  "paired_manifest_summary": {
+    "rows": 466,
+    "unique_twin_ids": 233,
+    "arrays": {
+      "450K": 233,
+      "EPIC": 233
+    },
+    "matched_one_each": 233,
+    "families": 117,
+    "family_sizes": {
+      "2": 116,
+      "1": 1
+    },
+    "duplicate_basenames": 0,
+    "filelist_rows": 2360
+  },
+  "paired_raw_manifest_subset": {
+    "files": 932,
+    "bytes": 5454457454,
+    "full_archive_bytes": 16026480640,
+    "complete_download": false
+  },
+  "raw_range_check": {
+    "target_arrays": 466,
+    "target_idat_files": 932,
+    "paired_manifest_missing": [],
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE154nnn/GSE154566/suppl/GSE154566_RAW.tar",
+    "status": 206,
+    "content_range": "bytes 0-1023/16026480640",
+    "content_length": "1024",
+    "fetched_bytes": 1024,
+    "sha256": "ac806817ad37de2c569303fe78a10f3403b83b55240080b2d8a14a0031396a5f",
+    "complete_download": false
+  },
+  "receipt_files": {
+    "small-artifact-receipts.json": {
+      "path": "/workspace/scratch/f247f15c065b/paired_evidence_v2/small-artifact-receipts.json",
+      "sha256": "196a5e752e62be180c1ad7d11882525eea6b61b6c7b47916a6f6438f37c00b30"
+    },
+    "api-receipts.json": {
+      "path": "/workspace/scratch/f247f15c065b/paired_evidence_v2/api-receipts.json",
+      "sha256": "1e30fb25d6e644cc8d6656f1404b62dc88560d755b328858c282fd95fa3de633"
+    },
+    "followup-receipts.json": {
+      "path": "/workspace/scratch/f247f15c065b/paired_evidence_v2/followup-receipts.json",
+      "sha256": "8bfa2f4de9c9d916e3ac409c1601112a696e7218998819a0dd8b76f1b048a0de"
+    },
+    "fulltext-receipts.json": {
+      "path": "/workspace/scratch/f247f15c065b/paired_evidence_v2/fulltext-receipts.json",
+      "sha256": "f96d0751b184bd04015e2ddda31aeab7dd33810217addeaa571689333e282620"
+    },
+    "search-connector-receipts.json": {
+      "path": "/workspace/scratch/f247f15c065b/paired_evidence_v2/search-connector-receipts.json",
+      "sha256": "b4fb4cdd1d4173d74981431530b4380b22f9b5ccc8b4a28e58bf4e84a6707edc"
+    }
+  },
+  "pubmed_query_receipt": "/workspace/scratch/f247f15c065b/paired_evidence_v2/search-connector-receipts.json",
+  "repositories": {
+    "voiage": "1ac249333d4fb4817f487189dd41b5c86ebc2cc8",
+    "kairos": "5e5e507616f63aa709ae5fc0684413b3fd7ba4c6",
+    "innovate": "a9360c1ea3414eaf0e712dbb131d3e923e958571"
+  },
+  "limitations": [
+    "Targeted discovery not exhaustive",
+    "PubMed broad queries missed known papers; exact accession/body/citation evidence still needed",
+    "Multiple PMC/EuropePMC retrieval attempts failed with502/500; successes and failures retained",
+    "No participant raw arrays or statistical disease models were fully downloaded or analysed",
+    "Metadata and range accessibility do not settle redistribution or institutional classification",
+    "No library numerical tests were run"
+  ]
+}

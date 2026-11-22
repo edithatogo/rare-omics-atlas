@@ -4,7 +4,7 @@
 
 This document refines [the candidate audit](rust-candidate-audit.md) and [the preprocessing audit](methylation-backend-audit.md). Their earlier `sinmojito/limma-rust` findings concern a different implementation from the user's **MassDynamics-derived fork**. For that fork, the [current source audit](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/source-audit-2026-11-22.md) and LM tracks are authoritative. Track links refer to the prepared publication paths; this document alone is not evidence of a completed remote publication.
 
-Evidence here is source inspection and the separately recorded limma cloud reference replay. No IDAT parser, SeSAMe2 or new Rust preprocessing pipeline was built, run or benchmarked for this roadmap. Effort ranges below are planning estimates, not published measurements or delivery promises.
+Evidence here is source inspection and the separately recorded limma cloud reference replay. No IDAT parser, SeSAMe2 or new Rust preprocessing pipeline was built, run or benchmarked for this roadmap. The agent-batch sequence below is a plan, not a measured completion-time forecast.
 
 ## 1. Ordered work and its effect on the first paper
 
@@ -56,20 +56,28 @@ A well-maintained Rust implementation could provide checked input boundaries, ty
 
 There is **no assumed speed advantage over native C SeSAMe2**. A wrapper can add maintenance without removing the original implementation. Translating syntax does not validate manifest mappings, channel inference, masks, detection probabilities, background/dye correction, QC, beta/M semantics or boundary cases.
 
-### Effort estimates
+### Agent execution batches
 
-The ranges assume an experienced Rust developer, access to an array-method reviewer, stable independent reference output, usable public fixtures and no unresolved licence blocker. They represent person-effort, not elapsed calendar time or a commitment. Unclear provenance can stop adoption entirely. Broader platforms, annotation drift and lack of reference cases can push effort beyond the ranges.
+The owner prefers agent effort and observed execution time. These are dependency-bounded batches, not human person-time conversions or promises of elapsed duration. A batch ends with an executable check, a review and either an archived result or a named blocker. Download/build/service queues vary; record actual wall-clock durations when run.
 
-| Scope | Planning estimate | Completion boundary |
+| Scope | Agent work sequence | Completion boundary |
 |---|---|---|
-| Harden one small existing IDAT reader | **1–3 person-weeks** | Parsing, checked failures and representative supported-file conformance; no preprocessing |
-| Single-platform preprocessing prototype | **4–8 person-weeks** | Demonstrates a restricted step sequence; not admitted for research inference |
-| Research-qualified 450K + EPICv1 QCDPB-compatible core | **3–6 person-months** | Fixed method/step order, manifests/masks, per-step and exported-output parity, failure handling, downstream replay and target-platform evidence |
-| Broad SeSAMe ecosystem coverage | **6–12+ person-months**, then ongoing maintenance | Additional platforms/releases and specialised functions, not merely the core above |
+| Existing IDAT reader conformance | Source/licence review → synthetic counterexamples → smallest fix → independent real-file replay → review/archive | Exact address/mean/SD/bead counts and defined failure behaviour; no preprocessing claim |
+| One-platform preprocessing prototype | Freeze reference and manifests → one preprocessing stage per reviewed batch → full chain/export comparison | A restricted prototype; no disease inference until accepted |
+| Research-qualified 450K + EPICv1 core | Reuse the one-platform stages → additional platform fixtures → missingness/QC/export checks → fixed downstream replay → official-device run | Independent per-stage and end-to-end evidence, including masks, axes, precision and failures |
+| Broader ecosystem | One demonstrated capability gap per separately specified batch | EPICv2/MSA, CNV, cell composition and specialised functions have separate oracles; no assumed complete parity |
 
-These are alternative scope levels, not additive promised milestones. EPICv2/MSA support, CNV, cell composition, sex/SNP-related functions and broad annotation maintenance each add separate contracts. No full ecosystem project should begin without a consumer, funding/ownership decision and measurable advantage over maintaining an existing route.
+The duration and number of correction batches are **unmeasured** until performed. Prefer an existing suitable implementation when it removes a batch. Keep the full native SeSAMe programme outside the initial clinical paper's critical path.
 
-## 4. Concrete Rust IDAT candidate: provenance and conformance first
+## 4. Existing Rust IDAT implementations before a new reader
+
+The [expanded source/API search](qualification/rust-backend-search-2026-11-22.md) found multiple partial readers, including Cyanea, snalty/idat-rs and two SNP-genotyping projects. No complete native SeSAMe-equivalent route was identified within the documented scope; this does not rule out private or unindexed work.
+
+**Preferred next candidate:** Cyanea's Apache-2.0 `cyanea-io::parse_idat`, with unneeded default features disabled. First reproduce its apparent directory-order, variable-length string, RunInfo and invalid-offset problems using synthetic conformance cases, then make the smallest compatible fixes. Qualify address, mean, SD and bead counts against independent R reader outputs on eligible 450K/EPIC files. Do not adopt Cyanea's non-equivalent limma/SWAN routines as part of this reader choice.
+
+**SeSAMe Rust sequence:** reader conformance → fixed manifest/channel mapping → detection/masking → background/dye correction → beta/M export → fixed downstream comparison. Give each stage its own reference and acceptance, preserving the existing R/C route. The current R SeSAMe source declares MIT + LICENSE, while C SeSAMe2 has a different institutional-use licence; inspect incorporated dependencies and annotations separately. A language translation is infrastructure, not an automatic new paper.
+
+### Earlier a-xavier candidate and retained findings
 
 The inspected [a-xavier/illumina_array_reader at c6a19f8](https://github.com/a-xavier/illumina_array_reader/tree/c6a19f8062a66790e48add1f3197e91edd0edc91) is an existing small IDAT/gzip reader that exposes address, intensity mean, standard deviation and bead count through Polars. [Cargo](https://github.com/a-xavier/illumina_array_reader/blob/c6a19f8062a66790e48add1f3197e91edd0edc91/Cargo.toml) uses Polars 0.33.2 and flate2. It is not a SeSAMe preprocessing implementation.
 

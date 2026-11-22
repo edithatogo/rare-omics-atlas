@@ -79,3 +79,11 @@ Keep provider-specific publication dates and exact retrieval dates. New evidence
 The [backend audit](methylation-backend-audit.md) and [Rust candidate audit](rust-candidate-audit.md) own preprocessing and dependency qualification. Existing C SeSAMe2 already has R comparison machinery; reuse it before considering a new preprocessing ecosystem. A source-level Rust IDAT candidate and a complete SeSAMe-compatible pipeline have very different scopes.
 
 Clinical E0→E2→E3 should retain a qualified existing reference route while a Rust candidate is assessed separately. Hardware, compiler choice and language migration do not supply biological novelty. A backend comparison should preserve exact inputs, annotations, masks, scientific methods and exported precision so that any difference has an interpretable cause.
+
+## Expanded public calibration option
+
+The [22 November paired-manifest review](qualification/paired-calibration-review-2026-11-22.md) verifies **GSE154566**: 233 age-18 blood specimens, each on 450K and EPIC, from 117 families. The complete series has 1,177 assays and a 16.03 GB raw archive; the paired subset's 932 listed IDAT members total 5.45 GB. Only metadata and a 1,024-byte range were transferred in that review. Neither the entire archive nor this subset has passed scientific QC.
+
+This can strengthen calibration alongside GSE86833; GSE92580 is an optional tumour/preservation stress set. Split/bootstrap by family and study. Sugden2020 already studied 350 E-Risk age-18 pairs and downstream reliability; potential overlap with this public subset remains unresolved. Cheung, CACTI and later reliability/noise work further reduce novelty of a generic pooled concordance exercise.
+
+The conditional contribution is an improvement in a **frozen held-out rare-disease estimand**, compared with common-probe QC and published reliability/noise annotations. Treat either platform's values as measurements, not ground truth; one pair alone cannot identify both platforms' separate error variances. Different tissue variance can inflate pooled correlation. Stop expansion if it does not materially improve the prespecified downstream result.

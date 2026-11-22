@@ -1,0 +1,723 @@
+{
+  "observed_on": "2026-11-22",
+  "scope": "Read-only Ponytail review of limma alternatives and native array preprocessing discovery. No code, test or upstream mutation performed by this lane.",
+  "queries": [
+    {
+      "service": "GitHub repository search",
+      "query": "idat language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 29,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "snalty/idat-rs",
+          "url": "https://github.com/snalty/idat-rs"
+        },
+        {
+          "repo": "a-xavier/illumina_array_reader",
+          "url": "https://github.com/a-xavier/illumina_array_reader"
+        },
+        {
+          "repo": "xo-cally/GPU-ACCELERATED-CLUSTERING-FOR-HIGH-DENSITY-GENOTYPING-DATA",
+          "url": "https://github.com/xo-cally/GPU-ACCELERATED-CLUSTERING-FOR-HIGH-DENSITY-GENOTYPING-DATA"
+        }
+      ],
+      "omitted_nonrelevant_results": 26
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "methylation language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 46,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "FelixKrueger/Bismark",
+          "url": "https://github.com/FelixKrueger/Bismark"
+        },
+        {
+          "repo": "dohlee/metheor",
+          "url": "https://github.com/dohlee/metheor"
+        },
+        {
+          "repo": "cgroza/panmethyl",
+          "url": "https://github.com/cgroza/panmethyl"
+        },
+        {
+          "repo": "fulcrumgenomics/methylsieve",
+          "url": "https://github.com/fulcrumgenomics/methylsieve"
+        },
+        {
+          "repo": "shitohana/bsxplorer2",
+          "url": "https://github.com/shitohana/bsxplorer2"
+        },
+        {
+          "repo": "omics-rust/rsomics-methyl",
+          "url": "https://github.com/omics-rust/rsomics-methyl"
+        },
+        {
+          "repo": "heathsc/fast_dss",
+          "url": "https://github.com/heathsc/fast_dss"
+        },
+        {
+          "repo": "clemgoub/panmethyl",
+          "url": "https://github.com/clemgoub/panmethyl"
+        },
+        {
+          "repo": "selkamand/probepicker",
+          "url": "https://github.com/selkamand/probepicker"
+        },
+        {
+          "repo": "jwyang21/metheor",
+          "url": "https://github.com/jwyang21/metheor"
+        },
+        {
+          "repo": "HIM72/metheor",
+          "url": "https://github.com/HIM72/metheor"
+        },
+        {
+          "repo": "BonilKoo/metheor",
+          "url": "https://github.com/BonilKoo/metheor"
+        },
+        {
+          "repo": "JianmeiZhong/metheor",
+          "url": "https://github.com/JianmeiZhong/metheor"
+        },
+        {
+          "repo": "shengwei666/metheor",
+          "url": "https://github.com/shengwei666/metheor"
+        },
+        {
+          "repo": "Schaudge/metheor",
+          "url": "https://github.com/Schaudge/metheor"
+        },
+        {
+          "repo": "xzhuo/metheor",
+          "url": "https://github.com/xzhuo/metheor"
+        },
+        {
+          "repo": "ggydush/metheor",
+          "url": "https://github.com/ggydush/metheor"
+        },
+        {
+          "repo": "nh13/Bismark",
+          "url": "https://github.com/nh13/Bismark"
+        },
+        {
+          "repo": "ryancey1/Bismark",
+          "url": "https://github.com/ryancey1/Bismark"
+        },
+        {
+          "repo": "zhangzhen/Bismark",
+          "url": "https://github.com/zhangzhen/Bismark"
+        },
+        {
+          "repo": "shaohuaihan/metheor",
+          "url": "https://github.com/shaohuaihan/metheor"
+        },
+        {
+          "repo": "gtarex/metheorMulti",
+          "url": "https://github.com/gtarex/metheorMulti"
+        },
+        {
+          "repo": "luhanlinbio/metheor",
+          "url": "https://github.com/luhanlinbio/metheor"
+        }
+      ],
+      "omitted_nonrelevant_results": 23
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "infinium language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 1,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 1
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "sesame-rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 9,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 9
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "sesame-rs methylation",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 0,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "illumina_array_reader fork:true",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 1,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "a-xavier/illumina_array_reader",
+          "url": "https://github.com/a-xavier/illumina_array_reader"
+        }
+      ],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "illumina language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 96,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "a-xavier/illumina_array_reader",
+          "url": "https://github.com/a-xavier/illumina_array_reader"
+        },
+        {
+          "repo": "snalty/idat-rs",
+          "url": "https://github.com/snalty/idat-rs"
+        }
+      ],
+      "omitted_nonrelevant_results": 94
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "methylation array language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 1,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "selkamand/probepicker",
+          "url": "https://github.com/selkamand/probepicker"
+        }
+      ],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "minfi language:Rust",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 5,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 5
+    },
+    {
+      "service": "GitHub repository search",
+      "query": "sesame methylation fork:true",
+      "requested_page": 1,
+      "requested_per_page": 100,
+      "returned_count": 50,
+      "limitation": "Default repository name/description matching, not full-tree search. Tool does not return total count or pagination links.",
+      "retained_relevant_results": [
+        {
+          "repo": "zwdzwd/sesame",
+          "url": "https://github.com/zwdzwd/sesame"
+        },
+        {
+          "repo": "zhou-lab/sesame",
+          "url": "https://github.com/zhou-lab/sesame"
+        }
+      ],
+      "omitted_nonrelevant_results": 48
+    },
+    {
+      "service": "GitHub code search connector",
+      "query": "IlluminaIdat",
+      "requested_topn": 30,
+      "returned_count": 26,
+      "limitation": "Default-branch indexed top results only; topn=30 is a cap.",
+      "retained_relevant_results": [
+        {
+          "url": "https://github.com/JuliaRegistries/General/blob/a26ff1de7a2152cd225498b68cf59644848b460a/I/IlluminaIdatFiles/Package.toml",
+          "path": "I/IlluminaIdatFiles/Package.toml"
+        },
+        {
+          "url": "https://github.com/oheil/IlluminaIdatFiles.jl/blob/97008f4fabf911a797a21153936bfe8e9974a285/src/IlluminaIdatFiles.jl",
+          "path": "src/IlluminaIdatFiles.jl"
+        },
+        {
+          "url": "https://github.com/maleadt/packagecompiler_report/blob/e5196640038be8803fd9e04ee593a3b4cbc5b355/logs/IlluminaIdatFiles.regular.log",
+          "path": "logs/IlluminaIdatFiles.regular.log"
+        },
+        {
+          "url": "https://github.com/maleadt/packagecompiler_report/blob/e5196640038be8803fd9e04ee593a3b4cbc5b355/logs/IlluminaIdatFiles.compiled.log",
+          "path": "logs/IlluminaIdatFiles.compiled.log"
+        },
+        {
+          "url": "https://github.com/oheil/IlluminaIdatFiles.jl/blob/97008f4fabf911a797a21153936bfe8e9974a285/README.md",
+          "path": "README.md"
+        },
+        {
+          "url": "https://github.com/hyperpolymath/julia-ecosystem/blob/d5aa02993c04cf7428a1ed60baa91e0c0f673275/registries/General/I/IlluminaIdatFiles/Package.toml",
+          "path": "registries/General/I/IlluminaIdatFiles/Package.toml"
+        },
+        {
+          "url": "https://github.com/oheil/IlluminaIdatFiles.jl/blob/97008f4fabf911a797a21153936bfe8e9974a285/Project.toml",
+          "path": "Project.toml"
+        },
+        {
+          "url": "https://github.com/oheil/IlluminaIdatFiles.jl/blob/97008f4fabf911a797a21153936bfe8e9974a285/src/decrypt_des.jl",
+          "path": "src/decrypt_des.jl"
+        },
+        {
+          "url": "https://github.com/oheil/IlluminaIdatFiles.jl/blob/97008f4fabf911a797a21153936bfe8e9974a285/test/runtests.jl",
+          "path": "test/runtests.jl"
+        },
+        {
+          "url": "https://github.com/barche/TestRegistry/blob/6ed0fd099012f0de55bbb6903d6737f3e9084968/I/IlluminaIdatFiles/Package.toml",
+          "path": "I/IlluminaIdatFiles/Package.toml"
+        },
+        {
+          "url": "https://github.com/codedownio/General/blob/3c1c0d8737290c4402b94a70ae2f7fc425ab7402/I/IlluminaIdatFiles/Package.toml",
+          "path": "I/IlluminaIdatFiles/Package.toml"
+        }
+      ],
+      "omitted_nonrelevant_results": 15
+    },
+    {
+      "service": "GitHub code search connector",
+      "query": "read_idat",
+      "requested_topn": 30,
+      "returned_count": 30,
+      "limitation": "Default-branch indexed top results only; topn=30 is a cap.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 30
+    },
+    {
+      "service": "GitHub code search connector",
+      "query": "pOOBAH",
+      "requested_topn": 30,
+      "returned_count": 30,
+      "limitation": "Default-branch indexed top results only; topn=30 is a cap.",
+      "retained_relevant_results": [
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/open.R",
+          "path": "R/open.R"
+        },
+        {
+          "url": "https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/docs/IDE.md",
+          "path": "docs/IDE.md"
+        },
+        {
+          "url": "https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/docs/cli.md",
+          "path": "docs/cli.md"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/NAMESPACE",
+          "path": "NAMESPACE"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/vignettes/sesame.Rmd",
+          "path": "vignettes/sesame.Rmd"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/inst/CITATION",
+          "path": "inst/CITATION"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/strain.R",
+          "path": "R/strain.R"
+        },
+        {
+          "url": "https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/README.md",
+          "path": "README.md"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/sesame.R",
+          "path": "R/sesame.R"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/QC.R",
+          "path": "R/QC.R"
+        },
+        {
+          "url": "https://github.com/brj0/mepylome/blob/6ed607ef4cde06b65f3ea695805ad9ea46399b5a/docs/index.rst",
+          "path": "docs/index.rst"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/mask.R",
+          "path": "R/mask.R"
+        },
+        {
+          "url": "https://github.com/brj0/mepylome/blob/6ed607ef4cde06b65f3ea695805ad9ea46399b5a/README.md",
+          "path": "README.md"
+        }
+      ],
+      "omitted_nonrelevant_results": 17
+    },
+    {
+      "service": "GitHub code search connector",
+      "query": "inferInfiniumIChannel",
+      "requested_topn": 30,
+      "returned_count": 30,
+      "limitation": "Default-branch indexed top results only; topn=30 is a cap.",
+      "retained_relevant_results": [
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/channel_inference.R",
+          "path": "R/channel_inference.R"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/NAMESPACE",
+          "path": "NAMESPACE"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/open.R",
+          "path": "R/open.R"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/vignettes/nonhuman.Rmd",
+          "path": "vignettes/nonhuman.Rmd"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/QC.R",
+          "path": "R/QC.R"
+        },
+        {
+          "url": "https://github.com/zwdzwd/sesame/blob/8b1fcfaed89b28e0def8b031a81611a0a770053c/vignettes/sesame.Rmd",
+          "path": "vignettes/sesame.Rmd"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/docs/llms.txt",
+          "path": "docs/llms.txt"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/NUMERICS.md",
+          "path": "NUMERICS.md"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/src/vcf.c",
+          "path": "src/vcf.c"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/src/qc.c",
+          "path": "src/qc.c"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/src/prep.c",
+          "path": "src/prep.c"
+        },
+        {
+          "url": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/include/sesame.h",
+          "path": "include/sesame.h"
+        }
+      ],
+      "omitted_nonrelevant_results": 18
+    },
+    {
+      "service": "GitHub code search connector",
+      "query": "SeSAMe-rust",
+      "requested_topn": 30,
+      "returned_count": 5,
+      "limitation": "Default-branch indexed top results only; topn=30 is a cap.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 5
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "IDAT language:Rust",
+      "requested_per_page": 100,
+      "total_count": 5840896,
+      "incomplete_results": false,
+      "returned_count": 100,
+      "limitation": "Returned 5,840,896 mostly unrelated Rust files; query is not reliable for absence evidence. Other searches are indexed default-branch bounds.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 100
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "pOOBAH language:Rust",
+      "requested_per_page": 100,
+      "total_count": 6,
+      "incomplete_results": false,
+      "returned_count": 6,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 6
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "noob methylation language:Rust",
+      "requested_per_page": 100,
+      "total_count": 0,
+      "incomplete_results": false,
+      "returned_count": 0,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "Infinium language:Rust",
+      "requested_per_page": 100,
+      "total_count": 7,
+      "incomplete_results": false,
+      "returned_count": 7,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [
+        {
+          "repo": "cyanea-bio/labs",
+          "path": "cyanea-omics/src/microarray.rs",
+          "url": "https://github.com/cyanea-bio/labs/blob/5d39b14357064efcfb918b1192e2f26d28b81ece/cyanea-omics/src/microarray.rs"
+        },
+        {
+          "repo": "cyanea-bio/labs",
+          "path": "cyanea-omics/src/lib.rs",
+          "url": "https://github.com/cyanea-bio/labs/blob/5d39b14357064efcfb918b1192e2f26d28b81ece/cyanea-omics/src/lib.rs"
+        }
+      ],
+      "omitted_nonrelevant_results": 5
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "IlluminaID language:Rust",
+      "requested_per_page": 100,
+      "total_count": 2,
+      "incomplete_results": false,
+      "returned_count": 2,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [
+        {
+          "repo": "cyanea-bio/labs",
+          "path": "cyanea-io/src/microarray.rs",
+          "url": "https://github.com/cyanea-bio/labs/blob/5d39b14357064efcfb918b1192e2f26d28b81ece/cyanea-io/src/microarray.rs"
+        },
+        {
+          "repo": "michael092749/SNP-genotyping",
+          "path": "src/idat_processing.rs",
+          "url": "https://github.com/michael092749/SNP-genotyping/blob/c1dcce7e1aa8763963acce273904617395412d70/src/idat_processing.rs"
+        }
+      ],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "read_idat language:Rust",
+      "requested_per_page": 100,
+      "total_count": 38,
+      "incomplete_results": false,
+      "returned_count": 38,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [
+        {
+          "repo": "cyanea-bio/labs",
+          "path": "cyanea-io/src/microarray.rs",
+          "url": "https://github.com/cyanea-bio/labs/blob/5d39b14357064efcfb918b1192e2f26d28b81ece/cyanea-io/src/microarray.rs"
+        },
+        {
+          "repo": "michael092749/SNP-genotyping",
+          "path": "src/idat_processing.rs",
+          "url": "https://github.com/michael092749/SNP-genotyping/blob/c1dcce7e1aa8763963acce273904617395412d70/src/idat_processing.rs"
+        }
+      ],
+      "omitted_nonrelevant_results": 36
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "InfiniumI language:Rust",
+      "requested_per_page": 100,
+      "total_count": 0,
+      "incomplete_results": false,
+      "returned_count": 0,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 0
+    },
+    {
+      "service": "GitHub REST code search through fetch",
+      "query": "sesame methylation language:Rust",
+      "requested_per_page": 100,
+      "total_count": 1,
+      "incomplete_results": false,
+      "returned_count": 1,
+      "limitation": "Indexed default-branch search; nonpublic/unindexed and alternate names are outside coverage.",
+      "retained_relevant_results": [],
+      "omitted_nonrelevant_results": 1
+    }
+  ],
+  "branches": {
+    "sinmojito/limma-rust": [
+      {
+        "name": "main",
+        "commit": {
+          "sha": "c569f87a1b5aa97f3499255bee7a1a8b45e200fa",
+          "url": "https://api.github.com/repos/sinmojito/limma-rust/commits/c569f87a1b5aa97f3499255bee7a1a8b45e200fa"
+        },
+        "protected": false
+      }
+    ],
+    "MassDynamics/limma-rust": [
+      {
+        "name": "benchmark",
+        "commit": {
+          "sha": "df2c50b5473de823dcfcc70c0ce851d3585559fc",
+          "url": "https://api.github.com/repos/MassDynamics/limma-rust/commits/df2c50b5473de823dcfcc70c0ce851d3585559fc"
+        },
+        "protected": false
+      },
+      {
+        "name": "block-correlation",
+        "commit": {
+          "sha": "21b6dc8cc8c35992c7cb0ddf324ac9b20934dff3",
+          "url": "https://api.github.com/repos/MassDynamics/limma-rust/commits/21b6dc8cc8c35992c7cb0ddf324ac9b20934dff3"
+        },
+        "protected": false
+      },
+      {
+        "name": "main",
+        "commit": {
+          "sha": "ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa",
+          "url": "https://api.github.com/repos/MassDynamics/limma-rust/commits/ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa"
+        },
+        "protected": false
+      },
+      {
+        "name": "tests-validation",
+        "commit": {
+          "sha": "e0e1b443166c3527d4012caee5b2be1e18ef312a",
+          "url": "https://api.github.com/repos/MassDynamics/limma-rust/commits/e0e1b443166c3527d4012caee5b2be1e18ef312a"
+        },
+        "protected": false
+      }
+    ],
+    "a-xavier/illumina_array_reader": [
+      {
+        "name": "main",
+        "commit": {
+          "sha": "c6a19f8062a66790e48add1f3197e91edd0edc91",
+          "url": "https://api.github.com/repos/a-xavier/illumina_array_reader/commits/c6a19f8062a66790e48add1f3197e91edd0edc91"
+        },
+        "protected": false
+      }
+    ],
+    "cyanea-bio/labs": [
+      {
+        "name": "main",
+        "commit": {
+          "sha": "5d39b14357064efcfb918b1192e2f26d28b81ece",
+          "url": "https://api.github.com/repos/cyanea-bio/labs/commits/5d39b14357064efcfb918b1192e2f26d28b81ece"
+        },
+        "protected": false
+      }
+    ],
+    "zhou-lab/sesame": [
+      {
+        "name": "main",
+        "commit": {
+          "sha": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+          "url": "https://api.github.com/repos/zhou-lab/sesame/commits/f6713747181764e0b7a97b64c3c0d52ab9d82703"
+        },
+        "protected": false
+      }
+    ]
+  },
+  "branch_comparisons": {
+    "benchmark": {
+      "status": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "files": [
+        "examples/bench.rs",
+        "tests-validation/report/benchmark.md",
+        "tests-validation/report/benchmark.svg",
+        "tests-validation/report/benchmark.tsv",
+        "tests-validation/scripts/bench.R",
+        "tests-validation/scripts/bench_data.R",
+        "tests-validation/scripts/bench_report.R",
+        "tests-validation/scripts/benchmark"
+      ]
+    },
+    "block-correlation": {
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 3,
+      "files": []
+    },
+    "tests-validation": {
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 1,
+      "files": []
+    }
+  },
+  "new_candidates": [
+    {
+      "repo": "snalty/idat-rs",
+      "sha": "42af9c598311010eec5dbb0fa0079200fd14b8d1",
+      "commit_date": "2024-06-15T21:46:51Z",
+      "description": "A rust library for reading Illumina IDAT files.",
+      "license": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "url": "https://github.com/snalty/idat-rs/tree/42af9c598311010eec5dbb0fa0079200fd14b8d1"
+    },
+    {
+      "repo": "omics-rust/rsomics-methyl",
+      "sha": "4a937bc57994a8497238bfba38a74c73c97e80dc",
+      "commit_date": "2026-08-03T00:38:13Z",
+      "description": "Bisulfite-sequencing methylation extraction and bias QC in Rust",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "url": "https://github.com/omics-rust/rsomics-methyl/tree/4a937bc57994a8497238bfba38a74c73c97e80dc"
+    },
+    {
+      "repo": "selkamand/probepicker",
+      "sha": "f7a1e6214fb3d4cf2caa1ad7d33625b762fb4033",
+      "commit_date": "2024-07-01T21:01:36Z",
+      "description": "Rust package for identifying most variable probes in larger-than-memory methylation array datasets",
+      "license": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "url": "https://github.com/selkamand/probepicker/tree/f7a1e6214fb3d4cf2caa1ad7d33625b762fb4033"
+    },
+    {
+      "repo": "xo-cally/GPU-ACCELERATED-CLUSTERING-FOR-HIGH-DENSITY-GENOTYPING-DATA",
+      "sha": "eac96fa8afecbf0706ec48a833e4b6bcbc702a0f",
+      "commit_date": "2025-11-13T20:08:29Z",
+      "description": "This project builds a GPU-accelerated SNP-genotyping pipeline using synthetic, anonymized IDATs from the Sydney Brenner Institute, accessed securely on the Wits Core Cluster. It extracts fluorescence intensities, applies GPU clustering, and benchmarks vs CPU to show faster, scalable, population-scale genotyping.",
+      "license": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "url": "https://github.com/xo-cally/GPU-ACCELERATED-CLUSTERING-FOR-HIGH-DENSITY-GENOTYPING-DATA/tree/eac96fa8afecbf0706ec48a833e4b6bcbc702a0f"
+    },
+    {
+      "repo": "michael092749/SNP-genotyping",
+      "sha": "c1dcce7e1aa8763963acce273904617395412d70",
+      "commit_date": "2024-09-15T23:17:07Z",
+      "description": "This project explores the usage of parallelisation techniques such as MPI, AVX and multithreading in the SNP genotyping process",
+      "license": null,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "url": "https://github.com/michael092749/SNP-genotyping/tree/c1dcce7e1aa8763963acce273904617395412d70"
+    }
+  ],
+  "secondary_receipts": [
+    "rust_backend_repo_heads_v2.json",
+    "rust_backend_registry_search_v2.json",
+    "rust_backend_publication_search_v2.json"
+  ],
+  "conclusion": "No complete native Rust SeSAMe-equivalent preprocessing pipeline identified in this bounded search; multiple partial Rust IDAT implementations exist. MassDynamics-derived owner fork remains primary narrow limma candidate, sinmojito optional comparator/extension evidence, R independent reference.",
+  "search_record_note": "Result lists in this compact file retain relevant hits; irrelevant matches are counted but omitted. Counts are retrieved-result counts, not claims of complete global coverage."
+}

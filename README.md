@@ -1,6 +1,6 @@
 # Rare Omics Atlas
 
-**Status: repository context and initial public-source checks executed; scientific analyses have not started.** Updated 22 November 2026.
+**Status: official API catalogue implemented and independently reviewed; minimal GitHub–Hugging Face publication in progress. Scientific analyses have not started.** Updated 22 November 2026.
 
 An ontology-linked rare-disease epigenomics programme. The first proposed paper tests whether a prespecified Kabuki methylation result transfers across independent cohorts and platforms, with explicit clinical interpretation limits. A pooled network, extra ontology or change of programming language is not by itself a novel clinical finding.
 
@@ -17,8 +17,8 @@ An ontology-linked rare-disease epigenomics programme. The first proposed paper 
 
 - The pinned Conductor submodule was fetched and its project context completed in a real clone. Automatic activation by a particular host application was not observed.
 - The three initial public Kabuki archives were downloaded without an application or login. Their exact bytes, SHA-256 identifiers, TAR structure and IDAT headers were checked; see the receipt for counts and limitations. Raw files are outside Git.
-- A 28-accession rights register and structured study–dataset literature edges were created. Accessions include technical subseries and are not independent cohort counts.
-- The owner's [limma-rust fork](https://github.com/edithatogo/limma-rust) is derived from **MassDynamics**, a different implementation from the previously inspected sinmojito project. Its existing suite passed 104 tests in this Linux workspace. Fresh independent R, actual local-runner and methylation acceptance remain pending.
+- The [Rust API catalogue](tools/catalogue/README.md) resolves all 29 sources through official NCBI/GEO and PRIDE interfaces, retaining 114 source-response receipts. Its 2,532 series–assay memberships represent 2,465 unique GEO assays; these are not independent participant/cohort counts. [T08 is reviewed and archived](conductor/archive/t08_catalogue_20261122/index.md).
+- The owner's [limma-rust fork](https://github.com/edithatogo/limma-rust) is derived from **MassDynamics**, a different implementation from the previously inspected sinmojito project. Its original 104-test corpus passed; the subsequent public synthetic R reference adds six tests, with 110 passing in debug/release and 30,840 fresh numerical comparisons. The independently reviewed LM01a increment is archived. Consumer, actual local-runner and methylation acceptance remain pending.
 - A weekly literature watch is scheduled, alongside mandatory N0–N3 analysis gates.
 
 ## Execution and governance
@@ -33,4 +33,4 @@ The owner requires official GitHub Actions self-hosted runners for local develop
 
 T00/T01 are **partly complete**, with remaining milestones visible rather than marked passed. Participant independence, final molecular subsets/covariates, reference annotations, institutional research classification and selected-method acceptance must be resolved before disease analysis. Public source permission is not a decision from an institution's ethics office.
 
-No patient files were committed or uploaded to Hugging Face. No clinical association, diagnostic performance, causal mechanism or perturbation efficacy has been estimated. Disease-level HPO annotations are not participant observations, and two accessions are not automatically independent cohorts.
+Patient files are never committed to Git. The selected three-archive HF mirror is governed by the [exact release manifest](research/releases/2026-11-22/manifest.json); actual upload status is recorded in the publication receipt. No clinical association, diagnostic performance, causal mechanism or perturbation efficacy has been estimated. Disease-level HPO annotations are not participant observations, and two accessions are not automatically independent cohorts.

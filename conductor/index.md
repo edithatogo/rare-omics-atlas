@@ -1,6 +1,6 @@
 # Conductor project context
 
-The owner's 22 November 2026 instruction authorises initial setup, public-source qualification and the existing fork baseline. It does not initiate statistical disease analysis or a new scientific implementation. Completed work and external prerequisites are recorded separately.
+The owner authorises continued bounded implementation, API catalogue and GitHub–Hugging Face integration, following implement → review → archive for each completed track. Source, numerical, scientific and actual-device acceptance remain distinct. See [AGENTS.md](../AGENTS.md) for the current scope.
 
 - [Product](product.md)
 - [Product guidelines](product-guidelines.md)

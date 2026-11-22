@@ -1,0 +1,13 @@
+[package]
+name = "rare-omics-catalogue"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+publish = false
+description = "Bounded official API metadata intake for rare-omics-atlas"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "rustls"] }
+serde_json = "1.0.154"
+sha2 = "0.11.1"

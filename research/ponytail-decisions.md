@@ -19,7 +19,7 @@ This current register supersedes earlier ambiguous references to two different l
 | Fork improvements | Independent R recipe, fixture identity and narrow consumer contract first | These address actual reproducibility/integration gaps before numerical rewriting |
 | faer/statrs | Conditional new-dependency experiment in the actual fork | Neither is installed there; preserve rank/pivot/tail semantics and qualify affected callers |
 | SeSAMe2 | Qualify existing C CLI before a rewrite | Author R comparisons already exist; resolve source terms, annotation and real export precision |
-| SeSAMe-rust | Optional bounded roadmap, not initial prerequisite | Reader/adapter work can be modest; a validated preprocessing ecosystem is months of work |
+| SeSAMe-rust | Optional bounded roadmap, not initial prerequisite | Reader/adapter work has bounded conformance batches; a full preprocessing ecosystem has multiple separately validated stages |
 | IDAT reader candidate | Hold adoption pending parser/provenance qualification | Source findings and copied-routine attribution require reproduction/clarification, not assumed equivalence |
 | HPO/ontology/interval libraries | Use needed existing functions | Preserve complete source annotations; do not replace missing metadata by inventing phenotypes |
 | Polars/petgraph | Use for actual table/graph consumers | One representation per stage; avoid a new framework or package collection |
@@ -42,3 +42,15 @@ At N0/N1 and N2/N3 ask which existing tool or dependency removes a real requirem
 Prefer a bounded upstream-compatible addition over a private reimplementation when the method is already available. Do not send upstream messages or PRs without authorisation. Owned-repository context changes and the existing-corpus check are recorded in [setup evidence](qualification/setup-receipt.md).
 
 A failed or redundant experiment can remain useful supporting validation. Preserve frozen analyses, report negative transfer and uncertainty, and do not manufacture a paper from every library, ontology, model or port.
+
+## Continued implementation — 22 November 2026
+
+- API catalogue: a small Rust client over official E-utilities/GEO and PRIDE interfaces, with JSONL boundaries and response receipts. No dataframe engine is needed for source JSON.
+- Minimal medallion: one Hugging Face dataset, GitHub-owned code/manifests and a source-specific object record. The official Hub client is a justified Python operational boundary; do not reimplement authentication, chunking, resumable upload or Hub commits in Rust.
+- Numerical backend: retain the MassDynamics-derived owner core first, make independent R regeneration and identity contracts usable, and evaluate sinmojito only for a concrete extra method. Agreement between two ports is not an independent reference.
+- SeSAMe Rust: use the expanded existing-reader search; prefer a bounded Cyanea conformance/fix experiment over a second generic parser. Native QCDPB stages follow independent references, not a complete ecosystem rewrite.
+- Decision support: eligibility precedes subjective score/rank sensitivity. Reuse Voiage's Rust EVPI only when coherent uncertainty draws and utilities exist. Do not add a decision framework for a small options table.
+- Paired cohorts: GSE154566 adds 233 verifiable paired blood specimens, with family clustering and possible prior-publication overlap. Ordinary pooled concordance is mature; assess whether a frozen policy improves held-out disease effects.
+- Execution: implement, review and archive each completed bounded track. Preserve incomplete parent scientific/device milestones. Use agent batches and measured durations; no human-effort estimates or fabricated delivery times.
+
+See the [new Rust search](qualification/rust-backend-search-2026-11-22.md) and [paired/decision review](qualification/paired-calibration-review-2026-11-22.md). These are source reviews; implementation-specific receipts govern what actually ran.
