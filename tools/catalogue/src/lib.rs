@@ -3,6 +3,9 @@
 use serde_json::{Value, json};
 use std::collections::{BTreeMap, BTreeSet};
 
+mod sample_contract;
+pub use sample_contract::{review_sample_json, review_sample_manifest};
+
 pub type Result<T> = std::result::Result<T, String>;
 pub type Soft = BTreeMap<String, BTreeMap<String, Vec<String>>>;
 pub type CatalogueRows = (Value, Vec<Value>, Vec<Value>);

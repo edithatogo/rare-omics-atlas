@@ -9,6 +9,7 @@
 7. Use one source of policy: `edithatogo/repository-standards`. Adopt GitHub shared defaults and templates only when applicable. No second competing Conductor installation.
 8. Local development acceptance uses the official GitHub Actions self-hosted runner on the relevant target OS/architecture, with a revision-bound observed run. Follow [local development](../research/local-development.md); no untrusted PR execution on personal machines, emulator substitution or unobserved success claim.
 9. Before changing code and after each bounded increment, run `uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep`. Follow the [strict CI contract](../research/ci-plan.md) for initial tool installation, exact receipts, separate central privacy scanning and outstanding licence/provider/device gates. Missing or failed checks are not a pass. Preserve template patch/nonregression coverage policy and existing numerical tolerances.
+10. Install the native pre-commit hook before the first implementation commit. Stage the complete candidate and let its central privacy/strict gates pass. Follow [repository integration](../research/repository-integration.md): qualify and publish limma first, pin its actual commit in atlas, then run the receiving gate and atlas's own local/hosted checks. Keep one authoritative numerical specification and separate bounded receiving evidence.
 
 ### Medallion decision
 

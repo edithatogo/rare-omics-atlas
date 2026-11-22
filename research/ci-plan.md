@@ -1,6 +1,6 @@
 # Strict development and CI contract
 
-Updated 22 November 2026. This is the repository's implementation of the applicable central standards, not a second policy authority. Code verification, hosted provider acceptance, official owner-device qualification and scientific admission remain separate outcomes.
+Updated 23 November 2026. This is the repository's implementation of the applicable central standards, not a second policy authority. Code verification, hosted provider acceptance, official owner-device qualification and scientific admission remain separate outcomes.
 
 ## One command from the outset
 
@@ -23,6 +23,7 @@ The single command checks:
 - Rust formatting, all-target/all-feature Clippy with warnings denied, locked debug and release tests, doctests and rustdoc with warnings denied.
 - Python formatting and linting; strict Pyright on production code and verification scripts; real publisher and harness regression tests. Python syntax targets the existing 3.11 minimum, while the executed development runtime is pinned to 3.15.2.
 - Workflow syntax, local documentation links, JSON parsing and the Conductor dependency graph.
+- The actual pinned limma synthetic exporter and atlas receiving contract, including named axes, complete families, uncertainty, missingness and independent R reference comparisons. See [repository integration](repository-integration.md).
 - Full claimed production-source Rust/Python coverage. Tests are excluded from the coverage denominator; untested production paths remain included.
 - RustSec advisories, Python advisories, a Python CycloneDX SBOM and a locked Rust dependency inventory. A Cargo metadata inventory is not itself an SBOM; the hosted lane additionally generates SPDX with the established SBOM action.
 - Current-source Gitleaks scanning, including untracked nonignored changes; `--deep` additionally scans reachable Git history. Upstream default rules are explicit; inherited configuration, local ignore files and inline allow comments cannot waive this gate. Symlinks are identified in source hashes and are not followed by the snapshot scanner.
@@ -35,7 +36,25 @@ Receipts and individual safe command logs are written under ignored `artifacts/v
 
 A separate read-only PR dependency-review job uses the official action pinned at `bbc44d14a204704ccc493733616cd1e93a0321ec` and blocks low-or-higher known vulnerabilities across runtime, development and unknown scopes. It posts no PR comments and makes no invented licence-policy choice. The local Cargo.lock audit and audit of the installed, frozen Python developer environment remain active alongside this diff review. The Python result applies to the qualified platform/environment; it does not claim to audit every alternate platform or extra recorded in the multi-platform lockfile.
 
-The separate `privacy-and-secrets` job calls the reviewed central Presidio/Gitleaks action at `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4`. It preserves the standard's commit-range/full-history semantics, value-free findings and reported coverage gaps. Current-source Gitleaks is an additional local check, not a replacement for Presidio. For pre-push use, install and invoke the pinned central guard as documented in its [local hook guidance](https://github.com/edithatogo/repository-standards/blob/b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4/privacy/local-hooks.md); no hook installation is implied by these committed files.
+The separate `privacy-and-secrets` job calls the reviewed central Presidio/Gitleaks action at `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4`. It preserves the standard's commit-range/full-history semantics, value-free findings and reported coverage gaps. Current-source Gitleaks is an additional local check, not a replacement for Presidio. The native pre-commit hook below additionally runs that central guard on the actual staged candidate.
+
+## Install the native pre-commit hook
+
+Prepare the central scanner checkout and isolated environment using its [pinned local guidance](https://github.com/edithatogo/repository-standards/blob/b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4/privacy/local-hooks.md). Set `PRIVACY_CHECKOUT`, `PRIVACY_PYTHON` and `GITLEAKS_BIN` to their absolute paths outside this repository, then install:
+
+```sh
+uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/hooks.py install \
+  --privacy-root "$PRIVACY_CHECKOUT" \
+  --privacy-python "$PRIVACY_PYTHON" \
+  --gitleaks "$GITLEAKS_BIN"
+git config --local --get core.hooksPath
+```
+
+The expected hook path is `.githooks`. Installation verifies the exact central commit, clean source, isolated Python 3.15.2 environment, Gitleaks 8.30.1 and executable wrapper; it preserves conflicting existing hooks. Stage every intended source change before committing. The hook rejects a candidate that differs from the working tree, runs central staged privacy scanning and the full strict verifier, then checks that the source/index/HEAD have not changed. Missing tooling, scanner failure or verification failure blocks the commit. No cached success or permissive profile is used.
+
+Actual installation is clone-local; another clone must run this command. The [integration document](repository-integration.md#native-pre-commit-enforcement) explains alternate-index handling and the separate server-side enforcement boundary.
+
+## Other execution lanes
 
 `Official local qualification` remains manual and accepts only this repository's reviewed main revision. It invokes the same harness on the selected macOS ARM64, Windows x64 or Linux x64 official runner and preserves the actual outcome. Each native command has its return code checked by Python, so a later PowerShell command cannot hide an earlier failure. No runner has been registered or activated by this increment, and no cloud result closes `T00.local_runner`.
 

@@ -66,6 +66,7 @@ class PatchCoverageContracts(unittest.TestCase):
                     "rust-coverage-xml": ("rust-coverage.xml", rust_report),
                     "rust-coverage": ("rust-lcov.info", "TN:fixture\n"),
                     "python-advisories": ("python-sbom.json", '{"components":[]}'),
+                    "limma-consumer-contract": ("limma-contract.json", '{"status":"passed"}'),
                 }
 
                 def fixture_git(*args, root=root):
