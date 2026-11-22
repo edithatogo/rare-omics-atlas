@@ -6,11 +6,13 @@ This project is **documentation-only** until the owner authorises a named track 
 - [Technology and interoperability decisions](tech-stack.md)
 - [Scientific workflow and evidence gates](workflow.md)
 - [Tracks registry](tracks.md)
-- [Local Ponytail approvals](../research/ponytail-decisions.md)
+- [Local Ponytail decisions](../research/ponytail-decisions.md)
+- [Rust candidate audit and qualification gaps](../research/rust-candidate-audit.md)
+- [Clinical journal routing, including Orphanet and SSIEM](../research/journals.md)
 
 ## Planned project phases
 
-T00 governance and first-principles scoping → T01 dataset/provenance qualification → T02 Kabuki replication → T03 cross-disease comparison → T04 Julia hierarchical methods → T05 matched multi-omics → T06 genotype–toxin analysis.
+T00 governance and first-principles scoping → T01 dataset/provenance qualification → T02 Kabuki replication → T03 cross-disease comparison → T04 hierarchical methods → T05 matched multi-omics → T06 genotype–toxin analysis.
 
 T05 may be pursued before T04 only if matched assays are qualified and no shared model implementation is needed. T06 is separately gated and is not required for publication of T02–T04.
 
@@ -23,3 +25,4 @@ T05 may be pursued before T04 only if matched assays are qualified and no shared
 - Prefer **clinical-genetics journal fit**, rather than aiming first for high-profile methods journals.
 
 **Current cross-cutting gates:** [Source public-access, rights and ethics](../research/source-access-ethics.md) and [Rust scientific backend qualification](../research/backend-replacement-policy.md). Both are planning/source checks, not analysis execution receipts.
+

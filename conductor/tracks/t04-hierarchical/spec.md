@@ -14,7 +14,7 @@ See [candidate dataset register](../../../research/datasets.md), [analysis matri
 
 ## Publication target
 
-Primary BMC Medical Genomics; backup Molecular Genetics & Genomic Medicine (Methods/Original Research).
+Orphanet Journal of Rare Diseases if clinically interpretable and independently validated; backup BMC Medical Genomics. Use the central journal routing for a focused metabolic question. See [journal strategy](../../../research/journals.md).
 
 ## Exit criteria
 
@@ -24,4 +24,5 @@ Primary BMC Medical Genomics; backup Molecular Genetics & Genomic Medicine (Meth
 
 ## Stop conditions
 
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+Reassess overlapping publications through N0/N2; continue only with a documented distinct contribution or justified replication. Stop if no worthwhile contribution remains, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+

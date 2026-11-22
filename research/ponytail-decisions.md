@@ -4,8 +4,8 @@ This register applies the already-qualified-first / smallest-correct-solution ap
 
 | Decision | Disposition | Reason / activation gate |
 |---|---|---|
-| Multiple languages (Julia modelling, R reference assays, selective Rust) | **Approve** | Existing scientific libraries avoid redundant ports; file boundaries keep isolation |
-| Arrow/Parquet for tabular interchange | **Approve** | Open typed formats across all three; future synthetic round trip gate |
+| Multiple languages under Rust > Julia/Mojo > Python > R | **Approve** | Existing scientific libraries avoid redundant ports; file boundaries keep isolation |
+| Arrow/Parquet for tabular interchange | **Approve** | Open typed formats at actual producer/consumer boundaries; future semantic round-trip gate |
 | Dense labelled matrix format for 450K/EPIC arrays | **Approve** | Parquet long form is an unnecessary storage/compute penalty |
 | Conductor Git submodule at existing path | **Approve** | Reuses exact existing `.agents/plugins/conductor` convention; pinned commit; activation unverified |
 | Central `repository-standards` and shared GitHub defaults | **Approve** | Single source of policy; only apply applicable research profiles |
@@ -41,6 +41,28 @@ Source: [public access and ethics triage](source-access-ethics.md). Ponytail is 
 - **Approve** a targeted N0/N1 pre-analysis and N2 post-analysis publication/preprint/dataset novelty check, plus N3 journal submission refresh, recorded in existing Conductor tracks; no always-on search service or extra layer. See [protocol](novelty-priority-protocol.md).
 - **Approve** dynamic study prioritisation by data rights/ethics, molecular confirmation, controls, independence, power, clinical outcome, publication competition, effect on other tracks and journal fit; do not optimise N/I/F alone.
 - **Approve conditionally** Python only for nonduplicative qualified specialist software and Rust Polars for a real large tabular consumer; Rust petgraph for an actual graph algorithm, not an ontology edge table.
-- **Defer** Mojo despite its 2026 1.0 release, pending demonstrable kernel/hardware benefit and scientific parity; do not add every possible language or statistical port.
+- **Mojo updated below:** same preference tier as Julia; activation remains conditional on an existing suitable capability and a real consumer, with platform/precision qualification.
 - **Prefer** lower-profile clinically appropriate journals (Molecular Syndromology, European Journal of Medical Genetics) over prior higher-profile outlets; reassess at N2/N3, never infer acceptance odds from impact factor.
 - **No estate-wide modifications**: existing `repository-standards` scientific-native profile already requires a minimal core and numerical/resource qualification, and references Ponytail. Propose a central *advisory* update only after reusable evidence appears.
+
+## 22 November 2026: deeper replacement review
+
+These decisions supersede earlier blanket Julia-first or performance-only language selection. They are planning judgments, not independent software certification.
+
+| Aspect | Ponytail disposition | Concrete reason / gate |
+|---|---|---|
+| Rust > Julia/Mojo > Python > R | **Adopt** | Among scientifically suitable candidates; a new Rust stage needs no speed claim. Keep runtime and oracle separate |
+| Broader candidate register | **Adopt as source review** | [Audit](rust-candidate-audit.md) identifies existing libraries and inspected source revisions; no installation or qualification implied |
+| limma-rust | **First numerical qualification** | Existing port avoids a new one; exact array/design/moderation/FDR/platform checks before use |
+| hpo, ontolius, bedrs/gia | **Use when needed** | Existing ontology/interval operations avoid custom code; annotation and coordinate semantics still matter |
+| petgraph + required algorithm | **Conditional** | rustworkx-core/leiden-rs or alternative graphrs reduce algorithm code; no mandatory bundle or duplicate graphs |
+| SeSAMe2 C exception | **Qualify, do not port** | Existing IDAT CLI; licence, mask/manifest and numerical discrepancies need explicit checks |
+| Cyanea array replacement | **Hold inspected methods** | Source implements materially different moderation/SWAN procedures; use focused candidates |
+| nuts-rs/diffsol/rebop/SDE candidates | **Conditional on actual model** | Reuse numerical components; validate the complete scientific contract, not only a solver call |
+| Array DMR/missMethyl native port | **Defer** | Specific methodological gaps remain; narrow R fallback is smaller than an unvalidated rewrite |
+| Mojo/Enzyme/GPU/new language | **Conditional, no installation** | Mature language features do not supply domain-method equivalence; preserve CPU float64 and pin experimental components |
+| OJRD and SSIEM titles | **Add by manuscript fit** | OJRD for substantive rare-disease work; JIMD Reports for focused metabolic studies; JIMD for stronger relevant contributions. No acceptance odds inferred |
+| New tracks/frameworks/estate-wide rollout | **Unnecessary** | Existing T01–T07, file boundaries and central standards accommodate these refinements |
+
+No upstream messages or PRs, scientific code, dependency installs, data downloads or numerical tests were performed by this review. N0–N3 clinical novelty checks remain separate future analysis gates.
+

@@ -12,7 +12,7 @@ An ontology-linked, public-data rare-disease epigenomics programme, designed to 
 2. [Proposed public datasets](research/datasets.md); every record is **candidate**, not independently qualified.
 3. [Public access, ethics and rights triage](research/source-access-ethics.md), [backend replacement protocol](research/backend-replacement-policy.md), [Analysis priorities and scoring](research/analyses.md), [clinical journal strategy](research/journals.md), [language/data contracts](research/interoperability.md) and [Ponytail decisions](research/ponytail-decisions.md).
 4. [Analysis-specific novelty/prioritisation gates](research/novelty-priority-protocol.md) and [Ponytail language/dependency decisions](research/language-dependency-triage.md) apply **before and after every analysis**; priorities and journal choices may change when new evidence appears.
-5. Rust replacements are managed under [conditional T07](conductor/tracks/t07-backend-qualification/index.md), not a universal plugin framework.
+5. [Rust candidate audit](research/rust-candidate-audit.md): source-reviewed replacements, remaining method gaps and planned qualification. Preference is **Rust > Julia or Mojo > Python > R** among scientifically suitable choices. [Conditional T07](conductor/tracks/t07-backend-qualification/index.md) manages admission; no new framework or analytical implementation.
 6. Follow the [scientific workflow](conductor/workflow.md) before any data is processed or code is written.
 
 ## Repository governance
@@ -28,3 +28,4 @@ An ontology-linked, public-data rare-disease epigenomics programme, designed to 
 Metadata discovery is not patient-level availability. A disease-level HPO association is **not** an observed phenotype in a study participant. Two GEO accessions are not necessarily independent cohorts. Toxin proteomics does not measure the host response. Literature overlap does not establish causal mechanisms. New model complexity must outperform prespecified simple baselines.
 
 **Not yet done in this planning snapshot:** Conductor plugin activation, data-file transfer and checksum verification, participant-level rights/ethics determination, dependency installation, statistical analysis, numerical qualification, hosted checks or any scientific result. GitHub publication and initial submodule check are separate deployment/verification steps, not evidence of activated tooling.
+
