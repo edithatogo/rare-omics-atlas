@@ -2,7 +2,7 @@
 
 ## Objective
 
-Test whether methylation-derived modules predict external gene-expression observations without false sample pairing.
+Test whether expression adds independently supported information to methylation effects or frozen modules, without false sample pairing or unsupported patient-level prediction.
 
 ## Scientific / governance boundary
 
@@ -14,12 +14,16 @@ See [candidate dataset register](../../../research/datasets.md), [analysis matri
 
 ## Publication target
 
-Primary European Journal of Medical Genetics; backup Molecular Syndromology with clinical phenotype relevance.
+This is **E6**, normally an extension or validation component of the combined E4/E5 **P2** study when it answers the same primary question. Follow the [experiment/publication plan](../../../research/experiment-publication-plan.md); T05 does not require a separate paper. A distinct focused metabolic/functional study is considered only if the actual E6/E7 evidence justifies it.
+
+European Journal of Medical Genetics or Molecular Syndromology are candidates for a focused clinical result; use the central [journal strategy](../../../research/journals.md) for P2 or a substantive SSIEM-relevant question. Journal fit does not justify inventing pairing or adding an unsuitable cohort.
 
 ## Exit criteria
 
-- Pairing evidence exists or analysis is labelled disease-level only.
-- Direction/magnitude predictive metrics compared with pathway/simple-expression baselines.
+- Pairing is evidenced through participant/specimen records, or analysis is explicitly disease-level only. Shared disease labels or related accessions do not establish matched participants.
+- Verified paired sets with adequate information use participant/family holdouts and compare methylation-only, expression-only and combined baselines. Three Sotos methylation cases are inadequate for unconstrained individual-level network learning; narrow prespecified corroboration may still be useful.
+- Unpaired cohorts support disease-level directional/biological confirmation, not sample-wise correlation or an assumed patient-level joint model. Freeze genomic mapping/module choices before independent confirmation.
+- Incremental information or a justified validation result beyond already published Sotos/ADNP integration is required for promotion; small real cohorts do not establish general predictive performance.
 - No causal claims without perturbation data.
 
 ## Stop conditions

@@ -14,13 +14,17 @@ See [candidate dataset register](../../../research/datasets.md), [analysis matri
 
 ## Publication target
 
-Primary Molecular Syndromology (Original Research / concise report as permitted); backup European Journal of Medical Genetics.
+This track supplies **E2/E3 to the single default P1 clinical study**, together with T01/E0 source qualification and platform robustness. Follow the [experiment/publication plan](../../../research/experiment-publication-plan.md). Optional E1 technical comparisons and backend qualification are supporting material, not automatic extra papers. E1 is not a routine prerequisite; require it only if an unresolved measurement question makes it necessary for the chosen claim.
+
+Primary Molecular Syndromology (article type checked at N3); backup European Journal of Medical Genetics. A focused T03/E4 comparison may extend the same manuscript. Use the [journal strategy](../../../research/journals.md) if the actual clinical contribution supports a different route; the track does not promise a publication.
 
 ## Exit criteria
 
 - No overlapping participant across discovery and replication cohorts.
+- Discovery features, regions/pathways and evaluation metrics frozen before test effects are inspected; replication uses the held-out cohort's own controls.
 - Effect sizes, multiple-testing rules and caveats preserved; nonsignificance not misreported as absence.
-- At least one new clinically interpretable result beyond existing publications, else no manuscript.
+- A distinct clinically interpretable result, useful failure boundary or independently valuable replication beyond merely repeating known lists; otherwise retain the benchmark without a manuscript.
+- Technical platform agreement distinguished from biological transfer across different participants, recruitment settings and laboratories.
 
 ## Stop conditions
 

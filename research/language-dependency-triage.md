@@ -17,7 +17,7 @@ The [dated candidate audit](rust-candidate-audit.md) records primary sources, ob
 | Stage | Preferred candidate / route | Fallback and unresolved work |
 |---|---|---|
 | Typed tables and joins | Rust Polars with Arrow/Parquet | DataFusion CLI for a SQL-only consumer; retain a simple existing DuckDB query when replacement adds needless work. Choose one engine for a stage |
-| HPO similarity and disease associations | Rust `hpo` | Preserve complete source annotations outside its simplified term sets; compare pinned semantic-similarity results |
+| HPO similarity and disease associations | Rust `hpo`; Semsimian only for a needed richer score | Preserve source annotations. Semsimian supports weighted/negated terms, but its current nonoptional PyO3 needs native-build qualification |
 | General ontology graph loading | Rust `ontolius` if needed | Qualify the exact MONDO release; its documented tested list does not establish MONDO support. Do not add alongside `hpo` without a separate need |
 | Genomic interval operations | Rust `bedrs` or existing `gia` CLI | Coordinate/build/strand tests; `grangers` only if broader annotation functions repay extra dependency and conversion cost |
 | Differential CpG models | **First numerical qualification: `limma-rust`** | Pinned R limma remains oracle and fallback. No raw IDAT preprocessing, DMR or missMethyl substitution is implied |
@@ -30,9 +30,14 @@ The [dated candidate audit](rust-candidate-audit.md) records primary sources, ob
 | Stochastic models | `rebop` for well-mixed reaction jumps; `differential-equations` for a specified SDE | Match the mathematical process and validate distributions/convergence against Julia/analytic references |
 | GPU/tensors | Existing Burn operators first; CubeCL only for a missing kernel | CPU float64 reference. Candle is an alternative if it fits an existing model better. No GPU work solely because hardware is available |
 | Specialist multi-omics | Prefer a qualified Rust/Julia method if it implements the required model | Python `mofapy2` is a legitimate direct interface to MOFA's Python core when that model is needed; generic Rust PCA/NMF is not a MOFA replacement |
-| Mojo | Same preference tier as Julia; **conditional kernel candidate** | Current language/platform support is real, but no complete matching array/statistical workflow was established. Benchmark a specific existing capability before adding a runtime |
+| Ranked gene expression GSEA | Native `rsfgsea` CPU classic mode, if required | Qualify against fgsea; decor is a different scoring/null choice. Neither replaces array probe-bias correction |
+| Mojo | **Removed from active initial stack**; retain future preference tier beside Julia | No selected early experiment requires a unique Mojo capability. Reconsider only for a supported, needed kernel with whole-stage evidence |
 
 Primary sources and version-specific limitations are in the [audit](rust-candidate-audit.md). Arrow IPC/Parquet [file contracts](interoperability.md) and [backend qualification](backend-replacement-policy.md) remain the integration mechanism. Do not add all candidates or a universal plugin framework.
+
+Read the [focused methylation audit](methylation-backend-audit.md) before accepting limma-rust/SeSAMe2: interface correctness and actual exported values matter as much as numerical kernels. Prefer already present faer/statrs functions; evaluate newer releases only against relevant contracts and MSRV/feature costs. Keep specialised stable log tails and R-specific algorithms where no equivalent is demonstrated.
+
+**No mandatory Python runtime:** retain an isolated optional route for mofapy2, a genuinely needed PyMC/nutpie model, or methylprep/methylcheck capabilities. Methylprep already provides Parquet output; don't recreate its exporter. Existing native CLIs take precedence when scientifically equivalent. R remains an isolated oracle and narrow fallback for missing validated domain methods, not an all-purpose orchestrator. Data/Python policy tooling from other repositories is not a reason to embed those runtimes into the atlas core.
 
 ## Review and upstream work
 

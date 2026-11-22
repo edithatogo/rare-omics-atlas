@@ -14,7 +14,7 @@ See [candidate dataset register](../../../research/datasets.md), [analysis matri
 
 ## Publication target
 
-Qualification may be a non-public research-methods appendix; publication only if new clinical-useful evidence emerges.
+E0 qualification supports the bundled clinical paper in the [experiment/publication plan](../../../research/experiment-publication-plan.md); it is not a separate manuscript by default.
 
 ## Exit criteria
 
@@ -23,7 +23,9 @@ Qualification may be a non-public research-methods appendix; publication only if
 - Clearly separate public repository listings from tested file retrieval, confirmed rights/consent, ethics/governance determination and model eligibility.
 - No human-derived analysis admission without the documented source-specific and institutional review requirements in `research/source-access-ethics.md`.
 - Existing `research/source-access-ethics.md` is preliminary **listing-only** evidence, not a completed T01 receipt.
+- Apply phased reference-source admission and the separate hosting/redistribution decision in [resources, hosting and reuse](../../../research/resources-hosting-reuse.md). Reuse qualified existing public snapshot/provenance assets before making duplicate catalogues or downloading every ontology.
 
 ## Stop conditions
 
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+Reassess overlapping publications through N0/N2; retain a documented distinct contribution or justified replication. Hold the affected dataset or analysis if no worthwhile contribution remains, source rights are unclear, validation samples are not independent, inference is not identifiable, or simpler methods make the complexity unnecessary. Recording an exclusion or failed qualification is a useful result of source review, not authority to proceed with analysis.
+

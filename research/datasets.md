@@ -1,6 +1,6 @@
 # Candidate datasets (NOT yet qualified)
 
-Repository-level public status and raw/processed download listings were checked in the [source-access and ethics audit](source-access-ethics.md) on 22 November 2026. Every accession listed in the register is public, but actual file transfer and data-specific permission remain **unverified**. Sample-level evidence and rights review are still required in T01. GEO series counts contain controls, other diagnoses and multiple assays; they are **not** automatically number of affected individuals.
+Repository-level public status and raw/processed download listings for the initial candidates were checked in the [source-access and ethics audit](source-access-ethics.md) on 22 November 2026. Actual file transfer and data-specific permission remain **unverified**. Newly added discovery leads below retain their own source-verification limits. Sample-level evidence and rights review are still required in T01. GEO series counts contain controls, other diagnoses and multiple assays; they are **not** automatically number of affected individuals.
 
 | Disease / material | Public identifier | Source | Planned analysis | Critical gate |
 |---|---|---|---|---|
@@ -19,9 +19,21 @@ Repository-level public status and raw/processed download listings were checked 
 | CHD2 / epilepsy | GSE269416 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE269416 | Generalisation test | Mixed diagnoses; stratification mandatory |
 | C3 glomerulopathy RNA panel | GSE261305 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261305 | Complement disease mapping | Not all individuals genetically confirmed |
 | King cobra venom proteomics | PXD003403 | https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD003403 | Toxin-side complement model | Venom source, not host response or quantitative exposure |
+| Same-specimen technical array reference | GSE86829 / GSE86831, SuperSeries GSE86833 | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE86833 | Optional E1 450K–EPIC paired stress test | Official RnBeads tutorial identifies same specimens; qualify five Guthrie-card pairs, individual GSM/file mapping and rights; not disease controls |
 
 Data register must later include `open_raw`, `open_processed`, `controlled`, `request_only`, `unknown` access classes; third-party reuse permissions; each sample's `role` and provenance; exact archive checksums; and flags for train/test contamination.
+
+The optional technical reference lists a 677.4 MB SuperSeries raw archive. The five paired labels and exact GSM candidates are in the [experiment plan](experiment-publication-plan.md); the supporting primary source is the [official RnBeads cross-platform tutorial](https://www.rnbeads.org/materials/data/tutorial/cross_platform/tutorial.html). This is repository/tutorial evidence, not a completed download or technical validation. Public SeSAMe platform fixtures are separately recorded in the [backend audit](methylation-backend-audit.md); a software fixture is not a clinically independent replication cohort.
+
+Later NSD1/DNMT3A engineered-cell studies (GSE299394 and GSE309381) are **discovery leads only**, not admitted cohorts. Their main contribution and relationship to patient datasets must first be assessed against the prior art in the experiment plan. Do not add them automatically merely because they increase modality count.
+
+### Later Kabuki neural-model layer: RNA and histone ChIP, not DNA arrays
+
+[Cuvertino et al., PLOS Genetics 2025](https://doi.org/10.1371/journal.pgen.1011608) provides a useful E6 discovery lead. The official indexed [GSE289159](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289159) record identifies 23 RNA-seq assay records across iPSC, neuronal-progenitor and cortical-neuron stages, a 5.5 MB processed gene-count file and raw SRA reads. These are not 23 independent participants. The article also lists [GSE289158](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289158) for its data; its companion epigenomic work is H3K4me1 ChIP-seq, but this accession's direct GEO modality/file inventory was not retrieved successfully. Do not mark it download-verified or count it as an additional methylation array study.
+
+The paper already tests histone–expression/enhancer relationships and differentiation effects. Its main ChIP comparison has one affected line and one control line in triplicate. A possible later use is testing frozen blood-derived modules against an independently qualified cell-model layer, with explicit donor, tissue and assay limitations. It is neither matched blood methylation–expression validation nor a perturbation-rescue dataset. No files were downloaded, and neither lead is a P1 prerequisite.
 
 ## Current data/ethics decision
 
 Use the [source-access and ethics register](source-access-ethics.md) as the source of truth for public landing status, concrete archive types, original sizes, no-login rules, separate downstream rights, and institutional ethics/exemption decision gates. **No source has been promoted beyond public repository listing.** The ProteomeXchange record is released but legacy FTP retrieval remains untested. Avoid unqualified republication of rare-disease participant-level molecular data.
+

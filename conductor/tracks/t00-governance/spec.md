@@ -21,7 +21,9 @@ N/A; foundational governance only.
 - The submodule resolves to the pinned verified commit and activation is actually observed.
 - One AGENTS.md authority, one local GEMINI.md adapter, no overwritten owner files.
 - No analysis source files, downloads, fake hosted-check receipts or undocumented credential requirements.
+- Local development/qualification uses the official GitHub Actions runner under [local-development policy](../../../research/local-development.md). Registration and an observed trusted job on the actual machine are required evidence before claiming this is operational; the present documentation does not meet that execution criterion.
 
 ## Stop conditions
 
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+Reassess overlapping publications through N0/N2; retain a documented distinct contribution or justified replication. Hold the affected scientific stage if no worthwhile contribution remains, source rights are unclear, validation samples are not independent, inference is not identifiable, or simpler methods make the complexity unnecessary. Governance documentation can still record the limitation without implying an executed study.
+
