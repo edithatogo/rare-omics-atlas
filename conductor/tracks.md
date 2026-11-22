@@ -13,6 +13,8 @@ Status: **all tracks planned**. Files here are scoped specifications, not delive
 | [T06](tracks/t06-toxin/index.md) | Genetic mechanism × toxin perturbation feasibility | T01, separate experiment gate | planned |
 | [T07](tracks/t07-backend-qualification/index.md) | Conditional Rust backend numerical qualification | T01 + measured unmet requirement | deferred |
 
-Recommended work: T00 → T01 → T02; then T03 and separately T05; T04 after disease-qualified effects; T06 only after quantitative independent data. Avoid parallel write ownership collisions.
+Every analysis is subject to the shared [N0/N1 before, N2 after and N3 submission review](../research/novelty-priority-protocol.md), including literature novelty, new datasets, journal fit, source independence and dependency retain/swap/remove. These gates can reorder, narrow, combine or stop a track without rewriting already frozen analyses.
+
+Recommended **default, not fixed**: T00 → T01 → T02 as reference; T03 or T05 next according to paired data and clinical relevance; T04 after disease-qualified effects; T06 only after quantitative independent data. Avoid parallel write ownership collisions.
 
 T07 is conditional: no automatic library ports or monitoring process; preserve the Julia/R numerical oracle.

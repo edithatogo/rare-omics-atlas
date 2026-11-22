@@ -1,6 +1,6 @@
 # Language-agnostic scientific results and Rust replacement policy
 
-**Ponytail decision: approve a file-level scientific contract, reject a speculative plugin framework.** The project must be able to substitute a qualified Rust command-line backend for an R or Julia stage without rewriting the science or silently changing estimands. This policy is a **design and admission rule only**, not implemented software.
+**Ponytail decision: approve a file-level scientific contract, reject a speculative plugin framework.** At N0/N1 **before** and N2/N3 **after each analysis**, explicitly consider retaining, removing or replacing dependencies; see [language and dependency triage](language-dependency-triage.md) and [novelty gates](novelty-priority-protocol.md). Polars/petgraph are conditional Rust candidates, not mandatory initial dependencies; Python is permitted for a uniquely useful qualified method, Mojo deferred pending a benchmark. The project must be able to substitute a qualified Rust command-line backend for an R or Julia stage without rewriting the science or silently changing estimands. This policy is a **design and admission rule only**, not implemented software.
 
 ## Approach
 

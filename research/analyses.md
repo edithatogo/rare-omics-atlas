@@ -17,6 +17,8 @@ All scores are **provisional subjective design judgements** on scales of 1–5: 
 | K | Complement × cobra venom factor | GSE261305, PXD003403, curated kinetic model | quantitative scenario / identifiability; do not claim genotype interaction yet | 3 | 4 | 2 | T06 |
 | L | Genotype×toxin interaction framework | qualified experimental variant-toxin pairs TBD | held-out functional perturbation predictions | 5 | 5 | 1 | T06 |
 
+**Sequencing policy:** these N/I/F scores do not rank acceptance likelihood. At N0 and N2, apply [novelty/priority gates](novelty-priority-protocol.md): rights/ethics, independence, case/control quality, sample/power, clinical interpretability, external replication, study cost, publication recency, journal audience/APCs and negative transfer. A hard hold overrides an attractive score. T02 is a low-cost reference exercise, not guaranteed publication; T03 and T05 can swap based on matched data and clinical findings. T04 is contingent on validated disease-level estimates and meaningful improvement over simpler models. T06 is independently gated. Do not force a single fixed disease order.
+
 **Main publication priorities:** A is a feasibility/clinical reproducibility test; G+I is the principal potential methods contribution; B/C and E/F require biological insights or predictive validation beyond already published pathway overlap; K/L separately gated.
 
 **No novelty claim without prior art:** Velasco et al. (2021) compared chromatin disorders; Kabuki hypergraph work already used public cohorts; cross-syndrome methylation function and epi-age comparisons exist. Verify against the specific analysis rather than saying 'first'.

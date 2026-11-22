@@ -35,3 +35,12 @@ Any new dependency must answer: (a) which validated requirement cannot be met by
 | Metadata-only source qualification and ethics dossier | **Approve** | Public sources checked; no implied data transfer or approval |
 
 Source: [public access and ethics triage](source-access-ethics.md). Ponytail is an engineering decision discipline, not an autonomous external signatory or a legal/HREC approval body.
+
+## 22 November 2026: scientific priority and dependency refinement
+
+- **Approve** a targeted N0/N1 pre-analysis and N2 post-analysis publication/preprint/dataset novelty check, plus N3 journal submission refresh, recorded in existing Conductor tracks; no always-on search service or extra layer. See [protocol](novelty-priority-protocol.md).
+- **Approve** dynamic study prioritisation by data rights/ethics, molecular confirmation, controls, independence, power, clinical outcome, publication competition, effect on other tracks and journal fit; do not optimise N/I/F alone.
+- **Approve conditionally** Python only for nonduplicative qualified specialist software and Rust Polars for a real large tabular consumer; Rust petgraph for an actual graph algorithm, not an ontology edge table.
+- **Defer** Mojo despite its 2026 1.0 release, pending demonstrable kernel/hardware benefit and scientific parity; do not add every possible language or statistical port.
+- **Prefer** lower-profile clinically appropriate journals (Molecular Syndromology, European Journal of Medical Genetics) over prior higher-profile outlets; reassess at N2/N3, never infer acceptance odds from impact factor.
+- **No estate-wide modifications**: existing `repository-standards` scientific-native profile already requires a minimal core and numerical/resource qualification, and references Ponytail. Propose a central *advisory* update only after reusable evidence appears.
