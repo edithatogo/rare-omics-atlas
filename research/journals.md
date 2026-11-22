@@ -1,0 +1,37 @@
+# Clinical-first journal routing (provisional)
+
+Scope fit is not a measured probability of acceptance. **Do not describe a title as easy to publish in** merely because its impact factor is lower. Verify current article types, indexing, fees, transfers, and editorial policy when the manuscript actually exists.
+
+| Candidate paper | Primary clinical journal | Alternative(s) | Manuscript framing / editorial gate |
+|---|---|---|---|
+| Kabuki cohort/pathway reproducibility | [Molecular Syndromology](https://academic.oup.com/msy/pages/about) | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | Short original study if clinical genotype-specific relevance; weak purely descriptive result may not merit paper |
+| Sotos–Weaver and chromatin comparison | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | [American Journal of Medical Genetics Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html) | Original research emphasizing clinical phenotype and molecular mechanisms |
+| Curated rare-disease methylation atlas | [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/) | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | Only submit if new clinically useful analysis beyond a metadata inventory; otherwise release governed catalogue and DOI as applicable |
+| ADNP / Sotos RNA-methylation validation | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | [Molecular Syndromology](https://academic.oup.com/msy/pages/about) | Clinical molecular subgroup insights / independent transcriptomic prediction |
+| Shared hierarchical model and withheld disease prediction | [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/) | [Molecular Genetics & Genomic Medicine](https://onlinelibrary.wiley.com/page/journal/23249269/homepage/forauthors.html) | Original methods/application paper; demonstrable clinical utility, false-discovery control and withheld cohorts |
+| Strong externally replicated epigenetic mechanism | [Clinical Epigenetics](https://clinicalepigeneticsjournal.biomedcentral.com/) | [American Journal of Medical Genetics Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html) | Stretch option; independent biology and clinical implications required |
+| Complement / venom functional simulation | [Toxicon](https://toxinology.org/toxicon/) | [Toxicon: X](https://www.sciencedirect.com/journal/toxicon-x) | Defined toxin mechanisms with independent quantitative/functional validation; do not submit unvalidated path diagrams |
+| Future human envenomation risk study | [Journal of Medical Toxicology](https://link.springer.com/journal/13181) | [Clinical Toxicology](https://www.tandfonline.com/journals/ictx20) | Real clinical endpoints and externally validated prediction required |
+
+**Helpful 2026 publisher disclosures:** Wiley currently lists about **29%** acceptance for AJMG Part A versus about **9%** for Molecular Genetics & Genomic Medicine. They are not adjusted for article mix or comparable submission populations, but they caution against assuming a lower-impact broadly scoped journal is easier. Check the rates at submission. Source pages: https://onlinelibrary.wiley.com/journal/15524833 and https://onlinelibrary.wiley.com/journal/23249269.
+
+**Specific caution:** Clinical Epigenetics has published requirements for independent biological validation, sufficient power, raw-data access and functional interpretation of reused datasets; not the initial low-friction target. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11682640/.
+
+**Process:** select 1 primary + 1 backup at the start of a study, but lock journal only after results; avoid redundant salami publications. Clinical usefulness beats complexity and journal prestige.
+
+## Verified prior publication experience and journal-fit adjustment
+
+Author publication examples (check exact title and role before submission):
+
+| Prior journal | Example already published | Relevance to rare-omics programme |
+|---|---|---|
+| [European Journal of Human Genetics](https://www.nature.com/articles/s41431-023-01417-6) | Mordaunt et al., *Uptake of funded genomic testing for syndromic and non-syndromic intellectual disability in Australia* (2023) | Familiar clinically oriented genetics outlet; **consider for a clinically interpretable, replicated cross-disease result**, not a bare software benchmark |
+| [Genetics in Medicine](https://www.sciencedirect.com/journal/genetics-in-medicine) | Co-authored genetic testing costing/microcosting publications (2023) | Familiar medical-genetics audience but substantial clinical significance/validation expected; **aspirational** for the strongest clinically meaningful analysis |
+| [BMJ Open](https://bmjopen.bmj.com/) | Mordaunt et al., *Development of a microcosting protocol to determine the economic cost of diagnostic genomic testing for rare diseases in Australia* (2023) | Potential home for a registered research protocol or broadly relevant health-services evaluation; not preferred for a purely computational molecular mechanism |
+| [Value in Health](https://www.valueinhealthjournal.com/article/S1098-3015%2825%2905624-4/fulltext) | Mordaunt et al., *Genomic Testing in Australia: A Budget Impact Analysis Using Diffusion Modeling From a Healthcare System Perspective* (2026) | **Reserve** for a genuine economic/policy evaluation of new genomic diagnostics, not an epigenomic association study |
+| [New Zealand Medical Journal](https://nzmj.org.nz/) | Prior published clinical governance and health-policy articles (2026) | More appropriate for clinically grounded NZ health policy or application; not an obvious primary molecular omics target |
+| [Australian and New Zealand Journal of Psychiatry](https://journals.sagepub.com/home/anp) | Previous medico-legal mental-health publication (2026) | Relevant only if a future study addresses a clinically material psychiatric/neurodevelopmental intervention/outcome, not methodology alone |
+
+Verification examples: https://mspgh.unimelb.edu.au/centres-institutes/centre-for-health-policy/economics-of-genomics-and-precision-medicine/about/staff/archived-staff/dylan-mordaunt ; https://researchnow.flinders.edu.au/en/persons/dylan-mordaunt-2/ . Publication history indicates topic familiarity, **not** preferential editorial treatment or a measured acceptance advantage.
+
+**Revised submission sequence:** Kabuki replication to *Molecular Syndromology* or *European Journal of Medical Genetics*; cross-disease disease/growth phenotype study to *European Journal of Human Genetics* **only if clinically substantive and independently validated**, otherwise *European Journal of Medical Genetics*; methodological atlas to *BMC Medical Genomics* or a data-resource venue; the strongest clinically interpretable transfer study to *European Journal of Human Genetics*, with *Genetics in Medicine* as a higher-threshold option. Check current author instructions, prior-publication risk, open-access fees, jurisdiction and indexing **at submission**.

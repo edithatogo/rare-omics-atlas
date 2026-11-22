@@ -1,0 +1,9 @@
+# Never commit downloaded or processed patient datasets
+/data/raw/
+/data/processed/
+/data/derived/
+/results/
+/.cache/
+/.venv/
+/.Rproj.user/
+/Manifest-local.toml
