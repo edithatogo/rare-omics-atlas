@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "scope": "Prepared one-entry metadata-only estate registration; no remote write and no full raw release claim",
+  "checked_at_utc": "2026-11-22T12:05:30.522372Z",
+  "base": {
+    "repo_id": "edithatogo/dataset-estate-registry",
+    "revision": "f82a1b706e7c55845ffef5dad0a1d4571b2892dd",
+    "catalog_sha256": "75f9d8576fb84afa35d488187a195e4e323ef01ff415c70bbdbf4428d5f1ffab",
+    "schema_sha256": "92220ad58029e4d21ca3fb5e73c8ea8e45576d9b6ff712292ecbf57ed90b3a6f",
+    "private": false
+  },
+  "base_catalogue_rows": 78,
+  "candidate_catalogue_rows": 79,
+  "target_entry_occurrences": 1,
+  "schema_validation": "passed Draft202012Validator with FormatChecker",
+  "canonical_reference_and_duplicate_role_checks": "passed",
+  "unrelated_rows_preserved": 78,
+  "unrelated_row_serialization_sha256": "27ef7f8185c259689fc92649d187f0e36b76bdf6ddcc35a68a34920b63b304fe",
+  "other_top_level_changes": [
+    "generated_at"
+  ],
+  "candidate_sha256": "54a72ce6185f861eceeca0a2d5d6a9de44fc202363488a79d0b99c8795357c64",
+  "candidate_bytes": 43072,
+  "target_entry": {
+    "repo_id": "edithatogo/rare-omics-atlas",
+    "family": "rare-omics",
+    "role": "canonical_dataset",
+    "canonical_repo_id": "edithatogo/rare-omics-atlas",
+    "origin_repository": "https://github.com/edithatogo/rare-omics-atlas",
+    "upstream_source": "Official NCBI/GEO/PRIDE catalogue metadata; GEO archives GSE97362/GSE116300/GSE218186 are linked and verified locally, not mirrored on the Hub",
+    "status": "metadata_catalogue_published_raw_pending",
+    "access": "public",
+    "rights_status": "Allowlisted factual metadata and original project notices; source-specific terms retained; no raw-source redistribution in this publication",
+    "viewer_status": "intentionally_disabled_metadata_release"
+  },
+  "publication_preconditions": [
+    "Final 13-metadata-object plus staging-manifest read-back passes at an immutable atlas Hub revision",
+    "Estate head/base catalogue still match this receipt immediately before update; otherwise rebase the single target entry"
+  ],
+  "post_publication_checks": [
+    "Read catalog.json at the immutable new estate commit and match this candidate SHA-256",
+    "Validate schema, one canonical atlas entry and preservation of unrelated rows",
+    "Keep full atlas T09 open for raw archive transfer and retain the observed UI route in its separate publication receipt"
+  ]
+}

@@ -178,5 +178,81 @@ class GitSourceContracts(unittest.TestCase):
                     publisher.assert_source_checkout(root,manifest_path,manifest,revision)
 
 
+class MetadataVerifierReceiptContract(unittest.TestCase):
+    def test_invalid_revision_cannot_overwrite_inputs_or_follow_symlinks(self):
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from unittest.mock import patch
+        real_root = Path(__file__).resolve().parents[3]
+        helper_relative = Path("research/releases/2026-11-22/hub-staging/verify-metadata.py")
+        helper_bytes = (real_root / helper_relative).read_bytes()
+        publisher_bytes = (real_root / "tools/hf-release/publisher.py").read_bytes()
+        cases = ("source", "staging_manifest", "full_manifest", "helper", "publisher",
+                 "pyproject", "lockfile", "receipt_symlink", "receipt_parent_symlink",
+                 "source_symlink", "publisher_symlink", "publisher_modified", "malformed_manifest", "safe_output")
+        for case in cases:
+            with self.subTest(case=case), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary) / "checkout"
+                helper = root / helper_relative
+                helper.parent.mkdir(parents=True)
+                helper.write_bytes(helper_bytes)
+                tool = root / "tools/hf-release"
+                tool.mkdir(parents=True)
+                (tool / "publisher.py").write_bytes(publisher_bytes)
+                (tool / "pyproject.toml").write_text("tooling sentinel\n")
+                (tool / "uv.lock").write_text("lock sentinel\n")
+                source = root / "source.txt"
+                source.write_text("selected input sentinel\n")
+                staging = helper.parent / "staging-publication-manifest.json"
+                staging.write_text(json.dumps({"objects": [{"source_path": "source.txt"}]}))
+                full = helper.parent.parent / "manifest.json"
+                full.write_text("full manifest sentinel\n")
+                protected = {"source": source, "staging_manifest": staging, "full_manifest": full,
+                             "helper": helper, "publisher": tool / "publisher.py",
+                             "pyproject": tool / "pyproject.toml", "lockfile": tool / "uv.lock"}
+                output = Path(temporary) / "reports/failure.json"
+                marker = Path(temporary) / "unreviewed-module-executed"
+                if case == "receipt_symlink":
+                    output = root / "receipt-alias.json"
+                    output.symlink_to(source)
+                elif case == "receipt_parent_symlink":
+                    alias = root / "receipt-parent"
+                    alias.symlink_to(root, target_is_directory=True)
+                    output = alias / "source.txt"
+                elif case in ("source_symlink", "publisher_symlink"):
+                    selected = source if case == "source_symlink" else tool / "publisher.py"
+                    outside = Path(temporary) / "outside-sentinel"
+                    outside.write_bytes(selected.read_bytes())
+                    selected.unlink()
+                    selected.symlink_to(outside)
+                elif case == "publisher_modified":
+                    (tool / "publisher.py").write_text("from pathlib import Path\nPath(" + repr(str(marker)) + ").write_text('executed')\n")
+                elif case == "malformed_manifest":
+                    staging.write_text('{"source_sentinel":true}\n')
+                    output = staging
+                elif case != "safe_output":
+                    output = protected[case]
+                before = {path: path.read_bytes() for path in protected.values()}
+                links = {path: path.is_symlink() for path in protected.values()}
+                module_spec = importlib.util.spec_from_file_location("metadata_verifier_fixture", helper)
+                module = importlib.util.module_from_spec(module_spec)
+                module_spec.loader.exec_module(module)
+                argv = [str(helper), "--root", str(root), "--hub-revision", "invalid", "--receipt", str(output)]
+                with patch.object(sys, "argv", argv), patch.dict(sys.modules, {"publisher": publisher}), \
+                     patch.object(module, "HfApi") as api, redirect_stdout(StringIO()):
+                    self.assertEqual(module.main(), 1)
+                api.assert_not_called()
+                for path, original in before.items():
+                    self.assertEqual(path.read_bytes(), original)
+                    self.assertEqual(path.is_symlink(), links[path])
+                if case == "safe_output":
+                    self.assertEqual(json.loads(output.read_text())["status"], "verification_failed")
+                elif case in ("source_symlink", "publisher_symlink", "publisher_modified"):
+                    self.assertFalse(output.exists())
+                self.assertFalse(marker.exists())
+                if case == "receipt_symlink":
+                    self.assertTrue(output.is_symlink())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -21,6 +21,7 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [Resources and hosting](../research/resources-hosting-reuse.md)
 - [Official local runners](../research/local-development.md)
 - [Clinical journal routing](../research/journals.md)
+- [Actual Hub metadata publication and remaining raw transfer](../research/qualification/hf-metadata-publication-2026-11-22.md)
 
 ## Execution rule
 
