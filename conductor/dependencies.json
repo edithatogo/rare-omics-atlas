@@ -10,6 +10,22 @@
       "scope": "Pinned source and project context"
     },
     {
+      "id": "T00.strict_code",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "33/33 strict cloud Linux code checks passed on the candidate source digest in research/qualification/strict-ci-2026-11-22.json; hosted/provider, owner-device, licence and scientific acceptance remain separate."
+    },
+    {
+      "id": "T00.hosted_ci",
+      "status": "pending",
+      "requires": [
+        "T00.strict_code"
+      ],
+      "scope": "Observed strict-verification, dependency-review, privacy and Codecov results at the actual submitted commit. Workflow configuration is not a successful run."
+    },
+    {
       "id": "T00.host_integration",
       "status": "not_observed",
       "requires": [
@@ -73,7 +89,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select method/reference and define independent numerical/consumer acceptance"
+      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1."
     },
     {
       "id": "T07.protocol_freeze",

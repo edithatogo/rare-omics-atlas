@@ -36,3 +36,15 @@ The owner requires official GitHub Actions self-hosted runners for local develop
 T00/T01 are **partly complete**, with remaining milestones visible rather than marked passed. Participant independence, final molecular subsets/covariates, reference annotations, institutional research classification and selected-method acceptance must be resolved before disease analysis. Public source permission is not a decision from an institution's ethics office.
 
 Patient files are never committed to Git. The current Hub publication is the [metadata subset](research/releases/2026-11-22/hub-staging/staging-publication-manifest.json); the [full release manifest](research/releases/2026-11-22/manifest.json) still describes a pending three-archive mirror. Bronze presently links upstream originals and local integrity receipts. No clinical association, diagnostic performance, causal mechanism or perturbation efficacy has been estimated. Disease-level HPO annotations are not participant observations, and two accessions are not automatically independent cohorts.
+
+## Strict development verification
+
+Install and run the pinned checks from the repository root before new code changes and after each increment:
+
+```sh
+uv sync --project tools/hf-release --frozen --python 3.15.2
+uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/bootstrap.py
+uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep
+```
+
+See the [CI contract](research/ci-plan.md) for prerequisites, exact scope, receipts and template alignment. Hosted CI and the trusted manual official-device workflow reuse this command. The atlas code licence is unresolved; code checks do not establish Community Standards, scientific or actual-device acceptance.

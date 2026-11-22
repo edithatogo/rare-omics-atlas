@@ -20,6 +20,7 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [Medallion layout](../research/medallion-layout.md)
 - [Resources and hosting](../research/resources-hosting-reuse.md)
 - [Official local runners](../research/local-development.md)
+- [Strict development and CI contract](../research/ci-plan.md)
 - [Clinical journal routing](../research/journals.md)
 - [Actual Hub metadata publication and remaining raw transfer](../research/qualification/hf-metadata-publication-2026-11-22.md)
 

@@ -19,6 +19,28 @@
 - [x] **T01.10a:** Assess per-source and per-artifact HF eligibility in the rights register.
 - [ ] **T01.10b:** When an actual release is selected, complete file-specific notices/disclosure/hosting review. No human-data release has been made.
 
+## Next executable batches
+
+The T01 owner takes these in order, using the [shared execution rule](../../tracks.md#executing-one-ready-batch). Public source reconciliation and synthetic contract implementation can proceed while an institution's analysis determination is outstanding. None of these rows admits a patient cohort by implication.
+
+| Batch / existing tasks | Inputs and action | Output and acceptance |
+|---|---|---|
+| A: T01.01b / .03b, source reconciliation | Start with `research/catalogue/2026-11-22/{datasets,assays,files,requests}.jsonl`, `research/registries/dataset-rights.json`, original source receipts and the three named Kabuki series. Inspect the original GSM/study metadata needed for donor–specimen–assay identity, molecular subset, native controls and available covariates. Preserve exact source references and unknowns; do not derive participants from assay counts or infer private identities. | Local `data/silver/cohort-admission/<analysis-id>/participants.tsv`, `assays.tsv` and `exclusions.tsv`, plus a cleared aggregate receipt in this track. Every selected assay maps to a sourced participant/specimen status; duplicated/reused controls and unresolved cases are explicitly excluded or held. No inference yet. |
+| B: T01.02b / .03b, validate the manifest contract | Freeze required fields and units from batch A before writing code. Reuse `tools/catalogue` only for a small compatible validation boundary; do not expose private source fields through its public output. Add synthetic cases to its existing `tests/contracts.rs` for duplicate assay assignment, unknown participant links, ineligible molecular status and study/role overlap. | A deterministic admitted/excluded/unknown report with source references and no numeric publication-probability score. Run the existing `cargo +1.95.0 test --locked --manifest-path tools/catalogue/Cargo.toml` plus the strict entry point. A negative fixture must fail or remain explicitly held; unknown eligibility may never become admitted. Public fixtures contain invented IDs only. |
+| C: T01.02b / .08b / .09, selected reference assets | Use `research/registries/initial-disease-crosswalk.tsv` and the ontology receipt. Select only the platform/build masks and annotation versions required by T07.02, then retrieve/check their actual bytes and licence. Test ID joins against those versions; keep disease-level HPO separate from observed participant phenotypes. | Source-bound local annotation files under `data/reference-cache/`, hashes and mapping/coverage counts in the admission receipt. Pass on exact selected joins, understood missingness and compatible genome/platform semantics. Optional resources with no consumer stay deferred. |
+| D: T01.05b / .06b, admission | Receive the exact preprocessing/QC contract from T07.02 and the applicable institutional determination. Execute that qualified technical QC on the admitted local inputs, recording command, feature/sample exclusion reasons and input/output hashes. Reserve clinical replication effects as specified at N1. | Local sample/probe QC tables and a cleared admission decision: selected / held / excluded per cohort, with exact remaining reasons. Pass only when molecular subset, independence, estimability, rights, QC and the applicable determination all satisfy the specification. A missing institutional receipt holds disease inference, not metadata work. |
+| E: T01.07b, hand off to T07.02b | Repeat the analysis-specific sources/queries required by `research/novelty-priority-protocol.md`; combine batch A–D evidence with the chosen method contract. | One immutable versioned N1 receipt in the consuming track, naming discovery/replication roles, contrasts, features, covariates, negative controls and decision. This prepares T07 qualification; it does not run T02. |
+
+The validator's exact interface is an implementation output of batch B, not an existing command claimed by this plan. Stop at that bounded feature; no new database, orchestration service, scoring framework or generic model API is needed.
+
+### Catalogue replay or refresh, only when the batch requires it
+
+Run the existing catalogue command from `tools/catalogue/README.md` with `--offline` and an integrity-valid local cache for a replay. For a new source snapshot, choose a **new dated output directory** and use `--refresh`; never overwrite the 2026-11-22 snapshot. Require zero failed records and inspect the summary's series memberships versus distinct assay accessions. Neither value is an independent-participant count. A missing cache is not an offline pass, and catalogue success does not satisfy batch D.
+
+### Blocker ownership
+
+The T01 owner resolves source/identity/annotation questions through the cited records; the institution owns its actual determination; the T07 owner owns the selected numerical/QC contract. Record a hold against only the affected accession or analysis. The optional T09 raw mirror and any unneeded ontology/port are not admission prerequisites.
+
 ## Receiving record
 
 Owner/integrator: ChatGPT with parallel source and literature review under Ponytail. **In progress; initial public intake complete, scientific admission pending.**

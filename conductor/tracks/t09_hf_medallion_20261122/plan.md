@@ -11,3 +11,16 @@
 - [ ] Archive full T09 only after its original full-publication acceptance passes. Metadata-only publication does not satisfy raw mirroring.
 
 Evidence: [publication and remaining task](../../../research/qualification/hf-metadata-publication-2026-11-22.md), [14-object read-back](../../../research/qualification/hf-metadata-publication-2026-11-22.json), [estate read-back](../../../research/qualification/hf-estate-publication-2026-11-22.json). No scientific or official owner-device admission follows from this infrastructure work.
+
+## Remaining executable batch
+
+**Owner:** the trusted runner operator supplies the authenticated execution environment; the T09 implementer owns the manifest verification, read-back and estate receipt. Revisit when that environment is available. Do not buy remote compute or build an alternative uploader to clear this hold.
+
+1. Pin reviewed main and run the strict verification command from [tracks.md](../../tracks.md#executing-one-ready-batch). Confirm `research/releases/2026-11-22/manifest.json`, source URLs, byte counts, SHA-256 and notices against the existing receipts; do not silently change the selected release. Preserve the existing published metadata subset.
+2. In the selected trusted environment, run the existing `publisher.py` default dry-run using `--manifest research/releases/2026-11-22/manifest.json --root . --data-root <explicit-cache-root> --receipt <outside-inputs-dry-run.json>`, through `uv run --project tools/hf-release --frozen --python 3.15.2 python`. If originals are absent, use its existing `--fetch-sources` path. Pass only when all allowlisted inputs match; a download listing or partial transfer is insufficient.
+3. Invoke the existing `publish-hf.yml` manual workflow on reviewed main and the actual registered target. Its publisher receives the exact source revision, uses the official Hub client and guards the parent commit. Retain the job's publication/failure artifact. A failed run with an observed Hub commit must be investigated by immutable read-back before any retry; do not claim that no mutation occurred.
+4. Verify every allowlisted destination and both generated release records at the returned immutable Hub revision. Match sizes and LFS SHA-256 or Git blob IDs as implemented, and retain local SHA-256 provenance. Record the reviewed GitHub SHA, Hub SHA, full object count, source archive outcomes and check command in the new publication receipt. Pass only if all three raw archives and the complete release verify.
+5. Update only the existing canonical estate entry from metadata-only to the observed complete release, preserving unrelated entries. Check the estate schema and read back the new commit. Reconcile notices to what was actually published; do not label biological Silver matrices or Gold analyses as present.
+6. Review the complete release against `spec.md`; only then mark the remaining boxes complete and archive T09 using `conductor/workflow.md`. Leave T00 device/scientific milestones open unless their own evidence independently passes.
+
+The values in angle brackets are environment-specific paths chosen by the operator, not literal runnable arguments. The exact full publisher command is already documented in `tools/hf-release/README.md`; this plan does not introduce a second publication interface.
