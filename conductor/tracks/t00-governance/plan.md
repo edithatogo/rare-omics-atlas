@@ -6,6 +6,7 @@
 - [ ] **T00.04:** Record licence/citation/privacy decisions; create no analytical dependencies or CI gates until actual functionality exists.
 - [ ] **T00.05:** Approve the stage-level scientific contract and no-plugin-rule in `research/backend-replacement-policy.md`; separate future Rust substitution from any new scientific method.
 - [ ] **T00.06:** Record an institutional research ethics/exemption determination route for open rare-disease molecular data; do not mistake public GEO access for an approval.
+- [ ] **T00.07:** Link all analyses to shared N0/N1 before, N2 after and N3 submission novelty/journal/dependency receipts. No duplicate automated searching, new analytics engine or broad central standards edits without reusable evidence.
 
 ## Receiving record
 
