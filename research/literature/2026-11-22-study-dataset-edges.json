@@ -173,6 +173,54 @@
       "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7467214/",
       "metadata_receipt": "2026-11-22-paired-addendum-api-receipts.json",
       "checked_on": "2026-11-22"
+    },
+    {
+      "study_id": "PMID:30678737",
+      "pmid": "30678737",
+      "pmcid": "PMC6346546",
+      "doi": "10.1186/s13148-019-0615-3",
+      "title": "Improved filtering of DNA methylation microarray data by detection p values and its impact on downstream analyses.",
+      "journal": "Clinical Epigenetics",
+      "pubmed_publication_date": "2019 Jan 24",
+      "canonical_publication_date": "2019-01-24",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30678737/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6346546/",
+      "checked_on": "2026-11-23",
+      "metadata_source": "PubMed identity and primary published PMC full text"
+    },
+    {
+      "study_id": "PMID:37409354",
+      "pmid": "37409354",
+      "pmcid": "PMC10327521",
+      "doi": "10.1080/15592294.2023.2230670",
+      "title": "Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package.",
+      "journal": "Epigenetics",
+      "pubmed_publication_date": "2023 Dec",
+      "canonical_publication_date": null,
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37409354/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10327521/",
+      "checked_on": "2026-11-23",
+      "metadata_source": "PubMed identity and primary published PMC full text; issue date not equated to electronic date"
+    },
+    {
+      "study_id": "PMID:39592593",
+      "pmid": "39592593",
+      "pmcid": "PMC11599844",
+      "doi": "10.1038/s41467-024-54711-2",
+      "title": "Developmental hematopoietic stem cell variation explains clonal hematopoiesis later in life.",
+      "journal": "Nature Communications",
+      "pubmed_publication_date": "2024 Nov 26",
+      "canonical_publication_date": "2024-11-26",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39592593/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11599844/",
+      "checked_on": "2026-11-23",
+      "preprint": {
+        "doi": "10.1101/2024.03.02.583106",
+        "pmid": "38496542",
+        "pmcid": "PMC10942294",
+        "date": "2024-03-05"
+      },
+      "metadata_source": "Published version of record; matched preprint is not a second study"
     }
   ],
   "edges": [
@@ -379,6 +427,54 @@
       "evidence_location": "Methods: DNA methylation; Data and code availability; PMC7467214.2 published XML via documented PMC Article Datasets AWS API",
       "checked_on": "2026-11-22",
       "notes": "The article reports 350 E-Risk age-18 blood specimens measured on both arrays and names GSE105018 for its 450K layer. This accession does not establish open download of all paired EPIC raw files. Exact participant overlap with GSE154566 is unresolved; the two reports cannot be counted as independent calibration cohorts."
+    },
+    {
+      "study_id": "PMID:30678737",
+      "doi": "10.1186/s13148-019-0615-3",
+      "dataset_id": "GSE97362",
+      "relation": "reanalysed",
+      "analysis_type": "cross_study_450k_detection_p_value_qc",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6346546/",
+      "evidence_location": "Methods: Data; table of 17 450K source studies and sex counts; Results: Detection of Y-chromosome probes",
+      "checked_on": "2026-11-23",
+      "notes": "GSE97362 explicitly forms one whole-blood source series in the multi-study detection-p-value/QC evaluation (table 145 male and 83 female assay records). It is not independent clinical replication of Kabuki effects; no donor or participant identity/linkage was established."
+    },
+    {
+      "study_id": "PMID:37409354",
+      "doi": "10.1080/15592294.2023.2230670",
+      "dataset_id": "GSE97362",
+      "relation": "comparator",
+      "analysis_type": "rare_epimutation_tool_case_control_example",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10327521/",
+      "evidence_location": "Methods: epimutacionsData demonstration / data package; explicit three cases from GSE97362 and 48 controls from GSE104812",
+      "checked_on": "2026-11-23",
+      "notes": "The published epimutacionsData example includes three case samples from GSE97362 as a demonstration/comparator; this does not establish an independent prospective clinical validation cohort, new Kabuki cases or donor-independent split."
+    },
+    {
+      "study_id": "PMID:39592593",
+      "doi": "10.1038/s41467-024-54711-2",
+      "dataset_id": "GSE154566",
+      "relation": "reanalysed",
+      "analysis_type": "blood_twin_methylation_clonal_hematopoiesis",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11599844/",
+      "evidence_location": "Results: Table 1 Description of datasets; Results following Table 1: extracted methylation profiles; Nature Communications published version",
+      "checked_on": "2026-11-23",
+      "notes": "Age-18 monozygotic twin dataset (116 twin pairs in published Table 1) was reused for a separate hematopoietic clonality question. Same 2024 paper also lists GSE105018; neither within-dataset pairing nor cross-dataset participant overlap is resolved."
+    },
+    {
+      "study_id": "PMID:39592593",
+      "doi": "10.1038/s41467-024-54711-2",
+      "dataset_id": "GSE105018",
+      "relation": "reanalysed",
+      "analysis_type": "blood_twin_methylation_clonal_hematopoiesis",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11599844/",
+      "evidence_location": "Results: Table 1 Description of datasets; Results following Table 1: extracted methylation profiles; Nature Communications published version",
+      "checked_on": "2026-11-23",
+      "notes": "Age-18 twin series (426 monozygotic and 306 dizygotic twin pairs as reported in Table 1) reused for a published clonality analysis. This is not paired-array validation, and joint appearance with GSE154566 does not determine person/family overlap or independent test eligibility."
     }
   ],
   "dataset_relationships": [
@@ -452,5 +548,6 @@
     "Reference-list mention alone",
     "A PubMed exact-accession hit without full-text context",
     "No exact-accession hits"
-  ]
+  ],
+  "last_verified_addendum_on": "2026-11-23"
 }
