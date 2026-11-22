@@ -11,6 +11,8 @@ Status: **22 November 2026 desktop verification of repository listing, not a fil
 
 NCBI states that anybody can access public GEO without login and that files can be downloaded using its repository and FTP. NCBI generally imposes no restriction itself on GEO data use/distribution **but cannot waive source submitters' intellectual-property claims**. Sources: https://www.ncbi.nlm.nih.gov/geo/info/faq.html ; https://www.ncbi.nlm.nih.gov/geo/info/download.html ; https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html . These are repository-wide rules, not individual consent verification.
 
+For Hugging Face hosting, source-specific ontology licences and existing account assets, use [resources, hosting and reuse](resources-hosting-reuse.md). The positive GEO distribution policy is evidence in favour of reuse; do not invent a universal submitter-permission requirement. Conversely, Silver transformation or Gold aggregation is not itself a new licence or a guarantee against disclosure. No dataset has been uploaded or mirrored by this planning review.
+
 ## Accession register: public source listings, **no application for GEO-listed files**
 
 | Accession | Repository-listed public access | Concrete downloadable evidence | Limitation / qualified use |
@@ -55,3 +57,4 @@ A protocol limited to public open-access, previously deposited data; source acce
 ## Admission rule for T01
 
 A dataset can be **discovered_public** on source evidence above. Promote to **download_verified** only after successful retrieval, checksum and file-content inspection. Promote to **research_reuse_eligible** only after source-specific rights/consent and institutional ethics/governance pathway are documented, with any qualifications. Promote to **model_eligible** only after diagnosis, controls, sample independence and relevant QC are established. A missing datum means *unknown*, not approved.
+

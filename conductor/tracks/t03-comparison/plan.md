@@ -1,9 +1,10 @@
 # T03 — task-level execution plan (future, not started)
 
-- [ ] **T03.01:** Start with GSE74432, GSE191276 and qualified Kabuki data; use GSE167230 only with its underlying external source cohorts reconciled.
-- [ ] **T03.02:** Estimate disease-specific region effects and contextual pathways without pooling incompatible case/control batches.
-- [ ] **T03.03:** Use GSE66552 as a separate deletion/duplication directionality comparator.
-- [ ] **T03.04:** Test whether biological overlaps survive region-matched nulls, ontology and cell-composition sensitivity.
+- [ ] **T03.01:** At N0/N1 choose one worthwhile E4 contrast using qualified GSE74432, GSE191276 and Kabuki data. Reconcile external sources behind GSE167230 before any DNMT3A comparison; two new TBRS samples without new native controls do not establish an adequate cohort.
+- [ ] **T03.02:** Estimate disease-specific region effects and uncertainty without pooling incompatible case/control batches. Preserve shared-control covariance and platform coverage; label the three-case Sotos EPIC result corroborative and count pooled parental DNA as one assay.
+- [ ] **T03.03 — conditional:** Add GSE66552 as a deletion/duplication directionality comparator only if it tests the frozen question; it is not a required extra disease or paper.
+- [ ] **T03.04:** Test whether biological overlaps survive region/probe-density matched nulls, ontology and cell-composition sensitivity. Compare actual region/gene drivers, not only shared pathway labels, against the existing Velasco/Levy/Wheeler/Hansknecht literature.
+- [ ] **T03.05:** At N2 choose P1 extension, combined P2 with E5/E6, exploratory supporting material or stop. Require a distinct central contribution before proposing another manuscript; reassess dependencies and complete N3 for the chosen submission route.
 
 ## Receiving record
 
@@ -15,3 +16,4 @@
 - Conductor disposition: **planned**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
+

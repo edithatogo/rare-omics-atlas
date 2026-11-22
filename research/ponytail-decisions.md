@@ -64,5 +64,29 @@ These decisions supersede earlier blanket Julia-first or performance-only langua
 | OJRD and SSIEM titles | **Add by manuscript fit** | OJRD for substantive rare-disease work; JIMD Reports for focused metabolic studies; JIMD for stronger relevant contributions. No acceptance odds inferred |
 | New tracks/frameworks/estate-wide rollout | **Unnecessary** | Existing T01–T07, file boundaries and central standards accommodate these refinements |
 
-No upstream messages or PRs, scientific code, dependency installs, data downloads or numerical tests were performed by this review. N0–N3 clinical novelty checks remain separate future analysis gates.
+No upstream messages or PRs, scientific code, dependency installs, assay downloads or numerical tests were performed by this review. Targeted planning searches inform the documents; complete analysis-specific N0–N3 receipts remain future gates.
+
+## 22 November 2026: source-level audit and bundled study decisions
+
+Apply the following to the current plan. This is Ponytail's engineering review discipline, not independent scientific certification, journal acceptance, permission to host data or ethics approval.
+
+| Aspect | Disposition | Smallest justified action |
+|---|---|---|
+| First paper | **One clinical bundle by default** | E0 qualification + E2 cohort estimates + E3 frozen external replication; E1 technical and backend checks support the paper. Additional capabilities do not imply more manuscripts |
+| Cross-disease, expression and model papers | **Combine conditionally** | E4–E6 extend the first paper or form one coherent later study only when independence, sample size and a distinct question support it; see [experiment plan](experiment-publication-plan.md) |
+| limma-rust source defects | **Hold scientific use pending bounded fixes/qualification** | Strict IDs/unique labels, correctly defined uncertainty, explicit NA/rank policy and a comparison that fails on identifier/NA/p-value discrepancies; use [focused audit](methylation-backend-audit.md) |
+| limma-rust custom numerical routines | **Prefer existing dependencies first** | Evaluate faer thin QR/SVD/eigensolvers and statrs checked functions. Separately qualify newer versions/MSRV; preserve stable tail math and R-specific moderation semantics. Do not assume shorter code is equivalent |
+| SeSAMe2 versus R | **Reuse existing upstream comparison** | Author comparison already exists. Extend only missing public-fixture, platform, mask and actual-export coverage. Qualify C production precision/licence; do not port the pipeline to Rust or claim the first comparison |
+| New Rust candidates | **Conditional** | rsfgsea CPU classic for an actual ranked-expression GSEA stage; Semsimian for needed weighted/negative phenotype evidence; num-dual/ad_trait for a defined gradient. No mandatory package collection |
+| Remaining array-method gaps | **Retain narrow oracle/fallback** | Exact DMR, probe-opportunity enrichment and specialised variance procedures still need method-specific equivalence. A change of language is not justification for an unvalidated substitute |
+| Python / Mojo | **Python optional; Mojo inactive initially** | Preserve real specialist options such as MOFA, PyMC/nutpie and methylprep/methylcheck. No Python orchestrator just for file exchange. Mojo has no necessary initial consumer; keep its preference tier as a watchlist, not an installed runtime |
+| Enzyme through Rust | **Defer to a specified model; not novel alone** | Existing Rust/LLVM AD is prior art. Compare gradient providers under the same model/sampler, with gradient, calibration, posterior and total-cost checks. Usually supporting methods, not a separate paper |
+| 450K + EPIC | **Integrate with explicit estimand** | Same-specimen pairs test platform agreement; independent cohorts test disease-effect transfer. Platform-confounded disease/control designs cannot be repaired by batch correction. Preserve common and platform-specific analyses separately |
+| Hugging Face medallion hosting | **Eligible objects only** | Reuse account registry and qualified reference snapshots. Initially publish source manifests and disclosure-reviewed aggregate outputs; source rights and institutional hosting permission remain object-specific |
+| Additional reference resources | **Incremental** | MONDO/HPO/OMIM IDs + manifests/gene identity initially, Reactome/GO with pathways; other resources need a named consumer and appropriate terms. No universal knowledge-graph build |
+| Hardware and local runners | **Official runner required; activation unverified** | Sanitised mail-confirmed hardware recorded in [local development](local-development.md). Register and observe trusted local jobs when implementation starts; no emulator or hosted-only receipt |
+| Journals | **Clinical question first, realistic scope** | Add paediatric and disease-specific options; BMC Bioinformatics/Bioinformatics Advances for substantive methods. OJRD and SSIEM titles remain fit-dependent, not automatic targets or acceptance claims |
+| Existing account/repo infrastructure | **Reuse selectively** | Preserve Conductor gitlink, central standards and public source provenance. No estate-wide edits, duplicated registries, new templates, extra services or patient-data uploads are needed now |
+
+The source and URL review is dated and bounded. Recheck releases, prior art, journal policies and terms at N0/N1 and N2/N3; do not represent this register as a standing automatic approval for future code or public data release.
 

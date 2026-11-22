@@ -9,6 +9,10 @@ This project is **documentation-only** until the owner authorises a named track 
 - [Local Ponytail decisions](../research/ponytail-decisions.md)
 - [Rust candidate audit and qualification gaps](../research/rust-candidate-audit.md)
 - [Clinical journal routing, including Orphanet and SSIEM](../research/journals.md)
+- [Experiments and publication bundles](../research/experiment-publication-plan.md)
+- [Focused methylation backend audit](../research/methylation-backend-audit.md)
+- [Reference resources, medallion hosting and account reuse](../research/resources-hosting-reuse.md)
+- [Hardware and official local development runners](../research/local-development.md)
 
 ## Planned project phases
 

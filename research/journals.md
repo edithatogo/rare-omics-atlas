@@ -32,6 +32,24 @@ JIMD Reports currently recommends a concise Research Report (2,250 words, up to 
 
 Existing narrower journal sources: [Molecular Syndromology](https://academic.oup.com/msy/pages/about), [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212), [AJMG Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html), [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/), [Toxicon](https://toxinology.org/toxicon/).
 
+## Paediatric, disease-focused and bioinformatics additions
+
+Use the [experiment/publication bundles](experiment-publication-plan.md). The default is one clinically focused P1 study with technical qualification in the supplement; later cross-disease and expression work is combined where it answers the same primary question.
+
+| Journal | Appropriate manuscript | Boundary |
+|---|---|---|
+| [BMC Pediatrics](https://link.springer.com/journal/12887/aims-and-scope) | A meaningful paediatric clinical/diagnostic, congenital or neurodevelopmental question with molecular genetics/pathophysiology evidence | Official scope covers birth to 21 years and scientific validity rather than perceived impact. Child participants alone do not make a software benchmark a clinical paper |
+| [Neuropediatrics](https://connect.thieme.com/en/journals/neuropediatrics) | Neurological phenotype or clinically useful neurodevelopmental interpretation is central | Requires actual relevant clinical content; disease-level HPO labels alone are not neurological outcomes |
+| [European Journal of Paediatric Neurology](https://www.ejpn-journal.com/) | A substantive clinical/experimental paediatric neurology question | Conditional rather than default for generic methylation methods. Detailed author-guidance endpoint was not fully accessible in this review; recheck at N3 |
+| [BMC Bioinformatics](https://link.springer.com/journal/12859/aims-and-scope) | Generalisable computational model, statistical method, software or informative benchmark with biological relevance | Best initial methods venue to assess when the contribution is primarily computational. A port or small wrapper alone is insufficient |
+| [Bioinformatics Advances](https://academic.oup.com/bioinformaticsadvances/pages/about) | Methods, disease/translational bioinformatics, systems biology, ontology work or biological discoveries requiring advanced computation | Alternative methods/application venue; contribution and validation still required |
+
+Molecular Syndromology, EJMG and AJMG Part A remain the most directly aligned disease-focused options for initial chromatinopathy work. OJRD is conditional on broader clinical/translational contribution. JIMD Reports remains the preferred focused SSIEM option, with JIMD reserved for stronger relevant work; do not add an unsuitable metabolic cohort simply to fit either title.
+
+[Clinical Epigenetics' explicit editorial policy](https://link.springer.com/journal/13148/updates/27797032) requires public-data reanalysis to add substantial clinically relevant insight beyond the original analysis, for example independent replication. Work it defines as purely in silico requires wet-lab validation. This is not a blanket wet-lab requirement for every public-data reanalysis, but prevents assuming any pathway-only analysis is suitable. It is not a default target under the owner's preference.
+
+No journal was contacted. Scope fit is a reason to consider a submission, not evidence of easier acceptance. Check article category, APC/waiver or institutional agreement, data policies and current scope again at N3.
+
 ## When to change the target
 
 Use [N0/N1 before analysis, N2 after results, N3 before submission/transfer](novelty-priority-protocol.md). Choose one primary and one backup for the actual manuscript, then reassess intervening studies, contribution, audience, article category, data/ethics policies, fees and overlap with other papers. A competing publication may change a mechanism claim into replication, justify combining analyses, or eliminate a separate paper. Do not revise the frozen protocol after seeing the result or split one modest finding into several manuscripts.

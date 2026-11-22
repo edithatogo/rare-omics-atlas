@@ -14,13 +14,16 @@ An ontology-linked, public-data rare-disease epigenomics programme, designed to 
 4. [Analysis-specific novelty/prioritisation gates](research/novelty-priority-protocol.md) and [Ponytail language/dependency decisions](research/language-dependency-triage.md) apply **before and after every analysis**; priorities and journal choices may change when new evidence appears.
 5. [Rust candidate audit](research/rust-candidate-audit.md): source-reviewed replacements, remaining method gaps and planned qualification. Preference is **Rust > Julia or Mojo > Python > R** among scientifically suitable choices. [Conditional T07](conductor/tracks/t07-backend-qualification/index.md) manages admission; no new framework or analytical implementation.
 6. Follow the [scientific workflow](conductor/workflow.md) before any data is processed or code is written.
+7. Use the [concrete experiments and paper bundles](research/experiment-publication-plan.md): one initial clinical study, with technical work in supporting material; later studies depend on distinct evidence.
+8. Read the [deeper limma-rust/SeSAMe2 audit](research/methylation-backend-audit.md), [reference-resource/Hugging Face reuse decisions](research/resources-hosting-reuse.md), and [verified hardware and official local-runner policy](research/local-development.md).
 
 ## Repository governance
 
 - Central standard: https://github.com/edithatogo/repository-standards (scientific/native and research/data controls); consumer context remains locally authoritative.
-- Gemini Conductor source is recorded as a **pinned Git submodule** at `.agents/plugins/conductor` in the repository's Git tree. Run `git submodule update --init --recursive` from a GitHub-connected working clone. Its bytes were not fetched in this offline planning environment.
+- Gemini Conductor source is recorded as a **pinned Git submodule** at `.agents/plugins/conductor` in the repository's Git tree. Run `git submodule update --init --recursive` from a GitHub-connected working clone. Its bytes were not fetched in this planning workspace.
 - Use shared GitHub community defaults and relevant existing starter files rather than copy competing sets of templates. The `template-solo-data` starter is Python-oriented and is not required for this documentation-first project. Only adopt `template-solo-rust` if a Rust crate is later justified.
 - No mandatory second human reviewer or CODEOWNERS dependency; maintain one writer per path and evidence-based merge gates.
+- Future local development qualification uses the official GitHub Actions self-hosted runner. The policy is recorded; installation/registration and observed runs on the owner's devices remain unverified.
 - Never commit human participant files, restricted data, credentials or large raw assay files. A public GEO page does not establish unrestricted redistributability of derived individual-level material.
 
 ## Scope boundaries

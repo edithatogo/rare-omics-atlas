@@ -7,6 +7,7 @@
 - [ ] **T00.05:** Approve the stage-level scientific contract and no-plugin-rule in `research/backend-replacement-policy.md`; separate future Rust substitution from any new scientific method.
 - [ ] **T00.06:** Record an institutional research ethics/exemption determination route for open rare-disease molecular data; do not mistake public GEO access for an approval.
 - [ ] **T00.07:** Link all analyses to shared N0/N1 before, N2 after and N3 submission novelty/journal/dependency receipts. No duplicate automated searching, new analytics engine or broad central standards edits without reusable evidence.
+- [ ] **T00.08:** When an actual development/qualification job exists, register the official `actions/runner` on the selected Mac or desktop OS and record the exact runner/version/labels and a successful trusted run. Use the [local-development policy](../../../research/local-development.md); never route untrusted public pull requests to personal machines. An emulator or a hosted `ubuntu-latest` run is not evidence of the requested local runner. No empty workflow or runner registration is part of this documentation change.
 
 ## Receiving record
 
@@ -18,3 +19,4 @@
 - Conductor disposition: **planned**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
+

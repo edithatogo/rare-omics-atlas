@@ -17,5 +17,7 @@ Every analysis is subject to the shared [N0/N1 before, N2 after and N3 submissio
 
 Recommended **default, not fixed**: T00 → T01 → T02 as reference; T03 or T05 next according to paired data and clinical relevance; T04 after disease-qualified effects; T06 only after quantitative independent data. Avoid parallel write ownership collisions.
 
+Tracks are work packages, **not paper allocations**. The [experiment/publication plan](../research/experiment-publication-plan.md) defaults to one E0+E2+E3 clinical paper, with technical/backend qualification in supporting materials. E4–E6 can extend that paper or form one later coherent study when justified; no target number of papers is imposed.
+
 T07 is conditional: no automatic ports or monitoring process. Prefer existing Rust tools under the language hierarchy, retain independent numerical oracles, and use the dated audit to distinguish validation work from missing methods. Qualified C exceptions such as SeSAMe2 can share the same admission process.
 
