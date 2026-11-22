@@ -1,25 +1,47 @@
 # Deeper methylation backend audit — 22 November 2026
 
-## Scope and conclusion
+## Scope, current candidate and conclusion
 
-Read-only source and documentation review under Ponytail full. No package was installed, compiled, executed, benchmarked or scientifically qualified. No patient arrays were downloaded. No upstream issue, PR, message or code change was made; this document records the source review. Source-derived failure mechanisms below are **audit findings to reproduce**, not results of executed tests.
+**Identity correction:** the owner's [edithatogo/limma-rust](https://github.com/edithatogo/limma-rust) is the **MassDynamics-derived `limma-core`** at audited base `ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa`. The earlier `sinmojito/limma-rust` review describes a different implementation. Sections 1–2 and the dependency-version addendum retain that historical source evidence; they are not this fork's defect list or installed dependency inventory.
 
-Continue qualifying **existing limma-rust**, with a narrow contract and several concrete upstream corrections before cohort execution. Consider **SeSAMe2's existing C CLI** before any Rust IDAT/preprocessing rewrite. Its R comparisons already exist and should be reused; qualification still must cover public input bytes, annotation versions and the actual production export. Keep independent R references. Do not build a backend framework, a general statistical library or a new array pipeline.
+**Actual initial result:** `cargo +1.95.0 test --locked` passed **104 tests**, with none failed or ignored, in the cloud Linux workspace against committed mixed synthetic/proteomics references. [The receipt](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/cloud-corpus-replay-2026-11-22.json) binds the log, source/test and fixture digests, compiler and limitations. Fresh independent R generation, the named methylation consumer and official user-device runner acceptance remain separate pending gates. The historical upstream report is not relabelled as this run.
 
-This report extends the [candidate audit](rust-candidate-audit.md), particularly correcting any impression that SeSAMe2 has no R comparisons or that all its test samples are inherently private.
+The broader candidate review was source/documentation inspection. Source-derived defects in the historical implementation and the IDAT-reader candidate are findings to reproduce, not executed failures. No SeSAMe2/reader numerical validation or clinical disease analysis is claimed by this audit. Public-source intake and ethics/redistribution decisions have their own records.
+
+Qualify the current fork's bounded interface and reference evidence; consider **SeSAMe2's existing C CLI** before a Rust preprocessing rewrite. Its R comparisons already exist, but actual production export, public bytes, annotation/mask versions and permitted use still need qualification. [T07](../conductor/tracks/t07-backend-qualification/spec.md) qualifies the selected method before the consuming analysis. Optional ports do not block a qualified reference route; see [the Rust port roadmap](rust-port-roadmap.md).
+
+## Current MassDynamics-derived fork: evidence and remaining work
+
+The [current fork source audit](https://github.com/edithatogo/limma-rust/blob/main/conductor/evidence/source-audit-2026-11-22.md) is authoritative for its implementation. Preserve GPL-3.0-or-later and R-source attribution.
+
+| Area | Observed in the current fork | Required next step |
+|---|---|---|
+| Input interface | Numeric column-major slices; no production CSV parser/CLI | Define the named consumer's sample/feature/design/contrast IDs and order; strengthen existing fixture identity checks |
+| Uncertainty | No `lfcSE` field; CI helper uses `sqrt(s2_post) * stdev_unscaled` | Export actual ordinary/moderated SE from existing components only if needed; retain explicit effect units |
+| Missingness/rank | Per-feature retained-observation refits use LINPACK rank/pivot and residual df | Verify supported missingness/estimability and invalid-input cases against the independent oracle |
+| Sorting/comparison | NaN-aware ordering; p/F p-values, BH, CI and nonfinite mismatch gates already exist | Reuse the harness; add only missing contracts and a self-contained independent R recipe |
+| Runtime dependencies | thiserror; CSV/Serde are test dependencies; no faer/statrs | Any numerical-library adoption is new and conditional, not an upgrade of an existing fork dependency |
+| Existing evidence | 104-test cloud debug replay of committed references | Fresh R, methylation consumer and actual official local-runner evidence before admission |
+
+Follow [LM01](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm01_baseline_20261122/spec.md) for reproducible baseline/oracle and device prerequisites, [LM02](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm02_consumer_20261122/spec.md) for the narrow consumer contract and [LM03](https://github.com/edithatogo/limma-rust/blob/main/conductor/tracks/lm03_methylation_20261122/spec.md) for methylation admission. The scalar generation script depends on an external full corpus, the matrix recipe is not self-contained, and the block recipe names a local R image. Fix the smallest missing reproducibility path rather than rebuilding the test framework.
+
+Retain R LINPACK's limited-pivot, rank and non-estimable coefficient behaviour. A generic QR can preserve fitted values while changing coefficient interpretation; a library replacement needs all affected caller checks. Do not assume weighted fitting, voom, TREAT, camera or full R package coverage. Camera was removed from README/Cargo claims because no implementation was found; no scientific method was changed.
 
 ### Source snapshots
 
 | Repository | Inspected source |
 |---|---|
-| sinmojito/limma-rust | `c569f87a1b5aa97f3499255bee7a1a8b45e200fa`; HEAD rechecked; Cargo 0.1.0; GPL-3.0-or-later |
+| edithatogo/limma-rust, parent MassDynamics/limma-rust — current candidate | `ba41fb6bbf6e3f2524bd44f5be017c827d5c4aaa`; limma-core 0.1.0; GPL-3.0-or-later; initial replay receipt above |
+| sinmojito/limma-rust — historical alternative | `c569f87a1b5aa97f3499255bee7a1a8b45e200fa`; Cargo 0.1.0; GPL-3.0-or-later; source-only findings below |
 | zhou-lab/sesame | `f6713747181764e0b7a97b64c3c0d52ab9d82703`; HEAD rechecked; academic/nonprofit research terms plus BSD-2 conditions; commercial use/transfers by inquiry |
-| statrs-dev/statrs | tagged `v0.18.0` sources, matching limma-rust dependency |
-| faer | official docs for **0.24.0**, matching checked-in limma-rust Cargo.lock; do not silently substitute latest 0.24.4 |
+| statrs-dev/statrs | tagged `v0.18.0`, matching the historical sinmojito dependency; absent from the owner's fork |
+| faer | official docs for **0.24.0**, matching the historical sinmojito lock; absent from the owner's fork |
 | vigna/CDFLIB-rs | `98476cddbd07ed33a61f5471678f2938674ee167`; Cargo 0.4.4, MIT |
 | tla-org/rmathlib | `aa3152b3324e57fc95850289e23af8841145155f`; Cargo 1.1.0, GPL-2.0-or-later; excluded below |
 
-## 1. limma-rust: specific issues before scientific use
+## 1. Historical sinmojito audit: source findings at c569f87
+
+**Scope of this entire section:** `sinmojito/limma-rust` at the pinned revision, not the owner's MassDynamics-derived fork. The suggested repairs below are conditional recommendations for that historical alternative. They were not reproduced as runtime failures or added to the current fork's task list.
 
 ### A. Input matching and numeric parsing
 
@@ -28,9 +50,9 @@ The shared [I/O module](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5
 - `align_design` and `align_contrasts` use label matching when all requested labels exist, but silently accept positional matching if names do not match and dimensions happen to match. A sample typo plus a reordered design could therefore attach the wrong case/control covariates. A HashMap also overwrites duplicate source row IDs.
 - `parse_cell` maps any unparseable numeric token to NaN, as well as intentional missing tokens. Invalid UTF-8 IDs are converted lossily. Corrupted input may therefore become missing data or altered identifiers rather than an error.
 
-Smallest correction: validate uniqueness and exact required ID membership using the Rust standard library; fail clearly on mismatches; make any positional mode explicit. Reuse the existing `csv` and `anyhow` dependencies for row/column errors. Accept only declared missing tokens and reject malformed numeric text/nonfinite designs. No new validation framework.
+For that implementation, the smallest correction would validate uniqueness and exact required ID membership using the Rust standard library; fail clearly on mismatches; make any positional mode explicit. Reuse the existing `csv` and `anyhow` dependencies for row/column errors. Accept only declared missing tokens and reject malformed numeric text/nonfinite designs. No new validation framework.
 
-Reference fixtures should include reordered correct labels, mismatched equal-length labels, duplicates, missing/unexpected names and malformed values. The current project may enforce the contract before invocation, but shared upstream fixes protect all callers.
+Reference fixtures should include reordered correct labels, mismatched equal-length labels, duplicates, missing/unexpected names and malformed values. A consumer of that historical implementation could enforce the contract before invocation; a verified shared fix would protect its other callers.
 
 ### B. Effect standard errors and NaN-aware inference
 
@@ -59,7 +81,7 @@ The [upstream dump comparator](https://github.com/sinmojito/limma-rust/blob/c569
 - excludes p-value and F-p-value columns from pass/fail;
 - can ignore one-sided NaN/NA differences because its final comparisons use `na.rm=TRUE`.
 
-Reuse its reference generation/dump interface but strengthen the existing comparator: exact key sets, duplicate detection, exact missingness/status, distribution-tail checks and downstream BH decisions. A reported upstream PASS is not our qualification.
+For that implementation, reuse its reference generation/dump interface but strengthen the comparator: exact key sets, duplicate detection, exact missingness/status, distribution-tail checks and downstream BH decisions. A reported upstream PASS is not our qualification.
 
 The [CLI test](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/tests/cli.rs) checks the CLI against the same library, useful for wiring but not an independent statistical oracle; it does not check lfcSE. [CI](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/.github/workflows/ci.yml) runs Windows and stored reference values for default/no-default features. Add only the required Apple ARM64/x86 platform evidence and fresh independent R fixture regeneration, not a new test framework.
 
@@ -67,9 +89,11 @@ The [CLI test](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499
 
 [CLI source](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/src/bin/limma.rs) invokes unweighted lmFit and exposes contrasts, robust/trend and TREAT. It does not expose all weighted/block-correlation library functionality. With multiple coefficients and no explicit coefficient, the default can be an overall F test. Freeze a named disease contrast; do not let defaults choose the scientific question.
 
-Start with this CLI only if the frozen design fits its supported contract. Add a small upstream flag for a specifically required library function before writing another executable. Its timing excludes input/output and some surrounding stages; do not present it as whole-workflow speed.
+For a future consumer selecting the sinmojito CLI, use it only if the frozen design fits its supported contract; a small upstream flag could expose a required existing function before creating another executable. This is not the current fork route. Its timing excludes input/output and some surrounding stages; do not present it as whole-workflow speed.
 
-## 2. Exact reuse opportunities, and where simplification would alter behavior
+## 2. Historical sinmojito reuse opportunities
+
+**Scope:** the following dependency and internal-code observations apply to the same historical sinmojito revision. The MassDynamics-derived fork does not contain these dependencies. General numerical cautions remain useful, but any proposed new dependency in the actual fork needs its own LM04 decision.
 
 [Cargofile](https://github.com/sinmojito/limma-rust/blob/c569f87a1b5aa97f3499255bee7a1a8b45e200fa/Cargo.toml) already uses ndarray, statrs, anyhow, optional csv/clap/rayon and optional faer. Default faer is enabled only for per-probe solves, without faer's own rayon. Preserve that deliberate avoidance of nested thread pools.
 
@@ -97,7 +121,7 @@ The [Nelder–Mead port](https://github.com/sinmojito/limma-rust/blob/c569f87a1b
 
 ### Additional Rust numerical candidates
 
-**CDFLIB-rs/cdflib 0.4.4 (MIT)** is worth an optional focused comparison if existing special functions fail a relevant boundary. It supplies paired lower/upper tails, incomplete gamma/beta and distribution APIs, with committed Fortran-generated reference fixtures and an Apple-silicon regeneration CI lane. Its ordinary CDF interface is not a universal log-probability interface; inverse/search tolerances differ from exact R conventions. Do not auto-add it or replace all statrs. Primary [README](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/README.md), [traits](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/src/traits.rs), [CI](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/.github/workflows/ci.yml). Upstream reported accuracy, not independently rerun.
+**CDFLIB-rs/cdflib 0.4.4 (MIT)** is worth an optional focused comparison if existing special functions fail a relevant boundary. It supplies paired lower/upper tails, incomplete gamma/beta and distribution APIs, with committed Fortran-generated reference fixtures and an Apple-silicon regeneration CI lane. Its ordinary CDF interface is not a universal log-probability interface; inverse/search tolerances differ from exact R conventions. Do not auto-add it or replace the historical implementation's statrs wholesale. Primary [README](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/README.md), [traits](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/src/traits.rs), [CI](https://github.com/vigna/CDFLIB-rs/blob/98476cddbd07ed33a61f5471678f2938674ee167/.github/workflows/ci.yml). Upstream reported accuracy, not independently rerun.
 
 **Do not adopt rmathlib 1.1.0.** Although it exposes R-style tail/log-probability functions, [issue 38](https://github.com/tla-org/rmathlib/issues/38) reports materially invalid pgamma probabilities and the maintainer says the project was abandoned. Closed issue is not evidence of a numerical fix: inspected HEAD remains 1.1.0. This is different from `r_mathlib`, a C-backed interface. We did not reproduce the report.
 
@@ -127,7 +151,7 @@ The checked-in [truth provenance](https://github.com/zhou-lab/sesame/blob/f67137
 | EPICv2 VCF `206909630042_R08C01` | Same GSE228820, GSM7139626 GM12878 replicate1 | Same limitation; VCF particularly sensitive to de-identification |
 | MSA `207760740030_R01C03` | [GSM8265587](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8265587), GSE264438, NA12878 DNA, paired IDATs listed | GEO explicitly says IDATs de-identified to mask SNP readings; cannot assume identical lab bytes |
 
-Public-index evidence establishes available candidate inputs, not a completed access/rights/ethics check or permission to infer identity. Public downloads require no access application in those records; no files were fetched here. Some direct sample-page opens hit temporary NCBI access errors, while primary indexed sample/series records supplied the mappings. Use exact downloaded checksums when execution is authorized.
+Public-index evidence establishes candidate inputs, not a completed access/rights/ethics check or permission to infer identity. This original source-mapping step did not retrieve the golden files; subsequent intake evidence belongs in its own receipt. The exact released bytes still need to be matched to the comparison inputs, including de-identification. Some direct sample-page opens hit temporary NCBI access errors, while primary indexed records supplied the mappings.
 
 [Public CI](https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/.github/workflows/conda-build.yml) explicitly lacks the external IDAT directory, populated store and R oracle, so real-IDAT comparisons skip. That does **not** mean all sample identities are private or that CI performs zero numerical checks. [Synthetic HM27 integration](https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/tests/run_hm27.py) runs offline from generated IDATs and a small store and is included in make test. It explicitly is not an R numerical comparison.
 
@@ -149,26 +173,25 @@ Extending Cyanea's Rust IDAT reader would still leave manifest/channel semantics
 
 ### Bounded Python alternative check
 
-[FoxoTech/methylprep](https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/README.md), current HEAD `eb1d2dab0681734dff09cdc8aa63ca0a097a54e1`, is a real MIT Python CLI/API for IDAT, noob, pOOBAH, dye correction, masking and beta/M outputs. [methylcheck](https://github.com/FoxoTech/methylcheck) supplies processed-data QC, reports and plots. These can remove custom work when a needed capability is absent elsewhere. However, methylprep's documented R benchmark versions are old (sesame1.10.4/minfi1.38), and its [release history](https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/docs/release-history.md) records historical intermediate-step disagreement and only within-1% beta agreement in v1.5.0/1.5.1. That history is not a measurement of current parity. It also contradicts the README's 27K claim: support was removed in v1.5.6. v1.7.0 adds Parquet output, useful for the agreed interchange without a custom exporter. For a current same-method QCDPB route, first qualify SeSAMe2/R SeSAMe with pinned current annotations; retain methylprep as a named alternative if licences, platform support or output needs make it preferable. No case for mandatory Python orchestration, Mojo kernels or rewriting these packages. This was documentation inspection, not a Python numerical audit.
+[FoxoTech/methylprep](https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/README.md), current HEAD `eb1d2dab0681734dff09cdc8aa63ca0a097a54e1`, is a real MIT Python CLI/API for IDAT, noob, pOOBAH, dye correction, masking and beta/M outputs. [methylcheck](https://github.com/FoxoTech/methylcheck) supplies processed-data QC, reports and plots. These can remove custom work when a needed capability is absent elsewhere. However, methylprep's documented R benchmark versions are old (sesame1.10.4/minfi1.38), and its [release history](https://github.com/FoxoTech/methylprep/blob/eb1d2dab0681734dff09cdc8aa63ca0a097a54e1/docs/release-history.md) records historical intermediate-step disagreement and only within-1% beta agreement in v1.5.0/1.5.1. That history is not a measurement of current parity. It also contradicts the README's 27K claim: support was removed in v1.5.6. v1.7.0 adds Parquet output, useful for the agreed interchange without a custom exporter. For a current same-method QCDPB route, first qualify SeSAMe2/R SeSAMe with pinned current annotations; retain methylprep as a named alternative if licences, platform support or output needs make it preferable. No case for mandatory Python orchestration or rewriting these packages. This was documentation inspection, not a Python numerical audit.
 
-### Qualification steps
+### Current qualification sequence
 
-1. **Interface first:** strict IDs/missing tokens; effect units and correct uncertainty; named contrast; finite/rank contract; safe missingness in BH and output. Reproduce tiny failure fixtures and contribute minimal shared upstream fixes if subsequently authorized.
-2. **Independent comparator:** extend existing scripts to fail on key/status/missingness differences, gate p tails and FDR, preserve complete tested universe. Separate input/export rounding from compute differences.
-3. **Numerical internals:** try already included faer only where it removes handwritten work and improves a demonstrated hazard. Benchmark only afterward. Keep method-specific robust/log-tail behavior unless a proven equivalent replaces it.
-4. **Public assay replay:** admit suitable public 450K/EPIC fixtures and cohorts through T01, freeze files/manifests/masks/reference versions. Compare raw decoding, per-step QC and betas, actual production exports, then a fixed M-value differential model. Reuse exact public core SeSAMe samples where bytes can be matched; do not treat the whole lab directory as reproduced.
-5. **Cohort/consumer checks:** T02 eligible Kabuki datasets such as GSE97362/GSE116300/GSE218186 only after cohort/rights admission. Compare coefficients, ordinary/moderated SE as chosen, variance components, df, t/F, log-tail probabilities, BH and threshold-adjacent decisions. Independent participants are biological replication; same-input engine comparisons answer a different question.
-6. **Hardware and promotion:** actual M1 Max and specified x86 OS/hardware, float64 CPU reference, matched threads, whole-stage memory/time and failure behavior. No speed claim from source size or upstream microbenchmarks.
-7. **Stop at the needed subset:** no entire limma/Cyanea rewrite, no compulsory CDFLIB dependency, no blanket log-tail simplification. If a bounded candidate fails scientific qualification, retain the known reference stage and proceed with the clinical study.
+1. **Select the actual method and source:** T07 admission must precede the consuming analysis. Start with the current fork's recorded baseline and a bounded independent R recipe; public/synthetic baseline work can proceed alongside T01. Keep optional ports separate.
+2. **Consumer interface:** define exact IDs/order, contrast, missingness/finite inputs, effect units and actual SE. Reuse the current numeric core and fixture machinery; reproduce a demonstrated gap before changing it. Do not import the historical parser/SE/rank defects.
+3. **Independent reference:** the current comparator already checks p/F p-values, BH, CIs and nonfinite mismatch. Preserve those gates and the full intended feature universe; make the selected R recipe reproducible. Separate export rounding from compute differences.
+4. **Numerical internals, only if justified:** the current fork has no faer/statrs. A new library needs an observed maintenance or resource need, exact provenance/cost and all-caller agreement, including R LINPACK semantics. Keep specialised tails/robust estimation; no blanket rewrite.
+5. **Public assay and cohort admission:** after T01, freeze eligible inputs, masks/manifests, design and reference. For inference compare a fixed processed M matrix from an admitted Kabuki cohort; compare coefficients, actual SE, variance/df, t/F, p/FDR and decisions. Independent participants address biological replication, not backend conformance.
+6. **Optional preprocessing comparison:** if SeSAMe2 is selected, separately qualify raw decoding, per-step QC/betas and the production export. Reuse exact public author fixtures where bytes match; do not claim the whole external lab directory was reproduced. The reference preprocessing path need not wait for this optional alternative.
+7. **Actual devices and promotion:** obtain official local-runner evidence on required targets, with float64 reference, resource/deployment evidence and failure handling. Cloud replay and purchase specifications do not establish those runs. Admit only the supported contract; retain a qualified reference route when a candidate is held.
 
 Preserve **global** eBayes moderation and the intended multiple-testing family across storage chunks. Neither dataset expansion nor Parquet partitions justify independent per-chunk priors/FDR. Separate software-validation claims from biological novelty, and retain existing N0–N3 publication checks.
 
-## Addendum: focused statrs/faer version check
+## Historical addendum: sinmojito statrs/faer version check
 
-The reuse table intentionally describes the dependencies locked by the inspected limma-rust revision. Newer releases warrant a **controlled comparison**, not automatic version selection merely because another candidate such as rsfgsea uses them.
+This addendum concerns the dependencies locked by **sinmojito/limma-rust c569f87**, not the current MassDynamics-derived fork. The latter contains neither package; adding one would be a new dependency. These historical release-source observations are retained as candidate evidence, not current-fork upgrade instructions. Any comparison must be controlled rather than selected because another project uses a release.
 
-- **statrs 0.19.0/0.19.1:** the tagged [changelog](https://github.com/statrs-dev/statrs/blob/v0.19.1/CHANGELOG.md) adds non-panicking inverse-CDF access, safeguards Gamma inverse quantiles for shape below one, and records later distribution-boundary, tiny-x Beta survival and NaN order-statistic fixes. The [Gamma source](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/distribution/gamma.rs) uses bracketed Newton/bisection; [ChiSquared](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/distribution/chi_squared.rs) delegates inverse CDF to Gamma, so this is relevant to low-df quantile fixtures. However, [Cargo](https://github.com/statrs-dev/statrs/blob/v0.19.1/Cargo.toml) requires Rust1.89, above limma-rust's declared1.85, and changes edition/dependency versions. The inspected [gamma API](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/function/gamma.rs) still does not supply trigamma/tetragamma or log-regularized incomplete gamma. Its fixes do not repair limma's own NaN/BH sorting, input matching or SE field. Qualify only used functions and feature sets, preserve tail/NA contracts, and document toolchain changes before any future upgrade.
+- **statrs 0.19.0/0.19.1:** the tagged [changelog](https://github.com/statrs-dev/statrs/blob/v0.19.1/CHANGELOG.md) adds non-panicking inverse-CDF access, safeguards Gamma inverse quantiles for shape below one, and records later distribution-boundary, tiny-x Beta survival and NaN order-statistic fixes. The [Gamma source](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/distribution/gamma.rs) uses bracketed Newton/bisection; [ChiSquared](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/distribution/chi_squared.rs) delegates inverse CDF to Gamma, so this is relevant to low-df quantile fixtures. However, [Cargo](https://github.com/statrs-dev/statrs/blob/v0.19.1/Cargo.toml) requires Rust1.89, above the historical sinmojito package's declared1.85, and changes edition/dependency versions. The inspected [gamma API](https://github.com/statrs-dev/statrs/blob/v0.19.1/src/function/gamma.rs) still does not supply trigamma/tetragamma or log-regularized incomplete gamma. Those dependency fixes would not repair the historical sinmojito implementation's own NaN/BH sorting, input matching or SE field; those defects are not assigned to the current fork. Qualify only used functions and feature sets, preserve tail/NA contracts, and document toolchain changes before any future upgrade.
 - **faer 0.24.0 to 0.24.4:** [release-source Cargo](https://github.com/sarah-quinones/faer-rs/blob/0539947ffb757a739d7e703a7d2fa0c792a909c1/faer/Cargo.toml) identifies0.24.4. Intervening [commit645768f](https://github.com/sarah-quinones/faer-rs/commit/645768f3f2b62f3c822ff8151aaa8900b07ff197) changes unpivoted QR rank-revealing behavior and Jacobi transpose/adjoint conventions. This is a concrete reason to compare supported full-rank, nearly singular and degenerate fixtures before choosing the execution pin. It does not establish improved cohort outcomes, speed or automatic R rank equivalence; the commit also relaxes rank-test expectations. The repository's main-branch changelog additionally contains later strided-view/iterative-solver fixes; do not claim those are in0.24.4. The current upstream source location is [Codeberg](https://codeberg.org/sarah-quinones/faer), with the inspected GitHub mirror providing commit evidence.
 
 No numerical comparison or dependency update was performed for this addendum.
-

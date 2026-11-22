@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0",
+  "retrieved_on": "2026-11-22",
+  "scope": "Targeted seed studies and explicit study\u2013dataset\u2013analysis relationships. Generated vs reused are not inferred from citations.",
+  "studies": [
+    {
+      "study_id": "PMID:27717381",
+      "pmid": "27717381",
+      "pmcid": "PMC5055731",
+      "doi": "10.1186/s13059-016-1066-1",
+      "title": "Critical evaluation of the Illumina MethylationEPIC BeadChip microarray for whole-genome DNA methylation profiling.",
+      "journal": "Genome biology",
+      "pubmed_publication_date": "2016 Oct 07",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/27717381/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5055731/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:28392843",
+      "pmid": "28392843",
+      "pmcid": "PMC5379646",
+      "doi": "10.1186/s13148-017-0333-7",
+      "title": "Validation of the MethylationEPIC BeadChip for fresh-frozen and formalin-fixed paraffin-embedded tumours.",
+      "journal": "Clinical epigenetics",
+      "pubmed_publication_date": "2017",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28392843/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5379646/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:31833794",
+      "pmid": "31833794",
+      "pmcid": "PMC7574380",
+      "doi": "10.1080/15592294.2019.1700003",
+      "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage.",
+      "journal": "Epigenetics",
+      "pubmed_publication_date": "2020",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31833794/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7574380/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:28809127",
+      "pmid": "28809127",
+      "pmcid": "PMC5967357",
+      "doi": "10.2217/epi-2017-0078",
+      "title": "The correlation of methylation levels measured using Illumina 450K and EPIC BeadChips in blood samples.",
+      "journal": "Epigenomics",
+      "pubmed_publication_date": "2017 Nov",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28809127/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5967357/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:30044683",
+      "pmid": "30044683",
+      "pmcid": "PMC6140901",
+      "doi": "10.1080/15592294.2018.1497386",
+      "title": "Comparison of DNA methylation measured by Illumina 450K and EPIC BeadChips in blood of newborns and 14-year-old children.",
+      "journal": "Epigenetics",
+      "pubmed_publication_date": "2018",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30044683/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6140901/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:31250700",
+      "pmid": "31250700",
+      "pmcid": "PMC6791701",
+      "doi": "10.1080/15592294.2019.1634975",
+      "title": "Comparison of Illumina 450K and EPIC arrays in placental DNA methylation.",
+      "journal": "Epigenetics",
+      "pubmed_publication_date": "2019 Dec",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31250700/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6791701/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:39578866",
+      "pmid": "39578866",
+      "pmcid": "PMC11583407",
+      "doi": "10.1186/s13148-024-01761-4",
+      "title": "Technical variability across the 450K, EPICv1, and EPICv2 DNA methylation arrays: lessons learned for clinical and longitudinal studies.",
+      "journal": "Clinical epigenetics",
+      "pubmed_publication_date": "2024 Nov 22",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39578866/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11583407/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:28035024",
+      "pmid": "28035024",
+      "pmcid": "PMC5408810",
+      "doi": "10.1093/bioinformatics/btw691",
+      "title": "Preprocessing, normalization and integration of the Illumina HumanMethylationEPIC array with minfi.",
+      "journal": "Bioinformatics (Oxford, England)",
+      "pubmed_publication_date": "2017 Feb 15",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28035024/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5408810/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:39701600",
+      "pmid": "39701600",
+      "pmcid": "PMC11658816",
+      "doi": "10.1093/bib/bbae667",
+      "title": "Higher order interaction analysis quantifies coordination in the epigenome revealing novel biological relationships in Kabuki syndrome.",
+      "journal": "Briefings in bioinformatics",
+      "pubmed_publication_date": "2024 Nov 22",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39701600/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658816/",
+      "canonical_publication_date": "2024-12-19",
+      "canonical_date_source": "https://doi.org/10.1093/bib/bbae667"
+    },
+    {
+      "study_id": "PMID:39549198",
+      "pmid": "39549198",
+      "pmcid": "PMC11979089",
+      "doi": "10.1007/s11357-024-01414-7",
+      "title": "The Multi-State Epigenetic Pacemaker enables the identification of combinations of factors that influence DNA methylation.",
+      "journal": "GeroScience",
+      "pubmed_publication_date": "2025 Apr",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/39549198/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979089/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:41456056",
+      "pmid": "41456056",
+      "pmcid": "PMC12853687",
+      "doi": "10.1186/s13072-025-00650-1",
+      "title": "Convergent DNA methylation abnormalities at enhancers and bivalent promoters in human growth disorders",
+      "journal": "Epigenetics & Chromatin",
+      "canonical_publication_date": "2025-12-27",
+      "issue_year": 2026,
+      "version_of_record_date": "2026-01-28",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/41456056/",
+      "full_text_url": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "canonical_date_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1"
+    }
+  ],
+  "edges": [
+    {
+      "study_id": "PMID:27717381",
+      "doi": "10.1186/s13059-016-1066-1",
+      "dataset_id": "GSE86833",
+      "relation": "generated",
+      "analysis_type": "paired_450k_epic_platform_validation",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5055731/",
+      "evidence_location": "Availability of data and material; Europe PMC fullTextXML HTTP200",
+      "checked_on": "2026-11-22",
+      "notes": "SuperSeries covers multiple specimen types. Five infant Guthrie blood pairs are a small subset, not rare-disease controls."
+    },
+    {
+      "study_id": "PMID:28392843",
+      "doi": "10.1186/s13148-017-0333-7",
+      "dataset_id": "GSE92580",
+      "relation": "generated",
+      "analysis_type": "paired_450k_epic_and_preservation_validation",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5379646/",
+      "evidence_location": "Methods/Results/Data availability",
+      "checked_on": "2026-11-22",
+      "notes": "Nine fresh-frozen tumour specimens T01\u2013T09 and three FFPE specimens T10\u2013T12 have both array types: twelve cross-platform specimen pairs; independent participant count is not established. Nine additional FFPE records matched to the fresh-frozen material supply a separate preservation comparison."
+    },
+    {
+      "study_id": "PMID:31833794",
+      "doi": "10.1080/15592294.2019.1700003",
+      "dataset_id": "GSE86833",
+      "relation": "reused",
+      "analysis_type": "cross_tissue_450k_epic_concordance",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7574380/",
+      "evidence_location": "Methods: DNA methylation data",
+      "checked_on": "2026-11-22",
+      "notes": "Five whole-blood pairs; the same candidate benchmark is already reused in published work."
+    },
+    {
+      "study_id": "PMID:31833794",
+      "doi": "10.1080/15592294.2019.1700003",
+      "dataset_id": "GSE92580",
+      "relation": "reused",
+      "analysis_type": "cross_tissue_450k_epic_concordance",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7574380/",
+      "evidence_location": "Methods: DNA methylation data",
+      "checked_on": "2026-11-22",
+      "notes": "Twelve cross-platform tumour specimen pairs; independently verify the participant count and preserve any participant/specimen dependence."
+    },
+    {
+      "study_id": "PMID:39701600",
+      "doi": "10.1093/bib/bbae667",
+      "dataset_id": "GSE97362",
+      "relation": "reused",
+      "analysis_type": "kabuki_higher_order_methylation_network",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658816/",
+      "evidence_location": "Methods: DNA methylation analysis and bioinformatic processing",
+      "checked_on": "2026-11-22",
+      "notes": "450K Kabuki cohort reused. Existing pooling/network analysis weakens an undifferentiated novelty claim."
+    },
+    {
+      "study_id": "PMID:39701600",
+      "doi": "10.1093/bib/bbae667",
+      "dataset_id": "GSE116300",
+      "relation": "reused",
+      "analysis_type": "kabuki_higher_order_methylation_network",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658816/",
+      "evidence_location": "Methods: DNA methylation analysis and bioinformatic processing",
+      "checked_on": "2026-11-22",
+      "notes": "450K Kabuki cohort reused. Common-platform probes intersected with EPIC."
+    },
+    {
+      "study_id": "PMID:39701600",
+      "doi": "10.1093/bib/bbae667",
+      "dataset_id": "GSE126167",
+      "relation": "reused",
+      "analysis_type": "kabuki_expression_overlay",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658816/",
+      "evidence_location": "Results: expression of DMR-associated genes",
+      "checked_on": "2026-11-22",
+      "notes": "Human/mouse cell-model RNA data. Accession-to-organism and paired donor linkage must be verified from original records before combined modelling."
+    },
+    {
+      "study_id": "PMID:39701600",
+      "doi": "10.1093/bib/bbae667",
+      "dataset_id": "GSE126166",
+      "relation": "reused",
+      "analysis_type": "kabuki_expression_overlay",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658816/",
+      "evidence_location": "Results: expression of DMR-associated genes",
+      "checked_on": "2026-11-22",
+      "notes": "Not paired blood multiomics; same caveat as GSE126167."
+    },
+    {
+      "study_id": "PMID:39549198",
+      "doi": "10.1007/s11357-024-01414-7",
+      "dataset_id": "GSE97362",
+      "relation": "reused",
+      "analysis_type": "multi_state_epigenetic_pacemaker",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979089/",
+      "evidence_location": "Supplementary information and Data Availability; Europe PMC fullTextXML HTTP200",
+      "checked_on": "2026-11-22",
+      "notes": "Accession explicitly supports pooled blood age/cell-composition modelling. Per-sample inclusion and whether affected Kabuki cases were retained remain unverified. Methods says17 datasets; availability lists18 series."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE128801",
+      "relation": "reused",
+      "analysis_type": "cross_disorder_methylation_chromatin_context",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "TBRS pedigree 450K; related participants and mosaic father; not 12 independent cases."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE191276",
+      "relation": "reused",
+      "analysis_type": "cross_disorder_methylation_chromatin_context",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "Sotos EPIC comparator; tiny cohort and pooled sample remain design limitations."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE120428",
+      "relation": "reused",
+      "analysis_type": "cross_disorder_methylation_chromatin_context",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "HESJAS public EPIC subset; mixed tissues/repeats/comparators. Other human sequencing modalities in the original study are controlled EGA."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE299394",
+      "relation": "generated",
+      "analysis_type": "engineered_growth_disorder_methylation",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "Data availability explicitly identifies arrays; direct file/role admission separate."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE301386",
+      "relation": "generated",
+      "analysis_type": "wild_type_chromatin_reference",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "GEO confirms WT H1/WA01 CUT&RUN; not mutant rescue or matched patient omics."
+    },
+    {
+      "study_id": "PMID:41456056",
+      "doi": "10.1186/s13072-025-00650-1",
+      "dataset_id": "GSE309381",
+      "relation": "generated",
+      "analysis_type": "engineered_model_rnaseq",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://link.springer.com/article/10.1186/s13072-025-00650-1",
+      "evidence_location": "Methods: patient array preprocessing; Data availability; source-specific GEO checks in rights register",
+      "checked_on": "2026-11-22",
+      "notes": "Data availability explicitly identifies RNA-seq; direct GEO file inventory not verified in this intake."
+    }
+  ],
+  "dataset_relationships": [
+    {
+      "parent": "GSE86833",
+      "child": "GSE86829",
+      "relation": "has_subseries",
+      "platform": "450K",
+      "evidence": "https://www.rnbeads.org/materials/data/tutorial/cross_platform/tutorial.html"
+    },
+    {
+      "parent": "GSE86833",
+      "child": "GSE86831",
+      "relation": "has_subseries",
+      "platform": "EPIC",
+      "evidence": "https://www.rnbeads.org/materials/data/tutorial/cross_platform/tutorial.html"
+    },
+    {
+      "parent": "GSE92580",
+      "child": "GSE92577",
+      "relation": "has_subseries",
+      "platform": "450K",
+      "evidence": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92577"
+    },
+    {
+      "parent": "GSE92580",
+      "child": "GSE92579",
+      "relation": "has_subseries",
+      "platform": "EPIC",
+      "evidence": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92579"
+    }
+  ],
+  "unresolved_relationships": [
+    {
+      "study_id": "PMID:39701600",
+      "dataset_id": "GSE218186",
+      "status": "study_of_origin_link_requires_original_metadata_confirmation",
+      "reason": "Main text names Cuvertino EPIC study reference34 but retrieved main-text portion does not contain this accession explicitly. Parent has series-level SOFT and should verify before promoting to an explicit edge."
+    }
+  ],
+  "date_conflicts": [
+    {
+      "study_id": "PMID:39701600",
+      "pubmed_publication_date": "2024 Nov 22",
+      "openalex_publication_date": "2024-11-22",
+      "publisher_electronic_publication_date": "2024-12-19",
+      "issue": "2025,26(1)",
+      "note": "Retain provider-specific dates and use the publisher electronic publication date as canonical after checking the primary source. Do not overwrite silently.",
+      "publisher_source": "https://doi.org/10.1093/bib/bbae667"
+    }
+  ],
+  "not_evidence_of_reuse": [
+    "OpenAlex cited-by count",
+    "Reference-list mention alone",
+    "A PubMed exact-accession hit without full-text context",
+    "No exact-accession hits"
+  ]
+}

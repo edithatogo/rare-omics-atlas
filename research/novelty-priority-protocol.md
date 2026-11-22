@@ -1,6 +1,6 @@
 # Analysis lifecycle: evidence, novelty, priority and publication gates
 
-**Status:** required protocol for future analyses, not evidence of executed searches or analyses. Minimal manual checks at track transitions; no new automation or monitoring service. Every analysis A–L follows these gates, including reanalysis and subsequent manuscripts.
+**Status:** required protocol for every analysis, including reanalysis and later manuscripts. A bounded initial literature review has been executed and an authorised weekly watch is scheduled; see [queries, receipts and study–dataset edges](literature/README.md). Those source checks are not a completed analysis-specific N1 freeze. No custom crawler or monitoring service is built.
 
 | Gate | When | Required dated receipt |
 |---|---|---|
@@ -19,9 +19,15 @@ No scientific score overrides a **hard hold**: uncertain use rights or required 
 
 Existing N/I/F (novelty/impact/feasibility, each 1–5) are subjective *opportunity* scores. Evaluate also clinical usefulness, quality of original controls, sample/power, independent replication, tissue/batch/age matching, provenance and consent, expected effort, novelty decay, journal fit/fees and negative transfer. Do not collapse all inputs to a false numerical probability of publication. Actual gating overrides score.
 
-**Default sequence:** T00/T01 before any analysis; T02 Kabuki as a reproducibility reference even if not worth its own publication; T03 or T05 next depending on data pairing and incremental clinical value; T04 only with sufficient independent disease effects and comparisons to simpler models; T06 separately gated by quantitative functional evidence. T07 dependency qualification is conditional on real needs. Alter this order at N0/N2 when new work or data changes value.
+**Default sequence:** T00 context, T01 source/admission and T07 selected-method acceptance before any consuming analysis; T02 Kabuki as a reproducibility reference even if not worth its own publication; T03 or T05 next depending on data pairing and incremental clinical value; T04 only with sufficient independent disease effects and comparisons to simpler models; T06 separately gated by quantitative functional evidence. The selected method must be qualified before consumption; optional T07 replacements remain conditional. Alter this order at N0/N2 when new work or data changes value.
 
 ## Ponytail dependency review at each gate
 
-Before analysis, examine the real consumer and existing qualified language/library. Apply Rust > Julia or Mojo > Python > R among suitable implementations; a new Rust stage does not require a prior speed bottleneck. For a replacement, identify the capability, portability, maintenance or resource benefit. After analysis, examine correctness, elapsed time/RSS, licensing, maintainability and whether a simpler tool could replace what was used. Record **retain / replace / remove / defer** with real evidence in the track. Use [dependency triage](language-dependency-triage.md) and [scientific backend contract](backend-replacement-policy.md). No preemptive Rust ports, data framework, GPU driver or recurring literature crawler.
+Before analysis, examine the real consumer and existing qualified language/library. Apply Rust > Julia > Python > R among suitable implementations; a new Rust stage does not require a prior speed bottleneck. For a replacement, identify the capability, portability, maintenance or resource benefit. After analysis, examine correctness, elapsed time/RSS, licensing, maintainability and whether a simpler tool could replace what was used. Record **retain / replace / remove / defer** with real evidence in the track. Use [dependency triage](language-dependency-triage.md) and [scientific backend contract](backend-replacement-policy.md). No preemptive Rust ports, data framework or GPU driver. Reuse the scheduled watch and source APIs rather than building a new crawler.
 
+
+## Durable experiment-to-literature map
+
+Keep exact queries, query translations, pagination/results, API failures, source dates and PMIDs/DOIs/OpenAlex IDs with the dated review. An edge records whether the paper explicitly reuses an accession, references a source study, uses the same participants or merely cites a related method. These are different assertions. Verify full-text availability statements and GEO relations where abstracts omit accession IDs. A zero-hit search cannot establish that data were never reused.
+
+The weekly watch checks a rolling overlap window for delayed indexing and early-online/preprint revisions, then records only material changes to novelty, dataset use, dependencies or journal fit. N1/N2/N3 are still event-triggered checks even when the weekly watch found no change. Preserve the original N1 if new literature appears later.

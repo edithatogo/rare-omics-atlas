@@ -1,0 +1,12 @@
+{
+  "recorded_on": "2026-11-22",
+  "title": "Rare omics literature watch",
+  "enabled_at_creation": true,
+  "timezone": "Australia/Brisbane",
+  "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Australia/Brisbane:20261123T080000\nRRULE:FREQ=WEEKLY;BYDAY=MO;BYHOUR=8;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+  "timing_mode": "flexible_schedule",
+  "next_run_at_creation": "2026-11-23T08:00:00+10:00",
+  "last_run_at_creation": null,
+  "scope": "Scheduled literature/dataset/dependency review of the two owner repositories. Supplement to required N0-N3 event checks; no scientific pipeline, data upload or new service.",
+  "identifier_note": "Automation account identifier is deliberately not published in this public repository."
+}

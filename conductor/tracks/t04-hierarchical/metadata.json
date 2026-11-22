@@ -5,5 +5,9 @@
   "implementation_authorized": false,
   "owner": null,
   "evidence": [],
-  "publication_target": "E5 in conditional combined P2: OJRD/BMC Medical Genomics for clinical interpretation, BMC Bioinformatics/Bioinformatics Advances for a substantive methods contribution."
+  "publication_target": "E5 in conditional combined P2: OJRD/BMC Medical Genomics for clinical interpretation, BMC Bioinformatics/Bioinformatics Advances for a substantive methods contribution.",
+  "dependencies": [
+    "T03.results"
+  ],
+  "dependency_note": "Apply separate data/method admission and N0/N1 for this experiment; optional ports are not required."
 }

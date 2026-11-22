@@ -1,32 +1,29 @@
 # Conductor project context
 
-This project is **documentation-only** until the owner authorises a named track for implementation. No computational scientific claim is accepted by merely writing this plan.
+The owner's 22 November 2026 instruction authorises initial setup, public-source qualification and the existing fork baseline. It does not initiate statistical disease analysis or a new scientific implementation. Completed work and external prerequisites are recorded separately.
 
-- [Product and scientific purpose](product.md)
-- [Technology and interoperability decisions](tech-stack.md)
-- [Scientific workflow and evidence gates](workflow.md)
-- [Tracks registry](tracks.md)
-- [Local Ponytail decisions](../research/ponytail-decisions.md)
-- [Rust candidate audit and qualification gaps](../research/rust-candidate-audit.md)
-- [Clinical journal routing, including Orphanet and SSIEM](../research/journals.md)
+- [Product](product.md)
+- [Product guidelines](product-guidelines.md)
+- [Technology and data contracts](tech-stack.md)
+- [General style guide](code_styleguides/general.md)
+- [Workflow](workflow.md)
+- [Tracks and execution dependencies](tracks.md)
+- [Machine-readable milestones](dependencies.json)
+- [Setup receipt](../research/qualification/setup-receipt.md)
+- [Source intake receipt](../research/qualification/initial-source-receipt.md)
+- [Ponytail decisions](../research/ponytail-decisions.md)
+- [Dataset rights](../research/dataset-rights.md)
+- [Literature map](../research/literature/README.md)
 - [Experiments and publication bundles](../research/experiment-publication-plan.md)
-- [Focused methylation backend audit](../research/methylation-backend-audit.md)
-- [Reference resources, medallion hosting and account reuse](../research/resources-hosting-reuse.md)
-- [Hardware and official local development runners](../research/local-development.md)
+- [Backend audit](../research/methylation-backend-audit.md)
+- [Rust additions and SeSAMe-rust assessment](../research/rust-port-roadmap.md)
+- [Medallion layout](../research/medallion-layout.md)
+- [Resources and hosting](../research/resources-hosting-reuse.md)
+- [Official local runners](../research/local-development.md)
+- [Clinical journal routing](../research/journals.md)
 
-## Planned project phases
+## Execution rule
 
-T00 governance and first-principles scoping → T01 dataset/provenance qualification → T02 Kabuki replication → T03 cross-disease comparison → T04 hierarchical methods → T05 matched multi-omics → T06 genotype–toxin analysis.
+Schedule ready milestones, not numeric track labels. T00 context enables T01 discovery and a synthetic/committed-corpus backend baseline. Patient-data inference requires T01 analysis admission, the selected T07 backend, actual target-device qualification and an analysis-specific N1 freeze. Optional Rust ports and unneeded model layers remain separate branches.
 
-T05 may be pursued before T04 only if matched assays are qualified and no shared model implementation is needed. T06 is separately gated and is not required for publication of T02–T04.
-
-## Rules
-
-- Exact accessions, versions, participant reuse and permissions first.
-- Freeze hypotheses before testing external data.
-- Distinguish methylation association, expression prediction and causal perturbation evidence.
-- Every numerical method requires a published baseline and explicit stop criteria.
-- Prefer **clinical-genetics journal fit**, rather than aiming first for high-profile methods journals.
-
-**Current cross-cutting gates:** [Source public-access, rights and ethics](../research/source-access-ethics.md) and [Rust scientific backend qualification](../research/backend-replacement-policy.md). Both are planning/source checks, not analysis execution receipts.
-
+A source manifest, completed code test, statistical acceptance and an institutional decision are different receipts. Never satisfy a missing criterion by renaming it. When an external prerequisite is unavailable, record its owner, resolution and affected downstream milestones; continue independent authorised work.

@@ -1,2 +1,24 @@
-{"track_id":"T07","name":"Conditional scientific backend qualification (Rust preferred)","status":"deferred","dependencies":["T01"],"owner":null,"scientific_code_authorised":false}
-
+{
+  "track_id": "T07",
+  "name": "Selected scientific backend qualification before its consumer",
+  "status": "in_progress",
+  "dependencies": [
+    "T00.context"
+  ],
+  "owner": "ChatGPT integrator",
+  "scientific_code_authorised": false,
+  "implementation_authorized": true,
+  "authorization_scope": "Initial context/source qualification and existing corpus only; new scientific implementation/analysis not started.",
+  "milestones": [
+    "T07.fork_baseline",
+    "T07.selected_contract",
+    "T07.protocol_freeze",
+    "T07.selected_backend"
+  ],
+  "evidence": [
+    "../../../research/qualification/setup-receipt.md",
+    "../../../research/qualification/initial-source-receipt.md"
+  ],
+  "scientific_analysis_authorized": false,
+  "title": "Selected scientific backend qualification before its consumer"
+}

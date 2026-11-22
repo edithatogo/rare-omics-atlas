@@ -5,5 +5,11 @@
   "implementation_authorized": false,
   "owner": null,
   "evidence": [],
-  "publication_target": "E4 may extend P1 or join conditional P2; no standalone paper by default. Use research/experiment-publication-plan.md and research/journals.md."
+  "publication_target": "E4 may extend P1 or join conditional P2; no standalone paper by default. Use research/experiment-publication-plan.md and research/journals.md.",
+  "dependencies": [
+    "T02.results",
+    "T01.analysis_admission",
+    "T07.selected_backend"
+  ],
+  "dependency_note": "Apply separate data/method admission and N0/N1 for this experiment; optional ports are not required."
 }

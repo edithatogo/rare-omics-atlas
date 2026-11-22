@@ -5,5 +5,9 @@
   "implementation_authorized": false,
   "owner": null,
   "evidence": [],
-  "publication_target": "Primary Toxicon / Toxicon: X for toxin mechanism; clinical toxicology journals only with human clinical outcomes."
+  "publication_target": "Primary Toxicon / Toxicon: X for toxin mechanism; clinical toxicology journals only with human clinical outcomes.",
+  "dependencies": [
+    "T00.context"
+  ],
+  "dependency_note": "Apply separate data/method admission and N0/N1 for this experiment; optional ports are not required."
 }

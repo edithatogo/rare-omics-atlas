@@ -1,34 +1,36 @@
 # Rare Omics Atlas
 
-**Status: research-planning scaffold only. No analytical source code, executable pipeline, data download or scientific result is included.**
+**Status: repository context and initial public-source checks executed; scientific analyses have not started.** Updated 22 November 2026.
 
-An ontology-linked, public-data rare-disease epigenomics programme, designed to test cross-cohort reproducibility, cross-disease regulatory inference and (only later) independently testable molecular responses to toxins.
-
-**Repository:** https://github.com/edithatogo/rare-omics-atlas . Local planning snapshot, 22 November 2026; no analysis or data download has been performed.
+An ontology-linked rare-disease epigenomics programme. The first proposed paper tests whether a prespecified Kabuki methylation result transfers across independent cohorts and platforms, with explicit clinical interpretation limits. A pooled network, extra ontology or change of programming language is not by itself a novel clinical finding.
 
 ## Start here
 
-1. [Conductor index](conductor/index.md) and [tracks](conductor/tracks.md).
-2. [Proposed public datasets](research/datasets.md); every record is **candidate**, not independently qualified.
-3. [Public access, ethics and rights triage](research/source-access-ethics.md), [backend replacement protocol](research/backend-replacement-policy.md), [Analysis priorities and scoring](research/analyses.md), [clinical journal strategy](research/journals.md), [language/data contracts](research/interoperability.md) and [Ponytail decisions](research/ponytail-decisions.md).
-4. [Analysis-specific novelty/prioritisation gates](research/novelty-priority-protocol.md) and [Ponytail language/dependency decisions](research/language-dependency-triage.md) apply **before and after every analysis**; priorities and journal choices may change when new evidence appears.
-5. [Rust candidate audit](research/rust-candidate-audit.md): source-reviewed replacements, remaining method gaps and planned qualification. Preference is **Rust > Julia or Mojo > Python > R** among scientifically suitable choices. [Conditional T07](conductor/tracks/t07-backend-qualification/index.md) manages admission; no new framework or analytical implementation.
-6. Follow the [scientific workflow](conductor/workflow.md) before any data is processed or code is written.
-7. Use the [concrete experiments and paper bundles](research/experiment-publication-plan.md): one initial clinical study, with technical work in supporting material; later studies depend on distinct evidence.
-8. Read the [deeper limma-rust/SeSAMe2 audit](research/methylation-backend-audit.md), [reference-resource/Hugging Face reuse decisions](research/resources-hosting-reuse.md), and [verified hardware and official local-runner policy](research/local-development.md).
+1. [Conductor context](conductor/index.md), [dependency-ordered tracks](conductor/tracks.md) and [initial completion receipt](research/qualification/setup-receipt.md).
+2. [Dataset register](research/datasets.md), [actual initial source checks](research/qualification/initial-source-receipt.md) and [dataset-specific rights](research/dataset-rights.md).
+3. [Experiments and paper bundles](research/experiment-publication-plan.md), [priorities](research/analyses.md), [platform comparison prior art](research/platform-comparison-review.md) and [clinical journals](research/journals.md).
+4. [Literature map and scheduled watch](research/literature/README.md). PubMed, OpenAlex and Europe PMC receipts support the first review; pre-analysis and post-analysis novelty gates still apply.
+5. [Backend contracts](research/backend-replacement-policy.md), [Rust candidates](research/rust-candidate-audit.md), [methylation backend audit](research/methylation-backend-audit.md) and [bounded Rust roadmap](research/rust-port-roadmap.md).
+6. [Logical medallion storage](research/medallion-layout.md), [reference resources and hosting](research/resources-hosting-reuse.md), [official local runner policy](research/local-development.md) and [Ponytail decisions](research/ponytail-decisions.md).
 
-## Repository governance
+## What is now evidenced
 
-- Central standard: https://github.com/edithatogo/repository-standards (scientific/native and research/data controls); consumer context remains locally authoritative.
-- Gemini Conductor source is recorded as a **pinned Git submodule** at `.agents/plugins/conductor` in the repository's Git tree. Run `git submodule update --init --recursive` from a GitHub-connected working clone. Its bytes were not fetched in this planning workspace.
-- Use shared GitHub community defaults and relevant existing starter files rather than copy competing sets of templates. The `template-solo-data` starter is Python-oriented and is not required for this documentation-first project. Only adopt `template-solo-rust` if a Rust crate is later justified.
-- No mandatory second human reviewer or CODEOWNERS dependency; maintain one writer per path and evidence-based merge gates.
-- Future local development qualification uses the official GitHub Actions self-hosted runner. The policy is recorded; installation/registration and observed runs on the owner's devices remain unverified.
-- Never commit human participant files, restricted data, credentials or large raw assay files. A public GEO page does not establish unrestricted redistributability of derived individual-level material.
+- The pinned Conductor submodule was fetched and its project context completed in a real clone. Automatic activation by a particular host application was not observed.
+- The three initial public Kabuki archives were downloaded without an application or login. Their exact bytes, SHA-256 identifiers, TAR structure and IDAT headers were checked; see the receipt for counts and limitations. Raw files are outside Git.
+- A 28-accession rights register and structured study–dataset literature edges were created. Accessions include technical subseries and are not independent cohort counts.
+- The owner's [limma-rust fork](https://github.com/edithatogo/limma-rust) is derived from **MassDynamics**, a different implementation from the previously inspected sinmojito project. Its existing suite passed 104 tests in this Linux workspace. Fresh independent R, actual local-runner and methylation acceptance remain pending.
+- A weekly literature watch is scheduled, alongside mandatory N0–N3 analysis gates.
 
-## Scope boundaries
+## Execution and governance
 
-Metadata discovery is not patient-level availability. A disease-level HPO association is **not** an observed phenotype in a study participant. Two GEO accessions are not necessarily independent cohorts. Toxin proteomics does not measure the host response. Literature overlap does not establish causal mechanisms. New model complexity must outperform prespecified simple baselines.
+Use **Rust > Julia > Python > R** among scientifically suitable implementations; a qualified existing C engine can avoid a rewrite. Keep independent numerical references. [Selected-backend qualification T07](conductor/tracks/t07-backend-qualification/index.md) precedes any clinical analysis that consumes it. Optional ports do not block a qualified reference route.
 
-**Not yet done in this planning snapshot:** Conductor plugin activation, data-file transfer and checksum verification, participant-level rights/ethics determination, dependency installation, statistical analysis, numerical qualification, hosted checks or any scientific result. GitHub publication and initial submodule check are separate deployment/verification steps, not evidence of activated tooling.
+Central policy remains [repository-standards](https://github.com/edithatogo/repository-standards). Conductor is a pinned Git submodule at .agents/plugins/conductor; clone with submodules or initialise them explicitly. Applicable shared GitHub defaults are reused without importing an unrelated template/runtime.
 
+The owner requires official GitHub Actions self-hosted runners for local development acceptance. The fork now has a manual trusted-revision workflow with real checks; registration and observed runs on the owner's machines remain external prerequisites. A cloud command is not that evidence.
+
+## Limits
+
+T00/T01 are **partly complete**, with remaining milestones visible rather than marked passed. Participant independence, final molecular subsets/covariates, reference annotations, institutional research classification and selected-method acceptance must be resolved before disease analysis. Public source permission is not a decision from an institution's ethics office.
+
+No patient files were committed or uploaded to Hugging Face. No clinical association, diagnostic performance, causal mechanism or perturbation efficacy has been estimated. Disease-level HPO annotations are not participant observations, and two accessions are not automatically independent cohorts.

@@ -6,7 +6,7 @@ Determine whether mechanism-informed partial pooling improves small-cohort effec
 
 ## Scientific / governance boundary
 
-No execution, downloads or code generation is authorised by this planning track. Any source-dependent assertion requires independently verifiable evidence. Follow `conductor/workflow.md` and Ponytail decisions.
+This scientific experiment has not started. Initial public-source intake elsewhere is authorised and separately recorded; this track does not authorise disease inference or a new scientific implementation. Any source-dependent assertion requires independently verifiable evidence. Follow `conductor/workflow.md` and Ponytail decisions.
 
 ## Inputs and dependencies
 
@@ -19,7 +19,7 @@ The receiving contract must preserve:
 - Case/control counts, design/covariates/weights, missingness and non-estimability statuses, and the complete prespecified feature universe. Shared controls, repeated participants and related samples require a covariance/dependence treatment or a defensible independent subset.
 - For region/module summaries, fixed definitions, contributing probes and an uncertainty calculation that respects their dependence. A shared region name does not guarantee the same measured sites across platforms.
 
-**Do not ingest the inspected limma-rust `lfcSE` field as an effect SE:** it exports unscaled design uncertainty. Ordinary SE requires multiplication by residual sigma; moderated SE requires multiplication by the square root of posterior residual variance. Obtain a qualified, explicitly named quantity from the fit outputs or a corrected upstream export, and check the actual consumer table against the reference. Hold rows with unresolved IDs, scale, uncertainty or estimability. See [backend replacement contracts](../../../research/backend-replacement-policy.md).
+**Do not ingest unscaled design uncertainty as an effect SE.** The historical sinmojito implementation exported such a field as `lfcSE`; the owner's MassDynamics-derived fork has no such field and already computes scaled confidence intervals. Qualify whichever actual consumer export is selected. Ordinary SE requires multiplication by residual sigma; moderated SE requires multiplication by the square root of posterior residual variance. Obtain a qualified, explicitly named quantity from the fit outputs or a corrected upstream export, and check the actual consumer table against the reference. Hold rows with unresolved IDs, scale, uncertainty or estimability. See [backend replacement contracts](../../../research/backend-replacement-policy.md).
 
 ## Evaluation and model boundary
 
@@ -45,3 +45,7 @@ Combine E5 with coherent E4/E6 results in P2 only if they establish a distinct, 
 
 Apply N0/N1 before execution, N2 after results and N3 before submission/transfer. Continue only with a documented distinct contribution or justified replication. Stop or narrow the task if no worthwhile contribution remains, source rights or uncertainty are unresolved, validation samples are not independent, there are too few disease/study contrasts for the claimed evaluation, the proposed inference is not identifiable, or simpler methods make extra complexity unnecessary. An unsupported Rust/AD route does not block a suitable existing reference model or the earlier clinical study. Record an honest hold rather than invent evidence.
 
+
+## Execution prerequisites
+
+Use the task-level [dependency registry](../../dependencies.json) and [tracks order](../../tracks.md). Admit this experiment's specific datasets and selected method before execution, with actual local-runner acceptance and a current N1 freeze. Optional ports do not block a qualified reference route. The molecular, pairing and identifiability requirements in this specification remain independent gates.

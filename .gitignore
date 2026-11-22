@@ -7,3 +7,9 @@
 /.venv/
 /.Rproj.user/
 /Manifest-local.toml
+
+# Medallion layers remain local until a separately reviewed artifact release
+/data/bronze/
+/data/silver/
+/data/gold/
+/data/reference-cache/

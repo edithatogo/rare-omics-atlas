@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-11-22",
+  "scope": "Initial reference-byte qualification and five disease-level identifier mappings; no participant assignments, statistical analyses, library conformance or redistribution.",
+  "status": "initial_reference_bytes_and_identifier_crosswalk_verified",
+  "selection": {
+    "mondo_host_repository": "edithatogo/rareburden-commons-open-source-snapshots",
+    "host_revision": "cf906c1f8b03179312c82137735976d642d337ed",
+    "selected_release": "2026-07-06",
+    "reason": "Reuse existing full MONDO OBO snapshot; newer existing assets use different formats/subsets. All five required active terms and explicit OMIM/gene relationships are present. This does not claim the selected MONDO release is latest.",
+    "alternative_inspected": {
+      "repository": "edithatogo/rareburden-open-sources",
+      "revision": "0dae8d3c4ac642cdee6b7ee34e46d9bd84919b66",
+      "path": "data/mondo/v2026-09-01/mondo-rare.owl",
+      "downloaded": false
+    }
+  },
+  "downloads": [
+    {
+      "file": "mondo-v2026-07-06.obo",
+      "source_url": "https://huggingface.co/datasets/edithatogo/rareburden-commons-open-source-snapshots/resolve/cf906c1f8b03179312c82137735976d642d337ed/raw/mondo/v2026-07-06/mondo.obo",
+      "retrieved_at_utc": "2026-11-22T09:36:00.214372+00:00",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 52967808,
+      "sha256": "75c51066741e04c0ec4751210911d29e17e16431ed2ba5b8a46fc6a37ff5b00e",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/mondo-v2026-07-06.obo",
+      "upstream_asset_id": 469175846,
+      "upstream_digest": "sha256:75c51066741e04c0ec4751210911d29e17e16431ed2ba5b8a46fc6a37ff5b00e",
+      "upstream_bytes": 52967808,
+      "upstream_digest_matches": true,
+      "upstream_size_matches": true
+    },
+    {
+      "file": "mondo-snapshot-README.md",
+      "source_url": "https://huggingface.co/datasets/edithatogo/rareburden-commons-open-source-snapshots/resolve/cf906c1f8b03179312c82137735976d642d337ed/raw/mondo/v2026-07-06/README.md",
+      "retrieved_at_utc": "2026-11-22T09:36:00.214913+00:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4090,
+      "sha256": "0d878d02b1720bab27fdb7db2575bd1758f5624a0fafb6657dce4819451b8368",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/mondo-snapshot-README.md"
+    },
+    {
+      "file": "mondo-repository-README.md",
+      "source_url": "https://huggingface.co/datasets/edithatogo/rareburden-commons-open-source-snapshots/resolve/cf906c1f8b03179312c82137735976d642d337ed/README.md",
+      "retrieved_at_utc": "2026-11-22T09:36:00.215294+00:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3755,
+      "sha256": "6863b3e485b13630931a60eb043f9461c4829f6d87dc014c31a703984a5321f1",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/mondo-repository-README.md"
+    },
+    {
+      "file": "mondo-history-notice.md",
+      "source_url": "https://huggingface.co/datasets/edithatogo/rareburden-commons-open-source-snapshots/resolve/cf906c1f8b03179312c82137735976d642d337ed/notices/mondo-release-history.md",
+      "retrieved_at_utc": "2026-11-22T09:36:00.215606+00:00",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1112,
+      "sha256": "38f41d9219b1b35a35acda8739ef252862f5ea2c92eea37fb8b226d5cb4341e8",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/mondo-history-notice.md"
+    },
+    {
+      "file": "hp-v2026-09-01.obo",
+      "source_url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.obo",
+      "retrieved_at_utc": "2026-11-22T09:36:13.265379+00:00",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 10863613,
+      "sha256": "93dace952fcb3ec4728818857f6ba76bc2d5312f4d83266519b8694b8e798f22",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/hp-v2026-09-01.obo",
+      "upstream_asset_id": 541749283,
+      "upstream_digest": "sha256:93dace952fcb3ec4728818857f6ba76bc2d5312f4d83266519b8694b8e798f22",
+      "upstream_bytes": 10863613,
+      "upstream_digest_matches": true,
+      "upstream_size_matches": true
+    },
+    {
+      "file": "phenotype-v2026-09-01.hpoa",
+      "source_url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa",
+      "retrieved_at_utc": "2026-11-22T09:36:13.269431+00:00",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 35816037,
+      "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/phenotype-v2026-09-01.hpoa",
+      "upstream_asset_id": 541761271,
+      "upstream_digest": "sha256:e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72",
+      "upstream_bytes": 35816037,
+      "upstream_digest_matches": true,
+      "upstream_size_matches": true
+    },
+    {
+      "file": "hpo-LICENSE.txt",
+      "source_url": "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/v2026-09-01/LICENSE",
+      "retrieved_at_utc": "2026-11-22T09:36:13.270516+00:00",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "hpo-LICENSE.md",
+      "source_url": "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/v2026-09-01/LICENSE.md",
+      "retrieved_on": "2026-11-22",
+      "http_status": 200,
+      "bytes": 90,
+      "sha256": "534f0ba30b74d13590247ddb5e24d749f5733b41cf19a730010b55edf4266336",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/hpo-LICENSE.md"
+    },
+    {
+      "file": "hpo-project-license.html",
+      "source_url": "https://human-phenotype-ontology.github.io/license.html",
+      "retrieved_on": "2026-11-22",
+      "http_status": 200,
+      "bytes": 8351,
+      "sha256": "d63799ff8d381891114b22e78c8164f198a9642f9ed0ca8b53bc73238c318b39",
+      "local_path": "/workspace/scratch/f247f15c065b/ontology_source_receipts/hpo-project-license.html"
+    }
+  ],
+  "upstream_release_api_receipts": [
+    {
+      "source": "mondo",
+      "request_url": "https://api.github.com/repos/monarch-initiative/mondo/releases/tags/v2026-07-06",
+      "retrieved_on": "2026-11-22",
+      "http_status": 200,
+      "tag_name": "v2026-07-06",
+      "published_at": "2026-07-07T13:18:17Z",
+      "assets": [
+        {
+          "id": 469175846,
+          "name": "mondo.obo",
+          "size": 52967808,
+          "digest": "sha256:75c51066741e04c0ec4751210911d29e17e16431ed2ba5b8a46fc6a37ff5b00e",
+          "browser_download_url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-07-06/mondo.obo"
+        }
+      ]
+    },
+    {
+      "source": "hpo",
+      "request_url": "https://api.github.com/repos/obophenotype/human-phenotype-ontology/releases/tags/v2026-09-01",
+      "retrieved_on": "2026-11-22",
+      "http_status": 200,
+      "tag_name": "v2026-09-01",
+      "published_at": "2026-09-03T06:08:39Z",
+      "assets": [
+        {
+          "id": 541749283,
+          "name": "hp.obo",
+          "size": 10863613,
+          "digest": "sha256:93dace952fcb3ec4728818857f6ba76bc2d5312f4d83266519b8694b8e798f22",
+          "browser_download_url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.obo"
+        },
+        {
+          "id": 541761271,
+          "name": "phenotype.hpoa",
+          "size": 35816037,
+          "digest": "sha256:e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72",
+          "browser_download_url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa"
+        }
+      ]
+    }
+  ],
+  "headers": {
+    "mondo_data_version": "releases/2026-07-06",
+    "hpo_data_version": "hp/releases/2026-09-01",
+    "hpoa_header": [
+      "#description: \"HPO annotations for rare diseases [8478: OMIM; 47: DECIPHER; 4357 ORPHANET]\"",
+      "#version: 2026-09-02",
+      "#tracker: https://github.com/obophenotype/human-phenotype-ontology/issues",
+      "#hpo-version: http://purl.obolibrary.org/obo/hp/releases/2026-09-01/hp.json"
+    ],
+    "hpoa_fields": [
+      "database_id",
+      "disease_name",
+      "qualifier",
+      "hpo_id",
+      "reference",
+      "evidence",
+      "onset",
+      "frequency",
+      "sex",
+      "modifier",
+      "aspect",
+      "biocuration"
+    ]
+  },
+  "crosswalk_evidence": [
+    {
+      "mondo_id": "MONDO:0007843",
+      "mondo_label": "Kabuki syndrome 1",
+      "is_obsolete": false,
+      "omim_xref_lines": [
+        "xref: OMIM:147920 {source=\"MONDO:equivalentTo\"}"
+      ],
+      "orphanet_xref_lines": [],
+      "gene_relationship_lines": [
+        "relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/7133 {source=\"OMIM:147920\"} ! KMT2D"
+      ]
+    },
+    {
+      "mondo_id": "MONDO:0010193",
+      "mondo_label": "Weaver syndrome",
+      "is_obsolete": false,
+      "omim_xref_lines": [
+        "xref: OMIM:277590 {source=\"MONDO:equivalentTo\", source=\"Orphanet:3447\", source=\"DOID:14731\", source=\"Orphanet:3447/e\"}"
+      ],
+      "orphanet_xref_lines": [
+        "xref: Orphanet:3447 {source=\"OMIM:277590\", source=\"MONDO:equivalentTo\"}"
+      ],
+      "gene_relationship_lines": [
+        "relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3527 {source=\"OMIM:277590\"} ! EZH2"
+      ]
+    },
+    {
+      "mondo_id": "MONDO:0010465",
+      "mondo_label": "Kabuki syndrome 2",
+      "is_obsolete": false,
+      "omim_xref_lines": [
+        "xref: OMIM:300867 {source=\"MONDO:equivalentTo\"}"
+      ],
+      "orphanet_xref_lines": [],
+      "gene_relationship_lines": [
+        "relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12637 {source=\"OMIM:300867\"} ! KDM6A"
+      ]
+    },
+    {
+      "mondo_id": "MONDO:0014382",
+      "mondo_label": "Tatton-Brown-Rahman overgrowth syndrome",
+      "is_obsolete": false,
+      "omim_xref_lines": [
+        "xref: OMIM:615879 {source=\"Orphanet:404443/e\", source=\"MONDO:equivalentTo\", source=\"Orphanet:404443\"}"
+      ],
+      "orphanet_xref_lines": [
+        "xref: Orphanet:404443 {source=\"MONDO:equivalentTo\", source=\"OMIM:615879\"}"
+      ],
+      "gene_relationship_lines": [
+        "relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2978 {source=\"OMIM:615879\"} ! DNMT3A"
+      ]
+    },
+    {
+      "mondo_id": "MONDO:0019349",
+      "mondo_label": "Sotos syndrome",
+      "is_obsolete": false,
+      "omim_xref_lines": [
+        "xref: OMIM:117550 {source=\"MONDO:equivalentTo\"}"
+      ],
+      "orphanet_xref_lines": [
+        "xref: Orphanet:821 {source=\"OMIM:117550\", source=\"DOID:14748\", source=\"MONDO:equivalentTo\"}"
+      ],
+      "gene_relationship_lines": [
+        "relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14234 {source=\"OMIM:117550\"} ! NSD1"
+      ]
+    }
+  ],
+  "deprecated_identifier": {
+    "id": "MONDO:0007299",
+    "label": "obsolete Sotos syndrome 1",
+    "is_obsolete": true,
+    "replaced_by": "MONDO:0019349"
+  },
+  "kabuki_parent_mapping": {
+    "mondo_id": "MONDO:0016512",
+    "label": "Kabuki syndrome",
+    "orpha_id": "ORPHA:2322",
+    "mapping_evidence": "MONDO:equivalentTo",
+    "relationship_to_selected_subtypes": "parent; do not treat as subtype-equivalent"
+  },
+  "hpoa_aggregate_coverage": {
+    "OMIM:615879": {
+      "rows": 39,
+      "positive_rows": 39,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "PCS": 36,
+        "TAS": 1,
+        "IEA": 2
+      },
+      "frequency_nonempty": 34,
+      "onset_nonempty": 0,
+      "reference_nonempty": 39,
+      "disease_names": [
+        "Tatton-Brown-Rahman syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 39,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 39
+      }
+    },
+    "OMIM:147920": {
+      "rows": 186,
+      "positive_rows": 186,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "PCS": 172,
+        "IEA": 11,
+        "TAS": 3
+      },
+      "frequency_nonempty": 171,
+      "onset_nonempty": 0,
+      "reference_nonempty": 186,
+      "disease_names": [
+        "Kabuki syndrome 1"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 183,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 186
+      }
+    },
+    "OMIM:277590": {
+      "rows": 80,
+      "positive_rows": 80,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "IEA": 29,
+        "PCS": 39,
+        "TAS": 12
+      },
+      "frequency_nonempty": 38,
+      "onset_nonempty": 1,
+      "reference_nonempty": 80,
+      "disease_names": [
+        "Weaver syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 80,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 80
+      }
+    },
+    "ORPHA:3447": {
+      "rows": 42,
+      "positive_rows": 42,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "TAS": 42
+      },
+      "frequency_nonempty": 42,
+      "onset_nonempty": 0,
+      "reference_nonempty": 42,
+      "disease_names": [
+        "Weaver syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 42,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 42
+      }
+    },
+    "OMIM:300867": {
+      "rows": 53,
+      "positive_rows": 53,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "PCS": 42,
+        "TAS": 11
+      },
+      "frequency_nonempty": 46,
+      "onset_nonempty": 5,
+      "reference_nonempty": 53,
+      "disease_names": [
+        "Kabuki syndrome 2"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 51,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 53
+      }
+    },
+    "OMIM:117550": {
+      "rows": 133,
+      "positive_rows": 133,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "PCS": 124,
+        "TAS": 9
+      },
+      "frequency_nonempty": 116,
+      "onset_nonempty": 2,
+      "reference_nonempty": 133,
+      "disease_names": [
+        "Sotos syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 128,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 133
+      }
+    },
+    "ORPHA:2322": {
+      "rows": 92,
+      "positive_rows": 92,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "TAS": 92
+      },
+      "frequency_nonempty": 92,
+      "onset_nonempty": 0,
+      "reference_nonempty": 92,
+      "disease_names": [
+        "Kabuki syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 92,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 92
+      }
+    },
+    "ORPHA:404443": {
+      "rows": 40,
+      "positive_rows": 40,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "TAS": 40
+      },
+      "frequency_nonempty": 40,
+      "onset_nonempty": 0,
+      "reference_nonempty": 40,
+      "disease_names": [
+        "Tatton-Brown-Rahman syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 40,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 40
+      }
+    },
+    "ORPHA:821": {
+      "rows": 107,
+      "positive_rows": 107,
+      "negative_rows": 0,
+      "evidence_codes": {
+        "TAS": 107
+      },
+      "frequency_nonempty": 107,
+      "onset_nonempty": 0,
+      "reference_nonempty": 107,
+      "disease_names": [
+        "Sotos syndrome"
+      ],
+      "missing_hpo_term_ids": [],
+      "obsolete_hpo_term_ids": [],
+      "unique_positive_hpo_count": 107,
+      "unique_negative_hpo_count": 0,
+      "qualifier_counts": {
+        "": 107
+      }
+    }
+  },
+  "hpo_term_validation": {
+    "hp_prefixed_primary_term_ids": 20482,
+    "obsolete_primary_term_ids": 588,
+    "selected_annotations_missing_term_ids": [],
+    "selected_annotations_obsolete_term_ids": []
+  },
+  "rights_and_attribution": {
+    "mondo": {
+      "licence": "CC-BY-4.0",
+      "evidence": "OBO terms:license header, pinned snapshot README/history notice and official download documentation",
+      "attribution": "MONDO, Monarch Initiative; release2026-07-06",
+      "source_url": "https://mondo.monarchinitiative.org/pages/download/",
+      "embedded_notices": "Preserved in original bytes outside git; no blanket claim about unrelated third-party assets."
+    },
+    "hpo": {
+      "licence": "HPO project custom acknowledgement/version/integrity terms; not CC0",
+      "release_licence_pointer": "https://hpo.jax.org/app/license",
+      "pointer_web_fetch": "404 in web retrieval on2026-11-22; recorded rather than assumed accessible",
+      "official_project_fallback": "https://human-phenotype-ontology.github.io/license.html",
+      "fallback_capture_file": "hpo-project-license.html",
+      "acknowledgement": "This project uses the Human Phenotype Ontology, release2026-09-01; disease annotations internal version2026-09-02. Human Phenotype Ontology Consortium.",
+      "handling": "Original hp.obo and phenotype.hpoa preserved unchanged outside git. Git contains only mappings, hashes, provenance and aggregate coverage. Keep reference/evidence/frequency/onset/negation/curation fields for later authorized consumers. Source-specific downstream distribution review remains separate."
+    },
+    "omim": "Only identifiers and MONDO mapping assertions retained; no OMIM prose mirror or independent OMIM data licence inferred."
+  },
+  "limits": [
+    "No Orphadata snapshot was fetched or independently qualified. ORPHA cross-references and annotation counts here come from pinned MONDO/HPO assets.",
+    "Disease-level HPO annotations are not observed participant phenotypes; no imputation or assignment to GEO samples occurred.",
+    "No absence of a phenotype inferred from absent or unrecorded annotations; selected records have zero NOT rows, which is not a clinical absence claim.",
+    "No HPO/ontology library was installed or tested; reference integrity is not parser/API conformance.",
+    "Future network inference must preserve evidence provenance, feature negation/frequency/onset and distinguish direct subtype mappings from parent mappings.",
+    "No annotation source or derivative was uploaded to Hugging Face; raw references remain outside git."
+  ]
+}
