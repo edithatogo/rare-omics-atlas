@@ -89,3 +89,33 @@ review-scope exclusions. Source-control labels, historical classifier splits and
 array keys do not assign new analysis controls, independent participants or
 replication partitions. Resolve source crosswalks, identities and missing
 covariates in parallel before jointly freezing the analysis manifest.
+
+## QC receiving and scanner reconciliation — 23 November 2026
+
+Retain the existing C producer and source-level R oracle. The
+[bounded QC receiver](qc-qualification.md) extends existing Atlas helpers with no
+new package, language bridge or numerical implementation. Native R's 65-field
+panel and separately labelled published-list GCT arithmetic are distinct
+contracts. Actual p-value serialization passes; four QC fields differ at minimum
+beads zero. Preserve that negative result and select the intended semantics and
+annotation explicitly before accepting a method. Do not invent a tolerance or
+remove a disagreeing field. Original-byte bead and GCT set diagnostics explain
+remaining method choices without a new generic data framework.
+
+The production checker binds recipe lineage and bytes and writes failed receipts
+for malformed compressed/CSV inputs. The portable test-oracle bead replay also
+uses explicit failure checks under Python -O. These are concrete correctness
+requirements identified by independent review, not speculative infrastructure.
+
+Advance the native hook and hosted privacy action to the reviewed central scanner
+and explicitly include merge diffs in the strict native history scan. The actual
+merge-only/then-deleted canary regression demonstrates the prior gap. Keep central
+standards authoritative and preserve all existing severity and coverage policy;
+the latest standards registry edit is separate maintenance. Limma numerical code
+and its existing Atlas producer pin remain unchanged.
+
+Parallel [source follow-up](qualification/t01-source-followup-2026-11-23.json)
+returned no new named joins. Retain 257 holds and 84 review-scope exclusions;
+failed/challenged supplement retrieval and unmatched counts cannot become sample
+identity. Current source/device/institutional limits affect their dependent
+scientific steps; compute and available local technical work are not exhausted.

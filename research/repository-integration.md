@@ -68,9 +68,11 @@ An existing checkout can be supplied with `--checkout /absolute/path/to/limma-ru
 
 When updating limma later, repeat producer qualification first, then update the atlas pin in a separate receiving change. A failed receiving check leaves the previously qualified pin in use. Changes to field meaning, scale, ordering, missingness or method require an explicitly versioned contract and new acceptance evidence. Storage chunking cannot split global moderation or a complete BH family.
 
+The [QC/p-value receiving boundary](qc-qualification.md) extends the same Atlas-owned qualification. Its full native QC parity is held while the exact production p-value export checks pass; upstream numerical code and the limma producer pin are unchanged.
+
 ## Native pre-commit enforcement
 
-The installed `.githooks/pre-commit` calls the repo's own small helper and strict verifier. The helper checks the central scanner checkout at `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4` and isolated Python/Gitleaks tooling. It refuses an existing conflicting hook path or executable legacy hook instead of overwriting it.
+The installed `.githooks/pre-commit` calls the repo's own small helper and strict verifier. The helper checks the central scanner checkout at `2efdbd988064f6857795b9fa9ed4e1d08d18791d` and isolated Python/Gitleaks tooling. It refuses an existing conflicting hook path or executable legacy hook instead of overwriting it.
 
 The guard captures the actual Git candidate tree, including the alternate index used by `git commit -a` and `git commit --only`. Because the central scanner removes inherited Git environment variables, the helper gives it a disposable Git index containing that exact candidate. It rejects unstaged tracked changes, untracked candidate files and hidden source changes, then runs strict verification with Git-local variables isolated. It checks the candidate, HEAD and working tree again before allowing the commit.
 

@@ -44,6 +44,14 @@ Run the existing catalogue command from `tools/catalogue/README.md` with `--offl
 
 The T01 owner resolves source/identity/annotation questions through the cited records; the institution owns its actual determination; the T07 owner owns the selected numerical/QC contract. Record a hold against only the affected accession or analysis. The optional T09 raw mirror and any unneeded ontology/port are not admission prerequisites.
 
+### Source follow-up — 23 November 2026
+
+The [aggregate follow-up receipt](../../../research/qualification/t01-source-followup-2026-11-23.json) records six bounded public retrieval attempts for the original GSE97362/GSE116300/GSE218186 publication material: **zero usable new supplement/PDF files and zero new named assay-to-paper joins**. API/server errors, two browser-challenge HTML responses and a publisher HTTP 403 were retained locally. One candidate publisher download URL remains unverified; its HTTP 503 does not establish file existence or access policy. The aggregate projection retains the original receipt SHA-256 and primary URLs without publishing response files or ephemeral tool citation IDs.
+
+The GSE116300 article distinguishes **27 sequenced probands, 36 described case/control arrays and 38 QC-passing samples used for ancestry principal components**; not all 38 belong to the analytical set. GEO contains 29 case-labelled assays, 9 controls and 6 case-parent assays. Agreement between the 38 nonparent assay count and the paper's QC count does not establish a named join or identify the two additional case-labelled assays. The `KS`/`PAT` crosswalk remains unresolved.
+
+The prior declaration and structural-review files were rechecked against their recorded hashes: **257 held, 84 KMT2D-review-scope exclusions and 0 ready for review remain unchanged**. No participant count, molecular eligibility, biological independence or scientific admission was inferred. T01.03b stays open. The T01 curator resumes the affected joins when valid original source material supplies an explicit sample/variant bridge; participant/specimen, overlap and required-covariate holds remain until their own evidence is available. Independent preprocessing/QC qualification may continue.
+
 ## Receiving record
 
 Owner/integrator: ChatGPT with parallel source and literature review under Ponytail. **In progress; initial public intake complete, scientific admission pending.**

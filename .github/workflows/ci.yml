@@ -90,6 +90,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
           submodules: false
-      - uses: edithatogo/repository-standards/.github/actions/privacy-secrets@b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4
+      - uses: edithatogo/repository-standards/.github/actions/privacy-secrets@2efdbd988064f6857795b9fa9ed4e1d08d18791d
         with:
           profile: repository

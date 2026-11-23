@@ -1,0 +1,15 @@
+{
+  "track_id": "t07c_qc_20261123",
+  "type": "feature",
+  "status": "completed",
+  "created_at": "2026-11-23",
+  "updated_at": "2026-11-23",
+  "parent_track": "T07",
+  "description": "Exact HM450 QC panel and stage-specific detection receiving boundary",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "archived_at": "2026-11-23",
+  "acceptance_record": "research/qualification/t07-qc-2026-11-23.json",
+  "method_status": "held: full native QC parity failed",
+  "integration_receipt": "Actual native-hook and immutable hosted outcomes in the associated integration PR"
+}

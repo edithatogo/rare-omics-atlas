@@ -1,0 +1,25 @@
+{
+  "url": "https://mghp.osn.xsede.org/bir190004-bucket01/ExperimentHub/sesameData/v1.7.2/HM450.probeInfo.rda",
+  "rdatapath": "sesameData/v1.7.2/HM450.probeInfo.rda",
+  "source_metadata_sha": "8edc8d6157bb3e86ebc4d70a78ba7cac8fc1ceffc8012ebde8c5737b45449e27",
+  "resolved_url": "https://mghp.osn.xsede.org/bir190004-bucket01/ExperimentHub/sesameData/v1.7.2/HM450.probeInfo.rda",
+  "headers": {
+    "content-length": "10616007",
+    "accept-ranges": "bytes",
+    "last-modified": "Thu, 29 May 2025 19:30:49 GMT",
+    "x-rgw-object-type": "Normal",
+    "etag": "\"2416eb80d081ec23af4c113037750102\"",
+    "x-amz-meta-mtime": "1637765555",
+    "x-amz-request-id": "tx000003cf7b1165f3875d6-006b03b597-dc63496-default",
+    "content-type": "binary/octet-stream",
+    "date": "Mon, 23 Nov 2026 03:40:07 GMT",
+    "x-envoy-upstream-service-time": "126",
+    "server": "envoy",
+    "connection": "close"
+  },
+  "size_bytes": 10616007,
+  "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+  "status": "verified_loaded_exact_named_object",
+  "verification": "gct-lineage-command.json",
+  "md5_matches_storage_etag": true
+}

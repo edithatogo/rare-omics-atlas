@@ -24,6 +24,103 @@ from verify import run_check
 
 
 class VerificationContracts(unittest.TestCase):
+    def test_history_gate_detects_a_merge_only_secret_after_its_removal(self):
+        original_git = verify.git
+        original_check = verify.run_check
+        environment = {
+            key: value for key, value in os.environ.items() if not key.startswith("GIT_")
+        }
+        environment.update(GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_SYSTEM=os.devnull)
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder).resolve()
+
+            def git(*args):
+                return subprocess.run(
+                    ["git", "-C", str(root), *args],
+                    env=environment,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                ).stdout.strip()
+
+            git("init", "--initial-branch=main")
+            git("config", "user.name", "Merge history fixture")
+            git("config", "user.email", "merge-fixture@example.invalid")
+            git("config", "commit.gpgsign", "false")
+            (root / ".gitignore").write_text("artifacts/\n", encoding="utf-8")
+            git("add", ".")
+            git("commit", "-m", "Baseline")
+            git("switch", "-c", "side")
+            (root / "side.txt").write_text("Side branch\n", encoding="utf-8")
+            git("add", ".")
+            git("commit", "-m", "Side change")
+            git("switch", "main")
+            (root / "main.txt").write_text("Main branch\n", encoding="utf-8")
+            git("add", ".")
+            git("commit", "-m", "Main change")
+            git("merge", "--no-ff", "--no-commit", "side")
+            # Construct a fictional canary; no usable credential is stored in source.
+            canary = "ghp_" + hashlib.sha256(b"atlas-merge-only-canary").hexdigest()[:36]
+            (root / "merge-only.txt").write_text(canary + "\n", encoding="utf-8")
+            git("add", ".")
+            git("commit", "-m", "Merge with a synthetic canary")
+            git("rm", "merge-only.txt")
+            git("commit", "-m", "Remove the synthetic canary")
+            artifacts = {
+                "python-coverage": ("python-coverage.xml", "<coverage/>"),
+                "rust-coverage-xml": ("rust-coverage.xml", "<coverage/>"),
+                "rust-coverage": ("rust-lcov.info", "TN:fixture\n"),
+                "python-advisories": ("python-sbom.json", '{"components":[]}'),
+                "limma-consumer-contract": ("limma-contract.json", '{"status":"passed"}'),
+            }
+
+            def fixture_git(*args, root=root):
+                return original_git(*args, root=root)
+
+            def check(name, command, output, environment, *, expected=None):
+                if name == "history-secrets":
+                    without_merge_diffs = [
+                        arg.replace(" --diff-merges=first-parent", "") for arg in command
+                    ]
+                    control = original_check(
+                        "history-without-merge-diffs",
+                        without_merge_diffs,
+                        output,
+                        environment,
+                        root=root,
+                    )
+                    self.assertEqual(control["exit_code"], 0)
+                if name in (
+                    "gitleaks-version",
+                    "source-secrets",
+                    "complete-history",
+                    "history-secrets",
+                ):
+                    return original_check(
+                        name, command, output, environment, expected=expected, root=root
+                    )
+                if name in artifacts:
+                    filename, contents = artifacts[name]
+                    (output / filename).write_text(contents, encoding="utf-8")
+                return {"name": name, "command": command, "status": "passed", "exit_code": 0}
+
+            with (
+                patch.dict(os.environ, environment, clear=True),
+                patch.object(verify, "ROOT", root),
+                patch.object(verify, "git", side_effect=fixture_git),
+                patch.object(verify, "run_check", side_effect=check),
+                patch.object(sys, "argv", ["verify.py", "--deep", "--base", "HEAD"]),
+                redirect_stdout(io.StringIO()),
+            ):
+                code = verify.main()
+            output = root / "artifacts/verification/latest"
+            receipt = json.loads((output / "receipt.json").read_text(encoding="utf-8"))
+            log = (output / "history-secrets.log").read_text(encoding="utf-8")
+            self.assertEqual(code, 1, log)
+            self.assertEqual(receipt["failed_checks"], ["history-secrets"])
+            self.assertIn("leaks found: 1", log)
+            self.assertNotIn(canary, log)
+
     def test_missing_and_failing_commands_cannot_report_success(self):
         with tempfile.TemporaryDirectory() as folder:
             output = Path(folder)
