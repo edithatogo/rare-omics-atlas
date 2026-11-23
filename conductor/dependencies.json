@@ -100,7 +100,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Accept the selected complete preprocessing/QC stage before T01 sample QC: exact stage source/assets, independent fixtures, actual exported precision and applicable device receipts. T07.hm450_raw_q is a bounded one-fixture raw/Q and annotation increment, not this full admission gate."
+      "scope": "Accept the selected complete preprocessing/QC stage before T01 sample QC: exact stage source/assets, independent fixtures, actual exported precision and applicable device receipts. T07.hm450_raw_q is a bounded one-fixture raw/Q and annotation increment, not this full admission gate. T07.hm450_qc_receiver implements the next exact receiving boundary; its native QC parity failure remains a method hold despite passing p-value serialization checks."
     },
     {
       "id": "T07.consumer_contract",
@@ -267,6 +267,15 @@
         "T00.strict_code"
       ],
       "scope": "Pinned HM450 author technical pair, independent mathematical/R raw/Q reference, complete named annotation and actual binary32-to-six-digit production exports. Full scientific preprocessing/QC, other platforms and owner devices retain separate criteria."
+    },
+    {
+      "id": "T07.hm450_qc_receiver",
+      "status": "complete",
+      "requires": [
+        "T07.hm450_raw_q",
+        "T00.strict_code"
+      ],
+      "scope": "Archived bounded full-schema HM450 QC and raw/QCD detection receiver: four actual exports, all p-values pass and four native R QC fields differ. Independent review and 34/34 strict code gates passed; final native-hook/hosted evidence belongs to its integration PR. Full QC method, rejection-policy, scientific and device admission remain held."
     }
   ],
   "external_gate_resolution": {

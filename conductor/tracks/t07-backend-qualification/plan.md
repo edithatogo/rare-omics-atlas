@@ -8,7 +8,8 @@
 - [ ] **T07.02b:** Complete N1 and freeze the scientific contrast, discovery/replication partition, preprocessing/feature rules and blinded backend-comparison protocol before disease-conditioned numerical qualification. Use unrelated technical fixtures or discovery data for tuning; do not expose reserved clinical replication effects.
 - [ ] **T07.03:** Complete the fork's independent R/fixture/consumer gates or qualify the selected alternative. Use LM01/LM02; do not repair defects belonging to another repository.
 - [x] **T07.03a:** Receive the actual pinned named-v1 synthetic exchange, preserve source/output/reference identity and pass the complete strict gate. [T07a is archived](../../archive/t07a_named_exchange_20261123/index.md); broader production/preprocessing acceptance under T07.03 remains open.
-- [x] **T07.03b:** Qualify the bounded HM450 raw/Q production export and exact annotation row-space using the independent mathematical and fresh R references. [T07b](../../archive/t07b_preprocessing_20261123/index.md) is archived after independent review and the combined strict pass; final native-hook/hosted outcomes remain separately recorded in the integration PR. Full preprocessing/QC, scientific precision budgets, other platforms and devices retain separate criteria.
+- [x] **T07.03b:** Qualify the bounded HM450 raw/Q production export and exact annotation row-space using the independent mathematical and fresh R references. [T07b](../../archive/t07b_preprocessing_20261123/index.md) is archived after independent review and the combined strict pass; [PR #12](https://github.com/edithatogo/rare-omics-atlas/pull/12) records the actual passing hook, PR and merged-main checks. Full preprocessing/QC, scientific precision budgets, other platforms and devices retain separate criteria.
+- [x] **T07.03c:** Implement and execute the exact HM450 QC/p-value receiver. [T07c](../../archive/t07c_qc_20261123/index.md) is archived after implementation, actual full-universe receiving, independent review and 34/34 strict candidate gates. P-value exports pass; the native QC panel remains failed. Final hook/hosted evidence is recorded in its integration PR; the method hold stays open.
 - [ ] **T07.04:** Compare the chosen inference engine on identical admitted technical/discovery M matrices under that frozen protocol, preserving annotations, filtering, design and global moderation/FDR. Qualify preprocessing separately, including actual exported precision if SeSAMe2 is selected. A backend validation reserve must be distinct from the clinical replication claim, or handled under a prespecified blinded numerical check with no scientific retuning.
 - [ ] **T07.05:** Observe official local-runner checks on the relevant actual machine and record source/toolchain/input/job identity and resource evidence. A configured workflow or cloud test is insufficient.
 - [ ] **T07.06:** Record selected / held / rejected for the exact scientific contract and permit only accepted stages to feed T02/T03.
@@ -30,3 +31,24 @@ The bounded numerical part of A is now [specified](selected-contract.md). Its sy
 **Ordering detail:** define the preprocessing/QC contract in A and qualify that stage on unrelated technical fixtures in B before T01 technical QC. Full disease-conditioned backend acceptance in D/E follows T01 admission and N1. This avoids a circular requirement that a cohort be scientifically analysed before its QC stage or protocol is qualified. A missing stage/device receipt holds T01 scientific QC while public source curation and synthetic work continue.
 
 **Receiving status:** initial source review and existing-corpus baseline complete; backend admission remains pending. [Source audit](../../../research/methylation-backend-audit.md), [contracts](../../../research/backend-replacement-policy.md), [small-additions roadmap](../../../research/rust-port-roadmap.md).
+
+## QC receiving follow-up — 23 November 2026
+
+The [executed T07c boundary](../../../research/qualification/t07-qc-2026-11-23.md)
+checks all 65 native R QC metrics plus explicitly separate published-list GCT
+arithmetic. Four native fields differ at minimum beads zero; full QC parity
+remains held. All raw/QCD-stage p-value exports match across 486,427 ordered
+probes and both thread settings. The independent complete original bead audit
+passes. This resolves the absence of an executable receiving check and identifies
+the next method decision; it does not accept the scientific preprocessing route.
+
+Before a dependent implementation, choose and justify the intended missing-signal
+QC denominator/NA semantics and the GCT probe curation. Preserve this native-R
+failure as evidence; any differently specified method needs a new predeclared
+contract and its own receiving run. Select study rejection rules and beta/M
+precision budgets for their actual consumer. The existing
+[reproduction commands](../../../research/qc-qualification.md) supply the next
+execution once that contract is fixed. Keep T01 named identity/overlap/covariate
+curation in parallel; actual owner-device and applicable institutional receipts
+remain separate external conditions. No full port or new platform is required
+by these findings.

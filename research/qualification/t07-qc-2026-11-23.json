@@ -1,0 +1,1525 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "track": "T07c",
+  "base_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+  "implementation_status": "completed: exact receiver, actual execution, independent review and 34/34 strict candidate gates; archived bounded T07c, final hook/hosted evidence in integration PR",
+  "method_status": "held: native QC parity failed; p-value serialization boundary passed",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "sample_rejection_policy_accepted": false,
+  "scientific_precision_budget_accepted": false,
+  "baseline": {
+    "path": "artifacts/verification/qc-baseline-20261123/receipt.json",
+    "sha256": "4f4db10b45881a0ff5008f8a7621336093b01da47220a41c4b7d02e4eecb8e17",
+    "bytes": 13825,
+    "status": "passed",
+    "quality_level": "strict",
+    "source_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+    "source_tree_sha256": "b74432660a4da02f22a772698080774f8a66a863e45f967123af7e267a330585",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "elapsed_seconds": 39.784,
+    "completed_at": "2026-11-23T03:32:44.255926+00:00"
+  },
+  "contract": {
+    "path": "research/contracts/sesame-hm450-qc-v1.json",
+    "sha256": "920a95a6e8374f2db61faabd8b3971add740f53b8e9a0aa4a941bf094cb92f69",
+    "bytes": 3598
+  },
+  "reference_evidence": {
+    "path": "research/qualification/t07-qc-reference-2026-11-23/reference-evidence.json",
+    "sha256": "ebc0a3abec2c6a3610ea0036256b566d97e4c64412e0ce195ad49bf9fde67728",
+    "bytes": 53115
+  },
+  "reference_recipes": {
+    "run_qc_reference.R": {
+      "path": "scripts/tests/run_qc_reference.R",
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+      "bytes": 7027
+    },
+    "compare_gct_lineage.R": {
+      "path": "scripts/tests/compare_gct_lineage.R",
+      "sha256": "09af5d72acbebc51ced9badc9e92c55af5c55da47fc551b0ea483ca61285c2e6",
+      "bytes": 2894
+    },
+    "check_beads.py": {
+      "path": "scripts/tests/check_beads.py",
+      "sha256": "f2f829d1fcfa39a7f231b3fb7f3acde8f61c6a34070381c2fc2ab756a05cbeff",
+      "bytes": 7285
+    }
+  },
+  "production_qualification": {
+    "path": "artifacts/verification/qc-final-20261123/qc-contract.json",
+    "sha256": "b46c8702feedfaf355c93101f909d4889bfe2751f9d0051180261fb4960433e1",
+    "bytes": 72260,
+    "status": "failed",
+    "exit_code": 1,
+    "elapsed_seconds": 36.346,
+    "command": "uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/qualify_qc.py --checkout artifacts/integration/sesame-raw-q --data-root /workspace/scratch/1ef0e9289b0e/preprocess-audit --raw-reference /workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/generated-raw-q-portable-final/expected-raw-q.tsv.gz --reference-root /workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit --output artifacts/verification/qc-final-20261123",
+    "source_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+    "yame_revision": "e1e7b38e9f3b67981a78b1116e7312864677d69d",
+    "r_source_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+    "implementation_sha256": {
+      "qualify_qc.py": "8b070d1c768b9deb141f55b16339b846afd76476936d3f4eef019ef863a418af",
+      "qualify_preprocessing.py": "8304da92e9cde5f320b9d3cf3d19b6bf8426476834fcd7224a76bac09193bf03",
+      "qualify_limma.py": "ff85e1865bafb410050ea1e10ca381512b39f2a3e20d6708d0435ab018deb038"
+    },
+    "reference_recipe_pin": {
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+      "bytes": 7027
+    },
+    "input_sha256": {
+      "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+      "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+      "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+      "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+      "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+      "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+      "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be",
+      "independent_reference": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3"
+    },
+    "reference_sha256": {
+      "pvalues-reference.tsv.gz": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a",
+      "qc-reference.tsv": "490dd59fd37e601dda27845d8879c075d198613d8336c87e58a866d1646a1712"
+    },
+    "binary_sha256": {
+      "sesame": "9062ba02c4599ec83f3579f2b475ac4e4bd4655b5fb580e783add0d81a2d31bc",
+      "YAME/yame": "8df7936d10216f83d38948fa734aed25401f49d896ab6821d4d4a09f147ddc3d"
+    },
+    "annotation": {
+      "rows": 486427,
+      "channels": {
+        "2": 350926,
+        "R": 89206,
+        "G": 46295
+      },
+      "probe_kinds": {
+        "cg": 482421,
+        "ch": 3091,
+        "control": 850,
+        "rs": 65
+      },
+      "coordinate_contigs": {
+        "chr16": 21937,
+        "chr3": 25158,
+        "chr1": 46823,
+        "chr8": 20952,
+        "chr14": 15080,
+        "chr15": 15262,
+        "chr9": 9872,
+        "chr19": 25516,
+        "chr6": 36613,
+        "chr12": 24541,
+        "chr2": 34783,
+        "chr4": 20451,
+        "chr11": 28784,
+        "chr20": 10395,
+        "chr10": 24386,
+        "chr18": 5917,
+        "chr21": 4246,
+        "chr17": 27893,
+        "chr7": 30016,
+        "chr22": 8544,
+        "chrX": 11241,
+        "chr13": 12293,
+        "chr5": 24327,
+        "chrY": 418,
+        "chrUn_GL000220v1": 4,
+        "chr16_KI270728v1_random": 22,
+        "chr22_KI270733v1_random": 6,
+        "chrUn_GL000213v1": 8,
+        "chr22_KI270879v1_alt": 18,
+        "chr8_KI270821v1_alt": 1,
+        "NA": 858,
+        "chrUn_KI270442v1": 1,
+        "chr1_KI270706v1_random": 10,
+        "chr2_KI270716v1_random": 4,
+        "chr14_GL000009v2_random": 4,
+        "chrUn_GL000218v1": 2,
+        "chr14_GL000194v1_random": 1,
+        "chrUn_KI270744v1": 1,
+        "chrM": 5,
+        "chr22_KI270731v1_random": 3,
+        "chr1_KI270713v1_random": 3,
+        "chrUn_KI270425v1": 1,
+        "chr19_GL949751v2_alt": 1,
+        "chr4_GL000008v2_random": 6,
+        "chr22_KI270928v1_alt": 1,
+        "chr3_GL000221v1_random": 2,
+        "chr22_KI270734v1_random": 2,
+        "chrUn_KI270743v1": 3,
+        "chr14_KI270726v1_random": 1,
+        "chr15_KI270727v1_random": 1,
+        "chrUn_GL000214v1": 2,
+        "chrUn_KI270742v1": 4,
+        "chrUn_GL000219v1": 1,
+        "chr19_GL949746v1_alt": 1,
+        "chr22_KI270737v1_random": 1,
+        "chr19_KI270938v1_alt": 1
+      },
+      "extension_codes": {
+        ".": 422563,
+        "C": 47879,
+        "T": 15985
+      },
+      "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+      "coordinate_convention": "pinned hg38 CpG_beg is zero-based; no rows filtered",
+      "positional_join_basis": "only these checksum-pinned companion files share this ordering"
+    },
+    "commands": [
+      {
+        "command": [
+          "make",
+          "clean"
+        ],
+        "stdout": "clean-sesame.stdout",
+        "stderr": "clean-sesame.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.012
+      },
+      {
+        "command": [
+          "make",
+          "-C",
+          "YAME",
+          "clean"
+        ],
+        "stdout": "clean-yame.stdout",
+        "stderr": "clean-yame.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.054
+      },
+      {
+        "command": [
+          "make",
+          "-j2",
+          "sesame"
+        ],
+        "stdout": "build.stdout",
+        "stderr": "build.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 17.993
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "version"
+        ],
+        "stdout": "version.stdout",
+        "stderr": "version.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.01
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "describe-probe",
+          "--platform",
+          "HM450",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz"
+        ],
+        "stdout": "annotation.stdout",
+        "stderr": "annotation.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.317
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "preprocess",
+          "--platform",
+          "HM450",
+          "--prep",
+          "",
+          "--mask",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+          "--min-beads",
+          "0",
+          "--threads",
+          "1",
+          "--output",
+          "pval,qc",
+          "--out",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/raw-1",
+          "--tmp",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+        ],
+        "stdout": "raw-1.stdout",
+        "stderr": "raw-1.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 1.503
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "describe-probe",
+          "--platform",
+          "HM450",
+          "--all",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/raw-1/pval.cg"
+        ],
+        "stdout": "raw-1-pval.stdout",
+        "stderr": "raw-1-pval.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.212
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "preprocess",
+          "--platform",
+          "HM450",
+          "--prep",
+          "",
+          "--mask",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+          "--min-beads",
+          "0",
+          "--threads",
+          "2",
+          "--output",
+          "pval,qc",
+          "--out",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/raw-2",
+          "--tmp",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+        ],
+        "stdout": "raw-2.stdout",
+        "stderr": "raw-2.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 1.677
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "describe-probe",
+          "--platform",
+          "HM450",
+          "--all",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/raw-2/pval.cg"
+        ],
+        "stdout": "raw-2-pval.stdout",
+        "stderr": "raw-2-pval.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.223
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "preprocess",
+          "--platform",
+          "HM450",
+          "--prep",
+          "QCDPB",
+          "--mask",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+          "--min-beads",
+          "0",
+          "--threads",
+          "1",
+          "--output",
+          "pval,qc",
+          "--out",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/QCDPB-1",
+          "--tmp",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+        ],
+        "stdout": "QCDPB-1.stdout",
+        "stderr": "QCDPB-1.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 2.352
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "describe-probe",
+          "--platform",
+          "HM450",
+          "--all",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/QCDPB-1/pval.cg"
+        ],
+        "stdout": "QCDPB-1-pval.stdout",
+        "stderr": "QCDPB-1-pval.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.222
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "preprocess",
+          "--platform",
+          "HM450",
+          "--prep",
+          "QCDPB",
+          "--mask",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+          "--min-beads",
+          "0",
+          "--threads",
+          "2",
+          "--output",
+          "pval,qc",
+          "--out",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/QCDPB-2",
+          "--tmp",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123",
+          "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+        ],
+        "stdout": "QCDPB-2.stdout",
+        "stderr": "QCDPB-2.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 2.306
+      },
+      {
+        "command": [
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+          "describe-probe",
+          "--platform",
+          "HM450",
+          "--all",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-final-20261123/QCDPB-2/pval.cg"
+        ],
+        "stdout": "QCDPB-2-pval.stdout",
+        "stderr": "QCDPB-2-pval.stderr",
+        "status": "passed",
+        "exit_code": 0,
+        "elapsed_seconds": 0.216
+      }
+    ],
+    "error": "ValueError: QC or detection reference comparison failed; method admission remains held",
+    "exports": [
+      {
+        "stage": "raw",
+        "threads": 1,
+        "pvalues": {
+          "status": "passed",
+          "rows": 486427,
+          "reference_missing": 0,
+          "serialized_mismatches": 0,
+          "missingness_mismatches": 0,
+          "detection_decision_changes_at_upstream_0_05": 0,
+          "maximum_absolute_serialization_error": 5.226362970178755e-07,
+          "reference_stage": "raw",
+          "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+          "sha256": "f5a102b359df5086722db77c99d0c21976a6c92484557164003c10197b646b18",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+        },
+        "pvalue_binary_sha256": "25ca5f6514a245cf7beb260f3424ab9ac08231af9d0e4eeec78de2b511b5c1a5",
+        "qc": {
+          "status": "failed",
+          "metrics_checked": 66,
+          "metrics_failed": 4,
+          "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+          "sha256": "4980001b2c960cac74f503a74233878327d5afe3d2d9c1a5ad98407ec4aa77f7"
+        }
+      },
+      {
+        "stage": "raw",
+        "threads": 2,
+        "pvalues": {
+          "status": "passed",
+          "rows": 486427,
+          "reference_missing": 0,
+          "serialized_mismatches": 0,
+          "missingness_mismatches": 0,
+          "detection_decision_changes_at_upstream_0_05": 0,
+          "maximum_absolute_serialization_error": 5.226362970178755e-07,
+          "reference_stage": "raw",
+          "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+          "sha256": "f5a102b359df5086722db77c99d0c21976a6c92484557164003c10197b646b18",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+        },
+        "pvalue_binary_sha256": "25ca5f6514a245cf7beb260f3424ab9ac08231af9d0e4eeec78de2b511b5c1a5",
+        "qc": {
+          "status": "failed",
+          "metrics_checked": 66,
+          "metrics_failed": 4,
+          "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+          "sha256": "4980001b2c960cac74f503a74233878327d5afe3d2d9c1a5ad98407ec4aa77f7"
+        }
+      },
+      {
+        "stage": "QCDPB",
+        "threads": 1,
+        "pvalues": {
+          "status": "passed",
+          "rows": 486427,
+          "reference_missing": 0,
+          "serialized_mismatches": 0,
+          "missingness_mismatches": 0,
+          "detection_decision_changes_at_upstream_0_05": 0,
+          "maximum_absolute_serialization_error": 5.199936867761323e-07,
+          "reference_stage": "QCD, before P masking and B correction",
+          "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+          "sha256": "54d65fb1a4ee239c21533fed77f575adcb349d6fea4402e58137476b3f42fe38",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+        },
+        "pvalue_binary_sha256": "8007ac8cd33b869605b62a9dc0ec8f8e41d60869ae1ff5fe72c4118b6b1aec5a",
+        "qc": {
+          "status": "failed",
+          "metrics_checked": 66,
+          "metrics_failed": 4,
+          "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+          "sha256": "4980001b2c960cac74f503a74233878327d5afe3d2d9c1a5ad98407ec4aa77f7"
+        }
+      },
+      {
+        "stage": "QCDPB",
+        "threads": 2,
+        "pvalues": {
+          "status": "passed",
+          "rows": 486427,
+          "reference_missing": 0,
+          "serialized_mismatches": 0,
+          "missingness_mismatches": 0,
+          "detection_decision_changes_at_upstream_0_05": 0,
+          "maximum_absolute_serialization_error": 5.199936867761323e-07,
+          "reference_stage": "QCD, before P masking and B correction",
+          "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+          "sha256": "54d65fb1a4ee239c21533fed77f575adcb349d6fea4402e58137476b3f42fe38",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+        },
+        "pvalue_binary_sha256": "8007ac8cd33b869605b62a9dc0ec8f8e41d60869ae1ff5fe72c4118b6b1aec5a",
+        "qc": {
+          "status": "failed",
+          "metrics_checked": 66,
+          "metrics_failed": 4,
+          "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+          "sha256": "4980001b2c960cac74f503a74233878327d5afe3d2d9c1a5ad98407ec4aa77f7"
+        }
+      }
+    ],
+    "qc_comparisons_shared_by_all_four_exports": [
+      {
+        "metric": "num_dtna",
+        "reference": 0,
+        "expected_serialized": 0,
+        "observed": 2,
+        "status": "failed"
+      },
+      {
+        "metric": "frac_dtna",
+        "reference": 0.0,
+        "expected_serialized": 0.0,
+        "observed": 4.11161387e-06,
+        "status": "failed"
+      },
+      {
+        "metric": "num_dt",
+        "reference": 432110,
+        "expected_serialized": 432110,
+        "observed": 432110,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_dt",
+        "reference": 0.8883347347083941,
+        "expected_serialized": 0.8883347347,
+        "observed": 0.8883383872,
+        "status": "failed"
+      },
+      {
+        "metric": "num_dt_mk",
+        "reference": 432110,
+        "expected_serialized": 432110,
+        "observed": 432110,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_dt_mk",
+        "reference": 0.8883347347083941,
+        "expected_serialized": 0.8883347347,
+        "observed": 0.8883383872,
+        "status": "failed"
+      },
+      {
+        "metric": "num_dt_cg",
+        "reference": 430074,
+        "expected_serialized": 430074,
+        "observed": 430074,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_dt_cg",
+        "reference": 0.8914910420566269,
+        "expected_serialized": 0.8914910421,
+        "observed": 0.8914910421,
+        "status": "passed"
+      },
+      {
+        "metric": "num_dt_ch",
+        "reference": 1812,
+        "expected_serialized": 1812,
+        "observed": 1812,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_dt_ch",
+        "reference": 0.5862180524102232,
+        "expected_serialized": 0.5862180524,
+        "observed": 0.5862180524,
+        "status": "passed"
+      },
+      {
+        "metric": "num_dt_rs",
+        "reference": 56,
+        "expected_serialized": 56,
+        "observed": 56,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_dt_rs",
+        "reference": 0.8615384615384616,
+        "expected_serialized": 0.8615384615,
+        "observed": 0.8615384615,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes",
+        "reference": 486427,
+        "expected_serialized": 486427,
+        "observed": 486427,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_II",
+        "reference": 350926,
+        "expected_serialized": 350926,
+        "observed": 350926,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_IR",
+        "reference": 89206,
+        "expected_serialized": 89206,
+        "observed": 89206,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_IG",
+        "reference": 46295,
+        "expected_serialized": 46295,
+        "observed": 46295,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_cg",
+        "reference": 482421,
+        "expected_serialized": 482421,
+        "observed": 482421,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_ch",
+        "reference": 3091,
+        "expected_serialized": 3091,
+        "observed": 3091,
+        "status": "passed"
+      },
+      {
+        "metric": "num_probes_rs",
+        "reference": 65,
+        "expected_serialized": 65,
+        "observed": 65,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_intensity",
+        "reference": 2309.5954216991313,
+        "expected_serialized": 2309.595422,
+        "observed": 2309.595422,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_intensity_MU",
+        "reference": 4619.190843398263,
+        "expected_serialized": 4619.190843,
+        "observed": 4619.190843,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_ii",
+        "reference": 2072.4528487649745,
+        "expected_serialized": 2072.452849,
+        "observed": 2072.452849,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_inb_grn",
+        "reference": 2599.174781293876,
+        "expected_serialized": 2599.174781,
+        "observed": 2599.174781,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_inb_red",
+        "reference": 3092.199100957335,
+        "expected_serialized": 3092.199101,
+        "observed": 3092.199101,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_oob_grn",
+        "reference": 275.83543707822344,
+        "expected_serialized": 275.8354371,
+        "observed": 275.8354371,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_oob_red",
+        "reference": 390.9316016848472,
+        "expected_serialized": 390.9316017,
+        "observed": 390.9316017,
+        "status": "passed"
+      },
+      {
+        "metric": "na_intensity_M",
+        "reference": 2,
+        "expected_serialized": 2,
+        "observed": 2,
+        "status": "passed"
+      },
+      {
+        "metric": "na_intensity_U",
+        "reference": 2,
+        "expected_serialized": 2,
+        "observed": 2,
+        "status": "passed"
+      },
+      {
+        "metric": "na_intensity_ig",
+        "reference": 0,
+        "expected_serialized": 0,
+        "observed": 0,
+        "status": "passed"
+      },
+      {
+        "metric": "na_intensity_ir",
+        "reference": 0,
+        "expected_serialized": 0,
+        "observed": 0,
+        "status": "passed"
+      },
+      {
+        "metric": "na_intensity_ii",
+        "reference": 4,
+        "expected_serialized": 4,
+        "observed": 4,
+        "status": "passed"
+      },
+      {
+        "metric": "InfI_switch_R2R",
+        "reference": 89075,
+        "expected_serialized": 89075,
+        "observed": 89075,
+        "status": "passed"
+      },
+      {
+        "metric": "InfI_switch_G2G",
+        "reference": 46150,
+        "expected_serialized": 46150,
+        "observed": 46150,
+        "status": "passed"
+      },
+      {
+        "metric": "InfI_switch_R2G",
+        "reference": 131,
+        "expected_serialized": 131,
+        "observed": 131,
+        "status": "passed"
+      },
+      {
+        "metric": "InfI_switch_G2R",
+        "reference": 145,
+        "expected_serialized": 145,
+        "observed": 145,
+        "status": "passed"
+      },
+      {
+        "metric": "medR",
+        "reference": 6104.0,
+        "expected_serialized": 6104.0,
+        "observed": 6104.0,
+        "status": "passed"
+      },
+      {
+        "metric": "medG",
+        "reference": 5307.0,
+        "expected_serialized": 5307.0,
+        "observed": 5307.0,
+        "status": "passed"
+      },
+      {
+        "metric": "topR",
+        "reference": 22835.0,
+        "expected_serialized": 22835.0,
+        "observed": 22835.0,
+        "status": "passed"
+      },
+      {
+        "metric": "topG",
+        "reference": 14971.0,
+        "expected_serialized": 14971.0,
+        "observed": 14971.0,
+        "status": "passed"
+      },
+      {
+        "metric": "RGratio",
+        "reference": 1.1501790088562276,
+        "expected_serialized": 1.150179009,
+        "observed": 1.150179009,
+        "status": "passed"
+      },
+      {
+        "metric": "RGdistort",
+        "reference": 1.3261259339047191,
+        "expected_serialized": 1.326125934,
+        "observed": 1.326125934,
+        "status": "passed"
+      },
+      {
+        "metric": "GCT",
+        "reference": 1.120552120376573,
+        "expected_serialized": 1.12055212,
+        "observed": 1.12055212,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_beta",
+        "reference": 0.5131716829042416,
+        "expected_serialized": 0.5131716829,
+        "observed": 0.5131716829,
+        "status": "passed"
+      },
+      {
+        "metric": "median_beta",
+        "reference": 0.6010811977435775,
+        "expected_serialized": 0.6010811977,
+        "observed": 0.6010811977,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_unmeth",
+        "reference": 0.36580731758117147,
+        "expected_serialized": 0.3658073176,
+        "observed": 0.3658073176,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_meth",
+        "reference": 0.44391011547985465,
+        "expected_serialized": 0.4439101155,
+        "observed": 0.4439101155,
+        "status": "passed"
+      },
+      {
+        "metric": "num_na",
+        "reference": 54317,
+        "expected_serialized": 54317,
+        "observed": 54317,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_na",
+        "reference": 0.11166526529160593,
+        "expected_serialized": 0.1116652653,
+        "observed": 0.1116652653,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_beta_cg",
+        "reference": 0.5150566844214137,
+        "expected_serialized": 0.5150566844,
+        "observed": 0.5150566844,
+        "status": "passed"
+      },
+      {
+        "metric": "median_beta_cg",
+        "reference": 0.6050556452476978,
+        "expected_serialized": 0.6050556452,
+        "observed": 0.6050556452,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_unmeth_cg",
+        "reference": 0.3631142547561582,
+        "expected_serialized": 0.3631142548,
+        "observed": 0.3631142548,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_meth_cg",
+        "reference": 0.44576049703074355,
+        "expected_serialized": 0.445760497,
+        "observed": 0.445760497,
+        "status": "passed"
+      },
+      {
+        "metric": "num_na_cg",
+        "reference": 52347,
+        "expected_serialized": 52347,
+        "observed": 52347,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_na_cg",
+        "reference": 0.1085089579433731,
+        "expected_serialized": 0.1085089579,
+        "observed": 0.1085089579,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_beta_ch",
+        "reference": 0.06512423051512481,
+        "expected_serialized": 0.06512423052,
+        "observed": 0.06512423052,
+        "status": "passed"
+      },
+      {
+        "metric": "median_beta_ch",
+        "reference": 0.05663635221908559,
+        "expected_serialized": 0.05663635222,
+        "observed": 0.05663635222,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_unmeth_ch",
+        "reference": 0.9988962472406181,
+        "expected_serialized": 0.9988962472,
+        "observed": 0.9988962472,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_meth_ch",
+        "reference": 0.0,
+        "expected_serialized": 0.0,
+        "observed": 0.0,
+        "status": "passed"
+      },
+      {
+        "metric": "num_na_ch",
+        "reference": 1279,
+        "expected_serialized": 1279,
+        "observed": 1279,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_na_ch",
+        "reference": 0.41378194758977677,
+        "expected_serialized": 0.4137819476,
+        "observed": 0.4137819476,
+        "status": "passed"
+      },
+      {
+        "metric": "mean_beta_rs",
+        "reference": 0.5281888869155619,
+        "expected_serialized": 0.5281888869,
+        "observed": 0.5281888869,
+        "status": "passed"
+      },
+      {
+        "metric": "median_beta_rs",
+        "reference": 0.5167661978407911,
+        "expected_serialized": 0.5167661978,
+        "observed": 0.5167661978,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_unmeth_rs",
+        "reference": 0.26785714285714285,
+        "expected_serialized": 0.2678571429,
+        "observed": 0.2678571429,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_meth_rs",
+        "reference": 0.3392857142857143,
+        "expected_serialized": 0.3392857143,
+        "observed": 0.3392857143,
+        "status": "passed"
+      },
+      {
+        "metric": "num_na_rs",
+        "reference": 9,
+        "expected_serialized": 9,
+        "observed": 9,
+        "status": "passed"
+      },
+      {
+        "metric": "frac_na_rs",
+        "reference": 0.13846153846153847,
+        "expected_serialized": 0.1384615385,
+        "observed": 0.1384615385,
+        "status": "passed"
+      }
+    ],
+    "pvalue_comparisons": 1945708,
+    "end_integrity_passed_before_final_comparison_failure": true,
+    "all_stage_thread_repeatability_passed": true,
+    "first_executed_receipt_retained": {
+      "path": "artifacts/verification/qc-first-20261123/qc-contract.json",
+      "sha256": "d3301e8fba5c819db0f746e4da442ff4dd199d9a5eadb13804857e928f6d849e",
+      "bytes": 72059,
+      "status": "failed",
+      "exit_code": 1,
+      "elapsed_seconds": 34.945
+    }
+  },
+  "minimum_three_diagnostic": {
+    "status": "failed",
+    "beads": 3,
+    "qc": {
+      "raw": {
+        "metrics": 66,
+        "matching": 63,
+        "differences": [
+          {
+            "metric": "num_dtna",
+            "reference": "0",
+            "production": "2"
+          },
+          {
+            "metric": "frac_dtna",
+            "reference": "0",
+            "production": "4.11161387e-06"
+          },
+          {
+            "metric": "frac_dt",
+            "reference": "0.8883347347",
+            "production": "0.8883383872"
+          }
+        ]
+      },
+      "qcd": {
+        "metrics": 66,
+        "matching": 63,
+        "differences": [
+          {
+            "metric": "num_dtna",
+            "reference": "0",
+            "production": "2"
+          },
+          {
+            "metric": "frac_dtna",
+            "reference": "0",
+            "production": "4.11161387e-06"
+          },
+          {
+            "metric": "frac_dt",
+            "reference": "0.8883347347",
+            "production": "0.8883383872"
+          }
+        ]
+      }
+    },
+    "pvalues": {
+      "raw": {
+        "rows": 486427,
+        "mismatches": 0,
+        "examples": []
+      },
+      "qcd": {
+        "rows": 486427,
+        "mismatches": 0,
+        "examples": []
+      }
+    },
+    "beta_masks": {
+      "raw": {
+        "missing": 336,
+        "mismatches": 0
+      },
+      "qcd": {
+        "missing": 80216,
+        "mismatches": 0
+      }
+    },
+    "raw_signal_reference_sha256": "9fc4e1d30b65ab72ce52febc93904d528d06a809fb9c0f8ee8dc280e632b9ba7",
+    "rules_sha256": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb"
+  },
+  "bead_reference_replay": {
+    "path": "artifacts/verification/qc-bead-reference-final/bead-verification.json",
+    "sha256": "2aed6828632313128ff2bb14cfa80d4987d54d2093b249847c502ff7d8bee447",
+    "bytes": 3383,
+    "result": {
+      "schema_version": 1,
+      "status": "passed",
+      "started_at": "2026-11-23T04:01:34.306707+00:00",
+      "scope": "Original HM450 IDAT bead vectors and initial minimum-zero/three masks only",
+      "data_root": "/workspace/scratch/1ef0e9289b0e/preprocess-audit",
+      "reference_zero": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit",
+      "reference_three": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads3-explicit",
+      "scientific_admitted": false,
+      "native_qc_parity_accepted": false,
+      "script_sha256": "f2f829d1fcfa39a7f231b3fb7f3acde8f61c6a34070381c2fc2ab756a05cbeff",
+      "original_addresses": 622399,
+      "probes": 486427,
+      "original_bead_vector_mismatches": 0,
+      "derived_mask_mismatches": 0,
+      "min_beads3_masked": 336,
+      "missing_address_rows": 2,
+      "low_present_bead_rows": 334,
+      "green_bead_histogram": {
+        "0": 34,
+        "1": 57,
+        "2": 244,
+        "3": 1097,
+        "4": 2186,
+        "5": 4328,
+        "6": 8371,
+        "7": 13719,
+        "8": 21153,
+        "9": 29307,
+        "10": 39078,
+        "11": 47186,
+        "12": 54432,
+        "13": 57993,
+        "14": 58787,
+        "15": 55979,
+        "16": 50598,
+        "17": 43611,
+        "18": 36095,
+        "19": 28446,
+        "20": 21740,
+        "21": 15712,
+        "22": 11308,
+        "23": 7589,
+        "24": 4840,
+        "25": 2954,
+        "26": 1884,
+        "27": 1100,
+        "28": 656,
+        "29": 442,
+        "30": 236,
+        "31": 176,
+        "32": 113,
+        "33": 97,
+        "34": 88,
+        "35": 85,
+        "36": 61,
+        "37": 64,
+        "38": 75,
+        "39": 60,
+        "40": 68,
+        "41": 70,
+        "42": 53,
+        "43": 50,
+        "44": 33,
+        "45": 28,
+        "46": 22,
+        "47": 15,
+        "48": 12,
+        "49": 11,
+        "50": 16,
+        "51": 9,
+        "52": 9,
+        "53": 4,
+        "54": 6,
+        "55": 5,
+        "56": 2,
+        "57": 4,
+        "58": 1
+      },
+      "red_bead_histogram": {
+        "0": 34,
+        "1": 57,
+        "2": 244,
+        "3": 1097,
+        "4": 2186,
+        "5": 4328,
+        "6": 8371,
+        "7": 13719,
+        "8": 21153,
+        "9": 29307,
+        "10": 39078,
+        "11": 47186,
+        "12": 54432,
+        "13": 57993,
+        "14": 58787,
+        "15": 55979,
+        "16": 50598,
+        "17": 43611,
+        "18": 36095,
+        "19": 28446,
+        "20": 21740,
+        "21": 15712,
+        "22": 11308,
+        "23": 7589,
+        "24": 4840,
+        "25": 2954,
+        "26": 1884,
+        "27": 1100,
+        "28": 656,
+        "29": 442,
+        "30": 236,
+        "31": 176,
+        "32": 113,
+        "33": 97,
+        "34": 88,
+        "35": 85,
+        "36": 61,
+        "37": 64,
+        "38": 75,
+        "39": 60,
+        "40": 68,
+        "41": 70,
+        "42": 53,
+        "43": 50,
+        "44": 33,
+        "45": 28,
+        "46": 22,
+        "47": 15,
+        "48": 12,
+        "49": 11,
+        "50": 16,
+        "51": 9,
+        "52": 9,
+        "53": 4,
+        "54": 6,
+        "55": 5,
+        "56": 2,
+        "57": 4,
+        "58": 1
+      },
+      "source_sha256": {
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      },
+      "ordering_sha256": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+      "bead_mask_sha256": "83758896c221d7986d9361870c055a3d10841b5889e5045a6f997de8c285970d",
+      "minimum_zero_mask_sha256": "ae091abcb7ce270e4116a357bc5c8806d8c45509e32415db6c106442dd174752",
+      "elapsed_seconds": 2.202,
+      "completed_at": "2026-11-23T04:01:36.509106+00:00"
+    },
+    "assertions_disabled": true,
+    "prior_portable_replay_retained": {
+      "path": "artifacts/verification/qc-bead-reference-replay/bead-verification.json",
+      "sha256": "3732fd7c375ddba5f37ca024bf17d692874f027e4c3b8a5025db77cc3a22d431",
+      "bytes": 3383
+    }
+  },
+  "gct_lineage": {
+    "values": [
+      {
+        "metric": "native_bisConversionControl",
+        "value": "1.1234892911962147"
+      },
+      {
+        "metric": "published_extension_arithmetic",
+        "value": "1.1205521203765729"
+      }
+    ],
+    "curation_counts": [
+      {
+        "extension": "C",
+        "original_curated": "45427",
+        "curated_present_InfIR": "45427",
+        "published": "47879",
+        "published_only": "2538",
+        "curated_only": "86"
+      },
+      {
+        "extension": "T",
+        "original_curated": "15148",
+        "curated_present_InfIR": "15148",
+        "published": "15985",
+        "published_only": "863",
+        "curated_only": "26"
+      }
+    ],
+    "native_r_gct_parity": false,
+    "published_list_arithmetic_only": true
+  },
+  "reference_retained_failures": [
+    {
+      "receipt": {
+        "path": "r-beads0-command.json",
+        "bytes": 5439,
+        "sha256": "0f7c771bc3993970e0c599c2e471049f03f4e0a5c33f0cac5a62a250754004b5"
+      },
+      "reason": "readIDATpair attempts unrelated platform-signature cache lookup before explicit platform override; unchanged readIDAT/chipAddressToSignal adapter then used."
+    },
+    {
+      "receipt": {
+        "path": "probeinfo-download.json",
+        "bytes": 1219,
+        "sha256": "9eeb54d0cf4ce9ac982152d04ee00406d96d3420384e737b76e1cec39ffe6ae8"
+      },
+      "reason": "Numeric ExperimentHub fetch returned unrelated resource path; rejected and never loaded. Exact author-metadata storage path subsequently resolved."
+    },
+    {
+      "receipt": {
+        "path": "comparison-beads0-initial-mask-fixture.json",
+        "bytes": 1656,
+        "sha256": "7dbae12f5b71dbc58551607e393fb45f3af2b4d49fef554645cc27a989b00584"
+      },
+      "reason": "Diagnostic control-label assumption corrected to complete independent R raw-beta NA vector. Full QC mismatches remained unchanged."
+    }
+  ],
+  "strict_ci_reconciliation": {
+    "central_standards_and_privacy_pin": "2efdbd988064f6857795b9fa9ed4e1d08d18791d",
+    "previous_privacy_pin": "b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4",
+    "template_solo_rust": "1c96169526b3ae5845c22d1fae19aeec5c5f35f9",
+    "template_solo_data": "a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3",
+    "registry_delta": "a3cc8dcc to 2efdbd changes one standards_check entry and evidence; 167 other entries identical",
+    "scanner_gap": "Pre-existing merge-only history omission at former Atlas pin, distinct from latest registry delta",
+    "history_log_options": "--all --full-history --diff-merges=first-parent --no-ext-diff --no-textconv",
+    "merge_regression": {
+      "path": "artifacts/verification/merge-history-regression/targeted-receipt.json",
+      "sha256": "d06dc6448770d4bd6792b50708c1c45e469628ee59999ef47c80261588ae44dc",
+      "bytes": 3800,
+      "result": {
+        "scope": "Targeted Atlas privacy history regression and affected CI files only; full strict verification is parent-owned.",
+        "source_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+        "source_files": [
+          {
+            "path": "scripts/hooks.py",
+            "sha256": "55c07f8b4ad3923a30b37702476d428ea2e44aef22bed9075402ed0a922e62ca"
+          },
+          {
+            "path": "scripts/verify.py",
+            "sha256": "56686a3ce5c1d36905c2f4f5f0e58c0d8aab2aba409109cc2f0e3fc408310589"
+          },
+          {
+            "path": "scripts/tests/test_verify.py",
+            "sha256": "3527eff55cd73eb8a483b41b474ab17ddae7fc89ce06c17c936a3a5509af2fa9"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "sha256": "a54612c7531d9354bbf7787c03fbecb250b49bd8760bf4d5be0320345ca96b21"
+          }
+        ],
+        "started_at": "2026-11-23T03:53:19.027813+00:00",
+        "completed_at": "2026-11-23T03:53:25.668167+00:00",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "targeted-tests",
+            "command": [
+              "uv",
+              "run",
+              "--project",
+              "tools/hf-release",
+              "--frozen",
+              "--python",
+              "3.15.2",
+              "python",
+              "-m",
+              "unittest",
+              "-v",
+              "scripts.tests.test_verify",
+              "scripts.tests.test_hooks",
+              "scripts.tests.test_coverage"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 6.622,
+            "log": "targeted-tests.log"
+          },
+          {
+            "name": "ruff",
+            "command": [
+              "uv",
+              "run",
+              "--project",
+              "tools/hf-release",
+              "--frozen",
+              "--python",
+              "3.15.2",
+              "ruff",
+              "check",
+              "scripts/hooks.py",
+              "scripts/verify.py",
+              "scripts/tests/test_verify.py"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 0.055,
+            "log": "ruff.log"
+          },
+          {
+            "name": "format",
+            "command": [
+              "uv",
+              "run",
+              "--project",
+              "tools/hf-release",
+              "--frozen",
+              "--python",
+              "3.15.2",
+              "ruff",
+              "format",
+              "--check",
+              "scripts/hooks.py",
+              "scripts/verify.py",
+              "scripts/tests/test_verify.py"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 0.041,
+            "log": "format.log"
+          },
+          {
+            "name": "strict-types",
+            "command": [
+              "uv",
+              "run",
+              "--project",
+              "tools/hf-release",
+              "--frozen",
+              "--python",
+              "3.15.2",
+              "pyright",
+              "scripts/hooks.py",
+              "scripts/verify.py"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 1.599,
+            "log": "strict-types.log"
+          },
+          {
+            "name": "workflow",
+            "command": [
+              "actionlint",
+              ".github/workflows/ci.yml"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 0.01,
+            "log": "workflow.log"
+          },
+          {
+            "name": "whitespace",
+            "command": [
+              "git",
+              "diff",
+              "--check",
+              "--",
+              "scripts/hooks.py",
+              "scripts/verify.py",
+              "scripts/tests/test_verify.py",
+              ".github/workflows/ci.yml"
+            ],
+            "exit_code": 0,
+            "elapsed_seconds": 0.007,
+            "log": "whitespace.log"
+          }
+        ],
+        "regression": {
+          "synthetic_only": true,
+          "before_selector_unittest_exit": 1,
+          "before_selector_harness_exit": 0,
+          "before_log": "without-selector.log",
+          "after_targeted_tests": 28,
+          "after_history_exit": 1,
+          "after_history_leaks": 1,
+          "control_without_merge_selector_exit": 0,
+          "source_snapshot_exit": 0
+        },
+        "scanner": {
+          "root": "/workspace/scratch/1ef0e9289b0e/standards-privacy-2ef",
+          "revision": "2efdbd988064f6857795b9fa9ed4e1d08d18791d",
+          "clean": true,
+          "runtime_reused": true
+        },
+        "hook": {
+          "core_hooks_path": ".githooks",
+          "privacy_root": "/workspace/scratch/1ef0e9289b0e/standards-privacy-2ef"
+        }
+      }
+    },
+    "native_hook_installed": true,
+    "native_hook_scanner_checkout_clean": true,
+    "native_hook_scanner_tree": "7caade42e1ef76e438c07b9aed4b82a2e8f3227a",
+    "coverage_policy_changed": false,
+    "quality_level": "strict"
+  },
+  "independent_review": {
+    "qc_receiver": "R revision/path/scope and recipe-byte integrity accepted after fixes; strict CSV and real truncated/invalid gzip tests preserve failed receipts",
+    "bead_replay": "Accepted algorithm; actual zlib.error and strict CSV correction plus six regressions and final -O production replay pass.",
+    "full_native_r_qc_pass_claimed": false,
+    "privacy_and_standards": "Accepted: both projection structures match originals except precisely declared Maintainer omissions; aggregate pins verified; registry/scanner distinction and unchanged coverage policy correctly stated.",
+    "executable_documentation": "Accepted after explicit gzip level9 exact-byte replay and pinned extra GCT asset download step; names complete extension sets and set-difference counts precisely. All inspected local links resolve and dependency graph has no cycles/missing edges."
+  },
+  "focused_tests": {
+    "qc_tests": 22,
+    "bead_tests": 6,
+    "status": "passed",
+    "production_pyright": "0 errors",
+    "ruff_lint_and_format": "passed"
+  },
+  "environment": {
+    "disk_free_gib": 31,
+    "memory_available_gib": 3.8,
+    "swap_gib": 0,
+    "new_installations": 0,
+    "near_environment_limit": false
+  },
+  "source_followup": "research/qualification/t01-source-followup-2026-11-23.json",
+  "limits": [
+    "One public HM450 author technical pair; no disease inference or clinical replication results accessed.",
+    "Four native R QC fields differ at minimum beads zero; full QC method acceptance remains held.",
+    "Published-list GCT arithmetic passes, but native bisConversionControl uses different probe sets and has no parity claim.",
+    "Minimum-three results are a separate diagnostic, not a changed contract or scientific rejection policy.",
+    "P-value qualification checks composed binary32-to-six-digit exports; it does not directly compare each stored binary word to R.",
+    "One/two-thread repetitions of one sample are not multi-sample concurrency or performance evidence.",
+    "Full R package installation, complete upstream suite, other platforms and official owner devices are not claimed.",
+    "Reference/runtime and C producer dependencies are reused; external build warnings and prior reference failures remain retained.",
+    "Original source joins, applicable institutional determination, cohort admission and scientific N1 remain open.",
+    "No new inference, beta/M precision tolerance, licence or study exclusion threshold is inferred."
+  ],
+  "final_integration": "Actual native commit-hook and immutable hosted outcomes will be recorded in the integration PR for the identical published tree.",
+  "combined_candidate_verification": {
+    "status": "passed",
+    "quality_level": "strict",
+    "receipt_path": "artifacts/verification/qc-candidate-first/receipt.json",
+    "receipt_sha256": "b22626b8bf87dda25cfd450f2493e077945cbdef12655074e4fe4e0755fdb8f1",
+    "source_tree_sha256": "d37d61c4df94bfbdc9177aa527fbfe16225b8fcab944cf18db459a2444e08c35",
+    "source_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+    "coverage_base_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "elapsed_seconds": 41.05,
+    "completed_at": "2026-11-23T04:05:38.346570+00:00",
+    "harness_tests": 96,
+    "publisher_tests": 41,
+    "rust_tests_per_profile": 20,
+    "changed_code_branch_aware_coverage_percent": 98.82352941176471,
+    "covered_changed_lines": 168,
+    "changed_lines": 170,
+    "coverage_minimum_percent": 90,
+    "scope": "Complete implementation candidate before final evidence/archive/gzip-recipe documentation updates; actual native commit hook rechecks every final candidate byte."
+  },
+  "documented_reference_compression_replay": {
+    "receipt_path": "artifacts/verification/qc-reference-gzip-replay.json",
+    "receipt_sha256": "9dbaf51bca0fb5a8ce1bb463235b1efb6ce05de0616d649c01b8ba4b646b6336",
+    "result": {
+      "status": "passed",
+      "python": "3.15.2 (main, Nov 11 2026, 00:19:20) [Clang 23.1.3 ]",
+      "compresslevel": 9,
+      "mtime": 0,
+      "filename": "",
+      "actual": {
+        "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a",
+        "bytes": 6200924
+      },
+      "expected": {
+        "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a",
+        "bytes": 6200924
+      }
+    },
+    "review_correction": "Explicit level9 preserves retained original compression across Python3.12 and 3.15 defaults; final documented Python3.15.2 recipe reproduced exact reference bytes."
+  }
+}

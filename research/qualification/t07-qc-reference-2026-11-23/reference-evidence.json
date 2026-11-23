@@ -1,0 +1,1146 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-11-23T03:46:45.086283+00:00",
+  "status": "reference_complete_native_qc_parity_failed",
+  "scope": "One public HM450 technical pair; independent source-level R QC/pOOBAH, exact production export serialization, original bead vectors at minima0/3, and explicit GCT lineage",
+  "sources": {
+    "c_repository": "https://github.com/zhou-lab/sesame",
+    "c_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+    "c_tracked_worktree_clean": true,
+    "yame_revision": "e1e7b38e9f3b67981a78b1116e7312864677d69d",
+    "r_repository": "https://github.com/zwdzwd/sesame",
+    "r_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+    "selected_source_sha256_before": {
+      "sesame-source/src/qc.c": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd",
+      "sesame-source/src/prep.c": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a",
+      "sesame-source/src/sigdf.c": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e",
+      "sesame-source/include/sesame.h": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89",
+      "sesame-source/cli/main.c": "6dfddafe53c3837c173c7cfbab288616cefc29e7533b77e66e1942c7db56bc2e",
+      "sesame-source/tests/compare_qc.R": "a800c1117e2d0f8836e85a23b386a9392cd35f0559b74d2470d1e84031368c4b",
+      "sesame-source/tests/run_qc.sh": "e22cedabd4b8e543b5d1b9d983286ab6ef37186d95b3aa6d2f44f192e47e42ab",
+      "sesame-source/NUMERICS.md": "1b74c5c7ca13147687da924afd7d0c60ea93725391c7facff9f080268f261c72",
+      "preprocess-audit/oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+      "preprocess-audit/oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+      "preprocess-audit/oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f"
+    },
+    "selected_source_sha256_after": {
+      "sesame-source/src/qc.c": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd",
+      "sesame-source/src/prep.c": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a",
+      "sesame-source/src/sigdf.c": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e",
+      "sesame-source/include/sesame.h": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89",
+      "sesame-source/cli/main.c": "6dfddafe53c3837c173c7cfbab288616cefc29e7533b77e66e1942c7db56bc2e",
+      "sesame-source/tests/compare_qc.R": "a800c1117e2d0f8836e85a23b386a9392cd35f0559b74d2470d1e84031368c4b",
+      "sesame-source/tests/run_qc.sh": "e22cedabd4b8e543b5d1b9d983286ab6ef37186d95b3aa6d2f44f192e47e42ab",
+      "sesame-source/NUMERICS.md": "1b74c5c7ca13147687da924afd7d0c60ea93725391c7facff9f080268f261c72",
+      "preprocess-audit/oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+      "preprocess-audit/oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+      "preprocess-audit/oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f"
+    },
+    "assets": [
+      {
+        "path": "assets/HM450/HM450.ordering.tsv.gz",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotation/678acbeddfb746c1ddfa24c5c1ca9f5197a61ee2/HM450/HM450.ordering.tsv.gz",
+        "sha256": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "size": 4583258,
+        "actual_size": 4583258,
+        "actual_sha256": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "actual_git_blob_sha": "109fe6fe82cb35d43974d1ad4cbd93a93fe57d06",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.ordering.tsv.gz"
+      },
+      {
+        "path": "assets/HM450/HM450.hg38.coord.tsv.gz",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotation/678acbeddfb746c1ddfa24c5c1ca9f5197a61ee2/HM450/HM450.hg38.coord.tsv.gz",
+        "sha256": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "size": 3064215,
+        "actual_size": 3064215,
+        "actual_sha256": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "actual_git_blob_sha": "00c0f14c1f9c9cbc1be2dad46fd8f18ded002a86",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz"
+      },
+      {
+        "path": "assets/HM450/HM450.typeI_ext.tsv.gz",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotation/678acbeddfb746c1ddfa24c5c1ca9f5197a61ee2/HM450/HM450.typeI_ext.tsv.gz",
+        "sha256": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "size": 72943,
+        "actual_size": 72943,
+        "actual_sha256": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "actual_git_blob_sha": "8be54e285f6f88a864dbd65f9a8e3eab81dd0a68",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz"
+      },
+      {
+        "path": "assets/HM450/HM450.hg38.mask.cm",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotation/678acbeddfb746c1ddfa24c5c1ca9f5197a61ee2/HM450/HM450.hg38.mask.cm",
+        "sha256": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "size": 213674,
+        "actual_size": 213674,
+        "actual_sha256": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "actual_git_blob_sha": "43dea6f897de1b818d9a4e9a2c550f44e3dc4aef",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm"
+      },
+      {
+        "path": "assets/HM450/HM450.hg38.mask.cm.idx",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotation/678acbeddfb746c1ddfa24c5c1ca9f5197a61ee2/HM450/HM450.hg38.mask.cm.idx",
+        "sha256": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "size": 727,
+        "actual_size": 727,
+        "actual_sha256": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "actual_git_blob_sha": "7d4baf76c50644be3d50eb73c6d508b51ea111da",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx"
+      },
+      {
+        "path": "idats/HM450/3999492009_R01C01_Grn.idat",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotationData/6d176d6e7e56465403d4478a09fe11b983eeb721/Test/3999492009_R01C01_Grn.idat",
+        "git_blob_sha": "9e3220fb5bcfceb25890cfab54f6d946e50a31b6",
+        "size": 8095289,
+        "actual_size": 8095289,
+        "actual_sha256": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "actual_git_blob_sha": "9e3220fb5bcfceb25890cfab54f6d946e50a31b6",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat"
+      },
+      {
+        "path": "idats/HM450/3999492009_R01C01_Red.idat",
+        "url": "https://raw.githubusercontent.com/zhou-lab/InfiniumAnnotationData/6d176d6e7e56465403d4478a09fe11b983eeb721/Test/3999492009_R01C01_Red.idat",
+        "git_blob_sha": "a6375b4ff3037863db77fdf30120bbc0786f078a",
+        "size": 8095289,
+        "actual_size": 8095289,
+        "actual_sha256": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be",
+        "actual_git_blob_sha": "a6375b4ff3037863db77fdf30120bbc0786f078a",
+        "verified": true,
+        "local_path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat"
+      }
+    ],
+    "r_assets": [
+      {
+        "name": "HM450.address.rda",
+        "size": 8000665,
+        "md5": "32302f788359a915234e132d6eaefdbe",
+        "url": "https://zenodo.org/api/records/23263026/files/HM450.address.rda/content",
+        "actual_size": 8000665,
+        "sha256": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+        "verified": true
+      },
+      {
+        "name": "KYCG.HM450.Mask.20261008.rds",
+        "size": 685695,
+        "md5": "46ff7aec9e596da5dc03a6f486507843",
+        "url": "https://zenodo.org/api/records/23263026/files/KYCG.HM450.Mask.20261008.rds/content",
+        "actual_size": 685695,
+        "sha256": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+        "verified": true
+      }
+    ],
+    "gct_probeinfo_metadata": {
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesameData/119df217cea4da8cb18173226fa85e6152d13e51/inst/extdata/metadata.csv",
+      "sha256": "8edc8d6157bb3e86ebc4d70a78ba7cac8fc1ceffc8012ebde8c5737b45449e27",
+      "matches": [
+        {
+          "Title": "HM450.probeInfo",
+          "Description": "Basic information about probe design on HM450 platform, including $probe2chr.hg19, $mapped.probes.hg19, $mapped.probes.hg38, $typeI.extC, $typeI.extT, $mask, $mask.tcga, $chrY.clean, $chrX.xlinked, $mask.hg19 (character)",
+          "BiocVersion": "3.12",
+          "Genome": "NA",
+          "SourceType": "RDA",
+          "SourceUrl": "http://zwdzwd.github.io/InfiniumAnnotation",
+          "SourceVersion": "15-Mar-2018",
+          "Species": "Homo sapiens",
+          "TaxonomyId": "9606",
+          "Coordinate_1_based": "TRUE",
+          "DataProvider": "Illumina Inc",
+          "RDataClass": "list",
+          "DispatchClass": "Rda",
+          "RDataPath": "sesameData/v1.7.2/HM450.probeInfo.rda",
+          "Location_Prefix": "",
+          "Tags": "NA",
+          "Notes": "NA"
+        }
+      ]
+    },
+    "gct_probeinfo_download": {
+      "url": "https://mghp.osn.xsede.org/bir190004-bucket01/ExperimentHub/sesameData/v1.7.2/HM450.probeInfo.rda",
+      "rdatapath": "sesameData/v1.7.2/HM450.probeInfo.rda",
+      "source_metadata_sha": "8edc8d6157bb3e86ebc4d70a78ba7cac8fc1ceffc8012ebde8c5737b45449e27",
+      "resolved_url": "https://mghp.osn.xsede.org/bir190004-bucket01/ExperimentHub/sesameData/v1.7.2/HM450.probeInfo.rda",
+      "headers": {
+        "content-length": "10616007",
+        "accept-ranges": "bytes",
+        "last-modified": "Thu, 29 May 2025 19:30:49 GMT",
+        "x-rgw-object-type": "Normal",
+        "etag": "\"2416eb80d081ec23af4c113037750102\"",
+        "x-amz-meta-mtime": "1637765555",
+        "x-amz-request-id": "tx000003cf7b1165f3875d6-006b03b597-dc63496-default",
+        "content-type": "binary/octet-stream",
+        "date": "Mon, 23 Nov 2026 03:40:07 GMT",
+        "x-envoy-upstream-service-time": "126",
+        "server": "envoy",
+        "connection": "close"
+      },
+      "size_bytes": 10616007,
+      "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+      "status": "verified_loaded_exact_named_object",
+      "verification": "gct-lineage-command.json",
+      "md5_matches_storage_etag": true
+    }
+  },
+  "rules": {
+    "path": "comparison-rules.json",
+    "bytes": 7131,
+    "sha256": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb"
+  },
+  "counts": {
+    "ordered_probes": 486427,
+    "original_idat_addresses_per_color": 622399,
+    "c_qc_metrics": 66,
+    "native_r_qc_metrics": 65,
+    "integer_metrics": 26,
+    "floating_metrics_including_gct": 40
+  },
+  "comparison_results": {
+    "minimum_beads_0": {
+      "status": "failed",
+      "beads": 0,
+      "qc": {
+        "raw": {
+          "metrics": 66,
+          "matching": 62,
+          "differences": [
+            {
+              "metric": "num_dtna",
+              "reference": "0",
+              "production": "2"
+            },
+            {
+              "metric": "frac_dtna",
+              "reference": "0",
+              "production": "4.11161387e-06"
+            },
+            {
+              "metric": "frac_dt",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            },
+            {
+              "metric": "frac_dt_mk",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            }
+          ]
+        },
+        "qcd": {
+          "metrics": 66,
+          "matching": 62,
+          "differences": [
+            {
+              "metric": "num_dtna",
+              "reference": "0",
+              "production": "2"
+            },
+            {
+              "metric": "frac_dtna",
+              "reference": "0",
+              "production": "4.11161387e-06"
+            },
+            {
+              "metric": "frac_dt",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            },
+            {
+              "metric": "frac_dt_mk",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            }
+          ]
+        }
+      },
+      "pvalues": {
+        "raw": {
+          "rows": 486427,
+          "mismatches": 0,
+          "examples": []
+        },
+        "qcd": {
+          "rows": 486427,
+          "mismatches": 0,
+          "examples": []
+        }
+      },
+      "beta_masks": {
+        "raw": {
+          "missing": 2,
+          "mismatches": 0
+        },
+        "qcd": {
+          "missing": 79947,
+          "mismatches": 0
+        }
+      },
+      "raw_signal_reference_sha256": "9fc4e1d30b65ab72ce52febc93904d528d06a809fb9c0f8ee8dc280e632b9ba7",
+      "rules_sha256": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb"
+    },
+    "minimum_beads_3": {
+      "status": "failed",
+      "beads": 3,
+      "qc": {
+        "raw": {
+          "metrics": 66,
+          "matching": 63,
+          "differences": [
+            {
+              "metric": "num_dtna",
+              "reference": "0",
+              "production": "2"
+            },
+            {
+              "metric": "frac_dtna",
+              "reference": "0",
+              "production": "4.11161387e-06"
+            },
+            {
+              "metric": "frac_dt",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            }
+          ]
+        },
+        "qcd": {
+          "metrics": 66,
+          "matching": 63,
+          "differences": [
+            {
+              "metric": "num_dtna",
+              "reference": "0",
+              "production": "2"
+            },
+            {
+              "metric": "frac_dtna",
+              "reference": "0",
+              "production": "4.11161387e-06"
+            },
+            {
+              "metric": "frac_dt",
+              "reference": "0.8883347347",
+              "production": "0.8883383872"
+            }
+          ]
+        }
+      },
+      "pvalues": {
+        "raw": {
+          "rows": 486427,
+          "mismatches": 0,
+          "examples": []
+        },
+        "qcd": {
+          "rows": 486427,
+          "mismatches": 0,
+          "examples": []
+        }
+      },
+      "beta_masks": {
+        "raw": {
+          "missing": 336,
+          "mismatches": 0
+        },
+        "qcd": {
+          "missing": 80216,
+          "mismatches": 0
+        }
+      },
+      "raw_signal_reference_sha256": "9fc4e1d30b65ab72ce52febc93904d528d06a809fb9c0f8ee8dc280e632b9ba7",
+      "rules_sha256": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb"
+    }
+  },
+  "bead_verification": {
+    "status": "passed",
+    "original_addresses": 622399,
+    "probes": 486427,
+    "original_bead_vector_mismatches": 0,
+    "derived_mask_mismatches": 0,
+    "min_beads3_masked": 336,
+    "missing_address_rows": 2,
+    "low_present_bead_rows": 334,
+    "green_bead_histogram": {
+      "0": 34,
+      "1": 57,
+      "2": 244,
+      "3": 1097,
+      "4": 2186,
+      "5": 4328,
+      "6": 8371,
+      "7": 13719,
+      "8": 21153,
+      "9": 29307,
+      "10": 39078,
+      "11": 47186,
+      "12": 54432,
+      "13": 57993,
+      "14": 58787,
+      "15": 55979,
+      "16": 50598,
+      "17": 43611,
+      "18": 36095,
+      "19": 28446,
+      "20": 21740,
+      "21": 15712,
+      "22": 11308,
+      "23": 7589,
+      "24": 4840,
+      "25": 2954,
+      "26": 1884,
+      "27": 1100,
+      "28": 656,
+      "29": 442,
+      "30": 236,
+      "31": 176,
+      "32": 113,
+      "33": 97,
+      "34": 88,
+      "35": 85,
+      "36": 61,
+      "37": 64,
+      "38": 75,
+      "39": 60,
+      "40": 68,
+      "41": 70,
+      "42": 53,
+      "43": 50,
+      "44": 33,
+      "45": 28,
+      "46": 22,
+      "47": 15,
+      "48": 12,
+      "49": 11,
+      "50": 16,
+      "51": 9,
+      "52": 9,
+      "53": 4,
+      "54": 6,
+      "55": 5,
+      "56": 2,
+      "57": 4,
+      "58": 1
+    },
+    "red_bead_histogram": {
+      "0": 34,
+      "1": 57,
+      "2": 244,
+      "3": 1097,
+      "4": 2186,
+      "5": 4328,
+      "6": 8371,
+      "7": 13719,
+      "8": 21153,
+      "9": 29307,
+      "10": 39078,
+      "11": 47186,
+      "12": 54432,
+      "13": 57993,
+      "14": 58787,
+      "15": 55979,
+      "16": 50598,
+      "17": 43611,
+      "18": 36095,
+      "19": 28446,
+      "20": 21740,
+      "21": 15712,
+      "22": 11308,
+      "23": 7589,
+      "24": 4840,
+      "25": 2954,
+      "26": 1884,
+      "27": 1100,
+      "28": 656,
+      "29": 442,
+      "30": 236,
+      "31": 176,
+      "32": 113,
+      "33": 97,
+      "34": 88,
+      "35": 85,
+      "36": 61,
+      "37": 64,
+      "38": 75,
+      "39": 60,
+      "40": 68,
+      "41": 70,
+      "42": 53,
+      "43": 50,
+      "44": 33,
+      "45": 28,
+      "46": 22,
+      "47": 15,
+      "48": 12,
+      "49": 11,
+      "50": 16,
+      "51": 9,
+      "52": 9,
+      "53": 4,
+      "54": 6,
+      "55": 5,
+      "56": 2,
+      "57": 4,
+      "58": 1
+    },
+    "source_sha256": {
+      "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+      "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+    },
+    "bead_mask_sha256": "83758896c221d7986d9361870c055a3d10841b5889e5045a6f997de8c285970d"
+  },
+  "gct_lineage": {
+    "values": [
+      {
+        "metric": "native_bisConversionControl",
+        "value": "1.1234892911962147"
+      },
+      {
+        "metric": "published_extension_arithmetic",
+        "value": "1.1205521203765729"
+      }
+    ],
+    "curation_counts": [
+      {
+        "extension": "C",
+        "original_curated": "45427",
+        "curated_present_InfIR": "45427",
+        "published": "47879",
+        "published_only": "2538",
+        "curated_only": "86"
+      },
+      {
+        "extension": "T",
+        "original_curated": "15148",
+        "curated_present_InfIR": "15148",
+        "published": "15985",
+        "published_only": "863",
+        "curated_only": "26"
+      }
+    ],
+    "native_r_gct_parity": false,
+    "published_list_arithmetic_only": true
+  },
+  "executions": [
+    {
+      "receipt": {
+        "path": "r-beads0-explicit-command.json",
+        "bytes": 7982,
+        "sha256": "69933df66c9bdb86fd94788c718f25394c3476929b5e847c8fcb26787b3d4c71"
+      },
+      "status": "passed",
+      "commands": [
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/bin/micromamba",
+            "--no-rc",
+            "run",
+            "--prefix",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/r-4.5.2",
+            "Rscript",
+            "--vanilla",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/run_qc_reference.R",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit",
+            "0"
+          ],
+          "seconds": 15.47676420100106,
+          "returncode": 0
+        }
+      ],
+      "input_sha256_before": {
+        "qc-reference-20261123/run_qc_reference.R": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+        "qc-reference-20261123/comparison-rules.json": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb",
+        "oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+        "oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "oracle/r-source/background.R": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9",
+        "oracle/r-source/channel_inference.R": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6",
+        "oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+        "oracle/r-source/dye_bias.R": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086",
+        "oracle/r-source/mask.R": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527",
+        "oracle/r-source/open.R": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5",
+        "oracle/r-source/readIDAT.R": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302",
+        "oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "r-assets/HM450.address.rda": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+        "r-assets/KYCG.HM450.Mask.20261008.rds": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      },
+      "input_sha256_after": {
+        "qc-reference-20261123/run_qc_reference.R": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+        "qc-reference-20261123/comparison-rules.json": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb",
+        "oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+        "oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "oracle/r-source/background.R": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9",
+        "oracle/r-source/channel_inference.R": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6",
+        "oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+        "oracle/r-source/dye_bias.R": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086",
+        "oracle/r-source/mask.R": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527",
+        "oracle/r-source/open.R": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5",
+        "oracle/r-source/readIDAT.R": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302",
+        "oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "r-assets/HM450.address.rda": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+        "r-assets/KYCG.HM450.Mask.20261008.rds": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      }
+    },
+    {
+      "receipt": {
+        "path": "r-beads3-explicit-command.json",
+        "bytes": 7983,
+        "sha256": "aa9676a8714328d15251c933ac9f0c7ed50412de29d7defc99f9688ae446dc24"
+      },
+      "status": "passed",
+      "commands": [
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/bin/micromamba",
+            "--no-rc",
+            "run",
+            "--prefix",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/r-4.5.2",
+            "Rscript",
+            "--vanilla",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/run_qc_reference.R",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads3-explicit",
+            "3"
+          ],
+          "seconds": 17.031508191001194,
+          "returncode": 0
+        }
+      ],
+      "input_sha256_before": {
+        "qc-reference-20261123/run_qc_reference.R": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+        "qc-reference-20261123/comparison-rules.json": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb",
+        "oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+        "oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "oracle/r-source/background.R": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9",
+        "oracle/r-source/channel_inference.R": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6",
+        "oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+        "oracle/r-source/dye_bias.R": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086",
+        "oracle/r-source/mask.R": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527",
+        "oracle/r-source/open.R": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5",
+        "oracle/r-source/readIDAT.R": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302",
+        "oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "r-assets/HM450.address.rda": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+        "r-assets/KYCG.HM450.Mask.20261008.rds": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      },
+      "input_sha256_after": {
+        "qc-reference-20261123/run_qc_reference.R": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+        "qc-reference-20261123/comparison-rules.json": "2b768a8007a7ad731f84159995afef162465d9f69ee5545cdbf665f501331fdb",
+        "oracle/r-source/QC.R": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+        "oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "oracle/r-source/background.R": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9",
+        "oracle/r-source/channel_inference.R": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6",
+        "oracle/r-source/detection.R": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+        "oracle/r-source/dye_bias.R": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086",
+        "oracle/r-source/mask.R": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527",
+        "oracle/r-source/open.R": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5",
+        "oracle/r-source/readIDAT.R": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302",
+        "oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "r-assets/HM450.address.rda": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+        "r-assets/KYCG.HM450.Mask.20261008.rds": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      }
+    },
+    {
+      "receipt": {
+        "path": "gct-lineage-command.json",
+        "bytes": 2890,
+        "sha256": "3315a8a168e8995933732554b3003e559f328c571de99e3f999dcb7986afa242"
+      },
+      "status": "passed",
+      "commands": [
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/bin/micromamba",
+            "--no-rc",
+            "run",
+            "--prefix",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/r-4.5.2",
+            "Rscript",
+            "--vanilla",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/compare_gct_lineage.R",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit/raw-sdf.rds",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/gct-lineage"
+          ],
+          "seconds": 2.5556106039985025,
+          "returncode": 0
+        }
+      ],
+      "input_sha256_before": {
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/compare_gct_lineage.R": "09af5d72acbebc51ced9badc9e92c55af5c55da47fc551b0ea483ca61285c2e6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit/raw-sdf.rds": "19be981d32c2a0e95670828cbe25aeba476cfecdd6aa854c1adc6e1e67a1b14f"
+      },
+      "input_sha256_after": {
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/compare_gct_lineage.R": "09af5d72acbebc51ced9badc9e92c55af5c55da47fc551b0ea483ca61285c2e6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source/sesame.R": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source/SigDFMethods.R": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/r-beads0-explicit/raw-sdf.rds": "19be981d32c2a0e95670828cbe25aeba476cfecdd6aa854c1adc6e1e67a1b14f"
+      }
+    },
+    {
+      "receipt": {
+        "path": "production-beads0/execution-receipt.json",
+        "bytes": 5995,
+        "sha256": "94dd6c7b6be2b3fee41b66abb05ed2b111b7bd5e844ddc4c61233b2222bb975d"
+      },
+      "status": "passed",
+      "commands": [
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "qc,pval,beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/raw",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "started_at_utc": "2026-11-23T03:41:10.581070+00:00",
+          "seconds": 1.806253546001244,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/raw/pval.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:41:12.387348+00:00",
+          "seconds": 0.29115996100154007,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/raw/beta.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:41:12.678567+00:00",
+          "seconds": 0.23082989799877396,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "QCDPB",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "qc,pval,beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/qcd",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "started_at_utc": "2026-11-23T03:41:12.909709+00:00",
+          "seconds": 2.8850645650018123,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/qcd/pval.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:41:15.794802+00:00",
+          "seconds": 0.2531008270016173,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads0/qcd/beta.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:41:16.047954+00:00",
+          "seconds": 0.20466637600111426,
+          "exit_code": 0
+        }
+      ],
+      "input_sha256_before": {
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame": "d82b667870d0d6b93af1f59565e5505d99ff271f64b053e24cd5e92851ac815e",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      },
+      "input_sha256_after": {
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame": "d82b667870d0d6b93af1f59565e5505d99ff271f64b053e24cd5e92851ac815e",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      }
+    },
+    {
+      "receipt": {
+        "path": "production-beads3/execution-receipt.json",
+        "bytes": 5996,
+        "sha256": "61e319d18063e64a3d5deb03f03945dcbc36ae0c56d741fafe250a11e7d970ed"
+      },
+      "status": "passed",
+      "commands": [
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "3",
+            "--threads",
+            "1",
+            "--output",
+            "qc,pval,beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/raw",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "started_at_utc": "2026-11-23T03:43:35.080691+00:00",
+          "seconds": 1.8517968940032006,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/raw/pval.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:43:36.932530+00:00",
+          "seconds": 0.2288593579978624,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/raw/beta.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:43:37.161420+00:00",
+          "seconds": 0.27549839000130305,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "QCDPB",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "3",
+            "--threads",
+            "1",
+            "--output",
+            "qc,pval,beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/qcd",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "started_at_utc": "2026-11-23T03:43:37.437074+00:00",
+          "seconds": 2.4497926129988628,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/qcd/pval.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:43:39.886895+00:00",
+          "seconds": 0.21937053199872025,
+          "exit_code": 0
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/production-beads3/qcd/beta.cg"
+          ],
+          "started_at_utc": "2026-11-23T03:43:40.106360+00:00",
+          "seconds": 0.18849507000049925,
+          "exit_code": 0
+        }
+      ],
+      "input_sha256_before": {
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame": "d82b667870d0d6b93af1f59565e5505d99ff271f64b053e24cd5e92851ac815e",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      },
+      "input_sha256_after": {
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/sesame": "d82b667870d0d6b93af1f59565e5505d99ff271f64b053e24cd5e92851ac815e",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "path": "run_qc_reference.R",
+      "bytes": 7027,
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c"
+    },
+    {
+      "path": "compare_gct_lineage.R",
+      "bytes": 2894,
+      "sha256": "09af5d72acbebc51ced9badc9e92c55af5c55da47fc551b0ea483ca61285c2e6"
+    },
+    {
+      "path": "check_beads.py",
+      "bytes": 4721,
+      "sha256": "85355ca89152fb519b6f4b8268cafcd5e01ced745f8e980349fa60f182beeb60"
+    },
+    {
+      "path": "run_reference.py",
+      "bytes": 3697,
+      "sha256": "5a0058a8639d3e13e48a8f4a7aabbf36746f54729653e982889cff59aa591fa1"
+    },
+    {
+      "path": "run_production.py",
+      "bytes": 3159,
+      "sha256": "da0cfb5e05ed712d3f7ce00303243151ad4ce6e692ff9fdaa943a6bdd80b9890"
+    },
+    {
+      "path": "compare_diagnostics.py",
+      "bytes": 5661,
+      "sha256": "9168e2f592e7276ae10fc5ced38c1bc1456b1cacc62f86244f8b79dd2fa5cfde"
+    }
+  ],
+  "interfaces": [
+    {
+      "path": "r-beads0-explicit/qc-reference.tsv",
+      "bytes": 1609,
+      "sha256": "490dd59fd37e601dda27845d8879c075d198613d8336c87e58a866d1646a1712"
+    },
+    {
+      "path": "r-beads0-explicit/native-r-qc.tsv",
+      "bytes": 1586,
+      "sha256": "54c468e2e87600c328a2110da9fbadf38b1cfc8230e74de757162a032dd96afb"
+    },
+    {
+      "path": "r-beads0-explicit/pvalues-reference.tsv.gz",
+      "bytes": 6200924,
+      "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a"
+    },
+    {
+      "path": "r-beads0-explicit/probe-ids.txt",
+      "bytes": 5371613,
+      "sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+    },
+    {
+      "path": "r-beads0-explicit/initial-bead-mask.u8",
+      "bytes": 486427,
+      "sha256": "ae091abcb7ce270e4116a357bc5c8806d8c45509e32415db6c106442dd174752"
+    },
+    {
+      "path": "r-beads0-explicit/qcd-mask.u8",
+      "bytes": 486427,
+      "sha256": "1fa818a4909bc1a61b20fe23811f413bf4c07d2949541310288669eb36a50707"
+    },
+    {
+      "path": "r-beads0-explicit/qcdp-mask.u8",
+      "bytes": 486427,
+      "sha256": "1e37331a8f8e3431da10da393eefe819a99279aec2c3483121a55a3f05f250e8"
+    },
+    {
+      "path": "r-beads3-explicit/qc-reference.tsv",
+      "bytes": 1608,
+      "sha256": "35e237f952eb1d094139d348b792a9cac653b1d6dacefa00e5a1852cb531d135"
+    },
+    {
+      "path": "r-beads3-explicit/native-r-qc.tsv",
+      "bytes": 1585,
+      "sha256": "d41763df08b213f479abb895bed296f09c01be959b67e8fd489bd70ef76ac754"
+    },
+    {
+      "path": "r-beads3-explicit/pvalues-reference.tsv.gz",
+      "bytes": 6200924,
+      "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a"
+    },
+    {
+      "path": "r-beads3-explicit/probe-ids.txt",
+      "bytes": 5371613,
+      "sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+    },
+    {
+      "path": "r-beads3-explicit/initial-bead-mask.u8",
+      "bytes": 486427,
+      "sha256": "83758896c221d7986d9361870c055a3d10841b5889e5045a6f997de8c285970d"
+    },
+    {
+      "path": "r-beads3-explicit/qcd-mask.u8",
+      "bytes": 486427,
+      "sha256": "dc70d92824b31c46adf81436babaf7dc6653ad0be7cda1fc61ecda65cff0ba0a"
+    },
+    {
+      "path": "r-beads3-explicit/qcdp-mask.u8",
+      "bytes": 486427,
+      "sha256": "ca7fe41301a535f7140cac684aeed2a9f2ea0c54eb2a401e231b14511917c4ed"
+    }
+  ],
+  "retained_failures": [
+    {
+      "receipt": {
+        "path": "r-beads0-command.json",
+        "bytes": 5439,
+        "sha256": "0f7c771bc3993970e0c599c2e471049f03f4e0a5c33f0cac5a62a250754004b5"
+      },
+      "reason": "readIDATpair attempts unrelated platform-signature cache lookup before explicit platform override; unchanged readIDAT/chipAddressToSignal adapter then used."
+    },
+    {
+      "receipt": {
+        "path": "probeinfo-download.json",
+        "bytes": 1219,
+        "sha256": "9eeb54d0cf4ce9ac982152d04ee00406d96d3420384e737b76e1cec39ffe6ae8"
+      },
+      "reason": "Numeric ExperimentHub fetch returned unrelated resource path; rejected and never loaded. Exact author-metadata storage path subsequently resolved."
+    },
+    {
+      "receipt": {
+        "path": "comparison-beads0-initial-mask-fixture.json",
+        "bytes": 1656,
+        "sha256": "7dbae12f5b71dbc58551607e393fb45f3af2b4d49fef554645cc27a989b00584"
+      },
+      "reason": "Diagnostic control-label assumption corrected to complete independent R raw-beta NA vector. Full QC mismatches remained unchanged."
+    }
+  ],
+  "limitations": {
+    "full_native_qc_parity": false,
+    "native_gct_curation_parity": false,
+    "scientific_or_cohort_admission": false,
+    "official_device_qualification": false,
+    "full_sesame_R_package_installed": false,
+    "complete_upstream_suite_executed": false,
+    "other_platforms_or_fixtures_tested": false,
+    "source_level_R_adapter": "Exact local cache getters plus explicit HM450 unchanged readIDAT/paired matrix/chipAddressToSignal; numerical functions unchanged.",
+    "runtime": "Existing R4.5.2 with serial official-source preprocessCore1.72.0. Existing dplyr built-under4.5.3 warning retained. No new package installation.",
+    "unmet_upstream_contract": "C QC no-signal convention and denominators differ from current R; native bisConversionControl and published extension lists use different curated input sets. No exemptions or fitted tolerances."
+  },
+  "resource_snapshot": {
+    "disk_free_gib": 31,
+    "memory_available_gib": 3.8,
+    "swap_gib": 0,
+    "new_installations": 0,
+    "near_environment_limit": false
+  },
+  "published_projection": {
+    "original_receipt_sha256": "6cbaf41fbc5d574add7786a46a18ba83ed37c5136d39b0c82b062f30ad971b1d",
+    "omitted_fields": [
+      "sources.gct_probeinfo_metadata.matches[0].Maintainer"
+    ],
+    "reason": "Author contact is unnecessary for numerical/source provenance; original metadata hash and source URL are retained."
+  }
+}

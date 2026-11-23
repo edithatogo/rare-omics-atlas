@@ -12,7 +12,7 @@ uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/bootst
 uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep
 ```
 
-Run verification before new implementation to expose the baseline, and after the bounded change. Missing tools, mismatched versions, unavailable advisory services, failed commands and absent generated coverage are failures. The default command is strict; there is no permissive profile. `--deep` adds a full reachable-history secret scan and rejects a shallow checkout. It does not replace the central privacy guard.
+Run verification before new implementation to expose the baseline, and after the bounded change. Missing tools, mismatched versions, unavailable advisory services, failed commands and absent generated coverage are failures. The default command is strict; there is no permissive profile. `--deep` adds a full reachable-history secret scan, including changes introduced by merge commits, and rejects a shallow checkout. It does not replace the central privacy guard.
 
 The bootstrap pins Rust **1.95.0**, cargo-llvm-cov **0.8.7**, cargo-audit **0.23.0**, Gitleaks **8.30.1** and actionlint **1.7.12**. Native release checksum manifests are themselves SHA-256 pinned; only the verified expected binary is extracted. Development-only Python dependencies are locked in the existing publisher project: Ruff **0.15.13**, Pyright **1.1.409**, coverage **7.17.4** and pip-audit **2.10.1**. These are verification tools; the Rust catalogue gains no runtime dependencies.
 
@@ -36,11 +36,11 @@ Receipts and individual safe command logs are written under ignored `artifacts/v
 
 A separate read-only PR dependency-review job uses the official action pinned at `bbc44d14a204704ccc493733616cd1e93a0321ec` and blocks low-or-higher known vulnerabilities across runtime, development and unknown scopes. It posts no PR comments and makes no invented licence-policy choice. The local Cargo.lock audit and audit of the installed, frozen Python developer environment remain active alongside this diff review. The Python result applies to the qualified platform/environment; it does not claim to audit every alternate platform or extra recorded in the multi-platform lockfile.
 
-The separate `privacy-and-secrets` job calls the reviewed central Presidio/Gitleaks action at `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4`. It preserves the standard's commit-range/full-history semantics, value-free findings and reported coverage gaps. Current-source Gitleaks is an additional local check, not a replacement for Presidio. The native pre-commit hook below additionally runs that central guard on the actual staged candidate.
+The separate `privacy-and-secrets` job calls the reviewed central Presidio/Gitleaks action at `2efdbd988064f6857795b9fa9ed4e1d08d18791d`. It preserves the standard's commit-range/full-history semantics, value-free findings and reported coverage gaps. Current-source Gitleaks is an additional local check, not a replacement for Presidio. The native pre-commit hook below additionally runs that central guard on the actual staged candidate.
 
 ## Install the native pre-commit hook
 
-Prepare the central scanner checkout and isolated environment using its [pinned local guidance](https://github.com/edithatogo/repository-standards/blob/b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4/privacy/local-hooks.md). Set `PRIVACY_CHECKOUT`, `PRIVACY_PYTHON` and `GITLEAKS_BIN` to their absolute paths outside this repository, then install:
+Prepare the central scanner checkout and isolated environment using its [pinned local guidance](https://github.com/edithatogo/repository-standards/blob/2efdbd988064f6857795b9fa9ed4e1d08d18791d/privacy/local-hooks.md). Set `PRIVACY_CHECKOUT`, `PRIVACY_PYTHON` and `GITLEAKS_BIN` to their absolute paths outside this repository, then install:
 
 ```sh
 uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/hooks.py install \
@@ -69,15 +69,40 @@ inputs or upstream skips never count as method acceptance. Keeping this POSIX
 candidate build separate preserves the existing cross-platform Atlas code gates
 and avoids claiming an unsupported native Windows preprocessing route.
 
+The [HM450 QC/p-value qualifier](qc-qualification.md) follows that same split.
+Its complete native-R QC comparison currently fails on documented semantic
+mismatches. CI tests the checker and its failure preservation; it does not turn
+a held method into an accepted preprocessing route. The dated QC receipt retains
+the actual nonzero production qualification separately from passing code checks.
+
 ## Central standards and template reconciliation
 
 | Source | Inspected revision | Applied decision |
 |---|---|---|
-| [repository-standards](https://github.com/edithatogo/repository-standards/tree/a3cc8dccdb67e6f122c71cec713194cdec792d07) | `a3cc8dccdb67e6f122c71cec713194cdec792d07` | Rechecked 23 November: the only change since inspected `e642522` removes a retired registry source; the applied code/privacy/coverage policy is unchanged |
+| [repository-standards](https://github.com/edithatogo/repository-standards/tree/2efdbd988064f6857795b9fa9ed4e1d08d18791d) | `2efdbd988064f6857795b9fa9ed4e1d08d18791d` | Rechecked 23 November: registry maintenance since `a3cc8dcc` changes one entry and its evidence; the other 167 entries and applicable templates/coverage policy are unchanged. The separate older scanner gap is corrected below. |
 | [template-solo-rust](https://github.com/edithatogo/template-solo-rust/tree/1c96169526b3ae5845c22d1fae19aeec5c5f35f9) | `1c96169526b3ae5845c22d1fae19aeec5c5f35f9` | Rechecked 23 November: the only change since inspected `d592464` advances its reusable central workflow pin to `e642522`; Rust quality/coverage and the single-maintainer model remain unchanged |
 | [template-solo-data](https://github.com/edithatogo/template-solo-data/tree/a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3) | `a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3` | Data boundary, Python coverage and published-artifact provenance |
 
 The central reusable Rust job assumes a root Cargo manifest and floating stable Rust. This repository instead has a catalogue subproject and a previously qualified 1.95.0 toolchain; a thin local caller is therefore justified. The strict Python choice is a local implementation decision, not a claim that central policy mandates a particular type checker. Existing account community defaults should be inherited where GitHub supports inheritance. Preserve existing Renovate onboarding PR #1 rather than introduce another dependency bot.
+
+### Merge-history secret-scan reconciliation
+
+T07c also corrects a pre-existing coverage gap between Atlas's former central
+scanner pin `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4` and the currently reviewed
+central scanner. The native history scan now explicitly passes
+`--all --full-history --diff-merges=first-parent --no-ext-diff --no-textconv`.
+The hosted privacy action and installed native hook share the new exact central
+pin. The action/runtime/install/lock/licence blobs inspected at the old and new
+pins are unchanged; the scanner has the relevant merge-history correction.
+This is separate from the latest registry-maintenance change.
+
+A real Git/Gitleaks regression creates a disposable merge-only fictional canary,
+removes it in the next commit and verifies that a clean final snapshot cannot
+hide it. The old selector misses the canary; the production strict verifier now
+fails `history-secrets` with exactly one redacted finding. The test checks that no
+canary value is logged. It preserves all existing secret rules and waiver
+prohibitions. The [dated receipt](qualification/t07-qc-2026-11-23.md) records the
+actual red/green regression, native installation and full candidate checks.
 
 ## Outstanding dispositions
 
