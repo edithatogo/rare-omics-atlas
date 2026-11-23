@@ -26,7 +26,12 @@ The first command obtains the exact pinned producer and runs `cargo +1.95.0 run 
 
 ## Remaining selection work
 
-T07.02 still needs the actual preprocessing/QC route and exact array manifest/mask/build/annotation assets. SeSAMe2 remains a candidate requiring its own technical/export/terms qualification; the numerical core does not supply preprocessing. Production matrix ingestion is outside the synthetic example's contract.
+The [HM450 raw/Q contract](../../../research/preprocessing-qualification.md)
+now specifies one bounded SeSAMe2 technical fixture, exact array assets,
+independent reference and actual export checks. T07.02 still needs the complete
+selected preprocessing/QC route, scientific precision budget and any additional
+platform/annotation consumers. The numerical core does not supply preprocessing.
+Production matrix ingestion is outside the synthetic example's contract.
 
 T01 participant independence, molecular eligibility and applicable institutional determination remain unresolved. No disease-conditioned comparison has run. T07.02b N1 must freeze the scientific estimand, features, covariates, missingness, discovery/replication roles and acceptance bounds before such work. The official actual-device receipt remains external.
 

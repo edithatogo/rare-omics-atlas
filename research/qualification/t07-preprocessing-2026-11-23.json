@@ -1,0 +1,1180 @@
+{
+  "schema_version": 1,
+  "scope": "T07b bounded HM450 raw/Q production text export, complete annotation and separate independent R diagnostics",
+  "reviewed_on": "2026-11-23",
+  "base_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+  "quality_level": "strict",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "baseline_runs": [
+    {
+      "path": "artifacts/verification/preprocessing-baseline/receipt.json",
+      "sha256": "23355d6cb30b41235c7f64212c397d49c581873285e81ad765a10090d7605fa5",
+      "bytes": 13901,
+      "status": "failed",
+      "source_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+      "source_tree_sha256": "974e2b89cdcff23ce07b35899bb902124c231f981c6c20e6204e846d5035a337",
+      "checks": [
+        {
+          "name": "rust-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "uv-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "cargo-llvm-cov-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "cargo-audit-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "gitleaks-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "actionlint-version",
+          "status": "failed",
+          "exit_code": 127
+        },
+        {
+          "name": "diff",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-lock",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "contracts",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "workflow-lint",
+          "status": "failed",
+          "exit_code": 127
+        },
+        {
+          "name": "rust-format",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-clippy",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-test-debug",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-test-release",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-doctests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-docs",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-lint",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-format",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-types",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "harness-tests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "publisher-tests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "limma-consumer-contract",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-coverage-summary",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-advisories",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-coverage-xml",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "patch-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-advisories",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-dependency-inventory",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "source-secrets",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "complete-history",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "history-secrets",
+          "status": "passed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "path": "artifacts/verification/preprocessing-baseline-corrected/receipt.json",
+      "sha256": "145d6ce438b3fd8ad02a15b7d150276b9adcdaae07cbfc39bec0df148915fd2d",
+      "bytes": 13909,
+      "status": "passed",
+      "source_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+      "source_tree_sha256": "974e2b89cdcff23ce07b35899bb902124c231f981c6c20e6204e846d5035a337",
+      "checks": [
+        {
+          "name": "rust-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "uv-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "cargo-llvm-cov-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "cargo-audit-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "gitleaks-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "actionlint-version",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "diff",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-lock",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "contracts",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "workflow-lint",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-format",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-clippy",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-test-debug",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-test-release",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-doctests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-docs",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-lint",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-format",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-types",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "harness-tests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "publisher-tests",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "limma-consumer-contract",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-coverage-summary",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-advisories",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-coverage-xml",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "patch-coverage",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "python-advisories",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "rust-dependency-inventory",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "source-secrets",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "complete-history",
+          "status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "history-secrets",
+          "status": "passed",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "production_raw_q": {
+    "receipt": {
+      "path": "artifacts/verification/preprocessing-raw-q-reviewed/preprocessing-contract.json",
+      "sha256": "c8183daf86089c41fdc4c585844e57877b7a5c87391b39712ca0c8e80c42c91f",
+      "bytes": 14567
+    },
+    "result": {
+      "schema_version": 1,
+      "contract_id": "sesame-hm450-raw-q-v1",
+      "status": "passed",
+      "started_at": "2026-11-23T01:49:49.038537+00:00",
+      "scientific_admitted": false,
+      "official_owner_device_accepted": false,
+      "full_qcdpb_accepted": false,
+      "limitations": [
+        "One unrelated public HM450 technical pair; raw/Q stages only.",
+        "No disease-conditioned analysis, full QCDPB or scientific M-error acceptance.",
+        "R execution, software licensing and device outcomes have separate receipts."
+      ],
+      "implementation_sha256": {
+        "qualify_preprocessing.py": "8304da92e9cde5f320b9d3cf3d19b6bf8426476834fcd7224a76bac09193bf03",
+        "qualify_limma.py": "ff85e1865bafb410050ea1e10ca381512b39f2a3e20d6708d0435ab018deb038"
+      },
+      "contract_sha256": "e049d7f9d1ba1790c4973fd783f74f530fa80fc05ac495bfb370a6f856acc10d",
+      "input_sha256": {
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be",
+        "independent_reference": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3"
+      },
+      "source_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+      "yame_revision": "e1e7b38e9f3b67981a78b1116e7312864677d69d",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "clean"
+          ],
+          "stdout": "clean-sesame.stdout",
+          "stderr": "clean-sesame.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.009
+        },
+        {
+          "command": [
+            "make",
+            "-C",
+            "YAME",
+            "clean"
+          ],
+          "stdout": "clean-yame.stdout",
+          "stderr": "clean-yame.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.041
+        },
+        {
+          "command": [
+            "make",
+            "-j2",
+            "sesame"
+          ],
+          "stdout": "build.stdout",
+          "stderr": "build.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 20.772
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "version"
+          ],
+          "stdout": "version.stdout",
+          "stderr": "version.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.011
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz"
+          ],
+          "stdout": "annotation.stdout",
+          "stderr": "annotation.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.264
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/raw-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-1.stdout",
+          "stderr": "raw-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.371
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/raw-1/beta.cg"
+          ],
+          "stdout": "raw-1-export.stdout",
+          "stderr": "raw-1-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.204
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/raw-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-2.stdout",
+          "stderr": "raw-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.461
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/raw-2/beta.cg"
+          ],
+          "stdout": "raw-2-export.stdout",
+          "stderr": "raw-2-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.225
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "Q",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/Q-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "Q-1.stdout",
+          "stderr": "Q-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.347
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/Q-1/beta.cg"
+          ],
+          "stdout": "Q-1-export.stdout",
+          "stderr": "Q-1-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.211
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "Q",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/Q-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "Q-2.stdout",
+          "stderr": "Q-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.398
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-raw-q/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/preprocessing-raw-q-reviewed/Q-2/beta.cg"
+          ],
+          "stdout": "Q-2-export.stdout",
+          "stderr": "Q-2-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.235
+        }
+      ],
+      "binary_sha256": "9062ba02c4599ec83f3579f2b475ac4e4bd4655b5fb580e783add0d81a2d31bc",
+      "yame_binary_sha256": "8df7936d10216f83d38948fa734aed25401f49d896ab6821d4d4a09f147ddc3d",
+      "annotation": {
+        "rows": 486427,
+        "channels": {
+          "2": 350926,
+          "R": 89206,
+          "G": 46295
+        },
+        "probe_kinds": {
+          "cg": 482421,
+          "ch": 3091,
+          "control": 850,
+          "rs": 65
+        },
+        "coordinate_contigs": {
+          "chr16": 21937,
+          "chr3": 25158,
+          "chr1": 46823,
+          "chr8": 20952,
+          "chr14": 15080,
+          "chr15": 15262,
+          "chr9": 9872,
+          "chr19": 25516,
+          "chr6": 36613,
+          "chr12": 24541,
+          "chr2": 34783,
+          "chr4": 20451,
+          "chr11": 28784,
+          "chr20": 10395,
+          "chr10": 24386,
+          "chr18": 5917,
+          "chr21": 4246,
+          "chr17": 27893,
+          "chr7": 30016,
+          "chr22": 8544,
+          "chrX": 11241,
+          "chr13": 12293,
+          "chr5": 24327,
+          "chrY": 418,
+          "chrUn_GL000220v1": 4,
+          "chr16_KI270728v1_random": 22,
+          "chr22_KI270733v1_random": 6,
+          "chrUn_GL000213v1": 8,
+          "chr22_KI270879v1_alt": 18,
+          "chr8_KI270821v1_alt": 1,
+          "NA": 858,
+          "chrUn_KI270442v1": 1,
+          "chr1_KI270706v1_random": 10,
+          "chr2_KI270716v1_random": 4,
+          "chr14_GL000009v2_random": 4,
+          "chrUn_GL000218v1": 2,
+          "chr14_GL000194v1_random": 1,
+          "chrUn_KI270744v1": 1,
+          "chrM": 5,
+          "chr22_KI270731v1_random": 3,
+          "chr1_KI270713v1_random": 3,
+          "chrUn_KI270425v1": 1,
+          "chr19_GL949751v2_alt": 1,
+          "chr4_GL000008v2_random": 6,
+          "chr22_KI270928v1_alt": 1,
+          "chr3_GL000221v1_random": 2,
+          "chr22_KI270734v1_random": 2,
+          "chrUn_KI270743v1": 3,
+          "chr14_KI270726v1_random": 1,
+          "chr15_KI270727v1_random": 1,
+          "chrUn_GL000214v1": 2,
+          "chrUn_KI270742v1": 4,
+          "chrUn_GL000219v1": 1,
+          "chr19_GL949746v1_alt": 1,
+          "chr22_KI270737v1_random": 1,
+          "chr19_KI270938v1_alt": 1
+        },
+        "extension_codes": {
+          ".": 422563,
+          "C": 47879,
+          "T": 15985
+        },
+        "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+        "coordinate_convention": "pinned hg38 CpG_beg is zero-based; no rows filtered",
+        "positional_join_basis": "only these checksum-pinned companion files share this ordering"
+      },
+      "exports": [
+        {
+          "rows": 486427,
+          "missing": 2,
+          "finite": 486425,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "5eb8302f89dfe35619d634ac9d2f220e9f249d52e0f993b9eb09353e7f325716",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "stage": "raw",
+          "threads": 1,
+          "binary_output_sha256": "f7aebc88f875f3bf8c31f07d4fa2c325dc5666462f350f531a153f8915a7a84b"
+        },
+        {
+          "rows": 486427,
+          "missing": 2,
+          "finite": 486425,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "5eb8302f89dfe35619d634ac9d2f220e9f249d52e0f993b9eb09353e7f325716",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "stage": "raw",
+          "threads": 2,
+          "binary_output_sha256": "f7aebc88f875f3bf8c31f07d4fa2c325dc5666462f350f531a153f8915a7a84b"
+        },
+        {
+          "rows": 486427,
+          "missing": 29506,
+          "finite": 456921,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "3e72ea2d52708872fe4d31f537ca14a4657d2b155307c67bc4059dde3c4d9744",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "stage": "Q",
+          "threads": 1,
+          "binary_output_sha256": "64f22be2a86a777ce179ed7a5bb388df2121fd33d6447cc79f3044eca460b13d"
+        },
+        {
+          "rows": 486427,
+          "missing": 29506,
+          "finite": 456921,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "3e72ea2d52708872fe4d31f537ca14a4657d2b155307c67bc4059dde3c4d9744",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "stage": "Q",
+          "threads": 2,
+          "binary_output_sha256": "64f22be2a86a777ce179ed7a5bb388df2121fd33d6447cc79f3044eca460b13d"
+        }
+      ],
+      "elapsed_seconds": 33.1
+    }
+  },
+  "fresh_r_raw_q": {
+    "status": "passed",
+    "scope": "complete ordered R source-level raw/Q versus independent Python mathematical reference",
+    "rows": 486427,
+    "mismatches": {
+      "M_signal": 0,
+      "U_signal": 0,
+      "raw_beta": 0,
+      "q_beta": 0,
+      "q_mask": 0
+    },
+    "missing": {
+      "M_signal": 2,
+      "U_signal": 2,
+      "raw_beta": 2,
+      "q_beta": 29506
+    },
+    "maximum_absolute_error": {
+      "M_signal": 0.0,
+      "U_signal": 0.0,
+      "raw_beta": 0.0,
+      "q_beta": 0.0
+    },
+    "acceptance": "exact finite binary64 values, exact NA pattern, exact mask and complete ordered identity",
+    "python_reference": {
+      "path": "preprocess-audit/oracle/generated-raw-q/expected-raw-q.tsv.gz",
+      "sha256": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3"
+    },
+    "r_outputs": {
+      "M-signal.f64": {
+        "sha256": "7c623b6eed4f4f866d94fd05c68add13e6e39ffc81cfb115d8d985874b1be1d7",
+        "bytes": 3891416
+      },
+      "U-signal.f64": {
+        "sha256": "743aa6c0fc5c161b511885be32c335740076c477fc240ff1d5a00b0ec43b1a01",
+        "bytes": 3891416
+      },
+      "adapter-scope.txt": {
+        "sha256": "b54b3f1451fea954bac02a5b60e44674f77450201f0658908c586a115c2043b3",
+        "bytes": 383
+      },
+      "address-comparison.tsv": {
+        "sha256": "1f823bdc6237091fcbb5bd86b6dbf3e2a1ab273694bc30833719ba4eaad17040",
+        "bytes": 74
+      },
+      "mask-comparison.tsv": {
+        "sha256": "43d019295782d84d3583792e3718c2eb884534c6e2b6bdef9bcafb8c07f47b5e",
+        "bytes": 881
+      },
+      "probe-ids.txt": {
+        "sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+        "bytes": 5371613
+      },
+      "q-beta.f64": {
+        "sha256": "224105abb3436ed99140397a7994709d0967e8cebed1e32edd23139da9b16836",
+        "bytes": 3891416
+      },
+      "q-mask.u8": {
+        "sha256": "1fa818a4909bc1a61b20fe23811f413bf4c07d2949541310288669eb36a50707",
+        "bytes": 486427
+      },
+      "q-sdf.rds": {
+        "sha256": "3c3c6a8ff70729a5871e28fe6dee714570d08f874793537c546580ad7195195e",
+        "bytes": 4661096
+      },
+      "raw-beta.f64": {
+        "sha256": "9fc4e1d30b65ab72ce52febc93904d528d06a809fb9c0f8ee8dc280e632b9ba7",
+        "bytes": 3891416
+      },
+      "raw-sdf.rds": {
+        "sha256": "19be981d32c2a0e95670828cbe25aeba476cfecdd6aa854c1adc6e1e67a1b14f",
+        "bytes": 4618250
+      },
+      "session-info.txt": {
+        "sha256": "46565160e0defe9e82d0c444a564c7ef49449ab653ae789a921cc99efe09446b",
+        "bytes": 788
+      },
+      "summary.tsv": {
+        "sha256": "c0296ec60518651b4b9c5ef86c9410f71389382a9a58fed9079fa08fac99f341",
+        "bytes": 98
+      }
+    },
+    "comparison_script_sha256": "6a78e934d67f52cc533f1e9174ec895e88406655cce403bfbe562be6b8658d01",
+    "does_not_admit": [
+      "full sesame package installation",
+      "QCDPB",
+      "EPIC",
+      "owner devices",
+      "disease inference"
+    ]
+  },
+  "full_qcdpb_diagnostic": {
+    "status": "passed for one HM450 beta-only technical fixture",
+    "reference_evidence_path": "research/qualification/t07-reference-2026-11-23/reference-evidence.json",
+    "reference_evidence_sha256": "dd81a93abf108f197d7d3ce1cf51267d637d9ea9b2f2dcb2421acaddc5fb75ab",
+    "internal": {
+      "status": "passed",
+      "scope": "independent R source-level QCDPB versus C internal float64 test helper",
+      "maximum_allowed_absolute_error": 1e-12,
+      "threshold_source": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/tests/compare_qcdpb.R",
+      "acceptance": "complete ordered identity, exact NA pattern, every finite absolute error <= 1e-12",
+      "not_admitted": [
+        "production export precision",
+        "full sesame package installation",
+        "EPIC",
+        "owner devices",
+        "disease inference"
+      ],
+      "comparison_script_sha256": "8fe3ae5243a0bcd375520050410632eefe8eb2eacb5773497ba67e0ccd73c69b",
+      "rows": 486427,
+      "reference_missing": 79947,
+      "paired_finite": 406480,
+      "na_mismatches": 0,
+      "values_exceeding_tolerance": 0,
+      "maximum_absolute_error": 1.1102230246251565e-15,
+      "c_values_sha256": "391fd28a65a2ea8c332c0694652a994d603af19aa81418efce4da8169e9783dd",
+      "r_values_sha256": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+      "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+    },
+    "production_beta_only": {
+      "status": "passed",
+      "scope": "selected public HM450 QCDPB production beta-only export versus fresh R",
+      "acceptance": "exact complete ordered text numeric values after declared binary32 then six-significant-digit serialization, including NA and sample index",
+      "direct_stored_binary_word_audit": false,
+      "qc_metrics_accepted": false,
+      "scientific_m_error_budget_accepted": false,
+      "scientific_admitted": false,
+      "official_owner_device_accepted": false,
+      "not_admitted": [
+        "EPIC",
+        "full sesame package installation",
+        "disease inference"
+      ],
+      "comparison_script_sha256": "b97b72c6b7d5ebb5b042228d32b3a732f21daa5df746c539f101ea64840edc8c",
+      "rows": 486427,
+      "missing": 79947,
+      "finite": 406480,
+      "reference_endpoints": 0,
+      "finite_to_endpoint_collapses": 0,
+      "maximum_absolute_beta_serialization_error": 5.294165927871575e-07,
+      "maximum_finite_absolute_m_serialization_error": 8.747193203184622e-05,
+      "sha256": {
+        "text_export": "f361b83e92feb31c28a3abfdd9e2d4f0d06f6653e298e8906ca8d96a809a5d80",
+        "sample_index": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+        "binary_output": "a662da66da596d81bc2453750597ce09ba5cfdb6bce7860feda4368e115b916f",
+        "r_values": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+        "ordered_probe_ids": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+      }
+    },
+    "failed_attempts": [
+      {
+        "stage": "initial object inspection",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "str(HM450.address) traversed the unused hg38 GRanges object; GenomicRanges was absent. Complete ordering and mask comparisons subsequently succeeded without using that slot.",
+        "artifact": "tooling/initial-object-inspection-failure.txt"
+      },
+      {
+        "stage": "precompiled preprocessCore QCDPB",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "normalize.quantiles.use.target failed with pthread_create return code 22",
+        "command_receipt": "oracle/r-qcdpb-command.json",
+        "driver_sha256": "47197a5fad6adf8885892f67ed8096f1fb03947e933ad3d607eb4d703a946305",
+        "stderr_sha256": "18764f53023cf0bc685e1aa597804de0842c6c97b20556842ada4fa9b5e86a4e"
+      },
+      {
+        "stage": "official source metadata fetch",
+        "status": "failed",
+        "reason": "HTTP 403 from https://bioconductor.org/packages/3.22/bioc/src/contrib/PACKAGES.gz before source download",
+        "resolution": "official Posit mirror supplied preprocessCore 1.72.0 matching release metadata; source SHA256 remained fixed"
+      }
+    ],
+    "serial_resolution": {
+      "status": "passed",
+      "exit_code": 0,
+      "package": "preprocessCore 1.72.0",
+      "configure_argument": "--disable-threading",
+      "source_sha256": "4472052371147cfbf91d223eb15f3b030d236de9b4bba6b58a205c368d53884d",
+      "source_changed": false,
+      "separate_library": true,
+      "reference_binary_sha256": "0d37957fdecea8d6ba0ce34cbd5ac7c9fe1bcee478a08125ac038d4fe5b3b3a9",
+      "official_guidance": "https://github.com/Bioconductor/bioconductor_docker/issues/22"
+    },
+    "retained_nonfatal_messages": [
+      "dplyr was built under R 4.5.3; the actual runtime was pinned R 4.5.2.",
+      "R CMD INSTALL reported the defunct config variable CPP; source build and load checks succeeded."
+    ],
+    "full_qc_or_scientific_route_admitted": false
+  },
+  "combined_candidate_verification": {
+    "status": "passed",
+    "stage": "complete candidate including reference recipes and archived bounded tracks; final evidence-only receipt updates are rechecked by the actual native commit hook",
+    "receipt_path": "artifacts/verification/preprocessing-candidate-final/receipt.json",
+    "receipt_sha256": "145040ae2d862ceff33b2046296a5dcab7e30f8ab4db76e403c56e511572d732",
+    "source_tree_sha256": "6fe92be3d9344f9c1ef679c29c2d10abbb7e00b7fe4e18d5af15be4d43ad87bd",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "elapsed_seconds": 32.303,
+    "changed_code_branch_aware_coverage_percent": 99,
+    "coverage_minimum_percent": 90,
+    "harness_tests": 67,
+    "publisher_tests": 41,
+    "rust_tests_per_profile": 20
+  },
+  "source_review": {
+    "central_standards": "a3cc8dccdb67e6f122c71cec713194cdec792d07",
+    "privacy_scanner": "b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4",
+    "template_solo_rust": "1c96169526b3ae5845c22d1fae19aeec5c5f35f9",
+    "template_solo_data": "a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3",
+    "relevant_policy_changed": false
+  },
+  "limits": [
+    "One public technical HM450 pair; no disease inference or clinical replication outcomes accessed.",
+    "Actual production raw/Q comparison checks composed binary32-to-six-digit text values, not each stored binary32 word.",
+    "One-versus-two threads repeats one sample; not a multi-sample performance or concurrency benchmark.",
+    "Full QC metrics, cross-platform behavior, molecular eligibility, independent participants, N1 and actual devices remain open.",
+    "No scientific beta/M tolerance was chosen from observed errors.",
+    "External C build completed with existing warnings; no warning-free or complete upstream dependency-security claim.",
+    "Atlas code licence and commercial use/distribution scope remain separate decisions."
+  ],
+  "precommit_and_hosted_receipt": "Final actual hook and immutable hosted outcomes will be recorded in the PR for the exact published tree.",
+  "independent_review": {
+    "raw_q_checker": "Accepted after exact Q-track validation and after-run YAME/checker/helper integrity fixes; meaningful failure regressions pass.",
+    "cohort_curation": "Separate reviewer checked retained original SOFT/XML, catalogue/source/artifact hashes, ten exact joins, 341 raw-link pairs and declared holds; accepted bounded source-only scope.",
+    "t01_markdown_sha256": "ab6757d0439aaab17448385ccbbb6c19913584423033b40ebd9dfcb122a49ffe",
+    "t01_json_sha256": "da105e3942965ac36144430dc3dc2b5a64122746df32f92282538e2a2d8003ef"
+  },
+  "limma_status_reconciliation": {
+    "pull_request": "https://github.com/edithatogo/limma-rust/pull/7",
+    "head_revision": "f8827e2e44f7127619569f95fd71966455b9fc46",
+    "merge_revision": "c6a757779c0f5d9869bf71a55df0c64cc69ac7b5",
+    "hook_verified_local_revision": "e04c8aea6e394bce5b0522fee895b7948e406035",
+    "identical_published_tree": "2674ffebeb2061c6ff9256129833bdbef9c7b83e",
+    "scope": "Three Conductor Markdown files; completed synthetic publication/receiving reconciled, parent production/device/scientific gates remain open",
+    "postmerge_strict_run": "https://github.com/edithatogo/limma-rust/actions/runs/45097048068",
+    "postmerge_privacy_run": "https://github.com/edithatogo/limma-rust/actions/runs/45097048019",
+    "strict_checks_passed": 29,
+    "atlas_numerical_producer_pin_changed": false
+  },
+  "reference_reproduction": "research/qualification/t07-reference-2026-11-23/REFERENCE_REPRODUCTION.md",
+  "committed_comparator_replay": {
+    "raw-q": {
+      "receipt_sha256": "38c1077eecb38cc267e921eb72fdc089a7f974e6cd8002d256c0fa3a1a41ee58",
+      "result": {
+        "status": "passed",
+        "scope": "complete ordered R source-level raw/Q versus independent Python mathematical reference",
+        "acceptance": "exact finite binary64 values, exact NA pattern, exact mask and complete ordered identity",
+        "comparison_script_sha256": "4454c8fbad5b55a333a1388fc76bb39cb2760a5f9b3f7a7e3721fda9d5a7b004",
+        "does_not_admit": [
+          "full sesame package installation",
+          "QCDPB",
+          "EPIC",
+          "owner devices",
+          "disease inference"
+        ],
+        "rows": 486427,
+        "mismatches": {
+          "M_signal": 0,
+          "U_signal": 0,
+          "raw_beta": 0,
+          "q_beta": 0,
+          "q_mask": 0
+        },
+        "missing": {
+          "M_signal": 2,
+          "U_signal": 2,
+          "raw_beta": 2,
+          "q_beta": 29506
+        },
+        "maximum_absolute_error": {
+          "M_signal": 0.0,
+          "U_signal": 0.0,
+          "raw_beta": 0.0,
+          "q_beta": 0.0
+        },
+        "python_reference": {
+          "path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/generated-raw-q/expected-raw-q.tsv.gz",
+          "sha256": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3"
+        },
+        "r_outputs": {
+          "probe-ids.txt": {
+            "sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+            "bytes": 5371613
+          },
+          "q-mask.u8": {
+            "sha256": "1fa818a4909bc1a61b20fe23811f413bf4c07d2949541310288669eb36a50707",
+            "bytes": 486427
+          },
+          "M-signal.f64": {
+            "sha256": "7c623b6eed4f4f866d94fd05c68add13e6e39ffc81cfb115d8d985874b1be1d7",
+            "bytes": 3891416
+          },
+          "U-signal.f64": {
+            "sha256": "743aa6c0fc5c161b511885be32c335740076c477fc240ff1d5a00b0ec43b1a01",
+            "bytes": 3891416
+          },
+          "raw-beta.f64": {
+            "sha256": "9fc4e1d30b65ab72ce52febc93904d528d06a809fb9c0f8ee8dc280e632b9ba7",
+            "bytes": 3891416
+          },
+          "q-beta.f64": {
+            "sha256": "224105abb3436ed99140397a7994709d0967e8cebed1e32edd23139da9b16836",
+            "bytes": 3891416
+          }
+        }
+      }
+    },
+    "qcdpb-internal": {
+      "receipt_sha256": "8847abde9eaeb245e785b51e53b733e84754d9eb2edb11f7471b20ad67cafa85",
+      "result": {
+        "status": "passed",
+        "scope": "independent R source-level QCDPB versus C internal float64 test helper",
+        "maximum_allowed_absolute_error": 1e-12,
+        "threshold_source": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/tests/compare_qcdpb.R",
+        "acceptance": "complete ordered identity, exact NA pattern, every finite absolute error <= 1e-12",
+        "not_admitted": [
+          "production export precision",
+          "full sesame package installation",
+          "EPIC",
+          "owner devices",
+          "disease inference"
+        ],
+        "comparison_script_sha256": "6933cedceee76dbba0b203cd6d62bdc6121df71f287e442e550084a36fe28f58",
+        "rows": 486427,
+        "reference_missing": 79947,
+        "paired_finite": 406480,
+        "na_mismatches": 0,
+        "values_exceeding_tolerance": 0,
+        "maximum_absolute_error": 1.1102230246251565e-15,
+        "c_values_sha256": "391fd28a65a2ea8c332c0694652a994d603af19aa81418efce4da8169e9783dd",
+        "r_values_sha256": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+        "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+      }
+    },
+    "qcdpb-export": {
+      "receipt_sha256": "cbee774a37729d32434115e064ca426197cf386acc481b47c12e9fd39cd4a2aa",
+      "result": {
+        "status": "passed",
+        "scope": "selected public HM450 QCDPB production beta-only export versus fresh R",
+        "acceptance": "exact complete ordered text numeric values after declared binary32 then six-significant-digit serialization, including NA and sample index",
+        "direct_stored_binary_word_audit": false,
+        "qc_metrics_accepted": false,
+        "scientific_m_error_budget_accepted": false,
+        "scientific_admitted": false,
+        "official_owner_device_accepted": false,
+        "not_admitted": [
+          "EPIC",
+          "full sesame package installation",
+          "disease inference"
+        ],
+        "comparison_script_sha256": "125f40e4c115141cce987254feec59f4ae9fe5dbd72c23ba5483843c49a8e130",
+        "rows": 486427,
+        "missing": 79947,
+        "finite": 406480,
+        "reference_endpoints": 0,
+        "finite_to_endpoint_collapses": 0,
+        "maximum_absolute_beta_serialization_error": 5.294165927871575e-07,
+        "maximum_finite_absolute_m_serialization_error": 8.747193203184622e-05,
+        "sha256": {
+          "text_export": "f361b83e92feb31c28a3abfdd9e2d4f0d06f6653e298e8906ca8d96a809a5d80",
+          "sample_index": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "binary_output": "a662da66da596d81bc2453750597ce09ba5cfdb6bce7860feda4368e115b916f",
+          "r_values": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+          "ordered_probe_ids": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+        }
+      }
+    }
+  },
+  "actual_r_driver_sha256": {
+    "run_raw_q.R": "f676525581c660f78a701815c83b25b678263b113d5f6ded45d057e43652a642",
+    "run_qcdpb.R": "47197a5fad6adf8885892f67ed8096f1fb03947e933ad3d607eb4d703a946305"
+  },
+  "first_combined_candidate_verification": {
+    "status": "passed",
+    "stage": "first combined strict candidate; subsequent reference-recipe/evidence/archive additions require final exact-tree hook verification",
+    "receipt_path": "artifacts/verification/preprocessing-candidate-first/receipt.json",
+    "receipt_sha256": "b6252bf4393a464ad93310935d2e7fff1f00b83613e90e7bd21ef7c875d23301",
+    "source_tree_sha256": "28e338f0faf2af72e83de66d46a3a0f9884b2bd7f83027b2efe87f45af24147f",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "changed_code_branch_aware_coverage_percent": 99,
+    "coverage_minimum_percent": 90,
+    "harness_tests": 63,
+    "publisher_tests": 41,
+    "rust_tests_per_profile": 20
+  }
+}
