@@ -60,12 +60,21 @@ Actual installation is clone-local; another clone must run this command. The [in
 
 The publication workflow stays separately authorised and source-bound. Verification has no Hub write token and never runs a real upload. The publisher's malformed-manifest failure handling is tested to preserve source files. Its historical metadata verifier separately pins the original reviewed publisher and the current reviewed implementation, without relabelling historical release bytes.
 
+The [HM450 raw/Q qualification](preprocessing-qualification.md) adds mandatory
+checker/oracle regression coverage to this same strict code command. Its actual
+public-fixture production run is a separate explicit acceptance command requiring
+the pinned C checkout, compiler and array assets. Re-run it before accepting a
+change to that contract, checker, reference or selected upstream source; missing
+inputs or upstream skips never count as method acceptance. Keeping this POSIX
+candidate build separate preserves the existing cross-platform Atlas code gates
+and avoids claiming an unsupported native Windows preprocessing route.
+
 ## Central standards and template reconciliation
 
 | Source | Inspected revision | Applied decision |
 |---|---|---|
-| [repository-standards](https://github.com/edithatogo/repository-standards/tree/e6425228dea09637eb0a45a3787421e7bce42b3b) | `e6425228dea09637eb0a45a3787421e7bce42b3b` | Single policy authority; proportionate executable gates, privacy, dependency evidence, immutable actions and truthful receipts |
-| [template-solo-rust](https://github.com/edithatogo/template-solo-rust/tree/d59246472351fc72a82a6ba535a4255af3a2fa45) | `d59246472351fc72a82a6ba535a4255af3a2fa45` | Rust quality/coverage policy and single-maintainer model |
+| [repository-standards](https://github.com/edithatogo/repository-standards/tree/a3cc8dccdb67e6f122c71cec713194cdec792d07) | `a3cc8dccdb67e6f122c71cec713194cdec792d07` | Rechecked 23 November: the only change since inspected `e642522` removes a retired registry source; the applied code/privacy/coverage policy is unchanged |
+| [template-solo-rust](https://github.com/edithatogo/template-solo-rust/tree/1c96169526b3ae5845c22d1fae19aeec5c5f35f9) | `1c96169526b3ae5845c22d1fae19aeec5c5f35f9` | Rechecked 23 November: the only change since inspected `d592464` advances its reusable central workflow pin to `e642522`; Rust quality/coverage and the single-maintainer model remain unchanged |
 | [template-solo-data](https://github.com/edithatogo/template-solo-data/tree/a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3) | `a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3` | Data boundary, Python coverage and published-artifact provenance |
 
 The central reusable Rust job assumes a root Cargo manifest and floating stable Rust. This repository instead has a catalogue subproject and a previously qualified 1.95.0 toolchain; a thin local caller is therefore justified. The strict Python choice is a local implementation decision, not a claim that central policy mandates a particular type checker. Existing account community defaults should be inherited where GitHub supports inheritance. Preserve existing Renovate onboarding PR #1 rather than introduce another dependency bot.

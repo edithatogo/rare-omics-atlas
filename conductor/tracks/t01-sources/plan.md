@@ -5,6 +5,7 @@
 - [x] **T01.02a:** Qualify five initial gene-defined MONDO/OMIM disease mappings and pinned HPO/HPOA coverage from actual source bytes; see [ontology receipt](../../../research/qualification/ontology-source-receipt.md).
 - [ ] **T01.02b:** Apply those mappings to eligible participant/assay records and validate the actual selected library/consumer semantics; disease-level HPO remains separate from participant observations.
 - [x] **T01.03a:** Retrieve initial three series/sample metadata and record aggregate diagnostic/control/assay categories.
+- [x] **T01.03c:** Curate source roles, molecular categories/crosswalk limits, native controls, technical array links, missing covariates and explicit study-data reuse; replay the 341-record KMT2D review inventory through the existing contract. [Actual source receipt](../../../research/qualification/t01-cohort-curation-2026-11-23.md): 257 held, 84 review-scope exclusions, zero admitted. This does not close T01.03b.
 - [ ] **T01.03b:** Freeze the actual molecular subset, participant/control independence and covariate-complete analysis manifest. No blanket acceptance of all clinically labelled Kabuki cases.
 - [x] **T01.04:** Map verified prior studies to datasets and revise the platform/network novelty claims; retain unverified edges explicitly.
 - [x] **T01.05a:** Download GSE97362, GSE116300 and GSE218186 raw archives; record exact byte counts/SHA-256, TAR structure, paired channels and IDAT headers.

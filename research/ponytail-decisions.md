@@ -66,3 +66,26 @@ Use the existing Rust numerical operations through one thin named boundary. Reus
 Keep real exporter round-trip tests in Cargo's ordinary target selection. The pinned cargo-llvm-cov native defaults exclude example files from coverage reporting; its unsupported all-default override would require duplicating toolchain/vendor/test filtering. Preserve those defaults and disclose that scope while requiring the executable tests, rather than transform reports or claim coverage that was not measured.
 
 The source/sample boundary validates declarations and keeps unresolved evidence held. Reusing already-locked Serde for strict duplicate-field rejection is justified by an independently reproduced parser ambiguity. No new scientific admission rule or identity inference is introduced.
+
+## Preprocessing and cohort curation — 23 November 2026
+
+Retain the existing SeSAMe2 CLI for the bounded HM450 raw/Q candidate. The
+[qualification contract](preprocessing-qualification.md) uses complete pinned
+public inputs, an independent signal-level reference and actual named exports.
+A small standard-library checker in the existing developer environment is
+sufficient; no Rust preprocessing port, new runtime dependency, managed storage
+or orchestration service is justified. Fresh R execution is a test reference,
+not a mandatory Atlas production runtime. Record both software terms and actual
+build warnings; scientific, platform and device acceptance remain distinct.
+
+Keep the serializer's binary32/six-significant-digit behavior explicit. Report
+observed beta/M loss and endpoints; do not choose a scientific tolerance from
+those same observations. Qualify a higher-precision export or accept a declared
+scientific error budget only for its actual future consumer.
+
+Reuse the existing sample contract for [cohort-source curation](qualification/t01-cohort-curation-2026-11-23.md).
+The 341-record inventory retains 257 held declarations and 84 explicit KMT2D
+review-scope exclusions. Source-control labels, historical classifier splits and
+array keys do not assign new analysis controls, independent participants or
+replication partitions. Resolve source crosswalks, identities and missing
+covariates in parallel before jointly freezing the analysis manifest.

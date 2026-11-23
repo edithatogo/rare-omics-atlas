@@ -1,0 +1,494 @@
+{
+  "schema_version": 1,
+  "scope": "T01 bounded KMT2D candidate-source curation and replay of the existing structural validator",
+  "review_date": "2026-11-23",
+  "base_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+  "analysis_admitted": false,
+  "scientific_admission_complete": false,
+  "independent_participant_count": null,
+  "raw_records_publication": "none; source-level records and identifiers remain ignored locally",
+  "public_sources": [
+    {
+      "accession": "GSE97362",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief",
+      "retrieved_at_utc": "2026-11-23T01:20:21.656637+00:00",
+      "http_status": 200,
+      "size_bytes": 622682,
+      "sha256": "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf",
+      "assay_records": 235,
+      "catalogue_set_equal": true,
+      "source_aggregates": {
+        "age_value_categories": {
+          "left_censored": 2,
+          "missing": 1,
+          "numeric": 232
+        },
+        "chips_with_multiple_source_groups": 19,
+        "disease_labels": {
+          "CHARGE": 19,
+          "CHD7 variant": 53,
+          "Control": 125,
+          "KDM6A variant": 1,
+          "KMT2D variant": 26,
+          "Kabuki": 11
+        },
+        "raw_metadata_array_pairs": 235,
+        "sex_labels": {
+          "female": 86,
+          "male": 149
+        },
+        "source_groups": {
+          "CHD7 LOF discovery cohort": 19,
+          "CHD7 sequence variant": 13,
+          "Control for CHD7 LOF discovery cohort": 29,
+          "Control for KMT2D LOF discovery cohort": 11,
+          "Control for validation cohort": 85,
+          "KMT2D LOF discovery cohort": 11,
+          "KMT2D sequence variant": 10,
+          "Validation cohort": 57
+        },
+        "unique_array_chips": 38
+      },
+      "characteristic_field_coverage": {
+        "age (years)": 235,
+        "disease state": 235,
+        "gender": 235,
+        "sample type": 235,
+        "tissue": 235
+      },
+      "reconciled_idat_metadata_pairs": 235
+    },
+    {
+      "accession": "GSE116300",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief",
+      "retrieved_at_utc": "2026-11-23T01:20:21.658361+00:00",
+      "http_status": 200,
+      "size_bytes": 97399,
+      "sha256": "9a8722a365f07c83e6f663d0ab0bb8b7723bd736aad16696d099ee9d2b12c7e1",
+      "assay_records": 44,
+      "catalogue_set_equal": true,
+      "source_aggregates": {
+        "chips_with_multiple_source_groups": 4,
+        "gene_and_classification": {
+          "DNMT3B | not stated": 1,
+          "HCFC1 | not stated": 1,
+          "KMT2A | likely pathogenic": 1,
+          "KMT2A | pathogenic": 1,
+          "KMT2D | VUS (variant of unknown significance)": 2,
+          "KMT2D | pathogenic": 9,
+          "KMT2D_and_KMT2B | VUS (variant of unknown significance)": 1,
+          "None | not stated": 12,
+          "ZBTB24 | not stated": 1
+        },
+        "raw_metadata_array_pairs": 44,
+        "sex_labels": {
+          "F": 20,
+          "M": 24
+        },
+        "source_roles": {
+          "case": 29,
+          "case parent": 6,
+          "control": 9
+        },
+        "unique_array_chips": 4
+      },
+      "characteristic_field_coverage": {
+        "array position": 44,
+        "case status": 44,
+        "mutation": 44,
+        "phenotype": 44,
+        "sex": 44,
+        "slide id": 44,
+        "variant classification": 14
+      },
+      "reconciled_idat_metadata_pairs": 44
+    },
+    {
+      "accession": "GSE218186",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief",
+      "retrieved_at_utc": "2026-11-23T01:20:21.659030+00:00",
+      "http_status": 200,
+      "size_bytes": 163381,
+      "sha256": "0e72adc9bc6547023f23d5ba4743eb76dfd98a4cf7357ed8abe3dddcb11bcbde",
+      "assay_records": 62,
+      "catalogue_set_equal": true,
+      "source_aggregates": {
+        "chips_with_multiple_source_groups": 7,
+        "raw_metadata_array_pairs": 62,
+        "sex_labels": {
+          "not stated": 62
+        },
+        "source_roles": {
+          "Control": 55,
+          "Kabuki syndrome": 7
+        },
+        "unique_array_chips": 14
+      },
+      "characteristic_field_coverage": {
+        "disease state": 62,
+        "tissue": 62
+      },
+      "reconciled_idat_metadata_pairs": 62
+    }
+  ],
+  "catalogue": {
+    "path": "research/catalogue/2026-11-22/assays.jsonl",
+    "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+    "size_bytes": 992318
+  },
+  "original_source_review": {
+    "GSE97362": {
+      "full_text_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=5420353",
+      "doi": "10.1016/j.ajhg.2017.04.004",
+      "sha256": "214742889923d571e528f89e56586e09f4557a9acb96076007f0a27b01228e7c",
+      "size_bytes": 222659,
+      "retrieved_at_utc": "2026-11-23T01:28:04.523284+00:00",
+      "body_and_tables_retrieved": true,
+      "exact_table2_sample_label_to_geo_description_joins": 10,
+      "exact_join_scope": "KMT2D sequence-variant samples; join by exact source label, no inferred numeric translation",
+      "author_reported_molecular_groups": {
+        "KMT2D_LOF_discovery": 11,
+        "KMT2D_VUS_sequence_variant_group": 10,
+        "KMT2D_pathogenic_or_likely_pathogenic_in_validation": 8
+      },
+      "unresolved": "Supplemental Tables S2/S5 case-level variant/classification joins; signature-derived predictions are not molecular eligibility evidence"
+    },
+    "GSE116300": {
+      "doi": "10.1038/s41431-017-0023-0",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5865196/",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29255178/",
+      "paper_reported_probands": 27,
+      "geo_case_labelled_assays": 29,
+      "paper_sample_label_namespace": "KS",
+      "geo_case_label_namespace": "PAT",
+      "case_level_crosswalk_resolved": false,
+      "rule": "No KS-to-PAT join by matching numbers; deposited assays are not assumed to be independent probands",
+      "retrieved_abstract_xml": {
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=5865196",
+        "sha256": "4c2380d6a20732f242cff9e406cae9adce37d42087a7e6c50202cca8bef724fe",
+        "size_bytes": 12599,
+        "retrieved_at_utc": "2026-11-23T01:28:04.523961+00:00",
+        "full_text_body_present": false
+      }
+    },
+    "GSE218186": {
+      "doi": "10.1111/cge.14304",
+      "article_url": "https://onlinelibrary.wiley.com/doi/10.1111/cge.14304",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36705342/",
+      "author_reported_IC1_pathogenic_or_likely_pathogenic_KMT2D_cases": 7,
+      "supplemental_case_variant_table_retrieved": false,
+      "case_level_eligibility_adjudicated": false,
+      "publisher_review": "Primary article text reviewed through public web retrieval; original publisher response bytes and supplemental case table were not archived, and no case-level molecular eligibility was assigned."
+    }
+  },
+  "reuse_evidence": {
+    "source_dataset": "GSE218186",
+    "source_field": "data_processing",
+    "records_containing_same_processing_text": 62,
+    "historical_training_inputs": [
+      {
+        "label": "PC",
+        "public_accession": "GSE97362",
+        "source_reported_Kabuki_records": 19,
+        "source_reported_controls": 57
+      },
+      {
+        "label": "IC2",
+        "public_accession": null,
+        "source_reported_Kabuki_records": 12,
+        "source_reported_controls": 13,
+        "availability": "Not public according to the GEO processing record"
+      }
+    ],
+    "historical_test_input": {
+      "label": "IC1",
+      "public_accession": "GSE218186",
+      "source_reported_Kabuki_records": 7,
+      "source_reported_controls": 55
+    },
+    "combined_before_classifier_training": "Arrays combined to 450K and quantile-normalized together according to the processing record",
+    "biological_overlap_proven": false,
+    "new_analysis_independence_verified": false,
+    "new_analysis_partition_frozen": false
+  },
+  "technical_covariate_checks": {
+    "all_assays_have_one_red_green_url_pair_with_same_array_key": true,
+    "cross_series_shared_array_keys": 0,
+    "array_key_is_biological_identity": false,
+    "GSE116300_declared_slide_and_position_match_url_key": 44,
+    "GSE97362_native_KMT2D_discovery_chip_distribution": {
+      "case_chips": 3,
+      "control_chips": 4,
+      "shared_chips": 2,
+      "case_only_chips": 1,
+      "control_only_chips": 2
+    },
+    "idat_file_bytes_downloaded_or_qc_passed": false
+  },
+  "declaration_review_scope": {
+    "name": "KMT2D candidate inventory for source review; no admitted analysis cohort",
+    "roles_total": {
+      "case": 68,
+      "control": 189,
+      "excluded": 84
+    },
+    "roles_by_source": {
+      "GSE116300": {
+        "case": 24,
+        "control": 9,
+        "excluded": 11
+      },
+      "GSE218186": {
+        "case": 7,
+        "control": 55
+      },
+      "GSE97362": {
+        "case": 37,
+        "control": 125,
+        "excluded": 73
+      }
+    },
+    "scope_exclusions": {
+      "GSE97362_source_CHARGE_CHD7_or_KDM6A": 73,
+      "GSE116300_other_gene_source_labels": 5,
+      "GSE116300_case_parents": 6
+    },
+    "scope_exclusion_is_molecular_pathogenicity_judgment": false,
+    "control_role_is_analysis_control_selection": false,
+    "source_control_groups_preserved": {
+      "GSE97362_KMT2D_discovery": 11,
+      "GSE97362_CHD7_discovery": 29,
+      "GSE97362_validation": 85,
+      "GSE116300_unaffected_controls": 9,
+      "GSE218186_IC1_controls": 55
+    },
+    "participant_ids": {
+      "null": 341
+    },
+    "specimen_ids": {
+      "null": 341
+    },
+    "partition_values": {
+      "unknown": 341
+    },
+    "independence_values": {
+      "unknown": 341
+    },
+    "molecular_eligibility_values": {
+      "unknown": 68,
+      "not_applicable": 273
+    },
+    "molecular_eligible_declarations": 0,
+    "source_predicates": {
+      "GSE97362": {
+        "field": "disease state",
+        "case": [
+          "Kabuki",
+          "KMT2D variant"
+        ],
+        "control": [
+          "Control"
+        ],
+        "excluded": [
+          "CHARGE",
+          "CHD7 variant",
+          "KDM6A variant"
+        ]
+      },
+      "GSE116300": {
+        "field": "case status",
+        "control": [
+          "control"
+        ],
+        "excluded": [
+          "case parent"
+        ],
+        "case_role_when_case_status_case": {
+          "field": "mutation",
+          "case": [
+            "KMT2D",
+            "KMT2D_and_KMT2B",
+            "None"
+          ],
+          "excluded": [
+            "DNMT3B",
+            "HCFC1",
+            "KMT2A",
+            "ZBTB24"
+          ]
+        }
+      },
+      "GSE218186": {
+        "field": "disease state",
+        "case": [
+          "Kabuki syndrome"
+        ],
+        "control": [
+          "Control"
+        ]
+      },
+      "unrecognized_values": "fail; no default role declaration"
+    }
+  },
+  "local_only_artifacts": [
+    {
+      "path": "data/silver/cohort-admission/source-curation-2026-11-23/declared-samples.json",
+      "sha256": "e597ac2fd42ce0bf172cb67dc041df59c930a4ad048cae912335fba14916052b",
+      "size_bytes": 171525
+    },
+    {
+      "path": "data/silver/cohort-admission/source-curation-2026-11-23/source-link-sidecar.json",
+      "sha256": "46a0cffd7ba30bb3ecc80f8d2837344f8517c7e7d8be81c2468a0b2c610181c0",
+      "size_bytes": 235052
+    },
+    {
+      "path": "data/silver/cohort-admission/source-curation-2026-11-23/curation-summary.json",
+      "sha256": "d1733595bec6667e133da6b380678085b0db47b7817f779fb99d3e76c728faca",
+      "size_bytes": 1340
+    },
+    {
+      "path": "data/silver/cohort-admission/source-curation-2026-11-23/sample-contract-report.json",
+      "sha256": "986d36ae5b10f71ab1378fbeda17838b77907e087dc3160c4212373e0c07d185",
+      "size_bytes": 97217
+    }
+  ],
+  "source_code_reused": [
+    {
+      "path": "tools/catalogue/src/sample_contract.rs",
+      "sha256": "a20a3d019fa25d72692eb8f52b475930abf281622a9fe65edcb548a09b24df2d",
+      "size_bytes": 8480
+    },
+    {
+      "path": "tools/catalogue/src/bin/sample-contract.rs",
+      "sha256": "fcd3f8f9af26cc554a7bdf6b84dbb9f3bedfbbec4887fbdcfcbee5336c057574",
+      "size_bytes": 1284
+    }
+  ],
+  "validator_execution": {
+    "command": [
+      "cargo",
+      "+1.95.0",
+      "run",
+      "--locked",
+      "--manifest-path",
+      "tools/catalogue/Cargo.toml",
+      "--bin",
+      "sample-contract",
+      "--",
+      "--input",
+      "data/silver/cohort-admission/source-curation-2026-11-23/declared-samples.json"
+    ],
+    "started_at_utc": "2026-11-23T01:40:35.139689+00:00",
+    "finished_at_utc": "2026-11-23T01:40:35.381294+00:00",
+    "exit_code": 2,
+    "summary": {
+      "excluded": 84,
+      "held": 257,
+      "ready_for_review": 0
+    },
+    "reason_counts": {
+      "excluded_by_declaration": 84,
+      "independence_unknown": 257,
+      "molecular_eligibility_unknown": 68,
+      "participant_unknown": 257,
+      "partition_unknown": 257,
+      "specimen_unknown": 257
+    },
+    "analysis_admitted": false,
+    "independent_participant_count": null,
+    "source_claims_verified": false,
+    "stdout_sha256": "986d36ae5b10f71ab1378fbeda17838b77907e087dc3160c4212373e0c07d185",
+    "stderr_sha256": "56ccd5cacf0ecacd942634c67c00015c884992ceae12cfed8b00f56835b43799",
+    "expected_exit_code": 2,
+    "disposition": "Expected held result; scientific admission remains closed"
+  },
+  "remaining_conditions": [
+    {
+      "owner": "T01 cohort curator",
+      "condition": "Obtain source-bound case variant and sample crosswalks for the actual intended cohort; resolve the GSE116300 paper/assay inventory difference without numeric ID inference."
+    },
+    {
+      "owner": "T01 cohort curator",
+      "condition": "Resolve participant, specimen, repeat and cross-study biological overlap claims; distinguish historic reuse of GSE97362 from person-level overlap with GSE218186."
+    },
+    {
+      "owner": "T01 cohort curator with T07 preprocessing owner",
+      "condition": "Recover required per-assay covariates from original sources and freeze native control selection, gene-specific eligibility and analysis partition before cohort admission."
+    },
+    {
+      "owner": "T07 qualification owner",
+      "condition": "Complete applicable preprocessing/annotation and official-device qualification; source curation and code checks alone do not admit analysis."
+    }
+  ],
+  "baseline_checks": [
+    {
+      "receipt_path": "artifacts/verification/preprocessing-baseline/receipt.json",
+      "sha256": "23355d6cb30b41235c7f64212c397d49c581873285e81ad765a10090d7605fa5",
+      "quality_level": "strict",
+      "status": "failed",
+      "source_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+      "source_tree_sha256": "974e2b89cdcff23ce07b35899bb902124c231f981c6c20e6204e846d5035a337",
+      "checks": 34,
+      "passed_checks": 32,
+      "failed_checks": [
+        "actionlint-version",
+        "workflow-lint"
+      ],
+      "completed_at": "2026-11-23T01:35:19.432670+00:00",
+      "official_owner_device_accepted": false
+    },
+    {
+      "receipt_path": "artifacts/verification/preprocessing-baseline-corrected/receipt.json",
+      "sha256": "145d6ce438b3fd8ad02a15b7d150276b9adcdaae07cbfc39bec0df148915fd2d",
+      "quality_level": "strict",
+      "status": "passed",
+      "source_revision": "4162111f38e63ca21d811d7df2e628239297bc8d",
+      "source_tree_sha256": "974e2b89cdcff23ce07b35899bb902124c231f981c6c20e6204e846d5035a337",
+      "checks": 34,
+      "passed_checks": 34,
+      "failed_checks": [],
+      "completed_at": "2026-11-23T01:40:04.472676+00:00",
+      "official_owner_device_accepted": false
+    }
+  ],
+  "baseline_disposition": "Initial Actionlint installation timing failure was retained; corrected unchanged-source strict --deep baseline passed 34/34 before tracked writes. Full combined candidate verification is recorded separately by the integration owner.",
+  "source_access_limits": [
+    {
+      "source": "Butcher 2017 supplements",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/bin/mmc1.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/bin/mmc2.xlsx",
+        "https://ars.els-cdn.com/content/image/1-s2.0-S0002929717301489-mmc1.pdf"
+      ],
+      "outcome": "PMC requests returned HTML instead of the requested binary formats; publisher supplement request returned HTTP 403. No supplemental bytes accepted."
+    },
+    {
+      "source": "Sobreira 2017 full text/supplements",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5865196/",
+        "https://www.nature.com/articles/s41431-017-0023-0"
+      ],
+      "outcome": "Public browser retrieval was inconsistent/challenged; EFetch returned abstract/front matter only. No complete case crosswalk or supplementary data downloaded."
+    },
+    {
+      "source": "Hildonen 2023 supplement",
+      "urls": [
+        "https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fcge.14304&file=cge14304-sup-0001-Supinfo.docx"
+      ],
+      "outcome": "Requested supplement returned HTTP 403; no case-variant table bytes accepted."
+    }
+  ],
+  "curation_status": "bounded source review completed with explicit holds; parent T01 admission remains open",
+  "declaration_reconstruction_validation": {
+    "interpreter": "Python 3.15.2 via frozen tools/hf-release uv project",
+    "documented_recipe_executed": true,
+    "exit_code": 0,
+    "reconstructed_manifest_sha256": "e597ac2fd42ce0bf172cb67dc041df59c930a4ad048cae912335fba14916052b",
+    "original_source_hashes_match": true,
+    "source_catalogue_assay_sets_match": true,
+    "aggregate_counts_and_internal_links_checked": true
+  }
+}

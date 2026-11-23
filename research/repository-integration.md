@@ -14,6 +14,14 @@ Keep the numerical specification in limma and link it from atlas. Keep the recei
 
 No new repository, submodule, shared hook package, workflow service or general plugin framework is needed for this increment. Atlas invokes a separately checked-out executable. Its catalogue does not gain a dependency on the GPL numerical crate or a copy of its numerical routines. This boundary does not itself settle distribution licensing: limma retains its existing licence and the atlas code licence remains unresolved.
 
+The [preprocessing contract](preprocessing-qualification.md) follows the same
+boundary: SeSAMe2 remains an external pinned C engine, while Atlas owns exact
+array assets, independent technical references, full-universe receiving checks
+and its admission decision. The author test pair and downloaded annotation/R
+objects remain outside Git; the executable recipes, pins and cleared aggregate
+receipts are maintained here. The separate Limma status reconciliation is prose
+only and does not require changing Atlas's already qualified numerical pin.
+
 ## Bounded numerical exchange
 
 The selected synthetic contract is `limma-named-contrasts-v1`: named float64 matrices, unweighted least squares, default nonrobust/nontrend eBayes, complete per-contrast BH families, ordinary and moderated SE and 95% intervals. Per-feature non-estimability is preserved. Unsupported domains must reject. The canonical limma document specifies the exact fields, ordering and tolerances.

@@ -1,0 +1,37 @@
+{
+  "note": "Current repository recipes; original audit execution identities remain in reference-evidence.json. R driver bytes are identical; formatted Python comparators were replayed against all actual outputs.",
+  "files": {
+    "scripts/tests/preprocessing_reference.py": {
+      "sha256": "c712a92f3191c3b491dfd403dbbc7c055d4ef74cfb6332d5d8fd319e9d1ed996",
+      "bytes": 11254
+    },
+    "scripts/tests/test_preprocessing_reference.py": {
+      "sha256": "3418941b9ea25466211d76d2f5ed3543a09dbc4790eecce128bb591f7c2d3ba5",
+      "bytes": 2693
+    },
+    "scripts/tests/compare_raw_q.py": {
+      "sha256": "4454c8fbad5b55a333a1388fc76bb39cb2760a5f9b3f7a7e3721fda9d5a7b004",
+      "bytes": 5572
+    },
+    "scripts/tests/compare_qcdpb.py": {
+      "sha256": "6933cedceee76dbba0b203cd6d62bdc6121df71f287e442e550084a36fe28f58",
+      "bytes": 4353
+    },
+    "scripts/tests/compare_qcdpb_export.py": {
+      "sha256": "125f40e4c115141cce987254feec59f4ae9fe5dbd72c23ba5483843c49a8e130",
+      "bytes": 5471
+    },
+    "scripts/tests/run_raw_q.R": {
+      "sha256": "f676525581c660f78a701815c83b25b678263b113d5f6ded45d057e43652a642",
+      "bytes": 5710
+    },
+    "scripts/tests/run_qcdpb.R": {
+      "sha256": "47197a5fad6adf8885892f67ed8096f1fb03947e933ad3d607eb4d703a946305",
+      "bytes": 4441
+    },
+    "scripts/tests/test_reference_comparison.py": {
+      "sha256": "5a783eaf25c509a3fe04b9df3212ceb248c562970b73f7b9fce5447e659fa33f",
+      "bytes": 5891
+    }
+  }
+}

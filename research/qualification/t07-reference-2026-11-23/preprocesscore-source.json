@@ -1,0 +1,8 @@
+{
+  "url": "https://bioconductor.posit.co/packages/3.22/bioc/src/contrib/preprocessCore_1.72.0.tar.gz",
+  "md5": "c288c12d10a9a8b02904140e08aa97bd",
+  "sha256": "4472052371147cfbf91d223eb15f3b030d236de9b4bba6b58a205c368d53884d",
+  "bytes": 131031,
+  "metadata_url": "https://bioconductor.posit.co/packages/3.22/bioc/src/contrib/PACKAGES.gz",
+  "entry": "Package: preprocessCore\nVersion: 1.72.0\nImports: stats\nLicense: LGPL (>= 2)\nMD5sum: c288c12d10a9a8b02904140e08aa97bd\nNeedsCompilation: yes"
+}
