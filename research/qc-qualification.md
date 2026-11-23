@@ -1,6 +1,11 @@
 # HM450 QC and detection qualification
 
-Updated 23 November 2026. The bounded T07c receiver is implemented. Its actual
+Updated 23 November 2026. The explicit [native v2 successor](native-qc-qualification.md)
+now passes the bounded complete-universe technical contract; see its
+[executed evidence](qualification/t07-native-qc-2026-11-23.md). This page retains
+the v1 reproduction and original failed result.
+
+The bounded T07c receiver is implemented. Its actual
 full-panel comparison **fails and holds the method**: four of the 65 native R QC
 fields differ at minimum beads zero. All complete ordered p-value exports match
 their declared serialization reference. The extra GCT field qualifies published
@@ -186,13 +191,12 @@ This produces both GCT values, the complete named curated/published sets and
 set-difference counts. Different curations remain different references even when
 each calculation is reproducible.
 
-## Next receiving decision
+## Successor decision and next boundary
 
-T07 must choose and justify missing-signal QC semantics and the GCT annotation
-set for the selected method, preserving the native-R comparison as a distinct
-result. A documented alternative method would need its own predeclared contract;
-loosening this contract after observing failures is not reconciliation. Study
-sample/probe rejection rules and beta/M precision budgets also remain unselected.
+T07 selected [native R missing-signal semantics and curated GCT](native-qc-semantics.md)
+and implemented the [explicit v2 successor](native-qc-qualification.md). Its
+complete technical run passes while this v1 result stays failed. Study
+sample/probe rejection rules and full QCDPB beta/M precision budgets remain unselected.
 Keep T01 identity, overlap, molecular-subset and covariate curation in parallel.
 
 This is technical qualification on an unrelated public author fixture. No

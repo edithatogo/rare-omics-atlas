@@ -119,3 +119,27 @@ returned no new named joins. Retain 257 holds and 84 review-scope exclusions;
 failed/challenged supplement retrieval and unmatched counts cannot become sample
 identity. Current source/device/institutional limits affect their dependent
 scientific steps; compute and available local technical work are not exhausted.
+
+## Native QC successor — 23 November 2026
+
+Select [native R missing-signal and GCT semantics](native-qc-semantics.md) in a
+separate v2 contract. The concrete observed blocker requires one C assignment
+change, its focused regressions and an exact curated extension input. Carry a
+pinned patch and original licence notice in Atlas; no new repository, producer
+API, runtime dependency or numerical port is justified. Bind the original
+upstream/YAME revisions, canonical patch and resulting tree, and keep the
+original v1 failure immutable.
+
+The [complete successor run](qualification/t07-native-qc-2026-11-23.md) passes
+all 66 QC fields, 1,945,708 p-value comparisons and 1,945,708 raw/Q preservation
+comparisons. The real C regression fails on the original source and passes on
+the patch. Reuse the existing receiver/helpers and require every complete ordered
+row; no tolerance changes or metric exemptions are introduced.
+
+The next code boundary is the actual full QCDPB beta/M export precision contract
+for its selected consumer. Technical capabilities remain available locally;
+external named identities, institutional determinations and trusted owner-device
+execution still hold their dependent scientific work. Parallel
+[identity/covariate curation](qualification/t01-identity-covariates-2026-11-23.md)
+adds source-backed context without changing 257 holds, 84 review-scope exclusions
+or zero ready/admitted records.
