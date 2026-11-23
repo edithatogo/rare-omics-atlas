@@ -24,8 +24,10 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [Repository ownership, native hooks and pinned receiving integration](../research/repository-integration.md)
 - [Accepted source/receiving increment and actual strict evidence](../research/qualification/contracts-hooks-2026-11-23.md)
 - [HM450 preprocessing/annotation contract and executable recipe](../research/preprocessing-qualification.md)
-- [HM450 QC/p-value contract, negative parity result and executable recipe](../research/qc-qualification.md)
+- [HM450 QC/p-value v1 history and executable recipe](../research/qc-qualification.md)
+- [Native QC v2 semantics, curated GCT and executable qualification](../research/native-qc-qualification.md)
 - [Cohort-source curation and actual held declarations](../research/qualification/t01-cohort-curation-2026-11-23.md)
+- [Current identity and covariate source evidence](../research/qualification/t01-identity-covariates-2026-11-23.md)
 - [Clinical journal routing](../research/journals.md)
 - [Actual Hub metadata publication and remaining raw transfer](../research/qualification/hf-metadata-publication-2026-11-22.md)
 

@@ -54,6 +54,28 @@ The prior declaration and structural-review files were rechecked against their r
 
 ## Receiving record
 
+### Identity and covariate increment — 23 November 2026
+
+The [new aggregate source receipt](../../../research/qualification/t01-identity-covariates-2026-11-23.md)
+retains three fresh official series texts and exactly reconciles all 341 assay
+IDs. GSE116300 explicitly describes 27 probands plus two clinic recruits later
+dropped as non-KS; the two are still not named in an assay crosswalk. Ten existing
+exact GSE97362 Table 2/GEO description joins gained inheritance provenance (two
+de novo, eight inherited), with no new participant/parent/specimen link.
+
+Covariate availability is now recorded by existing review role: 68 candidate
+cases have 37 numeric ages and 61 recorded sexes; 189 source controls have 124
+numeric ages, one explicit missing age and 134 recorded sexes. The native
+GSE97362 11-case/11-control discovery comparison has age and sex supplied for all
+22 assays, while molecular eligibility, identity, independence and design remain
+held. No values were imputed or inferred from methylation.
+
+The declarations remain 257 held, 84 review-scope exclusions and zero
+ready/admitted. Next obtain the explicit GSE116300 sample/variant bridge and
+original affected variant/control-provenance tables, then apply batch A/B's
+existing structural review. The separate native QC v2 technical pass does not
+clear those identity, covariate or institutional requirements.
+
 Owner/integrator: ChatGPT with parallel source and literature review under Ponytail. **In progress; initial public intake complete, scientific admission pending.**
 
 Evidence: [initial source checks](../../../research/qualification/initial-source-receipt.md), [T01a source/contract checks](../../../research/qualification/t01-sample-contract-2026-11-22.md), [rights](../../../research/dataset-rights.md), [literature receipts](../../../research/literature/README.md), [platform review](../../../research/platform-comparison-review.md). All source/header and structural declaration checks are distinct from statistical QC, cohort independence and institutional approval.

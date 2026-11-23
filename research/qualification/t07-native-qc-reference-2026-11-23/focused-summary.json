@@ -1,0 +1,29 @@
+{
+  "status": "focused_regressions_passed",
+  "test_source": "scripts/tests/test_qc_missing_signal.c",
+  "test_sha256": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312",
+  "original_regression": {
+    "exit_code": 1,
+    "failed_assertions": 19,
+    "passing_cases": 4,
+    "failing_cases": 3,
+    "log": "original-run.stderr"
+  },
+  "candidate": {
+    "normal_exit_code": 0,
+    "cases_passed": 7,
+    "normal_log": "candidate-run.stdout",
+    "asan_ubsan_exit_code": 0,
+    "asan_ubsan_receipt": "address-undefined-receipt.json"
+  },
+  "commands_receipt": "receipt.json",
+  "leak_sanitizer": "unavailable under this host ptrace; no leak qualification claimed",
+  "source_unchanged": true,
+  "whitespace_check": {
+    "exit_code": 1,
+    "diagnostics": "",
+    "note": "--no-index implies --exit-code;1 records new-file difference, with no whitespace diagnostics"
+  },
+  "compiler": "cc (Debian 14.2.0-19) 14.2.0",
+  "scope": "Exact native-R detection count and denominator semantics; no tiny-array, leak, full-universe or scientific/device claim."
+}

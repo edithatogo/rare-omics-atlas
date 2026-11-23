@@ -1,0 +1,2891 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "timezone": "Australia/Brisbane",
+  "track": "T07d",
+  "base_revision": "aa2d24502cd0dffc070a5c9c09651d95c5b516e8",
+  "implementation_status": "completed bounded native QC successor: independent review, exact production qualification and all 34 strict candidate gates passed; actual committing hook and immutable hosted outcomes recorded in integration PR",
+  "method_status": "passed only for the exact native HM450 technical QC/detection/raw-Q preservation contract; broader preprocessing/scientific/device route held",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "sample_rejection_policy_accepted": false,
+  "scientific_precision_budget_accepted": false,
+  "decision": {
+    "path": "research/native-qc-semantics.md",
+    "bytes": 4721,
+    "sha256": "b9251828d71755204d693c12cb7773f121b7432159d1125f01bbc561628ec17e"
+  },
+  "contract": {
+    "path": "research/contracts/sesame-hm450-qc-v2.json",
+    "bytes": 5829,
+    "sha256": "6521889176447917e43ba7b54085684d0fa7a203653bf2e44634d2ee469f191c"
+  },
+  "baseline": {
+    "path": "artifacts/verification/qc-semantics-baseline-20261123/receipt.json",
+    "bytes": 13962,
+    "sha256": "e0ce2810d126f1f97135b783bea1d845721fb4f6b90266e3cace2b896a318be6",
+    "status": "passed",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "quality_level": "strict",
+    "elapsed_seconds": 41.795
+  },
+  "original_failure_preserved": {
+    "contract": {
+      "path": "research/contracts/sesame-hm450-qc-v1.json",
+      "bytes": 3598,
+      "sha256": "920a95a6e8374f2db61faabd8b3971add740f53b8e9a0aa4a941bf094cb92f69"
+    },
+    "actual_failed_receipt": {
+      "path": "artifacts/verification/qc-final-20261123/qc-contract.json",
+      "bytes": 72260,
+      "sha256": "b46c8702feedfaf355c93101f909d4889bfe2751f9d0051180261fb4960433e1"
+    },
+    "status": "failed",
+    "tracked_receiving_record": {
+      "path": "research/qualification/t07-qc-2026-11-23.json",
+      "bytes": 50772,
+      "sha256": "9cbdf1ff2d92a8baadaa520c40d592118789e90ed45f00aaa6db4c77a8852260"
+    },
+    "reference_recipe": {
+      "path": "scripts/tests/run_qc_reference.R",
+      "bytes": 7027,
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c"
+    },
+    "original_published_extension": {
+      "path": "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz",
+      "bytes": 72943,
+      "sha256": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b"
+    }
+  },
+  "production_qualification": {
+    "path": "artifacts/verification/qc-native-v2-final-20261123/qc-contract.json",
+    "bytes": 86808,
+    "sha256": "1394bf5e2abaef81add91b818f720297b19b060c568ff1fd19e1789f8aff9e1b",
+    "exit_code": 0,
+    "result": {
+      "schema_version": 1,
+      "contract_id": "sesame-hm450-qc-v2",
+      "status": "passed",
+      "started_at": "2026-11-23T08:16:57.049321+00:00",
+      "scientific_admitted": false,
+      "official_owner_device_accepted": false,
+      "sample_rejection_policy_accepted": false,
+      "limitations": [
+        "One HM450 technical pair; explicit minimum beads zero.",
+        "Raw QC beta summaries use DBP; QCDPB p-values are captured before B.",
+        "No disease analysis, sample rejection policy or scientific precision budget."
+      ],
+      "implementation_sha256": {
+        "qualify_qc.py": "ef77238cf2f5d26dae850c8780a8c1f47cd3d1b4febf21cfdf993a9f92bfe53b",
+        "qualify_preprocessing.py": "8304da92e9cde5f320b9d3cf3d19b6bf8426476834fcd7224a76bac09193bf03",
+        "qualify_limma.py": "ff85e1865bafb410050ea1e10ca381512b39f2a3e20d6708d0435ab018deb038",
+        "test_qc_missing_signal.c": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312"
+      },
+      "contract_sha256": "6521889176447917e43ba7b54085684d0fa7a203653bf2e44634d2ee469f191c",
+      "input_sha256": {
+        "assets/HM450/HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "assets/HM450/HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "assets/HM450/HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959",
+        "assets/HM450/HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "assets/HM450/HM450.typeI_ext.tsv.gz": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b",
+        "idats/HM450/3999492009_R01C01_Grn.idat": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd",
+        "idats/HM450/3999492009_R01C01_Red.idat": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be",
+        "independent_reference": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3"
+      },
+      "reference_sha256": {
+        "native-curated-C.ids.txt": "03a1a3ff1a0bbc81ffbc6d8bc77e474a336280b3bda17198bd567ac94cd4ecd7",
+        "native-curated-T.ids.txt": "0c8086672b57cd1e231f0e19d07f8ec577c27fc67c3432b9ac92ec0d181f60af",
+        "native-typeI-ext.tsv.gz": "94fac8b1b5e79dd4b8f770d51d9674e7502a2c6d3fd2f460b01dd0aaa5357921",
+        "pvalues-reference.tsv.gz": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a",
+        "qc-reference.tsv": "bf459c7dc18b81f848ad98950b7afafb66e23caf8caedded25dc796f2ff4c37e"
+      },
+      "source_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+      "yame_revision": "e1e7b38e9f3b67981a78b1116e7312864677d69d",
+      "gct_reference": "Native bisConversionControl with pinned HM450.probeInfo C/T sets intersected with raw InfIR",
+      "r_source_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+      "reference_recipe_pin": {
+        "sha256": "d51dd218d1683cdf60b3347963979819e7ec825d431b8ab5ad97aa4b871a1890",
+        "bytes": 2850
+      },
+      "producer_patch": {
+        "path": "research/patches/sesame/native-qc-missing-signal.patch",
+        "pin": {
+          "sha256": "1566367d82b345cad6c6cd75fea9dc1a9384691999557b6b517b5ec7013e866b",
+          "bytes": 4086
+        },
+        "result_tree": "067d6fa93c34f326122a7c84bcad2ee3c3dc9112"
+      },
+      "missing_signal_policy": {
+        "both_channels_absent_pvalue": 1.0,
+        "num_dtna_counts": "missing p-values after native pOOBAH absent-signal handling",
+        "overall_denominator": "all nonmissing p-values, including absent-signal failures",
+        "unmasked_denominator": "all nonmissing p-values with existing mask false",
+        "subtype_denominator": "all nonmissing p-values within the cg/ch/rs prefix",
+        "empty_denominator": "NA",
+        "raw_mask": "unchanged"
+      },
+      "gct_annotation": {
+        "source_object": "HM450.probeInfo",
+        "source_metadata_revision": "119df217cea4da8cb18173226fa85e6152d13e51",
+        "source_version": "15-Mar-2018",
+        "source_object_pin": {
+          "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+          "bytes": 10616007
+        },
+        "selection": "intersect raw InfIR Probe_ID with typeI.extC and typeI.extT, separately",
+        "native_curated_C": 45427,
+        "native_curated_T": 15148,
+        "ordering_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+        "mask_applied": false,
+        "missing_green_values": "omit per value within each mean",
+        "zero_or_empty_denominator": "no coercion; nonfinite output is outside this finite-fixture contract"
+      },
+      "commands": [
+        {
+          "command": [
+            "cc",
+            "--version"
+          ],
+          "stdout": "compiler-version.stdout",
+          "stderr": "compiler-version.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.003
+        },
+        {
+          "command": [
+            "cc",
+            "-D_GNU_SOURCE",
+            "-std=c11",
+            "-O1",
+            "-g",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wshadow",
+            "-Wconversion",
+            "-Wstrict-prototypes",
+            "-Werror",
+            "-I/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+            "-lz",
+            "-lm",
+            "-o",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/test-qc-missing-signal"
+          ],
+          "stdout": "missing-signal-compile.stdout",
+          "stderr": "missing-signal-compile.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 1.043
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/test-qc-missing-signal",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123"
+          ],
+          "stdout": "missing-signal-run.stdout",
+          "stderr": "missing-signal-run.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.004
+        },
+        {
+          "command": [
+            "make",
+            "clean"
+          ],
+          "stdout": "clean-sesame.stdout",
+          "stderr": "clean-sesame.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.009
+        },
+        {
+          "command": [
+            "make",
+            "-C",
+            "YAME",
+            "clean"
+          ],
+          "stdout": "clean-yame.stdout",
+          "stderr": "clean-yame.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.039
+        },
+        {
+          "command": [
+            "make",
+            "-j2",
+            "sesame"
+          ],
+          "stdout": "build.stdout",
+          "stderr": "build.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 18.75
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "version"
+          ],
+          "stdout": "version.stdout",
+          "stderr": "version.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.012
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz"
+          ],
+          "stdout": "annotation.stdout",
+          "stderr": "annotation.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.274
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "pval,qc",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-1.stdout",
+          "stderr": "raw-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 1.858
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-1/pval.cg"
+          ],
+          "stdout": "raw-1-pval.stdout",
+          "stderr": "raw-1-pval.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.266
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "pval,qc",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-2.stdout",
+          "stderr": "raw-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 1.848
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-2/pval.cg"
+          ],
+          "stdout": "raw-2-pval.stdout",
+          "stderr": "raw-2-pval.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.375
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "QCDPB",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "pval,qc",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/QCDPB-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "QCDPB-1.stdout",
+          "stderr": "QCDPB-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 2.556
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/QCDPB-1/pval.cg"
+          ],
+          "stdout": "QCDPB-1-pval.stdout",
+          "stderr": "QCDPB-1-pval.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.319
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "QCDPB",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "pval,qc",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/QCDPB-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "QCDPB-2.stdout",
+          "stderr": "QCDPB-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 2.536
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/QCDPB-2/pval.cg"
+          ],
+          "stdout": "QCDPB-2-pval.stdout",
+          "stderr": "QCDPB-2-pval.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.238
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-raw-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-q-check-raw-1.stdout",
+          "stderr": "raw-q-check-raw-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.4
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-raw-1/beta.cg"
+          ],
+          "stdout": "raw-q-check-raw-1-export.stdout",
+          "stderr": "raw-q-check-raw-1-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.224
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-raw-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-q-check-raw-2.stdout",
+          "stderr": "raw-q-check-raw-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.39
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-raw-2/beta.cg"
+          ],
+          "stdout": "raw-q-check-raw-2-export.stdout",
+          "stderr": "raw-q-check-raw-2-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.279
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "Q",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "1",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-Q-1",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-q-check-Q-1.stdout",
+          "stderr": "raw-q-check-Q-1.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.358
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-Q-1/beta.cg"
+          ],
+          "stdout": "raw-q-check-Q-1-export.stdout",
+          "stderr": "raw-q-check-Q-1-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.237
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "preprocess",
+            "--platform",
+            "HM450",
+            "--prep",
+            "Q",
+            "--mask",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/native-assets/HM450/HM450.hg38.mask.cm",
+            "--min-beads",
+            "0",
+            "--threads",
+            "2",
+            "--output",
+            "beta",
+            "--out",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-Q-2",
+            "--tmp",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123",
+            "/workspace/scratch/1ef0e9289b0e/preprocess-audit/idats/HM450/3999492009_R01C01"
+          ],
+          "stdout": "raw-q-check-Q-2.stdout",
+          "stderr": "raw-q-check-Q-2.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.589
+        },
+        {
+          "command": [
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/sesame",
+            "describe-probe",
+            "--platform",
+            "HM450",
+            "--all",
+            "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-native-v2-final-20261123/raw-q-check-Q-2/beta.cg"
+          ],
+          "stdout": "raw-q-check-Q-2-export.stdout",
+          "stderr": "raw-q-check-Q-2-export.stderr",
+          "status": "passed",
+          "exit_code": 0,
+          "elapsed_seconds": 0.214
+        }
+      ],
+      "exports": [
+        {
+          "stage": "raw",
+          "threads": 1,
+          "qc": {
+            "status": "passed",
+            "metrics_checked": 66,
+            "metrics_failed": 0,
+            "comparisons": [
+              {
+                "metric": "num_dtna",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dtna",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_mk",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_mk",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_cg",
+                "reference": 430074,
+                "expected_serialized": 430074,
+                "observed": 430074,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_cg",
+                "reference": 0.8914910420566269,
+                "expected_serialized": 0.8914910421,
+                "observed": 0.8914910421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_ch",
+                "reference": 1812,
+                "expected_serialized": 1812,
+                "observed": 1812,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_ch",
+                "reference": 0.5862180524102232,
+                "expected_serialized": 0.5862180524,
+                "observed": 0.5862180524,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_rs",
+                "reference": 56,
+                "expected_serialized": 56,
+                "observed": 56,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_rs",
+                "reference": 0.8615384615384616,
+                "expected_serialized": 0.8615384615,
+                "observed": 0.8615384615,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes",
+                "reference": 486427,
+                "expected_serialized": 486427,
+                "observed": 486427,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_II",
+                "reference": 350926,
+                "expected_serialized": 350926,
+                "observed": 350926,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IR",
+                "reference": 89206,
+                "expected_serialized": 89206,
+                "observed": 89206,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IG",
+                "reference": 46295,
+                "expected_serialized": 46295,
+                "observed": 46295,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_cg",
+                "reference": 482421,
+                "expected_serialized": 482421,
+                "observed": 482421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_ch",
+                "reference": 3091,
+                "expected_serialized": 3091,
+                "observed": 3091,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_rs",
+                "reference": 65,
+                "expected_serialized": 65,
+                "observed": 65,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity",
+                "reference": 2309.5954216991313,
+                "expected_serialized": 2309.595422,
+                "observed": 2309.595422,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity_MU",
+                "reference": 4619.190843398263,
+                "expected_serialized": 4619.190843,
+                "observed": 4619.190843,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_ii",
+                "reference": 2072.4528487649745,
+                "expected_serialized": 2072.452849,
+                "observed": 2072.452849,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_grn",
+                "reference": 2599.174781293876,
+                "expected_serialized": 2599.174781,
+                "observed": 2599.174781,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_red",
+                "reference": 3092.199100957335,
+                "expected_serialized": 3092.199101,
+                "observed": 3092.199101,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_grn",
+                "reference": 275.83543707822344,
+                "expected_serialized": 275.8354371,
+                "observed": 275.8354371,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_red",
+                "reference": 390.9316016848472,
+                "expected_serialized": 390.9316017,
+                "observed": 390.9316017,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_M",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_U",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ig",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ir",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ii",
+                "reference": 4,
+                "expected_serialized": 4,
+                "observed": 4,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2R",
+                "reference": 89075,
+                "expected_serialized": 89075,
+                "observed": 89075,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2G",
+                "reference": 46150,
+                "expected_serialized": 46150,
+                "observed": 46150,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2G",
+                "reference": 131,
+                "expected_serialized": 131,
+                "observed": 131,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2R",
+                "reference": 145,
+                "expected_serialized": 145,
+                "observed": 145,
+                "status": "passed"
+              },
+              {
+                "metric": "medR",
+                "reference": 6104.0,
+                "expected_serialized": 6104.0,
+                "observed": 6104.0,
+                "status": "passed"
+              },
+              {
+                "metric": "medG",
+                "reference": 5307.0,
+                "expected_serialized": 5307.0,
+                "observed": 5307.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topR",
+                "reference": 22835.0,
+                "expected_serialized": 22835.0,
+                "observed": 22835.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topG",
+                "reference": 14971.0,
+                "expected_serialized": 14971.0,
+                "observed": 14971.0,
+                "status": "passed"
+              },
+              {
+                "metric": "RGratio",
+                "reference": 1.1501790088562276,
+                "expected_serialized": 1.150179009,
+                "observed": 1.150179009,
+                "status": "passed"
+              },
+              {
+                "metric": "RGdistort",
+                "reference": 1.3261259339047191,
+                "expected_serialized": 1.326125934,
+                "observed": 1.326125934,
+                "status": "passed"
+              },
+              {
+                "metric": "GCT",
+                "reference": 1.1234892911962147,
+                "expected_serialized": 1.123489291,
+                "observed": 1.123489291,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta",
+                "reference": 0.5131716829042416,
+                "expected_serialized": 0.5131716829,
+                "observed": 0.5131716829,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta",
+                "reference": 0.6010811977435775,
+                "expected_serialized": 0.6010811977,
+                "observed": 0.6010811977,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth",
+                "reference": 0.36580731758117147,
+                "expected_serialized": 0.3658073176,
+                "observed": 0.3658073176,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth",
+                "reference": 0.44391011547985465,
+                "expected_serialized": 0.4439101155,
+                "observed": 0.4439101155,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na",
+                "reference": 54317,
+                "expected_serialized": 54317,
+                "observed": 54317,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na",
+                "reference": 0.11166526529160593,
+                "expected_serialized": 0.1116652653,
+                "observed": 0.1116652653,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_cg",
+                "reference": 0.5150566844214137,
+                "expected_serialized": 0.5150566844,
+                "observed": 0.5150566844,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_cg",
+                "reference": 0.6050556452476978,
+                "expected_serialized": 0.6050556452,
+                "observed": 0.6050556452,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_cg",
+                "reference": 0.3631142547561582,
+                "expected_serialized": 0.3631142548,
+                "observed": 0.3631142548,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_cg",
+                "reference": 0.44576049703074355,
+                "expected_serialized": 0.445760497,
+                "observed": 0.445760497,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_cg",
+                "reference": 52347,
+                "expected_serialized": 52347,
+                "observed": 52347,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_cg",
+                "reference": 0.1085089579433731,
+                "expected_serialized": 0.1085089579,
+                "observed": 0.1085089579,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_ch",
+                "reference": 0.06512423051512481,
+                "expected_serialized": 0.06512423052,
+                "observed": 0.06512423052,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_ch",
+                "reference": 0.05663635221908559,
+                "expected_serialized": 0.05663635222,
+                "observed": 0.05663635222,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_ch",
+                "reference": 0.9988962472406181,
+                "expected_serialized": 0.9988962472,
+                "observed": 0.9988962472,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_ch",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_ch",
+                "reference": 1279,
+                "expected_serialized": 1279,
+                "observed": 1279,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_ch",
+                "reference": 0.41378194758977677,
+                "expected_serialized": 0.4137819476,
+                "observed": 0.4137819476,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_rs",
+                "reference": 0.5281888869155619,
+                "expected_serialized": 0.5281888869,
+                "observed": 0.5281888869,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_rs",
+                "reference": 0.5167661978407911,
+                "expected_serialized": 0.5167661978,
+                "observed": 0.5167661978,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_rs",
+                "reference": 0.26785714285714285,
+                "expected_serialized": 0.2678571429,
+                "observed": 0.2678571429,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_rs",
+                "reference": 0.3392857142857143,
+                "expected_serialized": 0.3392857143,
+                "observed": 0.3392857143,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_rs",
+                "reference": 9,
+                "expected_serialized": 9,
+                "observed": 9,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_rs",
+                "reference": 0.13846153846153847,
+                "expected_serialized": 0.1384615385,
+                "observed": 0.1384615385,
+                "status": "passed"
+              }
+            ],
+            "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+            "sha256": "52b62465f89a8e602f52ddb2009a7c16b3980a2f559749f8a8ebc18b9d4ee534"
+          },
+          "pvalues": {
+            "status": "passed",
+            "rows": 486427,
+            "reference_missing": 0,
+            "serialized_mismatches": 0,
+            "missingness_mismatches": 0,
+            "detection_decision_changes_at_upstream_0_05": 0,
+            "maximum_absolute_serialization_error": 5.226362970178755e-07,
+            "reference_stage": "raw",
+            "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+            "sha256": "f5a102b359df5086722db77c99d0c21976a6c92484557164003c10197b646b18",
+            "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+          },
+          "pvalue_binary_sha256": "25ca5f6514a245cf7beb260f3424ab9ac08231af9d0e4eeec78de2b511b5c1a5"
+        },
+        {
+          "stage": "raw",
+          "threads": 2,
+          "qc": {
+            "status": "passed",
+            "metrics_checked": 66,
+            "metrics_failed": 0,
+            "comparisons": [
+              {
+                "metric": "num_dtna",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dtna",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_mk",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_mk",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_cg",
+                "reference": 430074,
+                "expected_serialized": 430074,
+                "observed": 430074,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_cg",
+                "reference": 0.8914910420566269,
+                "expected_serialized": 0.8914910421,
+                "observed": 0.8914910421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_ch",
+                "reference": 1812,
+                "expected_serialized": 1812,
+                "observed": 1812,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_ch",
+                "reference": 0.5862180524102232,
+                "expected_serialized": 0.5862180524,
+                "observed": 0.5862180524,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_rs",
+                "reference": 56,
+                "expected_serialized": 56,
+                "observed": 56,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_rs",
+                "reference": 0.8615384615384616,
+                "expected_serialized": 0.8615384615,
+                "observed": 0.8615384615,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes",
+                "reference": 486427,
+                "expected_serialized": 486427,
+                "observed": 486427,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_II",
+                "reference": 350926,
+                "expected_serialized": 350926,
+                "observed": 350926,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IR",
+                "reference": 89206,
+                "expected_serialized": 89206,
+                "observed": 89206,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IG",
+                "reference": 46295,
+                "expected_serialized": 46295,
+                "observed": 46295,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_cg",
+                "reference": 482421,
+                "expected_serialized": 482421,
+                "observed": 482421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_ch",
+                "reference": 3091,
+                "expected_serialized": 3091,
+                "observed": 3091,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_rs",
+                "reference": 65,
+                "expected_serialized": 65,
+                "observed": 65,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity",
+                "reference": 2309.5954216991313,
+                "expected_serialized": 2309.595422,
+                "observed": 2309.595422,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity_MU",
+                "reference": 4619.190843398263,
+                "expected_serialized": 4619.190843,
+                "observed": 4619.190843,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_ii",
+                "reference": 2072.4528487649745,
+                "expected_serialized": 2072.452849,
+                "observed": 2072.452849,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_grn",
+                "reference": 2599.174781293876,
+                "expected_serialized": 2599.174781,
+                "observed": 2599.174781,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_red",
+                "reference": 3092.199100957335,
+                "expected_serialized": 3092.199101,
+                "observed": 3092.199101,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_grn",
+                "reference": 275.83543707822344,
+                "expected_serialized": 275.8354371,
+                "observed": 275.8354371,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_red",
+                "reference": 390.9316016848472,
+                "expected_serialized": 390.9316017,
+                "observed": 390.9316017,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_M",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_U",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ig",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ir",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ii",
+                "reference": 4,
+                "expected_serialized": 4,
+                "observed": 4,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2R",
+                "reference": 89075,
+                "expected_serialized": 89075,
+                "observed": 89075,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2G",
+                "reference": 46150,
+                "expected_serialized": 46150,
+                "observed": 46150,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2G",
+                "reference": 131,
+                "expected_serialized": 131,
+                "observed": 131,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2R",
+                "reference": 145,
+                "expected_serialized": 145,
+                "observed": 145,
+                "status": "passed"
+              },
+              {
+                "metric": "medR",
+                "reference": 6104.0,
+                "expected_serialized": 6104.0,
+                "observed": 6104.0,
+                "status": "passed"
+              },
+              {
+                "metric": "medG",
+                "reference": 5307.0,
+                "expected_serialized": 5307.0,
+                "observed": 5307.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topR",
+                "reference": 22835.0,
+                "expected_serialized": 22835.0,
+                "observed": 22835.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topG",
+                "reference": 14971.0,
+                "expected_serialized": 14971.0,
+                "observed": 14971.0,
+                "status": "passed"
+              },
+              {
+                "metric": "RGratio",
+                "reference": 1.1501790088562276,
+                "expected_serialized": 1.150179009,
+                "observed": 1.150179009,
+                "status": "passed"
+              },
+              {
+                "metric": "RGdistort",
+                "reference": 1.3261259339047191,
+                "expected_serialized": 1.326125934,
+                "observed": 1.326125934,
+                "status": "passed"
+              },
+              {
+                "metric": "GCT",
+                "reference": 1.1234892911962147,
+                "expected_serialized": 1.123489291,
+                "observed": 1.123489291,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta",
+                "reference": 0.5131716829042416,
+                "expected_serialized": 0.5131716829,
+                "observed": 0.5131716829,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta",
+                "reference": 0.6010811977435775,
+                "expected_serialized": 0.6010811977,
+                "observed": 0.6010811977,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth",
+                "reference": 0.36580731758117147,
+                "expected_serialized": 0.3658073176,
+                "observed": 0.3658073176,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth",
+                "reference": 0.44391011547985465,
+                "expected_serialized": 0.4439101155,
+                "observed": 0.4439101155,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na",
+                "reference": 54317,
+                "expected_serialized": 54317,
+                "observed": 54317,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na",
+                "reference": 0.11166526529160593,
+                "expected_serialized": 0.1116652653,
+                "observed": 0.1116652653,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_cg",
+                "reference": 0.5150566844214137,
+                "expected_serialized": 0.5150566844,
+                "observed": 0.5150566844,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_cg",
+                "reference": 0.6050556452476978,
+                "expected_serialized": 0.6050556452,
+                "observed": 0.6050556452,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_cg",
+                "reference": 0.3631142547561582,
+                "expected_serialized": 0.3631142548,
+                "observed": 0.3631142548,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_cg",
+                "reference": 0.44576049703074355,
+                "expected_serialized": 0.445760497,
+                "observed": 0.445760497,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_cg",
+                "reference": 52347,
+                "expected_serialized": 52347,
+                "observed": 52347,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_cg",
+                "reference": 0.1085089579433731,
+                "expected_serialized": 0.1085089579,
+                "observed": 0.1085089579,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_ch",
+                "reference": 0.06512423051512481,
+                "expected_serialized": 0.06512423052,
+                "observed": 0.06512423052,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_ch",
+                "reference": 0.05663635221908559,
+                "expected_serialized": 0.05663635222,
+                "observed": 0.05663635222,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_ch",
+                "reference": 0.9988962472406181,
+                "expected_serialized": 0.9988962472,
+                "observed": 0.9988962472,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_ch",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_ch",
+                "reference": 1279,
+                "expected_serialized": 1279,
+                "observed": 1279,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_ch",
+                "reference": 0.41378194758977677,
+                "expected_serialized": 0.4137819476,
+                "observed": 0.4137819476,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_rs",
+                "reference": 0.5281888869155619,
+                "expected_serialized": 0.5281888869,
+                "observed": 0.5281888869,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_rs",
+                "reference": 0.5167661978407911,
+                "expected_serialized": 0.5167661978,
+                "observed": 0.5167661978,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_rs",
+                "reference": 0.26785714285714285,
+                "expected_serialized": 0.2678571429,
+                "observed": 0.2678571429,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_rs",
+                "reference": 0.3392857142857143,
+                "expected_serialized": 0.3392857143,
+                "observed": 0.3392857143,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_rs",
+                "reference": 9,
+                "expected_serialized": 9,
+                "observed": 9,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_rs",
+                "reference": 0.13846153846153847,
+                "expected_serialized": 0.1384615385,
+                "observed": 0.1384615385,
+                "status": "passed"
+              }
+            ],
+            "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+            "sha256": "52b62465f89a8e602f52ddb2009a7c16b3980a2f559749f8a8ebc18b9d4ee534"
+          },
+          "pvalues": {
+            "status": "passed",
+            "rows": 486427,
+            "reference_missing": 0,
+            "serialized_mismatches": 0,
+            "missingness_mismatches": 0,
+            "detection_decision_changes_at_upstream_0_05": 0,
+            "maximum_absolute_serialization_error": 5.226362970178755e-07,
+            "reference_stage": "raw",
+            "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+            "sha256": "f5a102b359df5086722db77c99d0c21976a6c92484557164003c10197b646b18",
+            "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+          },
+          "pvalue_binary_sha256": "25ca5f6514a245cf7beb260f3424ab9ac08231af9d0e4eeec78de2b511b5c1a5"
+        },
+        {
+          "stage": "QCDPB",
+          "threads": 1,
+          "qc": {
+            "status": "passed",
+            "metrics_checked": 66,
+            "metrics_failed": 0,
+            "comparisons": [
+              {
+                "metric": "num_dtna",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dtna",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_mk",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_mk",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_cg",
+                "reference": 430074,
+                "expected_serialized": 430074,
+                "observed": 430074,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_cg",
+                "reference": 0.8914910420566269,
+                "expected_serialized": 0.8914910421,
+                "observed": 0.8914910421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_ch",
+                "reference": 1812,
+                "expected_serialized": 1812,
+                "observed": 1812,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_ch",
+                "reference": 0.5862180524102232,
+                "expected_serialized": 0.5862180524,
+                "observed": 0.5862180524,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_rs",
+                "reference": 56,
+                "expected_serialized": 56,
+                "observed": 56,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_rs",
+                "reference": 0.8615384615384616,
+                "expected_serialized": 0.8615384615,
+                "observed": 0.8615384615,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes",
+                "reference": 486427,
+                "expected_serialized": 486427,
+                "observed": 486427,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_II",
+                "reference": 350926,
+                "expected_serialized": 350926,
+                "observed": 350926,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IR",
+                "reference": 89206,
+                "expected_serialized": 89206,
+                "observed": 89206,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IG",
+                "reference": 46295,
+                "expected_serialized": 46295,
+                "observed": 46295,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_cg",
+                "reference": 482421,
+                "expected_serialized": 482421,
+                "observed": 482421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_ch",
+                "reference": 3091,
+                "expected_serialized": 3091,
+                "observed": 3091,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_rs",
+                "reference": 65,
+                "expected_serialized": 65,
+                "observed": 65,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity",
+                "reference": 2309.5954216991313,
+                "expected_serialized": 2309.595422,
+                "observed": 2309.595422,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity_MU",
+                "reference": 4619.190843398263,
+                "expected_serialized": 4619.190843,
+                "observed": 4619.190843,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_ii",
+                "reference": 2072.4528487649745,
+                "expected_serialized": 2072.452849,
+                "observed": 2072.452849,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_grn",
+                "reference": 2599.174781293876,
+                "expected_serialized": 2599.174781,
+                "observed": 2599.174781,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_red",
+                "reference": 3092.199100957335,
+                "expected_serialized": 3092.199101,
+                "observed": 3092.199101,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_grn",
+                "reference": 275.83543707822344,
+                "expected_serialized": 275.8354371,
+                "observed": 275.8354371,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_red",
+                "reference": 390.9316016848472,
+                "expected_serialized": 390.9316017,
+                "observed": 390.9316017,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_M",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_U",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ig",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ir",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ii",
+                "reference": 4,
+                "expected_serialized": 4,
+                "observed": 4,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2R",
+                "reference": 89075,
+                "expected_serialized": 89075,
+                "observed": 89075,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2G",
+                "reference": 46150,
+                "expected_serialized": 46150,
+                "observed": 46150,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2G",
+                "reference": 131,
+                "expected_serialized": 131,
+                "observed": 131,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2R",
+                "reference": 145,
+                "expected_serialized": 145,
+                "observed": 145,
+                "status": "passed"
+              },
+              {
+                "metric": "medR",
+                "reference": 6104.0,
+                "expected_serialized": 6104.0,
+                "observed": 6104.0,
+                "status": "passed"
+              },
+              {
+                "metric": "medG",
+                "reference": 5307.0,
+                "expected_serialized": 5307.0,
+                "observed": 5307.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topR",
+                "reference": 22835.0,
+                "expected_serialized": 22835.0,
+                "observed": 22835.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topG",
+                "reference": 14971.0,
+                "expected_serialized": 14971.0,
+                "observed": 14971.0,
+                "status": "passed"
+              },
+              {
+                "metric": "RGratio",
+                "reference": 1.1501790088562276,
+                "expected_serialized": 1.150179009,
+                "observed": 1.150179009,
+                "status": "passed"
+              },
+              {
+                "metric": "RGdistort",
+                "reference": 1.3261259339047191,
+                "expected_serialized": 1.326125934,
+                "observed": 1.326125934,
+                "status": "passed"
+              },
+              {
+                "metric": "GCT",
+                "reference": 1.1234892911962147,
+                "expected_serialized": 1.123489291,
+                "observed": 1.123489291,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta",
+                "reference": 0.5131716829042416,
+                "expected_serialized": 0.5131716829,
+                "observed": 0.5131716829,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta",
+                "reference": 0.6010811977435775,
+                "expected_serialized": 0.6010811977,
+                "observed": 0.6010811977,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth",
+                "reference": 0.36580731758117147,
+                "expected_serialized": 0.3658073176,
+                "observed": 0.3658073176,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth",
+                "reference": 0.44391011547985465,
+                "expected_serialized": 0.4439101155,
+                "observed": 0.4439101155,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na",
+                "reference": 54317,
+                "expected_serialized": 54317,
+                "observed": 54317,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na",
+                "reference": 0.11166526529160593,
+                "expected_serialized": 0.1116652653,
+                "observed": 0.1116652653,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_cg",
+                "reference": 0.5150566844214137,
+                "expected_serialized": 0.5150566844,
+                "observed": 0.5150566844,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_cg",
+                "reference": 0.6050556452476978,
+                "expected_serialized": 0.6050556452,
+                "observed": 0.6050556452,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_cg",
+                "reference": 0.3631142547561582,
+                "expected_serialized": 0.3631142548,
+                "observed": 0.3631142548,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_cg",
+                "reference": 0.44576049703074355,
+                "expected_serialized": 0.445760497,
+                "observed": 0.445760497,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_cg",
+                "reference": 52347,
+                "expected_serialized": 52347,
+                "observed": 52347,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_cg",
+                "reference": 0.1085089579433731,
+                "expected_serialized": 0.1085089579,
+                "observed": 0.1085089579,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_ch",
+                "reference": 0.06512423051512481,
+                "expected_serialized": 0.06512423052,
+                "observed": 0.06512423052,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_ch",
+                "reference": 0.05663635221908559,
+                "expected_serialized": 0.05663635222,
+                "observed": 0.05663635222,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_ch",
+                "reference": 0.9988962472406181,
+                "expected_serialized": 0.9988962472,
+                "observed": 0.9988962472,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_ch",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_ch",
+                "reference": 1279,
+                "expected_serialized": 1279,
+                "observed": 1279,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_ch",
+                "reference": 0.41378194758977677,
+                "expected_serialized": 0.4137819476,
+                "observed": 0.4137819476,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_rs",
+                "reference": 0.5281888869155619,
+                "expected_serialized": 0.5281888869,
+                "observed": 0.5281888869,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_rs",
+                "reference": 0.5167661978407911,
+                "expected_serialized": 0.5167661978,
+                "observed": 0.5167661978,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_rs",
+                "reference": 0.26785714285714285,
+                "expected_serialized": 0.2678571429,
+                "observed": 0.2678571429,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_rs",
+                "reference": 0.3392857142857143,
+                "expected_serialized": 0.3392857143,
+                "observed": 0.3392857143,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_rs",
+                "reference": 9,
+                "expected_serialized": 9,
+                "observed": 9,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_rs",
+                "reference": 0.13846153846153847,
+                "expected_serialized": 0.1384615385,
+                "observed": 0.1384615385,
+                "status": "passed"
+              }
+            ],
+            "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+            "sha256": "52b62465f89a8e602f52ddb2009a7c16b3980a2f559749f8a8ebc18b9d4ee534"
+          },
+          "pvalues": {
+            "status": "passed",
+            "rows": 486427,
+            "reference_missing": 0,
+            "serialized_mismatches": 0,
+            "missingness_mismatches": 0,
+            "detection_decision_changes_at_upstream_0_05": 0,
+            "maximum_absolute_serialization_error": 5.199936867761323e-07,
+            "reference_stage": "QCD, before P masking and B correction",
+            "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+            "sha256": "54d65fb1a4ee239c21533fed77f575adcb349d6fea4402e58137476b3f42fe38",
+            "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+          },
+          "pvalue_binary_sha256": "8007ac8cd33b869605b62a9dc0ec8f8e41d60869ae1ff5fe72c4118b6b1aec5a"
+        },
+        {
+          "stage": "QCDPB",
+          "threads": 2,
+          "qc": {
+            "status": "passed",
+            "metrics_checked": 66,
+            "metrics_failed": 0,
+            "comparisons": [
+              {
+                "metric": "num_dtna",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dtna",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_mk",
+                "reference": 432110,
+                "expected_serialized": 432110,
+                "observed": 432110,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_mk",
+                "reference": 0.8883347347083941,
+                "expected_serialized": 0.8883347347,
+                "observed": 0.8883347347,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_cg",
+                "reference": 430074,
+                "expected_serialized": 430074,
+                "observed": 430074,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_cg",
+                "reference": 0.8914910420566269,
+                "expected_serialized": 0.8914910421,
+                "observed": 0.8914910421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_ch",
+                "reference": 1812,
+                "expected_serialized": 1812,
+                "observed": 1812,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_ch",
+                "reference": 0.5862180524102232,
+                "expected_serialized": 0.5862180524,
+                "observed": 0.5862180524,
+                "status": "passed"
+              },
+              {
+                "metric": "num_dt_rs",
+                "reference": 56,
+                "expected_serialized": 56,
+                "observed": 56,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_dt_rs",
+                "reference": 0.8615384615384616,
+                "expected_serialized": 0.8615384615,
+                "observed": 0.8615384615,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes",
+                "reference": 486427,
+                "expected_serialized": 486427,
+                "observed": 486427,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_II",
+                "reference": 350926,
+                "expected_serialized": 350926,
+                "observed": 350926,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IR",
+                "reference": 89206,
+                "expected_serialized": 89206,
+                "observed": 89206,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_IG",
+                "reference": 46295,
+                "expected_serialized": 46295,
+                "observed": 46295,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_cg",
+                "reference": 482421,
+                "expected_serialized": 482421,
+                "observed": 482421,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_ch",
+                "reference": 3091,
+                "expected_serialized": 3091,
+                "observed": 3091,
+                "status": "passed"
+              },
+              {
+                "metric": "num_probes_rs",
+                "reference": 65,
+                "expected_serialized": 65,
+                "observed": 65,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity",
+                "reference": 2309.5954216991313,
+                "expected_serialized": 2309.595422,
+                "observed": 2309.595422,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_intensity_MU",
+                "reference": 4619.190843398263,
+                "expected_serialized": 4619.190843,
+                "observed": 4619.190843,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_ii",
+                "reference": 2072.4528487649745,
+                "expected_serialized": 2072.452849,
+                "observed": 2072.452849,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_grn",
+                "reference": 2599.174781293876,
+                "expected_serialized": 2599.174781,
+                "observed": 2599.174781,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_inb_red",
+                "reference": 3092.199100957335,
+                "expected_serialized": 3092.199101,
+                "observed": 3092.199101,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_grn",
+                "reference": 275.83543707822344,
+                "expected_serialized": 275.8354371,
+                "observed": 275.8354371,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_oob_red",
+                "reference": 390.9316016848472,
+                "expected_serialized": 390.9316017,
+                "observed": 390.9316017,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_M",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_U",
+                "reference": 2,
+                "expected_serialized": 2,
+                "observed": 2,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ig",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ir",
+                "reference": 0,
+                "expected_serialized": 0,
+                "observed": 0,
+                "status": "passed"
+              },
+              {
+                "metric": "na_intensity_ii",
+                "reference": 4,
+                "expected_serialized": 4,
+                "observed": 4,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2R",
+                "reference": 89075,
+                "expected_serialized": 89075,
+                "observed": 89075,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2G",
+                "reference": 46150,
+                "expected_serialized": 46150,
+                "observed": 46150,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_R2G",
+                "reference": 131,
+                "expected_serialized": 131,
+                "observed": 131,
+                "status": "passed"
+              },
+              {
+                "metric": "InfI_switch_G2R",
+                "reference": 145,
+                "expected_serialized": 145,
+                "observed": 145,
+                "status": "passed"
+              },
+              {
+                "metric": "medR",
+                "reference": 6104.0,
+                "expected_serialized": 6104.0,
+                "observed": 6104.0,
+                "status": "passed"
+              },
+              {
+                "metric": "medG",
+                "reference": 5307.0,
+                "expected_serialized": 5307.0,
+                "observed": 5307.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topR",
+                "reference": 22835.0,
+                "expected_serialized": 22835.0,
+                "observed": 22835.0,
+                "status": "passed"
+              },
+              {
+                "metric": "topG",
+                "reference": 14971.0,
+                "expected_serialized": 14971.0,
+                "observed": 14971.0,
+                "status": "passed"
+              },
+              {
+                "metric": "RGratio",
+                "reference": 1.1501790088562276,
+                "expected_serialized": 1.150179009,
+                "observed": 1.150179009,
+                "status": "passed"
+              },
+              {
+                "metric": "RGdistort",
+                "reference": 1.3261259339047191,
+                "expected_serialized": 1.326125934,
+                "observed": 1.326125934,
+                "status": "passed"
+              },
+              {
+                "metric": "GCT",
+                "reference": 1.1234892911962147,
+                "expected_serialized": 1.123489291,
+                "observed": 1.123489291,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta",
+                "reference": 0.5131716829042416,
+                "expected_serialized": 0.5131716829,
+                "observed": 0.5131716829,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta",
+                "reference": 0.6010811977435775,
+                "expected_serialized": 0.6010811977,
+                "observed": 0.6010811977,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth",
+                "reference": 0.36580731758117147,
+                "expected_serialized": 0.3658073176,
+                "observed": 0.3658073176,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth",
+                "reference": 0.44391011547985465,
+                "expected_serialized": 0.4439101155,
+                "observed": 0.4439101155,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na",
+                "reference": 54317,
+                "expected_serialized": 54317,
+                "observed": 54317,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na",
+                "reference": 0.11166526529160593,
+                "expected_serialized": 0.1116652653,
+                "observed": 0.1116652653,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_cg",
+                "reference": 0.5150566844214137,
+                "expected_serialized": 0.5150566844,
+                "observed": 0.5150566844,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_cg",
+                "reference": 0.6050556452476978,
+                "expected_serialized": 0.6050556452,
+                "observed": 0.6050556452,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_cg",
+                "reference": 0.3631142547561582,
+                "expected_serialized": 0.3631142548,
+                "observed": 0.3631142548,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_cg",
+                "reference": 0.44576049703074355,
+                "expected_serialized": 0.445760497,
+                "observed": 0.445760497,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_cg",
+                "reference": 52347,
+                "expected_serialized": 52347,
+                "observed": 52347,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_cg",
+                "reference": 0.1085089579433731,
+                "expected_serialized": 0.1085089579,
+                "observed": 0.1085089579,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_ch",
+                "reference": 0.06512423051512481,
+                "expected_serialized": 0.06512423052,
+                "observed": 0.06512423052,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_ch",
+                "reference": 0.05663635221908559,
+                "expected_serialized": 0.05663635222,
+                "observed": 0.05663635222,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_ch",
+                "reference": 0.9988962472406181,
+                "expected_serialized": 0.9988962472,
+                "observed": 0.9988962472,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_ch",
+                "reference": 0.0,
+                "expected_serialized": 0.0,
+                "observed": 0.0,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_ch",
+                "reference": 1279,
+                "expected_serialized": 1279,
+                "observed": 1279,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_ch",
+                "reference": 0.41378194758977677,
+                "expected_serialized": 0.4137819476,
+                "observed": 0.4137819476,
+                "status": "passed"
+              },
+              {
+                "metric": "mean_beta_rs",
+                "reference": 0.5281888869155619,
+                "expected_serialized": 0.5281888869,
+                "observed": 0.5281888869,
+                "status": "passed"
+              },
+              {
+                "metric": "median_beta_rs",
+                "reference": 0.5167661978407911,
+                "expected_serialized": 0.5167661978,
+                "observed": 0.5167661978,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_unmeth_rs",
+                "reference": 0.26785714285714285,
+                "expected_serialized": 0.2678571429,
+                "observed": 0.2678571429,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_meth_rs",
+                "reference": 0.3392857142857143,
+                "expected_serialized": 0.3392857143,
+                "observed": 0.3392857143,
+                "status": "passed"
+              },
+              {
+                "metric": "num_na_rs",
+                "reference": 9,
+                "expected_serialized": 9,
+                "observed": 9,
+                "status": "passed"
+              },
+              {
+                "metric": "frac_na_rs",
+                "reference": 0.13846153846153847,
+                "expected_serialized": 0.1384615385,
+                "observed": 0.1384615385,
+                "status": "passed"
+              }
+            ],
+            "acceptance": "all counts/NA exact; all floats exact ten-significant-digit reference serialization",
+            "sha256": "52b62465f89a8e602f52ddb2009a7c16b3980a2f559749f8a8ebc18b9d4ee534"
+          },
+          "pvalues": {
+            "status": "passed",
+            "rows": 486427,
+            "reference_missing": 0,
+            "serialized_mismatches": 0,
+            "missingness_mismatches": 0,
+            "detection_decision_changes_at_upstream_0_05": 0,
+            "maximum_absolute_serialization_error": 5.199936867761323e-07,
+            "reference_stage": "QCD, before P masking and B correction",
+            "acceptance": "exact binary32/six-digit reference serialization; no detection-decision changes",
+            "sha256": "54d65fb1a4ee239c21533fed77f575adcb349d6fea4402e58137476b3f42fe38",
+            "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32"
+          },
+          "pvalue_binary_sha256": "8007ac8cd33b869605b62a9dc0ec8f8e41d60869ae1ff5fe72c4118b6b1aec5a"
+        }
+      ],
+      "regression_binary_sha256": "5a9b784fa981b15c902a7abefd8f014742f1e8b2840a55c0922a26bc2d4e67a0",
+      "binary_sha256": {
+        "sesame": "a5ce10200490366e04eb6a275e685c7cf22f27c539c33cab2f59f2d22d38732d",
+        "YAME/yame": "8df7936d10216f83d38948fa734aed25401f49d896ab6821d4d4a09f147ddc3d"
+      },
+      "annotation": {
+        "rows": 486427,
+        "channels": {
+          "2": 350926,
+          "R": 89206,
+          "G": 46295
+        },
+        "probe_kinds": {
+          "cg": 482421,
+          "ch": 3091,
+          "control": 850,
+          "rs": 65
+        },
+        "coordinate_contigs": {
+          "chr16": 21937,
+          "chr3": 25158,
+          "chr1": 46823,
+          "chr8": 20952,
+          "chr14": 15080,
+          "chr15": 15262,
+          "chr9": 9872,
+          "chr19": 25516,
+          "chr6": 36613,
+          "chr12": 24541,
+          "chr2": 34783,
+          "chr4": 20451,
+          "chr11": 28784,
+          "chr20": 10395,
+          "chr10": 24386,
+          "chr18": 5917,
+          "chr21": 4246,
+          "chr17": 27893,
+          "chr7": 30016,
+          "chr22": 8544,
+          "chrX": 11241,
+          "chr13": 12293,
+          "chr5": 24327,
+          "chrY": 418,
+          "chrUn_GL000220v1": 4,
+          "chr16_KI270728v1_random": 22,
+          "chr22_KI270733v1_random": 6,
+          "chrUn_GL000213v1": 8,
+          "chr22_KI270879v1_alt": 18,
+          "chr8_KI270821v1_alt": 1,
+          "NA": 858,
+          "chrUn_KI270442v1": 1,
+          "chr1_KI270706v1_random": 10,
+          "chr2_KI270716v1_random": 4,
+          "chr14_GL000009v2_random": 4,
+          "chrUn_GL000218v1": 2,
+          "chr14_GL000194v1_random": 1,
+          "chrUn_KI270744v1": 1,
+          "chrM": 5,
+          "chr22_KI270731v1_random": 3,
+          "chr1_KI270713v1_random": 3,
+          "chrUn_KI270425v1": 1,
+          "chr19_GL949751v2_alt": 1,
+          "chr4_GL000008v2_random": 6,
+          "chr22_KI270928v1_alt": 1,
+          "chr3_GL000221v1_random": 2,
+          "chr22_KI270734v1_random": 2,
+          "chrUn_KI270743v1": 3,
+          "chr14_KI270726v1_random": 1,
+          "chr15_KI270727v1_random": 1,
+          "chrUn_GL000214v1": 2,
+          "chrUn_KI270742v1": 4,
+          "chrUn_GL000219v1": 1,
+          "chr19_GL949746v1_alt": 1,
+          "chr22_KI270737v1_random": 1,
+          "chr19_KI270938v1_alt": 1
+        },
+        "extension_codes": {
+          ".": 422563,
+          "C": 47879,
+          "T": 15985
+        },
+        "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+        "coordinate_convention": "pinned hg38 CpG_beg is zero-based; no rows filtered",
+        "positional_join_basis": "only these checksum-pinned companion files share this ordering"
+      },
+      "native_asset_sha256": {
+        "HM450.ordering.tsv.gz": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "HM450.hg38.coord.tsv.gz": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40",
+        "HM450.typeI_ext.tsv.gz": "94fac8b1b5e79dd4b8f770d51d9674e7502a2c6d3fd2f460b01dd0aaa5357921",
+        "HM450.hg38.mask.cm": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360",
+        "HM450.hg38.mask.cm.idx": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959"
+      },
+      "raw_q_exports": [
+        {
+          "rows": 486427,
+          "missing": 2,
+          "finite": 486425,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "5eb8302f89dfe35619d634ac9d2f220e9f249d52e0f993b9eb09353e7f325716",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "status": "passed",
+          "stage": "raw",
+          "threads": 1,
+          "binary_output_sha256": "f7aebc88f875f3bf8c31f07d4fa2c325dc5666462f350f531a153f8915a7a84b"
+        },
+        {
+          "rows": 486427,
+          "missing": 2,
+          "finite": 486425,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "5eb8302f89dfe35619d634ac9d2f220e9f249d52e0f993b9eb09353e7f325716",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "status": "passed",
+          "stage": "raw",
+          "threads": 2,
+          "binary_output_sha256": "f7aebc88f875f3bf8c31f07d4fa2c325dc5666462f350f531a153f8915a7a84b"
+        },
+        {
+          "rows": 486427,
+          "missing": 29506,
+          "finite": 456921,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "3e72ea2d52708872fe4d31f537ca14a4657d2b155307c67bc4059dde3c4d9744",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "status": "passed",
+          "stage": "Q",
+          "threads": 1,
+          "binary_output_sha256": "64f22be2a86a777ce179ed7a5bb388df2121fd33d6447cc79f3044eca460b13d"
+        },
+        {
+          "rows": 486427,
+          "missing": 29506,
+          "finite": 456921,
+          "reference_endpoints": 7,
+          "finite_to_endpoint_collapses": 0,
+          "maximum_absolute_beta_serialization_error": 5.29411764649268e-07,
+          "maximum_finite_absolute_m_serialization_error": 0.00036133936109372655,
+          "acceptance": "exact binary32 then six-significant-digit serialization",
+          "scientific_m_error_budget_accepted": false,
+          "text_sha256": "3e72ea2d52708872fe4d31f537ca14a4657d2b155307c67bc4059dde3c4d9744",
+          "sample_index_sha256": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+          "status": "passed",
+          "stage": "Q",
+          "threads": 2,
+          "binary_output_sha256": "64f22be2a86a777ce179ed7a5bb388df2121fd33d6447cc79f3044eca460b13d"
+        }
+      ],
+      "elapsed_seconds": 49.669
+    }
+  },
+  "comparison_totals": {
+    "ordered_probes": 486427,
+    "qc_fields_per_export": 66,
+    "qc_exports": 4,
+    "qc_failed_fields": 0,
+    "pvalue_comparisons": 1945708,
+    "pvalue_serialized_mismatches": 0,
+    "pvalue_missingness_mismatches": 0,
+    "pvalue_decision_changes_at_0_05": 0,
+    "raw_q_beta_comparisons": 1945708,
+    "raw_q_beta_exports_passed": 4
+  },
+  "independent_reference_generation": {
+    "path": "research/qualification/t07-native-qc-reference-2026-11-23/reference-command.json",
+    "bytes": 13088,
+    "sha256": "c22f99ca7f4b3b5478e75a22352e6bdca61083bf3c49a35506a7d52aa2432ee1"
+  },
+  "focused_c": {
+    "summary": {
+      "path": "research/qualification/t07-native-qc-reference-2026-11-23/focused-summary.json",
+      "bytes": 1070,
+      "sha256": "2f94d16665bc56b9031f40031d3679e1116019feb93e38662f22b29b0df6f2b8"
+    },
+    "original_and_normal_commands": {
+      "path": "research/qualification/t07-native-qc-reference-2026-11-23/focused-original-receipt.json",
+      "bytes": 13522,
+      "sha256": "25ecf49002060323cb2adf3e9b63b654f350e6e14b6584fddf49fc4072e2ec65"
+    },
+    "address_undefined_sanitizers": {
+      "path": "research/qualification/t07-native-qc-reference-2026-11-23/address-undefined-receipt.json",
+      "bytes": 7553,
+      "sha256": "e019934cc39d1ae52ca11aee2950ebfca8a43701636aa8faa48109252a83a8ce"
+    },
+    "original_failed_assertions": 19,
+    "candidate_cases_passed": 7,
+    "sanitizer_cases_passed": 7,
+    "leak_check_accepted": false,
+    "tiny_array_scope_accepted": false
+  },
+  "receiver_tests": {
+    "tests_passed": 35,
+    "new_native_tests": 13,
+    "isolated_coverage": {
+      "path": "artifacts/verification/qc-native-unit-final-20261123/coverage.json",
+      "bytes": 14218,
+      "sha256": "491b9d7deb2e6b5e94f1c1e34dc73ac57de3fc116614e9efc186cd10394110e4"
+    },
+    "review": "Root read the complete focused receiver test source; original v1 tests and new native mutations passed with actual comparison helpers."
+  },
+  "independent_review": {
+    "status": "accepted",
+    "reviewed_receiver_sha256": "ef77238cf2f5d26dae850c8780a8c1f47cd3d1b4febf21cfdf993a9f92bfe53b",
+    "reviewed_reproduction_guide_sha256": "7a3902df305e7f4d0a037c0c65b13fef6da394ae48e07c3967534e22fa6558b2",
+    "resolved_findings": [
+      "Strictly typed absent-signal policy rejects Boolean true in place of numeric 1.0.",
+      "Successful exception-based raw/Q comparisons now explicitly record passed status.",
+      "Exact GCT annotation metadata and actual C/T cardinalities/ordered-ID hash are bound.",
+      "YAME own root and origin are checked.",
+      "Git replacement objects are disabled."
+    ]
+  },
+  "retained_attempts": [
+    {
+      "receipt": {
+        "path": "artifacts/verification/qc-native-v2-initial-20261123/qc-contract.json",
+        "bytes": 695,
+        "sha256": "c9cdd144793876bee7a28e40b25ec40d632a090ea739134fcb3e135ef1c1577e"
+      },
+      "status": "failed",
+      "reason": "Initial command pointed at a nonexistent local raw/Q reference path; corrected to the existing byte-identical pinned reference."
+    },
+    {
+      "receipt": {
+        "path": "artifacts/verification/qc-native-v2-complete-20261123/qc-contract.json",
+        "bytes": 505,
+        "sha256": "044b3959eb7fa3b94362817e0a93015dba4597881bf91e006bccb6cfe265771b"
+      },
+      "process_exit_code": 1,
+      "receipt_status": "running",
+      "log": {
+        "path": "artifacts/qc-native-v2-complete-20261123.log",
+        "bytes": 816,
+        "sha256": "9e5bc7cb51463f7d4726d1d98d251e398faef414d4f577b2ccf61f264e0d37ac"
+      },
+      "reason": "A missing status field in the successful exception-based raw/Q helper caused KeyError; original incomplete receipt/log retained, focused regression added and definitive source-bound run passed."
+    },
+    {
+      "receipt": {
+        "path": "artifacts/verification/qc-native-v2-candidate-20261123/qc-contract.json",
+        "bytes": 86182,
+        "sha256": "47b88e20738eb3c1e2018e2b9ec7e1a5b6ca959644f8578a7260dcbb4cac63eb"
+      },
+      "status": "passed",
+      "reason": "First complete candidate passed before independent source/annotation binding tightenings; definitive final run includes those checks."
+    }
+  ],
+  "parallel_curation": {
+    "receipt": {
+      "path": "research/qualification/t01-identity-covariates-2026-11-23.json",
+      "bytes": 15846,
+      "sha256": "bd9d1b5b2190739c0f07fd915f50aab21f113d05ac65c66c7aa56f01781ded9f"
+    },
+    "held_declarations": 257,
+    "review_scope_exclusions": 84,
+    "ready": 0,
+    "admitted": 0,
+    "new_named_joins": 0
+  },
+  "license_review": {
+    "upstream_license": {
+      "path": "research/patches/sesame/UPSTREAM-LICENSE.txt",
+      "bytes": 1619,
+      "sha256": "00d1fbe63b05234f14d29c1730b2f3cb5ca289356bafafec86df13a003acf339"
+    },
+    "terms": "CHOP academic/non-profit research terms, with separate commercial use/transfer condition; not unrestricted BSD",
+    "two_file_privacy": {
+      "path": "research/qualification/t07-native-qc-reference-2026-11-23/license-privacy-receipt.json",
+      "bytes": 3508,
+      "sha256": "bc711d686a14d29cf64cf884118876e5c722d268ff39e31a97364a9ef2c06f36"
+    },
+    "finding_disposition": "One nonblocking advisory is the exact public upstream licensing contact; no suppression, registry entry or policy change."
+  },
+  "ci_reconciliation": {
+    "strict_from_outset": true,
+    "native_hook_installed": true,
+    "central_scanner_pin": "2efdbd988064f6857795b9fa9ed4e1d08d18791d",
+    "latest_central_reviewed": "0be4668d17ac3b6d902d4354bd01f420c7c29272",
+    "latest_central_delta": "Limma-specific reviewed nonidentifier registry and its size cap; no Atlas policy or template change required",
+    "template_solo_rust": "1c96169526b3ae5845c22d1fae19aeec5c5f35f9",
+    "template_solo_data": "a4b2b2aa06cba3bc875ca34f806074d2f4f7ebb3"
+  },
+  "retained_limits": [
+    "One public HM450 technical pair and explicit minimum beads zero.",
+    "65 native QC fields plus separately invoked native bisConversionControl; source-level R functions with declared cache/explicit-platform adapters, not full package qualification.",
+    "Full QCDPB beta/M exported precision, scientific error budgets and rejection policies remain open.",
+    "Native GCT projection is sample/source/platform specific and must be requalified for a new boundary.",
+    "No cohort identity, molecular eligibility, participant independence, scientific N1 or owner-device acceptance follows from this pass.",
+    "C full build retains upstream warnings outside the changed six-unit focused -Werror regression; no general producer warning-free claim.",
+    "LeakSanitizer and arrays below 334 probes remain outside the demonstrated scope."
+  ],
+  "integration": "Actual native committing hook and immutable hosted PR/main outcomes are recorded in the associated integration PR for the identical published tree.",
+  "combined_candidate_verification": {
+    "status": "passed",
+    "quality_level": "strict",
+    "path": "artifacts/verification/qc-native-v2-strict-candidate-20261123/receipt.json",
+    "sha256": "bba311e130898c143261258c35dceada98d8e661b9ee23983a527fbd9a0852d5",
+    "source_revision": "aa2d24502cd0dffc070a5c9c09651d95c5b516e8",
+    "source_tree_sha256": "df986a789c01d61dbf562edbda1c43143500f4fffa3e056752dc4d7876558f38",
+    "coverage_base_revision": "aa2d24502cd0dffc070a5c9c09651d95c5b516e8",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "elapsed_seconds": 41.307,
+    "completed_at": "2026-11-23T08:23:39.680745+00:00",
+    "harness_tests": 109,
+    "publisher_tests": 41,
+    "rust_tests_per_profile": 20,
+    "changed_code_branch_aware_coverage_percent": 100,
+    "covered_changed_lines": 118,
+    "changed_lines": 118,
+    "coverage_minimum_percent": 90,
+    "scope": "Entire implementation and receiving evidence before final archive/status documentation; actual committing hook rechecks every final source byte."
+  }
+}

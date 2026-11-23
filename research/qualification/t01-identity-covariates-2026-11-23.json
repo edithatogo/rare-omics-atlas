@@ -1,0 +1,345 @@
+{
+  "GSE116300_source_design": {
+    "KS_to_PAT_mapping_inferred": false,
+    "age_matching_claim_supplies_individual_ages": false,
+    "geo_assay_records": 44,
+    "geo_case_labelled_assays": 29,
+    "geo_case_parent_assays": 6,
+    "geo_control_assays": 9,
+    "prior_paper_36_case_control_and_38_ancestry_QC_sets_remain_distinct": true,
+    "reason_for_27_vs_29_supported_at_group_level": true,
+    "source_additional_clinic_recruits_dropped_as_not_KS": 2,
+    "source_age_matched_controls": 9,
+    "source_parental_controls": 6,
+    "source_probands_with_KS_phenotype": 27,
+    "source_reports_randomization_across_four_12_well_beadchips": true,
+    "source_synthetic_methylation_controls": 4,
+    "source_total_inputs": 48,
+    "two_dropped_recruits_named_or_joined_to_GEO": false
+  },
+  "GSE97362_Table2_exact_source_label_join": {
+    "article_sha256": "214742889923d571e528f89e56586e09f4557a9acb96076007f0a27b01228e7c",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/",
+    "existing_exact_joins_enriched_with_inheritance": 10,
+    "independent_molecular_eligibility_assigned": false,
+    "local_join_sha256": "9a58ce1a4004f7a1398b63100481d306077b6cfdecdc7b018000f8bfc64b1135",
+    "methylation_signature_classification_used_as_eligibility": false,
+    "new_assay_to_paper_joins": 0,
+    "new_parent_or_specimen_identity_links": 0,
+    "predicate": "Table 2 Sample ID, with XML inline text flattened and whitespace collapsed, equals the complete single GEO description field; no number extraction, fuzzy matching or KS/PAT translation.",
+    "retained_article_file": "data/bronze/t01-cohort-curation-2026-11-23/PMC5420353.efetch.xml",
+    "retained_local_join_file": "data/silver/qc-semantics-curation-20261123/table2-inheritance-joins.local.json",
+    "source_inheritance_counts": {
+      "de novo": 2,
+      "inherited": 8
+    },
+    "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=5420353",
+    "table_node": "tbl2",
+    "unique_exact_joins": 10
+  },
+  "access_outcomes": {
+    "credentials_or_challenge_evasion_used": false,
+    "fresh_original_series_metadata_files": 3,
+    "fresh_original_supplement_or_pdf_files": 0,
+    "new_supplement_download_attempts": 0,
+    "previous_receipt_sha256": "2f4a096dd9fc5da7cc30c286d69f4e5b99c6921395b86d3e7ff6943ad17b525a",
+    "previous_six_unsuccessful_attempts_preserved": "research/qualification/t01-source-followup-2026-11-23.json",
+    "prior_403_challenge_and_rate_limit_endpoints_retried": false,
+    "public_lookup_outcomes": [
+      {
+        "outcome": "Search index showed public supplementary-material labels; opening the article returned a non-retryable identity-provider redirect error. No supplement URL or file was inferred from that listing.",
+        "url": "https://www.nature.com/articles/s41431-017-0023-0"
+      },
+      {
+        "outcome": "Public search index exposed the series design; the HTML viewer returned a browser challenge. The documented plain-text GEO endpoint independently returned original geo/text bytes without challenge handling or credential changes.",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300"
+      }
+    ],
+    "public_lookup_outcomes_sha256": "eaf896e562182f2ec51c114141e77f9d641f423482a0596de611347a5bed58c9",
+    "series_receipt": "data/silver/qc-semantics-curation-20261123/series-retrievals.json",
+    "series_receipt_sha256": "07338f34144bb01572ba049dec3ef3225e4831c330481a7b32ed64ef79b5651f"
+  },
+  "base_revision": "aa2d24502cd0dffc070a5c9c09651d95c5b516e8",
+  "covariate_availability_by_existing_review_role": {
+    "case": {
+      "age_years": {
+        "explicit_NA": 0,
+        "left_censored": 0,
+        "not_supplied": 31,
+        "numeric": 37
+      },
+      "assay_records": 68,
+      "explicit_cell_fraction_characteristics": 0,
+      "sex_supplied": 61
+    },
+    "control": {
+      "age_years": {
+        "explicit_NA": 1,
+        "left_censored": 0,
+        "not_supplied": 64,
+        "numeric": 124
+      },
+      "assay_records": 189,
+      "explicit_cell_fraction_characteristics": 0,
+      "sex_supplied": 134
+    },
+    "excluded": {
+      "age_years": {
+        "explicit_NA": 0,
+        "left_censored": 2,
+        "not_supplied": 11,
+        "numeric": 71
+      },
+      "assay_records": 84,
+      "explicit_cell_fraction_characteristics": 0,
+      "sex_supplied": 84
+    }
+  },
+  "declaration_disposition": {
+    "analysis_admitted": false,
+    "declarations_sha256": "e597ac2fd42ce0bf172cb67dc041df59c930a4ad048cae912335fba14916052b",
+    "excluded_by_KMT2D_review_scope": 84,
+    "held": 257,
+    "independent_participant_count": null,
+    "ready_for_review": 0,
+    "replayed_contract_in_this_increment": false,
+    "report_sha256": "986d36ae5b10f71ab1378fbeda17838b77907e087dc3160c4212373e0c07d185",
+    "total": 341,
+    "unchanged_prior_contract_output_hash_verified": true
+  },
+  "fresh_primary_metadata": [
+    {
+      "accession": "GSE97362",
+      "assay_records": 235,
+      "existing_review_roles": {
+        "case": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 0,
+            "numeric": 37
+          },
+          "assay_records": 37,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 37
+        },
+        "control": {
+          "age_years": {
+            "explicit_NA": 1,
+            "left_censored": 0,
+            "not_supplied": 0,
+            "numeric": 124
+          },
+          "assay_records": 125,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 125
+        },
+        "excluded": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 2,
+            "not_supplied": 0,
+            "numeric": 71
+          },
+          "assay_records": 73,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 73
+        }
+      },
+      "fresh_series_metadata": {
+        "bytes": 10344,
+        "content_type": "geo/text",
+        "http_status": 200,
+        "sha256": "5159bb5379cca45f702d49dcf65b2d1eeba94bc72936df3c28ed0b3bbce3e342",
+        "started_at_utc": "2026-11-23T07:57:30.656414+00:00",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=self&form=text&view=full"
+      },
+      "retained_sample_file": "data/bronze/t01-cohort-curation-2026-11-23/GSE97362.soft",
+      "retained_series_file": "data/silver/qc-semantics-curation-20261123/GSE97362.series.soft",
+      "sample_metadata": {
+        "sha256": "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief"
+      },
+      "series_to_sample_and_catalogue_set_equal": true
+    },
+    {
+      "accession": "GSE116300",
+      "assay_records": 44,
+      "existing_review_roles": {
+        "case": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 24,
+            "numeric": 0
+          },
+          "assay_records": 24,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 24
+        },
+        "control": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 9,
+            "numeric": 0
+          },
+          "assay_records": 9,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 9
+        },
+        "excluded": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 11,
+            "numeric": 0
+          },
+          "assay_records": 11,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 11
+        }
+      },
+      "fresh_series_metadata": {
+        "bytes": 5094,
+        "content_type": "geo/text",
+        "http_status": 200,
+        "sha256": "d452f5c96e400ee27759307b593901675ab13d2919f02fbd12eccdfbf91fb5d5",
+        "started_at_utc": "2026-11-23T07:57:24.219796+00:00",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=self&form=text&view=full"
+      },
+      "retained_sample_file": "data/bronze/t01-cohort-curation-2026-11-23/GSE116300.soft",
+      "retained_series_file": "data/silver/qc-semantics-curation-20261123/GSE116300.series.soft",
+      "sample_metadata": {
+        "sha256": "9a8722a365f07c83e6f663d0ab0bb8b7723bd736aad16696d099ee9d2b12c7e1",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief"
+      },
+      "series_to_sample_and_catalogue_set_equal": true
+    },
+    {
+      "accession": "GSE218186",
+      "assay_records": 62,
+      "existing_review_roles": {
+        "case": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 7,
+            "numeric": 0
+          },
+          "assay_records": 7,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 0
+        },
+        "control": {
+          "age_years": {
+            "explicit_NA": 0,
+            "left_censored": 0,
+            "not_supplied": 55,
+            "numeric": 0
+          },
+          "assay_records": 55,
+          "explicit_cell_fraction_characteristics": 0,
+          "sex_supplied": 0
+        }
+      },
+      "fresh_series_metadata": {
+        "bytes": 4955,
+        "content_type": "geo/text",
+        "http_status": 200,
+        "sha256": "7be3fdb9903d099eaab10d84ed4585c7ed65c528af47d3533099acfd349248d3",
+        "started_at_utc": "2026-11-23T07:57:36.148347+00:00",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=self&form=text&view=full"
+      },
+      "retained_sample_file": "data/bronze/t01-cohort-curation-2026-11-23/GSE218186.soft",
+      "retained_series_file": "data/silver/qc-semantics-curation-20261123/GSE218186.series.soft",
+      "sample_metadata": {
+        "sha256": "0e72adc9bc6547023f23d5ba4743eb76dfd98a4cf7357ed8abe3dddcb11bcbde",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief"
+      },
+      "series_to_sample_and_catalogue_set_equal": true
+    }
+  ],
+  "next_bounded_actions": [
+    {
+      "action": "Obtain an explicit original KS/PAT/assay and variant bridge for GSE116300, including the two dropped clinic recruits. Group-count agreement cannot identify those assays.",
+      "owner": "T01 source curator",
+      "revisit_when": "Authorized original source material supplies an exact named join."
+    },
+    {
+      "action": "Resolve original case variant and control provenance tables for GSE97362 and GSE218186, with subject/specimen and overlap evidence. Preserve current holds until each actual claim has support.",
+      "owner": "T01 source curator",
+      "revisit_when": "Usable original supplementary material is available through authorized public access."
+    },
+    {
+      "action": "Use the recorded source-specific age/sex availability when selecting a future analysis and covariate requirements. Keep native control groups explicit; handle missing and left-censored ages by a declared rule, with no automatic imputation.",
+      "owner": "T01/T07 analysis owners",
+      "revisit_when": "The molecular/identity subset and selected qualified preprocessing/QC contract are available."
+    }
+  ],
+  "projection": {
+    "curation_command": "python data/silver/qc-semantics-curation-20261123/curate.py",
+    "curation_exit_code": 0,
+    "curation_script_sha256": "94cca472f3e81dbe34217de0107957a64c1635cbeb9a92f9818170f1e9345575",
+    "initial_diagnostic_failures": {
+      "count": 2,
+      "reason": "Diagnostic predicates initially assumed a total key inside the existing report summary and a three-series-only catalogue. Corrected to the actual summary schema and explicitly scoped the catalogue set to the three requested series. No input, declaration, contract or acceptance condition changed.",
+      "receipt": "data/silver/qc-semantics-curation-20261123/initial-replay-failure.json",
+      "sha256": "304031589e95acfccfd47a80f173a3c501d2f083ba7a0c18da1c47368c09abd7"
+    },
+    "log_sha256": "54af62b69e46e91538c16849acf2fe9573685361474e273a6c84e1ba55839703",
+    "note": "Projection omits assay-to-paper rows, study pseudonyms, sequence variants, participant/specimen identities and ephemeral search references. Original sources, local-only derivation hashes, aggregate availability and explicit unknowns are retained.",
+    "python_version": "3.12.14",
+    "source_receipt": "data/silver/qc-semantics-curation-20261123/curation-aggregate.json",
+    "source_receipt_sha256": "fe5b1e1ca16f59c3834a92b89e696728c8bfb36f8e36763dba29bdc93350e054"
+  },
+  "review_completed_at_utc": "2026-11-23T08:01:53.455300+00:00",
+  "review_date": "2026-11-23",
+  "schema_version": 1,
+  "scope": "T01 source identity and covariate curation; privacy-minimized aggregate only",
+  "source_level_covariate_and_control_provenance": {
+    "GSE116300": {
+      "KS_PAT_sample_variant_bridge_available": false,
+      "per_assay_age_not_supplied_in_retained_GEO_characteristics": 44,
+      "sex_present_for_all_44_assays": true,
+      "source_age_matched_control_claim_is_not_an_age_vector": true,
+      "source_randomization_claim_does_not_establish_current_analysis_design_rank": true,
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=self&form=text&view=full"
+    },
+    "GSE218186": {
+      "case_variant_table_join_available": false,
+      "per_assay_age_not_supplied_in_retained_GEO_characteristics": 62,
+      "per_assay_sex_not_supplied_in_retained_GEO_characteristics": 62,
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief"
+    },
+    "GSE97362": {
+      "cell_fraction_boundary": "The article reports a separate cell-type robustness assessment and limited clinical blood-count availability. These are not per-assay cell-fraction covariates for this inventory.",
+      "clinical_eligibility_identity_and_design_not_admitted": true,
+      "control_origin_not_assigned_to_individual_assays": true,
+      "native_KMT2D_discovery_cases": 11,
+      "native_KMT2D_discovery_controls": 11,
+      "needed_unretrieved_material": "Original supplementary Tables S2/S5 for case-level variants, S3/S4 for case phenotypes and S6 for additional control provenance remain unavailable in this lane.",
+      "numeric_age_and_recorded_sex_available_for_all_22_assays": true,
+      "source_ancestry_statement": "Discovery group ancestry proportions are reported at cohort level; this receipt assigns no ancestry label or principal component to an assay.",
+      "source_control_origins": [
+        "Simons Simplex Collection",
+        "Hospital for Sick Children",
+        "University of Michigan"
+      ],
+      "source_sha256": "214742889923d571e528f89e56586e09f4557a9acb96076007f0a27b01228e7c",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/"
+    }
+  },
+  "unchanged_boundaries": {
+    "analysis_admitted": false,
+    "covariates_imputed_or_inferred_from_methylation": false,
+    "independence_verified": false,
+    "new_analysis_partition_assigned": false,
+    "new_molecular_eligibility_assigned": 0,
+    "new_named_assay_to_paper_joins": 0,
+    "new_participant_or_specimen_identities_assigned": 0,
+    "original_sources_receipts_and_declarations_modified": false,
+    "scope_exclusions_are_global_eligibility_decisions": false
+  },
+  "verification_scope": "This increment ran the source aggregation and checked existing declaration/report hashes. It did not rerun the sample-contract CLI or full code suite. The integration owner records strict baseline/candidate and native-hook results separately."
+}

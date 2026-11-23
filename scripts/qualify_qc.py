@@ -6,10 +6,12 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import hashlib
 import json
 import math
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -24,6 +26,40 @@ from qualify_limma import digest, read_object, require
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "research/contracts/sesame-hm450-qc-v1.json"
+NATIVE_CONTRACT = ROOT / "research/contracts/sesame-hm450-qc-v2.json"
+PRODUCER_PATCH = "research/patches/sesame/native-qc-missing-signal.patch"
+NATIVE_RECIPE = "scripts/tests/run_native_gct_reference.R"
+NATIVE_HARNESS = "scripts/tests/test_qc_missing_signal.c"
+NATIVE_FILES = {"native-typeI-ext.tsv.gz", "native-curated-C.ids.txt", "native-curated-T.ids.txt"}
+NATIVE_GCT = (
+    "Native bisConversionControl with pinned HM450.probeInfo C/T sets intersected with raw InfIR"
+)
+NATIVE_SCOPE = "Unchanged native R 65-field QC panel plus independently called native bisConversionControl; not full package qualification."
+NATIVE_ANNOTATION = {
+    "source_object": "HM450.probeInfo",
+    "source_metadata_revision": "119df217cea4da8cb18173226fa85e6152d13e51",
+    "source_version": "15-Mar-2018",
+    "source_object_pin": {
+        "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+        "bytes": 10616007,
+    },
+    "selection": "intersect raw InfIR Probe_ID with typeI.extC and typeI.extT, separately",
+    "native_curated_C": 45427,
+    "native_curated_T": 15148,
+    "ordering_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+    "mask_applied": False,
+    "missing_green_values": "omit per value within each mean",
+    "zero_or_empty_denominator": "no coercion; nonfinite output is outside this finite-fixture contract",
+}
+MISSING_SIGNAL_POLICY = {
+    "both_channels_absent_pvalue": 1.0,
+    "num_dtna_counts": "missing p-values after native pOOBAH absent-signal handling",
+    "overall_denominator": "all nonmissing p-values, including absent-signal failures",
+    "unmasked_denominator": "all nonmissing p-values with existing mask false",
+    "subtype_denominator": "all nonmissing p-values within the cg/ch/rs prefix",
+    "empty_denominator": "NA",
+    "raw_mask": "unchanged",
+}
 METRICS = (
     "num_dtna",
     "frac_dtna",
@@ -223,17 +259,19 @@ def compare_pvalues(
 
 
 def check_contract(contract: dict[str, object], reference: Path) -> dict[str, str]:
+    native = contract.get("contract_id") == "sesame-hm450-qc-v2"
+    recipe = NATIVE_RECIPE if native else REFERENCE_RECIPE
     require(
         type(contract.get("schema_version")) is int
         and contract["schema_version"] == 1
-        and contract.get("contract_id") == "sesame-hm450-qc-v1"
+        and contract.get("contract_id") in ("sesame-hm450-qc-v1", "sesame-hm450-qc-v2")
         and contract.get("preprocessing_contract_sha256") == digest(prep.CONTRACT)
         and contract.get("metrics") == list(METRICS)
         and contract.get("integer_metrics") == sorted(COUNTS)
-        and contract.get("gct_reference") == GCT_REFERENCE
+        and contract.get("gct_reference") == (NATIVE_GCT if native else GCT_REFERENCE)
         and contract.get("r_source_revision") == R_REVISION
-        and contract.get("reference_recipe") == REFERENCE_RECIPE
-        and contract.get("reference_scope") == REFERENCE_SCOPE
+        and contract.get("reference_recipe") == recipe
+        and contract.get("reference_scope") == (NATIVE_SCOPE if native else REFERENCE_SCOPE)
         and type(contract.get("native_r_qc_metrics")) is int
         and contract["native_r_qc_metrics"] == 65
         and contract.get("qc_stage") == "raw"
@@ -254,13 +292,175 @@ def check_contract(contract: dict[str, object], reference: Path) -> dict[str, st
         and contract.get("scientific_precision_budget_accepted") is False,
         "unsupported QC contract",
     )
+    if native:
+        policy = prep.object_field(contract, "missing_signal_policy")
+        require(
+            type(policy.get("both_channels_absent_pvalue")) is float
+            and policy == MISSING_SIGNAL_POLICY
+            and contract.get("previous_contract_sha256") == digest(CONTRACT)
+            and contract.get("parent_reference_recipe") == REFERENCE_RECIPE,
+            "unsupported native QC semantics or parent contract",
+        )
+        require(
+            json.dumps(prep.object_field(contract, "gct_annotation"), sort_keys=True)
+            == json.dumps(NATIVE_ANNOTATION, sort_keys=True),
+            "unsupported native GCT annotation lineage",
+        )
+        producer = prep.object_field(contract, "producer_patch")
+        require(producer.get("path") == PRODUCER_PATCH, "unsupported producer patch path")
+        prep.revision(producer, "result_tree")
+        prep.checked_file(ROOT / PRODUCER_PATCH, prep.object_field(producer, "pin"))
+        prep.checked_file(
+            ROOT / REFERENCE_RECIPE, prep.object_field(contract, "parent_reference_recipe_pin")
+        )
     pins = prep.object_field(contract, "reference_files")
-    require(set(pins) == REFERENCE_FILES, "required QC reference files differ")
-    prep.checked_file(ROOT / REFERENCE_RECIPE, prep.object_field(contract, "reference_recipe_pin"))
+    names = REFERENCE_FILES | NATIVE_FILES if native else REFERENCE_FILES
+    require(set(pins) == names, "required QC reference files differ")
+    prep.checked_file(ROOT / recipe, prep.object_field(contract, "reference_recipe_pin"))
     return {
         name: prep.checked_file(reference / name, prep.object_field(pins, name))
-        for name in sorted(REFERENCE_FILES)
+        for name in sorted(names)
     }
+
+
+def native_git(checkout: Path, *args: str) -> str:
+    """Do not let caller Git environment or global configuration redirect a source check."""
+    environment = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    environment.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull)
+    return subprocess.check_output(
+        ["git", "--no-replace-objects", "-C", str(checkout), "-c", "core.fsmonitor=false", *args],
+        env=environment,
+        text=True,
+    ).strip()
+
+
+def check_qc_source(checkout: Path, base: dict[str, object], contract: dict[str, object]) -> None:
+    if contract["contract_id"] == "sesame-hm450-qc-v1":
+        prep.check_source(checkout, base)
+        return
+    require(
+        not any(path.is_symlink() for path in [checkout / "YAME", checkout, *checkout.parents]),
+        "source path contains a symlink",
+    )
+    require(
+        Path(native_git(checkout, "rev-parse", "--show-toplevel")).resolve() == checkout.resolve()
+        and native_git(checkout, "remote", "get-url", "origin") == prep.REPOSITORY,
+        "native QC source root or origin differs",
+    )
+    for path, key in ((checkout, "source_revision"), (checkout / "YAME", "yame_revision")):
+        require(
+            Path(native_git(path, "rev-parse", "--show-toplevel")).resolve() == path.resolve(),
+            "native QC source is not its own repository root",
+        )
+        require(
+            native_git(path, "rev-parse", "HEAD") == prep.revision(base, key),
+            "source revision drift",
+        )
+        require(
+            all(line.startswith("H ") for line in native_git(path, "ls-files", "-v").splitlines()),
+            "source has hidden index entries",
+        )
+    require(
+        native_git(checkout / "YAME", "remote", "get-url", "origin")
+        == "https://github.com/zhou-lab/YAME.git",
+        "native QC YAME origin differs",
+    )
+    producer = prep.object_field(contract, "producer_patch")
+    require(
+        native_git(checkout, "write-tree") == prep.revision(producer, "result_tree")
+        and not native_git(checkout, "diff", "--no-ext-diff", "--no-textconv", "--name-only")
+        and not native_git(checkout, "ls-files", "--others", "--exclude-standard")
+        and not native_git(checkout / "YAME", "status", "--porcelain", "--untracked-files=all"),
+        "patched source tree, worktree or YAME differs",
+    )
+    actual = native_git(
+        checkout,
+        "diff",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--no-renames",
+        "--full-index",
+        "--no-color",
+        "--src-prefix=a/",
+        "--dst-prefix=b/",
+        "--unified=3",
+        "--diff-algorithm=myers",
+        "--no-indent-heuristic",
+        "HEAD",
+    )
+    require(
+        actual == (ROOT / PRODUCER_PATCH).read_text(encoding="utf-8").strip(),
+        "producer patch differs",
+    )
+
+
+def native_assets(
+    data: Path, reference: Path, output: Path, ids: list[str], contract: dict[str, object]
+) -> tuple[Path, dict[str, str]]:
+    """Project the complete named native GCT sets into a fresh pinned asset store."""
+    pins = prep.object_field(contract, "reference_files")
+    for name in sorted(NATIVE_FILES):
+        prep.checked_file(reference / name, prep.object_field(pins, name))
+    groups: dict[str, set[str]] = {}
+    universe = set(ids)
+    annotation = prep.object_field(contract, "gct_annotation")
+    require(
+        len(ids) == len(universe)
+        and hashlib.sha256("".join(probe + "\n" for probe in ids).encode()).hexdigest()
+        == annotation["ordering_sha256"],
+        "native GCT ordering lineage differs",
+    )
+    for code in ("C", "T"):
+        names = (
+            (reference / f"native-curated-{code}.ids.txt").read_text(encoding="utf-8").splitlines()
+        )
+        groups[code] = set(names)
+        require(
+            bool(names) and len(names) == len(groups[code]) and groups[code] <= universe,
+            "native GCT set is empty, duplicated or outside the probe universe",
+        )
+        require(len(names) == annotation[f"native_curated_{code}"], "native GCT set count differs")
+    require(not groups["C"] & groups["T"], "native GCT sets overlap")
+    with (
+        gzip.open(reference / "native-typeI-ext.tsv.gz", "rt", encoding="utf-8", newline="") as ext,
+        gzip.open(
+            data / "assets/HM450" / prep.ASSETS[0], "rt", encoding="utf-8", newline=""
+        ) as order,
+    ):
+        extension = csv.reader(ext, delimiter="\t", strict=True)
+        ordering = csv.reader(order, delimiter="\t", strict=True)
+        require(
+            next(extension, None) == ["ext"]
+            and next(ordering, None) == ["Probe_ID", "M", "U", "col"],
+            "native GCT annotation schema differs",
+        )
+        for probe, row, ordered_row in zip_longest(ids, extension, ordering):
+            require(
+                probe is not None and row is not None and ordered_row is not None,
+                "native GCT complete universe differs",
+            )
+            row = cast(list[str], row)
+            ordered_row = cast(list[str], ordered_row)
+            code = "C" if probe in groups["C"] else "T" if probe in groups["T"] else "."
+            require(
+                len(ordered_row) == 4
+                and ordered_row[0] == probe
+                and row == [code]
+                and (code == "." or ordered_row[3] == "R"),
+                "native GCT identity, extension or raw InfIR selection differs",
+            )
+    root = output / "native-assets"
+    target = root / "HM450"
+    target.mkdir(parents=True, exist_ok=False)
+    for name in prep.ASSETS:
+        source = (
+            reference / "native-typeI-ext.tsv.gz"
+            if name == prep.ASSETS[2]
+            else data / "assets/HM450" / name
+        )
+        shutil.copyfile(source, target / name)
+        require(digest(source) == digest(target / name), "native GCT asset copy differs")
+    return root, {name: digest(target / name) for name in prep.ASSETS}
 
 
 def qualify(
@@ -270,31 +470,80 @@ def qualify(
     reference: Path,
     output: Path,
     receipt: dict[str, object],
+    contract_version: str = "v1",
 ) -> None:
     implementation_paths = [Path(__file__), Path(prep.__file__), ROOT / "scripts/qualify_limma.py"]
+    if contract_version == "v2":
+        implementation_paths.append(ROOT / NATIVE_HARNESS)
     implementation = {path.name: digest(path) for path in implementation_paths}
-    contract = read_object(CONTRACT)
+    contract_path = NATIVE_CONTRACT if contract_version == "v2" else CONTRACT
+    contract = read_object(contract_path)
+    require(
+        contract.get("contract_id") == f"sesame-hm450-qc-{contract_version}",
+        "QC contract selection differs",
+    )
     base = read_object(prep.CONTRACT)
     reference_hashes = check_contract(contract, reference)
     input_hashes = prep.check_inputs(data, raw_reference, base)
-    prep.check_source(checkout, base)
+    check_qc_source(checkout, base, contract)
     receipt.update(
         implementation_sha256=implementation,
-        contract_sha256=digest(CONTRACT),
+        contract_sha256=digest(contract_path),
         input_sha256=input_hashes,
         reference_sha256=reference_hashes,
         source_revision=base["source_revision"],
         yame_revision=base["yame_revision"],
-        gct_reference=GCT_REFERENCE,
+        gct_reference=contract["gct_reference"],
         r_source_revision=R_REVISION,
         reference_recipe_pin=contract["reference_recipe_pin"],
     )
+    if contract_version == "v2":
+        receipt.update(
+            producer_patch=contract["producer_patch"],
+            missing_signal_policy=contract["missing_signal_policy"],
+            gct_annotation=contract["gct_annotation"],
+        )
     commands: list[dict[str, object]] = []
     exports: list[dict[str, object]] = []
     receipt.update(commands=commands, exports=exports)
     environment = dict(os.environ)
     environment["YAME_DATA_HOME"] = str(data / "assets")
     binary = checkout / "sesame"
+    if contract_version == "v2":
+        regression_binary = output / "test-qc-missing-signal"
+        for name, command in (
+            ("compiler-version", ["cc", "--version"]),
+            (
+                "missing-signal-compile",
+                [
+                    "cc",
+                    "-D_GNU_SOURCE",
+                    "-std=c11",
+                    "-O1",
+                    "-g",
+                    "-Wall",
+                    "-Wextra",
+                    "-Wpedantic",
+                    "-Wshadow",
+                    "-Wconversion",
+                    "-Wstrict-prototypes",
+                    "-Werror",
+                    "-I" + str(checkout / "include"),
+                    str(ROOT / NATIVE_HARNESS),
+                    *[
+                        str(checkout / "src" / (unit + ".c"))
+                        for unit in ("qc", "prep", "numerics", "sigdf", "index", "util")
+                    ],
+                    "-lz",
+                    "-lm",
+                    "-o",
+                    str(regression_binary),
+                ],
+            ),
+            ("missing-signal-run", [str(regression_binary), str(output)]),
+        ):
+            prep.run(command, checkout, environment, output, name, commands)
+        receipt["regression_binary_sha256"] = digest(regression_binary)
     for name, command in (
         ("clean-sesame", ["make", "clean"]),
         ("clean-yame", ["make", "-C", "YAME", "clean"]),
@@ -322,6 +571,19 @@ def qualify(
         "pinned QC probe universe differs",
     )
     receipt["annotation"] = annotation
+    asset_hashes: dict[str, str] = {}
+    if contract_version == "v2":
+        asset_root, asset_hashes = native_assets(data, reference, output, ids, contract)
+        expected = {
+            name: reference_hashes["native-typeI-ext.tsv.gz"]
+            if name == prep.ASSETS[2]
+            else input_hashes[f"assets/HM450/{name}"]
+            for name in prep.ASSETS
+        }
+        require(asset_hashes == expected, "native GCT overlay differs from pinned input bytes")
+        environment["YAME_DATA_HOME"] = str(asset_root)
+        assets = asset_root / "HM450"
+        receipt["native_asset_sha256"] = asset_hashes
     for stage in ("raw", "QCDPB"):
         for threads in (1, 2):
             name = f"{stage}-{threads}"
@@ -387,15 +649,99 @@ def qualify(
                     "pvalue_binary_sha256": digest(target / "pval.cg"),
                 }
             )
+    if contract_version == "v2":
+        raw_q: list[dict[str, object]] = []
+        receipt["raw_q_exports"] = raw_q
+        for stage in ("raw", "Q"):
+            for threads in (1, 2):
+                name = f"raw-q-check-{stage}-{threads}"
+                target = output / name
+                prep.run(
+                    [
+                        str(binary),
+                        "preprocess",
+                        "--platform",
+                        "HM450",
+                        "--prep",
+                        "" if stage == "raw" else stage,
+                        "--mask",
+                        str(assets / prep.ASSETS[3]),
+                        "--min-beads",
+                        "0",
+                        "--threads",
+                        str(threads),
+                        "--output",
+                        "beta",
+                        "--out",
+                        str(target),
+                        "--tmp",
+                        str(output),
+                        str(data / f"idats/HM450/{prep.SAMPLE}"),
+                    ],
+                    checkout,
+                    environment,
+                    output,
+                    name,
+                    commands,
+                )
+                prep.run(
+                    [
+                        str(binary),
+                        "describe-probe",
+                        "--platform",
+                        "HM450",
+                        "--all",
+                        str(target / "beta.cg"),
+                    ],
+                    checkout,
+                    environment,
+                    output,
+                    name + "-export",
+                    commands,
+                )
+                result = prep.validate_export(
+                    raw_reference,
+                    output / f"{name}-export.stdout",
+                    target / "beta.cg.idx",
+                    ids,
+                    stage,
+                    prep.SAMPLE,
+                )
+                result.update(
+                    status="passed",
+                    stage=stage,
+                    threads=threads,
+                    binary_output_sha256=digest(target / "beta.cg"),
+                )
+                raw_q.append(result)
+        for stage in ("raw", "Q"):
+            runs = [item for item in raw_q if item["stage"] == stage]
+            require(
+                len({item["binary_output_sha256"] for item in runs}) == 1
+                and len({item["text_sha256"] for item in runs}) == 1,
+                "raw/Q preservation differs between thread settings",
+            )
+        require(
+            all(item["status"] == "passed" for item in raw_q),
+            "raw/Q preservation comparison failed",
+        )
+        require(
+            {name: digest(assets / name) for name in asset_hashes} == asset_hashes,
+            "native GCT asset overlay changed",
+        )
+        require(
+            digest(output / "test-qc-missing-signal") == receipt["regression_binary_sha256"],
+            "QC regression binary changed",
+        )
     require(check_contract(contract, reference) == reference_hashes, "QC references changed")
     require(prep.check_inputs(data, raw_reference, base) == input_hashes, "QC input bytes changed")
-    require(digest(CONTRACT) == receipt["contract_sha256"], "QC contract changed")
+    require(digest(contract_path) == receipt["contract_sha256"], "QC contract changed")
     require({name: digest(checkout / name) for name in binaries} == binaries, "QC binaries changed")
     require(
         {path.name: digest(path) for path in implementation_paths} == implementation,
         "QC qualification implementation changed",
     )
-    prep.check_source(checkout, base)
+    check_qc_source(checkout, base, contract)
     require(
         len({prep.object_field(item, "qc")["sha256"] for item in exports}) == 1,
         "raw QC output depends on stage or thread setting",
@@ -419,6 +765,7 @@ def qualify(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--contract", choices=("v1", "v2"), default="v1")
     for name in ("checkout", "data-root", "raw-reference", "reference-root", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
     args = parser.parse_args()
@@ -431,7 +778,7 @@ def main() -> int:
     output.mkdir(parents=True, exist_ok=False)
     receipt: dict[str, object] = {
         "schema_version": 1,
-        "contract_id": "sesame-hm450-qc-v1",
+        "contract_id": f"sesame-hm450-qc-{args.contract}",
         "status": "running",
         "started_at": datetime.now(UTC).isoformat(),
         "scientific_admitted": False,
@@ -454,6 +801,7 @@ def main() -> int:
             args.reference_root.absolute(),
             output,
             receipt,
+            args.contract,
         )
         receipt["status"] = "passed"
     except (

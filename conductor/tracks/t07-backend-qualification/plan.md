@@ -10,6 +10,7 @@
 - [x] **T07.03a:** Receive the actual pinned named-v1 synthetic exchange, preserve source/output/reference identity and pass the complete strict gate. [T07a is archived](../../archive/t07a_named_exchange_20261123/index.md); broader production/preprocessing acceptance under T07.03 remains open.
 - [x] **T07.03b:** Qualify the bounded HM450 raw/Q production export and exact annotation row-space using the independent mathematical and fresh R references. [T07b](../../archive/t07b_preprocessing_20261123/index.md) is archived after independent review and the combined strict pass; [PR #12](https://github.com/edithatogo/rare-omics-atlas/pull/12) records the actual passing hook, PR and merged-main checks. Full preprocessing/QC, scientific precision budgets, other platforms and devices retain separate criteria.
 - [x] **T07.03c:** Implement and execute the exact HM450 QC/p-value receiver. [T07c](../../archive/t07c_qc_20261123/index.md) is archived after implementation, actual full-universe receiving, independent review and 34/34 strict candidate gates. P-value exports pass; the native QC panel remains failed. Final hook/hosted evidence is recorded in its integration PR; the method hold stays open.
+- [x] **T07.03d:** Select native R missing-signal semantics and native curated GCT, apply the bounded producer correction and execute the explicit v2 successor. [T07d](../../archive/t07d_native_qc_20261123/index.md) records all 66 fields and complete p-value/raw-Q preservation passing; independent review and all 34 strict candidate gates passed. Archived bounded increment; actual hook/hosted outcomes are recorded in the integration PR. The original v1 failure remains unchanged.
 - [ ] **T07.04:** Compare the chosen inference engine on identical admitted technical/discovery M matrices under that frozen protocol, preserving annotations, filtering, design and global moderation/FDR. Qualify preprocessing separately, including actual exported precision if SeSAMe2 is selected. A backend validation reserve must be distinct from the clinical replication claim, or handled under a prespecified blinded numerical check with no scientific retuning.
 - [ ] **T07.05:** Observe official local-runner checks on the relevant actual machine and record source/toolchain/input/job identity and resource evidence. A configured workflow or cloud test is insufficient.
 - [ ] **T07.06:** Record selected / held / rejected for the exact scientific contract and permit only accepted stages to feed T02/T03.
@@ -42,13 +43,26 @@ probes and both thread settings. The independent complete original bead audit
 passes. This resolves the absence of an executable receiving check and identifies
 the next method decision; it does not accept the scientific preprocessing route.
 
-Before a dependent implementation, choose and justify the intended missing-signal
-QC denominator/NA semantics and the GCT probe curation. Preserve this native-R
-failure as evidence; any differently specified method needs a new predeclared
-contract and its own receiving run. Select study rejection rules and beta/M
-precision budgets for their actual consumer. The existing
-[reproduction commands](../../../research/qc-qualification.md) supply the next
-execution once that contract is fixed. Keep T01 named identity/overlap/covariate
-curation in parallel; actual owner-device and applicable institutional receipts
-remain separate external conditions. No full port or new platform is required
-by these findings.
+The [native v2 decision](../../../research/native-qc-semantics.md) now selects
+native R denominator/NA behavior and native curated GCT. The bounded correction
+passes all 66 QC fields and the complete p-value/raw-Q preservation comparisons;
+[actual evidence](../../../research/qualification/t07-native-qc-2026-11-23.md)
+retains the original v1 failure. No full port or new platform was needed.
+
+### Next executable code boundary
+
+1. Reuse the existing unrelated technical fixture and
+   [full QCDPB precision evidence](../../../research/qualification/t07-reference-2026-11-23/REFERENCE_REPRODUCTION.md).
+   Name the actual beta/M consumer and decide whether the existing binary32 and
+   six-digit export can satisfy its predeclared budget or requires a higher-
+   precision export. Do not derive scientific acceptance from observed errors.
+2. Freeze the selected precision/endpoint/missingness contract before modifying
+   or qualifying that export. Keep every ordered probe and masking decision;
+   reject unsupported endpoints or carry their explicit meaning.
+3. Make only the required producer/export/receiver increment, add independent
+   rounding/endpoint regressions and rerun the existing actual complete-universe
+   QCDPB comparison plus accepted raw/Q/QC preservation gates.
+4. Keep [T01 identity/covariate evidence](../../../research/qualification/t01-identity-covariates-2026-11-23.md)
+   in parallel. Named crosswalks, rejection rules, applicable institutional
+   determination and actual owner-device receipts retain separate owners and
+   acceptance criteria. They are not supplied by the v2 technical pass.

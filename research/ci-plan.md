@@ -70,10 +70,12 @@ candidate build separate preserves the existing cross-platform Atlas code gates
 and avoids claiming an unsupported native Windows preprocessing route.
 
 The [HM450 QC/p-value qualifier](qc-qualification.md) follows that same split.
-Its complete native-R QC comparison currently fails on documented semantic
-mismatches. CI tests the checker and its failure preservation; it does not turn
-a held method into an accepted preprocessing route. The dated QC receipt retains
-the actual nonzero production qualification separately from passing code checks.
+Its preserved v1 comparison fails on documented semantic mismatches. The
+[explicit native v2 successor](native-qc-qualification.md) passes its complete
+technical boundary and additionally runs the focused real-C regression and
+actual raw/Q preservation checks. Ordinary CI tests both versioned receiving
+paths, exact source/annotation binding and failure preservation. A technical
+pass does not accept the broader scientific or owner-device route.
 
 ## Central standards and template reconciliation
 
@@ -86,6 +88,13 @@ the actual nonzero production qualification separately from passing code checks.
 The central reusable Rust job assumes a root Cargo manifest and floating stable Rust. This repository instead has a catalogue subproject and a previously qualified 1.95.0 toolchain; a thin local caller is therefore justified. The strict Python choice is a local implementation decision, not a claim that central policy mandates a particular type checker. Existing account community defaults should be inherited where GitHub supports inheritance. Preserve existing Renovate onboarding PR #1 rather than introduce another dependency bot.
 
 ### Merge-history secret-scan reconciliation
+
+The native v2 increment also reviewed central main
+`0be4668d17ac3b6d902d4354bd01f420c7c29272` and the same relevant Rust/data templates.
+Its later central delta is Limma-specific nonidentifier review and a registry
+size-cap adjustment. Atlas needs no new exception or policy change and retains
+its already qualified `2efdbd` hook/action pin. The carried C licence contact is
+an advisory under the existing repository profile, not a suppressed identifier.
 
 T07c also corrects a pre-existing coverage gap between Atlas's former central
 scanner pin `b30b07bcdaa6aebad2c6a57a4d0adc3616dabfe4` and the currently reviewed

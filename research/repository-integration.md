@@ -68,7 +68,14 @@ An existing checkout can be supplied with `--checkout /absolute/path/to/limma-ru
 
 When updating limma later, repeat producer qualification first, then update the atlas pin in a separate receiving change. A failed receiving check leaves the previously qualified pin in use. Changes to field meaning, scale, ordering, missingness or method require an explicitly versioned contract and new acceptance evidence. Storage chunking cannot split global moderation or a complete BH family.
 
-The [QC/p-value receiving boundary](qc-qualification.md) extends the same Atlas-owned qualification. Its full native QC parity is held while the exact production p-value export checks pass; upstream numerical code and the limma producer pin are unchanged.
+The [QC/p-value receiving boundary](qc-qualification.md) preserves its failed v1
+result. The [native v2 successor](native-qc-qualification.md) carries one functional
+C assignment correction as an immutable Atlas-owned patch, retaining the exact
+upstream licence, base revisions and resulting tree. Its separate curated GCT
+asset uses the existing producer interface. The exact native QC/detection and
+raw/Q preservation boundary passes; full scientific/device acceptance remains
+open. No new repository or owned upstream fork is required for this bounded
+patch. Limma numerical code and its existing Atlas producer pin remain unchanged.
 
 ## Native pre-commit enforcement
 
