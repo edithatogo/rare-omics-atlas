@@ -1,5 +1,5 @@
 use clap::Parser;
-use rare_omics_catalogue::ontology_context;
+use rare_omics_catalogue::{ontology_context, ontology_context_with_hgnc};
 use serde_json::Value;
 use std::{
     fs::File,
@@ -19,6 +19,9 @@ struct Args {
     diseases: PathBuf,
     #[arg(long)]
     mappings: PathBuf,
+    /// Bind disease-reference genes to selected approved HGNC source records.
+    #[arg(long)]
+    hgnc: Option<PathBuf>,
 }
 
 fn read(path: &Path) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
@@ -32,11 +35,13 @@ fn read(path: &Path) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
 }
 
 fn review(args: Args) -> Result<Value, Box<dyn std::error::Error>> {
-    Ok(ontology_context(
-        &read(&args.assays)?,
-        &read(&args.diseases)?,
-        &read(&args.mappings)?,
-    )
+    let assays = read(&args.assays)?;
+    let diseases = read(&args.diseases)?;
+    let mappings = read(&args.mappings)?;
+    Ok(match args.hgnc {
+        Some(path) => ontology_context_with_hgnc(&assays, &diseases, &mappings, &read(&path)?),
+        None => ontology_context(&assays, &diseases, &mappings),
+    }
     .map_err(std::io::Error::other)?)
 }
 

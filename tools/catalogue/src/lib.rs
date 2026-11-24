@@ -6,7 +6,7 @@ use std::collections::{BTreeMap, BTreeSet};
 mod sample_contract;
 pub use sample_contract::{review_sample_json, review_sample_manifest};
 mod ontology_context;
-pub use ontology_context::ontology_context;
+pub use ontology_context::{ontology_context, ontology_context_with_hgnc};
 
 pub type Result<T> = std::result::Result<T, String>;
 pub type Soft = BTreeMap<String, BTreeMap<String, Vec<String>>>;

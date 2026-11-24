@@ -126,3 +126,47 @@ clinical phenotyping algorithm or new runtime package. Its regression tests
 exercise mapping direction, ambiguity, missing labels, raw-input provenance,
 duplicate/conflicting inputs, parent-versus-exact disease links and disclosure
 boundaries.
+
+### Optional HGNC gene-reference binding
+
+The same command can also bind the disease dictionary's gene identifiers and
+symbols to the five selected records from the HGNC quarterly archive of
+6 October 2026:
+
+```sh
+cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml \
+  --bin ontology-context -- \
+  --assays research/catalogue/2026-11-22/assays.jsonl \
+  --diseases research/registries/initial-disease-crosswalk.tsv \
+  --mappings research/registries/ontology-context-mappings.json \
+  --hgnc research/registries/hgnc-gene-references.json
+```
+
+The optional registry has `schema_version: 1`, two `sources` named
+`HGNC-complete` and `HGNC-withdrawn`, and `records`. Both sources use the same
+release and the source fields documented above. Each record supplies `hgnc_id`,
+`symbol`, `name`, `status`, `alias_symbol` and `prev_symbol` arrays, `entrez_id`,
+`ensembl_gene_id` and `in_withdrawn_source`. The registry records the exact
+generation-bound archive URLs, downloaded-byte hashes and HGNC's declared
+CC0-1.0 licence.
+
+Every disease-reference gene must match one selected HGNC ID and its exact
+current approved symbol. Records must declare `status: "Approved"` and
+`in_withdrawn_source: false`. An unknown ID, a conflicting or duplicated ID or
+approved symbol, an alias or previous symbol substituted for the approved symbol,
+a withdrawn record, or an unconsumed extra gene rejects the enriched report.
+Multiple diseases may share a gene. Source alias and previous-symbol strings are
+retained and sorted, but never become lookup keys or automatic replacements.
+Unknown means absent from this selected registry; this is not a full HGNC
+identifier resolver.
+
+With `--hgnc`, the report adds `reference_genes`, `gene_reference_sources`,
+`gene_reference_scope` and `input_sha256.hgnc_reference`. NCBI Gene and Ensembl
+identifiers are HGNC-supplied cross-references; their presence does not qualify
+NCBI/Ensembl release contents, transcript choices, genome builds or array
+annotation joins. The [HGNC qualification receipt](../../research/qualification/hgnc-context-2026-11-25.md)
+owns the independent archive and extraction checks, including the selected IDs'
+absence from the withdrawn file. The runtime validates supplied declarations and
+exact joins; `source_claims_verified` and `analysis_admitted` remain false,
+participant counts remain unknown, and the assay contexts remain unchanged.
+Without `--hgnc`, the existing three-input report is unchanged.

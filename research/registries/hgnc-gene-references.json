@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "HGNC-complete",
+      "version": "2026-10-06",
+      "url": "https://storage.googleapis.com/public-download-files/hgnc/archive/archive/quarterly/tsv/hgnc_complete_set_2026-10-06.tsv?generation=1791293906485185",
+      "sha256": "8bf6f686e640dbc864a346484626953621b0500d900d26cd085a35c2782d725d",
+      "license": "CC0-1.0",
+      "license_url": "https://www.genenames.org/about/license/"
+    },
+    {
+      "id": "HGNC-withdrawn",
+      "version": "2026-10-06",
+      "url": "https://storage.googleapis.com/public-download-files/hgnc/archive/archive/quarterly/tsv/withdrawn_2026-10-06.tsv?generation=1791293905928029",
+      "sha256": "9328a7361ed5149bf7901cae52c6c30b832b8ec55af22146ea296081278a3140",
+      "license": "CC0-1.0",
+      "license_url": "https://www.genenames.org/about/license/"
+    }
+  ],
+  "records": [
+    {
+      "hgnc_id": "HGNC:7133",
+      "symbol": "KMT2D",
+      "name": "lysine methyltransferase 2D",
+      "status": "Approved",
+      "alias_symbol": [
+        "ALR",
+        "MLL4",
+        "CAGL114"
+      ],
+      "prev_symbol": [
+        "TNRC21",
+        "MLL2"
+      ],
+      "entrez_id": "8085",
+      "ensembl_gene_id": "ENSG00000167548",
+      "in_withdrawn_source": false
+    },
+    {
+      "hgnc_id": "HGNC:12637",
+      "symbol": "KDM6A",
+      "name": "lysine demethylase 6A",
+      "status": "Approved",
+      "alias_symbol": [],
+      "prev_symbol": [
+        "UTX"
+      ],
+      "entrez_id": "7403",
+      "ensembl_gene_id": "ENSG00000147050",
+      "in_withdrawn_source": false
+    },
+    {
+      "hgnc_id": "HGNC:14234",
+      "symbol": "NSD1",
+      "name": "nuclear receptor binding SET domain protein 1",
+      "status": "Approved",
+      "alias_symbol": [
+        "ARA267",
+        "FLJ22263",
+        "KMT3B"
+      ],
+      "prev_symbol": [
+        "STO"
+      ],
+      "entrez_id": "64324",
+      "ensembl_gene_id": "ENSG00000165671",
+      "in_withdrawn_source": false
+    },
+    {
+      "hgnc_id": "HGNC:2978",
+      "symbol": "DNMT3A",
+      "name": "DNA methyltransferase 3 alpha",
+      "status": "Approved",
+      "alias_symbol": [],
+      "prev_symbol": [],
+      "entrez_id": "1788",
+      "ensembl_gene_id": "ENSG00000119772",
+      "in_withdrawn_source": false
+    },
+    {
+      "hgnc_id": "HGNC:3527",
+      "symbol": "EZH2",
+      "name": "enhancer of zeste 2 polycomb repressive complex 2 subunit",
+      "status": "Approved",
+      "alias_symbol": [
+        "EZH1",
+        "ENX-1",
+        "KMT6",
+        "KMT6A"
+      ],
+      "prev_symbol": [],
+      "entrez_id": "2146",
+      "ensembl_gene_id": "ENSG00000106462",
+      "in_withdrawn_source": false
+    }
+  ]
+}
