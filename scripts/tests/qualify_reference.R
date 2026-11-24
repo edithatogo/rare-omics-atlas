@@ -161,6 +161,92 @@ if (stage=="enrichment") {
     invisible(gc(full=TRUE))
     go <- gometh(sig.cpg=selected,all.cpg=universe,collection="GO",array.type="450K",
         anno=anno,plot.bias=FALSE,prior.prob=TRUE,equiv.cpg=TRUE,fract.counts=TRUE)
+    # Preserve unmodified synthetic results *before* the strict probability gate.
+    # This makes a numerical failure inspectable without changing the method,
+    # deleting terms, clipping probabilities or changing the BH family.
+    stopifnot(nrow(go)>0L,!anyDuplicated(rownames(go)),
+        all(c("N","DE","P.DE","FDR") %in% colnames(go)))
+    raw_go <- data.frame(GOID=rownames(go),N=go$N,DE=go$DE,
+        P.DE=sprintf("%.17g",go$P.DE),FDR=sprintf("%.17g",go$FDR))
+    write.table(raw_go,file.path(output,"enrichment-raw.tsv"),sep="\t",
+        quote=FALSE,row.names=FALSE)
+    bad_p <- which(!is.na(go$P.DE)&(!is.finite(go$P.DE)|go$P.DE<0|go$P.DE>1))
+    bad_fdr <- which(!is.na(go$FDR)&(!is.finite(go$FDR)|go$FDR<0|go$FDR>1))
+    fmt <- function(x) sprintf("%.17g",x)
+    write.table(data.frame(metric=c("tested","selected","GO_rows","finite_p",
+        "missing_p","p_below_zero","p_above_one","nonfinite_p_excluding_NA",
+        "invalid_FDR","minimum_finite_p","maximum_finite_p"),
+        value=c(length(universe),length(selected),nrow(go),sum(is.finite(go$P.DE)),
+        sum(is.na(go$P.DE)),sum(go$P.DE<0,na.rm=TRUE),
+        sum(go$P.DE>1,na.rm=TRUE),sum(!is.na(go$P.DE)&!is.finite(go$P.DE)),
+        length(bad_fdr),fmt(min(go$P.DE[is.finite(go$P.DE)])),
+        fmt(max(go$P.DE[is.finite(go$P.DE)])))),
+        file.path(output,"enrichment-diagnostics.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    if(length(bad_p)>0L) {
+        # Diagnosis only. The pinned release computes P(X>x)+P(X=x).
+        # Compare that calculation with the inclusive upper tail and a
+        # separate small exact urn recurrence. Never substitute these results.
+        mapped <- getMappedEntrezIDs(sig.cpg=selected,all.cpg=universe,
+            array.type="450K",anno=anno,genomic.features="ALL")
+        pwf <- getFromNamespace(".estimatePWF","missMethyl")(
+            D=mapped$de,bias=as.vector(mapped$equiv))
+        go_sets <- getFromNamespace(".getGO","missMethyl")()$idList
+        num_genes <- length(mapped$universe)
+        draws <- length(mapped$sig.eg)
+        # Bounded independent sequential weighted sampling without replacement.
+        # The recurrence is a diagnostic, not a production backend.
+        inclusive <- function(q,m1,m2,n,odds) {
+            if(!is.finite(odds)||odds<=0||n>m1+m2||n<0) return(NA_real_)
+            if(q<=max(0,n-m2)) return(1)
+            if(q>min(n,m1)) return(0)
+            if(n>1000L) return(NA_real_)
+            d <- numeric(min(n,m1)+1L)
+            d[1L] <- 1
+            for(t in seq_len(n)) {
+                k <- seq.int(max(0L,t-1L-m2),min(t-1L,m1))
+                red <- m1-k
+                white <- m2-(t-1L-k)
+                pr <- odds*red/(odds*red+white)
+                next_d <- numeric(length(d))
+                ix <- k+1L
+                next_d[ix] <- d[ix]*(1-pr)
+                can_red <- k<m1
+                next_d[ix[can_red]+1L] <- next_d[ix[can_red]+1L]+
+                    d[ix[can_red]]*pr[can_red]
+                d <- next_d
+            }
+            stopifnot(abs(sum(d)-1)<=1e-10)
+            sum(d[seq.int(q+1L,length(d))])
+        }
+        # At most 20 failing terms, deterministically prioritised by magnitude.
+        distance <- abs(go$P.DE[bad_p]-pmin(1,pmax(0,go$P.DE[bad_p])))
+        selected_bad <- head(bad_p[order(distance,decreasing=TRUE,na.last=TRUE)],20L)
+        diag_rows <- lapply(selected_bad,function(i) {
+            term <- rownames(go)[i]
+            genes <- go_sets[[term]]
+            in_set <- mapped$universe %in% genes
+            m1 <- sum(in_set)
+            m2 <- num_genes-m1
+            frac <- sum(mapped$fract.counts$frac[mapped$sig.eg %in% genes])
+            q <- as.integer(frac)
+            stopifnot(m1==go$N[i],floor(frac)==go$DE[i])
+            odds <- if(m1>0L&&m2>0L) mean(pwf[in_set])/mean(pwf[!in_set]) else NA_real_
+            safe <- function(expr) tryCatch(expr,error=function(e) NA_real_)
+            legacy <- if(is.finite(odds)&&odds>0) safe(
+                BiasedUrn::pWNCHypergeo(q,m1,m2,draws,odds,lower.tail=FALSE)+
+                BiasedUrn::dWNCHypergeo(q,m1,m2,draws,odds)) else NA_real_
+            direct <- if(is.finite(odds)&&odds>0) safe(
+                BiasedUrn::pWNCHypergeo(q-1L,m1,m2,draws,odds,
+                    precision=1e-12,lower.tail=FALSE)) else NA_real_
+            data.frame(GOID=term,raw_p=fmt(go$P.DE[i]),fractional_DE=fmt(frac),
+                integer_q=q,m1=m1,m2=m2,draws=draws,odds=fmt(odds),
+                native_sum=fmt(legacy),direct_upper_tail=fmt(direct),
+                independent_urn_tail=fmt(safe(inclusive(q,m1,m2,draws,odds))))
+        })
+        write.table(do.call(rbind,diag_rows),file.path(output,"enrichment-invalid-terms.tsv"),
+            sep="\t",quote=FALSE,row.names=FALSE)
+    }
+    capture.output(sessionInfo(),file=file.path(output,"enrichment-session-info.txt"))
     stopifnot(nrow(go)>0L,!anyDuplicated(rownames(go)),
         all(c("P.DE","FDR") %in% colnames(go)),any(is.finite(go$P.DE)),
         all(is.na(go$P.DE)|(go$P.DE>=0&go$P.DE<=1)),

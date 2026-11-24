@@ -59,3 +59,5 @@ retains the original v1 failure. No full port or new platform was needed.
 ### Native reference receiving update — 24 November
 
 The [native reference receipt and memory repair](../../../research/qualification/t07-native-reference-candidate.md) records actual SeSAMe technical and synthetic limma passes, the release probe-inventory difference and failed missMethyl invocation. Receive the isolated R-stage results only after actual checks. Scientific sample/probe QC, institution, official device and N1 remain separate. No new port or HF compute.
+
+The second reference run [45387391083](https://github.com/edithatogo/rare-omics-atlas/actions/runs/45387391083) passed native technical and synthetic limma stages with no OOM but failed the native GO P.DE validity gate. See the existing [receipt](../../../research/qualification/t07-native-reference-candidate.md) for the exact result and diagnostic successor. Keep the gate and all raw failures; no cohort acceptance.

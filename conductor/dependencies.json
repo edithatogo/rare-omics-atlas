@@ -74,7 +74,7 @@
         "T01.institutional_classification",
         "T07.technical_preprocessing"
       ],
-      "scope": "Molecular subset, native controls, overlap/covariates and source eligibility"
+      "scope": "Molecular subset via versioned original-source decision replay; source-reported versus new classification distinguished; native controls, material participant/specimen independence, overlap/covariates, selected QC and source eligibility"
     },
     {
       "id": "T07.fork_baseline",

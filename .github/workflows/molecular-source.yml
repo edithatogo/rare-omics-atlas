@@ -1,0 +1,289 @@
+name: Molecular source qualification
+
+on:
+  pull_request:
+    paths:
+      - scripts/molecular_replay.py
+      - scripts/tests/test_molecular_replay.py
+      - .github/workflows/molecular-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-replay:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && (github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: '0.13.9'
+          enable-cache: false
+      - name: Prepare reference text extractor and pinned tools
+        run: |
+          set -euo pipefail
+          if ! command -v pdftotext >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends poppler-utils
+          fi
+          pdftotext -v
+          uv sync --project tools/hf-release --frozen --python 3.15.2
+          rustup toolchain install 1.95.0 --profile minimal
+      - name: Verify originals and replay source decisions (aggregate only)
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief' \
+            -o "$work/source.soft"
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc1.pdf' -o "$work/mmc1.pdf"
+          uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/molecular_replay.py \
+            --geo "$work/source.soft" --supplement "$work/mmc1.pdf" --out "$work/review"
+          status=0
+          cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml \
+            --bin sample-contract -- --input "$work/review/declared-samples.json" > "$work/structural.json" || status=$?
+          test "$status" -eq 2
+          python3 - "$work/structural.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          report = json.loads(Path(sys.argv[1]).read_text())
+          assert report["summary"] == {"held": 22, "excluded": 0, "ready_for_review": 0}
+          assert report["analysis_admitted"] is False
+          assert report["independent_participant_count"] is None
+          print(json.dumps({"structural_exit": 2, "summary": report["summary"], "analysis_admitted": False}))
+          PY
+      - name: Inspect verified control provenance (aggregate-only source review)
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc2.xlsx' -o "$work/mmc2.xlsx"
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief' -o "$work/source.soft"
+          uv run --no-project --python 3.12.12 --with openpyxl==3.1.5 --with et-xmlfile==2.0.0 --with numpy==2.2.6 python - "$work" <<'PY'
+          import collections
+          import hashlib
+          import json
+          import re
+          import sys
+          from pathlib import Path
+          import openpyxl
+
+          work = Path(sys.argv[1])
+          workbook = work / "mmc2.xlsx"
+          raw = workbook.read_bytes()
+          assert hashlib.sha256(raw).hexdigest() == "cf50f0b1c733aeed612dfc5756bdf6e2d712ebcb5cf4635746ddd398180204a1"
+          geo = (work / "source.soft").read_bytes()
+          assert hashlib.sha256(geo).hexdigest() == "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf"
+          records = re.split(r"(?=^\^SAMPLE = )", "\n".join(geo.decode().splitlines()), flags=re.M)[1:]
+          labels = set()
+          for record in records:
+              if re.search(r"^!Sample_characteristics_ch1 = sample type: Control for KMT2D LOF discovery cohort\s*$", record, re.M):
+                  fields = re.findall(r"^!Sample_description = (.+)$", record, re.M)
+                  assert len(fields) == 1
+                  labels.add(fields[0].strip())
+          assert len(labels) == 11
+          book = openpyxl.load_workbook(workbook, read_only=True, data_only=True, keep_links=False)
+          # Do not emit any source labels, patient rows or clinical fields.
+          def norm(value):
+              return " ".join(str(value).split()) if value is not None else ""
+          aliases = {
+              "simons_simplex": {"ssc", "simons simplex collection", "simons simplex"},
+              "sickkids": {"hsc", "sickkids", "hospital for sick children", "the hospital for sick children", "sick kids"},
+              "michigan": {"um", "u of m", "university of michigan", "u michigan", "umich", "michigan"},
+          }
+          reports = []
+          for sheet in book:
+              hits = collections.defaultdict(list)
+              hit_cols = collections.Counter()
+              source_categories = collections.Counter()
+              family_header = False
+              specimen_header = False
+              row_count = 0
+              for values in sheet.iter_rows(values_only=True):
+                  cells = [norm(value) for value in values]
+                  if not any(cells):
+                      continue
+                  row_count += 1
+                  if row_count <= 5:
+                      family_header |= any(re.fullmatch(r"(family|pedigree|kindred)( id| identifier| number)?", s.lower()) is not None for s in cells)
+                      specimen_header |= any(re.fullmatch(r"(specimen|donor|participant)( id| identifier| number)?", s.lower()) is not None for s in cells)
+                  matches = [(i, c) for i, c in enumerate(cells) if c in labels]
+                  if not matches:
+                      continue
+                  categories = {cat for cat, names in aliases.items() if any(c.lower() in names for c in cells)}
+                  for i, label in matches:
+                      hits[label].append(categories)
+                      hit_cols[i + 1] += 1
+              for occurrences in hits.values():
+                  if len(occurrences) == 1 and len(occurrences[0]) == 1:
+                      source_categories[next(iter(occurrences[0]))] += 1
+              # Table numbering is public; arbitrary sheet names and all rows remain local.
+              match = re.search(r"(?i)\bS\s*(\d{1,2})\b", sheet.title)
+              reports.append({
+                  "worksheet_index": len(reports) + 1,
+                  "table_number_if_labelled": int(match.group(1)) if match else None,
+                  "nonempty_rows": row_count,
+                  "distinct_exact_control_label_matches": len(hits),
+                  "unique_row_matches": sum(len(v) == 1 for v in hits.values()),
+                  "matching_column_counts": dict(sorted(hit_cols.items())),
+                  "unambiguous_source_category_matches": dict(source_categories),
+                  "family_header_observed": family_header,
+                  "specimen_header_observed": specimen_header,
+              })
+
+          # Source-specific second-stage inspection: the prior run found all 11
+          # exact control labels uniquely in column 1 of worksheet 3.
+          import numpy as np
+          sheet = book.worksheets[2]
+          rows = [[norm(v) for v in row] for row in sheet.iter_rows(values_only=True)]
+          rows = [row for row in rows if any(row)]
+          matched = [row for row in rows if row[0] in labels]
+          assert len(matched) == 11 and len({row[0] for row in matched}) == 11
+          # Report only generic header labels and aggregate values. Never print
+          # source pseudonyms, participant IDs or any individual row.
+          header_fields = {}
+          for row in rows[:5]:
+              for col, val in enumerate(row):
+                  if re.fullmatch(r"(?i)[a-z][a-z \-/()._]{0,55}", val) and re.search(
+                      r"(?i)\b(sample|control|source|collection|cohort|institution|site|age|sex|gender|ethnicity|ancestry|family|specimen|donor|participant|individual|origin|recruitment|race)\b", val
+                  ):
+                      header_fields.setdefault(col, val)
+          source_cols = [i for i, value in header_fields.items() if re.search(
+              r"(?i)\b(source|collection|institution|site|origin|recruitment)\b", value)]
+          source_counts = collections.Counter()
+          unresolved_source = 0
+          category_regex = {
+              "simons_simplex": r"(?i)\b(simons|ssc|sfari)\b",
+              "sickkids": r"(?i)\b(sickkids|sick kids|hospital for sick children|hsc)\b",
+              "michigan": r"(?i)\b(university of michigan|u\s*of\s*m|umich|michigan|hanna)\b",
+          }
+          for row in matched:
+              fields = [row[i] for i in source_cols if i < len(row)]
+              categories = {cat for cat, pattern in category_regex.items()
+                            if any(re.search(pattern, value) for value in fields)}
+              if len(categories) == 1:
+                  source_counts[next(iter(categories))] += 1
+              else:
+                  unresolved_source += 1
+          identity_summary = {}
+          for field, pattern in {
+              "participant": r"(?i)\b(donor|participant|individual)\b",
+              "specimen": r"(?i)\b(specimen)\b",
+              "family": r"(?i)\b(family|pedigree|kindred)\b",
+          }.items():
+              candidates = [i for i, value in header_fields.items() if re.search(pattern,value)]
+              identity_summary[field] = [
+                  {"column": i+1, "nonempty": sum(bool(row[i]) for row in matched),
+                   "distinct_nonempty": len({row[i] for row in matched if row[i]})}
+                  for i in candidates if all(i < len(row) for row in matched)
+              ]
+          print(json.dumps({"worksheet_index": 3, "exact_control_matches": len(matched),
+              "recognized_header_fields": {str(i+1): v for i,v in header_fields.items()},
+              "source_field_columns": [i+1 for i in source_cols],
+              "explicit_source_categories": dict(source_counts),
+              "unresolved_source_count": unresolved_source,
+              "source_origin_join_verified": False,
+              "identity_field_coverage": identity_summary,
+              "biological_independence_verified": False}, sort_keys=True))
+
+          # With observed workbook columns 1/2/3, compare only source-stated
+          # sex and numeric age values; age unit is not inferred from a bare header.
+          assert header_fields.get(0) == "Sample ID" and header_fields.get(1) == "Sex" and header_fields.get(2) == "Age"
+          source_metadata = {}
+          for record in records:
+              group = re.findall(r"^!Sample_characteristics_ch1 = sample type: (.+)$", record, re.M)
+              if group != ["Control for KMT2D LOF discovery cohort"]:
+                  continue
+              label = re.findall(r"^!Sample_description = (.+)$", record, re.M)
+              age = re.findall(r"^!Sample_characteristics_ch1 = age \(years\): (.+)$", record, re.M)
+              sex = re.findall(r"^!Sample_characteristics_ch1 = gender: (.+)$", record, re.M)
+              assert len(label)==len(age)==len(sex)==1
+              assert label[0].strip() not in source_metadata
+              source_metadata[label[0].strip()] = (float(age[0]),sex[0].strip().lower())
+          assert set(source_metadata)==labels
+          sex_aliases = {"m":"male","male":"male","f":"female","female":"female"}
+          sex_matches = age_matches = age_comparable = sex_comparable = 0
+          for row in matched:
+              a,s = source_metadata[row[0]]
+              sex = sex_aliases.get(row[1].lower())
+              if sex is not None:
+                  sex_comparable += 1
+                  sex_matches += int(sex==s)
+              try:
+                  table_age = float(row[2])
+              except ValueError:
+                  continue
+              if np.isfinite(table_age):
+                  age_comparable += 1
+                  age_matches += int(abs(table_age-a)<1e-8)
+          print(json.dumps({"control_covariate_crosscheck_only":True,
+              "exact_control_matches":11,"sex_comparable":sex_comparable,
+              "sex_matches":sex_matches,"numeric_age_comparable":age_comparable,
+              "numeric_age_matches":age_matches,"workbook_age_unit_inferred":False,
+              "source_origin_join_verified":False,"independence_verified":False,
+              "analysis_admitted":False},sort_keys=True))
+
+          # Outcome-blind design sensitivity, using only explicitly labelled
+          # source ages, sexes and array serial/position keys.
+          metadata = []
+          for record in records:
+              group = re.findall(r"^!Sample_characteristics_ch1 = sample type: (.+)$", record, re.M)
+              if group not in (["KMT2D LOF discovery cohort"], ["Control for KMT2D LOF discovery cohort"]):
+                  continue
+              age = re.findall(r"^!Sample_characteristics_ch1 = age \(years\): (.+)$", record, re.M)
+              sex = re.findall(r"^!Sample_characteristics_ch1 = gender: (.+)$", record, re.M)
+              files = re.findall(r"^!Sample_supplementary_file = (.+)$", record, re.M)
+              keys = [re.search(r"_(\d+)_R\d+C\d+_(?:Grn|Red)\.idat\.gz$", v.strip()) for v in files]
+              assert len(age) == len(sex) == 1 and len(keys) == 2 and all(keys)
+              assert keys[0].group(1) == keys[1].group(1)
+              gender = sex[0].strip().lower()
+              assert gender in ("male","female")
+              metadata.append((int(group[0]=="KMT2D LOF discovery cohort"),float(age[0]),int(gender=="female"),keys[0].group(1)))
+          assert len(metadata)==22 and sum(row[0] for row in metadata)==11
+          def design_result(records, chip=True):
+              group = np.array([row[0] for row in records],dtype=float)
+              age = np.array([row[1] for row in records],dtype=float)
+              sex = np.array([row[2] for row in records],dtype=float)
+              chips = sorted({row[3] for row in records})
+              columns = [np.ones(len(records)), group, age-age.mean(), sex]
+              if chip:
+                  columns += [np.array([row[3]==ch for row in records],dtype=float) for ch in chips[1:]]
+              X = np.column_stack(columns)
+              rank = int(np.linalg.matrix_rank(X,tol=1e-10))
+              reduced_rank = int(np.linalg.matrix_rank(np.delete(X,1,axis=1),tol=1e-10))
+              return {"n":len(records),"cases":int(group.sum()),"columns":X.shape[1],
+                      "rank":rank,"case_estimable":rank>reduced_rank,
+                      "residual_df":len(records)-rank,
+                      "case_variance_factor":float(np.linalg.inv(X.T@X)[1,1]) if rank==X.shape[1] else None}
+          shared = {row[3] for row in metadata if row[0]==1} & {row[3] for row in metadata if row[0]==0}
+          full = design_result(metadata)
+          basic = design_result(metadata,chip=False)
+          mixed = design_result([row for row in metadata if row[3] in shared])
+          loo = [design_result(metadata[:i]+metadata[i+1:]) for i in range(len(metadata))]
+          factors = [v["case_variance_factor"] for v in loo if v["case_variance_factor"] is not None]
+          print(json.dumps({"metadata_design_only": True,"numpy_version":np.__version__,
+              "python_version":sys.version.split()[0],"rank_tolerance":1e-10,
+              "unadjusted_for_chip":basic,"chip_adjusted":full,"mixed_chips_only":mixed,
+              "leave_one_assay_out":{"runs":len(loo),"case_estimable":sum(v["case_estimable"] for v in loo),
+                   "full_rank":sum(v["rank"]==v["columns"] for v in loo),
+                   "minimum_residual_df":min(v["residual_df"] for v in loo),
+                   "maximum_case_variance_factor":max(factors) if factors else None},
+              "independence_verified":False,"post_qc":False,"analysis_admitted":False},sort_keys=True))
+          book.close()
+          print(json.dumps({"control_workbook_verified": True, "workbook_sha256": hashlib.sha256(raw).hexdigest(),
+                            "openpyxl_version": openpyxl.__version__, "selected_native_controls": len(labels),
+                            "worksheets": reports, "control_origin_join_verified": False,
+                            "independence_verified": False, "analysis_admitted": False}, sort_keys=True))
+          PY
