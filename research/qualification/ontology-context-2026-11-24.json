@@ -1,5 +1,5 @@
 {
-  "scope": "Qualified reference source bytes and bounded public catalogue context; native Reactome consumer implemented but current combined execution pending; no participant assignment or scientific admission",
+  "scope": "Qualified reference source bytes, accepted bounded public catalogue context and native synthetic Reactome receiver; no participant assignment, clinical pathway-family freeze or scientific admission",
   "ontologies": [
     {
       "source": "uberon",
@@ -142,7 +142,7 @@
       "TAS": 124950,
       "IEA": 32464
     },
-    "native_consumer_execution": "Initial hosted attempt failed in technical annotation loading before limma/enrichment. Combined hg38 QC repair and Reactome candidate is based on 9480311be20d51962ed9ce41684bf0bb56440f95; current native execution pending, no Reactome result received."
+    "native_consumer_execution": "Passed in native run 45413616413 on exact tested merge adc790ecb6d7451140f3e494314ead7d4f2b56dc; artifact independently reviewed. Raw native probability-domain acceptance remains false; only the bounded zero-integer-count receiver is accepted."
   },
   "schema_version": 1,
   "review_date": "2026-11-24",
@@ -181,12 +181,12 @@
     "rust_targeted_tests": "passed: 5 grouped ontology consumer tests",
     "rust_clippy": "passed: all targets, all features, warnings denied",
     "source_term_and_hash_review": "passed: every used term active and label matched in pinned source; all downloaded file hashes rechecked",
-    "full_strict": "Prior candidate passed 34/34 in 149.851 seconds; current combined candidate pending fresh qualification",
-    "native_reactome": "Not reached in initial failed hosted attempt; current combined native run pending",
-    "hosted": "Prior hosted strict failed one history finding and native technical stage failed before enrichment; current combined hosted checks pending",
-    "independent_review": "passed: independent Rust semantic/input-hash replay and native Reactome source/code consistency review; neither substitutes for native R execution",
+    "full_strict": "passed: combined local installed hook 34/34 in 54.331 seconds and hosted installed-hook replay 34/34 in 258.744 seconds; exact matching source digest",
+    "native_reactome": "passed: bounded synthetic receiver and independent artifact checks; raw native probability domain failed and remains recorded",
+    "hosted": "passed: strict, privacy, dependency review, Codecov patch and native reference on exact current-base PR23; receiving-main strict run 45417852753 subsequently completed successfully on merge 92639afe9b219e2814bbedf4faffa9e2b3bb882f",
+    "independent_review": "passed: independent catalogue semantic/input-hash review, native artifact family/IDs/N/DE/raw-positive-count preservation/full-family BH review, and separate source/QC review; native per-gene vectors are runtime assertions rather than separately exported inputs. Earlier source/QC review established historical export/count concordance only; the later control-label defect leaves intended negative-control backgrounds unqualified.",
     "rust_patch_coverage": "passed: branch-aware diff-cover 100%, 263 changed production lines, none missing",
-    "native_hook": "Prior candidate actual installed-hook commit passed 34/34 in 32.710 seconds; current combined candidate pending fresh hook"
+    "native_hook": "passed: actual local commit b37eaf54d81632552460624bc375428a850fdacf and hosted replay; tree identity verified"
   },
   "current_code_sha256": {
     "scripts/tests/qualify_reference.R": "e961009556ee083de013e041dc7ab57fb844ab968768d9e18b57cbccc0f52c23",
@@ -218,7 +218,7 @@
       "status": "failed",
       "history_findings": 1,
       "subsequent_current_ref_scan_findings": 0,
-      "causal_interpretation": "Association with an outdated PR22 prose head present in fetched history is an inference, not a proven cause. The failed run remains failed; the current combined candidate requires a fresh hosted history scan.",
+      "causal_interpretation": "Association with an outdated PR22 prose head present in fetched history is an inference, not a proven cause. The failed run remains failed. The later combined hosted history scan passed over 59 commits with zero findings and no waiver.",
       "scanner_waiver_added": false
     },
     "prior_native": {
@@ -240,18 +240,369 @@
       "native_run_id": 45410579769,
       "native_status_at_merge": "in_progress",
       "merge_preceded_native_completion": true,
-      "interpretation": "Merged source includes the native hg38 QC repair; merge does not supply missing native acceptance. Preserve the ordering gap and receive actual current combined execution."
+      "interpretation": "Merged source includes the native hg38 denominator change. Historical execution and fixed-denominator audit are recorded, but later malformed control labels leave intended negative-control backgrounds unqualified pending corrected replay. Preserve the merge-before-native-completion ordering gap.",
+      "post_merge_native": {
+        "status": "passed",
+        "finished_at_utc": "2026-11-24T14:25:37.738Z",
+        "artifact_id": 14931035812,
+        "artifact_sha256": "8aff87ff3565a2f65ccee07599f12f9b47708a87e023a32d8ba284757f6c9c9b",
+        "artifact_bytes": 1420961,
+        "ordering_gap_preserved": true
+      }
     },
     "current_combined_candidate": {
       "base_commit": "9480311be20d51962ed9ce41684bf0bb56440f95",
-      "integration": "Ontology and Reactome changes replayed without textual conflict onto actual merged PR22 source; both technical repair and enrichment extension retained.",
-      "strict_status": "pending",
-      "installed_hook_status": "pending",
-      "hosted_status": "pending",
-      "native_status": "pending",
-      "reactome_result_received": false,
+      "integration": "Ontology and Reactome changes replayed without textual conflict onto actual merged PR22 source; the legacy-route denominator change and independent synthetic enrichment extension are retained. Intended negative-control backgrounds remain unqualified after the later control-label finding.",
+      "strict_status": "passed",
+      "installed_hook_status": "passed",
+      "hosted_status": "passed",
+      "native_status": "passed",
+      "reactome_result_received": true,
       "scientific_admitted": false,
-      "official_owner_device_accepted": false
+      "official_owner_device_accepted": false,
+      "status": "merged_after_required_pr_checks_and_independent_artifact_review",
+      "pr_url": "https://github.com/edithatogo/rare-omics-atlas/pull/23",
+      "head_commit": "be9aaaac189a21c87b8ec646b1b308c558b9f2da",
+      "tested_merge_commit": "adc790ecb6d7451140f3e494314ead7d4f2b56dc",
+      "tested_and_merged_tree": "8c9feacf04c3277338dea7835a6f6d70dfd76f27",
+      "local_hook_commit": "b37eaf54d81632552460624bc375428a850fdacf",
+      "source_tree_sha256": "e4619c9083d63e5e1bfd95411a5f30ba3561c001d62a2b5437c5c770139701de",
+      "merge_commit": "92639afe9b219e2814bbedf4faffa9e2b3bb882f",
+      "tested_local_api_merged_tree_equal": true,
+      "local_hook": {
+        "checks": 34,
+        "elapsed_seconds": 54.331,
+        "source_tree_sha256": "e4619c9083d63e5e1bfd95411a5f30ba3561c001d62a2b5437c5c770139701de"
+      },
+      "hosted_strict": {
+        "run_id": 45413616626,
+        "job_id": 138513759659,
+        "status": "passed",
+        "checks": 34,
+        "elapsed_seconds": 258.744,
+        "source_tree_sha256": "e4619c9083d63e5e1bfd95411a5f30ba3561c001d62a2b5437c5c770139701de",
+        "artifact_id": 14932621724,
+        "artifact_sha256": "fcc1b4c6bb489aa72bfd682fb0ea0c401bfec8a42241a5e9f5ac50b5065ca987",
+        "artifact_bytes": 247897,
+        "zip_crc_pass": true,
+        "history_scanned_commits": 59,
+        "history_findings": 0,
+        "changed_production_line_coverage_percent": 100,
+        "changed_production_lines": 263,
+        "uncovered_changed_production_lines": 0
+      },
+      "additional_hosted_checks": {
+        "privacy": {
+          "job_id": 138513760099,
+          "status": "passed"
+        },
+        "dependency_review": {
+          "job_id": 138513760212,
+          "status": "passed"
+        },
+        "codecov_patch": {
+          "check_run_id": 138521221974,
+          "status": "passed"
+        }
+      },
+      "merged_main": {
+        "commit": "92639afe9b219e2814bbedf4faffa9e2b3bb882f",
+        "strict_run_id": 45417852753,
+        "status": "passed",
+        "url": "https://github.com/edithatogo/rare-omics-atlas/actions/runs/45417852753",
+        "conclusion": "success",
+        "run_updated_at_utc": "2026-11-24T14:53:50Z"
+      }
+    }
+  },
+  "acceptance_date": "2026-11-25",
+  "acceptance_date_context": "Australia/Brisbane; hosted runs occurred 24 November UTC",
+  "native_result": {
+    "run_id": 45413616413,
+    "job_id": 138513757775,
+    "url": "https://github.com/edithatogo/rare-omics-atlas/actions/runs/45413616413",
+    "status": "passed",
+    "source_revision": "adc790ecb6d7451140f3e494314ead7d4f2b56dc",
+    "artifact": {
+      "id": 14933475463,
+      "size_in_bytes": 1491415,
+      "download_sha256": "25d363ddf2f4dac17bf306d5d0d46f1fc8bb5d7f044d13b8179e4ae63a08638a",
+      "zip_crc_pass": true,
+      "members": [
+        "container-state.json",
+        "disposition.txt",
+        "container.txt",
+        "enrichment-diagnostics.tsv",
+        "enrichment-invalid-terms.tsv",
+        "enrichment-mapping.tsv",
+        "enrichment-raw.tsv",
+        "enrichment-received.tsv",
+        "enrichment-summary.tsv",
+        "installed-packages.tsv",
+        "enrichment-session-info.txt",
+        "limma-disposition.txt",
+        "limma-session-info.txt",
+        "limma-summary.tsv",
+        "reactome-family.tsv",
+        "reactome-evidence.tsv",
+        "reactome-raw.tsv",
+        "reactome-received.tsv",
+        "reactome-source.json",
+        "reactome-summary.tsv",
+        "reactome-zero-boundary.tsv",
+        "reference-objects.tsv",
+        "repositories.tsv",
+        "resource-limit.txt",
+        "source-revision.txt",
+        "technical-cohort-qc-controls.tsv",
+        "technical-cohort-qc-denominator.tsv",
+        "technical-cohort-qc-denominator.txt",
+        "technical-cohort-qc-disposition.txt",
+        "technical-cohort-qc-exclusions.tsv",
+        "technical-cohort-qc-mask-names.txt",
+        "technical-cohort-qc-native-panel.tsv",
+        "technical-disposition.txt",
+        "technical-session-info.txt",
+        "technical-summary.tsv"
+      ]
+    },
+    "container": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-24T14:24:52.611222313Z",
+      "FinishedAt": "2026-11-24T14:42:45.672930463Z"
+    },
+    "reactome": {
+      "rows": 2178,
+      "raw_invalid_p": 692,
+      "raw_p_below_zero": 0,
+      "raw_p_above_one": 692,
+      "raw_min_p": 0.010273962201153515,
+      "raw_max_p": 1.0000000000000042,
+      "received_min_p": 0.010273962201153515,
+      "received_max_p": 1.0,
+      "native_zero_integer_rows": 1541,
+      "changed_p": 1394,
+      "changed_positive_count_p": 0,
+      "max_absolute_correction": 4.218847493575595e-15,
+      "raw_full_family_BH_error": 0.0,
+      "received_full_family_BH_error": 0.0,
+      "max_exported_FDR_change": 0.0,
+      "changed_005_decisions": 0,
+      "raw_sha256": "402befe6afdf44a4d52218434f888c83aa53ec8f2584f1909e28516e343e8d9c",
+      "received_sha256": "3c99410fb208c08cc3eeb85fbd37b1385042518cfbf1b399121ab35fe5e88dd5",
+      "zero_boundary": {
+        "rows": 1541,
+        "fractional_overlap_zero_rows": 1469,
+        "fractional_overlap_positive_below_one_rows": 72,
+        "max_fractional_overlap": 0.5,
+        "min_odds": 0.6617533548171911,
+        "max_odds": 1.6273983602459927,
+        "all_native_integer_overlap_zero": true,
+        "all_reported_direct_upper_tails_exactly_one": true
+      },
+      "family": {
+        "numeric_source_pathways": 2861,
+        "tested_pathways": 2178,
+        "no_gene_in_tested_universe_pathways": 683,
+        "source_cardinality_independently_recomputed_for_all_pathways": true,
+        "raw_received_family_and_eligible_N_exact": true
+      }
+    },
+    "native_mapping_summary": {
+      "tested_CpGs": "4000",
+      "selected_CpGs": "200",
+      "source_human_rows": "157638",
+      "excluded_nonnumeric_rows": "224",
+      "unique_numeric_gene_pathway_pairs": "140535",
+      "source_pathways": "2861",
+      "empty_universe_pathways": "683",
+      "tested_pathways": "2178",
+      "native_universe_genes": "2906",
+      "native_genes_in_reactome": "1705",
+      "native_selected_genes_in_reactome": "118",
+      "raw_invalid_p": "692",
+      "zero_count_rows": "1541",
+      "corrected_p": "1394",
+      "max_absolute_correction": "4.2188474935755949e-15",
+      "max_BH_error": "0",
+      "changed_significance": "0"
+    },
+    "evidence_pairs": {
+      "TAS": 108071,
+      "IEA+TAS": 16879,
+      "IEA": 15585
+    },
+    "GO_regression": {
+      "rows": 13817,
+      "raw_invalid_p": 4253,
+      "raw_p_below_zero": 0,
+      "raw_p_above_one": 4253,
+      "raw_min_p": 0.00011504102442018376,
+      "raw_max_p": 1.0000000000000113,
+      "received_min_p": 0.00011504102442018376,
+      "received_max_p": 1.0,
+      "native_zero_integer_rows": 9591,
+      "changed_p": 8704,
+      "changed_positive_count_p": 0,
+      "max_absolute_correction": 1.1324274851176597e-14,
+      "raw_full_family_BH_error": 0.0,
+      "received_full_family_BH_error": 0.0,
+      "max_exported_FDR_change": 0.0,
+      "changed_005_decisions": 0,
+      "raw_sha256": "9166dd31660b1e852276d80bea883d8414afcfd013f37d2c0ec08c6b81718c99",
+      "received_sha256": "8a3adbe6437980a24d360351aee214ffa9b970e49fb744276b166b492e73c3df",
+      "historical_GO_output_bytes_exact": true
+    },
+    "disposition": {
+      "scope": "native_release_technical_and_synthetic",
+      "limma_synthetic_pass": "true",
+      "missMethyl_synthetic_zero_count_receiver_pass": "true",
+      "missMethyl_native_probability_domain_pass": "false",
+      "reactome_synthetic_zero_count_receiver_pass": "true",
+      "reactome_native_probability_domain_pass": "false",
+      "full_cross_version_preprocessing_parity_claimed": "false",
+      "clinical_cohort_qc": "false",
+      "owner_device_qualified": "false",
+      "institutional_determination": "false",
+      "scientific_admitted": "false"
+    },
+    "expected_package_versions_verified": {
+      "BiasedUrn": "2.0.12",
+      "GO.db": "3.22.0",
+      "IlluminaHumanMethylation450kanno.ilmn12.hg19": "0.6.1",
+      "limma": "3.66.0",
+      "minfi": "1.56.0",
+      "missMethyl": "1.44.0",
+      "org.Hs.eg.db": "3.22.0",
+      "sesame": "1.28.1",
+      "sesameData": "1.28.0"
+    },
+    "technical_qc": {
+      "denominator": {
+        "manifest_probes": "486427",
+        "cg_probes": "482421",
+        "cg_without_annotation": "32",
+        "nonautosomal_or_missing_coordinate": "11562",
+        "static_recommended_exclusions": "61861",
+        "fixed_denominator": "408966",
+        "valid": "366308",
+        "finite_M": "366308",
+        "valid_fraction": "0.89569304049725407",
+        "candidate_95pct_met": "0",
+        "coordinate_build": "hg38",
+        "denominator_sha256": "1d413041ee2bee0666b42ccb0a50c5180a305a4684f1327559796ec67e5f2366",
+        "annotation_rds_sha256": "1f0cfe59556ebc3b3bce92be7c55256fe61cf4048a8182086b34d1ff5b898779"
+      },
+      "exclusions": [
+        {
+          "reason": "bead_or_missing_address",
+          "marginal": "292",
+          "exclusive": "292"
+        },
+        {
+          "reason": "detection_missing",
+          "marginal": "0",
+          "exclusive": "0"
+        },
+        {
+          "reason": "detection_above_threshold",
+          "marginal": "42410",
+          "exclusive": "42366"
+        },
+        {
+          "reason": "processing_mask",
+          "marginal": "42658",
+          "exclusive": "0"
+        },
+        {
+          "reason": "beta_missing_or_nonfinite",
+          "marginal": "0",
+          "exclusive": "0"
+        },
+        {
+          "reason": "beta_endpoint",
+          "marginal": "0",
+          "exclusive": "0"
+        },
+        {
+          "reason": "valid",
+          "marginal": "366308",
+          "exclusive": "366308"
+        }
+      ],
+      "candidate_95pct_met": false,
+      "candidate_threshold_validated_for_clinical_use": false,
+      "control_acceptance_ranges_validated": false,
+      "clinical_cohort_qc": false,
+      "all_seven_qc_exports_byte_identical_to_pr22": true,
+      "qualification_status": "historical_legacy_route_execution_and_fixed_denominator_audit_only",
+      "historical_exported_control_rows": 848,
+      "canonical_control_labels_qualified": false,
+      "intended_negative_control_backgrounds_qualified": false,
+      "corrected_route_replay_received": false,
+      "control_label_defect": {
+        "observed_artifacts": [
+          "PR22 native run 45410579769 technical-cohort-qc-controls.tsv",
+          "PR23 native run 45413616413 technical-cohort-qc-controls.tsv"
+        ],
+        "control_table_sha256": "86b22d86cfc0adb5f660c0034d1ae28374b1d43f21819b3a6e99555aa6d7c33a",
+        "observed_numeric_Type_rows": 848,
+        "observed_Type_min": 3,
+        "observed_Type_max": 58,
+        "historical_negControls_raw3_row_count_separately_exported": false,
+        "source_version": "SeSAMe 1.28.1",
+        "source_commit": "3fa12279a56279c9edf3a82fa9b646fb0e3abaef",
+        "source_diagnosis": "readIDAT1 emits G/R/GN/RN; deprecated readControls applies obsolete positional names, placing red bead count RN in type. controls() prioritises this malformed legacy attribute. negControls searches probe ID then control type; pOOBAH and noob default to combining negative controls with out-of-band signals. This pinned-source diagnosis is distinct from a separately exported historical runtime row count.",
+        "source_urls": [
+          "https://github.com/bioc/sesame/blob/3fa12279a56279c9edf3a82fa9b646fb0e3abaef/R/sesame.R",
+          "https://github.com/bioc/sesame/blob/3fa12279a56279c9edf3a82fa9b646fb0e3abaef/R/SigDFMethods.R",
+          "https://github.com/bioc/sesame/blob/3fa12279a56279c9edf3a82fa9b646fb0e3abaef/R/detection.R",
+          "https://github.com/bioc/sesame/blob/3fa12279a56279c9edf3a82fa9b646fb0e3abaef/R/background.R"
+        ],
+        "proposed_correction_pr": "https://github.com/edithatogo/rare-omics-atlas/pull/24",
+        "corrected_route_status": "pending_exact_source_native_replay_and_review",
+        "scientific_effect": "Intended negative-control backgrounds remain unqualified; historical execution, denominator/counts and independently accepted ontology/synthetic consumers remain recorded."
+      }
+    },
+    "limma": {
+      "features": "128",
+      "samples": "12",
+      "missing_values": "1",
+      "design_rank": "4",
+      "max_OLS_error": "0",
+      "max_p_error": "3.33066907387547e-16",
+      "max_BH_error": "4.44089209850063e-16",
+      "max_CI_lower_error": "0",
+      "max_CI_upper_error": "0"
+    },
+    "limma_rounding_delta_from_pr22": {
+      "previous_max_BH_error": 4.9960036108132e-16,
+      "current_max_BH_error": 4.44089209850063e-16,
+      "absolute_change": 5.551115123125704e-17,
+      "all_other_summary_metrics_equal": true
+    },
+    "independent_review_scope": "Independent source counts, source-set cardinalities, result family, zero-boundary export validation, raw/received domains and complete BH, unchanged positive-count p, GO byte regression. Native per-gene mapping and all positive fractional overlaps are not separately exported and are checked by assertions in the pinned R execution.",
+    "review_receipt_sha256": {
+      "independent-review.json": "d24af94a5e6a1ec681c521f80a7af38d06dcf3cbacd05806371fd12700ddcc5f",
+      "root-independent-review.json": "d2287b82761ce0bb2539846db791198ee34835780381c486f95f1d1accc942a6",
+      "source-qc-review.json": "9cce430f87fb55989df2bbbc58f04033fbc3a0423ae07ee0455a0684111be208"
+    },
+    "synthetic_scope_preservation": {
+      "reviewed_pr24_head": "3d4cceaf2b8e4f0c5ca4a1a96f50532efd3e5c8c",
+      "limma_enrichment_suffix_start": "if (stage==\"limma\")",
+      "limma_enrichment_suffix_bytes": 21651,
+      "limma_enrichment_suffix_sha256": "74ad323568c82f4469b342c69f53ea4b86d61b2029c57802ead8792c12c8adc0",
+      "suffix_byte_identical_between_pr23_and_reviewed_pr24": true,
+      "historical_4000_tested_200_selected_cpg_input_unchanged": true,
+      "interpretation": "Bounded ontology and synthetic limma/GO/Reactome acceptance remains valid; this does not qualify the proposed corrected technical route or its intended negative-control backgrounds."
     }
   }
 }
