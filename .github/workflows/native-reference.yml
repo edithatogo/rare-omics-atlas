@@ -1,0 +1,71 @@
+name: Native reference method qualification
+
+on:
+  pull_request:
+    paths:
+      - scripts/tests/qualify_reference.R
+      - .github/workflows/native-reference.yml
+      - research/qualification/t07-native-reference-candidate.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reference:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && (github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      REFERENCE_IMAGE: bioconductor/bioconductor_docker@sha256:67ab741591c5cd068f8993ca5f0371794c300da9cc5e0b3b2c1c90c9058e4c6f
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify unrelated technical fixture against existing input pins
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/atlas-reference-input" artifacts/reference-qualification
+          python3 - "$RUNNER_TEMP/atlas-reference-input" <<'PY'
+          import hashlib
+          import json
+          import sys
+          import urllib.request
+          from pathlib import Path
+          dest = Path(sys.argv[1])
+          pins = json.loads(Path("research/contracts/sesame-hm450-raw-q-v1.json").read_text())["inputs"]
+          keys = (
+              "idats/HM450/3999492009_R01C01_Grn.idat",
+              "idats/HM450/3999492009_R01C01_Red.idat",
+              "assets/HM450/HM450.ordering.tsv.gz",
+          )
+          for name in keys:
+              pin = pins[name]
+              with urllib.request.urlopen(pin["url"], timeout=120) as response:
+                  payload = response.read()
+              assert len(payload) == pin["bytes"]
+              assert hashlib.sha256(payload).hexdigest() == pin["sha256"]
+              (dest / Path(name).name).write_bytes(payload)
+              print(name, len(payload), pin["sha256"])
+          PY
+          printf '%s\n' "$GITHUB_SHA" > artifacts/reference-qualification/source-revision.txt
+      - name: Execute installed reference package route on unrelated technical and synthetic inputs
+        run: |
+          set -euo pipefail
+          docker pull "$REFERENCE_IMAGE"
+          docker image inspect "$REFERENCE_IMAGE" --format '{{.Id}} {{json .RepoDigests}}' \
+            > artifacts/reference-qualification/container.txt
+          docker run --rm --cpus=2 --memory=6g \
+            -e MAKEFLAGS=-j2 -e OPENBLAS_NUM_THREADS=1 -e OMP_NUM_THREADS=1 \
+            -v "$GITHUB_WORKSPACE/scripts/tests/qualify_reference.R:/qualification.R:ro" \
+            -v "$RUNNER_TEMP/atlas-reference-input:/input:ro" \
+            -v "$GITHUB_WORKSPACE/artifacts/reference-qualification:/output" \
+            "$REFERENCE_IMAGE" Rscript --vanilla /qualification.R /input /output
+      - name: Preserve aggregate technical evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: native-reference-${{ github.sha }}
+          path: artifacts/reference-qualification
+          if-no-files-found: error
+          retention-days: 14
