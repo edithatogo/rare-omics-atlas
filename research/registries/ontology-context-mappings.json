@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "UBERON",
+      "version": "2026-11-05",
+      "url": "https://github.com/obophenotype/uberon/releases/download/v2026-11-05/uberon.obo",
+      "sha256": "b25b9fdf585bb31ea381abd61188711866a5255690f16216718a90368979ea7a",
+      "license": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "id": "CL",
+      "version": "2026-11-13",
+      "url": "https://github.com/obophenotype/cell-ontology/releases/download/v2026-11-13/cl.obo",
+      "sha256": "f6c5911182da822693ac55e5cc3ca240301ac93e9a0b2494e87909705c852941",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "mappings": [
+    {
+      "source_label": "cell line: primary fibroblast cell line",
+      "source_id": "CL",
+      "term_id": "CL:0000057",
+      "term_label": "fibroblast",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader fibroblast cell context only. Primary culture, cell-line identity, passage and specimen provenance are not determined by this mapping."
+    },
+    {
+      "source_label": "cell type: Cortical Neuron",
+      "source_id": "CL",
+      "term_id": "CL:0010012",
+      "term_label": "cerebral cortex neuron",
+      "predicate": "skos:exactMatch",
+      "evidence": "Selected CL release lists cortical neuron as an EXACT synonym. Case normalization was reviewed in this explicit mapping; the consumer performs no fuzzy matching."
+    },
+    {
+      "source_label": "cell type: fibroblast",
+      "source_id": "CL",
+      "term_id": "CL:0000057",
+      "term_label": "fibroblast",
+      "predicate": "skos:exactMatch",
+      "evidence": "Atlas curation: source value matches the active preferred cell label. Preserve a source tissue field without changing the ontology target into an anatomical tissue."
+    },
+    {
+      "source_label": "cell type: human embryonic stem cell",
+      "source_id": "CL",
+      "term_id": "CL:0002322",
+      "term_label": "embryonic stem cell",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader embryonic stem-cell class, with the human qualifier retained from the source; no specific line, pluripotency assay or differentiation result is inferred."
+    },
+    {
+      "source_label": "cell type: iPSC",
+      "source_id": "CL",
+      "term_id": "CL:0002248",
+      "term_label": "pluripotent stem cell",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: induced pluripotent stem-cell context mapped only to its broader pluripotent class. Induction and culture state remain source qualifiers; this release has no selected exact iPSC class."
+    },
+    {
+      "source_label": "cell type: Neuronal Progenitor",
+      "source_id": "CL",
+      "term_id": "CL:0011020",
+      "term_label": "neural progenitor cell",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader neural progenitor context only; its definition includes multiple neural lineages. Neuronal restriction and differentiation state are not promoted to an exact equivalence."
+    },
+    {
+      "source_label": "cell type: Peripheral blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: peripheral blood is represented only by the broader blood context. Preserve the peripheral qualifier and the original source field, even when that field is named cell type. No constituent cell type is inferred."
+    },
+    {
+      "source_label": "cell type: peripheral blood leukocytes",
+      "source_id": "CL",
+      "term_id": "CL:0000738",
+      "term_label": "leukocyte",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader leukocyte class; sampling context is retained in the source label. Neither purified subtype nor leukocyte proportions are asserted."
+    },
+    {
+      "source_label": "tissue: Blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:exactMatch",
+      "evidence": "Atlas curation: source value matches the active preferred label after case normalization; original metadata field and value are retained."
+    },
+    {
+      "source_label": "tissue: cancer associated fibroblasts (CAF)",
+      "source_id": "CL",
+      "term_id": "CL:0000057",
+      "term_label": "fibroblast",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader fibroblast context only. Retain the original cancer-associated or non-malignant-associated qualifier; do not merge the experimental groups."
+    },
+    {
+      "source_label": "tissue: fibroblast",
+      "source_id": "CL",
+      "term_id": "CL:0000057",
+      "term_label": "fibroblast",
+      "predicate": "skos:exactMatch",
+      "evidence": "Atlas curation: source value matches the active preferred cell label. Preserve a source tissue field without changing the ontology target into an anatomical tissue."
+    },
+    {
+      "source_label": "tissue: infant blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: blood context only; the source age qualifier remains in the original label and is not converted into an age measurement."
+    },
+    {
+      "source_label": "tissue: non-malignant tissue associated fibroblasts (NAF)",
+      "source_id": "CL",
+      "term_id": "CL:0000057",
+      "term_label": "fibroblast",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: broader fibroblast context only. Retain the original cancer-associated or non-malignant-associated qualifier; do not merge the experimental groups."
+    },
+    {
+      "source_label": "tissue: peripheral blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:broadMatch",
+      "evidence": "Atlas curation: peripheral blood is represented only by the broader blood context. Preserve the peripheral qualifier and the original source field, even when that field is named cell type. No constituent cell type is inferred."
+    },
+    {
+      "source_label": "tissue: saliva",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0001836",
+      "term_label": "saliva",
+      "predicate": "skos:exactMatch",
+      "evidence": "Atlas curation: source value matches the active preferred label. No oral tissue or constituent cell population is inferred."
+    },
+    {
+      "source_label": "tissue: whole blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:relatedMatch",
+      "evidence": "Selected Uberon release explicitly lists whole blood as a RELATED synonym. Preserve that relation; this is not exact equivalence or a cell-composition measurement."
+    },
+    {
+      "source_label": "tissue: Whole blood",
+      "source_id": "UBERON",
+      "term_id": "UBERON:0000178",
+      "term_label": "blood",
+      "predicate": "skos:relatedMatch",
+      "evidence": "Selected Uberon release explicitly lists whole blood as a RELATED synonym. Preserve that relation; this is not exact equivalence or a cell-composition measurement."
+    }
+  ]
+}

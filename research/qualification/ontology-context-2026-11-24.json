@@ -1,0 +1,257 @@
+{
+  "scope": "Qualified reference source bytes and bounded public catalogue context; native Reactome consumer implemented but current combined execution pending; no participant assignment or scientific admission",
+  "ontologies": [
+    {
+      "source": "uberon",
+      "version": "releases/2026-11-05",
+      "url": "https://github.com/obophenotype/uberon/releases/download/v2026-11-05/uberon.obo",
+      "api_url": "https://api.github.com/repos/obophenotype/uberon/releases/tags/v2026-11-05",
+      "release_id": 435447581,
+      "published_at": "2026-11-05T16:39:10Z",
+      "tag_commit": "0a749cd233dc3f433514fe02770261c8804b2984",
+      "asset_id": 714043980,
+      "bytes": 22534892,
+      "sha256": "b25b9fdf585bb31ea381abd61188711866a5255690f16216718a90368979ea7a",
+      "matched_upstream_digest_and_size": true,
+      "license_url": "https://raw.githubusercontent.com/obophenotype/uberon/0a749cd233dc3f433514fe02770261c8804b2984/LICENSE",
+      "license_sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+      "license_header": [
+        "property_value: dcterms-license http://creativecommons.org/licenses/by/3.0/"
+      ],
+      "terms": [
+        {
+          "id": "UBERON:0000178",
+          "label": "blood",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": [
+            "synonym: \"whole blood\" RELATED [BTO:0000089]"
+          ]
+        },
+        {
+          "id": "UBERON:0001836",
+          "label": "saliva",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        },
+        {
+          "id": "UBERON:0006956",
+          "label": "buccal mucosa",
+          "is_obsolete": false,
+          "used_in_context_mapping": false,
+          "synonyms": []
+        }
+      ],
+      "attribution": "Uberon contributors"
+    },
+    {
+      "source": "cl",
+      "version": "releases/2026-11-13",
+      "url": "https://github.com/obophenotype/cell-ontology/releases/download/v2026-11-13/cl.obo",
+      "api_url": "https://api.github.com/repos/obophenotype/cell-ontology/releases/tags/v2026-11-13",
+      "release_id": 446828830,
+      "published_at": "2026-11-16T09:37:13Z",
+      "tag_commit": "a0a9cb0bc0e5a9941384d30b108c101af8286151",
+      "asset_id": 754240117,
+      "bytes": 19846560,
+      "sha256": "f6c5911182da822693ac55e5cc3ca240301ac93e9a0b2494e87909705c852941",
+      "matched_upstream_digest_and_size": true,
+      "license_url": "https://raw.githubusercontent.com/obophenotype/cell-ontology/a0a9cb0bc0e5a9941384d30b108c101af8286151/LICENSE",
+      "license_sha256": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
+      "license_header": [
+        "property_value: terms:license http://creativecommons.org/licenses/by/4.0/"
+      ],
+      "terms": [
+        {
+          "id": "CL:0000057",
+          "label": "fibroblast",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        },
+        {
+          "id": "CL:0000738",
+          "label": "leukocyte",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        },
+        {
+          "id": "CL:0002248",
+          "label": "pluripotent stem cell",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        },
+        {
+          "id": "CL:0002322",
+          "label": "embryonic stem cell",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        },
+        {
+          "id": "CL:0010012",
+          "label": "cerebral cortex neuron",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": [
+            "synonym: \"cortical neuron\" EXACT []"
+          ]
+        },
+        {
+          "id": "CL:0011020",
+          "label": "neural progenitor cell",
+          "is_obsolete": false,
+          "used_in_context_mapping": true,
+          "synonyms": []
+        }
+      ],
+      "attribution": "Cell Ontology contributors"
+    }
+  ],
+  "reactome": {
+    "source": "reactome",
+    "version": "98",
+    "url": "https://download.reactome.org/98/NCBI2Reactome_All_Levels.txt",
+    "release_evidence": "https://zenodo.org/records/24067822",
+    "release_evidence_version": "v98",
+    "release_evidence_published_month": "2026-10",
+    "bytes": 97248132,
+    "sha256": "272ca73c16eb285be1698e07c81912335a1d3804e125f789f5160dff150be243",
+    "sha256_origin": "computed from downloaded bytes; no upstream SHA256 located",
+    "license_url": "https://reactome.org/license",
+    "data_license": "CC0 (section 1c; figures and code have separate terms)",
+    "columns": [
+      "source_identifier",
+      "pathway_identifier",
+      "url",
+      "name",
+      "evidence_code",
+      "species"
+    ],
+    "all_rows": 781553,
+    "human_rows": 157638,
+    "human_numeric_identifier_rows": 157414,
+    "human_sequence_accession_rows_excluded": 224,
+    "human_numeric_identifiers": 11470,
+    "human_numeric_pathways": 2861,
+    "human_numeric_unique_gene_pathway_pairs": 140535,
+    "evidence_codes_retained": {
+      "TAS": 124950,
+      "IEA": 32464
+    },
+    "native_consumer_execution": "Initial hosted attempt failed in technical annotation loading before limma/enrichment. Combined hg38 QC repair and Reactome candidate is based on 9480311be20d51962ed9ce41684bf0bb56440f95; current native execution pending, no Reactome result received."
+  },
+  "schema_version": 1,
+  "review_date": "2026-11-24",
+  "date_context": "Australia/Brisbane client date",
+  "base_commit": "9480311be20d51962ed9ce41684bf0bb56440f95",
+  "mapping_registry": "research/registries/ontology-context-mappings.json",
+  "original_disease_receipt": "research/qualification/ontology-source-receipt.json",
+  "consumer": {
+    "command": "cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml --bin ontology-context -- --assays research/catalogue/2026-11-22/assays.jsonl --diseases research/registries/initial-disease-crosswalk.tsv --mappings research/registries/ontology-context-mappings.json",
+    "input_sha256": {
+      "assays": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "context_mappings": "0068efa701e9d6e9dd4e2553e966c1733a0fe736bad072776f5a5627232df80e",
+      "disease_crosswalk": "98c15bca99e56e297fab1315b99fcad684dfe1bca16971616bc8209c60403d8f"
+    },
+    "summary": {
+      "annotation_status_counts": {
+        "ambiguous": 0,
+        "broader": 458,
+        "exact": 489,
+        "related": 457,
+        "unmapped": 895
+      },
+      "series_assay_memberships": 2532,
+      "unreported_memberships": 321
+    },
+    "mapped_memberships": 1404,
+    "disease_references": 5,
+    "output_bytes": 1471158,
+    "output_sha256": "485088ea41ff6b5c987e8606c4e8d8a6102891b599b550fd58a42a86f74fdc79",
+    "source_claims_verified_by_consumer": false,
+    "patient_phenotypes_inferred": false,
+    "analysis_admitted": false
+  },
+  "verification": {
+    "baseline_strict": "failed before implementation: missing Rust and native tools; failure preserved locally",
+    "rust_targeted_tests": "passed: 5 grouped ontology consumer tests",
+    "rust_clippy": "passed: all targets, all features, warnings denied",
+    "source_term_and_hash_review": "passed: every used term active and label matched in pinned source; all downloaded file hashes rechecked",
+    "full_strict": "Prior candidate passed 34/34 in 149.851 seconds; current combined candidate pending fresh qualification",
+    "native_reactome": "Not reached in initial failed hosted attempt; current combined native run pending",
+    "hosted": "Prior hosted strict failed one history finding and native technical stage failed before enrichment; current combined hosted checks pending",
+    "independent_review": "passed: independent Rust semantic/input-hash replay and native Reactome source/code consistency review; neither substitutes for native R execution",
+    "rust_patch_coverage": "passed: branch-aware diff-cover 100%, 263 changed production lines, none missing",
+    "native_hook": "Prior candidate actual installed-hook commit passed 34/34 in 32.710 seconds; current combined candidate pending fresh hook"
+  },
+  "current_code_sha256": {
+    "scripts/tests/qualify_reference.R": "e961009556ee083de013e041dc7ab57fb844ab968768d9e18b57cbccc0f52c23",
+    ".github/workflows/native-reference.yml": "d08b8ed6284e39fbcc2cce36c334c1d7bfdccf06560dbb25b09ae2136ae77746",
+    "research/contracts/reactome-v98.json": "407b395d5fd5e491ee34b1d5dc4afbc82f1915baf77f9bbe2d31a6eb5f0abff3"
+  },
+  "receiving_history": {
+    "prior_candidate": {
+      "commit": "f7adf0d514c5c7bf1eb0bc42790313b17fdc1299",
+      "base_commit": "dc2433ddb9d5778ce2a1df37b1d001068209d19a",
+      "git_tree": "8fffcdf4bb99a55ccc2e1b752f849bab7c07c843",
+      "source_tree_sha256": "bec654f083bcc4a6ec0ffeb76c60b13f4f8aef6d0e09e1c2d3c483f0ea134244",
+      "local_strict": {
+        "status": "passed",
+        "passed_checks": 34,
+        "total_checks": 34,
+        "elapsed_seconds": 149.851
+      },
+      "installed_hook_strict": {
+        "status": "passed",
+        "passed_checks": 34,
+        "total_checks": 34,
+        "elapsed_seconds": 32.71
+      }
+    },
+    "prior_hosted_strict": {
+      "run_id": 45409996763,
+      "url": "https://github.com/edithatogo/rare-omics-atlas/actions/runs/45409996763",
+      "status": "failed",
+      "history_findings": 1,
+      "subsequent_current_ref_scan_findings": 0,
+      "causal_interpretation": "Association with an outdated PR22 prose head present in fetched history is an inference, not a proven cause. The failed run remains failed; the current combined candidate requires a fresh hosted history scan.",
+      "scanner_waiver_added": false
+    },
+    "prior_native": {
+      "run_id": 45409996742,
+      "url": "https://github.com/edithatogo/rare-omics-atlas/actions/runs/45409996742",
+      "status": "failed",
+      "failed_stage": "technical",
+      "failure": "minfi annotation loading",
+      "limma_stage_reached": false,
+      "reactome_stage_reached": false,
+      "artifact_id": 14926959908,
+      "artifact_sha256": "5e51e7cfe118bf14268b19a7bb1d39fa8271fb8cc4caecb2eea0720daa0dfd25"
+    },
+    "pr22_receiving": {
+      "pr_url": "https://github.com/edithatogo/rare-omics-atlas/pull/22",
+      "head_commit": "30ee44026fe5764e546dca245e5c0496d0c0b8a5",
+      "merge_commit": "9480311be20d51962ed9ce41684bf0bb56440f95",
+      "merged_at_utc": "2026-11-24T14:18:54Z",
+      "native_run_id": 45410579769,
+      "native_status_at_merge": "in_progress",
+      "merge_preceded_native_completion": true,
+      "interpretation": "Merged source includes the native hg38 QC repair; merge does not supply missing native acceptance. Preserve the ordering gap and receive actual current combined execution."
+    },
+    "current_combined_candidate": {
+      "base_commit": "9480311be20d51962ed9ce41684bf0bb56440f95",
+      "integration": "Ontology and Reactome changes replayed without textual conflict onto actual merged PR22 source; both technical repair and enrichment extension retained.",
+      "strict_status": "pending",
+      "installed_hook_status": "pending",
+      "hosted_status": "pending",
+      "native_status": "pending",
+      "reactome_result_received": false,
+      "scientific_admitted": false,
+      "official_owner_device_accepted": false
+    }
+  }
+}

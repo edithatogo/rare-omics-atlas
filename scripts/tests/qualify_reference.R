@@ -497,12 +497,96 @@ if (stage=="enrichment") {
         sum((received$FDR<=0.05)!=(go$FDR<=0.05)))),
         file.path(output,"enrichment-summary.tsv"),sep="\t",
         quote=FALSE,row.names=FALSE)
-    cat("Synthetic missMethyl: bounded zero-count receiver passed; native invalid probabilities retained in raw output.\n")
+    # Reactome v98 uses the same synthetic CpGs and native Entrez mapping.
+    # The workflow verifies the exact source bytes against reactome-v98.json.
+    # Keep evidence and exclusion counts; deduplicate gene-pathway pairs so
+    # repeated TAS/IEA assertions cannot increase pathway sizes or evidence.
+    pathway_source <- read.delim(file.path(input,"NCBI2Reactome_All_Levels.txt"),
+        header=FALSE,quote="",comment.char="",colClasses="character",
+        check.names=FALSE)
+    stopifnot(ncol(pathway_source)==6L,nrow(pathway_source)==781553L,
+        !anyNA(pathway_source),length(unique(pathway_source[[6L]]))==16L)
+    names(pathway_source) <- c("gene","pathway","url","name","evidence","species")
+    human <- pathway_source[pathway_source$species=="Homo sapiens",]
+    stopifnot(nrow(human)==157638L,all(grepl("^R-HSA-[0-9]+$",human$pathway)),
+        setequal(human$evidence,c("IEA","TAS")))
+    numeric_id <- grepl("^[1-9][0-9]*$",human$gene)
+    stopifnot(sum(!numeric_id)==224L,length(unique(human$gene[!numeric_id]))==22L)
+    human_numeric <- human[numeric_id,]
+    pairs <- unique(human_numeric[,c("gene","pathway")])
+    stopifnot(nrow(pairs)==140535L,length(unique(pairs$gene))==11470L,
+        length(unique(pairs$pathway))==2861L)
+    evidence_counts <- as.data.frame(table(human_numeric$evidence))
+    names(evidence_counts) <- c("evidence","source_rows")
+    write.table(evidence_counts,file.path(output,"reactome-evidence.tsv"),
+        sep="\t",quote=FALSE,row.names=FALSE)
+    reactome_sets <- split(pairs$gene,pairs$pathway)
+    eligible_sets <- lapply(reactome_sets,intersect,mapped$universe)
+    eligible_counts <- lengths(eligible_sets)
+    expected_ids <- names(eligible_sets)[eligible_counts>0L]
+    stopifnot(length(expected_ids)>0L,all(eligible_counts<length(mapped$universe)))
+    write.table(data.frame(pathway=names(reactome_sets),
+        source_genes=lengths(reactome_sets),eligible_genes=eligible_counts,
+        disposition=ifelse(eligible_counts>0L,"tested","no_gene_in_tested_universe")),
+        file.path(output,"reactome-family.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    reactome <- gsameth(sig.cpg=selected,all.cpg=universe,collection=reactome_sets,
+        array.type="450K",anno=anno,plot.bias=FALSE,prior.prob=TRUE,
+        equiv.cpg=TRUE,fract.counts=TRUE,genomic.features="ALL")
+    stopifnot(identical(rownames(reactome),expected_ids))
+    write.table(data.frame(pathway=rownames(reactome),N=reactome$N,DE=reactome$DE,
+        P.DE=fmt(reactome$P.DE),FDR=fmt(reactome$FDR)),
+        file.path(output,"reactome-raw.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    fractional <- vapply(eligible_sets[expected_ids],function(genes)
+        sum(mapped$fract.counts$frac[mapped$sig.eg %in% genes]),numeric(1))
+    stopifnot(all(reactome$N==eligible_counts[expected_ids]),
+        all(reactome$DE==floor(fractional)))
+    zero_ids <- expected_ids[reactome$DE==0]
+    zero_odds <- vapply(eligible_sets[zero_ids],function(genes) {
+        in_set <- mapped$universe %in% genes
+        mean(pwf[in_set])/mean(pwf[!in_set])
+    },numeric(1))
+    stopifnot(length(zero_ids)>0L,all(is.finite(zero_odds)),all(zero_odds>0),
+        all(fractional[zero_ids]>=0 & fractional[zero_ids]<1))
+    zero_tail <- vapply(seq_along(zero_ids),function(i)
+        BiasedUrn::pWNCHypergeo(-1L,eligible_counts[zero_ids[i]],
+            length(mapped$universe)-eligible_counts[zero_ids[i]],
+            length(mapped$sig.eg),zero_odds[i],precision=1e-12,lower.tail=FALSE),numeric(1))
+    stopifnot(all(zero_tail==1))
+    write.table(data.frame(pathway=zero_ids,fractional_DE=fmt(fractional[zero_ids]),
+        native_integer_DE=0L,odds=fmt(zero_odds),inclusive_upper_tail=fmt(zero_tail)),
+        file.path(output,"reactome-zero-boundary.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    # Reuse the qualified mathematical zero-count boundary, never a blanket
+    # probability clip or a filter based on observed significance.
+    reactome_received <- receive_zero_count_tails(reactome)
+    stopifnot(max(abs(reactome_received$FDR-reactome$FDR))<=1e-12,
+        identical(reactome_received$FDR<=0.05,reactome$FDR<=0.05))
+    write.table(data.frame(pathway=rownames(reactome_received),N=reactome_received$N,
+        DE=reactome_received$DE,P.DE=fmt(reactome_received$P.DE),
+        FDR=fmt(reactome_received$FDR)),file.path(output,"reactome-received.tsv"),
+        sep="\t",quote=FALSE,row.names=FALSE)
+    write.table(data.frame(metric=c("tested_CpGs","selected_CpGs","source_human_rows",
+        "excluded_nonnumeric_rows","unique_numeric_gene_pathway_pairs","source_pathways",
+        "empty_universe_pathways","tested_pathways","native_universe_genes",
+        "native_genes_in_reactome","native_selected_genes_in_reactome",
+        "raw_invalid_p","zero_count_rows","corrected_p","max_absolute_correction",
+        "max_BH_error","changed_significance"),value=c(length(universe),length(selected),
+        nrow(human),sum(!numeric_id),nrow(pairs),length(reactome_sets),sum(eligible_counts==0L),
+        nrow(reactome),length(mapped$universe),sum(mapped$universe %in% pairs$gene),
+        sum(mapped$sig.eg %in% pairs$gene),sum(reactome$P.DE<0|reactome$P.DE>1),
+        sum(reactome$DE==0),sum(reactome_received$P.DE!=reactome$P.DE),
+        fmt(max(abs(reactome_received$P.DE-reactome$P.DE))),
+        fmt(max(abs(reactome_received$FDR-p.adjust(reactome_received$P.DE,"BH")))),
+        sum((reactome_received$FDR<=0.05)!=(reactome$FDR<=0.05)))),
+        file.path(output,"reactome-summary.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    cat("Synthetic missMethyl: GO and Reactome receivers passed; raw probabilities retained.\n")
     capture.output(sessionInfo(),file=file.path(output,"enrichment-session-info.txt"))
     stopifnot(file.exists(file.path(output,"technical-disposition.txt")),file.exists(file.path(output,"limma-disposition.txt")))
     writeLines(c("scope=native_release_technical_and_synthetic","limma_synthetic_pass=true",
         "missMethyl_synthetic_zero_count_receiver_pass=true",
         "missMethyl_native_probability_domain_pass=false",
+        "reactome_synthetic_zero_count_receiver_pass=true",
+        paste0("reactome_native_probability_domain_pass=",
+            tolower(as.character(all(reactome$P.DE>=0 & reactome$P.DE<=1)))),
         "full_cross_version_preprocessing_parity_claimed=false",
         "clinical_cohort_qc=false","owner_device_qualified=false",
         "institutional_determination=false","scientific_admitted=false"),

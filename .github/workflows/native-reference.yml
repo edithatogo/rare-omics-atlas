@@ -6,6 +6,7 @@ on:
       - scripts/tests/qualify_reference.R
       - .github/workflows/native-reference.yml
       - research/qualification/t07-native-reference-candidate.md
+      - research/contracts/reactome-v98.json
   workflow_dispatch:
 
 permissions:
@@ -34,10 +35,12 @@ jobs:
           from pathlib import Path
           dest = Path(sys.argv[1])
           pins = json.loads(Path("research/contracts/sesame-hm450-raw-q-v1.json").read_text())["inputs"]
+          pins["NCBI2Reactome_All_Levels.txt"] = json.loads(Path("research/contracts/reactome-v98.json").read_text())["input"]
           keys = (
               "idats/HM450/3999492009_R01C01_Grn.idat",
               "idats/HM450/3999492009_R01C01_Red.idat",
               "assets/HM450/HM450.ordering.tsv.gz",
+              "NCBI2Reactome_All_Levels.txt",
           )
           for name in keys:
               pin = pins[name]
@@ -47,6 +50,9 @@ jobs:
               assert hashlib.sha256(payload).hexdigest() == pin["sha256"]
               (dest / Path(name).name).write_bytes(payload)
               print(name, len(payload), pin["sha256"])
+          Path("artifacts/reference-qualification/reactome-source.json").write_text(
+              Path("research/contracts/reactome-v98.json").read_text()
+          )
           PY
           printf '%s\n' "$GITHUB_SHA" > artifacts/reference-qualification/source-revision.txt
       - name: Execute installed reference package route on unrelated technical and synthetic inputs
