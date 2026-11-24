@@ -1,0 +1,98 @@
+name: Bounded merged branch cleanup 2026-11-24
+
+# One-shot on receipt of this exact maintenance workflow into trusted main.
+# Deliberately no pull_request trigger and no general recurring write job.
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/prune-merged-20261124.yml
+
+permissions: {}
+
+jobs:
+  prune:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Prune only explicitly approved unchanged merged branch heads
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = edithatogo/rare-omics-atlas
+          test "$GITHUB_REF" = refs/heads/main
+          count=0
+          retained=0
+          while read -r number branch expected; do
+            [[ "$number" =~ ^[0-9]+$ && "$expected" =~ ^[0-9a-f]{40}$ ]]
+            ref="refs/heads/$branch"
+            test "$ref" != refs/heads/main
+            git check-ref-format "$ref"
+            pr=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")
+            if ! jq -e --arg repo "$GITHUB_REPOSITORY" --arg branch "$branch" --arg sha "$expected" '
+                .merged == true and .merged_at != null and
+                .head.repo.full_name == $repo and .head.ref == $branch and
+                .head.sha == $sha and .base.ref == "main"
+              ' <<<"$pr" >/dev/null; then
+              echo "Retained: $branch (merged-PR evidence changed)"
+              retained=$((retained+1))
+              continue
+            fi
+            if ! git merge-base --is-ancestor "$expected" "$GITHUB_SHA"; then
+              echo "Retained: $branch (exact head not an ancestor of receiving main)"
+              retained=$((retained+1))
+              continue
+            fi
+            active=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100")
+            if jq -e --arg branch "$branch" --arg repo "$GITHUB_REPOSITORY" '
+                any(.[][]; (.head.repo.full_name == $repo and .head.ref == $branch) or .base.ref == $branch)
+              ' <<<"$active" >/dev/null; then
+              echo "Retained: $branch (open pull request)"
+              retained=$((retained+1))
+              continue
+            fi
+            # An empty successful ls-remote means the branch is already absent.
+            # Network errors fail the job rather than imply absence.
+            remote=$(git ls-remote --heads origin "$ref")
+            if [ -z "$remote" ]; then
+              echo "Already absent: $branch"
+              continue
+            fi
+            actual=$(awk -v ref="$ref" '$2 == ref {print $1}' <<<"$remote")
+            if [ "$actual" != "$expected" ]; then
+              echo "Retained: $branch (head advanced or ambiguous)"
+              retained=$((retained+1))
+              continue
+            fi
+            # The explicit lease is enforced by Git at deletion, including a race
+            # where a branch advances after the preceding observation.
+            git push --porcelain --force-with-lease="$ref:$expected" origin ":$ref"
+            test -z "$(git ls-remote --heads origin "$ref")"
+            echo "Pruned: $branch @ $expected (PR #$number)"
+            count=$((count+1))
+          done <<'APPROVED'
+          2 docs/ponytail-novelty-language-priority-20261122 564c2f72f3bd7ff1eac015658619eb39a759a0aa
+          4 docs/rust-first-candidate-audit-20261122 3cce0efabd98a000d5311bde5916fb0384ac6a16
+          5 docs/methylation-backend-publication-refinement-20261122 f37933888a62b06c24dbc18ed358c67258e5df03
+          6 conductor/initial-qualification-20261122 ec0d9dd9dd31afd5ed232633eeb1e6dc8b7076f7
+          7 atlas/api-catalogue-hf-medallion-20261122 628c9e0ee4f2350f9aa675f3760cbd2aa7fb7454
+          8 feat/verified-hf-metadata-3f1cb8e 057ac34ba955ec6a8cd83cc30014d8fb87e57e25
+          9 codex/strict-ci-conductor-20261122 9b06b16a6809a51e013dc89800b1b7bf59d57d72
+          10 codex/contracts-hooks-20261123 f4666ead0124333dcdd1eca8df0f3bf0038c30a1
+          11 codex/literature-watch-20261123 94aadeea9d77903c12389ff83f8cc4b898a93363
+          12 codex/preprocessing-qualification-20261123 03fa2edfb35acf1b16f860262ae00154db10526f
+          13 codex/qc-qualification-20261123 1de2f7b0a904e78148336438d5c1bcf76303a5b6
+          14 feat/native-qc-semantics-v2-20261123 e613a2ee4edf2326be66b8ebaf2a9905df08c73d
+          16 codex/t01-source-molecular-replay-20261124 7282dc56daed3f0e47057b531bdd61d703cb785d
+          APPROVED
+          echo "Deleted: $count; retained after checks: $retained"
