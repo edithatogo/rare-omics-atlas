@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-24",
+  "updated_on": "2026-11-25",
   "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
   "milestones": [
     {
@@ -55,16 +55,16 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. The bounded HM450 technical increment qualifies exact ordering, hg38 coordinates, extension row-space and masks; remaining selected-platform/gene-mapping consumers stay open. T01.ontology_context qualifies a bounded metadata consumer separately; selected gene/transcript, SO, GO/Reactome and regulatory consumers require source/version/hash, rights, mapping coverage and actual tests. Protein/metabolite/cross-species resources are conditional, never universal admission prerequisites."
+      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. Uberon/CL bytes and bounded catalogue consumer are accepted under T01.ontology_context; Reactome v98 source and bounded native synthetic receiver are accepted under T07.03e. Selected-platform, gene/transcript, SO and regulatory consumers remain open. Preserve source/version/hash, rights, mapping coverage and actual tests; protein/metabolite/cross-species references remain conditional rather than universal prerequisites."
     },
     {
       "id": "T01.ontology_context",
-      "status": "in_progress",
+      "status": "complete",
       "requires": [
         "T08.api_catalogue",
         "T00.strict_code"
       ],
-      "scope": "T01.09a bounded source-bound disease dictionary and Uberon/CL context consumer for public catalogue literals. Require actual term/source qualification, deterministic replay with input hashes, exact/broader/related/ambiguous/unmapped/unreported coverage and rejected-input tests. Does not assign patient diagnoses/phenotypes, estimate cell composition, resolve biological independence, admit a cohort or establish scientific benefit."
+      "scope": "T01.09a accepted in PR23: source-bound disease dictionary and Uberon/CL context consumer replayed over 2,532 public memberships, with five disease references, 17 mappings/eight active terms, exact/broader/related/ambiguous/unmapped/unreported coverage and negative tests. Actual strict/hook/hosted checks and independent review passed. See research/qualification/ontology-context-2026-11-24.md; merged-main receipt is recorded separately. No patient diagnosis/phenotype, cell composition, independence, cohort admission or scientific benefit inferred."
     },
     {
       "id": "T01.institutional_classification",
@@ -99,7 +99,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has accepted bounded HM450, synthetic limma and corrected zero-count GO operation; #17 merged. Final scientific QC/annotation and wider method contract remain pending. See research/qualification/t07-native-reference-candidate.md. The existing selected contract now includes the native recipe; its N1 v0.1 draft is explicitly unfrozen. PR21 fixed-denominator execution failed at annotation loading; the reviewed native-hg38 successor needs its own actual receiving evidence."
+      "scope": "Select the complete scientific/reference consumer contract; changed code requires T00.strict_code. Historical HM450 legacy-route execution and the independently accepted synthetic limma, corrected zero-integer-count GO and Reactome v98 operations remain recorded, with raw native probability failures preserved. PR23 supplies a fixed-denominator audit on one unrelated fixture; its later malformed control-label finding leaves intended negative-control backgrounds unqualified pending corrected-route replay and review under PR24. Clinical QC/control rules, production ingestion and the wider method contract remain pending; N1 v0.1 stays explicitly unfrozen. See research/qualification/ontology-context-2026-11-24.md and the historical native receipt."
     },
     {
       "id": "T07.technical_preprocessing",
@@ -109,7 +109,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites. Installed native QCDPB/detection technical operation passed; qualify fixed autosomal denominator, min-beads/detection, annotation and control rules before cohort QC."
+      "scope": "Archived T07c retains failed native QC v1; T07d passed its distinct native QC v2/GCT/raw-Q boundary. PR23 records historical legacy-route execution and native-hg38 fixed-denominator/exclusion audit on the unrelated fixture. All 848 exported control Type values are malformed and numeric; intended pOOBAH/noob negative-control backgrounds remain unqualified pending exact-source corrected-route replay and review under PR24. Historical artifacts do not separately export the negControls(raw3) row count. The recorded 366,308/408,966 fraction fails the prospective 95% rule; that rule and clinical control ranges remain unvalidated. Full selected scientific policies, production QC ingestion, required platforms and actual-device evidence remain open. A qualified established R/Bioconductor route is valid; no mandatory C/Rust replacement."
     },
     {
       "id": "T07.consumer_contract",
@@ -118,7 +118,7 @@
         "T07.selected_contract",
         "T00.strict_code"
       ],
-      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence. Native R bounded synthetic GO receiver passed all 13,817 terms; raw native failure preserved; production mapping/QC and wider consumer qualification remain pending."
+      "scope": "Bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Native R accepted 13,817 GO terms and 2,178 eligible Reactome v98 pathways on 4,000 tested/200 selected synthetic CpGs; independent full-family BH and boundary checks passed, with raw native probability-domain failures retained. Complete scientific/preprocessing selection, cohort-scale mapping/QC and production ingestion/consumer qualification remain open. Only a chosen Rust route depends on remaining LM02 evidence."
     },
     {
       "id": "T07.protocol_freeze",
