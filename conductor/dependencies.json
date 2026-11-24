@@ -90,7 +90,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has accepted bounded HM450, synthetic limma and corrected zero-count GO operation; #17 merged. Final scientific QC/annotation and wider method contract remain pending. See research/qualification/t07-native-reference-candidate.md."
+      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has accepted bounded HM450, synthetic limma and corrected zero-count GO operation; #17 merged. Final scientific QC/annotation and wider method contract remain pending. See research/qualification/t07-native-reference-candidate.md. The existing selected contract now includes the native recipe; its N1 v0.1 draft is explicitly unfrozen. PR21 fixed-denominator execution failed at annotation loading; the reviewed native-hg38 successor needs its own actual receiving evidence."
     },
     {
       "id": "T07.technical_preprocessing",
@@ -118,7 +118,7 @@
         "T01.analysis_admission",
         "T07.selected_contract"
       ],
-      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification."
+      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification. Draft: conductor/tracks/t07-backend-qualification/n1.md; no freeze or analysis acceptance claimed."
     },
     {
       "id": "T07.selected_backend",

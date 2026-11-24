@@ -98,26 +98,31 @@ if (stage=="technical") {
 
     # Outcome-blind scientific-QC policy exercise on this unrelated fixture.
     # Fixed universe is independent of detection, bead count and observed beta.
-    stopifnot(as.character(packageVersion("IlluminaHumanMethylation450kanno.ilmn12.hg19"))=="0.6.1",
-        as.character(packageVersion("minfi"))=="1.56.0")
     manifest_ids <- sesameDataGet("HM450.address")$ordering$Probe_ID
-    annotation <- minfi::getAnnotation(
-        IlluminaHumanMethylation450kanno.ilmn12.hg19::IlluminaHumanMethylation450kanno.ilmn12.hg19)
+    # Reuse native hg38 coordinates with the native hg38 recommended masks.
+    # The separate missMethyl gene mapping below retains its native hg19 annotation.
+    annotation <- sesameData::sesameData_getManifestGRanges("HM450",genome="hg38")
     stopifnot(identical(manifest_ids,raw$Probe_ID),!anyDuplicated(manifest_ids),
-        !anyDuplicated(rownames(annotation)),all(c("chr","pos") %in% colnames(annotation)))
-    autosomal <- !is.na(annotation$chr)&as.character(annotation$chr) %in% paste0("chr",1:22)&
-        is.finite(annotation$pos)&annotation$pos>0
+        inherits(annotation,"GRanges"),length(annotation)>0L,
+        length(names(annotation))==length(annotation),!anyNA(names(annotation)),
+        all(nzchar(names(annotation))),!anyDuplicated(names(annotation)),
+        all(c("mapping","sub30_copy") %in% mask_names))
+    chr <- as.character(GenomicRanges::seqnames(annotation))
+    position <- GenomicRanges::start(annotation)
+    end <- GenomicRanges::end(annotation)
+    autosomal <- chr %in% paste0("chr",1:22)&is.finite(position)&position>0&
+        is.finite(end)&end>=position
     recommended <- getMask("HM450",mask_names="recommended")
     stopifnot(length(recommended)>0L,!anyNA(recommended))
     fixed_cpg <- manifest_ids[grepl("^cg[0-9]+$",manifest_ids)]
-    fixed_annotated <- fixed_cpg[fixed_cpg %in% rownames(annotation)]
-    fixed_autosomal <- fixed_annotated[fixed_annotated %in% rownames(annotation)[autosomal]]
+    fixed_annotated <- fixed_cpg[fixed_cpg %in% names(annotation)]
+    fixed_autosomal <- fixed_annotated[fixed_annotated %in% names(annotation)[autosomal]]
     eligible <- sort(setdiff(fixed_autosomal,recommended),method="radix")
     stopifnot(length(eligible)>0L,!anyDuplicated(eligible))
-    tmp <- tempfile(fileext=".txt")
-    writeLines(eligible,tmp)
-    denominator_sha <- sha256(tmp)
-    unlink(tmp)
+    denominator_path <- file.path(output,"technical-cohort-qc-denominator.txt")
+    writeLines(eligible,denominator_path)
+    denominator_sha <- sha256(denominator_path)
+    writeLines(mask_names,file.path(output,"technical-cohort-qc-mask-names.txt"))
     tmp <- tempfile(fileext=".rds")
     saveRDS(annotation,tmp,version=3)
     annotation_sha <- sha256(tmp)
@@ -147,8 +152,13 @@ if (stage=="technical") {
     p3 <- pOOBAH(qcd3,return.pval=TRUE)
     processed3 <- noob(pOOBAH(qcd3,pval.threshold=0.05))
     b3 <- getBetas(processed3)
+    unmasked3 <- getBetas(processed3,mask=FALSE)
     direct3 <- getBetas(prepSesame(raw3,"QCDPB"))
     stopifnot(identical(names(b3),manifest_ids),identical(names(p3),manifest_ids),
+        identical(names(unmasked3),manifest_ids),
+        all(is.na(p3)|(is.finite(p3)&p3>=0&p3<=1)),
+        all(is.na(unmasked3)|(is.finite(unmasked3)&unmasked3>=0&unmasked3<=1)),
+        identical(b3[!processed3$mask],unmasked3[!processed3$mask]),
         identical(names(b3),names(direct3)),identical(is.na(b3),is.na(direct3)),
         max(abs(b3-direct3),na.rm=TRUE)<=1e-12,
         !anyNA(processed3$mask),all(processed3$mask[raw3$mask]),
@@ -156,25 +166,40 @@ if (stage=="technical") {
     at <- match(eligible,manifest_ids)
     stopifnot(!anyNA(at))
     v <- valid_measurement(b3[at],p3[at],processed3$mask[at],raw3$mask[at])
-    # Disjoint rejection reasons; no sample-conditioned denominator.
+    # Marginal reasons can overlap. The first true reason assigns each rejected
+    # probe once; inspect underlying beta, not the NA imposed by a mask.
     bead_bad <- raw3$mask[at]
-    detection_bad <- !is.finite(p3[at])|p3[at]<0|p3[at]>0.05
-    other_bad <- processed3$mask[at]|!is.finite(b3[at])|b3[at]<=0|b3[at]>=1
-    stopifnot(!anyNA(v),identical(unname(v),unname(!(bead_bad|detection_bad|other_bad))))
+    reasons <- cbind(bead_or_missing_address=bead_bad,
+        detection_missing=!is.finite(p3[at]),
+        detection_above_threshold=is.finite(p3[at])&p3[at]>0.05,
+        processing_mask=processed3$mask[at],
+        beta_missing_or_nonfinite=!is.finite(unmasked3[at]),
+        beta_endpoint=is.finite(unmasked3[at])&(unmasked3[at]==0|unmasked3[at]==1))
+    stopifnot(!anyNA(reasons),!anyNA(v),
+        identical(unname(v),unname(rowSums(reasons)==0L)))
+    remaining <- rep(TRUE,length(at))
+    exclusive <- integer(ncol(reasons))
+    for (i in seq_len(ncol(reasons))) {
+        exclusive[i] <- sum(remaining&reasons[,i])
+        remaining <- remaining&!reasons[,i]
+    }
     n <- length(eligible)
     count <- sum(v)
-    stopifnot(count+sum(bead_bad)+sum(!bead_bad&detection_bad)+
-        sum(!bead_bad&!detection_bad&other_bad)==n)
+    m3 <- setNames(rep(NA_real_,n),eligible)
+    m3[v] <- log2(b3[at][v]/(1-b3[at][v]))
+    stopifnot(count+sum(exclusive)==n,identical(unname(remaining),unname(v)),
+        all(is.finite(m3[v])),all(is.na(m3[!v])))
+    write.table(data.frame(reason=c(colnames(reasons),"valid"),
+        marginal=c(colSums(reasons),count),exclusive=c(exclusive,count)),
+        file.path(output,"technical-cohort-qc-exclusions.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
     write.table(data.frame(metric=c("manifest_probes","cg_probes","cg_without_annotation",
         "nonautosomal_or_missing_coordinate","static_recommended_exclusions",
-        "fixed_denominator","valid","bead_fail","detection_fail_after_beads",
-        "other_invalid_after_beads_detection","valid_fraction","candidate_95pct_met",
-        "denominator_sha256","annotation_rds_sha256"),
+        "fixed_denominator","valid","finite_M","valid_fraction","candidate_95pct_met",
+        "coordinate_build","denominator_sha256","annotation_rds_sha256"),
         value=c(length(manifest_ids),length(fixed_cpg),length(fixed_cpg)-length(fixed_annotated),
         length(fixed_annotated)-length(fixed_autosomal),length(fixed_autosomal)-n,
-        n,count,sum(bead_bad),sum(!bead_bad&detection_bad),
-        sum(!bead_bad&!detection_bad&other_bad),sprintf("%.17g",count/n),
-        as.integer(count>=ceiling(0.95*n)),denominator_sha,annotation_sha)),
+        n,count,sum(is.finite(m3)),sprintf("%.17g",count/n),
+        as.integer(count>=ceiling(0.95*n)),"hg38",denominator_sha,annotation_sha)),
         file.path(output,"technical-cohort-qc-denominator.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
     native_qc <- sesameQC_getStats(sesameQC_calcStats(raw3,
         c("detection","intensity","numProbes","channel","dyeBias","betas")))
@@ -184,9 +209,12 @@ if (stage=="technical") {
     native_qc <- c(native_qc,list(native_gct=gct))
     write.table(data.frame(metric=names(native_qc),value=unlist(native_qc,use.names=FALSE)),
         file.path(output,"technical-cohort-qc-native-panel.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
-    controls <- attr(raw3,"controls")
-    stopifnot(is.data.frame(controls),nrow(controls)>0L)
-    writeLines(c(paste0("native_control_records=",nrow(controls)),
+    control_signals <- sesame::controls(raw3)
+    stopifnot(is.data.frame(control_signals),nrow(control_signals)>0L,
+        all(c("UG","UR","Type") %in% colnames(control_signals)))
+    write.table(control_signals,file.path(output,"technical-cohort-qc-controls.tsv"),
+        sep="\t",quote=FALSE,row.names=FALSE)
+    writeLines(c(paste0("native_control_records=",nrow(control_signals)),
         "candidate_sample_threshold=0.95","candidate_threshold_validated_for_clinical_use=false",
         "control_acceptance_ranges_validated=false","clinical_cohort_qc=false",
         "scope=unrelated_technical_fixture_only"),file.path(output,"technical-cohort-qc-disposition.txt"))

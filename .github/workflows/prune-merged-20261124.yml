@@ -40,16 +40,22 @@ jobs:
             git check-ref-format "$ref"
             pr=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")
             if ! jq -e --arg repo "$GITHUB_REPOSITORY" --arg branch "$branch" --arg sha "$expected" '
-                .merged == true and .merged_at != null and
+                .state == "closed" and .merged == true and .merged_at != null and
                 .head.repo.full_name == $repo and .head.ref == $branch and
-                .head.sha == $sha and .base.ref == "main"
+                .head.sha == $sha and .base.ref == "main" and .base.repo.full_name == $repo and
+                (.merge_commit_sha | type == "string" and test("^[0-9a-f]{40}$"))
               ' <<<"$pr" >/dev/null; then
               echo "Retained: $branch (merged-PR evidence changed)"
               retained=$((retained+1))
               continue
             fi
-            if ! git merge-base --is-ancestor "$expected" "$GITHUB_SHA"; then
-              echo "Retained: $branch (exact head not an ancestor of receiving main)"
+            # Squash/rebase integration preserves the recorded merge commit,
+            # not necessarily the original PR head. The exact head lease below
+            # still protects later branch work.
+            merge_commit=$(jq -er '.merge_commit_sha' <<<"$pr")
+            if ! git cat-file -e "$merge_commit^{commit}" ||
+                ! git merge-base --is-ancestor "$merge_commit" "$GITHUB_SHA"; then
+              echo "Retained: $branch (recorded merge commit not an ancestor of receiving main)"
               retained=$((retained+1))
               continue
             fi
@@ -99,5 +105,9 @@ jobs:
           13 codex/qc-qualification-20261123 1de2f7b0a904e78148336438d5c1bcf76303a5b6
           14 feat/native-qc-semantics-v2-20261123 e613a2ee4edf2326be66b8ebaf2a9905df08c73d
           16 codex/t01-source-molecular-replay-20261124 7282dc56daed3f0e47057b531bdd61d703cb785d
+          17 codex/t07-native-reference-20261124 eaa0c496eeb2b51f6611990f031cbc6a3ed8c4a3
+          19 codex/merged-branch-cleanup-20261124 49809cd390b06e0ed15e64c301d5cc80177015e2
+          20 codex/scientific-gap-cohort-enrichment-20261124 61c538679b898e9a927eea53b63fdeece75bd627
+          21 codex/t07-fixed-denominator-qc-20261124 b75bd21b115ac5642ee6091d115c4ad14e376182
           APPROVED
           echo "Deleted: $count; retained after checks: $retained"
