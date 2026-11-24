@@ -148,6 +148,11 @@ if (stage=="limma") {
 
 if (stage=="enrichment") {
     suppressPackageStartupMessages(library(missMethyl))
+    stopifnot(as.character(packageVersion("BiasedUrn"))=="2.0.12",
+        as.character(packageVersion("GO.db"))=="3.22.0",
+        as.character(packageVersion("org.Hs.eg.db"))=="3.22.0",
+        as.character(packageVersion("IlluminaHumanMethylation450kanno.ilmn12.hg19"))=="0.6.1",
+        as.character(packageVersion("minfi"))=="1.56.0")
     universe <- readLines(file.path(scratch,"synthetic-probe-universe.txt"))
     stopifnot(length(universe)==4000L,!anyDuplicated(universe))
     selected <- universe[seq(1,length(universe),by=20L)]
@@ -247,21 +252,115 @@ if (stage=="enrichment") {
             sep="\t",quote=FALSE,row.names=FALSE)
     }
     capture.output(sessionInfo(),file=file.path(output,"enrichment-session-info.txt"))
-    stopifnot(nrow(go)>0L,!anyDuplicated(rownames(go)),
-        all(c("P.DE","FDR") %in% colnames(go)),any(is.finite(go$P.DE)),
-        all(is.na(go$P.DE)|(go$P.DE>=0&go$P.DE<=1)),
-        all(is.na(go$FDR)|(go$FDR>=0&go$FDR<=1)))
-    cat("Synthetic missMethyl: ",length(universe)," tested, ",length(selected),
-        " selected, ",nrow(go)," GO rows.\n",sep="")
-    stopifnot(isTRUE(all.equal(go$FDR,p.adjust(go$P.DE,"BH"),tolerance=1e-12,check.attributes=FALSE)))
-    write.table(data.frame(metric=c("tested","selected","GO_rows","finite_p","max_BH_error"),
-        value=c(length(universe),length(selected),nrow(go),sum(is.finite(go$P.DE)),
-        max(abs(go$FDR-p.adjust(go$P.DE,"BH")),na.rm=TRUE))),
-        file.path(output,"enrichment-summary.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    # P(X >= 0) is exactly one for any valid nonnegative count distribution.
+    # missMethyl 1.44.0 passes fractional DE through BiasedUrn's integer
+    # coercion and reports floor(DE). Correct only that proven boundary.
+    # The pre-existing 1e-12 numerical comparison bound guards against
+    # materially wrong native results; the received domain stays exactly [0,1].
+    receive_zero_count_tails <- function(native) {
+        stopifnot(nrow(native)>0L,!anyDuplicated(rownames(native)),
+            all(c("N","DE","P.DE","FDR") %in% colnames(native)),
+            all(is.finite(native$N)),all(native$N>0),
+            all(native$N==floor(native$N)),
+            all(is.finite(native$DE)),all(native$DE>=0),
+            all(native$DE==floor(native$DE)),all(native$DE<=native$N),
+            all(is.finite(native$P.DE)),all(is.finite(native$FDR)),
+            all(native$FDR>=0 & native$FDR<=1))
+        zero <- native$DE==0
+        stopifnot(all(abs(native$P.DE[zero]-1)<=1e-12),
+            all(native$P.DE[!zero]>=0 & native$P.DE[!zero]<=1),
+            isTRUE(all.equal(native$FDR,p.adjust(native$P.DE,"BH"),
+                tolerance=1e-12,check.attributes=FALSE)))
+        received <- native
+        received$P.DE[zero] <- 1
+        received$FDR <- p.adjust(received$P.DE,"BH")
+        stopifnot(identical(rownames(received),rownames(native)),
+            identical(received$N,native$N),identical(received$DE,native$DE),
+            identical(received$P.DE[!zero],native$P.DE[!zero]),
+            all(received$P.DE>=0 & received$P.DE<=1),
+            all(received$FDR>=0 & received$FDR<=1))
+        received
+    }
+    # Observed red fixture plus explicit negative tests: do not blanket clip.
+    regression <- data.frame(N=c(14L,24L,8L),DE=c(0L,0L,2L),
+        P.DE=c(1.0000000000000113,0.9999999999999897,0.025))
+    regression$FDR <- p.adjust(regression$P.DE,"BH")
+    fixed <- receive_zero_count_tails(regression)
+    stopifnot(identical(fixed$P.DE,c(1,1,0.025)),
+        identical(fixed$FDR,p.adjust(c(1,1,0.025),"BH")))
+    reject <- function(native) inherits(try(receive_zero_count_tails(native),
+        silent=TRUE),"try-error")
+    wrong <- regression
+    wrong$P.DE[3L] <- 1.0000000000000113
+    wrong$FDR <- p.adjust(wrong$P.DE,"BH")
+    stopifnot(reject(wrong))
+    wrong <- regression
+    wrong$P.DE[1L] <- 0.99
+    wrong$FDR <- p.adjust(wrong$P.DE,"BH")
+    stopifnot(reject(wrong))
+    wrong <- regression
+    wrong$P.DE[3L] <- NA_real_
+    stopifnot(reject(wrong))
+    wrong <- regression
+    wrong$FDR[3L] <- 0.9
+    stopifnot(reject(wrong))
+
+    # Require the actual failing terms to be reproduced and corroborated.
+    # The diagnostic code above must preserve the native raw table and
+    # independently evaluate the largest invalid values before receipt.
+    stopifnot(length(bad_p)>0L,length(bad_fdr)==0L,
+        all(go$DE[bad_p]==0),all(go$P.DE[bad_p]>1))
+    diagnostic <- do.call(rbind,diag_rows)
+    stopifnot(nrow(diagnostic)==min(length(bad_p),20L),
+        all(diagnostic$integer_q==0L),
+        all(as.numeric(diagnostic$direct_upper_tail)==1),
+        all(as.numeric(diagnostic$independent_urn_tail)==1),
+        all(abs(as.numeric(diagnostic$raw_p)-
+            as.numeric(diagnostic$native_sum))<=1e-12))
+
+    # Verify every received zero integer count against the original
+    # missMethyl gene mapping and fractional counts, without changing them.
+    zero <- go$DE==0
+    stopifnot(length(mapped$sig.eg)==nrow(mapped$fract.counts),
+        all(is.finite(mapped$fract.counts$frac)),
+        all(mapped$fract.counts$frac>=0),all(is.finite(pwf)))
+    boundary <- vapply(which(zero),function(i) {
+        genes <- go_sets[[rownames(go)[i]]]
+        in_set <- mapped$universe %in% genes
+        m1 <- sum(in_set)
+        frac <- sum(mapped$fract.counts$frac[mapped$sig.eg %in% genes])
+        odds <- if(m1>0L && m1<num_genes) mean(pwf[in_set])/mean(pwf[!in_set]) else NA_real_
+        c(m1,frac,odds)
+    },numeric(3))
+    stopifnot(all(is.finite(boundary)),all(boundary[1L,]==go$N[zero]),
+        all(boundary[2L,]>=0 & boundary[2L,]<1),
+        all(boundary[3L,]>0))
+    received <- receive_zero_count_tails(go)
+    # This observed synthetic family must retain its complete BH results.
+    stopifnot(max(abs(received$FDR-go$FDR))<=1e-12,
+        identical(received$FDR<=0.05,go$FDR<=0.05))
+    write.table(data.frame(GOID=rownames(received),N=received$N,
+        DE=received$DE,P.DE=fmt(received$P.DE),FDR=fmt(received$FDR)),
+        file.path(output,"enrichment-received.tsv"),sep="\t",
+        quote=FALSE,row.names=FALSE)
+    write.table(data.frame(metric=c("tested","selected","GO_rows","finite_p",
+        "raw_invalid_p","zero_count_rows","corrected_p","max_absolute_correction",
+        "max_BH_error","max_BH_change","changed_significance"),
+        value=c(length(universe),length(selected),nrow(received),
+        sum(is.finite(received$P.DE)),length(bad_p),sum(zero),
+        sum(received$P.DE!=go$P.DE),fmt(max(abs(received$P.DE-go$P.DE))),
+        fmt(max(abs(received$FDR-p.adjust(received$P.DE,"BH")))),
+        fmt(max(abs(received$FDR-go$FDR))),
+        sum((received$FDR<=0.05)!=(go$FDR<=0.05)))),
+        file.path(output,"enrichment-summary.tsv"),sep="\t",
+        quote=FALSE,row.names=FALSE)
+    cat("Synthetic missMethyl: bounded zero-count receiver passed; native invalid probabilities retained in raw output.\n")
     capture.output(sessionInfo(),file=file.path(output,"enrichment-session-info.txt"))
     stopifnot(file.exists(file.path(output,"technical-disposition.txt")),file.exists(file.path(output,"limma-disposition.txt")))
     writeLines(c("scope=native_release_technical_and_synthetic","limma_synthetic_pass=true",
-        "missMethyl_synthetic_pass=true","full_cross_version_preprocessing_parity_claimed=false",
+        "missMethyl_synthetic_zero_count_receiver_pass=true",
+        "missMethyl_native_probability_domain_pass=false",
+        "full_cross_version_preprocessing_parity_claimed=false",
         "clinical_cohort_qc=false","owner_device_qualified=false",
         "institutional_determination=false","scientific_admitted=false"),
         file.path(output,"disposition.txt"))

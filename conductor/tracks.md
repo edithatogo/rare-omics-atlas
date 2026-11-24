@@ -1,6 +1,6 @@
 # Dependency-ordered tracks
 
-Updated 23 November 2026. **Bounded executable work is recorded; complete scientific tracks are not claimed.** Stable track IDs are retained, but T07 selection/qualification moves ahead of every consuming analysis.
+Updated 24 November 2026. **Bounded executable work is recorded; complete scientific tracks are not claimed.** Stable track IDs are retained, but T07 selection/qualification moves ahead of every consuming analysis.
 
 | Execution stage | Track / milestone | Requires | Current state |
 |---|---|---|---|
@@ -37,6 +37,10 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 - Next: first receive native GSE97362 11+11 discovery cases/controls, using the original study’s molecular diagnoses, exact source joins and established pre-QC design; resolve only material dependence and control provenance. Use the established R/Bioconductor reference route and preserve actual QC, institutional and applicable device gates. E2/E3 are the first scientific priority, not a variant-reclassification project or optional C/Rust port. GSE116300 and GSE218186 are separate candidate replication studies. See [receiving issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15) and [24 November first-science receipt](../research/qualification/t01-first-science-2026-11-24.md). Retain the 257 held, 84 review-scope exclusions and zero ready/admitted declarations until actual structural replay. The [molecular decision replay](../research/qualification/t01-molecular-decision.md) supplies an auditable source-specific policy and unchanged structural manifest; actual source/CI receipts required.
 
 The published metadata and source-linked Bronze are usable independently of the optional mirror. A raw-upload transport failure does not block eligible local technical work; it also does not close the mirror's acceptance criterion. The configured official-runner workflow is the concrete remaining route. [Observed publication and blocker](../research/qualification/hf-metadata-publication-2026-11-22.md).
+
+### 24 November receiving status
+
+PR [#16](https://github.com/edithatogo/rare-omics-atlas/pull/16) merged at `73f082b7b9cf6128d33f36edb9d24d4f0838cd8f`; [main strict CI 45396711579](https://github.com/edithatogo/rare-omics-atlas/actions/runs/45396711579) passed. Source replay: 11/11 cases, 11/11 control sex and age concordance; 22 held, none admitted. Control origin and biological independence remain unresolved. Native R candidate [#17](https://github.com/edithatogo/rare-omics-atlas/pull/17) has observed technical HM450 and synthetic limma passes, but the native GO probability domain failed. Actual full-table diagnostic isolates the exact zero-count boundary; the proposed corrected receiver is pending fresh R and strict verification. See [T07 receiving receipt](../research/qualification/t07-native-reference-candidate.md) and [issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15). Finish #17 first, then receive and verify the existing [one-shot merged-branch cleanup #19](https://github.com/edithatogo/rare-omics-atlas/pull/19) on current main. No additional backend or infrastructure work. No scientific admission, institutional, device or N1 acceptance.
 
 ## Executing one ready batch
 
