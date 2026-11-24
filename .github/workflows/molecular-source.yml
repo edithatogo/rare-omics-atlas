@@ -1,0 +1,91 @@
+name: Molecular source qualification
+
+on:
+  pull_request:
+    paths:
+      - scripts/molecular_replay.py
+      - scripts/tests/test_molecular_replay.py
+      - .github/workflows/molecular-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-replay:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && (github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: '0.13.9'
+          enable-cache: false
+      - name: Prepare reference text extractor and pinned tools
+        run: |
+          set -euo pipefail
+          if ! command -v pdftotext >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends poppler-utils
+          fi
+          pdftotext -v
+          uv sync --project tools/hf-release --frozen --python 3.15.2
+          rustup toolchain install 1.95.0 --profile minimal
+      - name: Verify originals and replay source decisions (aggregate only)
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief' \
+            -o "$work/source.soft"
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc1.pdf' -o "$work/mmc1.pdf"
+          uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/molecular_replay.py \
+            --geo "$work/source.soft" --supplement "$work/mmc1.pdf" --out "$work/review"
+          status=0
+          cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml \
+            --bin sample-contract -- --input "$work/review/declared-samples.json" > "$work/structural.json" || status=$?
+          test "$status" -eq 2
+          python3 - "$work/structural.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          report = json.loads(Path(sys.argv[1]).read_text())
+          assert report["summary"] == {"held": 22, "excluded": 0, "ready_for_review": 0}
+          assert report["analysis_admitted"] is False
+          assert report["independent_participant_count"] is None
+          print(json.dumps({"structural_exit": 2, "summary": report["summary"], "analysis_admitted": False}))
+          PY
+      - name: Retrieve and verify control provenance workbook
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc2.xlsx' -o "$work/mmc2.xlsx"
+          python3 - "$work/mmc2.xlsx" <<'PY'
+          import hashlib
+          import json
+          import sys
+          import zipfile
+          from pathlib import Path
+          from xml.etree import ElementTree
+          file = Path(sys.argv[1])
+          raw = file.read_bytes()
+          assert len(raw) == 153288
+          assert hashlib.md5(raw, usedforsecurity=False).hexdigest() == "2b1e4e654ec448b98901779c660ad236"
+          with zipfile.ZipFile(file) as workbook:
+              xml = ElementTree.fromstring(workbook.read("xl/workbook.xml"))
+          ns = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+          sheets = xml.findall(".//m:sheet", ns)
+          print(json.dumps({"control_workbook_verified": True, "bytes": len(raw),
+                            "sha256": hashlib.sha256(raw).hexdigest(),
+                            "worksheet_count": len(sheets),
+                            "control_origin_join_verified": False}))
+          PY
