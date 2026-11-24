@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-24",
+  "updated_on": "2026-11-25",
   "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
   "milestones": [
     {
@@ -99,7 +99,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has accepted bounded HM450, synthetic limma and corrected zero-count GO operation; #17 merged. Final scientific QC/annotation and wider method contract remain pending. See research/qualification/t07-native-reference-candidate.md. The existing selected contract now includes the native recipe; its N1 v0.1 draft is explicitly unfrozen. PR21 fixed-denominator execution failed at annotation loading; the reviewed native-hg38 successor needs its own actual receiving evidence."
+      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has accepted bounded HM450, synthetic limma and corrected zero-count GO operation; #17 merged. Final scientific QC/annotation and wider method contract remain pending. See research/qualification/t07-native-reference-candidate.md. The existing selected contract now includes the native recipe; its N1 v0.1 draft is explicitly unfrozen. PR21 fixed-denominator execution failed at annotation loading; the reviewed native-hg38 successor needs its own actual receiving evidence. #22/#23 bounded native technical and GO/Reactome synthetic results received; malformed legacy control attribute removes intended negative-control inputs. Native manifest-control successor requires actual replay. N1 v0.2 remains unfrozen."
     },
     {
       "id": "T07.technical_preprocessing",
@@ -109,7 +109,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites. Installed native QCDPB/detection technical operation passed; qualify fixed autosomal denominator, min-beads/detection, annotation and control rules before cohort QC."
+      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites. Installed native QCDPB/detection technical operation passed; qualify fixed autosomal denominator, min-beads/detection, annotation and control rules before cohort QC. Fixed hg38 denominator observed, 366308/408966 valid before correction; malformed control Type discovered. Corrected control route and paired qualification pending."
     },
     {
       "id": "T07.consumer_contract",
@@ -118,7 +118,7 @@
         "T07.selected_contract",
         "T00.strict_code"
       ],
-      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence. Native R bounded synthetic GO receiver passed all 13,817 terms; raw native failure preserved; production mapping/QC and wider consumer qualification remain pending."
+      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence. Native R bounded synthetic GO receiver passed all 13,817 terms; raw native failure preserved; production mapping/QC and wider consumer qualification remain pending. Synthetic Reactome 2178 pathway receiver passed; 683 no-gene pathways explicitly excluded, no BH changes. Cohort-scale qualification pending."
     },
     {
       "id": "T07.protocol_freeze",
@@ -127,7 +127,7 @@
         "T01.analysis_admission",
         "T07.selected_contract"
       ],
-      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification. Draft: conductor/tracks/t07-backend-qualification/n1.md; no freeze or analysis acceptance claimed."
+      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification. Draft: conductor/tracks/t07-backend-qualification/n1.md; no freeze or analysis acceptance claimed. v0.2 prospectively specifies research QC, primary design, regional and pathway families; no freeze."
     },
     {
       "id": "T07.selected_backend",
