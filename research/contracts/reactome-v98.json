@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "resource": "Reactome",
+  "release": "98",
+  "scope": "human_pathway_context_on_synthetic_HM450_CpGs_only",
+  "input": {
+    "url": "https://download.reactome.org/98/NCBI2Reactome_All_Levels.txt",
+    "bytes": 97248132,
+    "sha256": "272ca73c16eb285be1698e07c81912335a1d3804e125f789f5160dff150be243"
+  },
+  "release_evidence": "https://doi.org/10.5281/zenodo.24067822",
+  "format_evidence": "https://reactome.org/download-data?id=60&ml=1",
+  "license": "CC0-1.0",
+  "license_url": "https://reactome.org/license",
+  "selection": {
+    "species": "Homo sapiens",
+    "pathway_namespace": "R-HSA-",
+    "gene_identifier_pattern": "^[1-9][0-9]*$",
+    "evidence_codes": [
+      "IEA",
+      "TAS"
+    ],
+    "duplicate_policy": "unique numeric gene-pathway pairs; retain original evidence counts separately",
+    "native_universe": "missMethyl::getMappedEntrezIDs from exactly the existing all.cpg/sig.cpg and annotation; no result-dependent pathway filtering"
+  },
+  "observed_source_counts": {
+    "total_rows": 781553,
+    "species": 16,
+    "human_rows": 157638,
+    "human_pathways": 2863,
+    "human_source_ids": 11492,
+    "excluded_nonnumeric_rows": 224,
+    "excluded_nonnumeric_ids": 22,
+    "numeric_human_rows": 157414,
+    "numeric_human_genes": 11470,
+    "numeric_human_pathways": 2861,
+    "unique_numeric_gene_pathway_pairs": 140535,
+    "numeric_evidence_rows": {
+      "IEA": 32464,
+      "TAS": 124950
+    }
+  },
+  "limitations": [
+    "Numeric source identifiers and human pathway rows do not alone prove all members are human; the native human annotation universe determines eligibility.",
+    "All pathway hierarchy levels and TAS/IEA mappings are retained for technical qualification; a scientific consumer must predeclare its evidence/family policy.",
+    "This resource pin is not clinical pathway activity, an independent replicate, patient phenotyping or N1 admission."
+  ]
+}

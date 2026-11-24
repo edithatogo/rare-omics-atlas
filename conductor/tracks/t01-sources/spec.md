@@ -10,12 +10,15 @@ The initial increment retrieves public source metadata and the three selected Ka
 
 The [completed T01a increment](../../archive/t01a_sample_contract_20261123/index.md) reconciles 341 public GEO assay records against the catalogue and implements `sample-contract` in the existing Rust crate. Synthetic tests, independent review and all 34 combined strict checks passed before archive. All 341 actual declarations remain held. The structural statuses `ready_for_review`, `held` and `excluded` never grant scientific admission, verify source claims or produce an independent-participant count.
 
+The 24 November ontology extension adds a source-bound context consumer to the existing Rust catalogue. Its immediate inputs are the initial disease crosswalk and public tissue/cell literals, with curated Uberon/CL mappings. The disease dictionary remains reference context rather than assigning diagnoses to assays. The consumer must preserve source text, input hashes, explicit mapping predicates, ambiguous/unmapped/unreported values and unknown biological independence. See the [resource priorities](../../../research/resources-hosting-reuse.md#ontology-and-annotation-priorities) for subsequent gene, sequence-feature, pathway, regulatory, evidence, protein and metabolic consumers. Their activation depends on an actual analytical need.
+
 ## Admission criteria
 
 - Resolve official source URLs, exact file bytes/hash, assay type and original study provenance for every included input.
 - Define affected molecular subsets, native controls, tissue, age/sex/batch availability and donor/assay units. A clinical label or series count is not a confirmed affected-patient count.
 - Resolve participant/control reuse across development and validation cohorts using declared source evidence. Unknown overlap or perfect disease/platform confounding holds the affected claim.
 - Preserve original diagnosis and causal mechanism; pin ontology/manifest releases and qualified mapping predicates. Disease-level HPO does not create participant phenotypes.
+- Qualify each consumed reference product, release/revision, actual hash, rights/attribution and identifier lifecycle. Report exact/broader/ambiguous/unmapped context separately; do not equate Kabuki parent/subtypes, tissue/cell mixtures, cultured cell lines or nearest-gene/regulatory-target annotations. A successful catalogue join does not establish clinical meaning, cell composition or analytical benefit.
 - Record a dated analysis-specific prior-art decision and the applicable institutional research classification before inference.
 - Use [dataset rights](../../../research/dataset-rights.md) for research use, distribution and HF decisions. No additional author permission is required by default merely because a public repository does not expose private consent documents.
 

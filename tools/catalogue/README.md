@@ -57,3 +57,72 @@ Primary documentation:
 This is an operational metadata adapter, not a new bioinformatics algorithm. Reqwest supplies TLS/HTTP and URL encoding; Serde JSON supplies the API format; SHA-2 supplies content hashes; Clap supplies the CLI. The bounded SOFT adapter covers only the fields consumed here. No Polars, SQL engine, graph layer, lakehouse service, custom HTTP implementation or retry framework is necessary. The lockfile and exact enabled features are part of the qualification record. A published metadata API is the source oracle, while negative tests protect accession identity, duplicate/sample membership, API errors and disclosure boundaries.
 
 Cloud tests qualify this implementation in the observed environment. The repository's official local-runner requirement remains a separate target-device acceptance step.
+
+## Curated ontology context
+
+The existing catalogue can now receive the selected disease reference crosswalk and
+explicit tissue/cell mappings without changing the original source snapshot:
+
+```sh
+cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml \
+  --bin ontology-context -- \
+  --assays research/catalogue/2026-11-22/assays.jsonl \
+  --diseases research/registries/initial-disease-crosswalk.tsv \
+  --mappings research/registries/ontology-context-mappings.json
+```
+
+The command writes JSON to stdout only. Exit 0 means the inputs are structurally
+valid and a report was produced; unmapped or ambiguous annotations remain in that
+report. Exit 1 rejects malformed inputs, duplicate series–assay memberships,
+duplicate/conflicting reference mappings, incompatible identifier namespaces,
+unbound sources, or inputs larger than 16 MiB each. It never writes the input
+files, retrieves references, assigns disease diagnoses, or admits an analysis.
+
+The mapping JSON has `schema_version: 1`, `sources` and `mappings`. Each source
+declares `id` (`UBERON` or `CL`), `version`, `url`, `sha256`, `license` and
+`license_url`. Each mapping declares the entire literal `source_label`,
+`source_id`, `term_id`, `term_label`, `predicate` and `evidence`. Matching uses the
+complete source string, including its characteristic key and case; there is no
+fuzzy match or silent synonym expansion. The permitted predicates have explicit
+direction from the source label to the ontology term:
+
+| Predicate / report status | Meaning |
+|---|---|
+| `skos:exactMatch` / `exact` | Curator-declared equivalent context |
+| `skos:broadMatch` / `broader` | Target ontology concept is broader than the source label; source detail is retained |
+| `skos:relatedMatch` / `related` | Context is related, without an equivalence or subsumption claim |
+| Multiple candidates / `ambiguous` | Every candidate is retained; none is selected automatically |
+| No candidate / `unmapped` | A source label exists but has no curated mapping |
+| No source annotations / `unreported` | The catalogue supplied no tissue/cell annotation for that membership |
+
+Namespaces determine the target's meaning. For example, a source characteristic
+named `cell type: Peripheral blood` may map to an Uberon anatomical concept; this
+does not declare a blood cell type or measured cellular composition. Organism
+metadata and the complete original labels are retained. Repeated GSM accessions
+in different series remain separate memberships and never become independent
+participants.
+
+The disease TSV is consumed as a separate reference dictionary: MONDO concepts,
+HGNC gene relations, OMIM equivalence assertions, exact versus parent Orphanet
+links, and the versioned disease-level HPOA coverage counts remain distinct. The
+consumer does not join a disease label or causal gene onto assays, copy HPOA
+terms into participant observations, resolve obsolete identifiers, or traverse
+cross-reference chains. The five existing mappings are not a full HGNC or
+Orphadata ingest.
+
+Every report records SHA-256 hashes of all three exact input files, source
+declarations, annotation-status counts and sorted assay context. It explicitly
+keeps `analysis_admitted: false`, `source_claims_verified: false` and
+`independent_participant_count: null`. The separate
+[source qualification receipt](../../research/qualification/ontology-context-2026-11-24.md)
+supplies the actual byte/term checks; syntactically valid URLs, version labels,
+licences and digests alone do not verify those claims or provide distribution
+clearance. The original [MONDO/HPO receipt](../../research/qualification/ontology-source-receipt.md)
+continues to own disease-reference qualification.
+
+This bounded metadata join uses the crate's existing Serde, SHA-2, Reqwest URL
+validation and Clap dependencies. It adds no graph engine, OBO/OWL parser,
+clinical phenotyping algorithm or new runtime package. Its regression tests
+exercise mapping direction, ambiguity, missing labels, raw-input provenance,
+duplicate/conflicting inputs, parent-versus-exact disease links and disclosure
+boundaries.

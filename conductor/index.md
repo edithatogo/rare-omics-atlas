@@ -19,6 +19,8 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [Rust additions and SeSAMe-rust assessment](../research/rust-port-roadmap.md)
 - [Medallion layout](../research/medallion-layout.md)
 - [Resources and hosting](../research/resources-hosting-reuse.md)
+- [Ontology context implementation and source receipt](../research/qualification/ontology-context-2026-11-24.md)
+- [Ontology and annotation priorities](../research/resources-hosting-reuse.md#ontology-and-annotation-priorities)
 - [Official local runners](../research/local-development.md)
 - [Strict development and CI contract](../research/ci-plan.md)
 - [Repository ownership, native hooks and pinned receiving integration](../research/repository-integration.md)
@@ -36,3 +38,5 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 Schedule ready milestones, not numeric track labels. T00 context enables T01 discovery and a synthetic/committed-corpus backend baseline. Patient-data inference requires T01 analysis admission, the selected T07 backend, actual target-device qualification and an analysis-specific N1 freeze. Optional Rust ports and unneeded model layers remain separate branches.
 
 A source manifest, completed code test, statistical acceptance and an institutional decision are different receipts. Never satisfy a missing criterion by renaming it. When an external prerequisite is unavailable, record its owner, resolution and affected downstream milestones; continue independent authorised work.
+
+The owner's 24 November ontology extension is implemented within existing T01/T03/T04/T05 responsibilities. T01 qualifies selected source bytes and catalogue context; the consuming scientific track evaluates any predictive or interpretive benefit. Optional ontologies and knowledgebases do not become universal prerequisites, and disease annotations do not become observed participant phenotypes.

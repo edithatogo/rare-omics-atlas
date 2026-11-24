@@ -55,7 +55,16 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. The bounded HM450 technical increment qualifies exact ordering, hg38 coordinates, extension row-space and masks; remaining selected-platform/gene-mapping consumers stay open."
+      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. The bounded HM450 technical increment qualifies exact ordering, hg38 coordinates, extension row-space and masks; remaining selected-platform/gene-mapping consumers stay open. T01.ontology_context qualifies a bounded metadata consumer separately; selected gene/transcript, SO, GO/Reactome and regulatory consumers require source/version/hash, rights, mapping coverage and actual tests. Protein/metabolite/cross-species resources are conditional, never universal admission prerequisites."
+    },
+    {
+      "id": "T01.ontology_context",
+      "status": "in_progress",
+      "requires": [
+        "T08.api_catalogue",
+        "T00.strict_code"
+      ],
+      "scope": "T01.09a bounded source-bound disease dictionary and Uberon/CL context consumer for public catalogue literals. Require actual term/source qualification, deterministic replay with input hashes, exact/broader/related/ambiguous/unmapped/unreported coverage and rejected-input tests. Does not assign patient diagnoses/phenotypes, estimate cell composition, resolve biological independence, admit a cohort or establish scientific benefit."
     },
     {
       "id": "T01.institutional_classification",
@@ -154,7 +163,7 @@
         "T02.results",
         "T07.selected_backend"
       ],
-      "scope": "Separately admitted cross-disease comparisons and own N1"
+      "scope": "Separately admitted cross-disease comparisons and own N1; frozen GO/Reactome/regulatory drivers, tissue/cell and matched-null sensitivity; predictive ontology contributions require independent molecular-only/ontology-only/combined ablations."
     },
     {
       "id": "T04.results",
@@ -162,7 +171,7 @@
       "requires": [
         "T03.results"
       ],
-      "scope": "Adequate independent effects, model qualification and own N1"
+      "scope": "Adequate independent effects, model qualification and own N1; version-bound ontology priors, outcome-edge exclusions, source-removal ablations, calibration and negative-transfer checks against simple baselines."
     },
     {
       "id": "T05.results",
@@ -171,7 +180,7 @@
         "T01.analysis_admission",
         "T07.selected_backend"
       ],
-      "scope": "Separately admitted modalities/pairing; T02/T03 outputs additionally when used"
+      "scope": "Separately admitted modalities/pairing; T02/T03 outputs additionally when used; frozen gene/transcript/build/tissue/cell/regulatory mappings and ontology ablations on identical participant/family holdouts; extra modalities/references remain conditional."
     },
     {
       "id": "T06.results",

@@ -3,7 +3,7 @@
 - [ ] **T03.01:** At N0/N1 choose one worthwhile E4 contrast using qualified GSE74432, GSE191276 and Kabuki data. Reconcile external sources behind GSE167230 before any DNMT3A comparison; two new TBRS samples without new native controls do not establish an adequate cohort.
 - [ ] **T03.02:** Estimate disease-specific region effects and uncertainty without pooling incompatible case/control batches. Preserve shared-control covariance and platform coverage; label the three-case Sotos EPIC result corroborative and count pooled parental DNA as one assay.
 - [ ] **T03.03 — conditional:** Add GSE66552 as a deletion/duplication directionality comparator only if it tests the frozen question; it is not a required extra disease or paper.
-- [ ] **T03.04:** Test whether biological overlaps survive region/probe-density matched nulls, ontology and cell-composition sensitivity. Compare actual region/gene drivers, not only shared pathway labels, against the existing Velasco/Levy/Wheeler/Hansknecht literature.
+- [ ] **T03.04:** Test whether biological overlaps survive region/probe-density matched nulls, ontology and cell-composition sensitivity. Use qualified MONDO/mechanism, Uberon/CL and genome/build mappings; prespecify GO/Reactome families and any selected regulatory source. Compare actual region/gene drivers, not only shared pathway labels, against the existing Velasco/Levy/Wheeler/Hansknecht literature. Distinguish correlated annotation from independent biological replication.
 - [ ] **T03.05:** At N2 choose P1 extension, combined P2 with E5/E6, exploratory supporting material or stop. Require a distinct central contribution before proposing another manuscript; reassess dependencies and complete N3 for the chosen submission route.
 
 ## Execution batches after the receiving gates
@@ -15,6 +15,12 @@
 | C: .05 | Execute N2 and compare the observed incremental finding with the original question and current literature. | `n2.md` with extension / combined study / supporting evidence / stop decision. T04 consumes these effects only if its uncertainty and independence requirements pass; merely producing a table does not activate it. |
 
 The T03 owner records missing T01/T07 receipts and their existing owners. Use the shared strict command for code changes. Future scientific commands are selected and frozen before execution, not invented by this plan.
+
+### Ontology contribution within T03.01/.04
+
+Receive only the selected [T01 resource consumers](../../../research/resources-hosting-reuse.md#ontology-and-annotation-priorities), with immutable releases, source predicates, mapped/unmapped coverage and original evidence. Keep LoF/GoF or dosage mechanisms and tissue/cell strata separate where they change the estimand. An Uberon/CL label does not estimate blood-cell proportions; qualify the actual measured or deconvolved covariate separately.
+
+For descriptive enrichment, freeze the measured eligible universe and annotation families, test density/coverage-matched nulls, and report shared gene/region drivers and sensitivity to one reference source at a time. GO and Reactome overlap is not independent replication. If the frozen question involves prediction or similarity, compare molecular-only, ontology-only and combined inputs on the same independent holdouts, with source-removal ablations and uncertainty. Do not construct both phenotype and molecular concordance targets from the same disease label or reuse disease-derived HPO annotations as patient observations. A dataset too small for independent evaluation supports descriptive context only; record that limit at N1/N2.
 
 ## Receiving record
 
