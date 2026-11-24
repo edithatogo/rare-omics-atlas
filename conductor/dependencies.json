@@ -74,7 +74,7 @@
         "T01.institutional_classification",
         "T07.technical_preprocessing"
       ],
-      "scope": "Molecular subset via versioned original-source decision replay; source-reported versus new classification distinguished; native controls, material participant/specimen independence, overlap/covariates, selected QC and source eligibility"
+      "scope": "Molecular subset via versioned original-source decision replay; source-reported versus new classification distinguished; native controls, material participant/specimen independence, overlap/covariates, selected QC and source eligibility; PR #16 merged and main verified, 22 held and zero admitted, control-origin and biological independence unresolved."
     },
     {
       "id": "T07.fork_baseline",
@@ -90,7 +90,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1."
+      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1. Native reference candidate has actual HM450 and limma synthetic passes; missMethyl zero-count receiving correction pending qualification. See research/qualification/t07-native-reference-candidate.md."
     },
     {
       "id": "T07.technical_preprocessing",
@@ -109,7 +109,7 @@
         "T07.selected_contract",
         "T00.strict_code"
       ],
-      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence."
+      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence. Native R synthetic GO diagnostic preserves native failure and exact zero-count correction candidate; fresh acceptance pending."
     },
     {
       "id": "T07.protocol_freeze",
