@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "scope": "Selected unrelated public HM450 technical fixture: independent raw/Q reference, source-level R QCDPB, and separate production beta-only QCDPB diagnostic",
+  "sample": "3999492009_R01C01",
+  "platform": "HM450",
+  "genome": "hg38",
+  "source_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+  "yame_revision": "e1e7b38e9f3b67981a78b1116e7312864677d69d",
+  "r_source_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+  "software": {
+    "R": "4.5.2",
+    "MASS": "7.3.66",
+    "preprocessCore": "1.72.0",
+    "dplyr": "1.2.1",
+    "stringr": "1.6.0",
+    "micromamba": "2.10.0",
+    "serial_reference_compiler": "GCC 16.2.0",
+    "platform": "Linux x86_64"
+  },
+  "r_adapters": [
+    "Unmodified readIDAT outputs form the same G/R/GN/RN matrix as readIDAT1; explicit HM450 platform replaces only automatic idatSignature cache lookup.",
+    "Unmodified chipAddressToSignal uses the entire published R ordering and min_beads=NULL, corresponding to explicit CLI min-beads=0.",
+    "Raw/Q qualityMask receives the exact recommended five-track union from the independent R object; all 24 tracks and all addresses were compared over the complete universe first.",
+    "Full QCDPB uses local sesameDataList/Get/Has restricted to two exact downloaded objects; native mask discovery, prepSesame and every numerical function are unchanged.",
+    "No complete sesame package namespace/dependency lifecycle was installed or qualified; the unused hg38 GRanges slot was not interpreted."
+  ],
+  "raw_q": {
+    "status": "passed",
+    "scope": "complete ordered R source-level raw/Q versus independent Python mathematical reference",
+    "rows": 486427,
+    "mismatches": {
+      "M_signal": 0,
+      "U_signal": 0,
+      "raw_beta": 0,
+      "q_beta": 0,
+      "q_mask": 0
+    },
+    "missing": {
+      "M_signal": 2,
+      "U_signal": 2,
+      "raw_beta": 2,
+      "q_beta": 29506
+    },
+    "maximum_absolute_error": {
+      "M_signal": 0.0,
+      "U_signal": 0.0,
+      "raw_beta": 0.0,
+      "q_beta": 0.0
+    },
+    "acceptance": "exact finite binary64 values, exact NA pattern, exact mask and complete ordered identity",
+    "python_reference": {
+      "sha256": "af498b8ffb757dea34d93f661f49165a6a45d7dfa677bc38a684286ac96b86e3",
+      "artifact": "oracle/generated-raw-q/expected-raw-q.tsv.gz"
+    },
+    "comparison_script_sha256": "6a78e934d67f52cc533f1e9174ec895e88406655cce403bfbe562be6b8658d01",
+    "r_complete_address_fields_identical": [
+      "Probe_ID",
+      "M",
+      "U",
+      "col",
+      "no_initial_mask"
+    ],
+    "r_mask_tracks": 24,
+    "r_mask_bit_differences": 0,
+    "q_masked": 29504,
+    "complete_ordered_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+    "portable_comparator_revalidation": {
+      "status": "passed",
+      "rows": 486427,
+      "all_mismatches": 0,
+      "maximum_absolute_error": 0.0,
+      "script_sha256": "b2d6b0a203002fbe89d1995227a25039c422772e814d24569c13c095a809a1cf",
+      "receipt_sha256": "32259a6ea226db0116e5f5d1b71b75d07b1fb17920f67ce15bb3ce1f5365de10"
+    }
+  },
+  "qcdpb_internal": {
+    "status": "passed",
+    "scope": "independent R source-level QCDPB versus C internal float64 test helper",
+    "maximum_allowed_absolute_error": 1e-12,
+    "threshold_source": "https://github.com/zhou-lab/sesame/blob/f6713747181764e0b7a97b64c3c0d52ab9d82703/tests/compare_qcdpb.R",
+    "acceptance": "complete ordered identity, exact NA pattern, every finite absolute error <= 1e-12",
+    "not_admitted": [
+      "production export precision",
+      "full sesame package installation",
+      "EPIC",
+      "owner devices",
+      "disease inference"
+    ],
+    "comparison_script_sha256": "8fe3ae5243a0bcd375520050410632eefe8eb2eacb5773497ba67e0ccd73c69b",
+    "rows": 486427,
+    "reference_missing": 79947,
+    "paired_finite": 406480,
+    "na_mismatches": 0,
+    "values_exceeding_tolerance": 0,
+    "maximum_absolute_error": 1.1102230246251565e-15,
+    "c_values_sha256": "391fd28a65a2ea8c332c0694652a994d603af19aa81418efce4da8169e9783dd",
+    "r_values_sha256": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+    "ordered_probe_ids_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+  },
+  "qcdpb_production_beta_only": {
+    "status": "passed",
+    "scope": "selected public HM450 QCDPB production beta-only export versus fresh R",
+    "acceptance": "exact complete ordered text numeric values after declared binary32 then six-significant-digit serialization, including NA and sample index",
+    "direct_stored_binary_word_audit": false,
+    "qc_metrics_accepted": false,
+    "scientific_m_error_budget_accepted": false,
+    "scientific_admitted": false,
+    "official_owner_device_accepted": false,
+    "not_admitted": [
+      "EPIC",
+      "full sesame package installation",
+      "disease inference"
+    ],
+    "comparison_script_sha256": "b97b72c6b7d5ebb5b042228d32b3a732f21daa5df746c539f101ea64840edc8c",
+    "rows": 486427,
+    "missing": 79947,
+    "finite": 406480,
+    "reference_endpoints": 0,
+    "finite_to_endpoint_collapses": 0,
+    "maximum_absolute_beta_serialization_error": 5.294165927871575e-07,
+    "maximum_finite_absolute_m_serialization_error": 8.747193203184622e-05,
+    "sha256": {
+      "text_export": "f361b83e92feb31c28a3abfdd9e2d4f0d06f6653e298e8906ca8d96a809a5d80",
+      "sample_index": "4d7ff9bfebfc6201fee7e3787d539056f1f60d0675473fdb95e5481f21eb2c32",
+      "binary_output": "a662da66da596d81bc2453750597ce09ba5cfdb6bce7860feda4368e115b916f",
+      "r_values": "c489458dc4fbf00404673d1dbdc7c467797c199d9519abdf72d45d669100c7d1",
+      "ordered_probe_ids": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+    }
+  },
+  "failed_attempts": [
+    {
+      "stage": "initial object inspection",
+      "status": "failed",
+      "exit_code": 1,
+      "reason": "str(HM450.address) traversed the unused hg38 GRanges object; GenomicRanges was absent. Complete ordering and mask comparisons subsequently succeeded without using that slot.",
+      "artifact": "tooling/initial-object-inspection-failure.txt"
+    },
+    {
+      "stage": "precompiled preprocessCore QCDPB",
+      "status": "failed",
+      "exit_code": 1,
+      "reason": "normalize.quantiles.use.target failed with pthread_create return code 22",
+      "command_receipt": "oracle/r-qcdpb-command.json",
+      "driver_sha256": "47197a5fad6adf8885892f67ed8096f1fb03947e933ad3d607eb4d703a946305",
+      "stderr_sha256": "18764f53023cf0bc685e1aa597804de0842c6c97b20556842ada4fa9b5e86a4e"
+    },
+    {
+      "stage": "official source metadata fetch",
+      "status": "failed",
+      "reason": "HTTP 403 from https://bioconductor.org/packages/3.22/bioc/src/contrib/PACKAGES.gz before source download",
+      "resolution": "official Posit mirror supplied preprocessCore 1.72.0 matching release metadata; source SHA256 remained fixed"
+    }
+  ],
+  "serial_resolution": {
+    "status": "passed",
+    "exit_code": 0,
+    "package": "preprocessCore 1.72.0",
+    "configure_argument": "--disable-threading",
+    "source_sha256": "4472052371147cfbf91d223eb15f3b030d236de9b4bba6b58a205c368d53884d",
+    "source_changed": false,
+    "separate_library": true,
+    "reference_binary_sha256": "0d37957fdecea8d6ba0ce34cbd5ac7c9fe1bcee478a08125ac038d4fe5b3b3a9",
+    "official_guidance": "https://github.com/Bioconductor/bioconductor_docker/issues/22"
+  },
+  "retained_nonfatal_messages": [
+    "dplyr was built under R 4.5.3; the actual runtime was pinned R 4.5.2.",
+    "R CMD INSTALL reported the defunct config variable CPP; source build and load checks succeeded."
+  ],
+  "unaccepted": [
+    "QC metric correctness",
+    "scientific M-error budget",
+    "individual stored .cg binary word audit",
+    "EPIC/other platforms",
+    "biological sample/cohort admission",
+    "actual owner devices",
+    "clinical or disease inference"
+  ],
+  "validation": {
+    "python_generator_unit_tests": 4,
+    "python_generator_unit_test_status": "passed",
+    "portable_python_ruff": "passed",
+    "portable_python_strict_pyright": "0 errors, 0 warnings",
+    "scientific_results": "actual complete-fixture comparisons, not synthetic unit coverage claims",
+    "new_optional_test_loop": false,
+    "portable_unit_tests": 8,
+    "portable_unit_test_status": "passed",
+    "new_receipt_schema_regression_tests": 4,
+    "new_receipt_schema_cases": [
+      "known complete values and NA",
+      "wrong/extra header and extra fields",
+      "short/trailing/permuted complete universe",
+      "truncated/trailing/infinite numerical payload",
+      "lost finite reference value",
+      "existing receipt and present/absent input aliases preserved"
+    ],
+    "portable_python_files_checked": 6
+  },
+  "artifact_receipts": {
+    "oracle/r-raw-q-command.json": {
+      "sha256": "ae5a03a553ce7a3249e9faffc006184c7172fc0ad2d98b41b6ef05251c849f84"
+    },
+    "oracle/r-raw-q/comparison-receipt.json": {
+      "sha256": "3be250ddfed9d921758939d6c4a2c760c9d80e79c735132210a64156ee1089f7"
+    },
+    "oracle/r-qcdpb-command.json": {
+      "sha256": "f77ce23ce324f54a669c5acc88c9af311583037e12dc97864359efbb506a89ac"
+    },
+    "oracle/r-qcdpb-serial-command.json": {
+      "sha256": "31139a5a3def632ec1724b14d50a384d2fc19d207202021cfe72483d5f8703a9"
+    },
+    "oracle/r-qcdpb-serial/comparison-receipt.json": {
+      "sha256": "7f854b9883dce530c85e25fd5d9388655099df8f9e14bc328f3eb5b2b40a49d3"
+    },
+    "production-qcdpb-r/execution-receipt.json": {
+      "sha256": "1f648581df373b6712d18db1bd5434c3f1f098fefd1e650610123000ee6b5809"
+    },
+    "production-qcdpb-r/comparison-receipt.json": {
+      "sha256": "8c213df6a97e9978026506188d929ffc8835268762aa27645e54fec95451a89b"
+    },
+    "oracle/r-raw-q/portable-comparison-receipt.json": {
+      "sha256": "32259a6ea226db0116e5f5d1b71b75d07b1fb17920f67ce15bb3ce1f5365de10"
+    }
+  },
+  "source_only_bundle": {
+    "raw_idats_included": false,
+    "per_probe_results_included": false,
+    "runtime_binaries_included": false,
+    "note": "Portable comparisons use explicit UTF-8 and preserve existing/symlink receipts. The raw/Q comparator now creates a running receipt before parsing, records malformed inputs as failed, rejects input aliases and validates exact header/field shape. It was rerun over the complete actual fixture with zero differences; focused regressions pass. Original execution receipts remain unchanged."
+  }
+}

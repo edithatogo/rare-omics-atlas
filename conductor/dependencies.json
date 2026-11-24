@@ -55,7 +55,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete; selected array manifests/annotation and actual consumer semantics remain."
+      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. The bounded HM450 technical increment qualifies exact ordering, hg38 coordinates, extension row-space and masks; remaining selected-platform/gene-mapping consumers stay open."
     },
     {
       "id": "T01.institutional_classification",
@@ -100,7 +100,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Accept the selected preprocessing/QC stage before T01 sample QC: exact stage source, required manifest/mask/build/annotation assets, independent technical fixtures, actual exported precision and applicable device receipts. Isolated fixture development can proceed before device acceptance; optional references are not prerequisites."
+      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites."
     },
     {
       "id": "T07.consumer_contract",
@@ -230,7 +230,7 @@
       "requires": [
         "T00.strict_code"
       ],
-      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each actual publishing commit must pass its hook; source mapping is recorded in its PR. Server-side required checks and owner-device execution remain separate."
+      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each publishing candidate must pass its installed hook; a staged API candidate may receive an actual read-only hosted native-hook commit replay on the exact current-base merge tree before merge. Source/tree and observed checks are recorded in its PR. Owner-device execution remains separate."
     },
     {
       "id": "T01.sample_contract",
@@ -249,6 +249,33 @@
         "T00.strict_code"
       ],
       "scope": "Archived T07a named-v1 receiver at immutable limma c08c53943a7acb9c6a1152df8d79e27cffe7199b: three actual exchanges, 576 rows, 6912 numerical fields and 54 preserved nonfinite results; 34/34 strict checks. This synthetic Rust route does not gate an independently qualified reference route or establish production preprocessing."
+    },
+    {
+      "id": "T01.source_curation",
+      "status": "complete",
+      "requires": [
+        "T01.sample_contract",
+        "T00.strict_code"
+      ],
+      "scope": "Bounded source curation of 341 public assays: 68 candidate case, 189 source control and 84 KMT2D review-scope exclusions; the unchanged validator holds 257 and admits none. Molecular eligibility, identities, overlap, missing covariates and scientific admission remain open."
+    },
+    {
+      "id": "T07.hm450_raw_q",
+      "status": "complete",
+      "requires": [
+        "T00.context",
+        "T00.strict_code"
+      ],
+      "scope": "Pinned HM450 author technical pair, independent mathematical/R raw/Q reference, complete named annotation and actual binary32-to-six-digit production exports. Full scientific preprocessing/QC, other platforms and owner devices retain separate criteria."
+    },
+    {
+      "id": "T07.hm450_qc_receiver",
+      "status": "complete",
+      "requires": [
+        "T07.hm450_raw_q",
+        "T00.strict_code"
+      ],
+      "scope": "Archived bounded full-schema HM450 QC and raw/QCD detection receiver: four actual exports, all p-values pass and four native R QC fields differ. Independent review and 34/34 strict code gates passed; final native-hook/hosted evidence belongs to its integration PR. Full QC method, rejection-policy, scientific and device admission remain held."
     }
   ],
   "external_gate_resolution": {

@@ -1,0 +1,326 @@
+{
+  "status": "passed",
+  "started_at": "2026-11-23T08:05:36.744926+00:00",
+  "inputs_before": {
+    "rare-omics-atlas/scripts/tests/run_qc_reference.R": {
+      "bytes": 7027,
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c"
+    },
+    "rare-omics-atlas/scripts/tests/run_native_gct_reference.R": {
+      "bytes": 2850,
+      "sha256": "d51dd218d1683cdf60b3347963979819e7ec825d431b8ab5ad97aa4b871a1890"
+    },
+    "preprocess-audit/oracle/r-source/QC.R": {
+      "bytes": 24323,
+      "sha256": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824"
+    },
+    "preprocess-audit/oracle/r-source/SigDFMethods.R": {
+      "bytes": 6295,
+      "sha256": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc"
+    },
+    "preprocess-audit/oracle/r-source/background.R": {
+      "bytes": 7202,
+      "sha256": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9"
+    },
+    "preprocess-audit/oracle/r-source/channel_inference.R": {
+      "bytes": 2044,
+      "sha256": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6"
+    },
+    "preprocess-audit/oracle/r-source/detection.R": {
+      "bytes": 6420,
+      "sha256": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316"
+    },
+    "preprocess-audit/oracle/r-source/dye_bias.R": {
+      "bytes": 7293,
+      "sha256": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086"
+    },
+    "preprocess-audit/oracle/r-source/mask.R": {
+      "bytes": 13266,
+      "sha256": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527"
+    },
+    "preprocess-audit/oracle/r-source/open.R": {
+      "bytes": 5571,
+      "sha256": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5"
+    },
+    "preprocess-audit/oracle/r-source/readIDAT.R": {
+      "bytes": 9754,
+      "sha256": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302"
+    },
+    "preprocess-audit/oracle/r-source/sesame.R": {
+      "bytes": 21400,
+      "sha256": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": {
+      "bytes": 3064215,
+      "sha256": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.mask.cm": {
+      "bytes": 213674,
+      "sha256": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": {
+      "bytes": 727,
+      "sha256": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959"
+    },
+    "preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": {
+      "bytes": 4583258,
+      "sha256": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6"
+    },
+    "preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": {
+      "bytes": 72943,
+      "sha256": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b"
+    },
+    "preprocess-audit/r-assets/HM450.address.rda": {
+      "bytes": 8000665,
+      "sha256": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387"
+    },
+    "preprocess-audit/r-assets/KYCG.HM450.Mask.20261008.rds": {
+      "bytes": 685695,
+      "sha256": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310"
+    },
+    "preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": {
+      "bytes": 8095289,
+      "sha256": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd"
+    },
+    "preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": {
+      "bytes": 8095289,
+      "sha256": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+    },
+    "preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda": {
+      "bytes": 10616007,
+      "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd"
+    }
+  },
+  "commands": [
+    {
+      "name": "native-panel",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/bin/micromamba",
+        "--no-rc",
+        "run",
+        "--prefix",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/r-4.5.2",
+        "Rscript",
+        "--vanilla",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/run_qc_reference.R",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-native-v2-20261123/reference-parent",
+        "0"
+      ],
+      "returncode": 0,
+      "seconds": 19.411
+    },
+    {
+      "name": "native-gct",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/bin/micromamba",
+        "--no-rc",
+        "run",
+        "--prefix",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/tooling/r-4.5.2",
+        "Rscript",
+        "--vanilla",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/run_native_gct_reference.R",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/oracle/r-source",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-native-v2-20261123/reference-parent",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda",
+        "/workspace/scratch/1ef0e9289b0e/preprocess-audit/qc-native-v2-20261123/reference"
+      ],
+      "returncode": 0,
+      "seconds": 3.124
+    }
+  ],
+  "inputs_after": {
+    "rare-omics-atlas/scripts/tests/run_qc_reference.R": {
+      "bytes": 7027,
+      "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c"
+    },
+    "rare-omics-atlas/scripts/tests/run_native_gct_reference.R": {
+      "bytes": 2850,
+      "sha256": "d51dd218d1683cdf60b3347963979819e7ec825d431b8ab5ad97aa4b871a1890"
+    },
+    "preprocess-audit/oracle/r-source/QC.R": {
+      "bytes": 24323,
+      "sha256": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824"
+    },
+    "preprocess-audit/oracle/r-source/SigDFMethods.R": {
+      "bytes": 6295,
+      "sha256": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc"
+    },
+    "preprocess-audit/oracle/r-source/background.R": {
+      "bytes": 7202,
+      "sha256": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9"
+    },
+    "preprocess-audit/oracle/r-source/channel_inference.R": {
+      "bytes": 2044,
+      "sha256": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6"
+    },
+    "preprocess-audit/oracle/r-source/detection.R": {
+      "bytes": 6420,
+      "sha256": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316"
+    },
+    "preprocess-audit/oracle/r-source/dye_bias.R": {
+      "bytes": 7293,
+      "sha256": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086"
+    },
+    "preprocess-audit/oracle/r-source/mask.R": {
+      "bytes": 13266,
+      "sha256": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527"
+    },
+    "preprocess-audit/oracle/r-source/open.R": {
+      "bytes": 5571,
+      "sha256": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5"
+    },
+    "preprocess-audit/oracle/r-source/readIDAT.R": {
+      "bytes": 9754,
+      "sha256": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302"
+    },
+    "preprocess-audit/oracle/r-source/sesame.R": {
+      "bytes": 21400,
+      "sha256": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.coord.tsv.gz": {
+      "bytes": 3064215,
+      "sha256": "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.mask.cm": {
+      "bytes": 213674,
+      "sha256": "adebc62a6e6c1a783a5cd00bf61b441ee2b72c017d7be978fbf2ee6334d04360"
+    },
+    "preprocess-audit/assets/HM450/HM450.hg38.mask.cm.idx": {
+      "bytes": 727,
+      "sha256": "27dff6eb30329c3fc974226a8da3e2b8d5d66f4205abde8eebb78fb07e28b959"
+    },
+    "preprocess-audit/assets/HM450/HM450.ordering.tsv.gz": {
+      "bytes": 4583258,
+      "sha256": "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6"
+    },
+    "preprocess-audit/assets/HM450/HM450.typeI_ext.tsv.gz": {
+      "bytes": 72943,
+      "sha256": "dd223d6672d5fd0388048d9d9862be6947bac3b5e3effb088f16da90582d1c4b"
+    },
+    "preprocess-audit/r-assets/HM450.address.rda": {
+      "bytes": 8000665,
+      "sha256": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387"
+    },
+    "preprocess-audit/r-assets/KYCG.HM450.Mask.20261008.rds": {
+      "bytes": 685695,
+      "sha256": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310"
+    },
+    "preprocess-audit/idats/HM450/3999492009_R01C01_Grn.idat": {
+      "bytes": 8095289,
+      "sha256": "80ebef9ba5dcacdd1d0c70da9e06ee3d4c914552240858811704638fcfdfe6bd"
+    },
+    "preprocess-audit/idats/HM450/3999492009_R01C01_Red.idat": {
+      "bytes": 8095289,
+      "sha256": "0c12f9867f6e8c22056192185a810d2d1436362a67a607e395c66357844612be"
+    },
+    "preprocess-audit/qc-reference-20261123/HM450.probeInfo.rda": {
+      "bytes": 10616007,
+      "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd"
+    }
+  },
+  "outputs": {
+    "reference-parent/gct-extension-lineage.tsv": {
+      "bytes": 99,
+      "sha256": "0b812a7eeb3af6dca1d67a08276b1a1191ac019928e400f9c180aee803aae2a7"
+    },
+    "reference-parent/gct-scope.txt": {
+      "bytes": 324,
+      "sha256": "1142274fe6b0e8817a1939f3b66da6984d7c42be66e69d62fef2b7dc12b1b83a"
+    },
+    "reference-parent/initial-bead-mask.u8": {
+      "bytes": 486427,
+      "sha256": "ae091abcb7ce270e4116a357bc5c8806d8c45509e32415db6c106442dd174752"
+    },
+    "reference-parent/native-r-qc.tsv": {
+      "bytes": 1586,
+      "sha256": "54c468e2e87600c328a2110da9fbadf38b1cfc8230e74de757162a032dd96afb"
+    },
+    "reference-parent/original-address-ids.txt": {
+      "bytes": 5601591,
+      "sha256": "65633c70bf9668a904a83ac82bac3006940a85e4cde3c36e1347d282bcb7e467"
+    },
+    "reference-parent/original-green-beads.u8": {
+      "bytes": 622399,
+      "sha256": "180f68aa0edc17a19c3d2552440d98515cee9b8767352e662d007b1205d14cd5"
+    },
+    "reference-parent/original-red-beads.u8": {
+      "bytes": 622399,
+      "sha256": "180f68aa0edc17a19c3d2552440d98515cee9b8767352e662d007b1205d14cd5"
+    },
+    "reference-parent/probe-ids.txt": {
+      "bytes": 5371613,
+      "sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad"
+    },
+    "reference-parent/pvalues-reference.tsv": {
+      "bytes": 25742522,
+      "sha256": "30e8bf4606ba657a75791ce77ff710c27d2ca8bab9f7cbbd612b8451cc2ef562"
+    },
+    "reference-parent/pvalues-reference.tsv.gz": {
+      "bytes": 6200924,
+      "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a"
+    },
+    "reference-parent/qc-reference.tsv": {
+      "bytes": 1609,
+      "sha256": "490dd59fd37e601dda27845d8879c075d198613d8336c87e58a866d1646a1712"
+    },
+    "reference-parent/qcd-mask.u8": {
+      "bytes": 486427,
+      "sha256": "1fa818a4909bc1a61b20fe23811f413bf4c07d2949541310288669eb36a50707"
+    },
+    "reference-parent/qcd-pval.f64": {
+      "bytes": 3891416,
+      "sha256": "e9e8092e6d774aedeef3f09555e2e8c48f56f23a2a043fdf94b543f75ec2a847"
+    },
+    "reference-parent/qcdp-mask.u8": {
+      "bytes": 486427,
+      "sha256": "1e37331a8f8e3431da10da393eefe819a99279aec2c3483121a55a3f05f250e8"
+    },
+    "reference-parent/raw-pval.f64": {
+      "bytes": 3891416,
+      "sha256": "1f2a8fbb463689c4feb3a1ca149d1b5bdfd275a4c89a1ef839f80bab4d3da9ff"
+    },
+    "reference-parent/raw-sdf.rds": {
+      "bytes": 4618250,
+      "sha256": "19be981d32c2a0e95670828cbe25aeba476cfecdd6aa854c1adc6e1e67a1b14f"
+    },
+    "reference-parent/session-info.txt": {
+      "bytes": 1157,
+      "sha256": "c37bc931b4cb4705dfefad6e3365bb9f6b675f57bcff9ad468235ec51f678f1b"
+    },
+    "reference-parent/summary.tsv": {
+      "bytes": 216,
+      "sha256": "3a83ec7398a512c9334abeaa42f7ca2e4e890cd9bb5731ebdc49d7571000d5d6"
+    },
+    "reference/native-curated-C.ids.txt": {
+      "bytes": 499697,
+      "sha256": "03a1a3ff1a0bbc81ffbc6d8bc77e474a336280b3bda17198bd567ac94cd4ecd7"
+    },
+    "reference/native-curated-T.ids.txt": {
+      "bytes": 166626,
+      "sha256": "0c8086672b57cd1e231f0e19d07f8ec577c27fc67c3432b9ac92ec0d181f60af"
+    },
+    "reference/native-typeI-ext.tsv": {
+      "bytes": 972858,
+      "sha256": "514f28ea499cbad85d9cc555b3aa21e01a5726280c565c855560a6507be9f752"
+    },
+    "reference/native-typeI-ext.tsv.gz": {
+      "bytes": 59962,
+      "sha256": "94fac8b1b5e79dd4b8f770d51d9674e7502a2c6d3fd2f460b01dd0aaa5357921"
+    },
+    "reference/pvalues-reference.tsv.gz": {
+      "bytes": 6200924,
+      "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a"
+    },
+    "reference/qc-reference.tsv": {
+      "bytes": 1609,
+      "sha256": "bf459c7dc18b81f848ad98950b7afafb66e23caf8caedded25dc796f2ff4c37e"
+    },
+    "reference/session-info.txt": {
+      "bytes": 788,
+      "sha256": "46565160e0defe9e82d0c444a564c7ef49449ab653ae789a921cc99efe09446b"
+    }
+  }
+}

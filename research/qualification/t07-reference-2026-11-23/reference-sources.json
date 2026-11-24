@@ -1,0 +1,65 @@
+{
+  "source_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+  "sources": [
+    {
+      "name": "sesame.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/sesame.R",
+      "bytes": 21400,
+      "sha256": "aded5603c661b804468f4d6be4ec0e37d9f0bdeaa1da054d7ad3978e9cac6f5f"
+    },
+    {
+      "name": "SigDFMethods.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/SigDFMethods.R",
+      "bytes": 6295,
+      "sha256": "3625dc4d804c15fa257fadc25877ef70e970e8bc5353a1d85ead90913adce0bc"
+    },
+    {
+      "name": "mask.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/mask.R",
+      "bytes": 13266,
+      "sha256": "23eae3dfda6fd5ea4cdcfc885ec16c86d15d8d10720b7e8571e60548a7534527"
+    },
+    {
+      "name": "readIDAT.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/readIDAT.R",
+      "bytes": 9754,
+      "sha256": "534986132b27a5c002e3e1842d9cb05428c7040ae03bc7230b8694eddd16f302"
+    },
+    {
+      "name": "background.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/background.R",
+      "sha256": "fb7846fe803ba2bbc1a1185c6243845ec6fffc22a0fcd13f7fd27a7cdb2012f9",
+      "bytes": 7202
+    },
+    {
+      "name": "dye_bias.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/dye_bias.R",
+      "sha256": "905427d050427aed78e7420c9d4e1cbc7c7f68afa5ca6c101cac0af1f77eb086",
+      "bytes": 7293
+    },
+    {
+      "name": "channel_inference.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/channel_inference.R",
+      "sha256": "bbe445682fb1e147661cff78d6ea16a7a8833d4e216d3b0347fc1824ed93fda6",
+      "bytes": 2044
+    },
+    {
+      "name": "detection.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/detection.R",
+      "sha256": "75b7fff23941a0675f2ede9506653ff582ff2b8a88915f8600f18c066631a316",
+      "bytes": 6420
+    },
+    {
+      "name": "QC.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/QC.R",
+      "sha256": "23a9757f6afcae9990048538708f1c8cae5a1d2fe6ff504a92543fe45156d824",
+      "bytes": 24323
+    },
+    {
+      "name": "open.R",
+      "url": "https://raw.githubusercontent.com/zwdzwd/sesame/8b1fcfaed89b28e0def8b031a81611a0a770053c/R/open.R",
+      "sha256": "02cccc4c1df815529a64ef1047592b111610ca212713f750f0eed02384f576c5",
+      "bytes": 5571
+    }
+  ]
+}

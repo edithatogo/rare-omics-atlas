@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "T01 original-supplement and sample-crosswalk follow-up; aggregate evidence only",
+  "review_date": "2026-11-23",
+  "review_completed_at_utc": "2026-11-23T03:37:28.760696+00:00",
+  "base_revision": "55341f42359ba69e95570ec0064ee5a7197f59eb",
+  "projection": {
+    "original_receipt": "data/silver/qc-increment-curation-20261123/source-review.json",
+    "original_receipt_sha256": "56df702b9929db5fd33b4fbfb9c7703dccd873c53cbc56e1711d7cc37a15da21",
+    "note": "Privacy-minimized aggregate projection of the retained ignored receipt. Local response paths and ephemeral web-tool citation IDs are omitted. Public source URLs, response classifications, hashes and aggregate counts are retained. No individual-level records or inferred identifiers are included."
+  },
+  "retained_sources_verified": [
+    {
+      "accession": "GSE97362",
+      "primary_geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief",
+      "sha256": "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf",
+      "fresh_source_download_this_increment": false
+    },
+    {
+      "accession": "GSE116300",
+      "primary_geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief",
+      "sha256": "9a8722a365f07c83e6f663d0ab0bb8b7723bd736aad16696d099ee9d2b12c7e1",
+      "fresh_source_download_this_increment": false
+    },
+    {
+      "accession": "GSE218186",
+      "primary_geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218186&targ=gsm&form=text&view=brief",
+      "sha256": "0e72adc9bc6547023f23d5ba4743eb76dfd98a4cf7357ed8abe3dddcb11bcbde",
+      "fresh_source_download_this_increment": false
+    }
+  ],
+  "direct_retrieval_attempts": 6,
+  "retrieval_attempts": [
+    {
+      "requested_file": "PMC5865196.bioc.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC5865196/unicode",
+      "retrieved_at_utc": "2026-11-23T03:32:50.697467+00:00",
+      "http_status": 429,
+      "access_outcome": "HTTP Error 429: Too Many Requests",
+      "usable_original_file_received": false
+    },
+    {
+      "requested_file": "PMC5865196.europepmc.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5865196/fullTextXML",
+      "retrieved_at_utc": "2026-11-23T03:32:50.698139+00:00",
+      "http_status": 500,
+      "access_outcome": "HTTP Error 500: Internal Server Error",
+      "usable_original_file_received": false
+    },
+    {
+      "requested_file": "Sobreira2017-supp1.xlsx",
+      "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41431-017-0023-0/MediaObjects/41431_2017_23_MOESM1_ESM.xlsx",
+      "retrieved_at_utc": "2026-11-23T03:32:50.698660+00:00",
+      "url_basis": "Candidate public publisher file convention; exact download href not verified. HTTP 503 does not establish file existence or access policy.",
+      "http_status": 503,
+      "access_outcome": "HTTP Error 503: Service Unavailable",
+      "usable_original_file_received": false
+    },
+    {
+      "requested_file": "Butcher2017-mmc1.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/5420353/bin/mmc1.pdf",
+      "retrieved_at_utc": "2026-11-23T03:34:52.490654+00:00",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 21494,
+      "sha256": "045b61c35393854d57d4f2a47befd8c8a5c287242c5f041989e35079ba03e412",
+      "requested_binary_signature_valid": false,
+      "observed_content": "HTML reCAPTCHA browser check, not the requested publication file",
+      "access_outcome": "Browser-challenge HTML received; requested original file rejected",
+      "usable_original_file_received": false
+    },
+    {
+      "requested_file": "Sobreira2017-main.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/5865196/bin/41431_2017_Article_23.pdf",
+      "retrieved_at_utc": "2026-11-23T03:34:52.491377+00:00",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 21540,
+      "sha256": "87299ec4a6b87c5c07b82293fab1b13c53e9888592645e91ef2f6aef88fa5c4c",
+      "requested_binary_signature_valid": false,
+      "observed_content": "HTML reCAPTCHA browser check, not the requested publication file",
+      "access_outcome": "Browser-challenge HTML received; requested original file rejected",
+      "usable_original_file_received": false
+    },
+    {
+      "requested_file": "Hildonen2023-supinfo.docx",
+      "url": "https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fcge.14304&file=cge14304-sup-0001-Supinfo.docx",
+      "retrieved_at_utc": "2026-11-23T03:34:52.492031+00:00",
+      "http_status": 403,
+      "access_outcome": "HTTP Error 403: Forbidden",
+      "usable_original_file_received": false
+    }
+  ],
+  "accepted_new_supplement_or_pdf_files": 0,
+  "new_named_assay_to_paper_joins": 0,
+  "source_text_review": {
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5865196/",
+    "doi": "10.1038/s41431-017-0023-0",
+    "retrieval_method": "Primary article text returned by public web search; not an archived original XML/PDF body",
+    "original_article_body_bytes_archived_this_increment": false,
+    "reported_sequenced_probands": 27,
+    "reported_case_control_array_samples": 36,
+    "reported_qc_passing_samples_for_ancestry_pcs": 38,
+    "not_all_qc_passing_samples_were_in_the_analytical_set": true,
+    "scope_note": "These are distinct source-reported sets. No named GEO bridge identifying the extra two case-labelled assays was obtained in this follow-up."
+  },
+  "GSE116300_geo_inventory": {
+    "case_labelled_assays": 29,
+    "controls": 9,
+    "case_parents": 6,
+    "total_assays": 44
+  },
+  "interpretation": {
+    "nonparent_geo_assay_count": 38,
+    "numeric_count_agreement_is_a_named_join": false,
+    "extra_two_case_assays_identified": false,
+    "KS_to_PAT_mapping_inferred": false,
+    "new_molecular_eligibility_assigned": false,
+    "independence_verified": false,
+    "analysis_admitted": false,
+    "independent_participant_count": null
+  },
+  "declaration_disposition_reconfirmed": {
+    "held": 257,
+    "excluded_by_KMT2D_review_scope": 84,
+    "ready_for_review": 0,
+    "scope_exclusions_are_global_eligibility_decisions": false,
+    "declared_samples_sha256": "e597ac2fd42ce0bf172cb67dc041df59c930a4ad048cae912335fba14916052b",
+    "structural_review_report_sha256": "986d36ae5b10f71ab1378fbeda17838b77907e087dc3160c4212373e0c07d185",
+    "verification": "Both retained files still match the prior source-curation receipt hashes; the follow-up changed neither file or disposition."
+  },
+  "remaining_condition": {
+    "owner": "T01 cohort curator",
+    "affected_work": "T01.03b case-level molecular, participant/specimen and independence declarations",
+    "resume_when": "Valid original source material is available through authorized public retrieval and provides an explicit sample/variant bridge; the bridge must be checked before any declaration changes.",
+    "current_holds": "Unresolved case crosswalks, identities, biological overlap and required covariates remain held. Methylation-derived classifications and array keys do not resolve those claims.",
+    "retrieval_boundary": "Six direct attempts completed. The rate-limited BioC request was not retried. Challenge HTML was not accepted as source content; the candidate CDN response does not establish the file exists or an access restriction."
+  }
+}

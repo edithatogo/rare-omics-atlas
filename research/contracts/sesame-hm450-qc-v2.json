@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "contract_id": "sesame-hm450-qc-v2",
+  "preprocessing_contract_sha256": "e049d7f9d1ba1790c4973fd783f74f530fa80fc05ac495bfb370a6f856acc10d",
+  "metrics": [
+    "num_dtna",
+    "frac_dtna",
+    "num_dt",
+    "frac_dt",
+    "num_dt_mk",
+    "frac_dt_mk",
+    "num_dt_cg",
+    "frac_dt_cg",
+    "num_dt_ch",
+    "frac_dt_ch",
+    "num_dt_rs",
+    "frac_dt_rs",
+    "num_probes",
+    "num_probes_II",
+    "num_probes_IR",
+    "num_probes_IG",
+    "num_probes_cg",
+    "num_probes_ch",
+    "num_probes_rs",
+    "mean_intensity",
+    "mean_intensity_MU",
+    "mean_ii",
+    "mean_inb_grn",
+    "mean_inb_red",
+    "mean_oob_grn",
+    "mean_oob_red",
+    "na_intensity_M",
+    "na_intensity_U",
+    "na_intensity_ig",
+    "na_intensity_ir",
+    "na_intensity_ii",
+    "InfI_switch_R2R",
+    "InfI_switch_G2G",
+    "InfI_switch_R2G",
+    "InfI_switch_G2R",
+    "medR",
+    "medG",
+    "topR",
+    "topG",
+    "RGratio",
+    "RGdistort",
+    "GCT",
+    "mean_beta",
+    "median_beta",
+    "frac_unmeth",
+    "frac_meth",
+    "num_na",
+    "frac_na",
+    "mean_beta_cg",
+    "median_beta_cg",
+    "frac_unmeth_cg",
+    "frac_meth_cg",
+    "num_na_cg",
+    "frac_na_cg",
+    "mean_beta_ch",
+    "median_beta_ch",
+    "frac_unmeth_ch",
+    "frac_meth_ch",
+    "num_na_ch",
+    "frac_na_ch",
+    "mean_beta_rs",
+    "median_beta_rs",
+    "frac_unmeth_rs",
+    "frac_meth_rs",
+    "num_na_rs",
+    "frac_na_rs"
+  ],
+  "integer_metrics": [
+    "InfI_switch_G2G",
+    "InfI_switch_G2R",
+    "InfI_switch_R2G",
+    "InfI_switch_R2R",
+    "na_intensity_M",
+    "na_intensity_U",
+    "na_intensity_ig",
+    "na_intensity_ii",
+    "na_intensity_ir",
+    "num_dt",
+    "num_dt_cg",
+    "num_dt_ch",
+    "num_dt_mk",
+    "num_dt_rs",
+    "num_dtna",
+    "num_na",
+    "num_na_cg",
+    "num_na_ch",
+    "num_na_rs",
+    "num_probes",
+    "num_probes_IG",
+    "num_probes_II",
+    "num_probes_IR",
+    "num_probes_cg",
+    "num_probes_ch",
+    "num_probes_rs"
+  ],
+  "gct_reference": "Native bisConversionControl with pinned HM450.probeInfo C/T sets intersected with raw InfIR",
+  "native_r_qc_metrics": 65,
+  "qc_stage": "raw",
+  "qc_beta_stage": "DBP",
+  "qc_float_format": ".10g",
+  "pvalue_format": "binary32 then .6g",
+  "pvalue_reference_stages": {
+    "raw": "raw",
+    "QCDPB": "QCD before P masking and B"
+  },
+  "stages": [
+    "raw",
+    "QCDPB"
+  ],
+  "threads": [
+    1,
+    2
+  ],
+  "minimum_beads": 0,
+  "detection_threshold": 0.05,
+  "reference_files": {
+    "native-curated-C.ids.txt": {
+      "sha256": "03a1a3ff1a0bbc81ffbc6d8bc77e474a336280b3bda17198bd567ac94cd4ecd7",
+      "bytes": 499697
+    },
+    "native-curated-T.ids.txt": {
+      "sha256": "0c8086672b57cd1e231f0e19d07f8ec577c27fc67c3432b9ac92ec0d181f60af",
+      "bytes": 166626
+    },
+    "native-typeI-ext.tsv.gz": {
+      "sha256": "94fac8b1b5e79dd4b8f770d51d9674e7502a2c6d3fd2f460b01dd0aaa5357921",
+      "bytes": 59962
+    },
+    "pvalues-reference.tsv.gz": {
+      "sha256": "f7aad47fe5b4aaa54a4d9617cb14a4d2cd360f9d64bc8464f8986225e235133a",
+      "bytes": 6200924
+    },
+    "qc-reference.tsv": {
+      "sha256": "bf459c7dc18b81f848ad98950b7afafb66e23caf8caedded25dc796f2ff4c37e",
+      "bytes": 1609
+    }
+  },
+  "reference_recipe": "scripts/tests/run_native_gct_reference.R",
+  "r_source_revision": "8b1fcfaed89b28e0def8b031a81611a0a770053c",
+  "reference_scope": "Unchanged native R 65-field QC panel plus independently called native bisConversionControl; not full package qualification.",
+  "acceptance": "Exact schema, sample, integer counts and NA; exact declared float serialization; every ordered p-value and no changed decision at the upstream 0.05 boundary. No exemptions or intersected metric/probe subsets.",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "sample_rejection_policy_accepted": false,
+  "scientific_precision_budget_accepted": false,
+  "reference_recipe_pin": {
+    "sha256": "d51dd218d1683cdf60b3347963979819e7ec825d431b8ab5ad97aa4b871a1890",
+    "bytes": 2850
+  },
+  "previous_contract_sha256": "920a95a6e8374f2db61faabd8b3971add740f53b8e9a0aa4a941bf094cb92f69",
+  "missing_signal_policy": {
+    "both_channels_absent_pvalue": 1.0,
+    "num_dtna_counts": "missing p-values after native pOOBAH absent-signal handling",
+    "overall_denominator": "all nonmissing p-values, including absent-signal failures",
+    "unmasked_denominator": "all nonmissing p-values with existing mask false",
+    "subtype_denominator": "all nonmissing p-values within the cg/ch/rs prefix",
+    "empty_denominator": "NA",
+    "raw_mask": "unchanged"
+  },
+  "parent_reference_recipe": "scripts/tests/run_qc_reference.R",
+  "parent_reference_recipe_pin": {
+    "sha256": "6b7035931f91ff06e6bc04485c06a658b8821ea07c29489e035c78e4c990c58c",
+    "bytes": 7027
+  },
+  "producer_patch": {
+    "path": "research/patches/sesame/native-qc-missing-signal.patch",
+    "pin": {
+      "sha256": "1566367d82b345cad6c6cd75fea9dc1a9384691999557b6b517b5ec7013e866b",
+      "bytes": 4086
+    },
+    "result_tree": "067d6fa93c34f326122a7c84bcad2ee3c3dc9112"
+  },
+  "gct_annotation": {
+    "source_object": "HM450.probeInfo",
+    "source_metadata_revision": "119df217cea4da8cb18173226fa85e6152d13e51",
+    "source_version": "15-Mar-2018",
+    "source_object_pin": {
+      "sha256": "4faf0f8a4c5afceeb51b899a5eee93660c26ce599642f2d19dee09e1d8b8d6cd",
+      "bytes": 10616007
+    },
+    "selection": "intersect raw InfIR Probe_ID with typeI.extC and typeI.extT, separately",
+    "native_curated_C": 45427,
+    "native_curated_T": 15148,
+    "ordering_sha256": "c209c3788843d3f08950806b8dd240aaa0e6646d697a67ba710c11c2903f49ad",
+    "mask_applied": false,
+    "missing_green_values": "omit per value within each mean",
+    "zero_or_empty_denominator": "no coercion; nonfinite output is outside this finite-fixture contract"
+  }
+}

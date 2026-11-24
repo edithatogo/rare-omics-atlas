@@ -66,3 +66,74 @@ Use the existing Rust numerical operations through one thin named boundary. Reus
 Keep real exporter round-trip tests in Cargo's ordinary target selection. The pinned cargo-llvm-cov native defaults exclude example files from coverage reporting; its unsupported all-default override would require duplicating toolchain/vendor/test filtering. Preserve those defaults and disclose that scope while requiring the executable tests, rather than transform reports or claim coverage that was not measured.
 
 The source/sample boundary validates declarations and keeps unresolved evidence held. Reusing already-locked Serde for strict duplicate-field rejection is justified by an independently reproduced parser ambiguity. No new scientific admission rule or identity inference is introduced.
+
+## Preprocessing and cohort curation — 23 November 2026
+
+Retain the existing SeSAMe2 CLI for the bounded HM450 raw/Q candidate. The
+[qualification contract](preprocessing-qualification.md) uses complete pinned
+public inputs, an independent signal-level reference and actual named exports.
+A small standard-library checker in the existing developer environment is
+sufficient; no Rust preprocessing port, new runtime dependency, managed storage
+or orchestration service is justified. Fresh R execution is a test reference,
+not a mandatory Atlas production runtime. Record both software terms and actual
+build warnings; scientific, platform and device acceptance remain distinct.
+
+Keep the serializer's binary32/six-significant-digit behavior explicit. Report
+observed beta/M loss and endpoints; do not choose a scientific tolerance from
+those same observations. Qualify a higher-precision export or accept a declared
+scientific error budget only for its actual future consumer.
+
+Reuse the existing sample contract for [cohort-source curation](qualification/t01-cohort-curation-2026-11-23.md).
+The 341-record inventory retains 257 held declarations and 84 explicit KMT2D
+review-scope exclusions. Source-control labels, historical classifier splits and
+array keys do not assign new analysis controls, independent participants or
+replication partitions. Resolve source crosswalks, identities and missing
+covariates in parallel before jointly freezing the analysis manifest.
+
+## QC receiving and scanner reconciliation — 23 November 2026
+
+Retain the existing C producer and source-level R oracle. The
+[bounded QC receiver](qc-qualification.md) extends existing Atlas helpers with no
+new package, language bridge or numerical implementation. Native R's 65-field
+panel and separately labelled published-list GCT arithmetic are distinct
+contracts. Actual p-value serialization passes; four QC fields differ at minimum
+beads zero. Preserve that negative result and select the intended semantics and
+annotation explicitly before accepting a method. Do not invent a tolerance or
+remove a disagreeing field. Original-byte bead and GCT set diagnostics explain
+remaining method choices without a new generic data framework.
+
+The production checker binds recipe lineage and bytes and writes failed receipts
+for malformed compressed/CSV inputs. The portable test-oracle bead replay also
+uses explicit failure checks under Python -O. These are concrete correctness
+requirements identified by independent review, not speculative infrastructure.
+
+Advance the native hook and hosted privacy action to the reviewed central scanner
+and explicitly include merge diffs in the strict native history scan. The actual
+merge-only/then-deleted canary regression demonstrates the prior gap. Keep central
+standards authoritative and preserve all existing severity and coverage policy;
+the latest standards registry edit is separate maintenance. Limma numerical code
+and its existing Atlas producer pin remain unchanged.
+
+Parallel [source follow-up](qualification/t01-source-followup-2026-11-23.json)
+returned no new named joins. Retain 257 holds and 84 review-scope exclusions;
+failed/challenged supplement retrieval and unmatched counts cannot become sample
+identity. Current source/device/institutional limits affect their dependent
+scientific steps; compute and available local technical work are not exhausted.
+
+## Native QC successor — 23 November 2026
+
+Select [native R missing-signal and GCT semantics](native-qc-semantics.md) in a
+separate v2 contract. The concrete observed blocker requires one C assignment
+change, its focused regressions and an exact curated extension input. Carry a
+pinned patch and original licence notice in Atlas; no new repository, producer
+API, runtime dependency or numerical port is justified. Bind the original
+upstream/YAME revisions, canonical patch and resulting tree, and keep the
+original v1 failure immutable.
+
+The [complete successor run](qualification/t07-native-qc-2026-11-23.md) passes
+all 66 QC fields, 1,945,708 p-value comparisons and 1,945,708 raw/Q preservation
+comparisons. The real C regression fails on the original source and passes on
+the patch. Reuse the existing receiver/helpers and require every complete ordered
+row; no tolerance changes or metric exemptions are introduced.
+
+24 November scope reset: the original P1 study is E0+E2+E3, within-study adjusted methylation effects and independent biological transfer. Accept source-established molecular diagnoses without fresh variant adjudication. Use only material independence, control provenance, rank and QC checks; no variant study or private identity search. Proceed with the native 11+11 GSE97362 reference subset and a qualified R route, treating optional C/Rust replacement as conditional on a real consumer need. Use GitHub-hosted Actions for source/synthetic/technical CPU work; keep official owner-device qualification and institutionally approved human-data execution separate. Hugging Face is storage only. See [receiving issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15) and [aggregate source/design receipt](qualification/t01-first-science-2026-11-24.md). Existing 257 holds, 84 scope exclusions and zero admitted remain until actual evidence changes them.

@@ -353,7 +353,15 @@ def main() -> int:
             )
             if checks[-1]["exit_code"] == 0:
                 check(
-                    "history-secrets", ["gitleaks", "git", ".", "--log-opts=--all", *secret_flags]
+                    "history-secrets",
+                    [
+                        "gitleaks",
+                        "git",
+                        ".",
+                        "--log-opts=--all --full-history --diff-merges=first-parent "
+                        "--no-ext-diff --no-textconv",
+                        *secret_flags,
+                    ],
                 )
     if source_hash(ROOT) != receipt["source_tree_sha256"]:
         checks.append({"name": "source-unchanged", "status": "failed", "exit_code": 1})

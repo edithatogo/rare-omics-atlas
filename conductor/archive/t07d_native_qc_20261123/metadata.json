@@ -1,0 +1,15 @@
+{
+  "track_id": "t07d_native_qc_20261123",
+  "type": "feature",
+  "status": "completed",
+  "created_at": "2026-11-23",
+  "updated_at": "2026-11-23",
+  "parent_track": "T07",
+  "description": "Native R missing-signal QC semantics and curated GCT successor",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "archived_at": "2026-11-23",
+  "acceptance_record": "research/qualification/t07-native-qc-2026-11-23.json",
+  "method_status": "passed bounded native HM450 QC/detection/raw-Q preservation; broader route held",
+  "integration_receipt": "Actual native-hook and immutable hosted outcomes in the associated integration PR"
+}

@@ -1,0 +1,311 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-11-23T08:07:21.043677+00:00",
+  "source_before": [
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+      "sha256": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/qc.c",
+      "sha256": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/include/sesame.h",
+      "sha256": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+      "sha256": "9868913be49f0891f663ba5bc2b2511da4a4e550cf0338520a72379ca1773129"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include/sesame.h",
+      "sha256": "8001e7fee3f44155ea9f74b327c3d921638ed01661ff599684a433a8b4812763"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    }
+  ],
+  "commands": [
+    {
+      "name": "compiler-version",
+      "command": [
+        "/usr/bin/cc",
+        "--version"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 0.008816,
+      "stdout": "compiler-version.stdout",
+      "stderr": "compiler-version.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/cc",
+        "-D_GNU_SOURCE",
+        "-std=c11",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wconversion",
+        "-Wstrict-prototypes",
+        "-Werror",
+        "-I/workspace/scratch/1ef0e9289b0e/sesame-source/include",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/qc.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/prep.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/numerics.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/sigdf.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/index.c",
+        "/workspace/scratch/1ef0e9289b0e/sesame-source/src/util.c",
+        "-lz",
+        "-lm",
+        "-o",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/original-test"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 1.11858,
+      "stdout": "original-compile.stdout",
+      "stderr": "original-compile.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "original-run",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/original-test",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123"
+      ],
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.008701,
+      "stdout": "original-run.stdout",
+      "stderr": "original-run.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/cc",
+        "-D_GNU_SOURCE",
+        "-std=c11",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wconversion",
+        "-Wstrict-prototypes",
+        "-Werror",
+        "-I/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+        "-lz",
+        "-lm",
+        "-o",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/candidate-test"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 0.971367,
+      "stdout": "candidate-compile.stdout",
+      "stderr": "candidate-compile.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/candidate-test",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 0.008666,
+      "stdout": "candidate-run.stdout",
+      "stderr": "candidate-run.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "sanitized-compile",
+      "command": [
+        "/usr/bin/cc",
+        "-D_GNU_SOURCE",
+        "-std=c11",
+        "-O1",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wconversion",
+        "-Wstrict-prototypes",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+        "-lz",
+        "-lm",
+        "-o",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/candidate-sanitized-test"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 3.528555,
+      "stdout": "sanitized-compile.stdout",
+      "stderr": "sanitized-compile.stderr",
+      "status": "passed"
+    },
+    {
+      "name": "sanitized-run",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/candidate-sanitized-test",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123"
+      ],
+      "expected_exit_code": 0,
+      "exit_code": 1,
+      "elapsed_seconds": 0.033118,
+      "stdout": "sanitized-run.stdout",
+      "stderr": "sanitized-run.stderr",
+      "status": "failed"
+    }
+  ],
+  "upstream_revision": "f6713747181764e0b7a97b64c3c0d52ab9d82703",
+  "candidate_tree": "067d6fa93c34f326122a7c84bcad2ee3c3dc9112",
+  "scope": "Seven focused synthetic C cases, 512 probes; no numerical stubs; arrays below334probes and scientific/device acceptance out of scope.",
+  "error": "sanitized-run unexpected exit",
+  "source_after": [
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+      "sha256": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/qc.c",
+      "sha256": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/include/sesame.h",
+      "sha256": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+      "sha256": "9868913be49f0891f663ba5bc2b2511da4a4e550cf0338520a72379ca1773129"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include/sesame.h",
+      "sha256": "8001e7fee3f44155ea9f74b327c3d921638ed01661ff599684a433a8b4812763"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    }
+  ],
+  "source_unchanged": true,
+  "finished_at_utc": "2026-11-23T08:07:26.728638+00:00"
+}
