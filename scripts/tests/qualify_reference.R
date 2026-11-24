@@ -425,6 +425,121 @@ if (stage=="limma") {
         max(abs(tt$CI.L-(tt$logFC-half))),max(abs(tt$CI.R-(tt$logFC+half))))),
         file.path(output,"limma-summary.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
     capture.output(sessionInfo(),file=file.path(output,"limma-session-info.txt"))
+    # Independent synthetic fixture for prospective N1 v0.2; no cohort inputs.
+    local({
+        case <- rep(0:1, each=6L)
+        age <- c(-2,1,4,-3,0,2,3,-1,0,4,-4,2)
+        age <- age-mean(age)
+        sex <- rep(0:1,6L)
+        chip <- rep(c(1L,1L,1L,2L,2L,3L),2L)
+        design <- cbind(intercept=1,case=case,age=age,sex=sex,
+            chip2=as.integer(chip==2L),chip3=as.integer(chip==3L))
+        rownames(design) <- sprintf("synthetic-sample-%02d",seq_len(nrow(design)))
+        probe <- sprintf("synthetic-probe-%02d",seq_len(19L))
+        chr <- c(rep("chr1",6L),rep("chr2",3L),rep("chr1",9L),"chrX")
+        start <- c(0L,500L,999L,1000L,1500L,1999L,0L,500L,999L,
+            2000L,2999L,3000L,3500L,3999L,4000L,4500L,4999L,5000L,0L)
+        M <- outer(seq_along(probe),seq_along(case),function(i,j)
+            sin(i*j*0.37)+0.3*cos((i+2)*j*0.23))+
+            outer((seq_along(probe)-10)/10,case)+
+            outer(rep(0.02,length(probe)),age)
+        dimnames(M) <- list(probe,rownames(design))
+        M[cbind(c(14L,15L,15L,16L,16L,17L,17L,18L),
+            c(2L,2L,8L,6L,12L,1L,2L,9L))] <- NA_real_
+        stopifnot(qr(design)$rank==6L,identical(colnames(M),rownames(design)),
+            !anyDuplicated(probe),all(start>=0L))
+
+        valid <- is.finite(M)
+        n0 <- rowSums(valid[,case==0L,drop=FALSE])
+        n1 <- rowSums(valid[,case==1L,drop=FALSE])
+        rank <- vapply(seq_len(nrow(M)),function(i)
+            qr(design[valid[i,],,drop=FALSE])$rank,integer(1))
+        df <- rowSums(valid)-rank
+        eligible <- chr %in% paste0("chr",1:22)
+        estimable <- rank==ncol(design)&df>=5L
+        primary <- eligible&estimable&rowSums(valid)==ncol(M)
+        sensitivity <- eligible&estimable&n0>=ceiling(0.8*sum(case==0L))&
+            n1>=ceiling(0.8*sum(case==1L))
+        # Predeclared identities, including balanced-but-low-df, rank and coverage failures.
+        stopifnot(identical(unname(which(primary)),seq_len(13L)),
+            identical(unname(which(sensitivity)),c(seq_len(14L),18L)),
+            n0[15L]==5L,n1[15L]==5L,rank[15L]==6L,df[15L]==4L,
+            n0[16L]==5L,n1[16L]==5L,rank[16L]==5L,df[16L]==5L,
+            n0[17L]==4L,n1[17L]==6L,!eligible[19L])
+
+        bin_start <- (start%/%1000L)*1000L
+        bin <- paste(chr,bin_start,bin_start+1000L,sep=":")
+        members <- split(which(primary),bin[primary])
+        retained <- members[lengths(members)>=3L]
+        expected <- list("chr1:0:1000"=1:3,"chr1:1000:2000"=4:6,"chr2:0:1000"=7:9)
+        stopifnot(identical(unname(lapply(retained,as.integer)),unname(expected)),
+            identical(names(retained),names(expected)),length(members)==5L)
+        regional <- t(vapply(retained,function(ids)
+            colMeans(M[ids,,drop=FALSE]),numeric(ncol(M))))
+        colnames(regional) <- colnames(M)
+        stopifnot(all(is.finite(regional)),identical(rownames(regional),names(expected)))
+
+        # A separate complete moderation and BH family per operation; no chunking.
+        fit_family <- function(Y) {
+            fit <- lmFit(Y,design)
+            reference <- t(vapply(seq_len(nrow(Y)),function(i) {
+                keep <- is.finite(Y[i,])
+                X <- design[keep,,drop=FALSE]
+                y <- Y[i,keep]
+                b <- setNames(qr.solve(X,y),colnames(X))
+                residual_df <- nrow(X)-ncol(X)
+                variance <- sum((y-X%*%b)^2)/residual_df
+                c(effect=unname(b["case"]),ordinary_se=sqrt(variance*solve(crossprod(X))["case","case"]),
+                    df=residual_df)
+            },c(effect=0,ordinary_se=0,df=0)))
+            ordinary_se <- fit$stdev.unscaled[,"case"]*fit$sigma
+            stopifnot(all(is.finite(reference)),
+                max(abs(fit$coefficients[,"case"]-reference[,"effect"]))<=1e-10,
+                max(abs(ordinary_se-reference[,"ordinary_se"]))<=1e-10,
+                identical(as.numeric(fit$df.residual),as.numeric(reference[,"df"])))
+            mod <- eBayes(fit,trend=FALSE,robust=FALSE)
+            tt <- topTable(mod,coef="case",number=Inf,sort.by="none",confint=TRUE)
+            se <- mod$stdev.unscaled[,"case"]*sqrt(mod$s2.post)
+            p <- 2*pt(-abs(mod$coefficients[,"case"]/se),df=mod$df.total)
+            half <- qt(.975,df=mod$df.total)*se
+            stopifnot(identical(rownames(tt),rownames(Y)),all(is.finite(se)&se>0),
+                all(is.finite(p)&p>=0&p<=1),
+                max(abs(tt$logFC-reference[,"effect"]))<=1e-10,
+                max(abs(tt$P.Value-p))<=1e-10,
+                max(abs(tt$adj.P.Val-p.adjust(p,"BH")))<=1e-10,
+                max(abs(tt$CI.L-(tt$logFC-half)))<=1e-10,
+                max(abs(tt$CI.R-(tt$logFC+half)))<=1e-10)
+            data.frame(id=rownames(Y),effect=tt$logFC,ordinary_se=ordinary_se,
+                reference_effect=reference[,"effect"],reference_ordinary_se=reference[,"ordinary_se"],
+                residual_df=fit$df.residual,residual_variance=fit$sigma^2,
+                unscaled_se=fit$stdev.unscaled[,"case"],prior_df=mod$df.prior,
+                prior_variance=mod$s2.prior,posterior_variance=mod$s2.post,
+                moderated_se=se,moderated_df=mod$df.total,
+                p=tt$P.Value,bh=tt$adj.P.Val,ci_lower=tt$CI.L,ci_upper=tt$CI.R)
+        }
+        fits <- list(primary=fit_family(M[primary,,drop=FALSE]),
+            sensitivity=fit_family(M[sensitivity,,drop=FALSE]),regions=fit_family(regional))
+        stopifnot(max(abs(fits$regions$effect-c(-1.057399924280879,-0.545695195289085,
+            -0.256220308312924)))<=1e-10,
+            max(abs(fits$regions$ordinary_se-c(0.156837028300713,0.288598056479679,
+            0.221273175751039)))<=1e-10,
+            max(abs(fits$regions$effect-vapply(retained,function(ids)
+                mean(fits$primary$effect[match(probe[ids],fits$primary$id)]),numeric(1))))<=1e-10)
+        emit <- function(x,name) write.table(x,file.path(output,paste0("synthetic-n1-",name,".tsv")),
+            sep="\t",quote=FALSE,row.names=FALSE)
+        emit(data.frame(sample=rownames(design),design),"design")
+        emit(data.frame(probe=probe,chr=chr,start=start,bin=bin,eligible=eligible,
+            control_valid=n0,case_valid=n1,rank=rank,residual_df=df,primary=primary,
+            sensitivity=sensitivity,M,check.names=FALSE),"probe-audit")
+        emit(data.frame(region=rep(names(members),lengths(members)),
+            probe=probe[unlist(members,use.names=FALSE)],
+            retained=rep(lengths(members)>=3L,lengths(members))),"region-membership")
+        emit(data.frame(region=rownames(regional),regional,check.names=FALSE),"region-scores")
+        for (family in names(fits)) emit(fits[[family]],family)
+        writeLines(c("scope=synthetic_n1_v0.2_only","status=passed","clinical_inference=false",
+            "n1_frozen=false"),file.path(output,"synthetic-n1-disposition.txt"))
+        cat("Synthetic N1: 13 primary, 15 sensitivity, 3 fixed regional scores; rank/df and separate BH families passed.\n")
+    })
     writeLines(c("stage=limma","status=passed","scope=synthetic_named_M_matrix",
         "clinical_inference=false"),file.path(output,"limma-disposition.txt"))
 
