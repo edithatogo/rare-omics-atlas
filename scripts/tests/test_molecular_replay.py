@@ -76,9 +76,7 @@ class SourceEligibility(unittest.TestCase):
 
     def test_duplicate_and_count_failures(self):
         with self.assertRaisesRegex(ValueError, "duplicate"):
-            table_s2a(
-                table("KMT2D-1 c.1A>T p.X1* nonsense\nKMT2D-1 c.2del p.X2fs*3 frameshift")
-            )
+            table_s2a(table("KMT2D-1 c.1A>T p.X1* nonsense\nKMT2D-1 c.2del p.X2fs*3 frameshift"))
         cases = table_s2a(table("KMT2D-1 c.1A>T p.X1* nonsense"))
         with self.assertRaisesRegex(ValueError, "count"):
             review(soft("KMT2D-1", 1, CASE), cases, "a" * 64, "b" * 64, expected=1)
@@ -169,7 +167,9 @@ class SourceEligibility(unittest.TestCase):
                             "SUPPLEMENT_MD5",
                             hashlib.md5(pdf.read_bytes(), usedforsecurity=False).hexdigest(),
                         ),
-                        patch.object(replay.subprocess, "check_output", return_value=fixture) as extract,
+                        patch.object(
+                            replay.subprocess, "check_output", return_value=fixture
+                        ) as extract,
                         redirect_stdout(io.StringIO()) as stdout,
                     ):
                         replay.main(args)

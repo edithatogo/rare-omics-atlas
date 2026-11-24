@@ -61,7 +61,7 @@ jobs:
           assert report["independent_participant_count"] is None
           print(json.dumps({"structural_exit": 2, "summary": report["summary"], "analysis_admitted": False}))
           PY
-      - name: Retrieve and verify control provenance workbook
+      - name: Inspect verified control provenance (aggregate-only source review)
         run: |
           set -euo pipefail
           umask 077
@@ -69,23 +69,82 @@ jobs:
           trap 'rm -rf "$work"' EXIT
           curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
             'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc2.xlsx' -o "$work/mmc2.xlsx"
-          python3 - "$work/mmc2.xlsx" <<'PY'
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief' -o "$work/source.soft"
+          uv run --no-project --python 3.15.2 --with openpyxl==3.1.5 --with et-xmlfile==2.0.0 python - "$work" <<'PY'
+          import collections
           import hashlib
           import json
+          import re
           import sys
-          import zipfile
           from pathlib import Path
-          from xml.etree import ElementTree
-          file = Path(sys.argv[1])
-          raw = file.read_bytes()
-          assert len(raw) == 153288
-          assert hashlib.md5(raw, usedforsecurity=False).hexdigest() == "2b1e4e654ec448b98901779c660ad236"
-          with zipfile.ZipFile(file) as workbook:
-              xml = ElementTree.fromstring(workbook.read("xl/workbook.xml"))
-          ns = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-          sheets = xml.findall(".//m:sheet", ns)
-          print(json.dumps({"control_workbook_verified": True, "bytes": len(raw),
-                            "sha256": hashlib.sha256(raw).hexdigest(),
-                            "worksheet_count": len(sheets),
-                            "control_origin_join_verified": False}))
+          import openpyxl
+
+          work = Path(sys.argv[1])
+          workbook = work / "mmc2.xlsx"
+          raw = workbook.read_bytes()
+          assert hashlib.sha256(raw).hexdigest() == "cf50f0b1c733aeed612dfc5756bdf6e2d712ebcb5cf4635746ddd398180204a1"
+          geo = (work / "source.soft").read_bytes()
+          assert hashlib.sha256(geo).hexdigest() == "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf"
+          records = re.split(r"(?=^\^SAMPLE = )", geo.decode(), flags=re.M)[1:]
+          labels = set()
+          for record in records:
+              if re.search(r"^!Sample_characteristics_ch1 = sample type: Control for KMT2D LOF discovery cohort\s*$", record, re.M):
+                  fields = re.findall(r"^!Sample_description = (.+)$", record, re.M)
+                  assert len(fields) == 1
+                  labels.add(fields[0].strip())
+          assert len(labels) == 11
+          book = openpyxl.load_workbook(workbook, read_only=True, data_only=True, keep_links=False)
+          # Do not emit any source labels, patient rows or clinical fields.
+          def norm(value):
+              return " ".join(str(value).split()) if value is not None else ""
+          aliases = {
+              "simons_simplex": {"ssc", "simons simplex collection", "simons simplex"},
+              "sickkids": {"hsc", "sickkids", "hospital for sick children", "the hospital for sick children", "sick kids"},
+              "michigan": {"um", "u of m", "university of michigan", "u michigan", "umich", "michigan"},
+          }
+          reports = []
+          for sheet in book:
+              hits = collections.defaultdict(list)
+              hit_cols = collections.Counter()
+              source_categories = collections.Counter()
+              family_header = False
+              specimen_header = False
+              row_count = 0
+              for values in sheet.iter_rows(values_only=True):
+                  cells = [norm(value) for value in values]
+                  if not any(cells):
+                      continue
+                  row_count += 1
+                  if row_count <= 5:
+                      family_header |= any(re.fullmatch(r"(family|pedigree|kindred)( id| identifier| number)?", s.lower()) is not None for s in cells)
+                      specimen_header |= any(re.fullmatch(r"(specimen|donor|participant)( id| identifier| number)?", s.lower()) is not None for s in cells)
+                  matches = [(i, c) for i, c in enumerate(cells) if c in labels]
+                  if not matches:
+                      continue
+                  categories = {cat for cat, names in aliases.items() if any(c.lower() in names for c in cells)}
+                  for i, label in matches:
+                      hits[label].append(categories)
+                      hit_cols[i + 1] += 1
+              for occurrences in hits.values():
+                  if len(occurrences) == 1 and len(occurrences[0]) == 1:
+                      source_categories[next(iter(occurrences[0]))] += 1
+              # Table numbering is public; arbitrary sheet names and all rows remain local.
+              match = re.search(r"(?i)\bS\s*(\d{1,2})\b", sheet.title)
+              reports.append({
+                  "worksheet_index": len(reports) + 1,
+                  "table_number_if_labelled": int(match.group(1)) if match else None,
+                  "nonempty_rows": row_count,
+                  "distinct_exact_control_label_matches": len(hits),
+                  "unique_row_matches": sum(len(v) == 1 for v in hits.values()),
+                  "matching_column_counts": dict(sorted(hit_cols.items())),
+                  "unambiguous_source_category_matches": dict(source_categories),
+                  "family_header_observed": family_header,
+                  "specimen_header_observed": specimen_header,
+              })
+          book.close()
+          print(json.dumps({"control_workbook_verified": True, "workbook_sha256": hashlib.sha256(raw).hexdigest(),
+                            "openpyxl_version": openpyxl.__version__, "selected_native_controls": len(labels),
+                            "worksheets": reports, "control_origin_join_verified": False,
+                            "independence_verified": False, "analysis_admitted": False}, sort_keys=True))
           PY

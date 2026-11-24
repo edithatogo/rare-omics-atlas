@@ -32,3 +32,7 @@ The second command is expected to return exit 2 (22 held, no scientific admissio
 ## Remaining decisions
 
 Receive source-supported biological sample and family independence or a scientifically defensible restriction/dependence-aware plan; inspect S6 control provenance rather than invent identifiers; repeat design checks after selected QC. Preserve the historical 341-assay inventory and declarations; a 22-assay replay is a separate selected-subset review, not an update to the global counts. Qualify the actual selected R/Bioconductor route on independent technical/synthetic inputs, then obtain institutional and applicable official-device evidence, complete cohort QC, and freeze N1 before disease inference. No variant reclassification, raw participant data upload or optional numerical port is a prerequisite.
+
+### Control provenance receiving increment
+
+The original source workflow now also inspects the hash-verified S6 workbook with a pinned read-only XLSX reader. It emits only worksheet-level exact whole-label match counts, recognised explicit source-category counts, and the presence of family/specimen headers. No source labels or rows are published. This is a diagnostic for locating the original source crosswalk, not automatic control-origin or participant-independence admission. An unresolved match remains held. The earlier source replay and failed formatting gate are preserved in their original run receipts.
