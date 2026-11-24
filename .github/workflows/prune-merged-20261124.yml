@@ -54,9 +54,13 @@ jobs:
               continue
             fi
             active=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100")
-            if jq -e --arg branch "$branch" --arg repo "$GITHUB_REPOSITORY" '
-                any(.[][]; (.head.repo.full_name == $repo and .head.ref == $branch) or .base.ref == $branch)
-              ' <<<"$active" >/dev/null; then
+            # A malformed or incomplete response must fail closed, not permit deletion.
+            open_use=$(jq -r --arg branch "$branch" --arg repo "$GITHUB_REPOSITORY" '
+                if type != "array" or any(.[]; type != "array") then error("invalid page shape")
+                else any(.[][]; (.head.repo.full_name == $repo and .head.ref == $branch) or .base.ref == $branch)
+                end
+              ' <<<"$active")
+            if [ "$open_use" != false ]; then
               echo "Retained: $branch (open pull request)"
               retained=$((retained+1))
               continue
@@ -77,7 +81,8 @@ jobs:
             # The explicit lease is enforced by Git at deletion, including a race
             # where a branch advances after the preceding observation.
             git push --porcelain --force-with-lease="$ref:$expected" origin ":$ref"
-            test -z "$(git ls-remote --heads origin "$ref")"
+            after=$(git ls-remote --heads origin "$ref")
+            test -z "$after"
             echo "Pruned: $branch @ $expected (PR #$number)"
             count=$((count+1))
           done <<'APPROVED'
