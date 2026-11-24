@@ -103,7 +103,9 @@ class SourceEligibility(unittest.TestCase):
             write_review(out, report, manifest, decisions)
             self.assertEqual(json.loads((out / "aggregate.json").read_text()), report)
             self.assertEqual(json.loads((out / "declared-samples.json").read_text()), manifest)
-            self.assertEqual(json.loads((out / "molecular-decisions.local.json").read_text()), decisions)
+            self.assertEqual(
+                json.loads((out / "molecular-decisions.local.json").read_text()), decisions
+            )
             with self.assertRaises(FileExistsError):
                 write_review(out, report, manifest, decisions)
 
