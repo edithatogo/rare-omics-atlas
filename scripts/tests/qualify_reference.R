@@ -148,9 +148,117 @@ if (stage=="technical") {
     # The preceding independently received T07b/T07d evidence qualifies
     # address-level counts. Exercise native min-beads here, without a
     # second production IDAT parser or custom masking implementation.
+    # Reproduce the actual pinned SeSAMe 1.28.1 legacy-control defect before
+    # correcting anything: old positional names place red bead count in Type.
+    # Both pOOBAH and noob then omit their intended negative-control input.
+    legacy_controls <- sesame::controls(raw3)
+    negative_controls <- getFromNamespace("negControls","sesame")
+    stopifnot(nrow(legacy_controls)>0L,
+        all(grepl("^[0-9]+$",as.character(legacy_controls$Type))),
+        nrow(negative_controls(raw3))==0L)
+    write.table(legacy_controls,file.path(output,"technical-cohort-qc-legacy-controls.tsv"),
+        sep="\t",quote=FALSE,row.names=FALSE)
+    legacy_qcd3 <- prepSesame(raw3,"QCD")
+    legacy_p3 <- pOOBAH(legacy_qcd3,return.pval=TRUE)
+    legacy_processed3 <- noob(pOOBAH(legacy_qcd3,pval.threshold=0.05))
+    legacy_b3 <- getBetas(legacy_processed3)
+    legacy_mask3 <- legacy_processed3$mask
+    stopifnot(identical(names(legacy_p3),manifest_ids),
+        identical(names(legacy_b3),manifest_ids),!anyNA(legacy_mask3))
+    rm(legacy_qcd3,legacy_processed3)
+    invisible(gc(full=TRUE))
+
+    # Use the existing native manifest-based controls() branch, rather than
+    # invent a new parser, relabel the old bead-count column, or port pOOBAH.
+    # Verify identity, source signals, legacy bead count and exact join on
+    # the unrelated author fixture independently of the malformed attribute.
+    canonical <- sesameDataGet("HM450.address")$controls
+    stopifnot(is.data.frame(canonical),all(c("Address","Type") %in% names(canonical)),
+        nrow(canonical)>0L,!anyNA(canonical$Address),
+        !anyDuplicated(as.character(canonical$Address)),
+        !anyNA(canonical$Type),all(nzchar(as.character(canonical$Type))))
+    address <- as.character(canonical$Address)
+    raw_reader <- getFromNamespace("readIDAT","sesame")
+    green <- raw_reader(paste0(prefix,"_Grn.idat"))$Quants
+    red <- raw_reader(paste0(prefix,"_Red.idat"))$Quants
+    stopifnot(!anyDuplicated(rownames(green)),!anyDuplicated(rownames(red)),
+        identical(rownames(green),rownames(red)),
+        all(c("Mean","NBeads") %in% colnames(green)),
+        all(c("Mean","NBeads") %in% colnames(red)))
+    g <- as.numeric(green[match(address,rownames(green)),"Mean"])
+    r <- as.numeric(red[match(address,rownames(red)),"Mean"])
+    rn <- as.numeric(red[match(address,rownames(red)),"NBeads"])
+    available <- is.finite(g)&is.finite(r)
+    stopifnot(nrow(legacy_controls)==sum(available),
+        identical(as.numeric(legacy_controls$UG),g[available]),
+        identical(as.numeric(legacy_controls$UR),r[available]),
+        identical(as.numeric(as.character(legacy_controls$Type)),rn[available]))
+    rm(green,red,rn)
+    # Remove only the deprecated attribute; keep the native signal columns,
+    # masks, platform, order, and all fixed denominator identities unchanged.
+    original <- raw3
+    attr(raw3,"controls") <- NULL
+    stopifnot(is.null(attr(raw3,"controls")),identical(sdfPlatform(raw3),"HM450"),
+        identical(names(raw3),names(original)),
+        all(vapply(names(raw3),function(k) identical(raw3[[k]],original[[k]]),logical(1))))
+    rm(original)
+    control_signals <- sesame::controls(raw3)
+    stopifnot(is.data.frame(control_signals),
+        all(c("Address","Type","UG","UR") %in% names(control_signals)),
+        identical(as.character(control_signals$Address),address),
+        identical(as.character(control_signals$Type),as.character(canonical$Type)),
+        !anyNA(control_signals$Type),
+        !any(grepl("^[0-9]+$",as.character(control_signals$Type))),
+        all(paste0("ctl_",address[available]) %in% raw3$Probe_ID),
+        identical(as.numeric(control_signals$UG[available]),g[available]),
+        identical(as.numeric(control_signals$UR[available]),r[available]),
+        identical(is.finite(control_signals$UG)&is.finite(control_signals$UR),available))
+    neg_rows <- grepl("negative",tolower(as.character(canonical$Type)))
+    stopifnot(any(neg_rows&available),
+        identical(as.numeric(negative_controls(raw3)$G),as.numeric(control_signals$UG[neg_rows])),
+        identical(as.numeric(negative_controls(raw3)$R),as.numeric(control_signals$UR[neg_rows])))
+    write.table(data.frame(Address=address,Type=as.character(canonical$Type),
+        expected_control_probe=paste0("ctl_",address),available_both=available,
+        raw_green=g,raw_red=r,native_green=control_signals$UG,native_red=control_signals$UR),
+        file.path(output,"technical-control-join.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+
     qcd3 <- prepSesame(raw3,"QCD")
-    p3 <- pOOBAH(qcd3,return.pval=TRUE)
-    processed3 <- noob(pOOBAH(qcd3,pval.threshold=0.05))
+    stopifnot(is.null(attr(qcd3,"controls")))
+    # Negative-control input must survive QCD and reach both native stages.
+    after_qcd <- sesame::controls(qcd3)
+    neg <- negative_controls(qcd3)
+    stopifnot(identical(as.character(after_qcd$Address),address),
+        identical(as.character(after_qcd$Type),as.character(canonical$Type)),
+        nrow(neg)==sum(neg_rows),
+        identical(as.numeric(neg$G),as.numeric(after_qcd$UG[neg_rows])),
+        identical(as.numeric(neg$R),as.numeric(after_qcd$UR[neg_rows])),
+        any(is.finite(neg$G)&is.finite(neg$R)))
+    p3 <- pOOBAH(qcd3,return.pval=TRUE,combine.neg=TRUE)
+    # Independent empirical-CDF calculation with exactly the native
+    # out-of-band and restored negative-control inputs. No fallback prior
+    # should be needed on this fixture.
+    nonuniq <- getFromNamespace("nonuniqMask","sesame")
+    nmk <- qcd3[!(qcd3$Probe_ID %in% nonuniq("HM450")),]
+    bgG <- c(getFromNamespace("oobG","sesame")(nmk),neg$G)
+    bgR <- c(getFromNamespace("oobR","sesame")(nmk),neg$R)
+    stopifnot(sum(!is.na(bgG))>100L,sum(!is.na(bgR))>100L)
+    reference_p3 <- setNames(pmin(
+        1-ecdf(bgR)(pmax(qcd3$MR,qcd3$UR,na.rm=TRUE)),
+        1-ecdf(bgG)(pmax(qcd3$MG,qcd3$UG,na.rm=TRUE))),qcd3$Probe_ID)
+    stopifnot(identical(names(p3),names(reference_p3)),
+        identical(is.na(p3),is.na(reference_p3)),
+        max(abs(p3-reference_p3),na.rm=TRUE)<=1e-12)
+    reference_p_error <- max(abs(p3-reference_p3),na.rm=TRUE)
+    p3_oob <- pOOBAH(qcd3,return.pval=TRUE,combine.neg=FALSE)
+    detected3 <- pOOBAH(qcd3,pval.threshold=0.05,combine.neg=TRUE)
+    stopifnot(identical(negative_controls(detected3),neg))
+    processed3 <- noob(detected3,combine.neg=TRUE)
+    # Same detected input with only the native noob negative switch
+    # disabled isolates the background-stage difference from detection.
+    b3_noob_oob <- getBetas(noob(detected3,combine.neg=FALSE))
+    stopifnot(identical(names(b3_noob_oob),manifest_ids))
+    rm(nmk,bgG,bgR,reference_p3,detected3)
+    invisible(gc(full=TRUE))
     b3 <- getBetas(processed3)
     unmasked3 <- getBetas(processed3,mask=FALSE)
     direct3 <- getBetas(prepSesame(raw3,"QCDPB"))
@@ -189,6 +297,56 @@ if (stage=="technical") {
     m3[v] <- log2(b3[at][v]/(1-b3[at][v]))
     stopifnot(count+sum(exclusive)==n,identical(unname(remaining),unname(v)),
         all(is.finite(m3[v])),all(is.na(m3[!v])))
+    # Exact legacy/corrected paired results on the same fixed denominator.
+    legacy_valid <- valid_measurement(legacy_b3[at],legacy_p3[at],
+        legacy_mask3[at],raw3$mask[at])
+    stopifnot(!anyNA(legacy_valid),sum(legacy_valid)==366308L,
+        n==408966L)
+    changed <- function(a,b) {
+        stopifnot(length(a)==length(b),identical(names(a),names(b)))
+        sum(xor(is.na(a),is.na(b)) | (!is.na(a)&!is.na(b)&a!=b),na.rm=TRUE)
+    }
+    max_delta <- function(a,b) {
+        at <- is.finite(a)&is.finite(b)
+        stopifnot(any(at))
+        max(abs(a[at]-b[at]))
+    }
+    compare <- data.frame(metric=c("manifest_controls","available_control_pairs",
+        "unavailable_control_pairs","legacy_negative_controls","restored_negative_controls",
+        "restored_finite_negative_pairs","legacy_valid","corrected_valid",
+        "fixed_denominator","pOOBAH_reference_max_error",
+        "pOOBAH_changed_vs_legacy","pOOBAH_max_delta_vs_legacy",
+        "pOOBAH_changed_vs_oob_only","pOOBAH_max_delta_vs_oob_only",
+        "mask_changed_vs_legacy","beta_changed_vs_legacy","beta_max_delta_vs_legacy",
+        "noob_beta_changed_vs_oob_only","noob_beta_max_delta_vs_oob_only",
+        "eligible_gained","eligible_lost"),
+        value=c(length(address),sum(available),sum(!available),0L,sum(neg_rows),
+        sum(is.finite(neg$G)&is.finite(neg$R)),sum(legacy_valid),count,n,
+        reference_p_error,changed(legacy_p3,p3),max_delta(legacy_p3,p3),
+        changed(p3,p3_oob),max_delta(p3,p3_oob),sum(legacy_mask3!=processed3$mask),
+        changed(legacy_b3,b3),max_delta(legacy_b3,b3),
+        changed(b3,b3_noob_oob),max_delta(b3,b3_noob_oob),
+        sum(v&!legacy_valid),sum(!v&legacy_valid)))
+    stopifnot(count-sum(legacy_valid)==sum(v&!legacy_valid)-sum(!v&legacy_valid),
+        identical(names(legacy_b3),names(b3)),identical(names(legacy_p3),names(p3)))
+    write.table(compare,file.path(output,"technical-control-correction-summary.tsv"),
+        sep="\t",quote=FALSE,row.names=FALSE)
+    print(compare)
+    fmt17 <- function(x) ifelse(is.na(x),NA_character_,sprintf("%.17g",x))
+    con <- gzfile(file.path(output,"technical-control-correction-probes.tsv.gz"),"wt")
+    write.table(data.frame(Probe_ID=manifest_ids,legacy_p=fmt17(legacy_p3),
+        corrected_p=fmt17(p3),legacy_beta=fmt17(legacy_b3),corrected_beta=fmt17(b3),
+        legacy_mask=legacy_mask3,corrected_mask=processed3$mask),con,
+        sep="\t",quote=FALSE,row.names=FALSE)
+    close(con)
+    writeLines(c("scope=unrelated_HM450_fixture_only",
+        "legacy_numeric_control_type_reproduced=true",
+        "legacy_negative_controls_missing=true",
+        "native_manifest_controls_received=true",
+        "native_pOOBAH_ecdf_comparison_passed=true",
+        "native_noob_direct_staged_passed=true",
+        "clinical_cohort_qc=false","owner_device_qualified=false"),
+        file.path(output,"technical-control-correction-disposition.txt"))
     write.table(data.frame(reason=c(colnames(reasons),"valid"),
         marginal=c(colSums(reasons),count),exclusive=c(exclusive,count)),
         file.path(output,"technical-cohort-qc-exclusions.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
@@ -209,9 +367,7 @@ if (stage=="technical") {
     native_qc <- c(native_qc,list(native_gct=gct))
     write.table(data.frame(metric=names(native_qc),value=unlist(native_qc,use.names=FALSE)),
         file.path(output,"technical-cohort-qc-native-panel.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
-    control_signals <- sesame::controls(raw3)
-    stopifnot(is.data.frame(control_signals),nrow(control_signals)>0L,
-        all(c("UG","UR","Type") %in% colnames(control_signals)))
+    stopifnot(identical(control_signals,sesame::controls(raw3)))
     write.table(control_signals,file.path(output,"technical-cohort-qc-controls.tsv"),
         sep="\t",quote=FALSE,row.names=FALSE)
     writeLines(c(paste0("native_control_records=",nrow(control_signals)),
@@ -222,6 +378,8 @@ if (stage=="technical") {
         sprintf("%.6f",count/n),"); candidate threshold only.\n",sep="")
 
     writeLines(c("stage=technical","status=passed","scope=unrelated_HM450_fixture",
+        "legacy_no_bead_benchmark_preserved=true",
+        "selected_min_beads3_manifest_controls_received=true",
         "clinical_cohort_qc=false","cross_version_parity_claimed=false"),
         file.path(output,"technical-disposition.txt"))
 

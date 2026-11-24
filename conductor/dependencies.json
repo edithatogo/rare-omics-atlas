@@ -99,7 +99,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Select the complete scientific/reference consumer contract; changed code requires T00.strict_code. Historical HM450 legacy-route execution and the independently accepted synthetic limma, corrected zero-integer-count GO and Reactome v98 operations remain recorded, with raw native probability failures preserved. PR23 supplies a fixed-denominator audit on one unrelated fixture; its later malformed control-label finding leaves intended negative-control backgrounds unqualified pending corrected-route replay and review under PR24. Clinical QC/control rules, production ingestion and the wider method contract remain pending; N1 v0.1 stays explicitly unfrozen. See research/qualification/ontology-context-2026-11-24.md and the historical native receipt."
+      "scope": "Select the complete scientific/reference consumer contract; changed code requires T00.strict_code. Historical HM450 legacy-route execution and the independently accepted synthetic limma, corrected zero-integer-count GO and Reactome v98 operations remain recorded, with raw native probability failures preserved. PR23 supplies a fixed-denominator audit on one unrelated fixture; its later malformed control-label finding leaves intended negative-control backgrounds held for integration; prior-base PR24 restored 614 finite negative controls with actual native and independent output checks, fresh current-base replay pending. Clinical QC/control rules, production ingestion and the wider method contract remain pending; N1 v0.2 stays explicitly unfrozen. See research/qualification/ontology-context-2026-11-24.md and the historical native receipt."
     },
     {
       "id": "T07.technical_preprocessing",
@@ -109,7 +109,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Archived T07c retains failed native QC v1; T07d passed its distinct native QC v2/GCT/raw-Q boundary. PR23 records historical legacy-route execution and native-hg38 fixed-denominator/exclusion audit on the unrelated fixture. All 848 exported control Type values are malformed and numeric; intended pOOBAH/noob negative-control backgrounds remain unqualified pending exact-source corrected-route replay and review under PR24. Historical artifacts do not separately export the negControls(raw3) row count. The recorded 366,308/408,966 fraction fails the prospective 95% rule; that rule and clinical control ranges remain unvalidated. Full selected scientific policies, production QC ingestion, required platforms and actual-device evidence remain open. A qualified established R/Bioconductor route is valid; no mandatory C/Rust replacement."
+      "scope": "Archived T07c retains failed native QC v1; T07d passed its distinct native QC v2/GCT/raw-Q boundary. PR23 records historical legacy-route execution and native-hg38 fixed-denominator/exclusion audit on the unrelated fixture. All 848 exported control Type values are malformed and numeric; intended pOOBAH/noob negative-control backgrounds remain unqualified pending exact-source corrected-route replay and review under PR24. Historical artifacts do not separately export the negControls(raw3) row count. The recorded 366,308/408,966 fraction fails the prospective 95% rule; that rule and clinical control ranges remain unvalidated. Full selected scientific policies, production QC ingestion, required platforms and actual-device evidence remain open. A qualified established R/Bioconductor route is valid; no mandatory C/Rust replacement. Prior-base PR24 corrected 366397/408966, with 614 finite negative controls and same fixed denominator; the 95% rule still rejects the fixture. Current-base receiving required."
     },
     {
       "id": "T07.consumer_contract",
@@ -127,7 +127,7 @@
         "T01.analysis_admission",
         "T07.selected_contract"
       ],
-      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification. Draft: conductor/tracks/t07-backend-qualification/n1.md; no freeze or analysis acceptance claimed."
+      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification. Draft: conductor/tracks/t07-backend-qualification/n1.md; no freeze or analysis acceptance claimed. N1 v0.2 prospectively specifies research QC, primary model, regional and pathway families; still unfrozen."
     },
     {
       "id": "T07.selected_backend",
