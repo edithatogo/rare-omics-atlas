@@ -36,3 +36,7 @@ Receive source-supported biological sample and family independence or a scientif
 ### Control provenance receiving increment
 
 The original source workflow now also inspects the hash-verified S6 workbook with a pinned read-only XLSX reader. It emits only worksheet-level exact whole-label match counts, recognised explicit source-category counts, and the presence of family/specimen headers. No source labels or rows are published. This is a diagnostic for locating the original source crosswalk, not automatic control-origin or participant-independence admission. An unresolved match remains held. The earlier source replay and failed formatting gate are preserved in their original run receipts.
+
+### Targeted control and design receiving follow-up
+
+The prior source-only run established all 11 exact control-label matches in column 1 of worksheet 3. The next run inspects only recognised generic headers, aggregates explicit recruitment-source categories and counts the coverage of actual identity fields, with no patient-level release. It also calculates the pre-QC metadata-only rank, residual degrees of freedom, case-coefficient variance factor and leave-one-assay-out/mixed-chip sensitivity using a pinned NumPy release. None of these outputs establishes biological independence, post-QC rank or scientific admission. An unrecognised source code or missing identity evidence remains unknown.

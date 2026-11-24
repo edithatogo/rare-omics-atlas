@@ -71,7 +71,7 @@ jobs:
             'https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc2.xlsx' -o "$work/mmc2.xlsx"
           curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
             'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief' -o "$work/source.soft"
-          uv run --no-project --python 3.15.2 --with openpyxl==3.1.5 --with et-xmlfile==2.0.0 python - "$work" <<'PY'
+          uv run --no-project --python 3.12.12 --with openpyxl==3.1.5 --with et-xmlfile==2.0.0 --with numpy==2.2.6 python - "$work" <<'PY'
           import collections
           import hashlib
           import json
@@ -142,6 +142,108 @@ jobs:
                   "family_header_observed": family_header,
                   "specimen_header_observed": specimen_header,
               })
+
+          # Source-specific second-stage inspection: the prior run found all 11
+          # exact control labels uniquely in column 1 of worksheet 3.
+          import numpy as np
+          sheet = book.worksheets[2]
+          rows = [[norm(v) for v in row] for row in sheet.iter_rows(values_only=True)]
+          rows = [row for row in rows if any(row)]
+          matched = [row for row in rows if row[0] in labels]
+          assert len(matched) == 11 and len({row[0] for row in matched}) == 11
+          # Report only generic header labels and aggregate values. Never print
+          # source pseudonyms, participant IDs or any individual row.
+          header_fields = {}
+          for row in rows[:5]:
+              for col, val in enumerate(row):
+                  if re.fullmatch(r"(?i)[a-z][a-z \-/()._]{0,55}", val) and re.search(
+                      r"(?i)\b(sample|control|source|collection|cohort|institution|site|age|sex|gender|ethnicity|ancestry|family|specimen|donor|participant|individual|origin|recruitment|race)\b", val
+                  ):
+                      header_fields.setdefault(col, val)
+          source_cols = [i for i, value in header_fields.items() if re.search(
+              r"(?i)\b(source|collection|institution|site|origin|recruitment)\b", value)]
+          source_counts = collections.Counter()
+          unresolved_source = 0
+          category_regex = {
+              "simons_simplex": r"(?i)\b(simons|ssc|sfari)\b",
+              "sickkids": r"(?i)\b(sickkids|sick kids|hospital for sick children|hsc)\b",
+              "michigan": r"(?i)\b(university of michigan|u\s*of\s*m|umich|michigan|hanna)\b",
+          }
+          for row in matched:
+              fields = [row[i] for i in source_cols if i < len(row)]
+              categories = {cat for cat, pattern in category_regex.items()
+                            if any(re.search(pattern, value) for value in fields)}
+              if len(categories) == 1:
+                  source_counts[next(iter(categories))] += 1
+              else:
+                  unresolved_source += 1
+          identity_summary = {}
+          for field, pattern in {
+              "participant": r"(?i)\b(donor|participant|individual)\b",
+              "specimen": r"(?i)\b(specimen)\b",
+              "family": r"(?i)\b(family|pedigree|kindred)\b",
+          }.items():
+              candidates = [i for i, value in header_fields.items() if re.search(pattern,value)]
+              identity_summary[field] = [
+                  {"column": i+1, "nonempty": sum(bool(row[i]) for row in matched),
+                   "distinct_nonempty": len({row[i] for row in matched if row[i]})}
+                  for i in candidates if all(i < len(row) for row in matched)
+              ]
+          print(json.dumps({"worksheet_index": 3, "exact_control_matches": len(matched),
+              "recognized_header_fields": {str(i+1): v for i,v in header_fields.items()},
+              "source_field_columns": [i+1 for i in source_cols],
+              "explicit_source_categories": dict(source_counts),
+              "unresolved_source_count": unresolved_source,
+              "source_origin_join_verified": False,
+              "identity_field_coverage": identity_summary,
+              "biological_independence_verified": False}, sort_keys=True))
+
+          # Outcome-blind design sensitivity, using only explicitly labelled
+          # source ages, sexes and array serial/position keys.
+          metadata = []
+          for record in records:
+              group = re.findall(r"^!Sample_characteristics_ch1 = sample type: (.+)$", record, re.M)
+              if group not in (["KMT2D LOF discovery cohort"], ["Control for KMT2D LOF discovery cohort"]):
+                  continue
+              age = re.findall(r"^!Sample_characteristics_ch1 = age \(years\): (.+)$", record, re.M)
+              sex = re.findall(r"^!Sample_characteristics_ch1 = gender: (.+)$", record, re.M)
+              files = re.findall(r"^!Sample_supplementary_file = (.+)$", record, re.M)
+              keys = [re.search(r"_(\d+)_R\d+C\d+_(?:Grn|Red)\.idat\.gz$", v.strip()) for v in files]
+              assert len(age) == len(sex) == 1 and len(keys) == 2 and all(keys)
+              assert keys[0].group(1) == keys[1].group(1)
+              gender = sex[0].strip().lower()
+              assert gender in ("male","female")
+              metadata.append((int(group[0]=="KMT2D LOF discovery cohort"),float(age[0]),int(gender=="female"),keys[0].group(1)))
+          assert len(metadata)==22 and sum(row[0] for row in metadata)==11
+          def design_result(records, chip=True):
+              group = np.array([row[0] for row in records],dtype=float)
+              age = np.array([row[1] for row in records],dtype=float)
+              sex = np.array([row[2] for row in records],dtype=float)
+              chips = sorted({row[3] for row in records})
+              columns = [np.ones(len(records)), group, age-age.mean(), sex]
+              if chip:
+                  columns += [np.array([row[3]==ch for row in records],dtype=float) for ch in chips[1:]]
+              X = np.column_stack(columns)
+              rank = int(np.linalg.matrix_rank(X,tol=1e-10))
+              reduced_rank = int(np.linalg.matrix_rank(np.delete(X,1,axis=1),tol=1e-10))
+              return {"n":len(records),"cases":int(group.sum()),"columns":X.shape[1],
+                      "rank":rank,"case_estimable":rank>reduced_rank,
+                      "residual_df":len(records)-rank,
+                      "case_variance_factor":float(np.linalg.inv(X.T@X)[1,1]) if rank==X.shape[1] else None}
+          shared = {row[3] for row in metadata if row[0]==1} & {row[3] for row in metadata if row[0]==0}
+          full = design_result(metadata)
+          basic = design_result(metadata,chip=False)
+          mixed = design_result([row for row in metadata if row[3] in shared])
+          loo = [design_result(metadata[:i]+metadata[i+1:]) for i in range(len(metadata))]
+          factors = [v["case_variance_factor"] for v in loo if v["case_variance_factor"] is not None]
+          print(json.dumps({"metadata_design_only": True,"numpy_version":np.__version__,
+              "python_version":sys.version.split()[0],"rank_tolerance":1e-10,
+              "unadjusted_for_chip":basic,"chip_adjusted":full,"mixed_chips_only":mixed,
+              "leave_one_assay_out":{"runs":len(loo),"case_estimable":sum(v["case_estimable"] for v in loo),
+                   "full_rank":sum(v["rank"]==v["columns"] for v in loo),
+                   "minimum_residual_df":min(v["residual_df"] for v in loo),
+                   "maximum_case_variance_factor":max(factors) if factors else None},
+              "independence_verified":False,"post_qc":False,"analysis_admitted":False},sort_keys=True))
           book.close()
           print(json.dumps({"control_workbook_verified": True, "workbook_sha256": hashlib.sha256(raw).hexdigest(),
                             "openpyxl_version": openpyxl.__version__, "selected_native_controls": len(labels),
