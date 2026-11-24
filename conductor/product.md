@@ -8,6 +8,9 @@
 
 **Scientific outputs (conditional):** (1) independent Kabuki cohort reproducibility; (2) curated ontology-linked dataset catalogue; (3) cross-disease methylation/pathway comparisons; (4) disease-conditioned hierarchical model; (5) selected regulatory and genotype–toxin perturbation hypotheses.
 
+These are capabilities and findings, not five manuscripts. Default to the [bundled clinical experiment plan](../research/experiment-publication-plan.md); metadata, backend parity and platform checks support the main clinical claim unless independently substantial evidence justifies another paper.
+
 **Out of scope until evidence:** new methylation normalisation algorithm, bespoke R-to-Rust or Julia-to-Rust ports, universal biomedical knowledge graph, patient-specific digital twin, distributed cloud lakehouse, clinical diagnostic deployment.
 
 **Not yet demonstrated:** literature priority, publication acceptance, cohort independence, real-world prediction, numerical equivalence of any cross-language replacement.
+

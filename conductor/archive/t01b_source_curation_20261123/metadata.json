@@ -1,0 +1,13 @@
+{
+  "track_id": "t01b_source_curation_20261123",
+  "type": "research",
+  "status": "completed",
+  "created_at": "2026-11-23",
+  "updated_at": "2026-11-23",
+  "parent_track": "T01",
+  "description": "Source-bound KMT2D review inventory with explicit molecular and identity holds",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "archived_at": "2026-11-23",
+  "acceptance_record": "research/qualification/t01-cohort-curation-2026-11-23.json"
+}

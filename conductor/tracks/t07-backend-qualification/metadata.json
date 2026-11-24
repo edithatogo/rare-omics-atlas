@@ -1,0 +1,27 @@
+{
+  "track_id": "T07",
+  "name": "Selected scientific backend qualification before its consumer",
+  "status": "in_progress",
+  "dependencies": [
+    "T00.context"
+  ],
+  "owner": "ChatGPT integrator",
+  "scientific_code_authorised": false,
+  "implementation_authorized": true,
+  "authorization_scope": "Continued bounded source, numerical-contract and synthetic/reference qualification is authorised. Scientific inference remains behind source admission, selected preprocessing/method, actual-device and analysis-specific N1 gates.",
+  "milestones": [
+    "T07.fork_baseline",
+    "T07.synthetic_consumer",
+    "T07.selected_contract",
+    "T07.protocol_freeze",
+    "T07.selected_backend"
+  ],
+  "evidence": [
+    "../../../research/qualification/setup-receipt.md",
+    "../../../research/qualification/initial-source-receipt.md",
+    "../../../research/qualification/contracts-hooks-2026-11-23.md"
+  ],
+  "scientific_analysis_authorized": false,
+  "title": "Selected scientific backend qualification before its consumer",
+  "bounded_contract_implementation_authorized": true
+}

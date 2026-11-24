@@ -1,0 +1,161 @@
+{
+  "status": "passed_address_and_undefined_sanitizers",
+  "observed_at_utc": "2026-11-23T08:08:12.229359+00:00",
+  "command": [
+    "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123/candidate-sanitized-test",
+    "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-missing-signal-20261123"
+  ],
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=0:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.035489,
+  "cases_passed": 7,
+  "source_before": [
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+      "sha256": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/qc.c",
+      "sha256": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/include/sesame.h",
+      "sha256": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+      "sha256": "9868913be49f0891f663ba5bc2b2511da4a4e550cf0338520a72379ca1773129"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include/sesame.h",
+      "sha256": "8001e7fee3f44155ea9f74b327c3d921638ed01661ff599684a433a8b4812763"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    }
+  ],
+  "source_after": [
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/scripts/tests/test_qc_missing_signal.c",
+      "sha256": "e7f95b76fefb2cd82b42348c766f501068d450811bc63ca670ad8df843217312"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/qc.c",
+      "sha256": "60dab45d4ff517d8c3773eb658c16f9f284e003186aadc16b91a7965081533fd"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/include/sesame.h",
+      "sha256": "10f9d307bf9e1b6c13d4ab9648483ceba0ca8acf2d5bda1837b1968163d54d89"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/sesame-source/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/qc.c",
+      "sha256": "9868913be49f0891f663ba5bc2b2511da4a4e550cf0338520a72379ca1773129"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/prep.c",
+      "sha256": "eb087f3e8a8227dac1f96d5309053077473e9baf601a799739fd61eadc41de3a"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/numerics.c",
+      "sha256": "4938a4db56085f35b7320a8acaf8843810ad2d320a802e200e0c1f14cbb5b9a5"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/sigdf.c",
+      "sha256": "df0c248bc0ae56a3ffec3411a829374f55a4ed1424fc5065a10401bbbcf0c58e"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/index.c",
+      "sha256": "b454eda931dba900887f80f69b53c3c5a73f5f5c49e6378c5a28014c1916629f"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/util.c",
+      "sha256": "2cb0aaa544dca853cbe1cf7a1a16bd194d441d32ae7edb4fd2d4284520553253"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/include/sesame.h",
+      "sha256": "8001e7fee3f44155ea9f74b327c3d921638ed01661ff599684a433a8b4812763"
+    },
+    {
+      "path": "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/sesame-native-qc-v2/src/internal.h",
+      "sha256": "8e07dc03f9f8abf64bb5873f9b643ed950af73919c97fd1ed188d682b8bcdea9"
+    }
+  ],
+  "source_unchanged": true,
+  "leak_sanitizer": "unavailable under this host ptrace; no leak qualification claimed",
+  "initial_failed_sanitizer_receipt": "receipt.json",
+  "initial_failed_sanitizer_log": "sanitized-run.stderr",
+  "stdout": "address-undefined.stdout",
+  "stderr": "address-undefined.stderr"
+}

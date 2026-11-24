@@ -1,0 +1,30 @@
+$ /workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python -m unittest discover -s tools/hf-release/tests -p test_publisher.py -k invalid_revision_cannot -v
+test_invalid_revision_cannot_overwrite_inputs_or_follow_symlinks (test_publisher.MetadataVerifierReceiptContract.test_invalid_revision_cannot_overwrite_inputs_or_follow_symlinks) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.198s
+
+OK
+
+$ /workspace/scratch/f247f15c065b/rare-omics-atlas-current/tools/hf-release/.venv/bin/python -m unittest discover -s tools/hf-release/tests -v
+test_accepts_only_expected_geo_archive (test_publisher.Contracts.test_accepts_only_expected_geo_archive) ... ok
+test_dry_run_generates_exact_manifest_and_deterministic_provenance (test_publisher.Contracts.test_dry_run_generates_exact_manifest_and_deterministic_provenance) ... ok
+test_rejects_auto_generated_path_collision (test_publisher.Contracts.test_rejects_auto_generated_path_collision) ... ok
+test_rejects_duplicate_destinations (test_publisher.Contracts.test_rejects_duplicate_destinations) ... ok
+test_rejects_path_escape_and_aliases (test_publisher.Contracts.test_rejects_path_escape_and_aliases) ... ok
+test_rejects_symlink_source (test_publisher.Contracts.test_rejects_symlink_source) ... ok
+test_rejects_unsupported_source_or_query (test_publisher.Contracts.test_rejects_unsupported_source_or_query) ... ok
+test_rejects_wrong_hash_and_size (test_publisher.Contracts.test_rejects_wrong_hash_and_size) ... ok
+test_upload_requires_matching_clean_tracked_source (test_publisher.GitSourceContracts.test_upload_requires_matching_clean_tracked_source) ... ok
+test_bad_lfs_hash_cannot_fall_back_to_git_blob (test_publisher.HubContracts.test_bad_lfs_hash_cannot_fall_back_to_git_blob) ... ok
+test_commit_is_parent_guarded_and_pinned_readback_is_verified (test_publisher.HubContracts.test_commit_is_parent_guarded_and_pinned_readback_is_verified) ... ok
+test_existing_bad_file_is_not_overwritten (test_publisher.HubContracts.test_existing_bad_file_is_not_overwritten) ... ok
+test_failed_download_removes_only_its_partial (test_publisher.HubContracts.test_failed_download_removes_only_its_partial) ... ok
+test_failed_postcheck_retains_observed_commit (test_publisher.HubContracts.test_failed_postcheck_retains_observed_commit) ... ok
+test_private_target_is_never_changed (test_publisher.HubContracts.test_private_target_is_never_changed) ... ok
+test_invalid_revision_cannot_overwrite_inputs_or_follow_symlinks (test_publisher.MetadataVerifierReceiptContract.test_invalid_revision_cannot_overwrite_inputs_or_follow_symlinks) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.232s
+
+OK

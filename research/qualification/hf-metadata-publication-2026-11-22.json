@@ -1,0 +1,142 @@
+{
+  "automated_publisher_upload_executed": false,
+  "baseline_source_revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+  "checked_at": "2026-11-22T12:23:52.238700+00:00",
+  "elapsed_seconds": 8.444115630001761,
+  "full_publication_track_status": "open_raw_transfer_blocked",
+  "full_release_verified": false,
+  "hub_commit_url": "https://huggingface.co/datasets/edithatogo/rare-omics-atlas/commit/3f1cb8e64d8e31e7e40773441ba6266714569d05",
+  "hub_revision": "3f1cb8e64d8e31e7e40773441ba6266714569d05",
+  "huggingface_hub_version": "2.4.0",
+  "new_notice_files": 3,
+  "official_github_actions_run_observed": false,
+  "publication_acceptance": "metadata subset only; full T09 remains open",
+  "publication_route": "hugging_face_browser_editor",
+  "python_version": "3.15.2 (main, Nov 11 2026, 00:19:20) [Clang 23.1.3 ]",
+  "raw_archive_absence_checked": true,
+  "raw_archive_paths_observed": [],
+  "raw_archives_published_by_this_route": 0,
+  "record_type": "metadata_subset_receipt",
+  "remote_objects": [
+    {
+      "local_sha256": "1b563dbecf7e7b9b6d67443254a20421a52ceac4e31716fbd98a9eaac762beea",
+      "observed_hash": "8d1c46578e1e237021ceb192e224b65d574c4c7f",
+      "path_in_repo": "README.md",
+      "size_bytes": 4984,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "a993e0747e7f4b1ea6ba198bcf5342658909c089791a950287540f2350b4a86b",
+      "observed_hash": "32d36b7ecc5d734e45e52479a781653ef3d3f8d5",
+      "path_in_repo": "LICENSES.md",
+      "size_bytes": 2818,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "4fde9bd87fb52e57f5d18ed27fc07b1899d6f58f0b96e75b3f96e887a9e8693b",
+      "observed_hash": "19049eabae411d08fb2f1dcf4a30401404e625fe",
+      "path_in_repo": "bronze/README.md",
+      "size_bytes": 734,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "c086f83f31d8b99f97553051cdec33910684594d10fa83bf74baadeaa2e4de01",
+      "observed_hash": "09bb1df87a28c3b5969a1732c05ec043a3c51ead",
+      "path_in_repo": "silver/README.md",
+      "size_bytes": 291,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "b0e546e5067804809c5d59f191917ee054356167ad679a744441c6107e3b2304",
+      "observed_hash": "39178c43733516d2cc376cea1ab329542341bb44",
+      "path_in_repo": "gold/README.md",
+      "size_bytes": 188,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "0c996f2774db79b68f757aa7c4bf94be393e65d9b292728f4d1b3ae92c1c4ef2",
+      "observed_hash": "5bf2f19820dfbdfa5873d6363e7e99ab6f59ae24",
+      "path_in_repo": "silver/catalogue/2026-11-22/datasets.jsonl",
+      "size_bytes": 37716,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "observed_hash": "18e4085d649a8f72e31dafa6d925d07fe3de6ddb",
+      "path_in_repo": "silver/catalogue/2026-11-22/assays.jsonl",
+      "size_bytes": 992318,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "6a16069b68e6759244f0005813e13cd5a5a8e964c45718c509208aa311f1b0bf",
+      "observed_hash": "d9bf7de5f603dd88357e0a2011c7f6337daf223c",
+      "path_in_repo": "silver/catalogue/2026-11-22/files.jsonl",
+      "size_bytes": 1089982,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "1e4be2edb4dd112c6ef879fa787dba9eeadb4f7b3efa79abe7cfd4f488fffc58",
+      "observed_hash": "2b0cfbd6e24121b156b3e3e4d1ff191b5703fae9",
+      "path_in_repo": "silver/catalogue/2026-11-22/requests.jsonl",
+      "size_bytes": 70037,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "7d7f9c68fb3c70d7d9ab2be592fd6d7cd00d9dda61cb1f68f8b3fdbb7bb9e222",
+      "observed_hash": "198f74014dfd459e4a77483bca22f3d486354dde",
+      "path_in_repo": "silver/catalogue/2026-11-22/summary.json",
+      "size_bytes": 1039,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+      "observed_hash": "3833dd5cc0068735a5143fd7eed30f3553134385",
+      "path_in_repo": "metadata/dataset-rights.json",
+      "size_bytes": 80450,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "15bc7c85b2bee788b880da7f432dcf481dfc069fd7e0b92867b16904bd158cc8",
+      "observed_hash": "626533394b8594d7509e792f63e5c918aee0bb53",
+      "path_in_repo": "metadata/initial-source-receipt.json",
+      "size_bytes": 9025,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "02e8c7e628c001430e8ac331e3cfd3dbdf22b6e07af4f280b403d5d513660485",
+      "observed_hash": "150d59f49e104655d0278dcdb63ed517eb2d1e9a",
+      "path_in_repo": "metadata/full-gzip-check.json",
+      "size_bytes": 1692,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    },
+    {
+      "local_sha256": "3b5ab3a3dee81a48f42c10844d6b87f8ef75613e034f0d10b96e7026292f51c4",
+      "observed_hash": "ce4440a7993f1e50b245796fc6512269473d357e",
+      "path_in_repo": "releases/2026-11-22/staging-publication-manifest.json",
+      "size_bytes": 12896,
+      "status": "verified",
+      "verification_method": "git_blob_sha1"
+    }
+  ],
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "schema_version": 1,
+  "staging_manifest_sha256": "3b5ab3a3dee81a48f42c10844d6b87f8ef75613e034f0d10b96e7026292f51c4",
+  "status": "metadata_subset_ui_published_api_verified_raw_pending",
+  "unchanged_baseline_files": 10,
+  "verification_script_sha256": "e7495ed243873706e2935e263c321d40364f18f5a76f1040d7618b2b6cae084b",
+  "verified_additional_staging_manifest": true,
+  "verified_metadata_objects": 13
+}

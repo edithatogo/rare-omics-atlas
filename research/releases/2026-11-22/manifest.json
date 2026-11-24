@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "release_id": "2026-11-22",
+  "source_repository": "https://github.com/edithatogo/rare-omics-atlas",
+  "purpose": "Minimal medallion: three byte-identical Bronze source archives and 29-source Silver metadata; no scientific Silver matrix or Gold result",
+  "objects": [
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-22/README.md",
+      "path_in_repo": "README.md",
+      "size_bytes": 3566,
+      "sha256": "5545c33546788b46ec6eee315454722d8d45de6d46dca238e5ffd5ed76b18a18",
+      "redistribution_basis": "Original project documentation with upstream attribution; third-party rights remain source-specific"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-22/LICENSES.md",
+      "path_in_repo": "LICENSES.md",
+      "size_bytes": 2512,
+      "sha256": "556974f253f4f842794714186c76e9eaee0ca8c65c8de1cd9e6a208285b05ed7",
+      "redistribution_basis": "Original project documentation with upstream attribution; third-party rights remain source-specific"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-22/bronze-README.md",
+      "path_in_repo": "bronze/README.md",
+      "size_bytes": 313,
+      "sha256": "a174b707367c2f6fdbab8fe61993ba4dc4ba4254d4b5a3e79f01effe6b88c20d",
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-22/silver-README.md",
+      "path_in_repo": "silver/README.md",
+      "size_bytes": 291,
+      "sha256": "c086f83f31d8b99f97553051cdec33910684594d10fa83bf74baadeaa2e4de01",
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-22/gold-README.md",
+      "path_in_repo": "gold/README.md",
+      "size_bytes": 188,
+      "sha256": "b0e546e5067804809c5d59f191917ee054356167ad679a744441c6107e3b2304",
+      "redistribution_basis": "Original project layer description"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/catalogue/2026-11-22/datasets.jsonl",
+      "path_in_repo": "silver/catalogue/2026-11-22/datasets.jsonl",
+      "size_bytes": 37716,
+      "sha256": "0c996f2774db79b68f757aa7c4bf94be393e65d9b292728f4d1b3ae92c1c4ef2",
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/catalogue/2026-11-22/assays.jsonl",
+      "path_in_repo": "silver/catalogue/2026-11-22/assays.jsonl",
+      "size_bytes": 992318,
+      "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/catalogue/2026-11-22/files.jsonl",
+      "path_in_repo": "silver/catalogue/2026-11-22/files.jsonl",
+      "size_bytes": 1089982,
+      "sha256": "6a16069b68e6759244f0005813e13cd5a5a8e964c45718c509208aa311f1b0bf",
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/catalogue/2026-11-22/requests.jsonl",
+      "path_in_repo": "silver/catalogue/2026-11-22/requests.jsonl",
+      "size_bytes": 70037,
+      "sha256": "1e4be2edb4dd112c6ef879fa787dba9eeadb4f7b3efa79abe7cfd4f488fffc58",
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/catalogue/2026-11-22/summary.json",
+      "path_in_repo": "silver/catalogue/2026-11-22/summary.json",
+      "size_bytes": 1039,
+      "sha256": "7d7f9c68fb3c70d7d9ab2be592fd6d7cd00d9dda61cb1f68f8b3fdbb7bb9e222",
+      "redistribution_basis": "Allowlisted factual metadata from official NCBI/GEO/PRIDE interfaces; retain source citations and individual source terms"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/registries/dataset-rights.json",
+      "path_in_repo": "metadata/dataset-rights.json",
+      "size_bytes": 80450,
+      "sha256": "d07604c04b5f027c1be78642b13cf15c444166828410815972a0b6e7226d0aff",
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/qualification/initial-source-receipt.json",
+      "path_in_repo": "metadata/initial-source-receipt.json",
+      "size_bytes": 9025,
+      "sha256": "15bc7c85b2bee788b880da7f432dcf481dfc069fd7e0b92867b16904bd158cc8",
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/qualification/full-gzip-check-2026-11-22.json",
+      "path_in_repo": "metadata/full-gzip-check.json",
+      "size_bytes": 1692,
+      "sha256": "02e8c7e628c001430e8ac331e3cfd3dbdf22b6e07af4f280b403d5d513660485",
+      "redistribution_basis": "Original source/rights/integrity receipt; source attribution retained"
+    },
+    {
+      "kind": "source_archive",
+      "accession": "GSE97362",
+      "cache_path": "GSE97362_RAW.tar",
+      "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE97nnn/GSE97362/suppl/GSE97362_RAW.tar",
+      "path_in_repo": "bronze/geo/GSE97362/GSE97362_RAW.tar",
+      "size_bytes": 2181539840,
+      "sha256": "521fb68f049c69d3911bc8b91f010e81cb76caa7092436a823632c11249da7c7",
+      "redistribution_basis": "Public GEO release and affirmative GEO use/distribution policy; no contrary source-specific notice found in inspected metadata/archive scope; preserve source and Illumina annotation attribution; original bytes unchanged",
+      "source_policy_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+      "hash_origin": "Computed on actual full download; not an independently supplied publisher checksum"
+    },
+    {
+      "kind": "source_archive",
+      "accession": "GSE116300",
+      "cache_path": "GSE116300_RAW.tar",
+      "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE116nnn/GSE116300/suppl/GSE116300_RAW.tar",
+      "path_in_repo": "bronze/geo/GSE116300/GSE116300_RAW.tar",
+      "size_bytes": 565248000,
+      "sha256": "82742b84a4e9b7f352afad1e54524673517e14031e972df7d0facfe59757f326",
+      "redistribution_basis": "Public GEO release and affirmative GEO use/distribution policy; no contrary source-specific notice found in inspected metadata/archive scope; preserve source and Illumina annotation attribution; original bytes unchanged",
+      "source_policy_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+      "hash_origin": "Computed on actual full download; not an independently supplied publisher checksum"
+    },
+    {
+      "kind": "source_archive",
+      "accession": "GSE218186",
+      "cache_path": "GSE218186_RAW.tar",
+      "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218186/suppl/GSE218186_RAW.tar",
+      "path_in_repo": "bronze/geo/GSE218186/GSE218186_RAW.tar",
+      "size_bytes": 1082193920,
+      "sha256": "9c6014691c6bc0838efaca1ea697533ac68c85a86f600c1d69cbe69fa5143ab0",
+      "redistribution_basis": "Public GEO release and affirmative GEO use/distribution policy; no contrary source-specific notice found in inspected metadata/archive scope; preserve source and Illumina annotation attribution; original bytes unchanged",
+      "source_policy_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+      "hash_origin": "Computed on actual full download; not an independently supplied publisher checksum"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "contract_id": "limma-named-contrasts-v1",
+  "source_repository": "https://github.com/edithatogo/limma-rust.git",
+  "source_revision": "c08c53943a7acb9c6a1152df8d79e27cffe7199b"
+}

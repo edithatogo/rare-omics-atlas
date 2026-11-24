@@ -7,3 +7,21 @@
 /.venv/
 /.Rproj.user/
 /Manifest-local.toml
+
+# Medallion layers remain local until a separately reviewed artifact release
+/data/bronze/
+/data/silver/
+/data/gold/
+/data/reference-cache/
+
+# Native build products and operational caches
+**/target/
+**/__pycache__/
+*.pyc
+**/.venv/
+/.tools/
+/artifacts/
+/.coverage*
+/.env
+/.env.*
+!/.env.example

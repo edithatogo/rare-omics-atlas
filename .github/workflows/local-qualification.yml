@@ -1,0 +1,56 @@
+name: Official local qualification
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Registered owner device and native OS
+        required: true
+        type: choice
+        default: macos-arm64
+        options: [macos-arm64, windows-x64, linux-x64]
+permissions:
+  contents: read
+concurrency:
+  group: local-qualification-${{ inputs.target }}
+  cancel-in-progress: false
+jobs:
+  infrastructure:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
+    timeout-minutes: 60
+    env:
+      CARGO_BUILD_JOBS: '2'
+      VERIFY_BASE: HEAD^
+    steps:
+      - name: Check out trusted main revision
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-22
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          submodules: false
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: '0.13.9'
+          enable-cache: false
+      - name: Install locked Python tooling
+        run: uv sync --project tools/hf-release --frozen --python 3.15.2
+      - name: Install pinned native verification tools
+        env:
+          CARGO_HOME: ${{ runner.temp }}/atlas-cargo-${{ github.run_id }}
+          RUSTUP_HOME: ${{ runner.temp }}/atlas-rustup-${{ github.run_id }}
+        run: uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/bootstrap.py
+      - name: Run the same strict command as hosted CI
+        env:
+          CARGO_HOME: ${{ runner.temp }}/atlas-cargo-${{ github.run_id }}
+          RUSTUP_HOME: ${{ runner.temp }}/atlas-rustup-${{ github.run_id }}
+        run: uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep --output artifacts/verification/local
+      - name: Preserve observed device qualification
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: owner-device-${{ inputs.target }}-${{ github.sha }}
+          path: artifacts/verification/local
+          if-no-files-found: error
+          retention-days: 14

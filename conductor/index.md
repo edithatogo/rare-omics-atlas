@@ -1,25 +1,38 @@
 # Conductor project context
 
-This project is **documentation-only** until the owner authorises a named track for implementation. No computational scientific claim is accepted by merely writing this plan.
+The owner authorises continued bounded implementation, API catalogue and GitHub–Hugging Face integration, following implement → review → archive for each completed track. Source, numerical, scientific and actual-device acceptance remain distinct. See [AGENTS.md](../AGENTS.md) for the current scope.
 
-- [Product and scientific purpose](product.md)
-- [Technology and interoperability decisions](tech-stack.md)
-- [Scientific workflow and evidence gates](workflow.md)
-- [Tracks registry](tracks.md)
-- [Local Ponytail approvals](../research/ponytail-decisions.md)
+- [Product](product.md)
+- [Product guidelines](product-guidelines.md)
+- [Technology and data contracts](tech-stack.md)
+- [General style guide](code_styleguides/general.md)
+- [Workflow](workflow.md)
+- [Tracks and execution dependencies](tracks.md)
+- [Machine-readable milestones](dependencies.json)
+- [Setup receipt](../research/qualification/setup-receipt.md)
+- [Source intake receipt](../research/qualification/initial-source-receipt.md)
+- [Ponytail decisions](../research/ponytail-decisions.md)
+- [Dataset rights](../research/dataset-rights.md)
+- [Literature map](../research/literature/README.md)
+- [Experiments and publication bundles](../research/experiment-publication-plan.md)
+- [Backend audit](../research/methylation-backend-audit.md)
+- [Rust additions and SeSAMe-rust assessment](../research/rust-port-roadmap.md)
+- [Medallion layout](../research/medallion-layout.md)
+- [Resources and hosting](../research/resources-hosting-reuse.md)
+- [Official local runners](../research/local-development.md)
+- [Strict development and CI contract](../research/ci-plan.md)
+- [Repository ownership, native hooks and pinned receiving integration](../research/repository-integration.md)
+- [Accepted source/receiving increment and actual strict evidence](../research/qualification/contracts-hooks-2026-11-23.md)
+- [HM450 preprocessing/annotation contract and executable recipe](../research/preprocessing-qualification.md)
+- [HM450 QC/p-value v1 history and executable recipe](../research/qc-qualification.md)
+- [Native QC v2 semantics, curated GCT and executable qualification](../research/native-qc-qualification.md)
+- [Cohort-source curation and actual held declarations](../research/qualification/t01-cohort-curation-2026-11-23.md)
+- [Current identity and covariate source evidence](../research/qualification/t01-identity-covariates-2026-11-23.md)
+- [Clinical journal routing](../research/journals.md)
+- [Actual Hub metadata publication and remaining raw transfer](../research/qualification/hf-metadata-publication-2026-11-22.md)
 
-## Planned project phases
+## Execution rule
 
-T00 governance and first-principles scoping → T01 dataset/provenance qualification → T02 Kabuki replication → T03 cross-disease comparison → T04 Julia hierarchical methods → T05 matched multi-omics → T06 genotype–toxin analysis.
+Schedule ready milestones, not numeric track labels. T00 context enables T01 discovery and a synthetic/committed-corpus backend baseline. Patient-data inference requires T01 analysis admission, the selected T07 backend, actual target-device qualification and an analysis-specific N1 freeze. Optional Rust ports and unneeded model layers remain separate branches.
 
-T05 may be pursued before T04 only if matched assays are qualified and no shared model implementation is needed. T06 is separately gated and is not required for publication of T02–T04.
-
-## Rules
-
-- Exact accessions, versions, participant reuse and permissions first.
-- Freeze hypotheses before testing external data.
-- Distinguish methylation association, expression prediction and causal perturbation evidence.
-- Every numerical method requires a published baseline and explicit stop criteria.
-- Prefer **clinical-genetics journal fit**, rather than aiming first for high-profile methods journals.
-
-**Current cross-cutting gates:** [Source public-access, rights and ethics](../research/source-access-ethics.md) and [Rust scientific backend qualification](../research/backend-replacement-policy.md). Both are planning/source checks, not analysis execution receipts.
+A source manifest, completed code test, statistical acceptance and an institutional decision are different receipts. Never satisfy a missing criterion by renaming it. When an external prerequisite is unavailable, record its owner, resolution and affected downstream milestones; continue independent authorised work.

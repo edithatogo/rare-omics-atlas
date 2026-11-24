@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-11-23",
+  "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
+  "milestones": [
+    {
+      "id": "T00.context",
+      "status": "complete",
+      "requires": [],
+      "scope": "Pinned source and project context"
+    },
+    {
+      "id": "T00.strict_code",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Strict local/hosted code command is implemented and historically accepted; every new candidate must pass again. Exact receipts, rather than mutable counts here, are recorded under research/qualification/. Official device, licence and scientific acceptance remain separate."
+    },
+    {
+      "id": "T00.hosted_ci",
+      "status": "complete",
+      "requires": [
+        "T00.strict_code"
+      ],
+      "scope": "Prior strict implementation merged as 6bd452abde7aff9fbf2969814dca39a0f182d18a; main run 45031759251 strict/privacy passed. Every follow-up receives its own applicable PR/provider checks; required server enforcement remains an administrator task."
+    },
+    {
+      "id": "T00.host_integration",
+      "status": "not_observed",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Optional host-specific automatic integration"
+    },
+    {
+      "id": "T00.local_runner",
+      "status": "blocked_external",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Official selected-device runner registration and trusted observed run"
+    },
+    {
+      "id": "T01.initial_intake",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Three archives and bounded source/rights/prior-art review"
+    },
+    {
+      "id": "T01.reference_assets",
+      "status": "in_progress",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Initial MONDO/HPO/HPOA bytes and five disease mappings complete. The bounded HM450 technical increment qualifies exact ordering, hg38 coordinates, extension row-space and masks; remaining selected-platform/gene-mapping consumers stay open."
+    },
+    {
+      "id": "T01.institutional_classification",
+      "status": "blocked_external",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Applicable institution exemption/review/governance determination"
+    },
+    {
+      "id": "T01.analysis_admission",
+      "status": "pending",
+      "requires": [
+        "T01.initial_intake",
+        "T01.reference_assets",
+        "T01.institutional_classification",
+        "T07.technical_preprocessing"
+      ],
+      "scope": "Molecular subset, native controls, overlap/covariates and source eligibility"
+    },
+    {
+      "id": "T07.fork_baseline",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Historical 104-test cloud corpus replay at its recorded source; fresh independent and named-exchange evidence are separate milestones."
+    },
+    {
+      "id": "T07.selected_contract",
+      "status": "pending",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Select method/reference and define independent numerical/consumer acceptance; changed executable contracts require T00.strict_code. Technical preprocessing qualification on unrelated fixtures precedes T01 sample QC; disease-conditioned inference stays behind N1."
+    },
+    {
+      "id": "T07.technical_preprocessing",
+      "status": "pending",
+      "requires": [
+        "T07.selected_contract",
+        "T01.reference_assets",
+        "T00.local_runner"
+      ],
+      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites."
+    },
+    {
+      "id": "T07.consumer_contract",
+      "status": "pending",
+      "requires": [
+        "T07.selected_contract",
+        "T00.strict_code"
+      ],
+      "scope": "The bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Selection of the complete scientific/preprocessing route and production ingestion/consumer qualification remain; only the chosen Rust route depends on remaining LM02 evidence."
+    },
+    {
+      "id": "T07.protocol_freeze",
+      "status": "pending",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_contract"
+      ],
+      "scope": "N1 scientific and backend-comparison protocol, including discovery/replication partition, estimands and acceptance bounds, frozen before disease-conditioned numerical qualification."
+    },
+    {
+      "id": "T07.selected_backend",
+      "status": "pending",
+      "requires": [
+        "T07.protocol_freeze",
+        "T00.local_runner",
+        "T07.consumer_contract"
+      ],
+      "scope": "Accept selected reference or Rust method using technical/discovery qualification evidence; reserved clinical replication effects remain concealed."
+    },
+    {
+      "id": "T02.ready",
+      "status": "pending",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_backend"
+      ],
+      "scope": "Confirm already frozen N1 and current novelty before clinical execution; method changes require a new version and requalification."
+    },
+    {
+      "id": "T02.results",
+      "status": "planned",
+      "requires": [
+        "T02.ready"
+      ],
+      "scope": "Kabuki reference and external transfer"
+    },
+    {
+      "id": "T03.results",
+      "status": "planned",
+      "requires": [
+        "T02.results",
+        "T07.selected_backend"
+      ],
+      "scope": "Separately admitted cross-disease comparisons and own N1"
+    },
+    {
+      "id": "T04.results",
+      "status": "conditional",
+      "requires": [
+        "T03.results"
+      ],
+      "scope": "Adequate independent effects, model qualification and own N1"
+    },
+    {
+      "id": "T05.results",
+      "status": "conditional",
+      "requires": [
+        "T01.analysis_admission",
+        "T07.selected_backend"
+      ],
+      "scope": "Separately admitted modalities/pairing; T02/T03 outputs additionally when used"
+    },
+    {
+      "id": "T06.results",
+      "status": "conditional",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Separate quantitative data, institutional/method gates and own N1"
+    },
+    {
+      "id": "T08.api_catalogue",
+      "status": "complete",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "29 official API records and provenance; cloud infrastructure acceptance; archived"
+    },
+    {
+      "id": "T09.hf_publication",
+      "status": "in_progress",
+      "requires": [
+        "T09.metadata_publication",
+        "T09.raw_mirror"
+      ],
+      "scope": "Full source-bound three-archive mirror remains open. Reviewed publisher, 14-object metadata publication and canonical estate entry are complete; raw Hub transfer externally blocked."
+    },
+    {
+      "id": "T07.fresh_reference",
+      "status": "complete",
+      "requires": [
+        "T07.fork_baseline"
+      ],
+      "scope": "LM01a public synthetic R reference: 30,840 comparisons; archived. LM02a identifier hygiene/four fresh named cases archived; production consumer/device/methylation gates remain."
+    },
+    {
+      "id": "T09.metadata_publication",
+      "status": "complete",
+      "requires": [
+        "T08.api_catalogue"
+      ],
+      "scope": "13 metadata objects plus staging manifest verified at Hub 3f1cb8e64d8e31e7e40773441ba6266714569d05; existing estate updated, no raw files."
+    },
+    {
+      "id": "T09.raw_mirror",
+      "status": "blocked_external",
+      "requires": [
+        "T01.initial_intake",
+        "T09.metadata_publication",
+        "T00.local_runner"
+      ],
+      "scope": "Three raw archives remain local. Available remote compute returned HTTP 402; browser download transport failed. Existing official-runner workflow can publish once an authenticated runner is available."
+    },
+    {
+      "id": "T00.native_hooks",
+      "status": "complete",
+      "requires": [
+        "T00.strict_code"
+      ],
+      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each publishing candidate must pass its installed hook; a staged API candidate may receive an actual read-only hosted native-hook commit replay on the exact current-base merge tree before merge. Source/tree and observed checks are recorded in its PR. Owner-device execution remains separate."
+    },
+    {
+      "id": "T01.sample_contract",
+      "status": "complete",
+      "requires": [
+        "T01.initial_intake",
+        "T00.strict_code"
+      ],
+      "scope": "Archived T01a structural declaration/CLI and exact public 341-assay reconciliation, independently reviewed with 34/34 combined strict checks. All actual assays are held; no participant independence or scientific admission is inferred."
+    },
+    {
+      "id": "T07.synthetic_consumer",
+      "status": "complete",
+      "requires": [
+        "T07.fresh_reference",
+        "T00.strict_code"
+      ],
+      "scope": "Archived T07a named-v1 receiver at immutable limma c08c53943a7acb9c6a1152df8d79e27cffe7199b: three actual exchanges, 576 rows, 6912 numerical fields and 54 preserved nonfinite results; 34/34 strict checks. This synthetic Rust route does not gate an independently qualified reference route or establish production preprocessing."
+    },
+    {
+      "id": "T01.source_curation",
+      "status": "complete",
+      "requires": [
+        "T01.sample_contract",
+        "T00.strict_code"
+      ],
+      "scope": "Bounded source curation of 341 public assays: 68 candidate case, 189 source control and 84 KMT2D review-scope exclusions; the unchanged validator holds 257 and admits none. Molecular eligibility, identities, overlap, missing covariates and scientific admission remain open."
+    },
+    {
+      "id": "T07.hm450_raw_q",
+      "status": "complete",
+      "requires": [
+        "T00.context",
+        "T00.strict_code"
+      ],
+      "scope": "Pinned HM450 author technical pair, independent mathematical/R raw/Q reference, complete named annotation and actual binary32-to-six-digit production exports. Full scientific preprocessing/QC, other platforms and owner devices retain separate criteria."
+    },
+    {
+      "id": "T07.hm450_qc_receiver",
+      "status": "complete",
+      "requires": [
+        "T07.hm450_raw_q",
+        "T00.strict_code"
+      ],
+      "scope": "Archived bounded full-schema HM450 QC and raw/QCD detection receiver: four actual exports, all p-values pass and four native R QC fields differ. Independent review and 34/34 strict code gates passed; final native-hook/hosted evidence belongs to its integration PR. Full QC method, rejection-policy, scientific and device admission remain held."
+    }
+  ],
+  "external_gate_resolution": {
+    "T00.local_runner": "Owner device access plus official runner registration and observed workflow; no current session can supply this.",
+    "T01.institutional_classification": "Applicable institutional decision; source policy is not a substituted institutional decision.",
+    "T09.raw_mirror": "Use the configured manual workflow on a trusted official owner runner with scoped HF_TOKEN; verify full immutable release and reconcile notices/estate. Do not require a paid remote-compute subscription. Source-linked Bronze permits independent local technical work."
+  },
+  "conditional_rust_route": [
+    "limma-rust:LM00",
+    "limma-rust:LM01",
+    "limma-rust:LM02",
+    "limma-rust:LM03"
+  ],
+  "optional_rust_branches": [
+    "limma-rust:LM04",
+    "limma-rust:LM05"
+  ],
+  "rust_fallback": "A separately qualified reference backend does not depend on completion of the optional Rust route."
+}

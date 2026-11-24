@@ -1,0 +1,147 @@
+{
+  "retrieved_at_utc": "2026-11-22T09:20:46.258347+00:00",
+  "provider": "OpenAlex",
+  "request_url": "https://api.openalex.org/works?filter=doi%3Ahttps%3A%2F%2Fdoi.org%2F10.1186%2Fs13059-016-1066-1%7Chttps%3A%2F%2Fdoi.org%2F10.1186%2Fs13148-017-0333-7%7Chttps%3A%2F%2Fdoi.org%2F10.1080%2F15592294.2019.1700003%7Chttps%3A%2F%2Fdoi.org%2F10.2217%2Fepi-2017-0078%7Chttps%3A%2F%2Fdoi.org%2F10.1080%2F15592294.2018.1497386%7Chttps%3A%2F%2Fdoi.org%2F10.1080%2F15592294.2019.1634975%7Chttps%3A%2F%2Fdoi.org%2F10.1186%2Fs13148-024-01761-4%7Chttps%3A%2F%2Fdoi.org%2F10.1093%2Fbioinformatics%2Fbtw691%7Chttps%3A%2F%2Fdoi.org%2F10.1093%2Fbib%2Fbbae667%7Chttps%3A%2F%2Fdoi.org%2F10.1007%2Fs11357-024-01414-7&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cpublication_date%2Cids&per-page=50",
+  "scope": "exact DOI seed lookup; not forward citation review or accession-reuse evidence",
+  "status": 200,
+  "count": 10,
+  "results": [
+    {
+      "id": "https://openalex.org/W2529024004",
+      "doi": "https://doi.org/10.1186/s13059-016-1066-1",
+      "title": "Critical evaluation of the Illumina MethylationEPIC BeadChip microarray for whole-genome DNA methylation profiling",
+      "publication_year": 2016,
+      "publication_date": "2016-10-07",
+      "ids": {
+        "openalex": "https://openalex.org/W2529024004",
+        "doi": "https://doi.org/10.1186/s13059-016-1066-1",
+        "mag": "2529024004",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/27717381",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/5055731"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2567721002",
+      "doi": "https://doi.org/10.1093/bioinformatics/btw691",
+      "title": "Preprocessing, normalization and integration of the Illumina HumanMethylationEPIC array with minfi",
+      "publication_year": 2016,
+      "publication_date": "2016-11-29",
+      "ids": {
+        "openalex": "https://openalex.org/W2567721002",
+        "doi": "https://doi.org/10.1093/bioinformatics/btw691",
+        "mag": "2567721002",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/28035024",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/5408810"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2745699865",
+      "doi": "https://doi.org/10.2217/epi-2017-0078",
+      "title": "The Correlation Of Methylation Levels Measured Using Illumina 450K And EPIC Beadchips In Blood Samples",
+      "publication_year": 2017,
+      "publication_date": "2017-08-15",
+      "ids": {
+        "openalex": "https://openalex.org/W2745699865",
+        "doi": "https://doi.org/10.2217/epi-2017-0078",
+        "mag": "2745699865",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/28809127",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/5967357"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2883790521",
+      "doi": "https://doi.org/10.1080/15592294.2018.1497386",
+      "title": "Comparison of DNA methylation measured by Illumina 450K and EPIC BeadChips in blood of newborns and 14-year-old children",
+      "publication_year": 2018,
+      "publication_date": "2018-06-03",
+      "ids": {
+        "openalex": "https://openalex.org/W2883790521",
+        "doi": "https://doi.org/10.1080/15592294.2018.1497386",
+        "mag": "2883790521",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/30044683",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/6140901"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2998215188",
+      "doi": "https://doi.org/10.1080/15592294.2019.1700003",
+      "title": "Correlation of Infinium HumanMethylation450K and MethylationEPIC BeadChip arrays in cartilage",
+      "publication_year": 2019,
+      "publication_date": "2019-12-13",
+      "ids": {
+        "openalex": "https://openalex.org/W2998215188",
+        "doi": "https://doi.org/10.1080/15592294.2019.1700003",
+        "mag": "2998215188",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/31833794",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7574380"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2604242089",
+      "doi": "https://doi.org/10.1186/s13148-017-0333-7",
+      "title": "Validation of the MethylationEPIC BeadChip for fresh-frozen and formalin-fixed paraffin-embedded tumours",
+      "publication_year": 2017,
+      "publication_date": "2017-04-04",
+      "ids": {
+        "openalex": "https://openalex.org/W2604242089",
+        "doi": "https://doi.org/10.1186/s13148-017-0333-7",
+        "mag": "2604242089",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/28392843",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/5379646"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2955464753",
+      "doi": "https://doi.org/10.1080/15592294.2019.1634975",
+      "title": "Comparison of Illumina 450K and EPIC arrays in placental DNA methylation",
+      "publication_year": 2019,
+      "publication_date": "2019-06-28",
+      "ids": {
+        "openalex": "https://openalex.org/W2955464753",
+        "doi": "https://doi.org/10.1080/15592294.2019.1634975",
+        "mag": "2955464753",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/31250700",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/6791701"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404613437",
+      "doi": "https://doi.org/10.1186/s13148-024-01761-4",
+      "title": "Technical variability across the 450K, EPICv1, and EPICv2 DNA methylation arrays: lessons learned for clinical and longitudinal studies",
+      "publication_year": 2024,
+      "publication_date": "2024-11-22",
+      "ids": {
+        "openalex": "https://openalex.org/W4404613437",
+        "doi": "https://doi.org/10.1186/s13148-024-01761-4",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/39578866",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11583407"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404433502",
+      "doi": "https://doi.org/10.1007/s11357-024-01414-7",
+      "title": "The Multi-State Epigenetic Pacemaker enables the identification of combinations of factors that influence DNA methylation",
+      "publication_year": 2024,
+      "publication_date": "2024-11-16",
+      "ids": {
+        "openalex": "https://openalex.org/W4404433502",
+        "doi": "https://doi.org/10.1007/s11357-024-01414-7",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/39549198",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11979089"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4405585103",
+      "doi": "https://doi.org/10.1093/bib/bbae667",
+      "title": "Higher order interaction analysis quantifies coordination in the epigenome revealing novel biological relationships in Kabuki syndrome",
+      "publication_year": 2024,
+      "publication_date": "2024-11-22",
+      "ids": {
+        "openalex": "https://openalex.org/W4405585103",
+        "doi": "https://doi.org/10.1093/bib/bbae667",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/39701600",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11658816"
+      }
+    }
+  ]
+}

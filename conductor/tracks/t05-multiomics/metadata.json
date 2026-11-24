@@ -5,5 +5,10 @@
   "implementation_authorized": false,
   "owner": null,
   "evidence": [],
-  "publication_target": "Primary European Journal of Medical Genetics; backup Molecular Syndromology with clinical phenotype relevance."
+  "publication_target": "E6 normally validates the same claim in combined P2; no separate manuscript by default. JIMD Reports/JIMD require an actual metabolic question and adequate evidence.",
+  "dependencies": [
+    "T01.analysis_admission",
+    "T07.selected_backend"
+  ],
+  "dependency_note": "Apply separate data/method admission and N0/N1 for this experiment; optional ports are not required."
 }

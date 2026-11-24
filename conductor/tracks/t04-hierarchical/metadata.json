@@ -1,9 +1,13 @@
 {
   "track_id": "T04",
-  "title": "Julia hierarchical cross-disease inference",
+  "title": "Hierarchical cross-disease inference",
   "status": "planned",
   "implementation_authorized": false,
   "owner": null,
   "evidence": [],
-  "publication_target": "Primary BMC Medical Genomics; backup Molecular Genetics & Genomic Medicine (Methods/Original Research)."
+  "publication_target": "E5 in conditional combined P2: OJRD/BMC Medical Genomics for clinical interpretation, BMC Bioinformatics/Bioinformatics Advances for a substantive methods contribution.",
+  "dependencies": [
+    "T03.results"
+  ],
+  "dependency_note": "Apply separate data/method admission and N0/N1 for this experiment; optional ports are not required."
 }

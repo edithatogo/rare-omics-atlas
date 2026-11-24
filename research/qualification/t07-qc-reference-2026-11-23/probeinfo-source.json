@@ -1,0 +1,32 @@
+{
+  "url": "https://raw.githubusercontent.com/zwdzwd/sesameData/119df217cea4da8cb18173226fa85e6152d13e51/inst/extdata/metadata.csv",
+  "sha256": "8edc8d6157bb3e86ebc4d70a78ba7cac8fc1ceffc8012ebde8c5737b45449e27",
+  "matches": [
+    {
+      "Title": "HM450.probeInfo",
+      "Description": "Basic information about probe design on HM450 platform, including $probe2chr.hg19, $mapped.probes.hg19, $mapped.probes.hg38, $typeI.extC, $typeI.extT, $mask, $mask.tcga, $chrY.clean, $chrX.xlinked, $mask.hg19 (character)",
+      "BiocVersion": "3.12",
+      "Genome": "NA",
+      "SourceType": "RDA",
+      "SourceUrl": "http://zwdzwd.github.io/InfiniumAnnotation",
+      "SourceVersion": "15-Mar-2018",
+      "Species": "Homo sapiens",
+      "TaxonomyId": "9606",
+      "Coordinate_1_based": "TRUE",
+      "DataProvider": "Illumina Inc",
+      "RDataClass": "list",
+      "DispatchClass": "Rda",
+      "RDataPath": "sesameData/v1.7.2/HM450.probeInfo.rda",
+      "Location_Prefix": "",
+      "Tags": "NA",
+      "Notes": "NA"
+    }
+  ],
+  "published_projection": {
+    "original_receipt_sha256": "df10f528321626882fd524883029693aec00144c21806ca90a40182c44330712",
+    "omitted_fields": [
+      "matches[0].Maintainer"
+    ],
+    "reason": "Author contact is unnecessary for numerical/source provenance; original metadata hash and source URL are retained."
+  }
+}

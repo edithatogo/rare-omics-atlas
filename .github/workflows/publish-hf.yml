@@ -1,0 +1,55 @@
+name: Publish reviewed medallion release
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Registered owner device and native OS
+        required: true
+        type: choice
+        default: macos-arm64
+        options: [macos-arm64, windows-x64, linux-x64]
+permissions:
+  contents: read
+concurrency:
+  group: hf-publication-${{ inputs.target }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
+    timeout-minutes: 60
+    steps:
+      - name: Check out trusted main revision
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-22
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          submodules: false
+          fetch-depth: 1
+      - name: Record source and qualify publisher
+        run: |
+          git rev-parse HEAD
+          uv --version
+          uv run --project tools/hf-release --frozen python --version
+          uv run --project tools/hf-release --frozen python -m unittest discover -s tools/hf-release/tests -v
+      - name: Publish exact manifest through official Hub client
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_HUB_DISABLE_TELEMETRY: "1"
+        run: >-
+          uv run --project tools/hf-release --frozen python tools/hf-release/publisher.py
+          --manifest research/releases/2026-11-22/manifest.json
+          --root .
+          --data-root "${{ runner.temp }}/atlas-bronze-${{ github.run_id }}"
+          --source-revision "${{ github.sha }}"
+          --receipt "${{ runner.temp }}/atlas-hf-receipt-${{ github.run_id }}.json"
+          --fetch-sources --upload
+      - name: Preserve publication or failure receipt
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2, verified 2026-11-22
+        with:
+          name: atlas-hf-receipt-${{ github.run_id }}
+          path: ${{ runner.temp }}/atlas-hf-receipt-${{ github.run_id }}.json
+          if-no-files-found: warn
+          retention-days: 14

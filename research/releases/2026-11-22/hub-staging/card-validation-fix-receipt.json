@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-11-22T12:06:37.284898+00:00",
+  "issue": "Hugging Face dataset-card validation rejected the custom license_name containing spaces and a relative license_link before browser publication",
+  "evidence": "Root observed the Hub card-validation error before commit; no successful invalid-card publication is claimed",
+  "fix": {
+    "license_name": "rare-omics-source-specific",
+    "license_link": "https://huggingface.co/datasets/edithatogo/rare-omics-atlas/blob/main/LICENSES.md"
+  },
+  "scope": "Only the two frontmatter fields changed in the canonical full-release card and staging card, plus their required checksum/size bindings",
+  "baseline_source_revision": "8cfc85110911a2991301b358e4510e28026d13b8",
+  "before_sha256": {
+    "research/releases/2026-11-22/README.md": "018efab1d5b8088ec1fcc18be2a85b339cda32440f00a59620b03f2c03d21e32",
+    "research/releases/2026-11-22/hub-staging/README.md": "3721cd9bd934c247c0952416a692ecc3009eb7d060f23154a62f19340a90d19e",
+    "research/releases/2026-11-22/manifest.json": "8d68e803c1f01aa52e382f31b709893e6e52758df10ac0160b8d75656008f6f2",
+    "research/releases/2026-11-22/hub-staging/staging-publication-manifest.json": "72b72c9162bff23fe55809d5f35d49149ab23fdc66df9aeb7015fbd675e390f6"
+  },
+  "after_sha256": {
+    "research/releases/2026-11-22/README.md": "5545c33546788b46ec6eee315454722d8d45de6d46dca238e5ffd5ed76b18a18",
+    "research/releases/2026-11-22/hub-staging/README.md": "1b563dbecf7e7b9b6d67443254a20421a52ceac4e31716fbd98a9eaac762beea",
+    "research/releases/2026-11-22/manifest.json": "6954bacc70ec1adb19e2104def524b837c3abcb84bfceb24426cda9815744a52",
+    "research/releases/2026-11-22/hub-staging/staging-publication-manifest.json": "3b5ab3a3dee81a48f42c10844d6b87f8ef75613e034f0d10b96e7026292f51c4"
+  },
+  "source_revision_status": "Modified release plans require the next reviewed GitHub commit; neither new card is claimed byte-identical to the old canonical card",
+  "unchanged_baseline_metadata_files": 10,
+  "full_publication_track_status": "open_raw_transfer_blocked",
+  "dry_run_note": "Prospective source dry-run is executed without --source-revision and is not an upload or clean-commit assertion",
+  "prospective_dry_run": {
+    "status": "dry_run_verified",
+    "source_revision": null,
+    "objects_verified": 18,
+    "elapsed_seconds": 2.3802757040029974,
+    "python_version": "3.15.2",
+    "receipt_sha256": "bf6cdae70971ec994f451203da796f1469efefd6717dcbb1e20e41515be0aa4b",
+    "receipt_scope": "Local validation only; no Hub call or clean-commit assertion"
+  }
+}

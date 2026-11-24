@@ -1,0 +1,73 @@
+[
+  {
+    "pmcid": "PMC11583407",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11583407/fullTextXML",
+    "error": "HTTP Error 500: Internal Server Error",
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC6140901",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6140901/fullTextXML",
+    "error": "HTTP Error 500: Internal Server Error",
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC5967357",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5967357/fullTextXML",
+    "error": "HTTP Error 500: Internal Server Error",
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC6791701",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6791701/fullTextXML",
+    "error": "HTTP Error 500: Internal Server Error",
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC7574380",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7574380/fullTextXML",
+    "error": "HTTP Error 500: Internal Server Error",
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC5055731",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5055731/fullTextXML",
+    "status": 200,
+    "accessions_mentioned": [
+      "GSE86833"
+    ],
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC11979089",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11979089/fullTextXML",
+    "status": 200,
+    "accessions_mentioned": [
+      "GSE111629",
+      "GSE121633",
+      "GSE125105",
+      "GSE128064",
+      "GSE128235",
+      "GSE156994",
+      "GSE42861",
+      "GSE43976",
+      "GSE51032",
+      "GSE51057",
+      "GSE59065",
+      "GSE61496",
+      "GSE69138",
+      "GSE73103",
+      "GSE87571",
+      "GSE87640",
+      "GSE87648",
+      "GSE97362"
+    ],
+    "retrieved_on": "2026-11-22"
+  },
+  {
+    "pmcid": "PMC11658816",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11658816/fullTextXML",
+    "error": "The read operation timed out",
+    "retrieved_on": "2026-11-22"
+  }
+]

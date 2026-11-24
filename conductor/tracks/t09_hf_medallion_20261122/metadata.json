@@ -1,0 +1,11 @@
+{
+  "track_id": "t09_hf_medallion_20261122",
+  "status": "in_progress",
+  "created_at": "2026-11-22",
+  "description": "Minimal source-bound GitHub/HF publication",
+  "metadata_publication": "verified",
+  "raw_archive_transfer": "blocked_external",
+  "metadata_hub_revision": "3f1cb8e64d8e31e7e40773441ba6266714569d05",
+  "estate_revision": "bc551011281caabca9cc2d6e37a72459d8367242",
+  "archived": false
+}

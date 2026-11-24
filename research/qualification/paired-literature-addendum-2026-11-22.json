@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-22",
+  "status": "verified_targeted_ledger_addendum",
+  "scope": "Reconcile known paired-array evidence into the existing central literature ledger; no scientific analysis, new data intake or publication-manifest mutation",
+  "changes": {
+    "before": {
+      "studies": 11,
+      "edges": 15,
+      "unresolved_relationships": 1
+    },
+    "after": {
+      "studies": 13,
+      "edges": 17,
+      "unresolved_relationships": 2
+    },
+    "old_studies_and_edges_preserved": true,
+    "cheung_edges_existing_and_retained": 2,
+    "new_verified_edges": [
+      {
+        "study_id": "PMID:33371772",
+        "dataset_id": "GSE154566",
+        "relation": "generated"
+      },
+      {
+        "study_id": "PMID:32885222",
+        "dataset_id": "GSE105018",
+        "relation": "benchmark-used"
+      }
+    ],
+    "new_unresolved_overlap_edges": 1,
+    "api_requests": 18,
+    "api_HTTP200": 14,
+    "api_failures": 4,
+    "metadata_identity_crosschecks": "All 3 requested PMID/DOI identities agree across PubMed, OpenAlex, Europe PMC and PMC article metadata.",
+    "all4_PMC_XML_metadata_MD5_checks_passed": true
+  },
+  "selected_source_versions": [
+    {
+      "pmcid": "PMC8813077",
+      "version": 1,
+      "pmid": "33371772",
+      "is_manuscript": false
+    },
+    {
+      "pmcid": "PMC7467214",
+      "version": 2,
+      "pmid": "32885222",
+      "is_manuscript": false
+    },
+    {
+      "pmcid": "PMC7574380",
+      "version": 1,
+      "pmid": "31833794",
+      "is_manuscript": false
+    }
+  ],
+  "api_receipt": "research/literature/2026-11-22-paired-addendum-api-receipts.json",
+  "verification": {
+    "metadata_exact_identity_agreement": true,
+    "all_selected_xml_article_ids_match_metadata": true,
+    "all_four_retrieved_xml_metadata_md5_match": true,
+    "all_existing_study_and_edge_records_preserved": true,
+    "json_tsv_edge_equivalence": true,
+    "deduplicated_study_and_edge_keys": true,
+    "affected_scientific_analysis_executed": false,
+    "new_biological_data_transfer": false,
+    "participant_overlap_resolved": false
+  },
+  "observed_request_window": {
+    "first_request_at_utc": "2026-11-22T11:56:46.020627+00:00",
+    "last_request_completed_at_utc": "2026-11-22T12:00:59.269645+00:00",
+    "elapsed_seconds": 253.249018,
+    "interpretation": "Elapsed span between first API request and final API completion, including intervening inspection and fallback selection; not summed request time or a performance benchmark"
+  },
+  "agent_batches": [
+    "Exact PubMed/OpenAlex/Europe PMC metadata lookup",
+    "Primary text retrieval failures, current PMC API documentation and bounded AWS fallback",
+    "Ledger reconciliation and JSON/TSV/source-identity checks"
+  ],
+  "local_validation_correction": "An initial one-off MD5-check command had a Python syntax error before execution or file changes. The corrected check verified all four XML metadata MD5 values; no retrieval failure or checksum mismatch was removed.",
+  "outputs": [
+    {
+      "path": "research/literature/README.md",
+      "bytes": 8519,
+      "sha256": "e08375149e40881a7569c539146cc21c08411876eedba611b612e891cca2fc3b"
+    },
+    {
+      "path": "research/literature/2026-11-22-study-dataset-edges.json",
+      "bytes": 22402,
+      "sha256": "e0278f833234ad3dee9dd0a0308281b6a0dba4d775e993b352fd686d175b2cc4"
+    },
+    {
+      "path": "research/literature/2026-11-22-study-dataset-edges.tsv",
+      "bytes": 7004,
+      "sha256": "0ba43ce605f3085e94e4dc77831efbc25c2fb208426b20d1eb58157e69e42070"
+    },
+    {
+      "path": "research/literature/2026-11-22-paired-addendum-api-receipts.json",
+      "bytes": 19866,
+      "sha256": "ca956e594c3d43a2da4b8c3020e32e24461bc907f8f21a84700576249137e894"
+    },
+    {
+      "path": "research/qualification/paired-literature-addendum-2026-11-22.md",
+      "bytes": 5571,
+      "sha256": "96122c5b4f7ebb86c60bcbae3eb4534d0cf7c563fdfbd3fe32088988b00a9ac0"
+    }
+  ],
+  "limits": [
+    "Exact known seeds only; no complete novelty search, forward-citation census or N1 scientific freeze",
+    "E-Risk participant/family overlap unresolved; no independent pooled sample count asserted",
+    "GSE105018 identifies the reported 450K layer, not complete open access to matched EPIC raw data",
+    "Article XML/abstracts/contacts and individual participant metadata remain outside Git",
+    "Dataset rights, catalogue files and release manifests were not edited by this literature lane",
+    "No commit, push, Hub upload, new custom crawler or new dependency was performed"
+  ],
+  "source_revision_at_addendum": "8cfc85110911a2991301b358e4510e28026d13b8"
+}

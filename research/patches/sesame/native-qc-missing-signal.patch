@@ -1,0 +1,65 @@
+diff --git a/NUMERICS.md b/NUMERICS.md
+index 7b1f554d37817988fe8a3b5f3fedf081f1b98420..7bdaf6f926f7ff544de85baebe256ddde99f8f02 100644
+--- a/NUMERICS.md
++++ b/NUMERICS.md
+@@ -244,10 +244,11 @@ Two behaviors are faithful to R but worth stating:
+ - **`num_dtna` and the D2 fix.** `sesameQC_calcStats_detection` derives
+   "N. Probes w/ Missing Raw Intensity" from `sum(is.na(pOOBAH(sdf, return.pval)))`.
+   Our own D2 fix to R (`R/detection.R`) makes pOOBAH set those `NA`s to `1`, so in
+-  the current R package `num_dtna` is **0**. sesame-cli instead reports the metric
+-  as intended — probes with no usable signal in *either* channel — computed
+-  directly, independent of pOOBAH's NA convention. The QC test reports these two
+-  fields (`num_dtna`, `frac_dtna`) but does not gate them.
++  the current R package `num_dtna` is **0**. QC uses that same p-value convention:
++  absent-signal probes fail detection and remain in the applicable overall,
++  unmasked and probe-type denominators. Raw intensity missingness is reported
++  separately. The existing upstream QC test reports these two fields without
++  gating them; the Atlas HM450 successor contract gates every field exactly.
+ 
+ - **The beta group runs `D->B->P`.** `sesameQC_calcStats_betas` computes
+   `getBetas(pOOBAH(noob(dyeBiasNL(sdf))))` — i.e. the beta-distribution stats are
+diff --git a/include/sesame.h b/include/sesame.h
+index aea35bf1ed00d38af899cd0e0505d5d01e853d3e..29d2e0d9ba699e712c01713a04d8fd028ef4f17a 100644
+--- a/include/sesame.h
++++ b/include/sesame.h
+@@ -531,10 +531,9 @@ int sesame_read_cg_total(const char *path, double **mat_out, int32_t *nprobe_out
+  * groups mirror R/QC.R: detection, numProbes, intensity, channel, dyeBias (incl.
+  * GCT, bisConversionControl), betas.
+  *
+- * Two faithful-but-noted differences (see NUMERICS.md):
+- *  - the detection group runs pOOBAH internally, so it carries the same mask
+- *    lineage as `P`, and `num_dtna` counts probes with no signal in *either*
+- *    channel (the D2 fix makes R's pOOBAH no longer return NA there);
++ * Detection and beta stages follow the native R definitions:
++ *  - the detection group runs pOOBAH internally; no signal in either channel
++ *    gives p=1 and remains in the applicable denominators, as in native R;
+  *  - the betas group is computed on a D->B->P-processed copy, exactly as
+  *    sesameQC_calcStats_betas does (getBetas(pOOBAH(noob(dyeBiasNL(sdf))))).
+  */
+diff --git a/src/qc.c b/src/qc.c
+index 7ab8301289b6e41d5d410779777817a385d652e1..1e3ac3b85128f1c5b3593ff210cb08bde12b3a60 100644
+--- a/src/qc.c
++++ b/src/qc.c
+@@ -2,10 +2,9 @@
+  *
+  * Groups mirror R/QC.R: detection, numProbes, intensity, channel, dyeBias (incl.
+  * the GCT bisulfite-conversion metric), betas.
+- * Two faithful-but-noted differences live here (see NUMERICS.md):
+- *   - detection runs pOOBAH internally (same mask lineage as P), and num_dtna
+- *     counts probes with no signal in *either* channel -- the D2 fix means R's
+- *     pOOBAH no longer returns NA there;
++ * Detection and beta stages follow the native R definitions:
++ *   - detection runs pOOBAH internally (same mask lineage as P); no signal in
++ *     either channel gives p=1 and remains in the applicable denominators;
+  *   - the beta group is computed on a D->B->P copy, exactly as R does
+  *     (getBetas(pOOBAH(noob(dyeBiasNL(sdf))))).
+  *
+@@ -178,7 +177,7 @@ int sesame_qc_calc(const sesame_sigdf_t *s, const uint8_t *bgmask, int32_t bn,
+             double gm = sesame__pmax2_narm(s->MG[i], s->UG[i]);
+             double pr = isnan(rm) ? NAN : 1.0 - (double)sesame__count_le(bgR, nR, rm) / (double)nR;
+             double pg = isnan(gm) ? NAN : 1.0 - (double)sesame__count_le(bgG, nG, gm) / (double)nG;
+-            if (isnan(pr) && isnan(pg)) pv[i] = NAN;    /* no signal either channel */
++            if (isnan(pr) && isnan(pg)) pv[i] = 1.0;    /* absent signal fails detection */
+             else if (isnan(pr))         pv[i] = pg;
+             else if (isnan(pg))         pv[i] = pr;
+             else                        pv[i] = pr < pg ? pr : pg;

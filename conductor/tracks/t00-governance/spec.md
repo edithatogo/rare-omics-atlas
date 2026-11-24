@@ -2,26 +2,27 @@
 
 ## Objective
 
-Establish a single authoritative research context and applicable GitHub policy, without creating scientific code.
+Establish authoritative project context and the actual operating prerequisites before dependent implementation.
 
-## Scientific / governance boundary
+## Authorised initial increment
 
-No execution, downloads or code generation is authorised by this planning track. Any source-dependent assertion requires independently verifiable evidence. Follow `conductor/workflow.md` and Ponytail decisions.
+Complete repository inspection, pinned Conductor source installation, context, applicable central standards, rights/ethics route, dependency plan and literature-watch setup. Running existing public fork tests and bounded public source checks is authorised. New scientific methods and clinical analysis remain separately scoped.
 
-## Inputs and dependencies
+## Exit criteria and scope distinction
 
-See [candidate dataset register](../../../research/datasets.md), [analysis matrix](../../../research/analyses.md), and [journal routing](../../../research/journals.md). This track's relevant studies and exact eligibility must be qualified before use.
+- Verified repository identity, canonical base and actual pinned submodule bytes.
+- Complete product, guidelines, stack, workflow, style and track context, with one AGENTS authority and a GEMINI adapter.
+- Source licence, dataset rights and institutional determination route recorded without asserting an institution's decision.
+- Dependency ordering names each prerequisite and viable qualified fallback.
+- If a host application's automatic plugin activation is used, observe it; source installation and successful setup-helper checks alone do not prove that integration.
+- Before local development acceptance, register the official GitHub Actions runner on the actual selected device and record a trusted run. This remains an explicit external milestone, not erased to close the setup track.
 
-## Publication target
+The Conductor pin currently supplies an agent plugin and skills; no compatible Gemini CLI extension manifest was found at that revision. Do not claim a Gemini CLI extension was activated. The owner requested pinned source plus project context, which can be completed independently of a specific host UI.
 
-N/A; foundational governance only.
+## Evidence
 
-## Exit criteria
+[Setup receipt](../../../research/qualification/setup-receipt.md), [local runner policy](../../../research/local-development.md), [rights review](../../../research/dataset-rights.md) and [dependencies](../../dependencies.json).
 
-- The submodule resolves to the pinned verified commit and activation is actually observed.
-- One AGENTS.md authority, one local GEMINI.md adapter, no overwritten owner files.
-- No analysis source files, downloads, fake hosted-check receipts or undocumented credential requirements.
+## Stop or continue
 
-## Stop conditions
-
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+Hold only the affected dependent milestone when an actual gate is unresolved. Metadata/source review and isolated public corpus checks can continue without an institutional decision to perform disease inference. Do not duplicate standards, register new services or create an empty analysis workflow.

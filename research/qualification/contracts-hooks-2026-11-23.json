@@ -1,0 +1,889 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-23 Australia/Brisbane",
+  "scope": "Bounded sample-declaration and pinned synthetic numerical exchange, with strict local code gates",
+  "status": "passed",
+  "scientific_admitted": false,
+  "official_owner_device_accepted": false,
+  "source_revision": "6bd452abde7aff9fbf2969814dca39a0f182d18a",
+  "source_tree_sha256": "0577334a5275ac1ca5e2da8f44b9f0935424ba996f58bf2231d93d4b4cfb2230",
+  "coverage_base_revision": "6bd452abde7aff9fbf2969814dca39a0f182d18a",
+  "started_at": "2026-11-22T14:56:27.078786+00:00",
+  "completed_at": "2026-11-22T14:56:55.396971+00:00",
+  "elapsed_seconds": 28.318,
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.15.2 (main, Nov 11 2026, 00:19:20) [Clang 23.1.3 ]",
+  "runtime_receipt_sha256": "e2fd84d913862ffdb9b309409fa7b0d8f1eed0b2024c6878668deacfb8475651",
+  "selected_source_sha256": {
+    ".githooks/pre-commit": "bfdfa037539fa918a8c4c6f98dcb0f8444faa9bb9813eb99ec353a4b5027f46e",
+    "scripts/hooks.py": "d6668d8673a0c6ae8240bf1d0d5c1c6284beec19e81010f422c22351a29b512d",
+    "scripts/qualify_limma.py": "ff85e1865bafb410050ea1e10ca381512b39f2a3e20d6708d0435ab018deb038",
+    "scripts/verify.py": "520128c50a21da0d6f8d56271aa564de2c78a065e7fcfdc34dc701770fc1d9b4",
+    "scripts/tests/test_hooks.py": "ea70fea44610021572b4c12ff1104b376569c7c5144481db32d3eb90749807fa",
+    "scripts/tests/test_limma_integration.py": "c7bb86e37f2c266dbfd28157b70d21032dd5f41888315571fd03fd925f809c28",
+    "scripts/tests/test_coverage.py": "7ab3e7d015d4967f92603e8f28af13f9f228235b9e3d7d41ba8fb2964d24fe2b",
+    "tools/catalogue/src/sample_contract.rs": "a20a3d019fa25d72692eb8f52b475930abf281622a9fe65edcb548a09b24df2d",
+    "tools/catalogue/src/bin/sample-contract.rs": "fcd3f8f9af26cc554a7bdf6b84dbb9f3bedfbbec4887fbdcfcbee5336c057574",
+    "research/contracts/limma-named-v1.json": "bd3b5c667459851559f9da3a6248af9b0a52a965e4101d4cdbe5d21014cd4e48"
+  },
+  "checks": [
+    {
+      "name": "rust-version",
+      "command": [
+        "rustc",
+        "+1.95.0",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.024,
+      "log": "rust-version.log",
+      "log_sha256": "4fdff2578428e9c5c08ddd7a0d3079c1a106b1cdaa46e73e46f7cd32b0fb9cad"
+    },
+    {
+      "name": "python-version",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.003,
+      "log": "python-version.log",
+      "log_sha256": "b01b5da7ac6a0ecc5ff1aee7998c4ad10df616dc53585c5e44d3c6b916cfaf11"
+    },
+    {
+      "name": "uv-version",
+      "command": [
+        "uv",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.005,
+      "log": "uv-version.log",
+      "log_sha256": "fea701785388813775be3363dbaa846469bab06238f2f9a27c9005950463c72d"
+    },
+    {
+      "name": "cargo-llvm-cov-version",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "llvm-cov",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.012,
+      "log": "cargo-llvm-cov-version.log",
+      "log_sha256": "35c027b707427b0becc406096c32bd507961068f5d869735d7997da10bf44fd7"
+    },
+    {
+      "name": "cargo-audit-version",
+      "command": [
+        "cargo-audit",
+        "--version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.003,
+      "log": "cargo-audit-version.log",
+      "log_sha256": "099b5e31c557b0bcbf0fc8152869301670c0fac7bf23306539fb83030a46ec54"
+    },
+    {
+      "name": "gitleaks-version",
+      "command": [
+        "gitleaks",
+        "version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.222,
+      "log": "gitleaks-version.log",
+      "log_sha256": "c9fd9ccb6682c54b5fcb0363757b6c6873564e7c067f70b3b5581b611528b9f4"
+    },
+    {
+      "name": "actionlint-version",
+      "command": [
+        "actionlint",
+        "-version"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.01,
+      "log": "actionlint-version.log",
+      "log_sha256": "9d34cdaec053c6005199c08f2bac628bd8c087303faa26fd8ab58c3e22216ff5"
+    },
+    {
+      "name": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.006,
+      "log": "diff.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "python-lock",
+      "command": [
+        "uv",
+        "lock",
+        "--check",
+        "--project",
+        "tools/hf-release"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.015,
+      "log": "python-lock.log",
+      "log_sha256": "303f6132bcf6c6ec94fed429034a88fbb84afdd0fa0fb50dac4697ec68b0e45e"
+    },
+    {
+      "name": "contracts",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.034,
+      "log": "contracts.log",
+      "log_sha256": "2accbf023cabc461c546f24ea1d54adf23b4859858475c7283eaece0533335f5"
+    },
+    {
+      "name": "workflow-lint",
+      "command": [
+        "actionlint",
+        "-shellcheck="
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.005,
+      "log": "workflow-lint.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rust-format",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "fmt",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.095,
+      "log": "rust-format.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rust-clippy",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "clippy",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.241,
+      "log": "rust-clippy.log",
+      "log_sha256": "299f16a2c523be18fef769975d2df00e0505521db047540feea3a74b94666887"
+    },
+    {
+      "name": "rust-test-debug",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--all-targets"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.25,
+      "log": "rust-test-debug.log",
+      "log_sha256": "9e2211046f996a458228225304f773856b1bbae886dfbb99dc5b67f0e60c943d"
+    },
+    {
+      "name": "rust-test-release",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--all-targets",
+        "--release"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.186,
+      "log": "rust-test-release.log",
+      "log_sha256": "3db9bad5148b36b92cc7e477091602763fc5ed478cd01f2ef1ea63aa09bba0b7"
+    },
+    {
+      "name": "rust-doctests",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--doc"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.208,
+      "log": "rust-doctests.log",
+      "log_sha256": "bd0876f05e5e4a3804210a828c5442b95607508cbc8e5b87169e2e2e0dcfebb2"
+    },
+    {
+      "name": "rust-docs",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "doc",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--no-deps"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.086,
+      "log": "rust-docs.log",
+      "log_sha256": "9f70dfdb11ffccf3a581cc81f70c90d6970689bed3ee3c4849c3e8a04276d1ad"
+    },
+    {
+      "name": "python-lint",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.089,
+      "log": "python-lint.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "name": "python-format",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.068,
+      "log": "python-format.log",
+      "log_sha256": "d41ae50829b47e318b0787bc39d2a2ea2d52b518cfc7900d2efd569e6d26ab88"
+    },
+    {
+      "name": "python-types",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "pyright"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 1.578,
+      "log": "python-types.log",
+      "log_sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332"
+    },
+    {
+      "name": "harness-tests",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "coverage",
+        "run",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 1.709,
+      "log": "harness-tests.log",
+      "log_sha256": "b09373ebfa8a64e2f71873556a43bc57afc6507725ff37ad86386822b2f7c5d3"
+    },
+    {
+      "name": "publisher-tests",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "coverage",
+        "run",
+        "--append",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/hf-release/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 1.076,
+      "log": "publisher-tests.log",
+      "log_sha256": "334178525318929538ec755777af284078e66abb0df60fac1758352aac95d972"
+    },
+    {
+      "name": "limma-consumer-contract",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "coverage",
+        "run",
+        "--append",
+        "scripts/qualify_limma.py",
+        "--output",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.276,
+      "log": "limma-consumer-contract.log",
+      "log_sha256": "f8b5c9df5a97f0b21a56396ff215aa76dbbffbc14abe2615820028252c7f26fb"
+    },
+    {
+      "name": "python-coverage",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "coverage",
+        "xml",
+        "-o",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/python-coverage.xml"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.14,
+      "log": "python-coverage.log",
+      "log_sha256": "4f213804ee591be6b2e9228ce204054a720ec726d34e8f49475872cbaea2ae40"
+    },
+    {
+      "name": "python-coverage-summary",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "coverage",
+        "report"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.13,
+      "log": "python-coverage-summary.log",
+      "log_sha256": "a7fe9b977eba936f79ea4f5e15100046ee3833af7f5f534a566c96d57e532986"
+    },
+    {
+      "name": "rust-coverage",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "llvm-cov",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--all-features",
+        "--all-targets",
+        "--lcov",
+        "--output-path",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/rust-lcov.info"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 4.055,
+      "log": "rust-coverage.log",
+      "log_sha256": "16a782f5d6a67ce07a101f4e58ad91fcc68396376237d25583b6df136d53fdb1"
+    },
+    {
+      "name": "rust-advisories",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "audit",
+        "--file",
+        "tools/catalogue/Cargo.lock",
+        "--deny",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 11.275,
+      "log": "rust-advisories.log",
+      "log_sha256": "002bd75ba129a7aa8a5a0350114ddf74eab82fa83a016e0f9feff7a9214e1272"
+    },
+    {
+      "name": "rust-coverage-xml",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "llvm-cov",
+        "report",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--cobertura",
+        "--output-path",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/rust-coverage.xml"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.079,
+      "log": "rust-coverage-xml.log",
+      "log_sha256": "2df6f966a08ba5b2286b610259b73b53836c040ef5432413eb23f5702ec9cf9a"
+    },
+    {
+      "name": "patch-coverage",
+      "command": [
+        "diff-cover",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/python-coverage.xml",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/rust-coverage.xml",
+        "--compare-branch",
+        "6bd452abde7aff9fbf2969814dca39a0f182d18a",
+        "--include-untracked",
+        "--branch-coverage",
+        "--fail-under",
+        "90"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.151,
+      "log": "patch-coverage.log",
+      "log_sha256": "de81c62ff14ee0ec0be8cd3cb29f02c2c56d3b07e0fc78f48081d007d2b24cbd"
+    },
+    {
+      "name": "python-advisories",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-m",
+        "pip_audit",
+        "--strict",
+        "--progress-spinner",
+        "off",
+        "--format",
+        "cyclonedx-json",
+        "--output",
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/python-sbom.json"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 4.943,
+      "log": "python-advisories.log",
+      "log_sha256": "be3b4cba79d179cc2938d1fd66faa719238013dc7cdf0853efc907f2d0aa43cf"
+    },
+    {
+      "name": "rust-dependency-inventory",
+      "command": [
+        "cargo",
+        "+1.95.0",
+        "metadata",
+        "--manifest-path",
+        "tools/catalogue/Cargo.toml",
+        "--locked",
+        "--format-version",
+        "1"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.142,
+      "log": "rust-dependency-inventory.log",
+      "log_sha256": "981a3d48e0878e9bd0754746dff340a57829ec50eee872479f7fbf59f914a058"
+    },
+    {
+      "name": "source-secrets",
+      "command": [
+        "gitleaks",
+        "dir",
+        "/tmp/atlas-source-scan-20j27m_i/source",
+        "--no-banner",
+        "--redact=100",
+        "--config",
+        "/tmp/atlas-source-scan-20j27m_i/default.toml",
+        "--gitleaks-ignore-path",
+        "/tmp/atlas-source-scan-20j27m_i/empty-ignore",
+        "--ignore-gitleaks-allow"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.582,
+      "log": "source-secrets.log",
+      "log_sha256": "763218d0937ffc156a1f19b7f44ceeda7cbc9547fb1b5c8cb1598dd2a07ebdfb"
+    },
+    {
+      "name": "complete-history",
+      "command": [
+        "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/tools/hf-release/.venv/bin/python",
+        "-c",
+        "import subprocess; assert subprocess.check_output(['git','rev-parse','--is-shallow-repository'],text=True).strip() == 'false'"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.019,
+      "log": "complete-history.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "history-secrets",
+      "command": [
+        "gitleaks",
+        "git",
+        ".",
+        "--log-opts=--all",
+        "--no-banner",
+        "--redact=100",
+        "--config",
+        "/tmp/atlas-source-scan-20j27m_i/default.toml",
+        "--gitleaks-ignore-path",
+        "/tmp/atlas-source-scan-20j27m_i/empty-ignore",
+        "--ignore-gitleaks-allow"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "elapsed_seconds": 0.521,
+      "log": "history-secrets.log",
+      "log_sha256": "cdffc81ab952496f5d576a7121151e23b35cfca37990951299d66813999a16f1"
+    }
+  ],
+  "test_counts": {
+    "rust-test-debug": {
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0
+    },
+    "rust-test-release": {
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0
+    },
+    "rust-coverage": {
+      "passed": 20,
+      "failed": 0,
+      "ignored": 0
+    },
+    "harness-tests": {
+      "passed": 38,
+      "exit_code": 0
+    },
+    "publisher-tests": {
+      "passed": 41,
+      "exit_code": 0
+    }
+  },
+  "patch_coverage_report": "-------------\nDiff Coverage\nDiff: 6bd452abde7aff9fbf2969814dca39a0f182d18a...HEAD, staged, unstaged and untracked changes\n-------------\nscripts/hooks.py (96.5%): Missing lines 126,159-160,252-253\nscripts/qualify_limma.py (95.5%): Missing lines 123-126,264,395,397-398\nscripts/verify.py (100%)\ntools/catalogue/src/bin/sample-contract.rs (100%)\ntools/catalogue/src/sample_contract.rs (99.4%): Missing lines 98\n-------------\nTotal:   513 lines\nMissing: 14 lines\nCoverage: 97%\n-------------\n\n",
+  "limma_exchange": {
+    "schema_version": 1,
+    "contract_id": "limma-named-contrasts-v1",
+    "status": "passed",
+    "started_at": "2026-11-22T14:56:33.117940+00:00",
+    "scientific_admitted": false,
+    "official_owner_device_accepted": false,
+    "reference_regenerated": false,
+    "rust_toolchain": "1.95.0",
+    "limitations": [
+      "Only committed synthetic complete/missing fixtures and the named v1 method are qualified.",
+      "Transporting a methylation scale declaration does not validate methylation preprocessing.",
+      "Production ingestion, actual-device execution and scientific admission remain separate gates."
+    ],
+    "source_repository": "https://github.com/edithatogo/limma-rust.git",
+    "source_revision": "c08c53943a7acb9c6a1152df8d79e27cffe7199b",
+    "manifest_sha256": "bd3b5c667459851559f9da3a6248af9b0a52a965e4101d4cdbe5d21014cd4e48",
+    "cases": [
+      {
+        "rows": 192,
+        "numeric_comparisons": 2304,
+        "nonfinite_values_preserved": 0,
+        "worst_finite_relative_error": 7.273792555232767e-14,
+        "input_scale": "log2_expression",
+        "reference_scalar_rows": "feature_ids",
+        "warnings": [],
+        "input_and_reference_sha256": {
+          "contrasts.csv": "e1b80658a9cc18539055ed73f3cb88cce6e137269c545ee5c5aadfa47b2b13ff",
+          "contrasts_coefficients.csv": "df5d0b47e0c09d6026465443d9748333362e2a231498b1acfe192b6f19ff2fe4",
+          "contrasts_cov_coefficients.csv": "5a54ae3a1ce220a966c522d36a69df1bda1f1aeb9fe6bd601ca5b340dc43afc6",
+          "contrasts_stdev_unscaled.csv": "a21d608dd8e477a39e1dc32b6d3bd84919824cc311a8ba25b75db09b31223bbf",
+          "design.csv": "65b82f02926e6fea4853a7a2d769b88067397d9ea123e1f5b87e31b683153114",
+          "ebayes_robFALSE_trendFALSE_lods.csv": "53a6d8dc3c8a7e19ec223ed2f875de3c4ee101d40c95b1297c5745118ec43c6a",
+          "ebayes_robFALSE_trendFALSE_moderated_se.csv": "eaaf07926fc9a1f2616e7bdd0d8276311ff5f69de94ba822c82bd9ed7ea2d481",
+          "ebayes_robFALSE_trendFALSE_p.csv": "88b2174ab0da300b282b905bc8c1dc176b1efa93f7ba7b27a6e3e1ee710ed926",
+          "ebayes_robFALSE_trendFALSE_scalars.csv": "48d79c82d7ebc3a27453aac6b43295f10c3531f931260e32b197c07ade64f6cf",
+          "ebayes_robFALSE_trendFALSE_t.csv": "5ca7c7c9e599e064d593deed85e335da34670492cbe81a536bc57ca1452de76d",
+          "ebayes_robFALSE_trendFALSE_toptable_1.csv": "5dae6ca62737f6dc713f2726a1f32d309c44cd3e9a5050796857a2cce4b1ea34",
+          "ebayes_robFALSE_trendFALSE_toptable_2.csv": "22f3712b7ae3917312dbafad61a327e8ed7f056ad3f42bf870919bb23940ba07",
+          "ebayes_robFALSE_trendFALSE_toptable_F.csv": "c0c4f04631c27bd2dfbd5dbee943a0dc00d3b1d113cd0f7efbd53beeca1bad8e",
+          "ebayes_robFALSE_trendTRUE_lods.csv": "ae119eeefd8fed939f59c6d97e2c57dbb2721b9e87e17811de9dd452d8dd344d",
+          "ebayes_robFALSE_trendTRUE_moderated_se.csv": "ce550d64950e6c6cb1cdf857a3c4ba5d7b16f649731c572603ffc1ff615f6887",
+          "ebayes_robFALSE_trendTRUE_p.csv": "c0e737622836a3d2cb78cc8a116959623b26d11890d5d206285f425dc256401c",
+          "ebayes_robFALSE_trendTRUE_scalars.csv": "bdaee152ef23afa70176f993f74b195dccd115aa9f85ac527a3e7c1fd01a2e4e",
+          "ebayes_robFALSE_trendTRUE_t.csv": "f0b4d2fb99af1df3bf8b99e7f44939a79fa214b8f7fd00858a1e84efea7bca47",
+          "ebayes_robFALSE_trendTRUE_toptable_1.csv": "b97d66db3cb324c0a7d7589597afa939dc4d439cbbe116074de9391abc9faf99",
+          "ebayes_robFALSE_trendTRUE_toptable_2.csv": "1a8acee1fcdbacd3d201dccc4616c5ea5e0aa438d7f61b80fac7c141196bb873",
+          "ebayes_robFALSE_trendTRUE_toptable_F.csv": "c1416bd407cc04fea2111a6e2273d4d5db86c0dded87fa3efa74477f1b0ac3bb",
+          "ebayes_robTRUE_trendFALSE_lods.csv": "85443f10956198270c5d1a89ef112ea49c6d11b6f20867937f97003bbbe61cf9",
+          "ebayes_robTRUE_trendFALSE_moderated_se.csv": "41cd366c8f14fd55e6dda791dbfc45622385b6b61034922c5dc2122b11b11b00",
+          "ebayes_robTRUE_trendFALSE_p.csv": "f260329e6d0e57418483c3d264927791f4d51ab672e8bf454ec149caffdc58c0",
+          "ebayes_robTRUE_trendFALSE_scalars.csv": "bf832a39bd8d476391da98f8d04b3e2d0249920edeed3ccd02806fb30a7f4e7f",
+          "ebayes_robTRUE_trendFALSE_t.csv": "c5c6555a6d86ba8e7a1354dedab991319a75cb6723c1975365fca0ec3bc20faf",
+          "ebayes_robTRUE_trendFALSE_toptable_1.csv": "c36dbe59ed363bf2e01628afad3bdb0978315de865255b65fdbb57f074b7eb58",
+          "ebayes_robTRUE_trendFALSE_toptable_2.csv": "3d45e4739691c5181c8efbf99c9ec5372e862c15e983d2a45c3b899849b3bbd0",
+          "ebayes_robTRUE_trendFALSE_toptable_F.csv": "b6a5517b8c9c2829b1def37c3323b9bc14210c02da9160910d33e2371023ee09",
+          "ebayes_robTRUE_trendTRUE_lods.csv": "29e99746735768418194f0308669b3a505b36b1295ac3b52108fd73cbcd65f66",
+          "ebayes_robTRUE_trendTRUE_moderated_se.csv": "cb818c922b4437534859447e8defc3f5d515ea953c044d935d5015211b4d8c4b",
+          "ebayes_robTRUE_trendTRUE_p.csv": "cc24fa36564fa46d7afa8f241450ac097947bc6c47f8ec25d1eb7f08d7894c85",
+          "ebayes_robTRUE_trendTRUE_scalars.csv": "88d39b9072b97443bd24952508566c7afd43468f198454ce40ebf38c6b885a12",
+          "ebayes_robTRUE_trendTRUE_t.csv": "67f3dfcbb428e06de7dc76bc001f82ac203fddd474ec43597fe8900ce7b2d0dc",
+          "ebayes_robTRUE_trendTRUE_toptable_1.csv": "93568907b47e3435999e038184e55b4f5ab688995a57f279bab5a6fa1ec72e95",
+          "ebayes_robTRUE_trendTRUE_toptable_2.csv": "c657e2455f108e036b33ec88ed9fab71f1b875f707eb96c8b902b28e3623f799",
+          "ebayes_robTRUE_trendTRUE_toptable_F.csv": "e1e261b7601f753db9e31315b820d81487ed612bb16cfb3b6fe97ddc49e14f6b",
+          "input_log2.csv": "ace5f611274d87674ac346086600950293247cd3bd59de4bdc9d01613fac10d6",
+          "lmfit_coefficients.csv": "2249ff96ac399c4fc20b5a1ca9a0ca565737df42c74b678d1ca015a5bbf3d0ac",
+          "lmfit_cov_coefficients.csv": "419367c8722ab4210653063104c3ee3f897c74534f5b9469073a36e336f52487",
+          "lmfit_pivot.csv": "68873eb3a4bc1ad2e8c7f5dd716507efcf57c311b1722da08d58059c8360f24a",
+          "lmfit_rank.csv": "6d6dda4c079f0cd9a14e65f4dd55c53dc32550c3e0413912d1c416f144c35c07",
+          "lmfit_scalars.csv": "2a414f85871153077246c0db622782a838a392d5dfee9645fc59059c5ebc478d",
+          "lmfit_stdev_unscaled.csv": "704f47921a3cf7886ed68dd6f5dd4d27fddec3318a5718794da340a317789207"
+        },
+        "output_sha256": {
+          "estimates.csv": "45c2ce2cf1248213be72ee2efb8cc223f9f459f87e3b5ba637eb06be183ebcf7",
+          "metadata.json": "ca6643efea3819e78f2916ca55b7ac1eb4714c82bc997987ffce09d2c92d02b5"
+        },
+        "case": "complete",
+        "command": [
+          "cargo",
+          "+1.95.0",
+          "run",
+          "--locked",
+          "--example",
+          "export_named",
+          "--",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/limma-c08c53943a7acb9c6a1152df8d79e27cffe7199b/tests-validation/fresh-reference/complete",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/limma-exchange-bmqc_p50/complete-log2_expression",
+          "log2_expression"
+        ],
+        "exit_code": 0,
+        "output": "limma-exchange-bmqc_p50/complete-log2_expression"
+      },
+      {
+        "rows": 192,
+        "numeric_comparisons": 2304,
+        "nonfinite_values_preserved": 27,
+        "worst_finite_relative_error": 1.5804519258096147e-10,
+        "input_scale": "log2_expression",
+        "reference_scalar_rows": "one_based_input_order",
+        "warnings": [],
+        "input_and_reference_sha256": {
+          "contrasts.csv": "e1b80658a9cc18539055ed73f3cb88cce6e137269c545ee5c5aadfa47b2b13ff",
+          "contrasts_coefficients.csv": "f1211341db7120fcddc020d7e30472842fb3f14ace66b562e51cce8d26e7d51d",
+          "contrasts_cov_coefficients.csv": "5a54ae3a1ce220a966c522d36a69df1bda1f1aeb9fe6bd601ca5b340dc43afc6",
+          "contrasts_stdev_unscaled.csv": "7b2d8155470c6da04326dff216f6ce75cd3a4caae563a8a0bf3d53a85b92ece0",
+          "design.csv": "65b82f02926e6fea4853a7a2d769b88067397d9ea123e1f5b87e31b683153114",
+          "ebayes_robFALSE_trendFALSE_lods.csv": "fc25dd79afc687e884d835b2ef7af983a88bd93cf6cbbdaea7c113359a17e75d",
+          "ebayes_robFALSE_trendFALSE_moderated_se.csv": "a904d85f2e1e8360c7539a8734bd67cb3372fb39a935331ce918abaf14704971",
+          "ebayes_robFALSE_trendFALSE_p.csv": "ce4cf03c0d3e92334316cc7350cbda5ded43603eeed113da61085956e7317597",
+          "ebayes_robFALSE_trendFALSE_scalars.csv": "46653d771e4bc719b9c88b00eee2fbfc886622126947c7583b7b4e7897ceb197",
+          "ebayes_robFALSE_trendFALSE_t.csv": "da7c3f6f57cdccbe41758a49e88a05540f19038567ed86245a051b7359a79515",
+          "ebayes_robFALSE_trendFALSE_toptable_1.csv": "b7bceee72016ab1f11d5174335f159fc0fc2219b17cb057102375ffd8b068cd3",
+          "ebayes_robFALSE_trendFALSE_toptable_2.csv": "69ca4b1008da67255bdc70cc09145d72ff8cebba661416e8b43151378dc94904",
+          "ebayes_robFALSE_trendFALSE_toptable_F.csv": "261245d5ff36c1a1ce05c2ea72bcaa78085f6af37fcbed752f4b3357b840bf74",
+          "ebayes_robFALSE_trendTRUE_lods.csv": "2620ca934f0140b73bfa17d70edd3200625627bb44b7fbd0589ffba6b9d65f72",
+          "ebayes_robFALSE_trendTRUE_moderated_se.csv": "57959d6a95fd5e0e15cc02bb8090393a9aca80dfe01dc6e102e11b0247d19c21",
+          "ebayes_robFALSE_trendTRUE_p.csv": "15958411f9f197b86491427485a7bce32b962a143d01b3d19a27ae733bf94ca7",
+          "ebayes_robFALSE_trendTRUE_scalars.csv": "44beec0d98156329d5b78dbd6aa3e49f6041be2057088c1dc2fecdfc94603956",
+          "ebayes_robFALSE_trendTRUE_t.csv": "513f32fa10c444d5a793382978b3669b250258b25735b789dd4bba4d7aaf8a5f",
+          "ebayes_robFALSE_trendTRUE_toptable_1.csv": "0b7c953689fa9cb39843e1c5da797c32f581ab8f840ec4a3ec91517a8a208211",
+          "ebayes_robFALSE_trendTRUE_toptable_2.csv": "b0a11ea571be684cb2c33bb5c22984d8067758d346a57663d3868971676e0652",
+          "ebayes_robFALSE_trendTRUE_toptable_F.csv": "2ba25647a462504399604601191968bd5c54376f7be3e80f96e8cb7d79a63125",
+          "ebayes_robTRUE_trendFALSE_lods.csv": "29f4232bc609c9e1331d668125444d27bc842a1ad3dfb7bf5a2492479c84ee0e",
+          "ebayes_robTRUE_trendFALSE_moderated_se.csv": "7ea094ab4c95ccebfa4a6938cc263e21e02f4ea89158bfe8c1abbd7274e5b994",
+          "ebayes_robTRUE_trendFALSE_p.csv": "c26797eae4b98ab0a6f03895c3124b81fe9309585dc204ab91c670dd12c34e93",
+          "ebayes_robTRUE_trendFALSE_scalars.csv": "a71d706521018090131edacaecc12174c777fbfaf8a4c88f69a775231eedab06",
+          "ebayes_robTRUE_trendFALSE_t.csv": "0b16345eca25f3065ff68cdf1aa7039259712ab2df7941157c58dde2e0ec8727",
+          "ebayes_robTRUE_trendFALSE_toptable_1.csv": "e0aecc81f4fbebe3bc8a5842fd17cde2974705c9dfd2fe2df2718dea3505d9b6",
+          "ebayes_robTRUE_trendFALSE_toptable_2.csv": "d8899d63d90a608963099c4342ecc3115a0b73d7283f07d70c7ed35c78d0b196",
+          "ebayes_robTRUE_trendFALSE_toptable_F.csv": "1165a548af7233469f8bb1b52f8e5f7d821b1785ff562e8e8dcd12b10268def3",
+          "ebayes_robTRUE_trendTRUE_lods.csv": "13ad677f5f14810c381becb183e6b1e8c6fe00827341035cbfac2e85c451b281",
+          "ebayes_robTRUE_trendTRUE_moderated_se.csv": "931aa7273611781ea3bd16e02174c3d92c3309db2e22e4a9f0f43c535b171925",
+          "ebayes_robTRUE_trendTRUE_p.csv": "00982f3b0cfdb60e72ef6f0fe166dd6f5988c1a82c638badcb3daeddc2d93d56",
+          "ebayes_robTRUE_trendTRUE_scalars.csv": "183b322071f4321954fa4e34befcb7ff78b78ef18689c1e120a2b5c5790a59b8",
+          "ebayes_robTRUE_trendTRUE_t.csv": "fe3894a33a5fcdf243972710fd90f246fbe9e3cf0afbbaf925cb47a176cc7ed1",
+          "ebayes_robTRUE_trendTRUE_toptable_1.csv": "242bbe43b5ed6da969002fabed74207311f88f377e66f122858e84f3a7a651c0",
+          "ebayes_robTRUE_trendTRUE_toptable_2.csv": "ba3aefe42b042a286dcc74d4031e70075faab25966e3262bc139d020c70757cd",
+          "ebayes_robTRUE_trendTRUE_toptable_F.csv": "bde1c420f29f7fc1c42197aa8c28ce34fd15ca4f562b43ae0235aef176d4dcbf",
+          "input_log2.csv": "d4badd4b3fe80a868d7b5f009acdb76c4176dfd28d3469ee30e9a122297c5a60",
+          "lmfit_coefficients.csv": "d985e86cafec5323c93abe606400a658b6c5647de07738d87e2a39fd1cd808d7",
+          "lmfit_cov_coefficients.csv": "419367c8722ab4210653063104c3ee3f897c74534f5b9469073a36e336f52487",
+          "lmfit_pivot.csv": "68873eb3a4bc1ad2e8c7f5dd716507efcf57c311b1722da08d58059c8360f24a",
+          "lmfit_rank.csv": "6d6dda4c079f0cd9a14e65f4dd55c53dc32550c3e0413912d1c416f144c35c07",
+          "lmfit_scalars.csv": "71828cd7969dc4109086da08b0e538f0df6ec7f800441c2f4c53ed19bbab8194",
+          "lmfit_stdev_unscaled.csv": "00a1b2389a594c9487298988c4028f7c76aec745079adcd0a858452a4040385c"
+        },
+        "output_sha256": {
+          "estimates.csv": "c0e9993cbc1181b7c93f13d02b6d49d9515deafb68a76a0d2d1845444637622f",
+          "metadata.json": "ca6643efea3819e78f2916ca55b7ac1eb4714c82bc997987ffce09d2c92d02b5"
+        },
+        "case": "missing",
+        "command": [
+          "cargo",
+          "+1.95.0",
+          "run",
+          "--locked",
+          "--example",
+          "export_named",
+          "--",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/limma-c08c53943a7acb9c6a1152df8d79e27cffe7199b/tests-validation/fresh-reference/missing",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/limma-exchange-bmqc_p50/missing-log2_expression",
+          "log2_expression"
+        ],
+        "exit_code": 0,
+        "output": "limma-exchange-bmqc_p50/missing-log2_expression"
+      },
+      {
+        "rows": 192,
+        "numeric_comparisons": 2304,
+        "nonfinite_values_preserved": 27,
+        "worst_finite_relative_error": 1.5804519258096147e-10,
+        "input_scale": "log2_methylation_odds",
+        "reference_scalar_rows": "one_based_input_order",
+        "warnings": [],
+        "input_and_reference_sha256": {
+          "contrasts.csv": "e1b80658a9cc18539055ed73f3cb88cce6e137269c545ee5c5aadfa47b2b13ff",
+          "contrasts_coefficients.csv": "f1211341db7120fcddc020d7e30472842fb3f14ace66b562e51cce8d26e7d51d",
+          "contrasts_cov_coefficients.csv": "5a54ae3a1ce220a966c522d36a69df1bda1f1aeb9fe6bd601ca5b340dc43afc6",
+          "contrasts_stdev_unscaled.csv": "7b2d8155470c6da04326dff216f6ce75cd3a4caae563a8a0bf3d53a85b92ece0",
+          "design.csv": "65b82f02926e6fea4853a7a2d769b88067397d9ea123e1f5b87e31b683153114",
+          "ebayes_robFALSE_trendFALSE_lods.csv": "fc25dd79afc687e884d835b2ef7af983a88bd93cf6cbbdaea7c113359a17e75d",
+          "ebayes_robFALSE_trendFALSE_moderated_se.csv": "a904d85f2e1e8360c7539a8734bd67cb3372fb39a935331ce918abaf14704971",
+          "ebayes_robFALSE_trendFALSE_p.csv": "ce4cf03c0d3e92334316cc7350cbda5ded43603eeed113da61085956e7317597",
+          "ebayes_robFALSE_trendFALSE_scalars.csv": "46653d771e4bc719b9c88b00eee2fbfc886622126947c7583b7b4e7897ceb197",
+          "ebayes_robFALSE_trendFALSE_t.csv": "da7c3f6f57cdccbe41758a49e88a05540f19038567ed86245a051b7359a79515",
+          "ebayes_robFALSE_trendFALSE_toptable_1.csv": "b7bceee72016ab1f11d5174335f159fc0fc2219b17cb057102375ffd8b068cd3",
+          "ebayes_robFALSE_trendFALSE_toptable_2.csv": "69ca4b1008da67255bdc70cc09145d72ff8cebba661416e8b43151378dc94904",
+          "ebayes_robFALSE_trendFALSE_toptable_F.csv": "261245d5ff36c1a1ce05c2ea72bcaa78085f6af37fcbed752f4b3357b840bf74",
+          "ebayes_robFALSE_trendTRUE_lods.csv": "2620ca934f0140b73bfa17d70edd3200625627bb44b7fbd0589ffba6b9d65f72",
+          "ebayes_robFALSE_trendTRUE_moderated_se.csv": "57959d6a95fd5e0e15cc02bb8090393a9aca80dfe01dc6e102e11b0247d19c21",
+          "ebayes_robFALSE_trendTRUE_p.csv": "15958411f9f197b86491427485a7bce32b962a143d01b3d19a27ae733bf94ca7",
+          "ebayes_robFALSE_trendTRUE_scalars.csv": "44beec0d98156329d5b78dbd6aa3e49f6041be2057088c1dc2fecdfc94603956",
+          "ebayes_robFALSE_trendTRUE_t.csv": "513f32fa10c444d5a793382978b3669b250258b25735b789dd4bba4d7aaf8a5f",
+          "ebayes_robFALSE_trendTRUE_toptable_1.csv": "0b7c953689fa9cb39843e1c5da797c32f581ab8f840ec4a3ec91517a8a208211",
+          "ebayes_robFALSE_trendTRUE_toptable_2.csv": "b0a11ea571be684cb2c33bb5c22984d8067758d346a57663d3868971676e0652",
+          "ebayes_robFALSE_trendTRUE_toptable_F.csv": "2ba25647a462504399604601191968bd5c54376f7be3e80f96e8cb7d79a63125",
+          "ebayes_robTRUE_trendFALSE_lods.csv": "29f4232bc609c9e1331d668125444d27bc842a1ad3dfb7bf5a2492479c84ee0e",
+          "ebayes_robTRUE_trendFALSE_moderated_se.csv": "7ea094ab4c95ccebfa4a6938cc263e21e02f4ea89158bfe8c1abbd7274e5b994",
+          "ebayes_robTRUE_trendFALSE_p.csv": "c26797eae4b98ab0a6f03895c3124b81fe9309585dc204ab91c670dd12c34e93",
+          "ebayes_robTRUE_trendFALSE_scalars.csv": "a71d706521018090131edacaecc12174c777fbfaf8a4c88f69a775231eedab06",
+          "ebayes_robTRUE_trendFALSE_t.csv": "0b16345eca25f3065ff68cdf1aa7039259712ab2df7941157c58dde2e0ec8727",
+          "ebayes_robTRUE_trendFALSE_toptable_1.csv": "e0aecc81f4fbebe3bc8a5842fd17cde2974705c9dfd2fe2df2718dea3505d9b6",
+          "ebayes_robTRUE_trendFALSE_toptable_2.csv": "d8899d63d90a608963099c4342ecc3115a0b73d7283f07d70c7ed35c78d0b196",
+          "ebayes_robTRUE_trendFALSE_toptable_F.csv": "1165a548af7233469f8bb1b52f8e5f7d821b1785ff562e8e8dcd12b10268def3",
+          "ebayes_robTRUE_trendTRUE_lods.csv": "13ad677f5f14810c381becb183e6b1e8c6fe00827341035cbfac2e85c451b281",
+          "ebayes_robTRUE_trendTRUE_moderated_se.csv": "931aa7273611781ea3bd16e02174c3d92c3309db2e22e4a9f0f43c535b171925",
+          "ebayes_robTRUE_trendTRUE_p.csv": "00982f3b0cfdb60e72ef6f0fe166dd6f5988c1a82c638badcb3daeddc2d93d56",
+          "ebayes_robTRUE_trendTRUE_scalars.csv": "183b322071f4321954fa4e34befcb7ff78b78ef18689c1e120a2b5c5790a59b8",
+          "ebayes_robTRUE_trendTRUE_t.csv": "fe3894a33a5fcdf243972710fd90f246fbe9e3cf0afbbaf925cb47a176cc7ed1",
+          "ebayes_robTRUE_trendTRUE_toptable_1.csv": "242bbe43b5ed6da969002fabed74207311f88f377e66f122858e84f3a7a651c0",
+          "ebayes_robTRUE_trendTRUE_toptable_2.csv": "ba3aefe42b042a286dcc74d4031e70075faab25966e3262bc139d020c70757cd",
+          "ebayes_robTRUE_trendTRUE_toptable_F.csv": "bde1c420f29f7fc1c42197aa8c28ce34fd15ca4f562b43ae0235aef176d4dcbf",
+          "input_log2.csv": "d4badd4b3fe80a868d7b5f009acdb76c4176dfd28d3469ee30e9a122297c5a60",
+          "lmfit_coefficients.csv": "d985e86cafec5323c93abe606400a658b6c5647de07738d87e2a39fd1cd808d7",
+          "lmfit_cov_coefficients.csv": "419367c8722ab4210653063104c3ee3f897c74534f5b9469073a36e336f52487",
+          "lmfit_pivot.csv": "68873eb3a4bc1ad2e8c7f5dd716507efcf57c311b1722da08d58059c8360f24a",
+          "lmfit_rank.csv": "6d6dda4c079f0cd9a14e65f4dd55c53dc32550c3e0413912d1c416f144c35c07",
+          "lmfit_scalars.csv": "71828cd7969dc4109086da08b0e538f0df6ec7f800441c2f4c53ed19bbab8194",
+          "lmfit_stdev_unscaled.csv": "00a1b2389a594c9487298988c4028f7c76aec745079adcd0a858452a4040385c"
+        },
+        "output_sha256": {
+          "estimates.csv": "299f8a8ca4ec3cccbeb31b949570f3ab8447713da6b4512e694a12f78fab3f1b",
+          "metadata.json": "845952be3d85041ca08f51887d6057d7217484289c2ecc484a931ecba731b2c5"
+        },
+        "case": "missing",
+        "command": [
+          "cargo",
+          "+1.95.0",
+          "run",
+          "--locked",
+          "--example",
+          "export_named",
+          "--",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/integration/limma-c08c53943a7acb9c6a1152df8d79e27cffe7199b/tests-validation/fresh-reference/missing",
+          "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/contracts-hooks-corrected/limma-exchange-bmqc_p50/missing-log2_methylation_odds",
+          "log2_methylation_odds"
+        ],
+        "exit_code": 0,
+        "output": "limma-exchange-bmqc_p50/missing-log2_methylation_odds"
+      }
+    ],
+    "reference_generator_sha256": "14a3a49a571c31afeed82b00274b646f879ebe2fa7727e092b6ad0d1f769d761",
+    "completed_at": "2026-11-22T14:56:33.284299+00:00"
+  },
+  "producer_source_mapping": {
+    "local_hook_commit": "23caa34226f3671f452562bfbfde0393be50e845",
+    "published_commit": "c08c53943a7acb9c6a1152df8d79e27cffe7199b",
+    "identical_git_tree": "5b6804e446a037ffdcd18efbd816c74f3b1accde",
+    "pull_request": "https://github.com/edithatogo/limma-rust/pull/6",
+    "actual_commit_hook_passed": true,
+    "actual_commit_hook_log_sha256": "009907bfb4204a82bb405db5207eadf180b21d4ff999fe4f1eb6ae44a2d6c7bc",
+    "privacy": {
+      "gitleaks_findings": 0,
+      "presidio_blocking": 0,
+      "presidio_advisory": 2,
+      "advisory_context": "recorded command durations"
+    }
+  },
+  "preserved_failures": [
+    {
+      "stage": "receiver first-red regression",
+      "result": "ImportError before qualify_limma.py implementation; no pass claimed"
+    },
+    {
+      "stage": "development actual receiver",
+      "result": "Missing-case R scalar table uses ordinal rows; original generator verified, explicit one-file mapping added; no reference/tolerance change"
+    },
+    {
+      "stage": "first combined strict run",
+      "status": "failed",
+      "failed_checks": [
+        "harness-tests"
+      ],
+      "receipt_sha256": "a0ed53faab7c0e79eb18c8a62fbec0ac0c6aa1637eafdcc03a9e6a7bdf06db80",
+      "resolution": "Existing branch-coverage isolation fixture now creates the newly mandatory limma-contract.json artifact; production gate unchanged"
+    }
+  ],
+  "source_identity_note": "This runtime receipt precedes final evidence/status/archive edits. The actual final commit hook and hosted candidate checks bind the eventual Git tree; their local/remote commit mapping is recorded in the PR.",
+  "coverage_scope_note": "Native cargo-llvm-cov defaults exclude the producer example file. Its two real tests are mandatory; no exporter source-line coverage claim is made."
+}

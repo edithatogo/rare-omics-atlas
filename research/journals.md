@@ -1,32 +1,67 @@
-# Clinical-first journal routing (provisional)
+# Clinical journal strategy
 
-Scope fit is not a measured probability of acceptance. **Do not describe a title as easy to publish in** merely because its impact factor is lower. Verify current article types, indexing, fees, transfers, and editorial policy when the manuscript actually exists.
+**Updated 22 November 2026.** Prefer clinically appropriate, focused journals and a realistic contribution. The owner's requested **Orphanet Journal of Rare Diseases, Journal of Inherited Metabolic Disease (JIMD), and JIMD Reports** are now explicitly included. Higher-profile genetics titles are not default targets. Scope fit and a narrower article format are useful selection criteria; neither supplies an acceptance probability. This revision removes previous publisher acceptance-percentage comparisons because they do not provide a reliable comparison of the chance of this manuscript being accepted.
 
-| Candidate paper | Primary clinical journal | Alternative(s) | Manuscript framing / editorial gate |
+## Orphanet and the SSIEM journals
+
+| Journal | Role in this programme | Evidence and editorial fit |
+|---|---|---|
+| **Orphanet Journal of Rare Diseases (OJRD)** | Active candidate for a clinically useful, independently validated cross-disease analysis or resource with new findings | Its official overview includes translational, clinical and epidemiological rare-disease research. A small Kabuki replication paper is conditional on a substantive contribution; a metadata inventory or faster Rust code alone is insufficient |
+| **JIMD Reports** | Preferred SSIEM route for a focused, sound study with a meaningful metabolic or metabolic-diagnostic question | Guidelines explicitly accommodate research/observations of narrower interest and permit direct submission. This is a scope-based recommendation, not a claim of easy acceptance |
+| **Journal of Inherited Metabolic Disease (JIMD)** | Consider for a stronger validated mechanism, diagnostic result or method that could influence inherited-metabolic clinical/research practice | Scope includes methodological and theoretical work, but an isolated small methylation reanalysis should not be aimed here by default |
+
+Primary sources checked: [OJRD overview](https://link.springer.com/journal/13023), [OJRD scope](https://link.springer.com/journal/13023/aims-and-scope), [OJRD submission guidelines](https://link.springer.com/journal/13023/submission-guidelines), [SSIEM journals](https://www.ssiem.org/jimd), [JIMD guidelines](https://onlinelibrary.wiley.com/page/journal/15732665/homepage/author-guidelines), [JIMD Reports guidelines](https://onlinelibrary.wiley.com/page/journal/21928312/homepage/author-guidelines).
+
+Chromatinopathies and methylation are not categorically excluded from SSIEM's audience: JIMD published [Smirnov et al., Integrative omics approaches to advance rare disease diagnostics (2023)](https://onlinelibrary.wiley.com/doi/full/10.1002/jimd.12663), including episignatures. Nevertheless, a generic enriched metabolic pathway is not itself a compelling metabolic clinical question. Assess the actual diagnostic/biological bridge, and add a metabolic cohort only if it answers a worthwhile question and passes T01. Do not add a weak cohort merely to fit a journal.
+
+JIMD Reports currently recommends a concise Research Report (2,250 words, up to three main figures/tables); confirm the live limits at N3. SSIEM APC support is conditional on membership/funding rules, not automatic free publication. Recheck fees, institutional agreements and eligibility at submission. No editor was contacted and no manuscript submitted.
+
+## Provisional analysis routing
+
+| Candidate paper | Primary candidate | Backup / conditional route | Scientific gate |
 |---|---|---|---|
-| Kabuki cohort/pathway reproducibility | [Molecular Syndromology](https://academic.oup.com/msy/pages/about) | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | Short original study if clinical genotype-specific relevance; weak purely descriptive result may not merit paper |
-| Sotos–Weaver and chromatin comparison | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | [American Journal of Medical Genetics Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html) | Original research emphasizing clinical phenotype and molecular mechanisms |
-| Curated rare-disease methylation atlas | [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/) | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | Only submit if new clinically useful analysis beyond a metadata inventory; otherwise release governed catalogue and DOI as applicable |
-| ADNP / Sotos RNA-methylation validation | [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212) | [Molecular Syndromology](https://academic.oup.com/msy/pages/about) | Clinical molecular subgroup insights / independent transcriptomic prediction |
-| Shared hierarchical model and withheld disease prediction | [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/) | [Molecular Genetics & Genomic Medicine](https://onlinelibrary.wiley.com/page/journal/23249269/homepage/forauthors.html) | Original methods/application paper; demonstrable clinical utility, false-discovery control and withheld cohorts |
-| Strong externally replicated epigenetic mechanism | [Clinical Epigenetics](https://clinicalepigeneticsjournal.biomedcentral.com/) | [American Journal of Medical Genetics Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html) | Stretch option; independent biology and clinical implications required |
-| Complement / venom functional simulation | [Toxicon](https://toxinology.org/toxicon/) | [Toxicon: X](https://www.sciencedirect.com/journal/toxicon-x) | Defined toxin mechanisms with independent quantitative/functional validation; do not submit unvalidated path diagrams |
-| Future human envenomation risk study | [Journal of Medical Toxicology](https://link.springer.com/journal/13181) | [Clinical Toxicology](https://www.tandfonline.com/journals/ictx20) | Real clinical endpoints and externally validated prediction required |
+| T02 Kabuki cohort/pathway reproducibility | Molecular Syndromology | European Journal of Medical Genetics; OJRD only if the result has broader clinical relevance | Independent molecularly confirmed cohorts and a new clinically interpretable conclusion; otherwise useful benchmark without a separate paper |
+| T03 Sotos–Weaver / chromatin comparison | European Journal of Medical Genetics | AJMG Part A; OJRD for a substantive cross-disease contribution | Distinct findings beyond existing comparisons and meaningful control/replication evidence |
+| Curated rare-disease atlas with new clinical findings | OJRD, conditional on contribution | BMC Medical Genomics | A clinically useful question and validation beyond cataloguing metadata |
+| T05 Sotos / ADNP methylation–expression | European Journal of Medical Genetics | Molecular Syndromology; OJRD if broadly translational | Real pairing or explicitly disease-level integration and independently tested prediction |
+| T04 cross-disease hierarchy / held-out prediction | OJRD if clinically interpretable and independently validated | BMC Medical Genomics; European Journal of Medical Genetics for a focused clinical result | Improvement/calibration over simple models, no leakage or unsupported clinical-utility claim |
+| Future focused inherited-metabolic validation or omics study | **JIMD Reports** | JIMD only if the scope/significance supports it | A substantive metabolic/diagnostic question and qualified public data; no new cohort selected by this document |
+| Stronger metabolic mechanism or diagnostic advance | **JIMD**, conditional | JIMD Reports if the contribution is narrower | Evidence likely to inform metabolic practice/research, with suitable biological/clinical validation |
+| T06 complement / venom functional simulation | Toxicon / Toxicon: X | Journal of Medical Toxicology only with appropriate human outcomes | Quantitative independent validation; toxin proteomics alone does not measure host effects |
+| Rust backend qualification alone | No clinical-journal target by default | Keep as reproducibility/benchmark artifact; reassess a software-methods venue if a distinct contribution emerges | Porting or speeding up an existing method does not make a new clinical finding |
 
-**Helpful 2026 publisher disclosures:** Wiley currently lists about **29%** acceptance for AJMG Part A versus about **9%** for Molecular Genetics & Genomic Medicine. They are not adjusted for article mix or comparable submission populations, but they caution against assuming a lower-impact broadly scoped journal is easier. Check the rates at submission. Source pages: https://onlinelibrary.wiley.com/journal/15524833 and https://onlinelibrary.wiley.com/journal/23249269.
+Existing narrower journal sources: [Molecular Syndromology](https://academic.oup.com/msy/pages/about), [European Journal of Medical Genetics](https://shop.elsevier.com/journals/european-journal-of-medical-genetics/1769-7212), [AJMG Part A](https://onlinelibrary.wiley.com/page/journal/15524833/homepage/forauthors.html), [BMC Medical Genomics](https://bmcmedgenomics.biomedcentral.com/), [Toxicon](https://toxinology.org/toxicon/).
 
-**Specific caution:** Clinical Epigenetics has published requirements for independent biological validation, sufficient power, raw-data access and functional interpretation of reused datasets; not the initial low-friction target. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11682640/.
+## Paediatric, disease-focused and bioinformatics additions
 
-**Process:** select 1 primary + 1 backup at the start of a study, but lock journal only after results; avoid redundant salami publications. Clinical usefulness beats complexity and journal prestige.
+Use the [experiment/publication bundles](experiment-publication-plan.md). The default is one clinically focused P1 study with technical qualification in the supplement; later cross-disease and expression work is combined where it answers the same primary question.
 
-## Verified prior publication experience and journal-fit adjustment
+| Journal | Appropriate manuscript | Boundary |
+|---|---|---|
+| [BMC Pediatrics](https://link.springer.com/journal/12887/aims-and-scope) | A meaningful paediatric clinical/diagnostic, congenital or neurodevelopmental question with molecular genetics/pathophysiology evidence | Official scope covers birth to 21 years and scientific validity rather than perceived impact. Child participants alone do not make a software benchmark a clinical paper |
+| [Neuropediatrics](https://connect.thieme.com/en/journals/neuropediatrics) | Neurological phenotype or clinically useful neurodevelopmental interpretation is central | Requires actual relevant clinical content; disease-level HPO labels alone are not neurological outcomes |
+| [European Journal of Paediatric Neurology](https://www.ejpn-journal.com/) | A substantive clinical/experimental paediatric neurology question | Conditional rather than default for generic methylation methods. Detailed author-guidance endpoint was not fully accessible in this review; recheck at N3 |
+| [BMC Bioinformatics](https://link.springer.com/journal/12859/aims-and-scope) | Generalisable computational model, statistical method, software or informative benchmark with biological relevance | Best initial methods venue to assess when the contribution is primarily computational. A port or small wrapper alone is insufficient |
+| [Bioinformatics Advances](https://academic.oup.com/bioinformaticsadvances/pages/about) | Methods, disease/translational bioinformatics, systems biology, ontology work or biological discoveries requiring advanced computation | Alternative methods/application venue; contribution and validation still required |
 
-Author publication examples (check exact title and role before submission):
+Molecular Syndromology, EJMG and AJMG Part A remain the most directly aligned disease-focused options for initial chromatinopathy work. OJRD is conditional on broader clinical/translational contribution. JIMD Reports remains the preferred focused SSIEM option, with JIMD reserved for stronger relevant work; do not add an unsuitable metabolic cohort simply to fit either title.
+
+[Clinical Epigenetics' explicit editorial policy](https://link.springer.com/journal/13148/updates/27797032) requires public-data reanalysis to add substantial clinically relevant insight beyond the original analysis, for example independent replication. Work it defines as purely in silico requires wet-lab validation. This is not a blanket wet-lab requirement for every public-data reanalysis, but prevents assuming any pathway-only analysis is suitable. It is not a default target under the owner's preference.
+
+No journal was contacted. Scope fit is a reason to consider a submission, not evidence of easier acceptance. Check article category, APC/waiver or institutional agreement, data policies and current scope again at N3.
+
+## When to change the target
+
+Use [N0/N1 before analysis, N2 after results, N3 before submission/transfer](novelty-priority-protocol.md). Choose one primary and one backup for the actual manuscript, then reassess intervening studies, contribution, audience, article category, data/ethics policies, fees and overlap with other papers. A competing publication may change a mechanism claim into replication, justify combining analyses, or eliminate a separate paper. Do not revise the frozen protocol after seeing the result or split one modest finding into several manuscripts.
+
+## Prior publication experience: context, not a selection rule
+
+Examples retained from the earlier project review; this dependency/journal update did not re-audit the full bibliography. Verify the exact publication and author role before using it in a submission.
 
 | Prior journal | Example already published | Relevance to rare-omics programme |
 |---|---|---|
-| [European Journal of Human Genetics](https://www.nature.com/articles/s41431-023-01417-6) | Mordaunt et al., *Uptake of funded genomic testing for syndromic and non-syndromic intellectual disability in Australia* (2023) | Familiar clinically oriented genetics outlet; **consider for a clinically interpretable, replicated cross-disease result**, not a bare software benchmark |
-| [Genetics in Medicine](https://www.sciencedirect.com/journal/genetics-in-medicine) | Co-authored genetic testing costing/microcosting publications (2023) | Familiar medical-genetics audience but substantial clinical significance/validation expected; **aspirational** for the strongest clinically meaningful analysis |
+| [European Journal of Human Genetics](https://www.nature.com/articles/s41431-023-01417-6) | Mordaunt et al., *Uptake of funded genomic testing for syndromic and non-syndromic intellectual disability in Australia* (2023) | Prior experience retained for context; **not a routine target under the current preference** |
+| [Genetics in Medicine](https://www.sciencedirect.com/journal/genetics-in-medicine) | Co-authored genetic testing costing/microcosting publications (2023) | Prior experience retained for context; **not a routine target under the current preference** |
 | [BMJ Open](https://bmjopen.bmj.com/) | Mordaunt et al., *Development of a microcosting protocol to determine the economic cost of diagnostic genomic testing for rare diseases in Australia* (2023) | Potential home for a registered research protocol or broadly relevant health-services evaluation; not preferred for a purely computational molecular mechanism |
 | [Value in Health](https://www.valueinhealthjournal.com/article/S1098-3015%2825%2905624-4/fulltext) | Mordaunt et al., *Genomic Testing in Australia: A Budget Impact Analysis Using Diffusion Modeling From a Healthcare System Perspective* (2026) | **Reserve** for a genuine economic/policy evaluation of new genomic diagnostics, not an epigenomic association study |
 | [New Zealand Medical Journal](https://nzmj.org.nz/) | Prior published clinical governance and health-policy articles (2026) | More appropriate for clinically grounded NZ health policy or application; not an obvious primary molecular omics target |
@@ -34,4 +69,3 @@ Author publication examples (check exact title and role before submission):
 
 Verification examples: https://mspgh.unimelb.edu.au/centres-institutes/centre-for-health-policy/economics-of-genomics-and-precision-medicine/about/staff/archived-staff/dylan-mordaunt ; https://researchnow.flinders.edu.au/en/persons/dylan-mordaunt-2/ . Publication history indicates topic familiarity, **not** preferential editorial treatment or a measured acceptance advantage.
 
-**Revised submission sequence:** Kabuki replication to *Molecular Syndromology* or *European Journal of Medical Genetics*; cross-disease disease/growth phenotype study to *European Journal of Human Genetics* **only if clinically substantive and independently validated**, otherwise *European Journal of Medical Genetics*; methodological atlas to *BMC Medical Genomics* or a data-resource venue; the strongest clinically interpretable transfer study to *European Journal of Human Genetics*, with *Genetics in Medicine* as a higher-threshold option. Check current author instructions, prior-publication risk, open-access fees, jurisdiction and indexing **at submission**.

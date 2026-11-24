@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-23T08:15:56.642661+00:00",
+  "scope": "Two exact source files at original repository-relative paths in an isolated index-free committed Git projection. No Atlas index or refs changed; final native hook remains separate.",
+  "scanner_revision": "2efdbd988064f6857795b9fa9ed4e1d08d18791d",
+  "python": "3.15.2",
+  "gitleaks": "8.30.1",
+  "profile": "repository",
+  "command": [
+    "/workspace/scratch/1ef0e9289b0e/toolchains/privacy/venv/bin/python",
+    "-I",
+    "/workspace/scratch/1ef0e9289b0e/standards-privacy-2ef/scripts/privacy_guard.py",
+    "--root",
+    "/workspace/scratch/1ef0e9289b0e/rare-omics-atlas/artifacts/verification/qc-license-privacy-20261123/isolated-repository",
+    "--binary",
+    "/workspace/scratch/1ef0e9289b0e/toolchains/privacy/bin/gitleaks",
+    "--mode",
+    "full"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.384032,
+  "projection_commit": "6b6c5fca6158ac71327a102f55432218c878ddae",
+  "projection_tree": "62682d86e0e81e94dd7579454a329b146a9f2355",
+  "projection_index_created": false,
+  "source_before": [
+    {
+      "path": "research/patches/sesame/UPSTREAM-LICENSE.txt",
+      "bytes": 1619,
+      "sha256": "00d1fbe63b05234f14d29c1730b2f3cb5ca289356bafafec86df13a003acf339"
+    },
+    {
+      "path": "research/patches/sesame/native-qc-missing-signal.patch",
+      "bytes": 4086,
+      "sha256": "1566367d82b345cad6c6cd75fea9dc1a9384691999557b6b517b5ec7013e866b"
+    }
+  ],
+  "source_after": [
+    {
+      "path": "research/patches/sesame/UPSTREAM-LICENSE.txt",
+      "bytes": 1619,
+      "sha256": "00d1fbe63b05234f14d29c1730b2f3cb5ca289356bafafec86df13a003acf339"
+    },
+    {
+      "path": "research/patches/sesame/native-qc-missing-signal.patch",
+      "bytes": 4086,
+      "sha256": "1566367d82b345cad6c6cd75fea9dc1a9384691999557b6b517b5ec7013e866b"
+    }
+  ],
+  "source_unchanged": true,
+  "reports": [
+    {
+      "counts_by_rule": {},
+      "detected_finding_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "mode": "full_history",
+      "reviewed_nonsecret_count": 0,
+      "scanner": "gitleaks",
+      "status": "clean",
+      "summary_truncated": false
+    },
+    {
+      "advisory_findings": 1,
+      "blocking_findings": 0,
+      "coverage_complete": true,
+      "engine": "presidio",
+      "files_scanned": 2,
+      "files_selected": 2,
+      "findings": [
+        {
+          "count": 1,
+          "entity": "EMAIL_ADDRESS",
+          "line": 4,
+          "path": "research/patches/sesame/UPSTREAM-LICENSE.txt",
+          "severity": "advisory"
+        }
+      ],
+      "findings_omitted": 0,
+      "limitations": [
+        "Names, addresses, clinical narratives and re-identification risk are not covered by this baseline.",
+        "Only selected Git text blobs are scanned; images, binary documents, LFS payloads and submodule contents are not scanned.",
+        "Repository checks do not inspect application runtime data or prevent upload before CI executes.",
+        "Detection is probabilistic; no findings is not a declaration that data is anonymous or safe to publish."
+      ],
+      "profile": "repository",
+      "reviewed_nonidentifier_count": 0,
+      "schema_version": 1,
+      "scope": "tracked",
+      "skipped": [],
+      "skipped_count": 0,
+      "skipped_counts_by_reason": {},
+      "skipped_omitted": 0,
+      "status": "advisory_findings"
+    }
+  ],
+  "log": "scan.jsonl",
+  "log_sha256": "7334ff70a53af5a9af29409e0577b86de7972d11f9c29a264bbca64cf5c5cb1c"
+}

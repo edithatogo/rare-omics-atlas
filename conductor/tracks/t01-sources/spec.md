@@ -2,28 +2,27 @@
 
 ## Objective
 
-Establish candidate accessions, participant-level independence, rights, matched modalities and exact study overlap before analysis.
+Qualify a bounded dataset manifest for a defined scientific comparison, keeping access, use rights, redistribution, institutional classification and analytical eligibility separate.
 
-## Scientific / governance boundary
+## Current scope
 
-No execution, downloads or code generation is authorised by this planning track. Any source-dependent assertion requires independently verifiable evidence. Follow `conductor/workflow.md` and Ponytail decisions.
+The initial increment retrieves public source metadata and the three selected Kabuki archives, checks content identity and file headers, establishes a per-source rights register and maps known prior uses. It does not run disease inference, infer private participant identities or upload human data.
 
-## Inputs and dependencies
+The [completed T01a increment](../../archive/t01a_sample_contract_20261123/index.md) reconciles 341 public GEO assay records against the catalogue and implements `sample-contract` in the existing Rust crate. Synthetic tests, independent review and all 34 combined strict checks passed before archive. All 341 actual declarations remain held. The structural statuses `ready_for_review`, `held` and `excluded` never grant scientific admission, verify source claims or produce an independent-participant count.
 
-See [candidate dataset register](../../../research/datasets.md), [analysis matrix](../../../research/analyses.md), and [journal routing](../../../research/journals.md). This track's relevant studies and exact eligibility must be qualified before use.
+## Admission criteria
 
-## Publication target
+- Resolve official source URLs, exact file bytes/hash, assay type and original study provenance for every included input.
+- Define affected molecular subsets, native controls, tissue, age/sex/batch availability and donor/assay units. A clinical label or series count is not a confirmed affected-patient count.
+- Resolve participant/control reuse across development and validation cohorts using declared source evidence. Unknown overlap or perfect disease/platform confounding holds the affected claim.
+- Preserve original diagnosis and causal mechanism; pin ontology/manifest releases and qualified mapping predicates. Disease-level HPO does not create participant phenotypes.
+- Record a dated analysis-specific prior-art decision and the applicable institutional research classification before inference.
+- Use [dataset rights](../../../research/dataset-rights.md) for research use, distribution and HF decisions. No additional author permission is required by default merely because a public repository does not expose private consent documents.
 
-Qualification may be a non-public research-methods appendix; publication only if new clinical-useful evidence emerges.
+## Evidence and limits
 
-## Exit criteria
+[Initial source receipt](../../../research/qualification/initial-source-receipt.md) establishes successful transfers/header checks for three sources. The [29-accession rights register](../../../research/registries/dataset-rights.json) has a broader scope and does not assert all those files were downloaded.
 
-- Public accession links resolved and direct source evidence recorded for every included study.
-- Any unresolved participant overlap or confounded case/control batch is marked hold.
-- Clearly separate public repository listings from tested file retrieval, confirmed rights/consent, ethics/governance determination and model eligibility.
-- No human-derived analysis admission without the documented source-specific and institutional review requirements in `research/source-access-ethics.md`.
-- Existing `research/source-access-ethics.md` is preliminary **listing-only** evidence, not a completed T01 receipt.
+The [T01a source/contract receipt](../../../research/qualification/t01-sample-contract-2026-11-22.md) records exact source hashes, zero assay-set discrepancies, held reasons, the executable JSON interface and its peer-reviewed limits. Case/control and clinical annotations require analysis-specific curation; their existence does not resolve molecular eligibility or cross-study participant overlap.
 
-## Stop conditions
-
-Stop if the scientific claim is already published, source rights are unclear, validation samples are not independent, the proposed inference is not identifiable, or simpler methods make the extra complexity unnecessary. Record an honest hold rather than invent evidence.
+A completed intake subtask is not full T01 admission. Newly selected diseases and file revisions repeat the relevant gates. The [medallion layout](../../../research/medallion-layout.md) preserves originals and derivation provenance without requiring a service-backed lakehouse or raw public mirror.

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "HM450.address.rda",
+    "size": 8000665,
+    "md5": "32302f788359a915234e132d6eaefdbe",
+    "url": "https://zenodo.org/api/records/23263026/files/HM450.address.rda/content",
+    "actual_size": 8000665,
+    "sha256": "183ef507e2c28421216b0cc3bb78d4001cafb90b22f2d45f6266cf913d92a387",
+    "verified": true
+  },
+  {
+    "name": "KYCG.HM450.Mask.20261008.rds",
+    "size": 685695,
+    "md5": "46ff7aec9e596da5dc03a6f486507843",
+    "url": "https://zenodo.org/api/records/23263026/files/KYCG.HM450.Mask.20261008.rds/content",
+    "actual_size": 685695,
+    "sha256": "e63501cfad22c529b28c6e6608fa9e40c486da2f1a5a95094bd0d5b55d49c310",
+    "verified": true
+  }
+]

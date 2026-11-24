@@ -1,0 +1,26 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+include = ["scripts/*.py", "scripts/tests/*.py", "tools/hf-release/**/*.py", "research/releases/2026-11-22/hub-staging/verify-metadata.py"]
+exclude = [".venv", "artifacts", ".tools"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.11"
+include = ["scripts", "tools/hf-release/publisher.py", "research/releases/2026-11-22/hub-staging/verify-metadata.py"]
+exclude = ["scripts/tests"]
+venvPath = "tools/hf-release"
+venv = ".venv"
+extraPaths = ["tools/hf-release"]
+
+[tool.coverage.run]
+branch = true
+source = ["scripts", "tools/hf-release", "research/releases/2026-11-22/hub-staging"]
+omit = ["*/tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
