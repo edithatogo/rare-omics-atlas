@@ -37,6 +37,28 @@ struct Registry {
     mappings: Vec<Mapping>,
 }
 
+#[derive(Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+struct GeneReference {
+    hgnc_id: String,
+    symbol: String,
+    name: String,
+    status: String,
+    alias_symbol: Vec<String>,
+    prev_symbol: Vec<String>,
+    entrez_id: String,
+    ensembl_gene_id: String,
+    in_withdrawn_source: bool,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct GeneRegistry {
+    schema_version: u64,
+    sources: Vec<Source>,
+    records: Vec<GeneReference>,
+}
+
 // Read only the catalogue's public metadata fields, never copy arbitrary input keys.
 #[derive(Deserialize)]
 struct Assay {
@@ -310,4 +332,105 @@ pub fn ontology_context(assays: &[u8], crosswalk: &[u8], mappings: &[u8]) -> Res
             "annotation_status_counts":summary},
         "assays":rows}),
     )
+}
+
+/// Bind disease-reference genes to selected HGNC source declarations. The separate
+/// receipt verifies archive bytes and extraction; this validates the supplied
+/// declarations and exact ID/current-symbol joins without resolving old symbols.
+pub fn ontology_context_with_hgnc(
+    assays: &[u8],
+    crosswalk: &[u8],
+    mappings: &[u8],
+    hgnc: &[u8],
+) -> Result<Value> {
+    let mut report = ontology_context(assays, crosswalk, mappings)?;
+    let mut registry: GeneRegistry =
+        serde_json::from_slice(hgnc).map_err(|_| "invalid HGNC reference JSON, fields or types")?;
+    if registry.schema_version != 1 || registry.sources.len() != 2 || registry.records.is_empty() {
+        return Err("unsupported or empty HGNC reference registry".into());
+    }
+    let mut sources = BTreeSet::new();
+    for source in &registry.sources {
+        if !["HGNC-complete", "HGNC-withdrawn"].contains(&source.id.as_str())
+            || !sources.insert(&source.id)
+        {
+            return Err("unsupported or duplicate HGNC source".into());
+        }
+        text(&source.version)?;
+        text(&source.license)?;
+        https(&source.url)?;
+        https(&source.license_url)?;
+        digest(&source.sha256)?;
+    }
+    if registry.sources[0].version != registry.sources[1].version {
+        return Err("HGNC complete and withdrawn sources must share a release".into());
+    }
+    let mut ids = BTreeSet::new();
+    let mut symbols = BTreeSet::new();
+    for record in &mut registry.records {
+        numeric_id(&record.hgnc_id, "HGNC:", None)?;
+        text(&record.symbol)?;
+        text(&record.name)?;
+        if record.status != "Approved" {
+            return Err("selected HGNC record is not Approved".into());
+        }
+        if record.in_withdrawn_source {
+            return Err("selected HGNC record is present in the withdrawn source".into());
+        }
+        if !ids.insert(record.hgnc_id.clone()) || !symbols.insert(record.symbol.clone()) {
+            return Err("duplicate or conflicting HGNC ID or approved symbol".into());
+        }
+        numeric_id(&record.entrez_id, "", None)?;
+        numeric_id(&record.ensembl_gene_id, "ENSG", Some(11))?;
+        if record.hgnc_id.starts_with("HGNC:0") || record.entrez_id.starts_with('0') {
+            return Err("HGNC and NCBI Gene IDs must use canonical positive integers".into());
+        }
+        for labels in [&mut record.alias_symbol, &mut record.prev_symbol] {
+            let mut seen = BTreeSet::new();
+            for label in labels.iter() {
+                text(label)?;
+                if !seen.insert(label) {
+                    return Err("duplicate HGNC alias or previous symbol".into());
+                }
+            }
+            labels.sort();
+        }
+    }
+    let by_id: BTreeMap<_, _> = registry
+        .records
+        .iter()
+        .map(|record| (record.hgnc_id.as_str(), record))
+        .collect();
+    let mut consumed_ids = BTreeSet::new();
+    for disease in report["reference_diseases"].as_array().unwrap() {
+        let id = disease["hgnc_id"].as_str().unwrap();
+        let record = by_id
+            .get(id)
+            .ok_or("disease HGNC ID has no selected source record")?;
+        consumed_ids.insert(id.to_owned());
+        let symbol = disease["gene_symbol"].as_str().unwrap();
+        if record.symbol != symbol {
+            if record.alias_symbol.iter().any(|alias| alias == symbol) {
+                return Err("disease gene symbol is an alias, not the approved HGNC symbol".into());
+            }
+            if record.prev_symbol.iter().any(|previous| previous == symbol) {
+                return Err(
+                    "disease gene symbol is a previous HGNC symbol, not the approved symbol".into(),
+                );
+            }
+            return Err("disease HGNC ID and approved symbol conflict".into());
+        }
+    }
+    if consumed_ids != ids {
+        return Err("HGNC registry contains genes not consumed by the disease references".into());
+    }
+    registry.sources.sort_by(|a, b| a.id.cmp(&b.id));
+    registry.records.sort_by(|a, b| a.hgnc_id.cmp(&b.hgnc_id));
+    report["input_sha256"]["hgnc_reference"] = json!(hash(hgnc));
+    report["gene_reference_scope"] = json!(
+        "disease-reference genes only; exact approved HGNC ID and symbol binding; aliases and previous symbols are not resolved; NCBI Gene and Ensembl IDs are HGNC assertions, not independently qualified references"
+    );
+    report["gene_reference_sources"] = json!(registry.sources);
+    report["reference_genes"] = json!(registry.records);
+    Ok(report)
 }

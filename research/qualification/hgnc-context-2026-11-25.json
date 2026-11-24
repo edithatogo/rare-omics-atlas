@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-25",
+  "timezone": "Australia/Brisbane",
+  "scope": "T01.09b/C2 selected disease-reference HGNC authority binding; no assay diagnosis or scientific admission",
+  "source_qualification": "passed",
+  "consumer_qualification": "passed_focused_checks_actual_catalogue_replay_and_independent_review",
+  "integration": {
+    "evidence_location": "Receiving pull request and https://github.com/edithatogo/rare-omics-atlas/issues/15",
+    "required_before_merge": [
+      "Actual installed native committing hook on the exact candidate tree",
+      "Current-base hosted strict/privacy/dependency/provider checks",
+      "Independent source/code/output review"
+    ],
+    "post_merge": "Observe receiving-main checks; no acceptance inferred from prior base or focused tests"
+  },
+  "release": "HGNC quarterly 2026-10-06",
+  "retrieved_at_utc": "2026-11-24T15:45:03.699735+00:00",
+  "sources": [
+    {
+      "filename": "hgnc_complete_set_2026-10-06.tsv",
+      "url": "https://storage.googleapis.com/public-download-files/hgnc/archive/archive/quarterly/tsv/hgnc_complete_set_2026-10-06.tsv?generation=1791293906485185",
+      "object_generation": "1791293906485185",
+      "metadata_url": "https://storage.googleapis.com/storage/v1/b/public-download-files/o/hgnc%2Farchive%2Farchive%2Fquarterly%2Ftsv%2Fhgnc_complete_set_2026-10-06.tsv?generation=1791293906485185",
+      "bytes": 16973125,
+      "sha256": "8bf6f686e640dbc864a346484626953621b0500d900d26cd085a35c2782d725d",
+      "upstream_md5_base64": "r0P9VqZK1XwPzHLW72XlFg==",
+      "computed_md5_base64": "r0P9VqZK1XwPzHLW72XlFg==",
+      "upstream_md5_matches": true,
+      "upstream_crc32c_base64": "spxuzQ==",
+      "time_created": "2026-10-06T13:38:26.490Z",
+      "updated": "2026-10-06T13:38:26.490Z",
+      "etag": null,
+      "last_modified": null,
+      "sha256_provenance": "computed from downloaded bytes; upstream object metadata publishes MD5 and CRC32C, not SHA256"
+    },
+    {
+      "filename": "withdrawn_2026-10-06.tsv",
+      "url": "https://storage.googleapis.com/public-download-files/hgnc/archive/archive/quarterly/tsv/withdrawn_2026-10-06.tsv?generation=1791293905928029",
+      "object_generation": "1791293905928029",
+      "metadata_url": "https://storage.googleapis.com/storage/v1/b/public-download-files/o/hgnc%2Farchive%2Farchive%2Fquarterly%2Ftsv%2Fwithdrawn_2026-10-06.tsv?generation=1791293905928029",
+      "bytes": 258994,
+      "sha256": "9328a7361ed5149bf7901cae52c6c30b832b8ec55af22146ea296081278a3140",
+      "upstream_md5_base64": "wH6r6/xyhMcIzAlrt4LfUQ==",
+      "computed_md5_base64": "wH6r6/xyhMcIzAlrt4LfUQ==",
+      "upstream_md5_matches": true,
+      "upstream_crc32c_base64": "sMudhw==",
+      "time_created": "2026-10-06T13:38:25.937Z",
+      "updated": "2026-10-06T13:38:25.937Z",
+      "etag": null,
+      "last_modified": null,
+      "sha256_provenance": "computed from downloaded bytes; upstream object metadata publishes MD5 and CRC32C, not SHA256"
+    }
+  ],
+  "license": {
+    "id": "CC0-1.0",
+    "url": "https://www.genenames.org/about/license/",
+    "downloaded_html_sha256": "f018117edc6ab055ca6eefec1971cf3dc7da2e5ff52c0f5e465fd163dd07cdc8",
+    "attribution": "HGNC (RRID:SCR_002827); attribution recommended by HGNC"
+  },
+  "complete_set": {
+    "rows": 45233,
+    "status_counts": {
+      "Approved": 45233
+    },
+    "unique_hgnc_ids": true,
+    "unique_approved_symbols": true
+  },
+  "withdrawn_set": {
+    "rows": 5291,
+    "status_counts": {
+      "Entry Withdrawn": 1802,
+      "Merged/Split": 3489
+    }
+  },
+  "selected_registry": {
+    "path": "research/registries/hgnc-gene-references.json",
+    "bytes": 2692,
+    "sha256": "541d0d5c34e74287b86b96243011329502efa729ac53746c49de120b4eac8b86",
+    "exact_approved_id_symbol_bindings": 5,
+    "selected_withdrawn_matches": 0
+  },
+  "selected_records": [
+    {
+      "hgnc_id": "HGNC:7133",
+      "symbol": "KMT2D",
+      "status": "Approved",
+      "entrez_id": "8085",
+      "ensembl_gene_id": "ENSG00000167548",
+      "prev_symbol": "TNRC21|MLL2",
+      "alias_symbol": "ALR|MLL4|CAGL114"
+    },
+    {
+      "hgnc_id": "HGNC:12637",
+      "symbol": "KDM6A",
+      "status": "Approved",
+      "entrez_id": "7403",
+      "ensembl_gene_id": "ENSG00000147050",
+      "prev_symbol": "UTX",
+      "alias_symbol": ""
+    },
+    {
+      "hgnc_id": "HGNC:14234",
+      "symbol": "NSD1",
+      "status": "Approved",
+      "entrez_id": "64324",
+      "ensembl_gene_id": "ENSG00000165671",
+      "prev_symbol": "STO",
+      "alias_symbol": "ARA267|FLJ22263|KMT3B"
+    },
+    {
+      "hgnc_id": "HGNC:2978",
+      "symbol": "DNMT3A",
+      "status": "Approved",
+      "entrez_id": "1788",
+      "ensembl_gene_id": "ENSG00000119772",
+      "prev_symbol": "",
+      "alias_symbol": ""
+    },
+    {
+      "hgnc_id": "HGNC:3527",
+      "symbol": "EZH2",
+      "status": "Approved",
+      "entrez_id": "2146",
+      "ensembl_gene_id": "ENSG00000106462",
+      "prev_symbol": "",
+      "alias_symbol": "EZH1|ENX-1|KMT6|KMT6A"
+    }
+  ],
+  "full_snapshot_alias_collisions": {
+    "MLL2": [
+      {
+        "hgnc_id": "HGNC:15840",
+        "symbol": "KMT2B",
+        "field": "alias_symbol"
+      },
+      {
+        "hgnc_id": "HGNC:7133",
+        "symbol": "KMT2D",
+        "field": "prev_symbol"
+      }
+    ],
+    "MLL4": [
+      {
+        "hgnc_id": "HGNC:15840",
+        "symbol": "KMT2B",
+        "field": "alias_symbol"
+      },
+      {
+        "hgnc_id": "HGNC:7133",
+        "symbol": "KMT2D",
+        "field": "alias_symbol"
+      }
+    ],
+    "ALR": [
+      {
+        "hgnc_id": "HGNC:380",
+        "symbol": "AKR1A1",
+        "field": "alias_symbol"
+      },
+      {
+        "hgnc_id": "HGNC:4236",
+        "symbol": "GFER",
+        "field": "alias_symbol"
+      },
+      {
+        "hgnc_id": "HGNC:7133",
+        "symbol": "KMT2D",
+        "field": "alias_symbol"
+      }
+    ],
+    "EZH1": [
+      {
+        "hgnc_id": "HGNC:3526",
+        "symbol": "EZH1",
+        "field": "symbol"
+      },
+      {
+        "hgnc_id": "HGNC:3527",
+        "symbol": "EZH2",
+        "field": "alias_symbol"
+      }
+    ]
+  },
+  "independent_source_review": {
+    "status": "passed",
+    "review_sha256": "2414b62fcc183c5d7b1f9572a09efd89a145a9ff6388219dbb711b85e36c555a",
+    "published_md5_and_size_matches": 2,
+    "locally_computed_sha256_matches": 2,
+    "documented_projection_recipe_executed": true,
+    "projection_recipe_sha256": "e5942468481403555db48902b09afe367e51eed69dc4aadf81ee3fd594e5dbbd"
+  },
+  "baseline_strict": {
+    "status": "passed",
+    "source_revision": "bcccd781fea89895c0ca1e4af1ea43f8d45e1073",
+    "source_tree_sha256": "f2325bf0a4b0365dd94788179e6205819c570f2dea9fa5fa782a4a983072f2ca",
+    "elapsed_seconds": 55.933,
+    "started_at": "2026-11-24T15:41:10.103571+00:00",
+    "completed_at": "2026-11-24T15:42:06.036200+00:00",
+    "failed_checks": []
+  },
+  "baseline_strict_check_count": 34,
+  "runtime_semantics": {
+    "old_three_input_output": "actual regenerated output byte-identical to accepted historical report",
+    "hgnc_mode": "exact Approved ID/current-symbol binding with withdrawn-source declaration false; IDs absent from selected registry, withdrawn, alias, previous-symbol, duplicate, conflicting or unconsumed records reject; multiple disease concepts may share a gene",
+    "upstream_sources_fetched_by_consumer": false,
+    "source_claims_verified": false,
+    "ncbi_ensembl_independently_qualified": false,
+    "gene_transcript_build_or_regulation_qualified": false,
+    "analysis_admitted": false,
+    "independent_participant_count": null
+  },
+  "parent_T01_09b_complete": false,
+  "retained_gates": [
+    "Selected platform/build/transcript joins",
+    "Scientific preprocessing and cohort QC",
+    "Biological independence",
+    "Applicable institutional determination",
+    "Official owner-device qualification",
+    "N1 freeze"
+  ],
+  "separate_work": {
+    "pr": 24,
+    "scope": "SeSAMe control correction and prospective N1 revision",
+    "owned_or_accepted_here": false
+  },
+  "publication_implication": "Reference identity context only; no clinical finding, demonstrated ontology benefit or new publication claim",
+  "consumer_replay": {
+    "command": [
+      "tools/catalogue/target/debug/ontology-context",
+      "--assays",
+      "research/catalogue/2026-11-22/assays.jsonl",
+      "--diseases",
+      "research/registries/initial-disease-crosswalk.tsv",
+      "--mappings",
+      "research/registries/ontology-context-mappings.json"
+    ],
+    "legacy_report_byte_identical": true,
+    "legacy_report_sha256": "485088ea41ff6b5c987e8606c4e8d8a6102891b599b550fd58a42a86f74fdc79",
+    "legacy_report_bytes": 1471158,
+    "hgnc_report_path": "artifacts/ontology-context/hgnc-report.json",
+    "hgnc_report_sha256": "97a117b191f5548fe21ea735c9e8ff744550fe2061fc14aa5ada7093fd0c9f70",
+    "hgnc_report_bytes": 1474172,
+    "hgnc_input_sha256": "541d0d5c34e74287b86b96243011329502efa729ac53746c49de120b4eac8b86",
+    "reference_genes": 5,
+    "reference_diseases": 5,
+    "summary": {
+      "annotation_status_counts": {
+        "ambiguous": 0,
+        "broader": 458,
+        "exact": 489,
+        "related": 457,
+        "unmapped": 895
+      },
+      "series_assay_memberships": 2532,
+      "unreported_memberships": 321
+    },
+    "assay_context_unchanged": true,
+    "analysis_admitted": false,
+    "source_claims_verified": false,
+    "independent_participant_count": null,
+    "hgnc_command": [
+      "tools/catalogue/target/debug/ontology-context",
+      "--assays",
+      "research/catalogue/2026-11-22/assays.jsonl",
+      "--diseases",
+      "research/registries/initial-disease-crosswalk.tsv",
+      "--mappings",
+      "research/registries/ontology-context-mappings.json",
+      "--hgnc",
+      "research/registries/hgnc-gene-references.json"
+    ]
+  },
+  "independent_output_review": {
+    "status": "passed",
+    "old_report_sha256": "485088ea41ff6b5c987e8606c4e8d8a6102891b599b550fd58a42a86f74fdc79",
+    "hgnc_report_sha256": "97a117b191f5548fe21ea735c9e8ff744550fe2061fc14aa5ada7093fd0c9f70",
+    "registry_sha256": "541d0d5c34e74287b86b96243011329502efa729ac53746c49de120b4eac8b86",
+    "hgnc_report_bytes": 1474172,
+    "exact_sorted_registry_projection": true,
+    "all_original_report_fields_unchanged": true,
+    "gene_count": 5,
+    "new_assay_gene_or_disease_assignments": 0,
+    "analysis_admitted": false
+  },
+  "focused_checks": {
+    "ontology_tests": {
+      "passed": 8,
+      "failed": 0,
+      "test_seconds": 0.07,
+      "build_seconds": 3.5
+    },
+    "cargo_fmt": "passed",
+    "all_target_clippy_warnings_denied": "passed",
+    "git_diff_check": "passed",
+    "independent_source_and_code_review": "passed"
+  },
+  "retired_examples": [
+    {
+      "hgnc_id": "HGNC:11418",
+      "withdrawn_symbol": "STO",
+      "status": "Merged/Split",
+      "replacement_hgnc_id": "HGNC:14234",
+      "replacement_symbol": "NSD1",
+      "automatic_replacement": false
+    },
+    {
+      "hgnc_id": "HGNC:11964",
+      "withdrawn_symbol": "TNRC21",
+      "status": "Merged/Split",
+      "replacement_hgnc_id": "HGNC:7133",
+      "replacement_symbol": "KMT2D",
+      "automatic_replacement": false
+    }
+  ],
+  "native_r_qualification": {
+    "inputs_and_code_changed": false,
+    "new_run_claimed": false,
+    "reason": "No changed path is in the existing native-reference workflow trigger set"
+  }
+}
