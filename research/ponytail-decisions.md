@@ -136,10 +136,4 @@ comparisons. The real C regression fails on the original source and passes on
 the patch. Reuse the existing receiver/helpers and require every complete ordered
 row; no tolerance changes or metric exemptions are introduced.
 
-The next code boundary is the actual full QCDPB beta/M export precision contract
-for its selected consumer. Technical capabilities remain available locally;
-external named identities, institutional determinations and trusted owner-device
-execution still hold their dependent scientific work. Parallel
-[identity/covariate curation](qualification/t01-identity-covariates-2026-11-23.md)
-adds source-backed context without changing 257 holds, 84 review-scope exclusions
-or zero ready/admitted records.
+24 November scope reset: the original P1 study is E0+E2+E3, within-study adjusted methylation effects and independent biological transfer. Accept source-established molecular diagnoses without fresh variant adjudication. Use only material independence, control provenance, rank and QC checks; no variant study or private identity search. Proceed with the native 11+11 GSE97362 reference subset and a qualified R route, treating optional C/Rust replacement as conditional on a real consumer need. Use GitHub-hosted Actions for source/synthetic/technical CPU work; keep official owner-device qualification and institutionally approved human-data execution separate. Hugging Face is storage only. See [receiving issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15) and [aggregate source/design receipt](qualification/t01-first-science-2026-11-24.md). Existing 257 holds, 84 scope exclusions and zero admitted remain until actual evidence changes them.

@@ -55,7 +55,33 @@ jobs:
         run: uv sync --project tools/hf-release --frozen --python 3.15.2
       - name: Install pinned native verification tools
         run: uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/bootstrap.py
+      - name: Replay actual staged native hook on the current PR merge tree
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidate=$(git rev-parse HEAD)
+          tree=$(git rev-parse 'HEAD^{tree}')
+          git merge-base --is-ancestor "$VERIFY_BASE" "$candidate"
+          guard="$RUNNER_TEMP/atlas-privacy-source"
+          runtime="$RUNNER_TEMP/atlas-privacy-guard"
+          mkdir -p artifacts/verification/ci
+          trap 'if [ -d artifacts/verification/latest ]; then cp -a artifacts/verification/latest/. artifacts/verification/ci/; fi' EXIT
+          git clone --quiet --no-checkout https://github.com/edithatogo/repository-standards.git "$guard"
+          git -C "$guard" checkout --quiet --detach 2efdbd988064f6857795b9fa9ed4e1d08d18791d
+          uv venv --python 3.15.2 "$RUNNER_TEMP/atlas-privacy-bootstrap"
+          bash "$guard/privacy/install.sh" "$RUNNER_TEMP/atlas-privacy-bootstrap/bin/python" "$runtime"
+          uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/hooks.py install \
+            --privacy-root "$guard" --privacy-python "$runtime/venv/bin/python" --gitleaks "$runtime/bin/gitleaks"
+          git reset --soft "$VERIFY_BASE"
+          test "$(git write-tree)" = "$tree"
+          git -c user.name='GitHub Actions' -c user.email='github-actions[bot]@users.noreply.github.com' commit -m 'CI native-hook replay' 2>&1 | tee artifacts/verification/ci/native-hook.log
+          test "$(git rev-parse 'HEAD^{tree}')" = "$tree"
+          printf '{"base":"%s","candidate":"%s","tree":"%s","replay_commit":"%s","hook_passed":true}\n' \
+            "$VERIFY_BASE" "$candidate" "$tree" "$(git rev-parse HEAD)" > artifacts/verification/ci/native-hook.json
+          git reset --hard "$candidate"
       - name: Run strict verification
+        if: github.event_name != 'pull_request'
         run: uv run --project tools/hf-release --frozen --python 3.15.2 python scripts/verify.py --deep --output artifacts/verification/ci
       - name: Inventory locked software components
         uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0

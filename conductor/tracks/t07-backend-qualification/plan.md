@@ -51,18 +51,7 @@ retains the original v1 failure. No full port or new platform was needed.
 
 ### Next executable code boundary
 
-1. Reuse the existing unrelated technical fixture and
-   [full QCDPB precision evidence](../../../research/qualification/t07-reference-2026-11-23/REFERENCE_REPRODUCTION.md).
-   Name the actual beta/M consumer and decide whether the existing binary32 and
-   six-digit export can satisfy its predeclared budget or requires a higher-
-   precision export. Do not derive scientific acceptance from observed errors.
-2. Freeze the selected precision/endpoint/missingness contract before modifying
-   or qualifying that export. Keep every ordered probe and masking decision;
-   reject unsupported endpoints or carry their explicit meaning.
-3. Make only the required producer/export/receiver increment, add independent
-   rounding/endpoint regressions and rerun the existing actual complete-universe
-   QCDPB comparison plus accepted raw/Q/QC preservation gates.
-4. Keep [T01 identity/covariate evidence](../../../research/qualification/t01-identity-covariates-2026-11-23.md)
-   in parallel. Named crosswalks, rejection rules, applicable institutional
-   determination and actual owner-device receipts retain separate owners and
-   acceptance criteria. They are not supplied by the v2 technical pass.
+1. Select the shortest established R/Bioconductor production route: pinned native SeSAMe QCDPB, limma and missMethyl. The pinned source-function reference is not a full installed runtime.
+2. Use GitHub-hosted Actions for read-only source/synthetic/technical qualification and CPU verification; Hugging Face for storage only. Qualify the selected exact consumer using unrelated technical inputs and a prospectively frozen precision/missingness/endpoint contract. Preserve v1 failure and v2 technical passes.
+3. Prefer the existing Rust named consumer only if actually qualified for the selected operation. Full-precision C export, new libraries and ports require a demonstrated consumer blocker; none is mandatory for an accepted native R route.
+4. Receive T01's native 11+11 GSE97362 discovery subset and the applicable institutional and official-device receipts separately. Actual human-data processing must use the approved environment. See [receiving issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15) and [24 November first-science receipt](../../../research/qualification/t01-first-science-2026-11-24.md). Complete N1 before disease effects; no admission by implication.

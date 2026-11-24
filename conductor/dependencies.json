@@ -100,7 +100,7 @@
         "T01.reference_assets",
         "T00.local_runner"
       ],
-      "scope": "Accept the selected complete preprocessing/QC stage before T01 sample QC: exact stage source/assets, independent fixtures, actual exported precision and applicable device receipts. T07.hm450_raw_q is a bounded one-fixture raw/Q and annotation increment, not this full admission gate. T07.hm450_qc_receiver implements the next exact receiving boundary; its native QC parity failure remains a method hold despite passing p-value serialization checks."
+      "scope": "Archived T07c retains failed native QC v1. Archived T07d passed native HM450 QC v2, curated GCT, p-value and raw/Q preservation on one technical fixture. Full selected preprocessing, precision/endpoint and rejection rules, required platform assets and applicable device evidence remain open. A qualified established R/Bioconductor route is valid; C export and Rust replacement are conditional, not universal prerequisites."
     },
     {
       "id": "T07.consumer_contract",
@@ -230,7 +230,7 @@
       "requires": [
         "T00.strict_code"
       ],
-      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each actual publishing commit must pass its hook; source mapping is recorded in its PR. Server-side required checks and owner-device execution remain separate."
+      "scope": "Native hooks are installed and tested in both working clones with exact staged-index central scanning, source/index checks and the same strict verifier. Each publishing candidate must pass its installed hook; a staged API candidate may receive an actual read-only hosted native-hook commit replay on the exact current-base merge tree before merge. Source/tree and observed checks are recorded in its PR. Owner-device execution remains separate."
     },
     {
       "id": "T01.sample_contract",

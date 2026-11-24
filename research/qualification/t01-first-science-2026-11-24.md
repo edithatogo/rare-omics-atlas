@@ -1,0 +1,18 @@
+# First-science scope and source/design receiving receipt — 24 November 2026
+
+Owner instruction: use GitHub Actions for compute and Hugging Face only for eligible storage; retain original scientific objective. See [receiving issue #15](https://github.com/edithatogo/rare-omics-atlas/issues/15). Base source for this candidate: 672c6bff137b0f13189635edf2af406baa69b37a.
+
+## Scope and decisions
+
+P1 remains E0 + E2 + E3: adjusted within-study KMT2D-associated blood methylation effects and independent transfer of frozen regions/pathways, with E1 optional. Reproducibility/clinically useful limits are the contribution; generic classification, variant adjudication and software ports are not separate analyses. If only known effects replicate, keep a benchmark and progress the next justified cross-disease contrast. Molecular Syndromology then European Journal of Medical Genetics remains conditional on actual results. No N1 freeze or disease inference.
+
+## Observed earlier on 24 November (aggregate, no row-level release)
+
+- [Published PMC manifest](https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/PMC5420353.1.json) lists [Table S2 supplement](https://pmc-oa-opendata.s3.amazonaws.com/PMC5420353.1/mmc1.pdf), 602011 bytes, source-reported MD5 c837df430d84e9881adbcb6709cc0cb3. Retrieved extracted text, not independently hashed original binary. Exact complete study-label joins to 11/11 GSE97362 KMT2D discovery case records: 7 frameshift, 4 nonsense, 10 distinct reported changes. Source-established diagnoses independent of methylation are sufficient for the intended eligibility check; repeated change is not evidence of family relatedness. No independent variant reclassification required.
+- [Full GEO SOFT sample metadata](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97362&targ=gsm&form=text&view=brief): 235 distinct assay records; select the native 11+11 discovery comparison, 22 distinct array keys with matching red/green references and complete age and sex. Before QC, intercept/case/centred age/sex rank 4/4, residual df 18; adding four chip indicators rank 8/8, residual df 14 (rank 7 without case). Two mixed chips contain 15 assays. Partial-pivot elimination tolerance 1e-10; no methylation values read. Technical keys are not independent biological subjects. The control workbook mmc2.xlsx was listed but no usable binary workbook received.
+- Preserve existing 257 held, 84 review-scope exclusions, 0 ready/admitted. Use source recruitment, control provenance and defensible dependence-aware restrictions/sensitivity if adequate; do not seek unnecessary private identifiers. Before inference resolve material independence, applicable institutional determination, qualified sample/probe QC, post-QC design, official device requirement and analysis-specific N1.
+- Native R SeSAMe/limma/missMethyl is the proposed first route; prior synthetic/QC v2 evidence is not a full package or cohort qualification. Optional native ports and export work remain off the critical path. No human-data transfer, institutional determination, scientific results or device qualification claimed.
+
+## Current integration
+
+PR #11 historical literature files are carried on current main; source corrections and hosted native-hook replay are a receiving candidate, not a passing run. The actual hosted hook, current strict, dependency, privacy and provider checks, and unchanged merge tree are required before integration. Local device and actual human-data analysis remain separately gated. See existing [CI policy](../ci-plan.md), [publication plan](../experiment-publication-plan.md) and [T01 plan](../../conductor/tracks/t01-sources/plan.md). No HF compute.
