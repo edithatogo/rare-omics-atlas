@@ -30,3 +30,7 @@ T01 owns missing cohort evidence; T07 owns missing method evidence; the trusted 
 - Conductor disposition: **planned**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
+
+### Receiving contribution rule — 24 November
+
+Use [the dated prior-analysis and gap review](../../../research/experiment-publication-plan.md#24-november-2026--analytical-gap-and-contribution-review-pre-n1) for T02.01/.02/.04/.05. Compare with the original published CpG/region/pathway analyses and later Wang 2026 signature and Cuvertino network prior art. Prespecify what is added: fixed effects with uncertainty, frozen transfer or reproducibility failure boundaries rather than a generic new classifier, pathway list or network. If available, use new assays on existing participants in a distinct paired measurement/cross-modal corroboration role; only the verified distinct-participant native-control partition is independent biological E3. GSE199836 targeted bisulfite sequencing is optional cross-technology corroboration after source/coverage/pairing qualification, not required for E2 or counted as a new independent cohort by default. No significance-filtered table as a testing background. Record original measured data/source-derived results/Atlas operations separately in N1/N2 and actual receipts; retain benchmark if no novel or clinically useful contribution. No E2/E3 execution or N1 freeze yet.
