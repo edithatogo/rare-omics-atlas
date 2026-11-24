@@ -86,7 +86,7 @@ jobs:
           assert hashlib.sha256(raw).hexdigest() == "cf50f0b1c733aeed612dfc5756bdf6e2d712ebcb5cf4635746ddd398180204a1"
           geo = (work / "source.soft").read_bytes()
           assert hashlib.sha256(geo).hexdigest() == "820228d67ecf030e9f6c5caef5ca0d7451c960c45eb8b770be5d7e68e12458cf"
-          records = re.split(r"(?=^\^SAMPLE = )", geo.decode(), flags=re.M)[1:]
+          records = re.split(r"(?=^\^SAMPLE = )", "\n".join(geo.decode().splitlines()), flags=re.M)[1:]
           labels = set()
           for record in records:
               if re.search(r"^!Sample_characteristics_ch1 = sample type: Control for KMT2D LOF discovery cohort\s*$", record, re.M):
@@ -197,6 +197,43 @@ jobs:
               "source_origin_join_verified": False,
               "identity_field_coverage": identity_summary,
               "biological_independence_verified": False}, sort_keys=True))
+
+          # With observed workbook columns 1/2/3, compare only source-stated
+          # sex and numeric age values; age unit is not inferred from a bare header.
+          assert header_fields.get(0) == "Sample ID" and header_fields.get(1) == "Sex" and header_fields.get(2) == "Age"
+          source_metadata = {}
+          for record in records:
+              group = re.findall(r"^!Sample_characteristics_ch1 = sample type: (.+)$", record, re.M)
+              if group != ["Control for KMT2D LOF discovery cohort"]:
+                  continue
+              label = re.findall(r"^!Sample_description = (.+)$", record, re.M)
+              age = re.findall(r"^!Sample_characteristics_ch1 = age \(years\): (.+)$", record, re.M)
+              sex = re.findall(r"^!Sample_characteristics_ch1 = gender: (.+)$", record, re.M)
+              assert len(label)==len(age)==len(sex)==1
+              assert label[0].strip() not in source_metadata
+              source_metadata[label[0].strip()] = (float(age[0]),sex[0].strip().lower())
+          assert set(source_metadata)==labels
+          sex_aliases = {"m":"male","male":"male","f":"female","female":"female"}
+          sex_matches = age_matches = age_comparable = sex_comparable = 0
+          for row in matched:
+              a,s = source_metadata[row[0]]
+              sex = sex_aliases.get(row[1].lower())
+              if sex is not None:
+                  sex_comparable += 1
+                  sex_matches += int(sex==s)
+              try:
+                  table_age = float(row[2])
+              except ValueError:
+                  continue
+              if np.isfinite(table_age):
+                  age_comparable += 1
+                  age_matches += int(abs(table_age-a)<1e-8)
+          print(json.dumps({"control_covariate_crosscheck_only":True,
+              "exact_control_matches":11,"sex_comparable":sex_comparable,
+              "sex_matches":sex_matches,"numeric_age_comparable":age_comparable,
+              "numeric_age_matches":age_matches,"workbook_age_unit_inferred":False,
+              "source_origin_join_verified":False,"independence_verified":False,
+              "analysis_admitted":False},sort_keys=True))
 
           # Outcome-blind design sensitivity, using only explicitly labelled
           # source ages, sexes and array serial/position keys.
