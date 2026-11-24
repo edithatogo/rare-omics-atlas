@@ -95,6 +95,104 @@ if (stage=="technical") {
     universe <- universe[unique(round(seq(1,length(universe),length.out=4000L)))]
     stopifnot(length(universe)==4000L)
     writeLines(universe,file.path(scratch,"synthetic-probe-universe.txt"))
+
+    # Outcome-blind scientific-QC policy exercise on this unrelated fixture.
+    # Fixed universe is independent of detection, bead count and observed beta.
+    stopifnot(as.character(packageVersion("IlluminaHumanMethylation450kanno.ilmn12.hg19"))=="0.6.1",
+        as.character(packageVersion("minfi"))=="1.56.0")
+    manifest_ids <- sesameDataGet("HM450.address")$ordering$Probe_ID
+    annotation <- minfi::getAnnotation(
+        IlluminaHumanMethylation450kanno.ilmn12.hg19::IlluminaHumanMethylation450kanno.ilmn12.hg19)
+    stopifnot(identical(manifest_ids,raw$Probe_ID),!anyDuplicated(manifest_ids),
+        !anyDuplicated(rownames(annotation)),all(c("chr","pos") %in% colnames(annotation)))
+    autosomal <- !is.na(annotation$chr)&as.character(annotation$chr) %in% paste0("chr",1:22)&
+        is.finite(annotation$pos)&annotation$pos>0
+    recommended <- getMask("HM450",mask_names="recommended")
+    stopifnot(length(recommended)>0L,!anyNA(recommended))
+    fixed_cpg <- manifest_ids[grepl("^cg[0-9]+$",manifest_ids)]
+    fixed_annotated <- fixed_cpg[fixed_cpg %in% rownames(annotation)]
+    fixed_autosomal <- fixed_annotated[fixed_annotated %in% rownames(annotation)[autosomal]]
+    eligible <- sort(setdiff(fixed_autosomal,recommended),method="radix")
+    stopifnot(length(eligible)>0L,!anyDuplicated(eligible))
+    tmp <- tempfile(fileext=".txt")
+    writeLines(eligible,tmp)
+    denominator_sha <- sha256(tmp)
+    unlink(tmp)
+    tmp <- tempfile(fileext=".rds")
+    saveRDS(annotation,tmp,version=3)
+    annotation_sha <- sha256(tmp)
+    unlink(tmp)
+    rm(annotation)
+    invisible(gc(full=TRUE))
+    # Candidate validity rule: missing detection, failed bead or any
+    # processing mask invalidates an observation; endpoint beta remains NA.
+    valid_measurement <- function(beta,p,mask,bead_mask) {
+        stopifnot(length(beta)==length(p),length(beta)==length(mask),
+            length(beta)==length(bead_mask))
+        is.finite(beta)&beta>0&beta<1&is.finite(p)&p>=0&p<=0.05&
+            !is.na(mask)&!mask&!is.na(bead_mask)&!bead_mask
+    }
+    stopifnot(identical(valid_measurement(
+        c(.5,.5,.5,NA_real_,0,1,.5,.5,.5,.5,.5),
+        c(.05,.050001,NA_real_,.01,.01,.01,.01,.01,-.01,Inf,.01),
+        c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,FALSE,FALSE),
+        c(rep(FALSE,10),TRUE)),c(TRUE,rep(FALSE,10))))
+    raw3 <- readIDATpair(prefix,platform="HM450",min_beads=3L)
+    stopifnot(identical(raw3$Probe_ID,manifest_ids),!anyNA(raw3$mask),
+        all(raw3$mask[raw$mask]))
+    # The preceding independently received T07b/T07d evidence qualifies
+    # address-level counts. Exercise native min-beads here, without a
+    # second production IDAT parser or custom masking implementation.
+    qcd3 <- prepSesame(raw3,"QCD")
+    p3 <- pOOBAH(qcd3,return.pval=TRUE)
+    processed3 <- noob(pOOBAH(qcd3,pval.threshold=0.05))
+    b3 <- getBetas(processed3)
+    direct3 <- getBetas(prepSesame(raw3,"QCDPB"))
+    stopifnot(identical(names(b3),manifest_ids),identical(names(p3),manifest_ids),
+        identical(names(b3),names(direct3)),identical(is.na(b3),is.na(direct3)),
+        max(abs(b3-direct3),na.rm=TRUE)<=1e-12,
+        !anyNA(processed3$mask),all(processed3$mask[raw3$mask]),
+        all(is.na(b3[raw3$mask])),all(is.na(b3[processed3$mask])))
+    at <- match(eligible,manifest_ids)
+    stopifnot(!anyNA(at))
+    v <- valid_measurement(b3[at],p3[at],processed3$mask[at],raw3$mask[at])
+    # Disjoint rejection reasons; no sample-conditioned denominator.
+    bead_bad <- raw3$mask[at]
+    detection_bad <- !is.finite(p3[at])|p3[at]<0|p3[at]>0.05
+    other_bad <- processed3$mask[at]|!is.finite(b3[at])|b3[at]<=0|b3[at]>=1
+    stopifnot(!anyNA(v),identical(unname(v),unname(!(bead_bad|detection_bad|other_bad))))
+    n <- length(eligible)
+    count <- sum(v)
+    stopifnot(count+sum(bead_bad)+sum(!bead_bad&detection_bad)+
+        sum(!bead_bad&!detection_bad&other_bad)==n)
+    write.table(data.frame(metric=c("manifest_probes","cg_probes","cg_without_annotation",
+        "nonautosomal_or_missing_coordinate","static_recommended_exclusions",
+        "fixed_denominator","valid","bead_fail","detection_fail_after_beads",
+        "other_invalid_after_beads_detection","valid_fraction","candidate_95pct_met",
+        "denominator_sha256","annotation_rds_sha256"),
+        value=c(length(manifest_ids),length(fixed_cpg),length(fixed_cpg)-length(fixed_annotated),
+        length(fixed_annotated)-length(fixed_autosomal),length(fixed_autosomal)-n,
+        n,count,sum(bead_bad),sum(!bead_bad&detection_bad),
+        sum(!bead_bad&!detection_bad&other_bad),sprintf("%.17g",count/n),
+        as.integer(count>=ceiling(0.95*n)),denominator_sha,annotation_sha)),
+        file.path(output,"technical-cohort-qc-denominator.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    native_qc <- sesameQC_getStats(sesameQC_calcStats(raw3,
+        c("detection","intensity","numProbes","channel","dyeBias","betas")))
+    stopifnot(length(native_qc)>0L,all(vapply(native_qc,length,integer(1))==1L))
+    gct <- bisConversionControl(raw3)
+    stopifnot(length(gct)==1L,is.finite(gct),gct>=0)
+    native_qc <- c(native_qc,list(native_gct=gct))
+    write.table(data.frame(metric=names(native_qc),value=unlist(native_qc,use.names=FALSE)),
+        file.path(output,"technical-cohort-qc-native-panel.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    controls <- attr(raw3,"controls")
+    stopifnot(is.data.frame(controls),nrow(controls)>0L)
+    writeLines(c(paste0("native_control_records=",nrow(controls)),
+        "candidate_sample_threshold=0.95","candidate_threshold_validated_for_clinical_use=false",
+        "control_acceptance_ranges_validated=false","clinical_cohort_qc=false",
+        "scope=unrelated_technical_fixture_only"),file.path(output,"technical-cohort-qc-disposition.txt"))
+    cat("Technical fixed-denominator QC: ",count,"/",n," valid (",
+        sprintf("%.6f",count/n),"); candidate threshold only.\n",sep="")
+
     writeLines(c("stage=technical","status=passed","scope=unrelated_HM450_fixture",
         "clinical_cohort_qc=false","cross_version_parity_claimed=false"),
         file.path(output,"technical-disposition.txt"))
@@ -160,9 +258,25 @@ if (stage=="enrichment") {
     # The native mapping function filters to all.cpg after flattening. Supply
     # the exact tested annotation rows before flattening to bound memory.
     anno <- minfi::getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19::IlluminaHumanMethylation450kanno.ilmn12.hg19)
-    stopifnot(!anyDuplicated(rownames(anno)),all(universe %in% rownames(anno)))
-    anno <- anno[match(universe,rownames(anno)),,drop=FALSE]
-    stopifnot(identical(rownames(anno),universe))
+    stopifnot(!anyDuplicated(rownames(anno)))
+    annotation_index <- match(universe,rownames(anno))
+    annotated <- universe[!is.na(annotation_index)]
+    anno <- anno[annotation_index[!is.na(annotation_index)],,drop=FALSE]
+    stopifnot(length(annotated)>0L,identical(rownames(anno),annotated))
+    # Original all.cpg and selected inputs are retained even if a CpG is
+    # absent from annotation or unmapped to an Entrez gene by native code.
+    flat <- getFromNamespace(".getFlatAnnotation","missMethyl")("450K",anno)
+    mapped_cpg <- unique(flat$cpg)
+    stopifnot(all(mapped_cpg %in% annotated))
+    write.table(data.frame(metric=c("tested","selected","annotation_present_tested",
+        "annotation_absent_tested","annotation_present_selected","annotation_absent_selected",
+        "gene_mapped_tested","gene_unmapped_tested","gene_mapped_selected","gene_unmapped_selected"),
+        value=c(length(universe),length(selected),length(annotated),
+        length(setdiff(universe,annotated)),sum(selected %in% annotated),
+        sum(!selected %in% annotated),length(mapped_cpg),length(setdiff(universe,mapped_cpg)),
+        sum(selected %in% mapped_cpg),sum(!selected %in% mapped_cpg))),
+        file.path(output,"enrichment-mapping.tsv"),sep="\t",quote=FALSE,row.names=FALSE)
+    rm(flat)
     invisible(gc(full=TRUE))
     go <- gometh(sig.cpg=selected,all.cpg=universe,collection="GO",array.type="450K",
         anno=anno,plot.bias=FALSE,prior.prob=TRUE,equiv.cpg=TRUE,fract.counts=TRUE)
@@ -193,6 +307,7 @@ if (stage=="enrichment") {
         # separate small exact urn recurrence. Never substitute these results.
         mapped <- getMappedEntrezIDs(sig.cpg=selected,all.cpg=universe,
             array.type="450K",anno=anno,genomic.features="ALL")
+        stopifnot(abs(sum(mapped$equiv)-length(mapped_cpg))<=1e-8)
         pwf <- getFromNamespace(".estimatePWF","missMethyl")(
             D=mapped$de,bias=as.vector(mapped$equiv))
         go_sets <- getFromNamespace(".getGO","missMethyl")()$idList
