@@ -1,4 +1,7 @@
-# Rare Omics Atlas
+# Rare-Venomics (working name)
+
+One clinically oriented research repository, two scientific streams: **Rare Disease (Rare Omics Atlas)** and **Toxinology (including venomics and toxicogenomics)**. The existing repository slug and Hugging Face identifier remain unchanged pending verified administrative migration. See [stream ownership and scope](conductor/product.md) and [V01 Toxinology](conductor/tracks/v01-toxinology/index.md). T06 is the conditional cross-stream bridge. The status below applies to the existing rare-disease stream, not to an executed toxinology study.
+
 
 **Status: official API catalogue published; source/sample validation and a pinned synthetic numerical exchange are implemented and locally verified with native commit hooks. Three raw archives remain locally verified, with their Hub transfer pending. Scientific analyses have not started.** Updated 23 November 2026.
 

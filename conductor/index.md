@@ -33,6 +33,15 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [Clinical journal routing](../research/journals.md)
 - [Actual Hub metadata publication and remaining raw transfer](../research/qualification/hf-metadata-publication-2026-11-22.md)
 
+## Scientific streams
+
+- **Rare Disease (Rare Omics Atlas):** existing T01â€“T05 and applicable T07 milestones; unchanged scientific priority and identifiers.
+- **Toxinology:** [V01 source reconciliation, clinical information extraction and research opportunities](tracks/v01-toxinology/index.md), tracked by [issue #30](https://github.com/edithatogo/rare-omics-atlas/issues/30). Venomics, human host-response omics and clinically motivated animal biology are components of this stream, not separate repositories.
+- **Cross-stream:** existing [T06](tracks/t06-toxin/index.md), conditional on separately admissible data and a defensible host variation/exposure question.
+- **Shared:** T00 governance, T08 catalogue, T09 data releases, existing ontology, literature, method and publication controls. Shared infrastructure is not shared biological replication. No new Conductor installation or separate ticketing system.
+
+The V01 track is planned. Its narrative milestones are the initial contract; reconcile its machine-readable dependency entries with the active T01/T07 changes in PR #28 after receiving that change. No V01 inference is admitted by adding this context.
+
 ## Execution rule
 
 Schedule ready milestones, not numeric track labels. T00 context enables T01 discovery and a synthetic/committed-corpus backend baseline. Patient-data inference requires T01 analysis admission, the selected T07 backend, actual target-device qualification and an analysis-specific N1 freeze. Optional Rust ports and unneeded model layers remain separate branches.

@@ -21,6 +21,10 @@ Updated 25 November 2026. **Bounded executable work is recorded; complete scient
 
 See [dependencies.json](dependencies.json) for task-level prerequisites and [setup receipt](../research/qualification/setup-receipt.md) for what was actually performed. A partially complete parent track does not prevent work depending only on its completed context milestone.
 
+## Parallel scientific stream — Toxinology
+
+[V01 — source reconciliation and incremental clinical information](tracks/v01-toxinology/index.md) ([issue #30](https://github.com/edithatogo/rare-omics-atlas/issues/30)) is **planned, not executed**. Ready first increment is source inventory and actual original/expanded eAtlas retrieval, followed by descriptive quality and overlap assessment. Method qualification, institutional determination as applicable, N0/N1 and appropriate device acceptance precede inference. T06 remains the existing cross-stream bridge, not a duplicate. T00/T08/T09 shared capabilities apply where relevant; no dependency on the rare-disease methylation-specific scientific gates. Keep existing execution priority for T01/T07/T02. Machine-readable additions to `dependencies.json` await reconciliation with active PR #28 rather than competing for that file.
+
 ## Active implementation increment
 
 - [x] [T01a — source/sample declaration boundary](archive/t01a_sample_contract_20261123/index.md): public 341-assay reconciliation and strict local CLI passed independent review and combined verification. Archived; actual identities/independence and scientific admission remain held.
