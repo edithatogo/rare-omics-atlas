@@ -20,6 +20,10 @@ Use `research/methylation-backend-audit.md` before selecting limma-rust or SeSAM
 
 Before marking a track completed: record exact source identifiers and checksums/commits when available; tests *actually run* and failures; retained limitations; manuscript implication and any publication/ethics/rights gate. A plan is not an implementation receipt.
 
+## Scientific streams (owner direction 25 November 2026)
+
+One repository, two scientific streams: Rare Disease (existing T01–T05/T07 scientific milestones) and Toxinology ([V01](conductor/tracks/v01-toxinology/index.md)). T06 is the conditional cross-stream bridge; shared T00/T08/T09 infrastructure remains common. Do not make Toxinology depend on irrelevant methylation admission or delay the existing Kabuki critical path. New toxinology data use requires its own source, unit-of-inference, scientific-method, rights, institutional and applicable device gates. The owner authorises source reconciliation and bounded research-method development, not new toxin experiments, clinical deployment, unapproved patient-text processing or third-party communications. Comparative animal biology is in scope only when it contributes to understanding human envenomation, exposure, diagnosis or prevention; no toxin optimisation or standalone animal-genomics programme. Prefer evidence retrieval and descriptive comparison before modelling. Quantify incremental information and extraction error against independent annotation; retain nulls and failed receipts. See the stream track for the first bounded increment.
+
 ## Incremental execution
 
 Implement one ready, bounded track; review its actual outputs; archive it when its stated acceptance criteria pass, then start the next dependent track. The owner has already selected archiving, so do not ask again. Keep incomplete parent scientific tracks open. Independent source/literature review may run in parallel under separate path ownership. Estimate work in agent execution batches with input/exit criteria; record observed wall-clock duration when available. Do not use person-weeks/months or invent agent delivery times.
