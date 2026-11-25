@@ -8,6 +8,7 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - [General style guide](code_styleguides/general.md)
 - [Workflow](workflow.md)
 - [Tracks and execution dependencies](tracks.md)
+- [Cross-stream capability crosswalk and just-in-time reuse](capability-crosswalk.md)
 - [Machine-readable milestones](dependencies.json)
 - [Setup receipt](../research/qualification/setup-receipt.md)
 - [Source intake receipt](../research/qualification/initial-source-receipt.md)
