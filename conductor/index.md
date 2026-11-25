@@ -40,7 +40,7 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - **Cross-stream:** existing [T06](tracks/t06-toxin/index.md), conditional on separately admissible data and a defensible host variation/exposure question.
 - **Shared:** T00 governance, T08 catalogue, T09 data releases, existing ontology, literature, method and publication controls. Shared infrastructure is not shared biological replication. No new Conductor installation or separate ticketing system.
 
-The V01 track is planned. Its narrative milestones are the initial contract; reconcile its machine-readable dependency entries with the active T01/T07 changes in PR #28 after receiving that change. No V01 inference is admitted by adding this context.
+The [machine-readable V01 milestones](dependencies.json) are independent of methylation-specific prerequisites. The public source metadata seed is staged; original clinical data access and inference are held. The draft T01/T07 PR #28 is not altered. See the [acquisition and release record](tracks/v01-toxinology/acquisition.md).
 
 ## Execution rule
 

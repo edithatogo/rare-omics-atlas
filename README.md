@@ -1,6 +1,6 @@
-# Rare-Venomics (working name)
+# Rare-Venomics
 
-One clinically oriented research repository, two scientific streams: **Rare Disease (Rare Omics Atlas)** and **Toxinology (including venomics and toxicogenomics)**. The existing repository slug and Hugging Face identifier remain unchanged pending verified administrative migration. See [stream ownership and scope](conductor/product.md) and [V01 Toxinology](conductor/tracks/v01-toxinology/index.md). T06 is the conditional cross-stream bridge. The status below applies to the existing rare-disease stream, not to an executed toxinology study.
+One clinically oriented research repository, two scientific streams: **Rare Disease (Rare Omics Atlas)** and **Toxinology (including venomics and toxicogenomics)**. The GitHub repository was renamed to `edithatogo/rare-venomics` on 25 November 2026 (repository ID 1467227964 unchanged). The existing Hugging Face dataset identifier `edithatogo/rare-omics-atlas` is retained to preserve the published release history. See [stream ownership and scope](conductor/product.md) and [V01 Toxinology](conductor/tracks/v01-toxinology/index.md). T06 is the conditional cross-stream bridge. The status below applies to the existing rare-disease stream, not to an executed toxinology study.
 
 
 **Status: official API catalogue published; source/sample validation and a pinned synthetic numerical exchange are implemented and locally verified with native commit hooks. Three raw archives remain locally verified, with their Hub transfer pending. Scientific analyses have not started.** Updated 23 November 2026.

@@ -285,6 +285,74 @@
         "T00.strict_code"
       ],
       "scope": "Archived bounded full-schema HM450 QC and raw/QCD detection receiver: four actual exports, all p-values pass and four native R QC fields differ. Independent review and 34/34 strict code gates passed; final native-hook/hosted evidence belongs to its integration PR. Full QC method, rejection-policy, scientific and device admission remain held."
+    },
+    {
+      "id": "V01.source_metadata",
+      "status": "in_progress",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Programmatically retrieved three PubMed bibliographic records; original and expanded eAtlas catalogue and AIHW published aggregate source context; three published benchmark rows manually transcribed. Source-level event access, overlap and scientific admission not established."
+    },
+    {
+      "id": "V01.event_source_bytes",
+      "status": "blocked_external",
+      "requires": [
+        "V01.source_metadata"
+      ],
+      "scope": "Original and expanded eAtlas clinical event data not downloaded; direct catalogue HTTP 403, local DNS unavailable. Verify public authorised transfer, actual bytes and terms in approved environment; no raw event rows in Git or unapproved cloud."
+    },
+    {
+      "id": "V01.clinical_source_qc",
+      "status": "pending",
+      "requires": [
+        "V01.event_source_bytes"
+      ],
+      "scope": "Independent event and record provenance, source/first-contact separation, completeness, duplicate and study overlap review; prespecified incremental information feasibility."
+    },
+    {
+      "id": "V01.extraction_method",
+      "status": "conditional",
+      "requires": [
+        "V01.clinical_source_qc",
+        "T00.strict_code"
+      ],
+      "scope": "If narratives add meaningful information, qualify structured and deterministic baseline plus selected established NLP method with independent adjudication, field/source-separated error and review burden. Local approved processing only."
+    },
+    {
+      "id": "V01.institutional",
+      "status": "pending",
+      "requires": [
+        "T00.context"
+      ],
+      "scope": "Obtain applicable toxinology-specific institutional and source/hosting determinations; separate from rare-disease T01. No new contact or patient data access inferred."
+    },
+    {
+      "id": "V01.n1_admission",
+      "status": "pending",
+      "requires": [
+        "V01.clinical_source_qc",
+        "V01.institutional",
+        "T00.local_runner"
+      ],
+      "scope": "Admit exact event data and selected scientific method; require extraction qualification if used; N0/N1, independent units, estimability and appropriate device acceptance before clinical inference. No methylation-specific dependency."
+    },
+    {
+      "id": "V01.results",
+      "status": "planned",
+      "requires": [
+        "V01.n1_admission"
+      ],
+      "scope": "Execute frozen admitted clinical comparison only; full analysis family, uncertainty, nulls, incremental information and N2. T06 remains conditional cross-stream bridge."
+    },
+    {
+      "id": "V01.hf_metadata",
+      "status": "pending",
+      "requires": [
+        "V01.source_metadata",
+        "T00.strict_code"
+      ],
+      "scope": "Source-bound four-object metadata/aggregate release candidate to existing edithatogo/rare-omics-atlas Hub, with existing official publisher; actual authenticated trusted publication and immutable read-back outstanding. No patient data or original eAtlas bytes."
     }
   ],
   "external_gate_resolution": {

@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   infrastructure:
-    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    if: github.repository == 'edithatogo/rare-venomics' && github.ref == 'refs/heads/main'
     runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
     timeout-minutes: 60
     env:
