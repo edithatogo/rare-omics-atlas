@@ -20,6 +20,11 @@ jobs:
     runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
     timeout-minutes: 60
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+
       - name: Check out trusted main revision
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-22
         with:
