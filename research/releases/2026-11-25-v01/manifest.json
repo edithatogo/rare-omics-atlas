@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "release_id": "2026-11-25-v01",
+  "source_repository": "https://github.com/edithatogo/rare-omics-atlas",
+  "purpose": "V01 bibliographic and source metadata plus already-published clinical aggregate benchmark; no patient or raw molecular data. Historical source URL required by existing publisher.",
+  "objects": [
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-25-v01/README.md",
+      "path_in_repo": "silver/toxinology/2026-11-25/README.md",
+      "size_bytes": 1373,
+      "sha256": "a006aada3a3cf37984dd7ddbfb4e5f9b60bd543a9895508d09879c3eae99b72c",
+      "redistribution_basis": "Original project description with attribution; no source report or patient data copied"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-25-v01/aihw-benchmark.jsonl",
+      "path_in_repo": "silver/toxinology/2026-11-25/aihw-benchmark.jsonl",
+      "size_bytes": 1838,
+      "sha256": "4ee797fe3beba9b590dc4423defa2e9db6d40851371a728bc915a727731f03c5",
+      "redistribution_basis": "Based on Australian Institute of Health and Welfare material; CC BY 4.0, https://www.aihw.gov.au/copyright; manually transcribed published aggregates only"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-25-v01/publications.jsonl",
+      "path_in_repo": "silver/toxinology/2026-11-25/publications.jsonl",
+      "size_bytes": 1201,
+      "sha256": "f230aa3f1fe0b60e421759f06fc9ecd0e5201d0594bc95d4a60934bccd850c78",
+      "redistribution_basis": "Factual bibliographic metadata and source identifiers; no abstracts or full text"
+    },
+    {
+      "kind": "metadata",
+      "source_path": "research/releases/2026-11-25-v01/source-register.jsonl",
+      "path_in_repo": "silver/toxinology/2026-11-25/source-register.jsonl",
+      "size_bytes": 1606,
+      "sha256": "958cca8af531dbdd5dafeffb5d3e42c266d7355fe799665aec2afa6bec5628dd",
+      "redistribution_basis": "Original source inventory with factual catalogue identifiers and rights notices; no raw records"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Product / research definition
 
-**Working name:** Rare-Venomics (current GitHub slug `rare-omics-atlas`; proposed rename `rare-venomics` is not yet executed).
+**Project name:** Rare-Venomics (`edithatogo/rare-venomics`, unchanged repository ID 1467227964). Existing Hub identifier `edithatogo/rare-omics-atlas` and scientific identifiers are retained.
 
 **Overarching aim:** learn from public and appropriately governed molecular, experimental and clinical data about the causes and heterogeneity of human disease, including envenomation. One repository with separate scientific protocols, common source/rights/ontology/qualification tooling, and a single Conductor. Preserve existing history, dataset IDs, publication bundles and acceptance receipts.
 

@@ -3,6 +3,12 @@ name: Publish reviewed medallion release
 on:
   workflow_dispatch:
     inputs:
+      release:
+        description: Reviewed source-bound release manifest
+        required: true
+        type: choice
+        default: '2026-11-22'
+        options: ['2026-11-22', '2026-11-25-v01']
       target:
         description: Registered owner device and native OS
         required: true
@@ -16,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.repository == 'edithatogo/rare-omics-atlas' && github.ref == 'refs/heads/main'
+    if: github.repository == 'edithatogo/rare-venomics' && github.ref == 'refs/heads/main' && (inputs.release == '2026-11-22' || inputs.release == '2026-11-25-v01')
     runs-on: ${{ fromJSON(inputs.target == 'macos-arm64' && '["self-hosted","macOS","ARM64","rare-omics-local"]' || inputs.target == 'windows-x64' && '["self-hosted","Windows","X64","rare-omics-local"]' || '["self-hosted","Linux","X64","rare-omics-local"]') }}
     timeout-minutes: 60
     steps:
@@ -44,7 +50,7 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: "1"
         run: >-
           uv run --project tools/hf-release --frozen python tools/hf-release/publisher.py
-          --manifest research/releases/2026-11-22/manifest.json
+          --manifest ${{ inputs.release == '2026-11-25-v01' && 'research/releases/2026-11-25-v01/manifest.json' || 'research/releases/2026-11-22/manifest.json' }}
           --root .
           --data-root "${{ runner.temp }}/atlas-bronze-${{ github.run_id }}"
           --source-revision "${{ github.sha }}"

@@ -1,4 +1,4 @@
-# V01 — bounded implementation sequence (not started)
+# V01 — bounded implementation sequence
 
 One owner per path; retain the existing rare-disease critical path. Do not add runtime dependencies before an actual consumer. Use the existing strict command, installed pre-commit hook or authorised exact-current-base hosted replay, independent review and actual applicable device qualification. Use the existing repository-wide N0–N3 and archive conventions.
 
@@ -20,4 +20,4 @@ One owner per path; retain the existing rare-disease critical path. Do not add r
 
 ## Receiving and rename
 
-No execution, hook replay, data admission, institutional determination or scientific result is claimed by this plan. Issue #30 tracks V01; add machine-readable milestones following PR #28 to avoid path conflicts. Repository rename: verify name availability and same repository ID, update central estate, automation/references, Pages/Actions/release URLs as applicable and remotes; preserve historical citations, HF ID and qualified commits. Do not recreate the repository or silently republish data. Recheck exact current-base checks after any rename.
+Issue #30 tracks V01. The owner completed the GitHub rename; repository ID 1467227964 verified. Preserve the existing Hub identifier and original release bytes. Machine-readable milestones are appended independently of the draft T01/T07 scope edits. See [actual acquisition and staged release](acquisition.md); no event-level transfer, data admission, institutional determination, hook replay or scientific result is implied. Recheck exact current-base checks before merging. Historical one-time prune workflow remains disabled after the rename; do not reactivate its historical deletion operation. Reconcile central estate and local remotes only against actual current state.
