@@ -28,7 +28,7 @@ At the start of each ready batch, name its actual scientific consumer and any co
 
 ## Immediate sequence
 
-1. Receive the existing V01 acquisition/release candidate PR #36 only after its exact-head, current-base gates pass. It appends V01 milestones and repairs the trusted publication route; clinical data and actual Hub transfer remain separately gated.
+1. Use the received V01 acquisition/release increment and the crosswalk (PRs #36/#37). Verify current main and its source-bound release, then publish eligible metadata through the approved trusted route. Clinical data and actual Hub transfer remain separately gated.
 2. Use the existing official sources and acquisition code for a bounded data intake with receipt. Prioritise resolving event-level access and public aggregate/source metadata, not an ontology or NLP platform. Do not transfer human records into GitHub/Hub.
 3. When actual bytes permit, do V01.02 structured/source reconciliation. Reuse source and evidence conventions from T01, and qualify any genuinely shared increment there or in its existing capability owner. Only then select a useful V01.03 extraction baseline.
 4. Reconcile any changed dependency or consumer in the existing graph and owning plan as part of the same receiving change; do not duplicate track state in the crosswalk. Keep T06 conditional and rare-disease E2/E3 priority unchanged.

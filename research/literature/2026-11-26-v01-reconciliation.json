@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-26",
+  "scope": "Bounded V01.01/02 study-level source reconciliation; preliminary N0 inputs, not systematic review, not N1 freeze, no participant-level linkage or inference.",
+  "provider": {
+    "name": "PubMed structured exact-ID connector",
+    "requested_pmids": [
+      "9887916",
+      "12492390",
+      "23508658",
+      "19409658",
+      "15588216",
+      "32604451",
+      "27770113",
+      "28711467",
+      "35925949",
+      "35638940",
+      "37251904",
+      "23039299"
+    ],
+    "returned": 12,
+    "missing_pmids": [],
+    "abstract_field_pagination": [],
+    "source_response_bytes_retained": false,
+    "limits": "Factual bibliographic projection and analyst-curated source facts only; original abstracts/full texts, patient records and raw provider responses are not committed. Dates/units remain publication-reported."
+  },
+  "publications": [
+    {
+      "pmid": "9887916",
+      "title": "A year's experience of Irukandji envenomation in far north Queensland.",
+      "doi": "10.5694/j.1326-5377.1998.tb123443.x",
+      "publication_date": "1998 Dec 7-21",
+      "journal": "The Medical journal of Australia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9887916/"
+    },
+    {
+      "pmid": "12492390",
+      "title": "Severity of Irukandji syndrome and nematocyst identification from skin scrapings.",
+      "doi": "10.5694/j.1326-5377.2003.tb05041.x",
+      "publication_date": "2003 Jan 06",
+      "journal": "The Medical journal of Australia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12492390/"
+    },
+    {
+      "pmid": "23508658",
+      "title": "Long-term analysis of Irukandji stings in Far North Queensland.",
+      "doi": null,
+      "publication_date": "2013 Mar",
+      "journal": "Diving and hyperbaric medicine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23508658/"
+    },
+    {
+      "pmid": "19409658",
+      "title": "Irukandji syndrome case series from Australia's Tropical Northern Territory.",
+      "doi": "10.1016/j.annemergmed.2009.03.022",
+      "publication_date": "2009 Sep",
+      "journal": "Annals of emergency medicine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19409658/"
+    },
+    {
+      "pmid": "15588216",
+      "title": "Irukandji syndrome in northern Western Australia: an emerging health problem.",
+      "doi": "10.5694/j.1326-5377.2004.tb06527.x",
+      "publication_date": "2004 Dec 6-20",
+      "journal": "The Medical journal of Australia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15588216/"
+    },
+    {
+      "pmid": "32604451",
+      "title": "Irukandji-like syndrome caused by single-tentacle box jellyfish found in Thailand, 2007-2019.",
+      "doi": "10.5603/IMH.2020.0017",
+      "publication_date": "2020",
+      "journal": "International maritime health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32604451/"
+    },
+    {
+      "pmid": "27770113",
+      "title": "Jellyfish stings on Langkawi Island, Malaysia.",
+      "doi": null,
+      "publication_date": "2016 Aug",
+      "journal": "The Medical journal of Malaysia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27770113/"
+    },
+    {
+      "pmid": "28711467",
+      "title": "Retrospective study of jellyfish envenomation in emergency wards in Guadeloupe between 2010 and 2016: When to diagnose Irukandji syndrome?",
+      "doi": "10.1016/j.toxicon.2017.07.011",
+      "publication_date": "2017 Oct",
+      "journal": "Toxicon : official journal of the International Society on Toxinology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28711467/"
+    },
+    {
+      "pmid": "35925949",
+      "title": "Environmental drivers of the occurrence and abundance of the Irukandji jellyfish (Carukia barnesi).",
+      "doi": "10.1371/journal.pone.0272359",
+      "publication_date": "2022",
+      "journal": "PloS one",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35925949/"
+    },
+    {
+      "pmid": "35638940",
+      "title": "Use of clonidine in the treatment of Irukandji syndrome: A 4-year retrospective cohort study on safety, efficacy and clinical utility.",
+      "doi": "10.1111/1742-6723.14017",
+      "publication_date": "2022 Aug",
+      "journal": "Emergency medicine Australasia : EMA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35638940/"
+    },
+    {
+      "pmid": "37251904",
+      "title": "Differences in clinical manifestations between cases stung by single-tentacle and multiple-tentacle box jellyfish over two decades.",
+      "doi": "10.1016/j.heliyon.2023.e16374",
+      "publication_date": "2023 May",
+      "journal": "Heliyon",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37251904/"
+    },
+    {
+      "pmid": "23039299",
+      "title": "Randomised trial of magnesium in the treatment of Irukandji syndrome.",
+      "doi": "10.1111/j.1742-6723.2012.01602.x",
+      "publication_date": "2012 Oct",
+      "journal": "Emergency medicine Australasia : EMA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23039299/"
+    }
+  ],
+  "curated_studies": [
+    {
+      "pmid": "9887916",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/9887916/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Cairns emergency departments, Australia",
+      "period": "1996",
+      "design": "clinical series",
+      "reported_unit_and_count": "62 ED presentations described as Irukandji envenomation",
+      "reported_primary_count": 62,
+      "interpretation": "Historical clinical benchmark; date and site fall within the later Cairns series; individual overlap unknown.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "12492390",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/12492390/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Cairns Base Hospital ED, Australia",
+      "period": "2001-07-01/2002-06-30",
+      "design": "retrospective clinical series plus prospective skin scraping study",
+      "reported_unit_and_count": "128 marine-sting presentations; 116 syndrome cases; 50 skin-scraping participants",
+      "reported_primary_count": 128,
+      "interpretation": "Two components from the same period; do not add 50 to 128 or assert individual overlap without original records. Species attribution and syndrome outcome benchmark.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "23508658",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23508658/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Barnes historical accounts and Cairns Base Hospital emergency unit, Australia",
+      "period": "1942–1967 and 1995–2007",
+      "design": "retrospective two-source historical review",
+      "reported_unit_and_count": "Two historical sources; total not established from abstract",
+      "reported_primary_count": null,
+      "interpretation": "Published geographic and severity comparisons; earlier Cairns series may overlap; source identity and independence not established.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "19409658",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19409658/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Health facilities, Northern Territory, Australia",
+      "period": "1990–2007",
+      "design": "prospective standardised collection plus retrospective identification",
+      "reported_unit_and_count": "87 people with Irukandji syndrome",
+      "reported_primary_count": 87,
+      "interpretation": "Regional clinical comparator; separate ascertainment design. Exact overlap with national historical compilation unknown.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "15588216",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/15588216/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Broome Health Service ED, Western Australia",
+      "period": "2001-01-01/2003-07-01",
+      "design": "retrospective form/chart analysis",
+      "reported_unit_and_count": "111 marine-sting presentations; 88 identified as Irukandji syndrome",
+      "reported_primary_count": 111,
+      "interpretation": "Regional comparator; diagnostic criteria and denominators require full-text verification. Source-level independence unknown.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "32604451",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32604451/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Thai surveillance and toxic jellyfish networks",
+      "period": "2007–2019",
+      "design": "selected incident investigations",
+      "reported_unit_and_count": "19 Irukandji-like syndrome cases",
+      "reported_primary_count": 19,
+      "interpretation": "Surveillance included collapse, hospital attendance or death; not population-based. Possible reuse in later Thai study.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "37251904",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/37251904/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Thai national toxic jellyfish surveillance and networks",
+      "period": "1999–2021",
+      "design": "retrospective surveillance comparison",
+      "reported_unit_and_count": "29 single-tentacle, 92 multiple-tentacle and 3 indeterminate cases",
+      "reported_primary_count": null,
+      "interpretation": "Includes the period of the 2020 paper and a related surveillance system. Do not pool these reports as independent.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "27770113",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/27770113/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Langkawi Hospital ED, Malaysia",
+      "period": "2012–2014",
+      "design": "retrospective clinical records",
+      "reported_unit_and_count": "759 jellyfish sting presentations, at least 90 with mild Irukandji or Irukandji-like syndromes",
+      "reported_primary_count": 759,
+      "interpretation": "Syndrome subset is a lower-bound count, not a complete confirmed syndrome cohort.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "28711467",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28711467/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Two public hospitals, Guadeloupe",
+      "period": "2010-01-01/2016-09-01",
+      "design": "retrospective emergency database",
+      "reported_unit_and_count": "211 jellyfish envenomations, 95 meeting the study syndrome definition",
+      "reported_primary_count": 211,
+      "interpretation": "Published comparison and source-specific syndrome definition; species attribution described as probable, not confirmed.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "35925949",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35925949/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Nearshore Cairns coast, Australia",
+      "period": "six years, exact calendar limits not established here",
+      "design": "direct animal capture and ecological modelling",
+      "reported_unit_and_count": "Animal observations, not human encounters",
+      "reported_primary_count": null,
+      "interpretation": "Ecological prior art; not an independent clinical cohort or a substitute for patient data.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "35638940",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/35638940/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Cairns Hospital and Magnesium in Irukandji Study Trial participants",
+      "period": "2016-03-01/2020-04-30 plus prior trial participants",
+      "design": "retrospective treatment cohort",
+      "reported_unit_and_count": "114 combined cases",
+      "reported_primary_count": 114,
+      "interpretation": "Explicit reuse of trial participants; 114 is not a newly recruited independent cohort. Named trial identity and exact included cases need verification.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    },
+    {
+      "pmid": "23039299",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23039299/",
+      "evidence_location": "provider abstract (not full text or source dataset)",
+      "setting": "Clinical trial; site not established from abstract",
+      "period": "2003-11/2007-05",
+      "design": "double-blind randomised trial",
+      "reported_unit_and_count": "39 enrolled patients",
+      "reported_primary_count": 39,
+      "interpretation": "Candidate match for the named magnesium trial; verify trial identity before counting a confirmed study-to-study link. No treatment recommendation inferred.",
+      "scientific_admission": false,
+      "raw_data_retrieved": false
+    }
+  ],
+  "overlap_relationships": [
+    {
+      "from": "9887916",
+      "to": "23508658",
+      "status": "possible",
+      "basis": "Cairns ED and 1996 within 1995–2007; exact identity unknown"
+    },
+    {
+      "from": "12492390",
+      "to": "23508658",
+      "status": "possible",
+      "basis": "Cairns Base Hospital and 2001–02 within 1995–2007; exact identity unknown"
+    },
+    {
+      "from": "35638940",
+      "to": "23039299",
+      "status": "candidate_named_trial_reuse",
+      "basis": "2022 abstract explicitly includes Magnesium in Irukandji Study Trial participants; 2012 randomised magnesium trial is a candidate match, exact trial and subset not verified"
+    },
+    {
+      "from": "32604451",
+      "to": "37251904",
+      "status": "possible",
+      "basis": "Related Thai national surveillance/network source and nested calendar windows; no person-level linkage"
+    },
+    {
+      "from": "eatlas-2017",
+      "to": "eatlas-2018",
+      "status": "successor_release_reported",
+      "basis": "Research Data Australia original catalogue identifies a later release; original record count and dates differ, actual CSVs and membership not observed"
+    },
+    {
+      "from": "eatlas-2018",
+      "to": "OBIS-projection",
+      "status": "same_source_candidate_projection",
+      "basis": "Existing source register identifies a biodiversity representation; exact membership and transformation unverified; not an independent clinical cohort"
+    }
+  ],
+  "public_source_access": [
+    {
+      "id": "eatlas-original-catalogue",
+      "url": "https://researchdata.edu.au/venomous-jellyfish-database-223-csiro/1356134",
+      "observed": "Public record describes 265 mixed records, partial dates, multiple source reports, later release published 2019-01-18; original catalogue CC BY 3.0 AU with source acknowledgement and metadata conditions.",
+      "raw_bytes": false
+    },
+    {
+      "id": "eatlas-public-archive",
+      "url": "https://nextcloud.eatlas.org.au/apps/sharealias/a/au-nesp-twq-2-2-3-venomous-jellyfish-db-20181130",
+      "observed_redirect": "https://nextcloud.eatlas.org.au/s/Ba944yF4SynNrot",
+      "displayed_filename": "AU_NESP-TWQ-2-2-3_Venomous-Jellyfish-DB-20181130.zip",
+      "observed": "Public share landing page resolved through the catalogue; page needs JavaScript; no actual ZIP bytes. Earlier catalogue label references an October 2017 extract, so identify release from actual archive metadata rather than link text.",
+      "raw_bytes": false,
+      "disposition": "Use the ordinary custodian-provided download on approved device; preserve attribution/terms and privacy; no event narrative in Git or public Hub."
+    },
+    {
+      "id": "aihw-2021-22",
+      "url": "https://www.aihw.gov.au/reports/injury/contact-with-animals/data",
+      "observed": "Official data page and cited supplementary workbook listing; exact workbook bytes and download URL not observed.",
+      "raw_bytes": false
+    },
+    {
+      "id": "aihw-2024-25-candidate",
+      "url": "https://www.aihw.gov.au/reports/injury/contact-with-living-things",
+      "observed": "Later public report identifies supplementary table H16 for cause-specific hospitalisations and a 2016–17/2017–18 collection break. Broader cause categories and coding may differ; no verified Irukandji-specific series.",
+      "raw_bytes": false,
+      "disposition": "Inspect workbook/coding definitions and period comparability before making any trend comparison."
+    }
+  ],
+  "decision": {
+    "n0": "partial",
+    "n1": "not_frozen",
+    "eligible_independent_cohorts": null,
+    "clinical_inference_admitted": false,
+    "next": "Acquire authorised original archive and public aggregate workbook; reconcile definitions, source provenance, release overlap and feasible comparison; validate source-specific extraction only if actual evidence requires it.",
+    "reuse": "Existing T01 literature receipt and study–dataset edge conventions, T08 source verification and T09 reviewed publisher; no new software dependency or shared abstraction."
+  }
+}
