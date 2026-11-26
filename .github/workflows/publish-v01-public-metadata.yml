@@ -35,7 +35,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-          fetch-depth: 2
+          # The publisher tests verify immutable historical Git objects.
+          fetch-depth: 0
           persist-credentials: false
           submodules: false
       - name: Select only the reviewed activation revision and exact manifest
@@ -64,6 +65,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          test "$(git rev-parse --is-shallow-repository)" = false
+          git cat-file -e '8cfc85110911a2991301b358e4510e28026d13b8:tools/hf-release/publisher.py'
           uv sync --project tools/hf-release --frozen --python 3.15.2
           uv run --project tools/hf-release --frozen python -m unittest discover -s tools/hf-release/tests -v
           uv run --project tools/hf-release --frozen python tools/hf-release/publisher.py \

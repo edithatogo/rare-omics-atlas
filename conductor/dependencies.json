@@ -292,7 +292,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted. Hosted replay 45786593656 resolved all 12 PubMed IDs from 21,087 actual response bytes with SHA-256 retained; AIHW report HTTP 403 in same replay. PubMed-only successor requires fresh verification; original event, AIHW workbook and scientific admission remain held. PubMed-only replay 45802713825 independently read back: identical response hash, 12/12 ID join, no duplicate PMIDs. 27 November bounded metadata profile and source dictionary/coding QC staged; no clinical admission or original event bytes."
+      "scope": "Initial metadata release integrated; 12 exact PubMed records resolved, 21,087 bytes, repeatable source hash and 12/12 joins. PR #41 source replay 45891388787 and strict CI 45891388559 passed; merged b178fc753d5ff1f662662ba6541ff88fad88d2a7 with tested tree. Bounded metadata QC and original source hold receipts integrated; receiving-main 45896927445 must be observed. Overall source metadata remains in progress; AIHW workbook, original clinical event bytes and scientific admission held."
     },
     {
       "id": "V01.event_source_bytes",
@@ -347,12 +347,12 @@
     },
     {
       "id": "V01.hf_metadata",
-      "status": "blocked_external",
+      "status": "in_progress",
       "requires": [
         "V01.source_metadata",
         "T00.strict_code"
       ],
-      "scope": "Four-object metadata/aggregate release merged on main, current main strict CI 45779804390 passed. Hub listing on 26 November confirms no V01 objects. Existing authenticated trusted owner runner and dispatch/publication/read-back needed; no accessible device or write/dispatch action observed in current session. No raw patient data."
+      "scope": "Four-object release plus generated manifest/provenance, unchanged exact SHA-256 manifest. PR #40 received at 5b0f6e645b06ebc7b8a8f0103d2876da7772c574, receiving strict 45891111994 passed; automatic publication 45892080466 triggered but failed pre-upload tests due to shallow history omitting historical publisher baseline. Full-history checkout correction staged in successor; successful strict receiving CI, actual scoped authentication, Hub commit/read-back required. No V01 Hub objects observed; no raw patient data."
     }
   ],
   "external_gate_resolution": {
