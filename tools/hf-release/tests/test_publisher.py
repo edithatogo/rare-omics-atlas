@@ -212,17 +212,22 @@ class HubContracts(unittest.TestCase):
         self.assertEqual(api.calls, [])
 
     def test_no_overwrite_rejects_partial_or_mismatching_release(self):
+        from unittest.mock import patch
+
         from huggingface_hub.hf_api import RepoFile
 
         payloads = self.payloads()
         for partial in (True, False):
             with self.subTest(partial=partial):
                 api = self.fake_api(payloads)
-                api.get_paths_info = lambda **kw: [
+                rows = [
                     RepoFile(path=p.path_in_repo, size=p.size_bytes, oid="0" * 40)
                     for p in (payloads[:1] if partial else payloads)
                 ]
-                with self.assertRaises(publisher.ReleaseError):
+                with (
+                    patch.object(api, "get_paths_info", return_value=rows),
+                    self.assertRaises(publisher.ReleaseError),
+                ):
                     publisher.publish(api, self.manifest, payloads, {}, no_overwrite=True)
                 self.assertEqual(api.calls, [])
 
@@ -232,7 +237,10 @@ class HubContracts(unittest.TestCase):
         from huggingface_hub.errors import RepositoryNotFoundError
 
         api = Mock()
-        api.repo_info.side_effect = RepositoryNotFoundError("missing")
+        response = Mock()
+        response.status_code = 404
+        response.headers = {}
+        api.repo_info.side_effect = RepositoryNotFoundError("missing", response=response)
         with self.assertRaises(RepositoryNotFoundError):
             publisher.publish(api, self.manifest, self.payloads(), {}, no_overwrite=True)
         api.create_repo.assert_not_called()
@@ -247,9 +255,19 @@ class HubContracts(unittest.TestCase):
         manifest.write_text(json.dumps(self.manifest))
         receipt = self.root / "receipt.json"
         argv = [
-            "publisher.py", "--manifest", str(manifest), "--root", str(self.root),
-            "--data-root", str(self.root), "--source-revision", "a" * 40,
-            "--receipt", str(receipt), "--upload", "--no-overwrite",
+            "publisher.py",
+            "--manifest",
+            str(manifest),
+            "--root",
+            str(self.root),
+            "--data-root",
+            str(self.root),
+            "--source-revision",
+            "a" * 40,
+            "--receipt",
+            str(receipt),
+            "--upload",
+            "--no-overwrite",
         ]
         with (
             patch.object(sys, "argv", argv),
