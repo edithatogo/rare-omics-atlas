@@ -292,7 +292,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted."
+      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted. Hosted replay 45786593656 resolved all 12 PubMed IDs from 21,087 actual response bytes with SHA-256 retained; AIHW report HTTP 403 in same replay. PubMed-only successor requires fresh verification; original event, AIHW workbook and scientific admission remain held. PubMed-only replay 45802713825 independently read back: identical response hash, 12/12 ID join, no duplicate PMIDs. 27 November bounded metadata profile and source dictionary/coding QC staged; no clinical admission or original event bytes."
     },
     {
       "id": "V01.event_source_bytes",
@@ -300,7 +300,7 @@
       "requires": [
         "V01.source_metadata"
       ],
-      "scope": "Original and expanded eAtlas event data not acquired. Original catalogue and public Nextcloud archive landing page/filename verified; no ZIP or CSV bytes. Source version/terms and approved trusted-device acquisition required. AIHW workbook also not retrieved; later H16 aggregate table is a candidate."
+      "scope": "Original and expanded eAtlas event data not acquired. Original catalogue and public Nextcloud archive landing page/filename verified; no ZIP or CSV bytes. Source version/terms and approved trusted-device acquisition required. AIHW workbook also not retrieved; later H16 aggregate table is a candidate. Both official catalogues now rechecked: original/expanded archive links resolve to the same 20181130 share; verify separate original release availability, actual bytes, terms and clinical field/version differences on approved device. AIHW official workbook listing and X26.01 coding context documented; no workbook bytes."
     },
     {
       "id": "V01.clinical_source_qc",
@@ -308,7 +308,7 @@
       "requires": [
         "V01.event_source_bytes"
       ],
-      "scope": "Independent event and record provenance, source/first-contact separation, completeness, duplicate and study overlap review; prespecified incremental information feasibility."
+      "scope": "Independent event and record provenance, source/first-contact separation, completeness, duplicate and study overlap review; prespecified incremental information feasibility. 27 November metadata-only profile and source-specific prospective QC checklist documented; clinical event-level QC remains pending and no patient data admitted."
     },
     {
       "id": "V01.extraction_method",

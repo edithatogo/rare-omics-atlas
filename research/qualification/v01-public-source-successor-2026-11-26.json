@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "source_revision": "2e5c5168c71b07ec2cee35be28fdbc36d3a8c03d",
+  "checked_at": "2026-11-26T10:43:22.865674+00:00",
+  "sources": [
+    {
+      "source": "pubmed",
+      "requested_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=9887916,12492390,23508658,19409658,15588216,32604451,27770113,28711467,35925949,35638940,37251904,23039299&retmode=json",
+      "status": "source_bytes_and_selected_content_verified",
+      "curl_exit": 0,
+      "http_status": "200",
+      "effective_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=9887916,12492390,23508658,19409658,15588216,32604451,27770113,28711467,35925949,35638940,37251904,23039299&retmode=json",
+      "size_bytes": 21087,
+      "sha256": "1f6cb3edc23afcb30aa3080c929dcec569ace3599362b8510d8d4528c96ef1b8",
+      "pmids": [
+        "9887916",
+        "12492390",
+        "23508658",
+        "19409658",
+        "15588216",
+        "32604451",
+        "27770113",
+        "28711467",
+        "35925949",
+        "35638940",
+        "37251904",
+        "23039299"
+      ],
+      "resolved_records": 12
+    }
+  ],
+  "scope": "Public bibliographic metadata only",
+  "clinical_inference_admitted": false,
+  "original_event_bytes_retrieved": false,
+  "raw_source_retention": "ephemeral; source-linked Bronze, not a permanent byte mirror",
+  "outside_scope": [
+    "AIHW PDF/workbook acquisition remains held after HTTP 403",
+    "original eAtlas clinical event archive"
+  ]
+}
