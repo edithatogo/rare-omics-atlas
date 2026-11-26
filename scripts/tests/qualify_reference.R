@@ -883,8 +883,12 @@ if (stage=="annotation") {
     }
     emit <- function(x,name) write.table(x,file.path(output,name),sep="\t",
         quote=FALSE,row.names=FALSE)
-    emit_summary <- function(values,name) emit(data.frame(metric=names(values),
-        value=unname(values)),name)
+    emit_summary <- function(values,name) {
+        # Require one scalar per metric, including when counts mix with hashes.
+        stopifnot(!is.null(names(values)),!anyDuplicated(names(values)),
+            all(lengths(as.list(values))==1L))
+        emit(data.frame(metric=names(values),value=as.character(values)),name)
+    }
     ids_path <- file.path(output,"technical-cohort-qc-denominator.txt")
     ids <- readLines(ids_path)
     stopifnot(length(ids)==408966L,identical(ids,sort(unique(ids),method="radix")),
@@ -968,8 +972,10 @@ if (stage=="annotation") {
         interval_crosses_bin=sum(e>bin+1000L),
         duplicate_anchor_probes=sum(duplicate_anchor),
         distinct_anchors=length(unique(locus)),unknown_strand=sum(strand=="*"),
-        as.list(table(factor(comparison,levels=c("absent_from_historical_order",
+        setNames(as.integer(table(factor(comparison,levels=c("absent_from_historical_order",
             "historical_coordinate_unavailable","same_anchor","different_anchor")))),
+            c("absent_from_historical_order","historical_coordinate_unavailable",
+                "same_anchor","different_anchor")),
         coordinates_sha256=sha256(file.path(output,"annotation-native-coordinates.tsv"))),
         "annotation-coordinate-summary.tsv")
     rm(gr,coordinates,old_order,old_coord,old_ix,old_chr,old_start,old_valid,
