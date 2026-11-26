@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - scripts/molecular_replay.py
+      - scripts/replication_source_replay.py
+      - scripts/tests/test_replication_source_replay.py
       - scripts/tests/test_molecular_replay.py
       - .github/workflows/molecular-source.yml
   workflow_dispatch:
@@ -291,4 +293,49 @@ jobs:
                             "openpyxl_version": openpyxl.__version__, "selected_native_controls": len(labels),
                             "worksheets": reports, "control_origin_join_verified": False,
                             "independence_verified": False, "analysis_admitted": False}, sort_keys=True))
+          PY
+      - name: Receive Brazilian replication declarations (aggregate-only metadata)
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116300&targ=gsm&form=text&view=brief' \
+            -o "$work/replication.soft"
+          curl --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 180 \
+            'https://raw.githubusercontent.com/demh/epigenetic_ageing_clock/6fd592a4672a0281818a2a4c45ddf239b892097d/paper/syndromes_screen/metadata_files/GSE116300/metadata_GSE116300_curated.csv' \
+            -o "$work/curated.csv"
+          uv run --project tools/hf-release --frozen --python 3.15.2 python - "$work" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, str(Path("scripts").resolve()))
+          from molecular_replay import write_review
+          from replication_source_replay import review
+
+          work = Path(sys.argv[1])
+          report, manifest, decisions = review(
+              (work / "replication.soft").read_bytes(), (work / "curated.csv").read_bytes()
+          )
+          write_review(work / "replication-review", report, manifest, decisions)
+          assert report["molecular_source_eligible"] == 9 and report["selected_control_assays"] == 9
+          assert report["sampling_age_verified"] is False and report["analysis_admitted"] is False
+          print(json.dumps(report, sort_keys=True))
+          PY
+          status=0
+          cargo +1.95.0 run --locked --manifest-path tools/catalogue/Cargo.toml \
+            --bin sample-contract -- --input "$work/replication-review/declared-samples.json" > "$work/structural.json" || status=$?
+          test "$status" -eq 2
+          python3 - "$work/structural.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          report = json.loads(Path(sys.argv[1]).read_text())
+          assert report["summary"] == {"held": 18, "excluded": 0, "ready_for_review": 0}
+          assert report["analysis_admitted"] is False
+          assert report["independent_participant_count"] is None
+          print(json.dumps({"replication_structural_exit": 2, "summary": report["summary"],
+                            "analysis_admitted": False}))
           PY
