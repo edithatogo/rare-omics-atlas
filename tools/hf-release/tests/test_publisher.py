@@ -200,11 +200,17 @@ class HubContracts(unittest.TestCase):
 
         payloads = self.payloads()
         api = self.fake_api(payloads)
-        api.get_paths_info = lambda **kw: [
-            RepoFile(path=p.path_in_repo, size=p.size_bytes, oid=p.git_blob_sha1)
-            for p in payloads
-        ]
+        rows = []
+        for payload in payloads:
+            rows.append(
+                RepoFile(
+                    path=payload.path_in_repo,
+                    size=payload.size_bytes,
+                    oid=payload.git_blob_sha1,
+                )
+            )
         receipt = {}
+        api.get_paths_info = lambda **kw: rows
         publisher.publish(api, self.manifest, payloads, receipt, no_overwrite=True)
         self.assertEqual(receipt["status"], "already_published_verified")
         self.assertEqual(receipt["hub_verified_revision"], "1" * 40)
@@ -245,6 +251,32 @@ class HubContracts(unittest.TestCase):
             publisher.publish(api, self.manifest, self.payloads(), {}, no_overwrite=True)
         api.create_repo.assert_not_called()
         api.create_commit.assert_not_called()
+
+    def test_manual_publish_can_create_missing_public_repository(self):
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+
+        from huggingface_hub.errors import RepositoryNotFoundError
+
+        payloads = self.payloads()
+        api = self.fake_api(payloads)
+        response = Mock()
+        response.status_code = 404
+        response.headers = {}
+        api.repo_info = Mock(
+            side_effect=[
+                RepositoryNotFoundError("missing", response=response),
+                SimpleNamespace(private=False, sha="1" * 40),
+            ]
+        )
+        api.create_repo = Mock()
+        receipt = {}
+        publisher.publish(api, self.manifest, payloads, receipt)
+        api.create_repo.assert_called_once_with(
+            self.manifest["repo_id"], repo_type="dataset", private=False, exist_ok=False
+        )
+        self.assertEqual(receipt["status"], "published_verified")
+        self.assertEqual(api.calls[0]["parent_commit"], "1" * 40)
 
     def test_cli_passes_no_overwrite_to_publisher(self):
         from contextlib import redirect_stdout
