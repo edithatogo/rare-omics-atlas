@@ -37,7 +37,8 @@ jobs:
           ref: ${{ github.sha }}
           persist-credentials: false
           submodules: false
-          fetch-depth: 1
+          # The publisher tests verify immutable historical Git objects.
+          fetch-depth: 0
       - name: Record source and qualify publisher
         run: |
           git rev-parse HEAD
