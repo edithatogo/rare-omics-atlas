@@ -1,0 +1,140 @@
+name: V01 public source replay
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/v01-public-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-source-replay:
+    if: >-
+      github.repository == 'edithatogo/rare-venomics' &&
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' ||
+      github.event_name == 'pull_request' && github.event.pull_request.head.repo.id == 1467227964)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
+        with:
+          egress-policy: audit
+      - name: Prepare existing public source tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v pdftotext >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends poppler-utils
+          fi
+          python3 --version
+          pdftotext -v
+      - name: Acquire and verify public bibliographic and aggregate sources only
+        shell: bash
+        env:
+          SOURCE_REVISION: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          umask 077
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          python3 - "$work" "$RUNNER_TEMP/v01-public-source-receipt.json" <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          import subprocess
+          import sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          work, output = map(Path, sys.argv[1:])
+          ids = ["9887916", "12492390", "23508658", "19409658", "15588216",
+                 "32604451", "27770113", "28711467", "35925949", "35638940",
+                 "37251904", "23039299"]
+          sources = [
+              ("pubmed", "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
+               "?db=pubmed&id=" + ",".join(ids) + "&retmode=json", "eutils.ncbi.nlm.nih.gov"),
+              ("aihw", "https://www.aihw.gov.au/getmedia/d7acac5e-d721-4567-a335-6518177565ba/"
+               "contact-with-animals.pdf", "www.aihw.gov.au"),
+          ]
+          receipt = {
+              "schema_version": 1, "source_revision": os.environ["SOURCE_REVISION"],
+              "checked_at": datetime.now(timezone.utc).isoformat(), "sources": [],
+              "scope": "Public bibliographic metadata and already-published national aggregates only",
+              "clinical_inference_admitted": False, "original_event_bytes_retrieved": False,
+              "raw_source_retention": "ephemeral; source-linked Bronze, not a permanent byte mirror",
+          }
+          for source, url, host in sources:
+              record = {"source": source, "requested_url": url, "status": "held"}
+              receipt["sources"].append(record)
+              path = work / source
+              completed = subprocess.run(
+                  ["curl", "--fail", "--silent", "--show-error", "--location",
+                   "--max-redirs", "2", "--proto", "=https", "--proto-redir", "=https",
+                   "--connect-timeout", "15", "--max-time", "90", "--max-filesize", "10485760",
+                   "--output", str(path), "--write-out", "%{http_code}\t%{url_effective}", url],
+                  text=True, capture_output=True, check=False,
+              )
+              record["curl_exit"] = completed.returncode
+              status, _, final_url = completed.stdout.partition("\t")
+              record["http_status"] = status
+              if completed.returncode or status != "200" or urlsplit(final_url).hostname != host:
+                  record["hold_reason"] = "source access or unexpected effective host"
+                  continue
+              record["effective_url"] = final_url
+              original = path.read_bytes()
+              record.update(size_bytes=len(original), sha256=hashlib.sha256(original).hexdigest())
+              try:
+                  if source == "pubmed":
+                      result = json.loads(original)["result"]
+                      if set(result["uids"]) != set(ids) or len(result["uids"]) != len(ids):
+                          raise ValueError("identifier set changed")
+                      if any(str(result[i]["uid"]) != i or not result[i]["title"] for i in ids):
+                          raise ValueError("record identity or title missing")
+                      record["pmids"] = ids
+                      record["resolved_records"] = len(ids)
+                  else:
+                      if not original.startswith(b"%PDF-"):
+                          raise ValueError("not a PDF")
+                      parsed = subprocess.run(
+                          ["pdftotext", "-layout", str(path), "-"],
+                          text=True, capture_output=True, check=True,
+                      )
+                      plain = " ".join(parsed.stdout.split())
+                      match = re.search(
+                          r"\b(\d+) hospitalisations during 2021[-–]22 were due to Irukandji"
+                          r"\s*\((\d+\.\d+) per 100,000 persons\)", plain, re.I,
+                      )
+                      if not match or (int(match[1]), float(match[2])) != (91, 0.4):
+                          raise ValueError("published textual benchmark absent or changed")
+                      record["benchmark"] = {
+                          "period": "2021-22", "geography": "Australia",
+                          "unit": "hospitalisations, not unique people",
+                          "count": int(match[1]), "crude_rate_per_100000": float(match[2]),
+                          "attribution": "Based on Australian Institute of Health and Welfare material.",
+                          "figure_only_121_jellyfish_total": "not verified by this text replay",
+                          "supplementary_workbook": "not acquired",
+                      }
+                  record["status"] = "source_bytes_and_selected_content_verified"
+              except (ValueError, KeyError, TypeError, subprocess.CalledProcessError) as error:
+                  record["hold_reason"] = type(error).__name__
+          output.write_text(json.dumps(receipt, indent=2) + "\n")
+          print(json.dumps({"sources": [{"source": row["source"], "status": row["status"]}
+                                        for row in receipt["sources"]]}))
+          if any(row["status"] != "source_bytes_and_selected_content_verified"
+                 for row in receipt["sources"]):
+              raise SystemExit(2)
+          PY
+      - name: Preserve aggregate source receipt, including holds
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: v01-public-source-receipt-${{ github.sha }}
+          path: ${{ runner.temp }}/v01-public-source-receipt.json
+          if-no-files-found: warn
+          retention-days: 14
