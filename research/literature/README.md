@@ -14,6 +14,8 @@
 | [23 November watch receipt](2026-11-23-watch.json) | Overlapping entry-date queries and exact accession checks, BioStudies and GEO metadata source responses, three new primary publications with four verified historical reuse edges, OpenAlex identifier crosswalk, limitations, and E0–E7 disposition |
 | [Paired-array addendum API receipts](2026-11-22-paired-addendum-api-receipts.json) | Fresh exact-ID/DOI lookups for Kandaswamy, Sugden and Cheung through PubMed, OpenAlex and Europe PMC; failed full-text calls and successful documented PMC AWS retrievals, with hashes, version metadata and limits |
 
+| [26 November V01 clinical reconciliation](2026-11-26-v01-reconciliation.json) | Twelve exact PubMed IDs resolved; bounded publication-level source designs, candidate overlap and explicit source access/rights holds. Reuses the receipt and edge conventions without altering Rare Disease records. No clinical admission, full systematic search or patient-level joins. |
+
 ## How to extend the record
 
 For each search event retain the retrieval date/time, provider, exact query or request URL, translated query if supplied, pagination, returned counts, warnings and failures. Date provider outputs separately from the publication's electronic and issue dates. Link a changed conclusion to the exact evidence record.

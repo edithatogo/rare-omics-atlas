@@ -292,7 +292,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Programmatically retrieved three PubMed bibliographic records; original and expanded eAtlas catalogue and AIHW published aggregate source context; three published benchmark rows manually transcribed. Source-level event access, overlap and scientific admission not established."
+      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted."
     },
     {
       "id": "V01.event_source_bytes",
@@ -300,7 +300,7 @@
       "requires": [
         "V01.source_metadata"
       ],
-      "scope": "Original and expanded eAtlas clinical event data not downloaded; direct catalogue HTTP 403, local DNS unavailable. Verify public authorised transfer, actual bytes and terms in approved environment; no raw event rows in Git or unapproved cloud."
+      "scope": "Original and expanded eAtlas event data not acquired. Original catalogue and public Nextcloud archive landing page/filename verified; no ZIP or CSV bytes. Source version/terms and approved trusted-device acquisition required. AIHW workbook also not retrieved; later H16 aggregate table is a candidate."
     },
     {
       "id": "V01.clinical_source_qc",
@@ -347,12 +347,12 @@
     },
     {
       "id": "V01.hf_metadata",
-      "status": "pending",
+      "status": "blocked_external",
       "requires": [
         "V01.source_metadata",
         "T00.strict_code"
       ],
-      "scope": "Source-bound four-object metadata/aggregate release candidate to existing edithatogo/rare-omics-atlas Hub, with existing official publisher; actual authenticated trusted publication and immutable read-back outstanding. No patient data or original eAtlas bytes."
+      "scope": "Four-object metadata/aggregate release merged on main, current main strict CI 45779804390 passed. Hub listing on 26 November confirms no V01 objects. Existing authenticated trusted owner runner and dispatch/publication/read-back needed; no accessible device or write/dispatch action observed in current session. No raw patient data."
     }
   ],
   "external_gate_resolution": {
