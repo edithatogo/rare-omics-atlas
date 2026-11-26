@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source_revision": "d2cbbdff384840af3b93dfed93df90e293c93f59",
+  "checked_at": "2026-11-26T08:51:55.073449+00:00",
+  "sources": [
+    {
+      "source": "pubmed",
+      "requested_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=9887916,12492390,23508658,19409658,15588216,32604451,27770113,28711467,35925949,35638940,37251904,23039299&retmode=json",
+      "status": "source_bytes_and_selected_content_verified",
+      "curl_exit": 0,
+      "http_status": "200",
+      "effective_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=9887916,12492390,23508658,19409658,15588216,32604451,27770113,28711467,35925949,35638940,37251904,23039299&retmode=json",
+      "size_bytes": 21087,
+      "sha256": "1f6cb3edc23afcb30aa3080c929dcec569ace3599362b8510d8d4528c96ef1b8",
+      "pmids": [
+        "9887916",
+        "12492390",
+        "23508658",
+        "19409658",
+        "15588216",
+        "32604451",
+        "27770113",
+        "28711467",
+        "35925949",
+        "35638940",
+        "37251904",
+        "23039299"
+      ],
+      "resolved_records": 12
+    },
+    {
+      "source": "aihw",
+      "requested_url": "https://www.aihw.gov.au/getmedia/d7acac5e-d721-4567-a335-6518177565ba/contact-with-animals.pdf",
+      "status": "held",
+      "curl_exit": 22,
+      "http_status": "403",
+      "hold_reason": "source access or unexpected effective host"
+    }
+  ],
+  "scope": "Public bibliographic metadata and already-published national aggregates only",
+  "clinical_inference_admitted": false,
+  "original_event_bytes_retrieved": false,
+  "raw_source_retention": "ephemeral; source-linked Bronze, not a permanent byte mirror"
+}

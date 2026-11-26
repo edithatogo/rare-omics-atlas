@@ -292,7 +292,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted."
+      "scope": "Initial three-record bibliographic release merged; 26 November exact-ID retrieval resolved 12 selected publications and curated study-level source/overlap and access receipts in research/literature/2026-11-26-v01-reconciliation.json. Source-level event data and independent cohorts not admitted. Hosted replay 45786593656 resolved all 12 PubMed IDs from 21,087 actual response bytes with SHA-256 retained; AIHW report HTTP 403 in same replay. PubMed-only successor requires fresh verification; original event, AIHW workbook and scientific admission remain held."
     },
     {
       "id": "V01.event_source_bytes",
