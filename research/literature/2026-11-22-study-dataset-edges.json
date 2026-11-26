@@ -224,6 +224,54 @@
       },
       "metadata_source": "Published version of record; matched preprint is not a second study",
       "openalex_id": "https://openalex.org/W4404735508"
+    },
+    {
+      "study_id": "PMID:28475860",
+      "pmid": "28475860",
+      "pmcid": "PMC5420353",
+      "doi": "10.1016/j.ajhg.2017.04.004",
+      "title": "CHARGE and Kabuki Syndromes: Gene-Specific DNA Methylation Signatures Identify Epigenetic Mechanisms Linking These Clinically Overlapping Conditions",
+      "journal": "American Journal of Human Genetics",
+      "pubmed_publication_date": "2017 May 4",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28475860/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/",
+      "canonical_publication_date": "2017-05-04"
+    },
+    {
+      "study_id": "PMID:29255178",
+      "pmid": "29255178",
+      "pmcid": "PMC5865196",
+      "doi": "10.1038/s41431-017-0023-0",
+      "title": "Patients with a Kabuki syndrome phenotype demonstrate DNA methylation abnormalities",
+      "journal": "European Journal of Human Genetics",
+      "pubmed_publication_date": "2017 Dec",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29255178/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5865196/",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:36705342",
+      "pmid": "36705342",
+      "pmcid": null,
+      "doi": "10.1111/cge.14304",
+      "title": "DNA methylation signature classification of rare disorders using publicly available methylation data",
+      "journal": "Clinical Genetics",
+      "pubmed_publication_date": "2023 Jun",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36705342/",
+      "full_text_url": "https://onlinelibrary.wiley.com/doi/10.1111/cge.14304",
+      "canonical_publication_date": null
+    },
+    {
+      "study_id": "PMID:38528056",
+      "pmid": "38528056",
+      "pmcid": "PMC11220151",
+      "doi": "10.1038/s41431-024-01597-9",
+      "title": "DNA methylation profiling in Kabuki syndrome: reclassification of germline KMT2D VUS and sensitivity in validating postzygotic mosaicism",
+      "journal": "European Journal of Human Genetics",
+      "pubmed_publication_date": "2024 Jul",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38528056/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11220151/",
+      "canonical_publication_date": "2024-03-25"
     }
   ],
   "edges": [
@@ -478,6 +526,54 @@
       "evidence_location": "Results: Table 1 Description of datasets; Results following Table 1: extracted methylation profiles; Nature Communications published version",
       "checked_on": "2026-11-23",
       "notes": "Age-18 twin series (426 monozygotic and 306 dizygotic twin pairs as reported in Table 1) reused for a published clonality analysis. This is not paired-array validation, and joint appearance with GSE154566 does not determine person/family overlap or independent test eligibility."
+    },
+    {
+      "study_id": "PMID:28475860",
+      "doi": "10.1016/j.ajhg.2017.04.004",
+      "dataset_id": "GSE97362",
+      "relation": "generated",
+      "analysis_type": "CHD7_KMT2D_methylation_signature",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5420353/",
+      "evidence_location": "Methods; discovery cohorts; data accession",
+      "checked_on": "2026-11-25",
+      "notes": "Native KMT2D discovery contrast 11 molecularly confirmed cases and 11 matching controls; prior source joins exact. No family/individual-control-origin evidence or independently qualified sample QC. Additional GEO controls are not this native contrast."
+    },
+    {
+      "study_id": "PMID:29255178",
+      "doi": "10.1038/s41431-017-0023-0",
+      "dataset_id": "GSE116300",
+      "relation": "generated",
+      "analysis_type": "Kabuki_phenotype_methylation_signature",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5865196/",
+      "evidence_location": "Methods; patient samples; supervised analysis; data availability",
+      "checked_on": "2026-11-25",
+      "notes": "Nine molecular KMT2D cases and nine matched controls in reported supervised contrast; 27 clinical probands recruited in Brazil. Deposited assays are not an exact participant crosswalk; publication KS labels and GEO PAT labels unresolved, two excluded clinic recruits not identified. Same-center control provenance is group-level."
+    },
+    {
+      "study_id": "PMID:36705342",
+      "doi": "10.1111/cge.14304",
+      "dataset_id": "GSE218186",
+      "relation": "generated",
+      "analysis_type": "KMT2D_classifier_public_training",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://onlinelibrary.wiley.com/doi/10.1111/cge.14304",
+      "evidence_location": "Section 2.1; Table 1; Data Availability Statement",
+      "checked_on": "2026-11-25",
+      "notes": "Internal IC1 seven P/LP cases and 55 healthy controls; distinct IC2 not silently included in this accession. Exact assay-to-case assignment and biological independence remain unresolved."
+    },
+    {
+      "study_id": "PMID:36705342",
+      "doi": "10.1111/cge.14304",
+      "dataset_id": "GSE97362",
+      "relation": "reused",
+      "analysis_type": "KMT2D_classifier_public_training",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://onlinelibrary.wiley.com/doi/10.1111/cge.14304",
+      "evidence_location": "Section 2.1; Table 1; Data Availability Statement",
+      "checked_on": "2026-11-25",
+      "notes": "Public PC 19 cases and 57 controls reused for classifier training; published 153-CpG signature and cross-study normalization mean not a previously untouched holdout. Exact overlap with native 11+11 and individual membership require separate evidence."
     }
   ],
   "dataset_relationships": [
@@ -533,6 +629,21 @@
         "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154566"
       ],
       "required_before_joint_use": "Reconcile explicit specimen/person and family IDs; keep related/repeated observations together. Do not add the sample counts or promote this to an explicit Sugden-to-GSE154566 use edge without primary confirmation."
+    },
+    {
+      "study_id": "PMID:38528056",
+      "dataset_id": "GSE218186",
+      "related_study_id": "PMID:36705342",
+      "status": "publication_case_reuse_confirmed_exact_assay_and_control_overlap_unverified",
+      "reason": "Niceta 2024 Methods external RH cohort includes seven molecularly confirmed cases previously characterized in reference 34 (Hildonen 2023), one VUS and 55 healthy controls. Seven case reuse is explicit at publication level; neither exact GSM/array reuse nor individual control overlap is stated. No additional independent replication cohort count is justified. Italian internal samples and the external VUS are not automatically included in GSE218186; the 2024 raw dataset is available on request, not verified as publicly deposited.",
+      "overlap_participant_count": null,
+      "independent_holdout_established": false,
+      "checked_on": "2026-11-25",
+      "evidence_sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11220151/",
+        "https://www.nature.com/articles/s41431-024-01597-9",
+        "https://onlinelibrary.wiley.com/doi/10.1111/cge.14304"
+      ]
     }
   ],
   "date_conflicts": [
@@ -552,5 +663,5 @@
     "A PubMed exact-accession hit without full-text context",
     "No exact-accession hits"
   ],
-  "last_verified_addendum_on": "2026-11-23"
+  "last_verified_addendum_on": "2026-11-25"
 }

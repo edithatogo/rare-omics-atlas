@@ -72,7 +72,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Applicable institution exemption/review/governance determination"
+      "scope": "Written applicable institutional exemption/review, consent and governance determination; P1 packet drafted in research/source-access-ethics.md, not submitted or approved."
     },
     {
       "id": "T01.analysis_admission",
@@ -83,7 +83,7 @@
         "T01.institutional_classification",
         "T07.technical_preprocessing"
       ],
-      "scope": "Molecular subset via versioned original-source decision replay; source-reported versus new classification distinguished; native controls, material participant/specimen independence, overlap/covariates, selected QC and source eligibility; PR #16 merged and main verified, 22 held and zero admitted, control-origin and biological independence unresolved."
+      "scope": "Molecular subset via versioned original-source decision replay; source-reported versus new classification distinguished; native controls, material participant/specimen independence, overlap/covariates, selected QC and source eligibility; PR #16 merged and main verified, 22 held and zero admitted, control-origin and biological independence unresolved. Primary-study review established Brazilian same-center control provenance and Danish seven-case publication reuse; exact assay and control overlap, age semantics and biological independence not resolved. 257 held / 84 scope exclusions / zero admitted unchanged."
     },
     {
       "id": "T07.fork_baseline",
@@ -118,7 +118,7 @@
         "T07.selected_contract",
         "T00.strict_code"
       ],
-      "scope": "Bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Native R accepted 13,817 GO terms and 2,178 eligible Reactome v98 pathways on 4,000 tested/200 selected synthetic CpGs; independent full-family BH and boundary checks passed, with raw native probability-domain failures retained. Next bounded native synthetic complete-case, per-arm missingness/rank and fixed-region score receiver is staged; actual execution and independent artifact review required. Complete scientific/preprocessing selection, cohort-scale mapping/QC and production ingestion/consumer qualification remain open. Only a chosen Rust route depends on remaining LM02 evidence."
+      "scope": "Bounded named-v1 synthetic producer/receiver passed under T07.synthetic_consumer. Native R accepted 13,817 GO terms and 2,178 eligible Reactome v98 pathways on 4,000 tested/200 selected synthetic CpGs; independent full-family BH and boundary checks passed, with raw native probability-domain failures retained. PR27 bounded native synthetic complete-case, per-arm missingness/rank and fixed-region score operation passed native, strict, hook and independent 31-row replay; merged exact tree; same-head automated review passed after merge. Receiving-main pending at receipt. Complete scientific/preprocessing selection, cohort-scale mapping/QC and production ingestion/consumer qualification remain open. Only a chosen Rust route depends on remaining LM02 evidence."
     },
     {
       "id": "T07.protocol_freeze",
