@@ -44,6 +44,8 @@ Patient files are never committed to Git. The current Hub publication is the [me
 
 ## Strict development verification
 
+[![Codecov](https://codecov.io/gh/edithatogo/rare-venomics/graph/badge.svg)](https://app.codecov.io/gh/edithatogo/rare-venomics) — [coverage dashboard](https://app.codecov.io/gh/edithatogo/rare-venomics).
+
 The [repository integration contract](research/repository-integration.md) assigns numerical ownership to limma and source/receiving ownership to atlas. Atlas's strict command runs an actual synthetic file exchange against an immutable limma commit and its independent R references. It also tests the local source/sample boundary; neither code contract admits a dataset for inference.
 
 Install and run the pinned checks from the repository root before new code changes and after each increment:
