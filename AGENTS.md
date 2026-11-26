@@ -26,4 +26,6 @@ One repository, two scientific streams: Rare Disease (existing T01–T05/T07 sci
 
 ## Incremental execution
 
+Before each batch, consult the [cross-stream capability crosswalk](conductor/capability-crosswalk.md). Consider both streams' concrete consumers upfront; implement or qualify shared capabilities once, just before the first real use, at the existing owner. Preserve domain-specific scientific admission and the rare-disease critical path. Record reuse/extend/defer decisions in the owning track/PR.
+
 Implement one ready, bounded track; review its actual outputs; archive it when its stated acceptance criteria pass, then start the next dependent track. The owner has already selected archiving, so do not ask again. Keep incomplete parent scientific tracks open. Independent source/literature review may run in parallel under separate path ownership. Estimate work in agent execution batches with input/exit criteria; record observed wall-clock duration when available. Do not use person-weeks/months or invent agent delivery times.
