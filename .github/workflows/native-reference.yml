@@ -45,6 +45,7 @@ jobs:
               "idats/HM450/3999492009_R01C01_Grn.idat",
               "idats/HM450/3999492009_R01C01_Red.idat",
               "assets/HM450/HM450.ordering.tsv.gz",
+              "assets/HM450/HM450.hg38.coord.tsv.gz",
               "NCBI2Reactome_All_Levels.txt",
           )
           for name in keys:
@@ -81,7 +82,7 @@ jobs:
             -v "$GITHUB_WORKSPACE/artifacts/reference-qualification:/output" \
             "$REFERENCE_IMAGE" bash -euc '
               mkdir -p /tmp/atlas-reference
-              for stage in install technical limma enrichment; do
+              for stage in install technical limma enrichment annotation; do
                 echo "Starting stage: $stage"
                 if [ -x /usr/bin/time ]; then
                   /usr/bin/time -v -o "/output/${stage}-resource.txt" \
