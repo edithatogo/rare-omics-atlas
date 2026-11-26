@@ -43,6 +43,8 @@ Before a Hub mutation, upload mode requires matching Git `HEAD`, tracked and cle
 
 One official `create_commit` call receives exactly the allowlisted additions plus two generated release records. The observed Hub parent commit is supplied as `parent_commit`, so a concurrent change makes the operation fail. No folder glob, deletion, or unrelated account/repository update is performed.
 
+For the new one-shot public metadata lane, `--no-overwrite` additionally refuses to create a missing repository and checks the six selected paths against the same immutable parent used for the guarded commit. If any exists, only exact verification of all selected objects, including the generated provenance, succeeds without a write (`already_published_verified`, `hub_verified_revision`); partial or differing releases fail closed. A replay at a different source revision may legitimately hold because provenance differs. This option leaves the historical/manual release behavior unchanged. The [V01 activation](../../.github/workflows/publish-v01-public-metadata.yml) pins the reviewed manifest SHA-256, uses successful main CI, excludes `--fetch-sources`, and does not repeat on ordinary main updates. The secret is needed only for actual transfer.
+
 After commit, the script queries the returned immutable Hub revision. Every selected object's size must match, along with its LFS SHA-256 or, for small ordinary Git files, the Git blob SHA-1 computed with the standard blob header. SHA-1 is used solely for matching Git object identifiers; local content integrity and the release manifest use SHA-256. A verification failure retains the observed Hub commit in the failure receipt so publication cannot be mistaken for an operation that never occurred.
 
 ## Manifest contract

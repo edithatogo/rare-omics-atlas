@@ -56,6 +56,7 @@ class Arguments(argparse.Namespace):
     receipt: Path
     upload: bool
     fetch_sources: bool
+    no_overwrite: bool
 
 
 REPOSITORY = "https://github.com/edithatogo/rare-omics-atlas"
@@ -391,7 +392,12 @@ def verify_remote(
 
 
 def publish(
-    api: HfApi, manifest: Manifest, payloads: list[Payload], receipt: dict[str, object]
+    api: HfApi,
+    manifest: Manifest,
+    payloads: list[Payload],
+    receipt: dict[str, object],
+    *,
+    no_overwrite: bool = False,
 ) -> None:
     from huggingface_hub import CommitOperationAdd
     from huggingface_hub.errors import RepositoryNotFoundError
@@ -400,7 +406,7 @@ def publish(
     try:
         info = api.repo_info(repo_id, repo_type="dataset")
     except RepositoryNotFoundError as exc:
-        if exc.response.status_code != 404:
+        if no_overwrite or exc.response.status_code != 404:
             raise
         api.create_repo(repo_id, repo_type="dataset", private=False, exist_ok=False)
         info = api.repo_info(repo_id, repo_type="dataset")
@@ -409,6 +415,18 @@ def publish(
     if not isinstance(info.sha, str) or not re.fullmatch(r"[0-9a-f]{40}", info.sha):
         raise ReleaseError("Hub target has no observable parent commit")
     receipt["hub_parent_commit"] = info.sha
+    if no_overwrite and api.get_paths_info(
+        repo_id=repo_id,
+        paths=[p.path_in_repo for p in payloads],
+        revision=info.sha,
+        repo_type="dataset",
+    ):
+        # No mutation if any selected path already exists. Only an exact
+        # existing release (including its provenance) is a successful replay.
+        receipt["remote_objects"] = verify_remote(api, repo_id, info.sha, payloads)
+        receipt["hub_verified_revision"] = info.sha
+        receipt["status"] = "already_published_verified"
+        return
     operations = [
         CommitOperationAdd(path_in_repo=p.path_in_repo, path_or_fileobj=p.content) for p in payloads
     ]
@@ -450,6 +468,7 @@ def main() -> int:
     parser.add_argument("--receipt", type=Path, required=True)
     parser.add_argument("--upload", action="store_true")
     parser.add_argument("--fetch-sources", action="store_true")
+    parser.add_argument("--no-overwrite", action="store_true")
     args = parser.parse_args(namespace=Arguments())
     started = time.monotonic()
     receipt: dict[str, object] = {
@@ -516,7 +535,7 @@ def main() -> int:
         if args.upload:
             from huggingface_hub import HfApi
 
-            publish(HfApi(), manifest, payloads, receipt)
+            publish(HfApi(), manifest, payloads, receipt, no_overwrite=args.no_overwrite)
         result = 0
     except Exception as exc:
         receipt["status"] = "failed"

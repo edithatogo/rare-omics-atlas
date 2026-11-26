@@ -179,6 +179,89 @@ class HubContracts(unittest.TestCase):
         )
         self.assertEqual(len(receipt["remote_objects"]), 3)
 
+    def test_new_release_uses_observed_parent_when_paths_absent(self):
+        from unittest.mock import patch
+
+        payloads = self.payloads()
+        api = self.fake_api(payloads)
+        readback = api.get_paths_info
+        with patch.object(
+            api,
+            "get_paths_info",
+            side_effect=lambda **kw: [] if kw["revision"] == "1" * 40 else readback(**kw),
+        ):
+            receipt = {}
+            publisher.publish(api, self.manifest, payloads, receipt, no_overwrite=True)
+        self.assertEqual(receipt["status"], "published_verified")
+        self.assertEqual(api.calls[0]["parent_commit"], "1" * 40)
+
+    def test_no_overwrite_exact_existing_release_is_read_only(self):
+        from huggingface_hub.hf_api import RepoFile
+
+        payloads = self.payloads()
+        api = self.fake_api(payloads)
+        api.get_paths_info = lambda **kw: [
+            RepoFile(path=p.path_in_repo, size=p.size_bytes, oid=p.git_blob_sha1)
+            for p in payloads
+        ]
+        receipt = {}
+        publisher.publish(api, self.manifest, payloads, receipt, no_overwrite=True)
+        self.assertEqual(receipt["status"], "already_published_verified")
+        self.assertEqual(receipt["hub_verified_revision"], "1" * 40)
+        self.assertEqual(len(receipt["remote_objects"]), len(payloads))
+        self.assertEqual(api.calls, [])
+
+    def test_no_overwrite_rejects_partial_or_mismatching_release(self):
+        from huggingface_hub.hf_api import RepoFile
+
+        payloads = self.payloads()
+        for partial in (True, False):
+            with self.subTest(partial=partial):
+                api = self.fake_api(payloads)
+                api.get_paths_info = lambda **kw: [
+                    RepoFile(path=p.path_in_repo, size=p.size_bytes, oid="0" * 40)
+                    for p in (payloads[:1] if partial else payloads)
+                ]
+                with self.assertRaises(publisher.ReleaseError):
+                    publisher.publish(api, self.manifest, payloads, {}, no_overwrite=True)
+                self.assertEqual(api.calls, [])
+
+    def test_no_overwrite_never_creates_missing_target(self):
+        from unittest.mock import Mock
+
+        from huggingface_hub.errors import RepositoryNotFoundError
+
+        api = Mock()
+        api.repo_info.side_effect = RepositoryNotFoundError("missing")
+        with self.assertRaises(RepositoryNotFoundError):
+            publisher.publish(api, self.manifest, self.payloads(), {}, no_overwrite=True)
+        api.create_repo.assert_not_called()
+        api.create_commit.assert_not_called()
+
+    def test_cli_passes_no_overwrite_to_publisher(self):
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from unittest.mock import patch
+
+        manifest = self.root / "manifest.json"
+        manifest.write_text(json.dumps(self.manifest))
+        receipt = self.root / "receipt.json"
+        argv = [
+            "publisher.py", "--manifest", str(manifest), "--root", str(self.root),
+            "--data-root", str(self.root), "--source-revision", "a" * 40,
+            "--receipt", str(receipt), "--upload", "--no-overwrite",
+        ]
+        with (
+            patch.object(sys, "argv", argv),
+            patch.object(publisher, "assert_source_checkout"),
+            patch("huggingface_hub.HfApi"),
+            patch.object(publisher, "publish") as upload,
+            redirect_stdout(StringIO()),
+        ):
+            self.assertEqual(publisher.main(), 0)
+        self.assertTrue(upload.call_args.kwargs["no_overwrite"])
+        self.assertTrue(receipt.is_file())
+
     def test_failed_postcheck_retains_observed_commit(self):
         payloads = self.payloads()
         api = self.fake_api(payloads, corrupt=True)
