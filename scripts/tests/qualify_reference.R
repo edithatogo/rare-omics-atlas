@@ -960,6 +960,34 @@ if (stage=="annotation") {
         region=region,duplicate_anchor=duplicate_anchor,historical_comparison=comparison)
     stopifnot(identical(coordinates$probe,ids),!anyDuplicated(coordinates$probe))
     emit(coordinates,"annotation-native-coordinates.tsv")
+    # Preserve compared source fields, not only the result labels. This makes
+    # every historical disposition independently replayable without relying
+    # on a second network transfer of the source archives.
+    historical <- data.frame(probe=ids,historical_order_row=old_ix,
+        historical_probe=old_order$Probe_ID[old_ix],
+        historical_chr=old_chr,
+        historical_start0_literal=old_coord$CpG_beg[old_ix],
+        historical_strand=old_coord$strand[old_ix],
+        historical_mapq=old_coord$mapQ[old_ix],disposition=comparison)
+    stopifnot(identical(historical$probe,ids),
+        identical(historical$historical_probe[!is.na(old_ix)],ids[!is.na(old_ix)]),
+        !anyDuplicated(old_ix[!is.na(old_ix)]))
+    emit(historical,"annotation-historical-coordinate-join.tsv")
+    historical_files <- c("HM450.ordering.tsv.gz","HM450.hg38.coord.tsv.gz")
+    historical_hashes <- vapply(file.path(input,historical_files),sha256,character(1))
+    stopifnot(identical(unname(historical_hashes),c(
+        "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40")))
+    emit(data.frame(file=c(historical_files,"annotation-historical-coordinate-join.tsv"),
+        sha256=c(unname(historical_hashes),
+            sha256(file.path(output,"annotation-historical-coordinate-join.tsv")))),
+        "annotation-historical-source.tsv")
+    # Verify the emitted comparison has the complete eligible row space.
+    check_join <- read.delim(file.path(output,"annotation-historical-coordinate-join.tsv"),
+        colClasses="character",quote="",comment.char="",check.names=FALSE)
+    stopifnot(identical(names(check_join),names(historical)),
+        identical(check_join$probe,ids),identical(check_join$disposition,comparison))
+    rm(historical,check_join)
     regions <- table(region)
     region_counts <- data.frame(region=names(regions),eligible_probes=as.integer(regions),
         at_least_three=as.integer(regions)>=3L)
