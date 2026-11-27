@@ -27,6 +27,8 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 ## Active implementation increment
 
+- [x] [28 November model assessment and public overlap audit](archive/model_assessment_20261128/index.md): AG2 alternatives and conditional T05/T06 evaluation contract received in PR #46 with exact-tree hook/strict, independent review and passing receiving-main CI. Bounded documentation/metadata increment archived; no model inference or parent scientific milestone completed.
+
 - [x] [V01 publication implementation/preflight correction](archive/v01_publication_preflight_20261127/index.md): exact-base native hook, receiving-main CI, all 47 publisher tests and six-object local dry-run passed. Bounded correction archived; actual V01 publication remains externally blocked on the scoped Actions credential, and the parent/source/scientific gates remain open.
 - [x] [T01a — source/sample declaration boundary](archive/t01a_sample_contract_20261123/index.md): public 341-assay reconciliation and strict local CLI passed independent review and combined verification. Archived; actual identities/independence and scientific admission remain held.
 - [x] [T07a — pinned synthetic numerical exchange](archive/t07a_named_exchange_20261123/index.md): actual immutable producer/receiver exchanges and all 34 strict gates passed. Archived for the bounded synthetic contract; preprocessing and scientific/device acceptance remain separate.
@@ -112,3 +114,4 @@ The atlas can select a qualified R/Bioconductor reference route while Rust admis
 Every analysis requires N0/N1 before, N2 after and N3 at submission. The scheduled weekly literature watch supplements those gates. Reorder at explicit decision points when a dataset is unusable, a new paper changes novelty or a simpler dependency removes work. Preserve frozen analyses and historical results.
 
 Tracks are work packages, not paper allocations. The default clinical bundle is E0 + E2 + E3, with E1 and backend checks in support. E4–E6 extend that paper or form one later coherent study only when the evidence warrants it.
+
