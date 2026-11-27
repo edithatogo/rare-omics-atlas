@@ -23,8 +23,9 @@ The future T06 owner resolves public quantitative/model evidence; the applicable
 methods, metadata inventories, source hashes and existing complement-model
 comparison. The [safe source receipt](../../../research/qualification/model-input-readiness-2026-11-28.json)
 keeps metadata retrieval separate from molecular payloads and model execution.
-The bounded authored assessment requires independent review and exact-current-base
-integration checks; its final receiving evidence belongs in the PR/archive.
+The bounded assessment is [received and archived](../../archive/model_input_readiness_20261128/index.md)
+after independent content/artifact review, exact-current-base native-hook/strict,
+privacy, dependency/provider checks and passing receiving-main verification.
 
 GSE261305's 108 assays are not an established genetically confirmed cohort.
 PXD003403 is the bottom-up deposit; MSV000079351 identifies related PXD004160.
@@ -57,7 +58,7 @@ and no new model dependency or T06 scientific milestone was completed.
 - Data rights and checksum receipts: public metadata/document hashes recorded in [feasibility](feasibility.md); molecular rights, clinical linkage and scientific admission **unqualified**
 - Biological/numerical baselines: **not run**; metadata/code integration receipts belong in the PR/archive
 - Publication / institutional gate: **unqualified**; source-specific conditions described in feasibility
-- Conductor disposition: bounded source assessment recorded; quantitative/scientific work **held**
+- Conductor disposition: bounded source assessment **received and archived**; quantitative/scientific work **held**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
 
