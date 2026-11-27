@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "model-source-overlap-2026-11-28",
+  "audit_date": "2026-11-28",
+  "scope": "Read-only audit of public model-corpus and repository assay metadata; aggregate findings only.",
+  "disposition": "metadata_audit_completed_scientific_admission_not_assessed",
+  "model": {
+    "name": "MethylGPT",
+    "code_release": "v1.1.2",
+    "weight_bundle": "methylgpt-1.1",
+    "release_url": "https://github.com/albert-ying/MethylGPT/releases/tag/v1.1.2",
+    "upstream_commit": "7b137f593caa941ee5b12b803ff98759c1d5c90c",
+    "no_weights_downloaded": true,
+    "no_model_execution": true
+  },
+  "sources": {
+    "model_corpus_split": {
+      "repository": "albert-ying/MethylGPT",
+      "commit": "7b137f593caa941ee5b12b803ff98759c1d5c90c",
+      "path": "methylgpt/release_tables/methylgpt_profile_split_2026-10-03.csv.gz",
+      "url": "https://raw.githubusercontent.com/albert-ying/MethylGPT/7b137f593caa941ee5b12b803ff98759c1d5c90c/methylgpt/release_tables/methylgpt_profile_split_2026-10-03.csv.gz",
+      "documentation_url": "https://github.com/albert-ying/MethylGPT/blob/7b137f593caa941ee5b12b803ff98759c1d5c90c/methylgpt/release_tables/README.md",
+      "git_blob_sha1": "b5bb7fef269d37ad40d18bf6bcf026b089aeea08",
+      "git_blob_sha1_verified_from_downloaded_bytes": true,
+      "sha256": "07581393c2dbe3870c4dc77d580fd1a3ec939393678c7198c82d0e7a6106670b",
+      "bytes": 844860,
+      "compression": "gzip",
+      "decoded_encoding": "UTF-8",
+      "parser": "Python standard library gzip.decompress, io.StringIO, csv.DictReader",
+      "expected_columns": [
+        "profile_id",
+        "dataset_group",
+        "split"
+      ],
+      "complete_parse": true
+    },
+    "repository_assay_catalogue": {
+      "repository": "edithatogo/rare-venomics",
+      "commit": "098a330517210d90a88512de12490a9f193764d4",
+      "path": "research/catalogue/2026-11-22/assays.jsonl",
+      "url": "https://raw.githubusercontent.com/edithatogo/rare-venomics/098a330517210d90a88512de12490a9f193764d4/research/catalogue/2026-11-22/assays.jsonl",
+      "sha256": "6e7680a5a66fd35380b3cf7a976e8aefb365fd69102779fb5ddf07b4289152fb",
+      "bytes": 992318,
+      "encoding": "UTF-8 JSON Lines",
+      "parser": "Python standard library json.loads for each nonempty line",
+      "rows": 2532,
+      "complete_parse": true
+    }
+  },
+  "model_corpus_totals": {
+    "rows": 169120,
+    "distinct_profile_identifiers": 169120,
+    "duplicate_profile_identifier_rows": 0,
+    "declared_split_counts": {
+      "train": 145700,
+      "dev": 3922,
+      "test": 14185,
+      "excluded_downstream": 5203,
+      "excluded_qc": 110
+    }
+  },
+  "target_datasets": [
+    {
+      "dataset_accession": "GSE97362",
+      "catalogue_rows": 235,
+      "unique_catalogue_assay_identifiers": 235,
+      "declared_dataset_group_rows": 235,
+      "declared_dataset_group_split_counts": {
+        "train": 0,
+        "dev": 0,
+        "test": 235,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "exact_catalogue_identifier_matches": 235,
+      "exact_matched_profile_rows": 235,
+      "exact_catalogue_identifier_matches_by_split": {
+        "train": 0,
+        "dev": 0,
+        "test": 235,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "unmatched_catalogue_identifiers": 0,
+      "interpretation": "All checked assay identifiers occur in the upstream declared test split. This is upstream evaluation overlap, not proof of untouched independent validation."
+    },
+    {
+      "dataset_accession": "GSE116300",
+      "catalogue_rows": 44,
+      "unique_catalogue_assay_identifiers": 44,
+      "declared_dataset_group_rows": 44,
+      "declared_dataset_group_split_counts": {
+        "train": 0,
+        "dev": 0,
+        "test": 44,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "exact_catalogue_identifier_matches": 44,
+      "exact_matched_profile_rows": 44,
+      "exact_catalogue_identifier_matches_by_split": {
+        "train": 0,
+        "dev": 0,
+        "test": 44,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "unmatched_catalogue_identifiers": 0,
+      "interpretation": "All checked assay identifiers occur in the upstream declared test split. This is upstream evaluation overlap, not proof of untouched independent validation."
+    },
+    {
+      "dataset_accession": "GSE218186",
+      "catalogue_rows": 62,
+      "unique_catalogue_assay_identifiers": 62,
+      "declared_dataset_group_rows": 0,
+      "declared_dataset_group_split_counts": {
+        "train": 0,
+        "dev": 0,
+        "test": 0,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "exact_catalogue_identifier_matches": 0,
+      "exact_matched_profile_rows": 0,
+      "exact_catalogue_identifier_matches_by_split": {
+        "train": 0,
+        "dev": 0,
+        "test": 0,
+        "excluded_downstream": 0,
+        "excluded_qc": 0
+      },
+      "unmatched_catalogue_identifiers": 62,
+      "interpretation": "No exact dataset-group or checked assay-identifier match in this published split table. Biological reuse, alternate identifiers, reuse through related publications, and upstream model-selection exposure remain unresolved."
+    }
+  ],
+  "method": {
+    "executed": true,
+    "source_fetch": "Python standard library urllib.request.urlopen against the two exact-commit raw URLs, with timeout=25 and a 3000000-byte read cap. Observed byte counts were below the cap and matched the recorded SHA-256 digests.",
+    "grouping": "Initial audit matched the target accession as a bounded token in dataset_group; returned group strings were exactly the target accession. No other group strings matched.",
+    "exact_identifier_join": "Select catalogue rows where dataset_accession equals the target GSE accession, deduplicate assay_accession, and match those exact strings against the complete upstream profile_id index. Count all matched profile rows by declared split. Do not infer aliases, biological identity, participant independence, or clinical eligibility.",
+    "full_table_checks": "Count every parsed split row, distinct profile_id values, duplicate profile_id rows, and all declared split labels. Verify compressed source SHA-256 and Git blob SHA-1; verify catalogue SHA-256.",
+    "repeatable_standard_library_recipe": [
+      "Fetch the two source URLs recorded above using urllib.request.urlopen; read at most 3000000 bytes from each response; check exact byte counts and hashlib.sha256 against this receipt.",
+      "Compute the corpus Git blob identifier as hashlib.sha1(b'blob ' + str(len(corpus_bytes)).encode() + b'\\0' + corpus_bytes).hexdigest(); require the recorded value.",
+      "Parse corpus_rows = list(csv.DictReader(io.StringIO(gzip.decompress(corpus_bytes).decode('utf-8')))); parse catalogue_rows = [json.loads(line) for line in catalogue_bytes.splitlines() if line].",
+      "Build a collections.defaultdict(list) index keyed by each corpus row's profile_id. Count total rows, distinct keys, duplicate rows, and collections.Counter(row['split'] for row in corpus_rows).",
+      "For each target in ['GSE97362', 'GSE116300', 'GSE218186'], select the set of row['assay_accession'] for catalogue rows where row['dataset_accession'] == target. Count matched and unmatched exact identifiers, all matched corpus rows, and their split frequencies.",
+      "Separately count corpus rows where dataset_group equals the target and their split frequencies. Emit aggregate counts only. Do not print or save the identifier keys, source rows or clinical attributes."
+    ]
+  },
+  "retrieval_failures": [
+    {
+      "operation": "GitHub connector fetch of the gzip source via its Git blob API URL",
+      "url": "https://api.github.com/repos/albert-ying/MethylGPT/git/blobs/b5bb7fef269d37ad40d18bf6bcf026b089aeea08",
+      "observed_error": "HTTPError: 400: GitHub Fetch only accepts UTF-8 text.",
+      "disposition": "Connector format limitation. The public exact-commit gzip was subsequently retrieved successfully using urllib.request; its bytes and Git blob identifier were verified."
+    }
+  ],
+  "evidence_limits": {
+    "biological_reuse_excluded": false,
+    "independent_validation_established": false,
+    "cohort_admission_established": false,
+    "scientific_model_qualification_established": false,
+    "upstream_training_execution_independently_verified": false,
+    "statements": [
+      "Published split labels are reported as declared by upstream; this audit did not reproduce or inspect every upstream training and model-selection execution.",
+      "Zero exact train/dev matches is not proof of absence of biological or alternative-identifier overlap, exposure through earlier model versions, outcome-informed feature selection, or developer/model-selection exposure.",
+      "GSE97362 and GSE116300 are already declared upstream test datasets; they are not established as untouched external validation for a new MethylGPT evaluation.",
+      "The absence of the 62 checked GSE218186 assay identifiers from this table is an exact-identifier result only and does not resolve the repository's participant/control-origin or biological-independence gates.",
+      "Counts represent public assay/profile metadata records, not independent participants, molecularly eligible cases, or admitted analysis units.",
+      "No scientific prediction, disease inference, clinical decision, model performance, or institutional/device acceptance was assessed."
+    ]
+  },
+  "data_handling": {
+    "source_rows_processed_in_memory_only": true,
+    "profile_identifiers_exported": false,
+    "source_rows_exported": false,
+    "clinical_attributes_exported": false,
+    "molecular_profiles_downloaded": false,
+    "model_weights_downloaded": false,
+    "model_execution_performed": false,
+    "patient_data_uploaded": false,
+    "artifact_content": "Source provenance, aggregate counts, reproducible audit method, retrieval limitation, and interpretation limits only."
+  }
+}
