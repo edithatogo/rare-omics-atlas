@@ -27,6 +27,7 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 ## Active implementation increment
 
+- [x] [V01 publication implementation/preflight correction](archive/v01_publication_preflight_20261127/index.md): exact-base native hook, receiving-main CI, all 47 publisher tests and six-object local dry-run passed. Bounded correction archived; actual V01 publication remains externally blocked on the scoped Actions credential, and the parent/source/scientific gates remain open.
 - [x] [T01a — source/sample declaration boundary](archive/t01a_sample_contract_20261123/index.md): public 341-assay reconciliation and strict local CLI passed independent review and combined verification. Archived; actual identities/independence and scientific admission remain held.
 - [x] [T07a — pinned synthetic numerical exchange](archive/t07a_named_exchange_20261123/index.md): actual immutable producer/receiver exchanges and all 34 strict gates passed. Archived for the bounded synthetic contract; preprocessing and scientific/device acceptance remain separate.
 - [x] [T07b — HM450 raw/Q and annotation qualification](archive/t07b_preprocessing_20261123/index.md): actual full-universe production exports, independent mathematical/R references, review and all 34 combined strict gates passed. Archived for the bounded raw/Q contract; [PR #12](https://github.com/edithatogo/rare-omics-atlas/pull/12) merged with actual hook, PR and main checks passed.
