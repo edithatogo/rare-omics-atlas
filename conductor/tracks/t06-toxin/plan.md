@@ -1,4 +1,4 @@
-# T06 — task-level execution plan (future, not started)
+# T06 — task-level execution plan (source feasibility assessed; modelling held)
 
 - [ ] **T06.01:** Start with GSE261305 for complement disease and PXD003403 venom proteins; verify genetic subsets and whether CVF identification is quantitative.
 - [ ] **T06.02:** Inventory pre-existing complement models, species-specific validity, venom concentration/kinetics and published experimental observations.
@@ -16,6 +16,22 @@
 The future T06 owner resolves public quantitative/model evidence; the applicable institutional and trusted-device operators own their decisions/runs. This branch never blocks the initial Kabuki study. No new wet-lab work is authorised by a feasibility plan.
 
 ## Receiving record
+
+### 28 November public-source feasibility assessment
+
+[Batch A feasibility](feasibility.md) now records the original GSE261305/PXD003403
+methods, metadata inventories, source hashes and existing complement-model
+comparison. The [safe source receipt](../../../research/qualification/model-input-readiness-2026-11-28.json)
+keeps metadata retrieval separate from molecular payloads and model execution.
+The bounded authored assessment requires independent review and exact-current-base
+integration checks; its final receiving evidence belongs in the PR/archive.
+
+GSE261305's 108 assays are not an established genetically confirmed cohort.
+PXD003403 is the bottom-up deposit; MSV000079351 identifies related PXD004160.
+CVF identification and relative proteomic methods do not supply active exposure
+or kinetics. Keep .01/.02's scientific qualification and .03/.04 open: the
+inspected pair does not support an identifiable genotype-by-venom prediction.
+No N1 freeze, solver selection, model inference or parent-track completion.
 
 ### 28 November conditional model reuse
 
@@ -36,12 +52,12 @@ feasibility hold where inputs or identifiability are missing; do not create an
 animal-genomics programme or delay V01 source reconciliation. No model was run
 and no new model dependency or T06 scientific milestone was completed.
 
-- Assigned owner: **unassigned**
-- Branch / pinned head: **none**
-- Data rights and checksum receipts: **not run**
-- Exact tests / numerical baselines: **not run**
-- Publication / ethics gate: **not assessed**
-- Conductor disposition: **planned**
+- Scientific execution owner: **unassigned**; bounded source assessment: current integrator
+- Quantitative branch / pinned head: **none**; source-assessment head bound in its PR/archive
+- Data rights and checksum receipts: public metadata/document hashes recorded in [feasibility](feasibility.md); molecular rights, clinical linkage and scientific admission **unqualified**
+- Biological/numerical baselines: **not run**; metadata/code integration receipts belong in the PR/archive
+- Publication / institutional gate: **unqualified**; source-specific conditions described in feasibility
+- Conductor disposition: bounded source assessment recorded; quantitative/scientific work **held**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
 

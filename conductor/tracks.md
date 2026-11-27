@@ -27,7 +27,8 @@ See [dependencies.json](dependencies.json) for task-level prerequisites and [set
 
 ## Active implementation increment
 
-- [x] [28 November model assessment and public overlap audit](archive/model_assessment_20261128/index.md): AG2 alternatives and conditional T05/T06 evaluation contract received in PR #46 with exact-tree hook/strict, independent review and passing receiving-main CI. Bounded documentation/metadata increment archived; no model inference or parent scientific milestone completed.
+- [ ] [28 November model-input/source feasibility](tracks/t06-toxin/feasibility.md): T06 Batch A source/parameter map and CpGPT membership availability audit authored; independent review and exact-current-base integration checks pending. Quantitative/scientific T06 remains held.
+
 
 - [x] [V01 publication implementation/preflight correction](archive/v01_publication_preflight_20261127/index.md): exact-base native hook, receiving-main CI, all 47 publisher tests and six-object local dry-run passed. Bounded correction archived; actual V01 publication remains externally blocked on the scoped Actions credential, and the parent/source/scientific gates remain open.
 - [x] [T01a — source/sample declaration boundary](archive/t01a_sample_contract_20261123/index.md): public 341-assay reconciliation and strict local CLI passed independent review and combined verification. Archived; actual identities/independence and scientific admission remain held.
