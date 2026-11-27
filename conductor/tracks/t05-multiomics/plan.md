@@ -26,6 +26,26 @@ Group every modality of a participant/family in the same split. Freeze source re
 
 ## Receiving record
 
+### 28 November optional model assessment
+
+The [model selection and evaluation decision](../../../research/model-selection-2026-11-28.md)
+records AG2 as a conditional human regulatory interpretation arm, plus more
+directly matched methylation, coding/splice and measured-cell alternatives.
+The executed aggregate MethylGPT metadata audit places all 235 GSE97362 and 44
+GSE116300 catalogue IDs in upstream test, with none in train/development; these
+are not fresh external validation cohorts. Exact-ID absence for GSE218186 does
+not establish biological independence. Model performance and checkpoint/device
+qualification remain unrun.
+
+Reuse this assessment within T05.03/.04 when there is a named eligible consumer.
+Keep AG2 outputs outside learned feature matrices while its API output terms
+prohibit ML training. Preserve measured methylation and frozen simple baselines;
+require biological-unit overlap review and an independent reference before a
+replication claim. No adapter, runtime, additional mandatory milestone or change
+to molecular eligibility is introduced. T02 remains on its existing critical
+path. This provider/source assessment is N0 input, not N1 or scientific completion;
+the receiving record below still describes the unexecuted parent track.
+
 **Additional E6 lead:** qualify the later Kabuki neural-model RNA/ChIP accessions GSE289159/GSE289158 only if a frozen blood-module question needs them; see [dataset limitations](../../../research/datasets.md#later-kabuki-neural-model-layer-rna-and-histone-chip-not-dna-arrays). Histone ChIP is not a DNA methylation array, differentiation/technical replicates are not independent donors, and GSE289158's direct file inventory remains unverified. Existing histone–expression integration is prior art, not a new result of this project.
 
 - Assigned owner: **unassigned**
@@ -40,3 +60,4 @@ Before marking complete, link exact evidence and obtain the integrator's receivi
 ### 24 November source-record audit and incremental question
 
 [Actual aggregate metadata review](../../../research/experiment-publication-plan.md#executed-public-metadata-pairing-audit-aggregate-only): Sotos companion RNA series contains six exact array/RNA titles (three cases and three individual controls); pooled-parent array excluded from individual matching. Confirm donor/specimen/timing/family and file/rights before claiming pairs. Only a small prospectively defined directional/module or agreement analysis is plausible at that paired size. ADNP SuperSeries contains 36 RNA and 57 DNA assay titles with differing naming conventions; obtain the author-provided crosswalk, never align by order. No new individual-level output produced. The source studies already integrate methylation and expression; select a narrow incremental benefit against existing results and methylation-only/expression-only baselines, or stop. Additional measurements on the same participants are specifically desirable, but split/resample by participant/family across every modality and source; model repeat/visit/tissue where relevant. For unpaired cohorts/cell models use only prespecified disease-level or cross-tissue corroboration, not invented paired correlations or independent patient validation. The [additional source leads](../../../research/datasets.md#additional-measurements-and-cohort-reuse--24-november-review) include request-only human PBMC measurements, published organoid multiome and public processed-only organoid lead; no data requests, new infrastructure or mandatory extra layer. Existing T05.01–.05 and N1/N2 govern all work.
+

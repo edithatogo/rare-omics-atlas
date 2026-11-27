@@ -17,6 +17,25 @@ The future T06 owner resolves public quantitative/model evidence; the applicable
 
 ## Receiving record
 
+### 28 November conditional model reuse
+
+Receive the [T05-owned model assessment and evaluation contract](../../../research/model-selection-2026-11-28.md)
+only when T06.01/.02 identifies eligible human inputs and a testable exposure
+question. AlphaMissense or a splice predictor may supply consequence-specific
+annotations; AG2 or one Borzoi-family model may supply regulatory predictions.
+None supplies toxin binding, reaction rates, dose-response parameters or the
+direction of genotype-dependent clinical susceptibility.
+
+Measured single-cell response work would have a separate consumer: scVI for
+observed-count integration; State for a supported perturbation/context transfer;
+PIE as an unqualified newer candidate for unseen perturbations. State's published
+training-exposure limits do not support arbitrary new venom predictions. Require
+actual independent functional observations, frozen conventional baselines and
+calibrated response metrics before interpreting any transfer. Preserve the
+feasibility hold where inputs or identifiability are missing; do not create an
+animal-genomics programme or delay V01 source reconciliation. No model was run
+and no new model dependency or T06 scientific milestone was completed.
+
 - Assigned owner: **unassigned**
 - Branch / pinned head: **none**
 - Data rights and checksum receipts: **not run**
@@ -25,4 +44,5 @@ The future T06 owner resolves public quantitative/model evidence; the applicable
 - Conductor disposition: **planned**
 
 Before marking complete, link exact evidence and obtain the integrator's receiving acknowledgement. Never infer completion from a document or synthetic fixture alone.
+
 
