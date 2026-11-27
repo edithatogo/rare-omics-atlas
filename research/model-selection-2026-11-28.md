@@ -148,6 +148,31 @@ T02 estimand or reserve a known upstream test cohort as if this audit had made i
 new. The audit is complete as a source-overlap receipt; model performance,
 Kabuki-effect preservation and device qualification are **not run**.
 
+## Follow-up: qualify inputs before selecting an adapter
+
+The [28 November source-readiness receipt](qualification/model-input-readiness-2026-11-28.json)
+adds a bounded CpGPT availability audit. At the pinned code/model/dependency
+revisions, inspected repository inventories and small/large configurations do
+not provide a checkpoint-linked study/profile split manifest. **Train,
+validation, test and excluded membership remain unknown for GSE97362,
+GSE116300 and GSE218186; none is recorded as zero overlap.** This does not prove
+that a manifest is absent elsewhere. Configured local split directories and
+probe/genome annotation databases do not establish cohort membership.
+
+The documented CpGCorpus metadata route uses requester-pays S3; no request was
+made. Corpus presence would still not establish checkpoint-specific membership.
+Before an independent benchmark, obtain an accessible, versioned membership
+table linked to the selected checkpoint. The pinned code licence adds a
+restriction on compensated aging-biomarker/longevity competitions; preserve the
+full terms instead of relying on the model-card MIT label. No model/dependency
+binaries were downloaded and no CpGPT inference was run.
+
+For the conditional T06 consumer, the [source-to-parameter assessment](../conductor/tracks/t06-toxin/feasibility.md)
+finds no qualified genotype–exposure–response linkage in GSE261305 and the
+related venom deposits. It records existing complement models as narrower
+mechanistic references. Quantitative execution remains held; a regulatory or
+missense score cannot replace the missing biochemical observations.
+
 ## AlphaGenome 2: retained scope and constraints
 
 The [official API documentation](https://www.alphagenomedocs.com/getting_started.html)

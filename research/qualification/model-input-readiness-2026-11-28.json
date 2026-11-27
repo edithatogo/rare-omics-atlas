@@ -1,0 +1,466 @@
+{
+  "record_version": 1,
+  "assessment_date": "2026-11-28",
+  "assessment_timezone": "Australia/Brisbane",
+  "repository_base": "e3e83d95e46dec61dfae4f5057c1dd65eb33409f",
+  "scope": "Public source/document metadata only; T06 Batch A and CpGPT source availability, not a model benchmark or scientific admission.",
+  "source_responses": [
+    {
+      "id": "geo_series",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261305&targ=self&form=text&view=full",
+      "bytes": 8762,
+      "sha256": "8cf2ece8581636a72218763258a8ff932b05c5456c7804a98389a6a3bd8f50fa",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "pride_project",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003403",
+      "bytes": 12763,
+      "sha256": "2e1dc4c32db26a4f00a002061ebab015bf9695b738f258577ac79fcc570afa28",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "pride_files",
+      "url": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD003403/files",
+      "bytes": 7853,
+      "sha256": "9c430f0a44e04055758bc614261a2eb33758f58c9bf11438044dc095f8cf99e5",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "cpgpt_readme",
+      "url": "https://raw.githubusercontent.com/lucascamillomd/CpGPT/f983174b2ba6774ec9400392c3b03be2292d60d6/README.md",
+      "bytes": 22098,
+      "sha256": "5b276268d4b096f8ecca627d07df7acc8bce271352a42b9791630c3fca23b8ee",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_license",
+      "url": "https://raw.githubusercontent.com/lucascamillomd/CpGPT/f983174b2ba6774ec9400392c3b03be2292d60d6/LICENSE",
+      "bytes": 1415,
+      "sha256": "34aa11959390c59e888c18f0171869aa6b622eb6cde9771d0700d5738d6b2040",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_models_readme",
+      "url": "https://huggingface.co/lucascamillomd/cpgpt-models/resolve/dd4d31e8579123ebfe77b6d5ad1049203b4d0a6d/README.md",
+      "bytes": 1856,
+      "sha256": "13201fa1f404b7d29f49125748adbbf33b8c7273b8538d89e1194f0fa9a0822c",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_small_config",
+      "url": "https://huggingface.co/lucascamillomd/cpgpt-models/resolve/dd4d31e8579123ebfe77b6d5ad1049203b4d0a6d/config/small.yaml",
+      "bytes": 3556,
+      "sha256": "e5de754732ce5c9af3baf003885e16c01f9e2f9417bed6a9fe6873ca18aca477",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_large_config",
+      "url": "https://huggingface.co/lucascamillomd/cpgpt-models/resolve/dd4d31e8579123ebfe77b6d5ad1049203b4d0a6d/config/large.yaml",
+      "bytes": 3557,
+      "sha256": "bd8a57214100b49a17c722a77c4c7be28d8b2244e703c7731b8efab8142d15fa",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_human_readme",
+      "url": "https://huggingface.co/lucascamillomd/cpgpt-human-dependencies/resolve/e66bbe467b3404c1a783b1361e565c5fe6c7235f/README.md",
+      "bytes": 1988,
+      "sha256": "bcb84da7996e802ae8c12d80194f219555fd9525c6db6911915d5a7945c84544",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "geo_root",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261305/",
+      "bytes": 739,
+      "sha256": "c7a401e3a3a459565c2ecb6a660b4fe8bb1af39715d23c32579585f3de155ffb",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "geo_suppl",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261305/suppl/",
+      "bytes": 701,
+      "sha256": "e7d33bdf0a1a35645dfd58e8709baa471a924dd6452de56befa52b56a8b85f1b",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "geo_matrix",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261305/matrix/",
+      "bytes": 603,
+      "sha256": "1e3622994831072a2a4f221e6729684af45ac92615e962c657e75c7fc636873c",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "geo_miniml",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261305/miniml/",
+      "bytes": 597,
+      "sha256": "c12f00375b9aff54d6fc5d5e9a3cd960db2aa6503a4068abd8eac500f887644d",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "geo_soft",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE261nnn/GSE261305/soft/",
+      "bytes": 593,
+      "sha256": "7d1ec282637da63381a3c092f097b830258d89e049f4fff89300737d7d1af055",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "proteomexchange_xml",
+      "url": "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD003403&outputMode=XML",
+      "bytes": 8895,
+      "sha256": "bb1f7386950f1223307e9745f354efd56765ba089f6c7aefa74402480147aba1",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "massive_landing",
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000079351",
+      "bytes": 80430,
+      "sha256": "4c07dad5b097125670a21b79f4b4f29418580f201a881f949dd17f30ff4c6eb8",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "massive_files",
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset_files.jsp?task=7a55a57c9fdd42c7a2e2bb85f03fb826",
+      "bytes": 95220,
+      "sha256": "f784b53ef41d3a57b193e609ef29c930f04f59a54254fea5ae4a3be385c6f7ee",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "massive_summary",
+      "url": "https://massive.ucsd.edu/ProteoSAFe/MassiveServlet?function=massivesummary&massiveid=MSV000079351",
+      "bytes": 602,
+      "sha256": "3e7ede104ac622270572f271f88437e5ac8cb7c591d4c41d042f7bcce2efe0f2",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "mutable_response_snapshot"
+    },
+    {
+      "id": "complement_readme",
+      "url": "https://raw.githubusercontent.com/varnerlab/Complement_model_repository/0b05998085bb19b3cf5633b5cb169b2e4be4c622/README.md",
+      "bytes": 7177,
+      "sha256": "2f2567d0a61c422a476baad1d66a8d9c7a27f00ea42ea4f9d47c4a17e3f5d50f",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "complement_license",
+      "url": "https://raw.githubusercontent.com/varnerlab/Complement_model_repository/0b05998085bb19b3cf5633b5cb169b2e4be4c622/LICENSE",
+      "bytes": 1078,
+      "sha256": "1a93112dff0dcea3628e16188b1ee17495e61d5ee3221aa1bb91395517d40312",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_metadata_or_document",
+      "upstream_identity": "commit_pinned_file"
+    },
+    {
+      "id": "cpgpt_code_tree",
+      "url": "https://api.github.com/repos/lucascamillomd/CpGPT/git/trees/f983174b2ba6774ec9400392c3b03be2292d60d6?recursive=1",
+      "bytes": 30293,
+      "sha256": "4768e5c6a401997599440d8fbf27a5793dde18c5760b77cf7b85fa92bc8f15ab",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_repository_file_inventory",
+      "upstream_identity": "mutable_API_snapshot_at_pinned_revision"
+    },
+    {
+      "id": "cpgpt_model_inventory",
+      "url": "https://huggingface.co/api/models/lucascamillomd/cpgpt-models/revision/dd4d31e8579123ebfe77b6d5ad1049203b4d0a6d",
+      "bytes": 2781,
+      "sha256": "c86dde18bc1e3f508ce6a91b76a985271fde4200b37ecc24f9ad3478723c9e11",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_repository_file_inventory",
+      "upstream_identity": "mutable_API_snapshot_at_pinned_revision"
+    },
+    {
+      "id": "cpgpt_dependency_inventory",
+      "url": "https://huggingface.co/api/models/lucascamillomd/cpgpt-human-dependencies/revision/e66bbe467b3404c1a783b1361e565c5fe6c7235f",
+      "bytes": 898,
+      "sha256": "314dfbfcfe2ada220a8fdde7a836da2307a0cf92314aece751536dda4da9d3b9",
+      "status": "retrieved",
+      "retrieved_date_utc": "2026-11-27",
+      "content_kind": "public_repository_file_inventory",
+      "upstream_identity": "mutable_API_snapshot_at_pinned_revision"
+    }
+  ],
+  "hash_semantics": "SHA-256 covers received response bytes without newline normalization. Metadata response hashes are not molecular-payload hashes. Mutable endpoints are dated snapshots, not immutable releases.",
+  "source_storage": "Source-linked only; no upstream response bodies or molecular rows committed.",
+  "independent_retrieval": {
+    "matching_source_ids": [
+      "geo_series",
+      "pride_project",
+      "pride_files",
+      "cpgpt_readme",
+      "cpgpt_license",
+      "cpgpt_models_readme",
+      "cpgpt_small_config",
+      "cpgpt_large_config",
+      "cpgpt_human_readme",
+      "cpgpt_code_tree",
+      "cpgpt_model_inventory",
+      "cpgpt_dependency_inventory"
+    ],
+    "interpretation": "Root independently reproduced the investigators' nine document/metadata byte lengths and hashes; also independently checked three pinned CpGPT repository inventories. Subsequent source changes require a new dated receipt.",
+    "pride_inventory_matches": true
+  },
+  "geo": {
+    "accession": "GSE261305",
+    "platform": "GPL25507",
+    "series_assay_count": 108,
+    "person_count_qualified": null,
+    "genotype_assay_linkage": "unqualified",
+    "supplementary": [
+      {
+        "name": "GSE261305_RCC_files_Final.xlsx",
+        "head_status": 200,
+        "declared_bytes": 576086,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "GSE261305_normalized.xls.gz",
+        "head_status": 200,
+        "declared_bytes": 650942,
+        "body_retrieved": false,
+        "payload_sha256": null
+      }
+    ],
+    "other_listed_payloads": [
+      "GSE261305_series_matrix.txt.gz",
+      "GSE261305_family.xml.tgz",
+      "GSE261305_family.soft.gz"
+    ],
+    "molecular_payloads_retrieved": 0,
+    "clinical_data_condition": "Original paper conditions clinical-data sharing on appropriate IRB approvals; no clinical data requested."
+  },
+  "venom": {
+    "accession": "PXD003403",
+    "deposit_role": "bottom_up",
+    "related_accession": "MSV000079351",
+    "related_proteomexchange_accession": "PXD004160",
+    "relationship": "related deposits, not equivalent aliases",
+    "reported_species": "Ophiophagus hannah",
+    "reported_taxon": 8665,
+    "pooled_individuals": 2,
+    "reported_origin": "Malaysia",
+    "submitter_country_not_origin": "Brazil",
+    "pride_files": [
+      {
+        "name": "OH_Try_1.raw",
+        "category": "RAW",
+        "declared_bytes": 977561059,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "OH_Try_2.raw",
+        "category": "RAW",
+        "declared_bytes": 942965650,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "OH_Try_3.raw",
+        "category": "RAW",
+        "declared_bytes": 942480036,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "OH_Try_1.sqt",
+        "category": "SEARCH",
+        "declared_bytes": 13530981,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "OH_Try_2.sqt",
+        "category": "SEARCH",
+        "declared_bytes": 13723990,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "OH_Try_3.sqt",
+        "category": "SEARCH",
+        "declared_bytes": 13597370,
+        "body_retrieved": false,
+        "payload_sha256": null
+      },
+      {
+        "name": "Trypsin_Quant.sepr",
+        "category": "OTHER",
+        "declared_bytes": 84180310,
+        "body_retrieved": false,
+        "payload_sha256": null
+      }
+    ],
+    "pride_total_files": 7,
+    "pride_total_declared_bytes": 2988039396,
+    "massive_collections": [
+      {
+        "collection": "raw",
+        "files": 129,
+        "declared_bytes": 33157492221
+      },
+      {
+        "collection": "ccms_peak",
+        "files": 106,
+        "declared_bytes": 5853659622
+      },
+      {
+        "collection": "result",
+        "files": 1,
+        "declared_bytes": 71580
+      }
+    ],
+    "massive_total_files": 236,
+    "massive_total_declared_bytes": 39011223423,
+    "payloads_retrieved": 0,
+    "overlap": "Three raw filenames and declared sizes agree across deposits; payload identity unverified.",
+    "cvf_evidence": "I2C090 identified in the paper's native analysis of the pooled material, not independently replayed from PXD003403.",
+    "cvf_relative_fraction": "not_verified_supplements_not_read",
+    "cvf_absolute_concentration": "not_established",
+    "study_specific_kinetics": "not_established",
+    "paired_host_exposure_response": "not_established",
+    "dynamic_manifest_note": {
+      "earlier_massive_files_bytes": 95220,
+      "earlier_massive_files_sha256": "d336cdfacfde3cff9c2f789e35308276d8ff599636d4714615f03de3bdfe2048",
+      "difference": "Changing last_used metadata; counts and declared byte totals agreed."
+    }
+  },
+  "cpgpt": {
+    "code_commit": "f983174b2ba6774ec9400392c3b03be2292d60d6",
+    "model_repository": "lucascamillomd/cpgpt-models",
+    "model_revision": "dd4d31e8579123ebfe77b6d5ad1049203b4d0a6d",
+    "dependency_repository": "lucascamillomd/cpgpt-human-dependencies",
+    "dependency_revision": "e66bbe467b3404c1a783b1361e565c5fe6c7235f",
+    "inspected_inventory": {
+      "code_tree_entries": 130,
+      "code_files": 96,
+      "model_files": 57,
+      "dependency_files": 5
+    },
+    "checkpoint_linked_membership_manifest": "not_found_in_inspected_sources",
+    "cohorts": [
+      {
+        "study": "GSE97362",
+        "train": null,
+        "validation": null,
+        "test": null,
+        "excluded": null,
+        "membership": "unknown"
+      },
+      {
+        "study": "GSE116300",
+        "train": null,
+        "validation": null,
+        "test": null,
+        "excluded": null,
+        "membership": "unknown"
+      },
+      {
+        "study": "GSE218186",
+        "train": null,
+        "validation": null,
+        "test": null,
+        "excluded": null,
+        "membership": "unknown"
+      }
+    ],
+    "config_evidence": "small/large YAML identify local cpgcorpus/processed/train, val and test directories; no study/profile membership enumerations.",
+    "dependency_metadata_role": "Genomic/probe annotation, not corpus or checkpoint membership.",
+    "corpus_metadata_route": "s3://cpgpt-lucascamillo-public/data/cpgcorpus/raw/{GSE_ID}/{GPL_ID}/metadata/metadata.arrow",
+    "s3_status": "not_retrieved_no_request_made",
+    "s3_condition": "Author documents requester-pays; no paid service activated.",
+    "corpus_vs_checkpoint": "Corpus presence alone would not establish checkpoint-specific train/validation/test/excluded membership.",
+    "preprint_supplement": "Not retrieved; article retrieval failed with HTTP 403. No absence claim beyond inspected sources.",
+    "license": "Code LICENSE is MIT with an additional restriction on compensated aging-biomarker/longevity competitions. Model-card MIT label links to code terms; source-cohort rights separate.",
+    "weights_or_dependency_binaries_retrieved": 0,
+    "model_execution": "not_run",
+    "disposition": "hold_independent_benchmark_until_versioned_checkpoint_linked_membership_is_available"
+  },
+  "complement_reference": {
+    "repository": "varnerlab/Complement_model_repository",
+    "commit": "0b05998085bb19b3cf5633b5cb169b2e4be4c622",
+    "branch": "master",
+    "license": "MIT",
+    "license_notice_as_supplied": "Copyright (c) 2014 Zichen Wang",
+    "readme_and_license_git_blob_checks": "matched_independent_git_blob_SHA1",
+    "runtime": "not_executed_unqualified"
+  },
+  "original_studies": [
+    {
+      "doi": "10.2215/CJN.0000000000000474",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11321730/",
+      "article_sha256": null
+    },
+    {
+      "doi": "10.1074/mcp.M115.056523",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4937514/",
+      "article_sha256": null
+    }
+  ],
+  "article_retrieval_limit": "Original methods inspected through canonical/indexed web renderings. Direct byte routes returned challenge/error responses, so no article-byte hashes claimed. Molecular/clinical supplements not read.",
+  "extraction_recipe": [
+    "Count !Series_sample_id = lines in the GEO self-only SOFT response; do not equate assays with people.",
+    "Read PRIDE project and files JSON; sum declared sizes across seven objects.",
+    "Read MassIVE embedded file-list metadata and group by raw/ccms_peak/result; compare total with summary endpoint. Do not follow data links.",
+    "Inspect exact CpGPT code tree and Hugging Face repository file inventories; read only pinned cards/configs/licence; do not deserialize checkpoints or query requester-pays S3.",
+    "Hash received bytes with SHA-256; retain source URL, byte length and actual retrieval date separately from report date."
+  ],
+  "scientific_disposition": "T06 quantitative consumer held; no N1, scientific admission, institutional determination, owner-device qualification, model run or publication."
+}

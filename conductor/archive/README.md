@@ -11,3 +11,5 @@
 - [T07c — HM450 QC and detection receiver](t07c_qc_20261123/index.md): complete native-R QC and actual p-value boundary, portable original-byte bead audit and reproducible GCT curation diagnosis; implementation reviewed and strict checks passed, while full native QC parity remains held.
 
 - [V01 — Publication implementation/preflight correction](v01_publication_preflight_20261127/index.md): full-history correction received, exact-main CI and six-object dry-run verified; actual publication remains blocked on credential configuration, with V01 open.
+
+- [Model assessment and public overlap audit](model_assessment_20261128/index.md): conditional AG2 alternatives/evaluation contract and exact MethylGPT overlap receipt received in PR #46; archive and receiving-main checks completed in PR #47. No model inference or parent scientific milestone completed.
