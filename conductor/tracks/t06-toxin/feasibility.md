@@ -115,9 +115,9 @@ or toxin-response optimisation is introduced here.
 
 ## Receiving scope and next decision
 
-The source/metadata assessment is complete as an authored output, subject to
-independent review and exact-current-base hook, strict, privacy, dependency and
-provider checks. Integration receipts belong in the PR and bounded archive.
+The source/metadata assessment is [received and archived](../../archive/model_input_readiness_20261128/index.md)
+after independent content/artifact review, exact-current-base native-hook/strict,
+privacy, dependency/provider checks and passing receiving-main verification.
 The original scientific tasks and parent T06 remain open.
 
 Proceed with an annotated evidence map only if it serves a named question.
