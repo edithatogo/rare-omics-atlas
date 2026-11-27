@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-25",
+  "updated_on": "2026-11-27",
   "interpretation": "Prerequisites are milestone-specific, not an instruction to run every track. Re-run admission for each newly selected dataset/method. Optional extensions are not prerequisites of a qualified fallback.",
   "milestones": [
     {
@@ -292,7 +292,7 @@
       "requires": [
         "T00.context"
       ],
-      "scope": "Initial metadata release integrated; 12 exact PubMed records resolved, 21,087 bytes, repeatable source hash and 12/12 joins. PR #41 source replay 45891388787 and strict CI 45891388559 passed; merged b178fc753d5ff1f662662ba6541ff88fad88d2a7 with tested tree. Bounded metadata QC and original source hold receipts integrated; receiving-main 45896927445 must be observed. Overall source metadata remains in progress; AIHW workbook, original clinical event bytes and scientific admission held."
+      "scope": "Initial metadata release integrated; 12 exact PubMed records resolved, 21,087 bytes, repeatable source hash and 12/12 joins. PR #41 source replay 45891388787 and strict CI 45891388559 passed; merged b178fc753d5ff1f662662ba6541ff88fad88d2a7 with tested tree; receiving-main 45896927445 passed. Bounded metadata QC and original source hold receipts integrated. Overall source metadata remains in progress; AIHW workbook, original clinical event bytes and scientific admission held."
     },
     {
       "id": "V01.event_source_bytes",
@@ -347,18 +347,19 @@
     },
     {
       "id": "V01.hf_metadata",
-      "status": "in_progress",
+      "status": "blocked_external",
       "requires": [
         "V01.source_metadata",
         "T00.strict_code"
       ],
-      "scope": "Four-object release plus generated manifest/provenance, unchanged exact SHA-256 manifest. PR #40 received at 5b0f6e645b06ebc7b8a8f0103d2876da7772c574, receiving strict 45891111994 passed; automatic publication 45892080466 triggered but failed pre-upload tests due to shallow history omitting historical publisher baseline. Full-history checkout correction staged in successor; successful strict receiving CI, actual scoped authentication, Hub commit/read-back required. No V01 Hub objects observed; no raw patient data."
+      "scope": "Four reviewed public metadata/aggregate objects plus generated manifest/provenance; pinned release bytes unchanged. PR #42 full-history correction merged at e32e8917aed52e72828cb6cb1fa505da67aef516; exact receiving Strict CI 45913236312 passed. Activated publication 45913968090 passed all 47 publisher tests and verified six local payloads, then exited before upload because HF_TOKEN was unavailable or empty to the job. Actual dry-run receipt preserved; no upload invocation, upload receipt or Hub revision. Configure scoped repository Actions credential, retry that activated run and verify all six remote objects. Bounded implementation/preflight archived; publication and clinical gates remain open."
     }
   ],
   "external_gate_resolution": {
     "T00.local_runner": "Owner device access plus official runner registration and observed workflow; no current session can supply this.",
     "T01.institutional_classification": "Applicable institutional decision; source policy is not a substituted institutional decision.",
-    "T09.raw_mirror": "Use the configured manual workflow on a trusted official owner runner with scoped HF_TOKEN; verify full immutable release and reconcile notices/estate. Do not require a paid remote-compute subscription. Source-linked Bronze permits independent local technical work."
+    "T09.raw_mirror": "Use the configured manual workflow on a trusted official owner runner with scoped HF_TOKEN; verify full immutable release and reconcile notices/estate. Do not require a paid remote-compute subscription. Source-linked Bronze permits independent local technical work.",
+    "V01.hf_metadata": "Repository credential operator must securely make the scoped HF_TOKEN Actions secret available to the reviewed publication job for edithatogo/rare-omics-atlas, then rerun failed publication run 45913968090 at its original source revision. Preserve no-overwrite, exact manifest and six-object immutable remote read-back; do not put credentials in chat or repository files. No authentication attempt or upload occurred in the observed failed run."
   },
   "conditional_rust_route": [
     "limma-rust:LM00",

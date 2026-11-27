@@ -9,3 +9,5 @@
 - [T07b — HM450 raw/Q and annotation](t07b_preprocessing_20261123/index.md): complete pinned technical fixture, independent mathematical/fresh R references and actual production exports; separate QCDPB beta-only diagnostics, strict checks and explicit method/device limits.
 
 - [T07c — HM450 QC and detection receiver](t07c_qc_20261123/index.md): complete native-R QC and actual p-value boundary, portable original-byte bead audit and reproducible GCT curation diagnosis; implementation reviewed and strict checks passed, while full native QC parity remains held.
+
+- [V01 — Publication implementation/preflight correction](v01_publication_preflight_20261127/index.md): full-history correction received, exact-main CI and six-object dry-run verified; actual publication remains blocked on credential configuration, with V01 open.

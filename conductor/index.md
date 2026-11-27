@@ -41,7 +41,7 @@ The owner authorises continued bounded implementation, API catalogue and GitHubâ
 - **Cross-stream:** existing [T06](tracks/t06-toxin/index.md), conditional on separately admissible data and a defensible host variation/exposure question.
 - **Shared:** T00 governance, T08 catalogue, T09 data releases, existing ontology, literature, method and publication controls. Shared infrastructure is not shared biological replication. No new Conductor installation or separate ticketing system.
 
-The [machine-readable V01 milestones](dependencies.json) are independent of methylation-specific prerequisites. PRs #28, #36 and #37 are now received; the rare-disease scientific scope is unchanged. V01's initial source metadata release is integrated, not published to the Hub. Original clinical data access and inference are held. See the [acquisition and release record](tracks/v01-toxinology/acquisition.md).
+The [machine-readable V01 milestones](dependencies.json) are independent of methylation-specific prerequisites. PRs #28, #36 and #37 are now received; the rare-disease scientific scope is unchanged. V01's initial source metadata release is integrated, not published to the Hub. The [publication implementation/preflight correction](archive/v01_publication_preflight_20261127/index.md) is accepted and archived; the actual upload is externally blocked because HF_TOKEN was unavailable to the reviewed job. Original clinical data access and inference are held. See the [acquisition and release record](tracks/v01-toxinology/acquisition.md).
 
 ## Execution rule
 

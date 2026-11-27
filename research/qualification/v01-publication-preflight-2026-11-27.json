@@ -1,0 +1,52 @@
+{
+  "completed_at": "2026-11-26T23:58:25.160568+00:00",
+  "elapsed_seconds": 0.0015191439999995282,
+  "local_objects": [
+    {
+      "path_in_repo": "silver/toxinology/2026-11-25/README.md",
+      "sha256": "a006aada3a3cf37984dd7ddbfb4e5f9b60bd543a9895508d09879c3eae99b72c",
+      "size_bytes": 1373,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/toxinology/2026-11-25/aihw-benchmark.jsonl",
+      "sha256": "4ee797fe3beba9b590dc4423defa2e9db6d40851371a728bc915a727731f03c5",
+      "size_bytes": 1838,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/toxinology/2026-11-25/publications.jsonl",
+      "sha256": "f230aa3f1fe0b60e421759f06fc9ecd0e5201d0594bc95d4a60934bccd850c78",
+      "size_bytes": 1201,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "silver/toxinology/2026-11-25/source-register.jsonl",
+      "sha256": "958cca8af531dbdd5dafeffb5d3e42c266d7355fe799665aec2afa6bec5628dd",
+      "size_bytes": 1606,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "releases/2026-11-25-v01/manifest.json",
+      "sha256": "4e0fcc255351e5b557d731916413d55e8dd5bb61789733c1c1cb99ecb97db7b6",
+      "size_bytes": 2122,
+      "status": "verified"
+    },
+    {
+      "path_in_repo": "releases/2026-11-25-v01/provenance.json",
+      "sha256": "1c403d9c56270efea17ab2b5781d8c7bc01019be1e4841f65dbbe8c5c56fa447",
+      "size_bytes": 1664,
+      "status": "verified"
+    }
+  ],
+  "manifest_sha256": "4e0fcc255351e5b557d731916413d55e8dd5bb61789733c1c1cb99ecb97db7b6",
+  "mode": "dry_run",
+  "python_version": "3.15.2",
+  "release_id": "2026-11-25-v01",
+  "repo_id": "edithatogo/rare-omics-atlas",
+  "schema_version": 1,
+  "source_repository": "https://github.com/edithatogo/rare-omics-atlas",
+  "source_revision": "e32e8917aed52e72828cb6cb1fa505da67aef516",
+  "started_at": "2026-11-26T23:58:25.159056+00:00",
+  "status": "dry_run_verified"
+}
