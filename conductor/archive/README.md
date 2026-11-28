@@ -15,3 +15,5 @@
 - [Model assessment and public overlap audit](model_assessment_20261128/index.md): conditional AG2 alternatives/evaluation contract and exact MethylGPT overlap receipt received in PR #46; archive and receiving-main checks completed in PR #47. No model inference or parent scientific milestone completed.
 
 - [Model-input and T06 source feasibility](model_input_readiness_20261128/index.md): named human/venom deposit identities, source-to-parameter limits, existing complement-model comparison and CpGPT membership availability audit. Bounded source/documentation increment received; quantitative T06 and parent scientific tasks remain held.
+
+- [T05 — Aggregate multimodal pairing readiness](t05_pairing_readiness_20261128/index.md): PR #50 accepted on exact receiving main, 125 assay memberships and 21 target file listings reconciled; no verified participant-level pairing or parent scientific admission.
