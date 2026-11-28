@@ -1,0 +1,150 @@
+{
+  "assessment_date": "2026-11-28",
+  "timezone": "Australia/Brisbane",
+  "scope": "T05.01/T05.02 aggregate public-source readiness; no molecular analysis, new individual linkage or admission",
+  "base_commit": "f856b18c5376f960c41144fdc29c2d158e40f82c",
+  "catalogue_snapshot": {
+    "directory": "research/catalogue/2026-11-22",
+    "git_blobs": {
+      "assays.jsonl": "18e4085d649a8f72e31dafa6d925d07fe3de6ddb",
+      "datasets.jsonl": "5bf2f19820dfbdfa5873d6363e7e99ab6f59ae24",
+      "requests.jsonl": "2b0cfbd6e24121b156b3e3e4d1ff191b5703fae9"
+    },
+    "all_assay_memberships": 2532,
+    "selected_assay_memberships": 125,
+    "historical_request_receipts": 16,
+    "historical_request_receipts_http_200": 16,
+    "historical_request_receipts_with_sha256": 16,
+    "historical_response_bytes_reacquired": false,
+    "method": "Parse the three pinned JSONL tables. For each target accession, assert the catalogue and source assay counts equal distinct GSM count; require both subseries and parent in every row's membership; check null participant IDs, null independent participant count, false admission and all four referenced historical request records with HTTP 200 and 64-character hexadecimal SHA-256. Compare assay-accession sets across each modality pair. Different GSM identifiers do not establish different people. No row-level identifiers emitted.",
+    "result": "passed",
+    "datasets": [
+      {
+        "accession": "GSE191276",
+        "parent": "GSE191277",
+        "platform": "GPL23976",
+        "modality": "methylation",
+        "distinct_assays": 7,
+        "known_participant_id_rows": 0,
+        "independent_participants": null,
+        "rows_with_source_relations": 0,
+        "catalogue_pmids": [
+          "35094088"
+        ],
+        "analysis_admitted": false,
+        "historical_request_receipts": 4
+      },
+      {
+        "accession": "GSE191274",
+        "parent": "GSE191277",
+        "platform": "GPL23227",
+        "modality": "RNA-seq",
+        "distinct_assays": 25,
+        "known_participant_id_rows": 0,
+        "independent_participants": null,
+        "rows_with_source_relations": 25,
+        "catalogue_pmids": [
+          "35094088"
+        ],
+        "analysis_admitted": false,
+        "historical_request_receipts": 4
+      },
+      {
+        "accession": "GSE152427",
+        "parent": "GSE152428",
+        "platform": "GPL21145",
+        "modality": "methylation",
+        "distinct_assays": 57,
+        "known_participant_id_rows": 0,
+        "independent_participants": null,
+        "rows_with_source_relations": 0,
+        "catalogue_pmids": [],
+        "analysis_admitted": false,
+        "historical_request_receipts": 4
+      },
+      {
+        "accession": "GSE152421",
+        "parent": "GSE152428",
+        "platform": "GPL16791",
+        "modality": "RNA-seq",
+        "distinct_assays": 36,
+        "known_participant_id_rows": 0,
+        "independent_participants": null,
+        "rows_with_source_relations": 36,
+        "catalogue_pmids": [
+          "32758449"
+        ],
+        "analysis_admitted": false,
+        "historical_request_receipts": 4
+      }
+    ]
+  },
+  "study_evidence": [
+    {
+      "condition": "Sotos syndrome",
+      "source": "https://doi.org/10.1093/hmg/ddac026",
+      "pmid": "35094088",
+      "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9262396/",
+      "geo": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE191276",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE191274"
+      ],
+      "methylation": {
+        "affected": 3,
+        "individual_controls": 3,
+        "pooled_parent_assays": 1,
+        "contributors_to_parent_pool": 5
+      },
+      "rna": {
+        "affected": 10,
+        "controls": 15
+      },
+      "shared_assay_accessions": 0,
+      "prior_exact_title_candidate_links": 6,
+      "new_source_observation": "Published methods describe simultaneous DNA and RNA extraction from fresh whole blood and two RNA-seq phases. This supports specimen-level linkage plausibility, not verified matching for each deposited assay. Anonymous age/sex-matched controls are not independently identified by demographic labels. Exclude the pooled parent measurement from individual pairing; retain family and technical control roles.",
+      "verified_pairs": null,
+      "decision": "hold individual-level analysis; candidate small prespecified directional/module corroboration only after source-specific admission, independent family/participant grouping and N0/N1"
+    },
+    {
+      "condition": "ADNP syndrome",
+      "source": "https://doi.org/10.1016/j.ajhg.2020.07.003",
+      "pmid": "32758449",
+      "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7477006/",
+      "geo": [
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152427",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152421"
+      ],
+      "published_affected_participants": 43,
+      "methylation": {
+        "affected": 24,
+        "class_I": 12,
+        "class_II": 12,
+        "unaffected_age_matched_controls": 19,
+        "unaffected_siblings": 14
+      },
+      "rna": {
+        "affected": 17,
+        "unaffected_siblings": 19
+      },
+      "clinical_phenotype_affected": 32,
+      "affected_pair_count_bounds_from_margins_only": {
+        "lower": 0,
+        "upper": 17,
+        "assumption": "Both affected modality subsets lie within the 43 affected participants. Inclusion-exclusion lower bound max(0,24+17-43); upper bound min(24,17). These are conservative bounds from published margins, not estimates or observed pairs."
+      },
+      "shared_assay_accessions": 0,
+      "verified_pairs": null,
+      "new_source_observation": "Original paper explicitly names both subseries and reports institutional approvals, caregiver consent and assent as appropriate. This updates the previously incomplete article-level evidence; the source rights owner must receive it without changing scientific, redistribution or institutional status. Methylation draws from A/R/part of S; RNA-seq draws from part of S. Study-level cohort membership is not a deposited assay crosswalk. The paper already tests expression concordance with methylation and reports limited transcriptomic changes.",
+      "decision": "hold individual-level analysis pending source-declared participant/specimen crosswalk; no join on title resemblance, ordering, variants or family labels"
+    }
+  ],
+  "limitations": {
+    "new_source_access": "Public article/series web records inspected; ADNP supplemental PDF access returned download preparation rather than document content; supplement workbooks, clinical records, molecular matrices and raw sequence not retrieved. No exact new response-byte hashes are claimed.",
+    "source_file_inventory": "Full files.jsonl connector response could not be parsed (incomplete JSONL); no file-level inventory qualification is claimed. Existing historical receipt references preserved.",
+    "novelty": "Bounded prior-art and source review only; no complete dated N0/N1, clinical or device acceptance.",
+    "rights": "Existing dataset-rights register and artifact-specific approval still govern; no new release or data transfer.",
+    "verified_model_inference": false,
+    "scientific_admission": false
+  },
+  "next_gate": "T01/T05 receive an authoritative, permitted assay-person-specimen/time and family relation evidence table before individual-level pairing. If not available, restrict to prespecified disease-level confirmation or stop. Keep T02 critical path and open PRs 43/44 unchanged."
+}
