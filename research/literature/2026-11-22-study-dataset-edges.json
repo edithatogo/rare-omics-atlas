@@ -272,6 +272,19 @@
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/38528056/",
       "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11220151/",
       "canonical_publication_date": "2024-03-25"
+    },
+    {
+      "study_id": "PMID:31409373",
+      "pmid": "31409373",
+      "pmcid": "PMC6693144",
+      "doi": "10.1186/s13059-019-1753-9",
+      "title": "Screening for genes that accelerate the epigenetic aging clock in humans reveals a role for the H3K36 methyltransferase NSD1",
+      "journal": "Genome Biology",
+      "pubmed_publication_date": "2019 Aug 14",
+      "canonical_publication_date": "2019-08-14",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/31409373/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6693144/",
+      "checked_on": "2026-11-27"
     }
   ],
   "edges": [
@@ -574,6 +587,30 @@
       "evidence_location": "Section 2.1; Table 1; Data Availability Statement",
       "checked_on": "2026-11-25",
       "notes": "Public PC 19 cases and 57 controls reused for classifier training; published 153-CpG signature and cross-study normalization mean not a previously untouched holdout. Exact overlap with native 11+11 and individual membership require separate evidence."
+    },
+    {
+      "study_id": "PMID:31409373",
+      "doi": "10.1186/s13059-019-1753-9",
+      "dataset_id": "GSE116300",
+      "relation": "reused",
+      "analysis_type": "developmental_disorder_epigenetic_ageing_screen",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6693144/",
+      "evidence_location": "Availability of data and materials; Methods; companion GitHub metadata preparation at 6fd592a4672a0281818a2a4c45ddf239b892097d",
+      "checked_on": "2026-11-27",
+      "notes": "Explicit accession reuse; historical metadata snapshot reconciled with current atlas catalogue. Exact analytical inclusion and biological independence not established. No methylation-derived eligibility imported."
+    },
+    {
+      "study_id": "PMID:31409373",
+      "doi": "10.1186/s13059-019-1753-9",
+      "dataset_id": "GSE97362",
+      "relation": "reused",
+      "analysis_type": "developmental_disorder_epigenetic_ageing_screen",
+      "evidence_status": "verified_explicit",
+      "evidence_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6693144/",
+      "evidence_location": "Availability of data and materials; Methods; companion GitHub metadata preparation at 6fd592a4672a0281818a2a4c45ddf239b892097d",
+      "checked_on": "2026-11-27",
+      "notes": "Explicit accession reuse; historical metadata snapshot reconciled with current atlas catalogue. Exact analytical inclusion and biological independence not established. No methylation-derived eligibility imported."
     }
   ],
   "dataset_relationships": [
@@ -663,5 +700,5 @@
     "A PubMed exact-accession hit without full-text context",
     "No exact-accession hits"
   ],
-  "last_verified_addendum_on": "2026-11-25"
+  "last_verified_addendum_on": "2026-11-27"
 }
