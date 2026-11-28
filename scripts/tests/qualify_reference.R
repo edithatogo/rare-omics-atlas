@@ -2,7 +2,7 @@
 # Installed native package qualification, unrelated technical/synthetic inputs only.
 args <- commandArgs(trailingOnly=TRUE)
 stopifnot(length(args)==4L)
-stage <- match.arg(args[3],c("install","technical","limma","enrichment"))
+stage <- match.arg(args[3],c("install","technical","limma","enrichment","annotation"))
 scratch <- normalizePath(args[4],mustWork=TRUE)
 input <- normalizePath(args[1],mustWork=TRUE)
 output <- normalizePath(args[2],mustWork=TRUE)
@@ -865,4 +865,217 @@ if (stage=="enrichment") {
         "institutional_determination=false","scientific_admitted=false"),
         file.path(output,"disposition.txt"))
 
+}
+
+
+# Outcome-blind reference-only audit after the unchanged historical stages.
+# No human sample/phenotype values, alternate preprocessing or disease fit.
+if (stage=="annotation") {
+    suppressPackageStartupMessages(library(sesameData))
+    suppressPackageStartupMessages(library(missMethyl))
+    stopifnot(as.character(packageVersion("org.Hs.eg.db"))=="3.22.0",
+        as.character(packageVersion("IlluminaHumanMethylation450kanno.ilmn12.hg19"))=="0.6.1",
+        as.character(packageVersion("minfi"))=="1.56.0")
+    sha256 <- function(path) {
+        result <- system2("sha256sum",shQuote(path),stdout=TRUE,stderr=TRUE)
+        stopifnot(length(result)==1L,grepl("^[0-9a-f]{64} ",result))
+        substr(result,1L,64L)
+    }
+    emit <- function(x,name) write.table(x,file.path(output,name),sep="\t",
+        quote=FALSE,row.names=FALSE)
+    emit_summary <- function(values,name) {
+        # Require one scalar per metric, including when counts mix with hashes.
+        stopifnot(!is.null(names(values)),!anyDuplicated(names(values)),
+            all(lengths(as.list(values))==1L))
+        emit(data.frame(metric=names(values),value=as.character(values)),name)
+    }
+    ids_path <- file.path(output,"technical-cohort-qc-denominator.txt")
+    ids <- readLines(ids_path)
+    stopifnot(length(ids)==408966L,identical(ids,sort(unique(ids),method="radix")),
+        all(grepl("^cg[0-9]{8}$",ids)),
+        sha256(ids_path)=="1d413041ee2bee0666b42ccb0a50c5180a305a4684f1327559796ec67e5f2366")
+    # Native builder uses CpG_beg+1 and CpG_end in its inclusive GRanges.
+    # Use the leftmost CpG coordinate, not the strand-specific probe end.
+    region_start <- function(start1,end1) {
+        stopifnot(length(start1)==length(end1),all(is.finite(start1)),
+            all(is.finite(end1)),all(start1==floor(start1)),all(end1==floor(end1)),
+            all(start1>=1),all(end1>=start1),all(end1-start1+1<=2))
+        ((start1-1L)%/%1000L)*1000L
+    }
+    # Independently predeclared boundary, width and malformed-range cases.
+    stopifnot(identical(as.integer(region_start(c(1L,1000L,1001L,2000L,2001L),
+        c(2L,1001L,1002L,2000L,2002L))),c(0L,0L,1000L,1000L,2000L)),
+        inherits(try(region_start(0L,1L),silent=TRUE),"try-error"),
+        inherits(try(region_start(NA_real_,2L),silent=TRUE),"try-error"),
+        inherits(try(region_start(1.5,2),silent=TRUE),"try-error"),
+        inherits(try(region_start(2L,1L),silent=TRUE),"try-error"),
+        inherits(try(region_start(1L,3L),silent=TRUE),"try-error"))
+    stopifnot(isTRUE(sesameDataCache("HM450.address")))
+    gr <- sesameData_getManifestGRanges("HM450",genome="hg38")
+    stopifnot(inherits(gr,"GRanges"),!anyDuplicated(names(gr)))
+    tmp <- tempfile(fileext=".rds")
+    saveRDS(gr,tmp,version=3)
+    native_sha <- sha256(tmp)
+    unlink(tmp)
+    stopifnot(native_sha=="1f0cfe59556ebc3b3bce92be7c55256fe61cf4048a8182086b34d1ff5b898779")
+    index <- match(ids,names(gr))
+    stopifnot(!anyNA(index),identical(names(gr)[index],ids))
+    gr <- gr[index]
+    chr <- as.character(GenomicRanges::seqnames(gr))
+    s <- GenomicRanges::start(gr)
+    e <- GenomicRanges::end(gr)
+    strand <- as.character(GenomicRanges::strand(gr))
+    stopifnot(all(chr %in% paste0("chr",1:22)),all(strand %in% c("+","-","*")))
+    # Retain the actual width distribution even if the range guard fails.
+    emit(as.data.frame(table(width=e-s+1L)),"annotation-native-widths.tsv")
+    bin <- region_start(s,e)
+    stopifnot(all(s-1L>=bin),all(s-1L<bin+1000L),
+        all(e>s-1L),all(e-(s-1L)==GenomicRanges::width(gr)))
+    region <- paste(chr,bin,bin+1000L,sep=":")
+    locus <- paste(chr,s-1L,sep=":")
+    duplicate_anchor <- duplicated(locus)|duplicated(locus,fromLast=TRUE)
+    # The old ordering and coordinate file are exact checksum-pinned companion
+    # files. Positional joining is allowed only inside that historical release.
+    old_order <- read.delim(gzfile(file.path(input,"HM450.ordering.tsv.gz")),
+        check.names=FALSE,stringsAsFactors=FALSE)
+    old_coord <- read.delim(gzfile(file.path(input,"HM450.hg38.coord.tsv.gz")),
+        check.names=FALSE,colClasses="character",quote="",comment.char="")
+    stopifnot(identical(names(old_order),c("Probe_ID","M","U","col")),
+        identical(names(old_coord),c("CpG_chrm","CpG_beg","strand","mapQ")),
+        nrow(old_order)==486427L,nrow(old_coord)==nrow(old_order),
+        !anyNA(old_order$Probe_ID),!anyDuplicated(old_order$Probe_ID))
+    old_ix <- match(ids,old_order$Probe_ID)
+    old_chr <- old_coord$CpG_chrm[old_ix]
+    old_start <- suppressWarnings(as.numeric(old_coord$CpG_beg[old_ix]))
+    old_valid <- !is.na(old_ix)&old_chr %in% paste0("chr",1:22)&
+        is.finite(old_start)&old_start>=0&old_start==floor(old_start)
+    # A release difference is a reported finding, not an instruction to
+    # replace native coordinates or silently redefine the eligible universe.
+    comparison <- rep("absent_from_historical_order",length(ids))
+    comparison[!is.na(old_ix)] <- "historical_coordinate_unavailable"
+    comparison[old_valid] <- ifelse(chr[old_valid]==old_chr[old_valid]&
+        s[old_valid]-1L==old_start[old_valid],"same_anchor","different_anchor")
+    coordinates <- data.frame(probe=ids,build="hg38",chr=chr,
+        native_start1=s,native_end1=e,strand=strand,start0=s-1L,end0=e,
+        region=region,duplicate_anchor=duplicate_anchor,historical_comparison=comparison)
+    stopifnot(identical(coordinates$probe,ids),!anyDuplicated(coordinates$probe))
+    emit(coordinates,"annotation-native-coordinates.tsv")
+    # Preserve compared source fields, not only the result labels. This makes
+    # every historical disposition independently replayable without relying
+    # on a second network transfer of the source archives.
+    historical <- data.frame(probe=ids,historical_order_row=old_ix,
+        historical_probe=old_order$Probe_ID[old_ix],
+        historical_chr=old_chr,
+        historical_start0_literal=old_coord$CpG_beg[old_ix],
+        historical_strand=old_coord$strand[old_ix],
+        historical_mapq=old_coord$mapQ[old_ix],disposition=comparison)
+    stopifnot(identical(historical$probe,ids),
+        identical(historical$historical_probe[!is.na(old_ix)],ids[!is.na(old_ix)]),
+        !anyDuplicated(old_ix[!is.na(old_ix)]))
+    emit(historical,"annotation-historical-coordinate-join.tsv")
+    historical_files <- c("HM450.ordering.tsv.gz","HM450.hg38.coord.tsv.gz")
+    historical_hashes <- vapply(file.path(input,historical_files),sha256,character(1))
+    stopifnot(identical(unname(historical_hashes),c(
+        "e659fe9983df66a20eacff97b98dd08e225963cead5d512d11d6c38a7e9136f6",
+        "bedd968a41a2f287e18d94c86f34d46fd640086bd3c43639bd0a878ea64f3a40")))
+    emit(data.frame(file=c(historical_files,"annotation-historical-coordinate-join.tsv"),
+        sha256=c(unname(historical_hashes),
+            sha256(file.path(output,"annotation-historical-coordinate-join.tsv")))),
+        "annotation-historical-source.tsv")
+    # Verify the emitted comparison has the complete eligible row space.
+    check_join <- read.delim(file.path(output,"annotation-historical-coordinate-join.tsv"),
+        colClasses="character",quote="",comment.char="",check.names=FALSE)
+    stopifnot(identical(names(check_join),names(historical)),
+        identical(check_join$probe,ids),identical(check_join$disposition,comparison))
+    rm(historical,check_join)
+    regions <- table(region)
+    region_counts <- data.frame(region=names(regions),eligible_probes=as.integer(regions),
+        at_least_three=as.integer(regions)>=3L)
+    stopifnot(sum(region_counts$eligible_probes)==length(ids))
+    emit(region_counts,"annotation-region-census.tsv")
+    emit_summary(c(eligible_probes=length(ids),native_annotation_rds_sha256=native_sha,
+        denominator_sha256=sha256(ids_path),region_count=length(regions),
+        regions_with_at_least_three=sum(regions>=3L),regions_with_fewer_than_three=sum(regions<3L),
+        probes_in_regions_with_fewer_than_three=sum(regions[regions<3L]),
+        interval_crosses_bin=sum(e>bin+1000L),
+        duplicate_anchor_probes=sum(duplicate_anchor),
+        distinct_anchors=length(unique(locus)),unknown_strand=sum(strand=="*"),
+        setNames(as.integer(table(factor(comparison,levels=c("absent_from_historical_order",
+            "historical_coordinate_unavailable","same_anchor","different_anchor")))),
+            c("absent_from_historical_order","historical_coordinate_unavailable",
+                "same_anchor","different_anchor")),
+        coordinates_sha256=sha256(file.path(output,"annotation-native-coordinates.tsv"))),
+        "annotation-coordinate-summary.tsv")
+    rm(gr,coordinates,old_order,old_coord,old_ix,old_chr,old_start,old_valid,
+        comparison,index,chr,s,e,strand,bin,region,locus,duplicate_anchor,regions,region_counts)
+    invisible(gc(full=TRUE))
+
+    # Native hg19 gene annotation remains a separate ID-based relationship.
+    # Use the package's own mapper in bounded disjoint CpG chunks; only
+    # mapping is chunked, never limma moderation or enrichment testing.
+    anno <- minfi::getAnnotation(
+        IlluminaHumanMethylation450kanno.ilmn12.hg19::IlluminaHumanMethylation450kanno.ilmn12.hg19)
+    stopifnot(!anyDuplicated(rownames(anno)),
+        all(c("Name","UCSC_RefGene_Name","UCSC_RefGene_Group") %in% names(anno)))
+    annotation_index <- match(ids,rownames(anno))
+    present <- !is.na(annotation_index)
+    a <- anno[annotation_index[present],c("Name","UCSC_RefGene_Name","UCSC_RefGene_Group"),drop=FALSE]
+    stopifnot(identical(rownames(a),ids[present]),identical(as.character(a$Name),ids[present]))
+    rm(anno)
+    invisible(gc(full=TRUE))
+    flat <- getFromNamespace(".getFlatAnnotation","missMethyl")
+    canonical <- function(x) {
+        x <- x[,c("cpg","entrezid","symbol","alias","group"),drop=FALSE]
+        x[] <- lapply(x,as.character)
+        x <- x[order(x$cpg,x$entrezid,method="radix"),,drop=FALSE]
+        rownames(x) <- NULL
+        stopifnot(!anyNA(x$cpg),all(grepl("^cg[0-9]{8}$",x$cpg)),
+            !anyNA(x$entrezid),all(grepl("^[0-9]+$",x$entrezid)),
+            !anyDuplicated(x[,c("cpg","entrezid")]))
+        x
+    }
+    chunks <- split(seq_len(nrow(a)),(seq_len(nrow(a))-1L)%/%20000L)
+    native_pairs <- canonical(do.call(rbind,lapply(chunks,function(i) {
+        x <- flat("450K",a[i,,drop=FALSE])
+        stopifnot(all(x$cpg %in% rownames(a)[i]))
+        x
+    })))
+    # Exact full-row comparison on the previous unrelated technical 4000
+    # probe universe intersected with the fixed eligible set.
+    audit_ids <- intersect(readLines(file.path(scratch,"synthetic-probe-universe.txt")),rownames(a))
+    stopifnot(length(audit_ids)>0L)
+    whole <- canonical(flat("450K",a[match(audit_ids,rownames(a)),,drop=FALSE]))
+    chunked <- canonical(native_pairs[native_pairs$cpg %in% audit_ids,,drop=FALSE])
+    stopifnot(identical(whole,chunked),all(native_pairs$cpg %in% ids[present]))
+    counts <- tabulate(match(native_pairs$cpg,ids),nbins=length(ids))
+    stopifnot(sum(counts)==nrow(native_pairs),all(counts[!present]==0L))
+    status <- ifelse(!present,"absent_from_hg19_annotation",
+        ifelse(counts==0L,"present_no_native_gene_mapping",
+            ifelse(counts==1L,"one_native_gene","multiple_native_genes")))
+    # Native alias2SymbolTable chooses a first mapping for ambiguous aliases.
+    # Preserve source symbol and native-selected alias; this is NOT a new
+    # authoritative HGNC/transcript mapping or demonstration of regulation.
+    emit(native_pairs,"annotation-native-gene-pairs.tsv")
+    emit(data.frame(probe=ids,annotation_build="hg19",annotation_present=present,
+        native_gene_count=counts,disposition=status),"annotation-gene-coverage.tsv")
+    emit_summary(c(eligible_probes=length(ids),annotation_present=sum(present),
+        annotation_absent=sum(!present),gene_mapped=sum(counts>0L),
+        gene_unmapped=sum(counts==0L),mapped_to_multiple_genes=sum(counts>1L),
+        unique_native_pairs=nrow(native_pairs),native_entrez_genes=length(unique(native_pairs$entrezid)),
+        whole_vs_chunked_audit_probes=length(audit_ids),whole_vs_chunked_audit_pairs=nrow(whole),
+        native_pairs_sha256=sha256(file.path(output,"annotation-native-gene-pairs.tsv")),
+        coverage_sha256=sha256(file.path(output,"annotation-gene-coverage.tsv"))),
+        "annotation-gene-summary.tsv")
+    capture.output(sessionInfo(),file=file.path(output,"annotation-session-info.txt"))
+    emit(data.frame(package=c("sesameData","IlluminaHumanMethylation450kanno.ilmn12.hg19","org.Hs.eg.db"),
+        version=c("1.28.0","0.6.1","3.22.0"),
+        license=vapply(c("sesameData","IlluminaHumanMethylation450kanno.ilmn12.hg19","org.Hs.eg.db"),
+            function(p) as.character(packageDescription(p,fields="License")),character(1))),
+        "annotation-source-notices.tsv")
+    writeLines(c("scope=public_reference_only","status=passed",
+        "scientific_cohort_qc=false","scientific_admission=false","n1_frozen=false",
+        "transcript_mapping_qualified=false","cohort_scale_enrichment_qualified=false"),
+        file.path(output,"annotation-disposition.txt"))
+    cat("HM450 reference-only annotation: ",length(ids)," eligible IDs; ",
+        sum(counts>0L)," native gene-mapped; ",nrow(native_pairs)," unique pairs.\n",sep="")
 }
